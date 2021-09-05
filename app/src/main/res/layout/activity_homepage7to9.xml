@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/backgroundH79"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bg2"
+    tools:context=".Homepage7to9">
+
+  <LinearLayout
+      android:id="@+id/linearLayout1H79"
+      android:layout_width="371dp"
+      android:layout_height="wrap_content"
+      android:orientation="vertical"
+      app:layout_constraintBottom_toBottomOf="parent"
+      app:layout_constraintEnd_toEndOf="parent"
+      app:layout_constraintStart_toStartOf="parent"
+      app:layout_constraintTop_toTopOf="parent"
+      app:layout_constraintVertical_bias="0.1"
+      app:layout_constraintHorizontal_bias="0.5">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+      <ImageButton
+          android:id="@+id/backbtnH79"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:backgroundTint="#00FFFFFF"
+          android:contentDescription="@string/todo"
+          app:srcCompat="@drawable/subtnback"
+          tools:ignore="SpeakableTextPresentCheck,ImageContrastCheck,DuplicateSpeakableTextCheck" />
+
+      <Space
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:layout_weight="1" />
+
+      <ImageButton
+          android:id="@+id/userprofilebtn79"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:backgroundTint="#00FFFFFF"
+          android:contentDescription="@string/todo"
+          app:srcCompat="@drawable/ctgbtnprofile"
+          android:visibility="invisible"
+          tools:ignore="SpeakableTextPresentCheck,ImageContrastCheck,DuplicateSpeakableTextCheck" />
+
+    </LinearLayout>
+
+    <ImageView
+        android:id="@+id/logoH79"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:contentDescription="@string/todo"
+        app:srcCompat="@drawable/teluiconsmall" />
+
+    <ImageView
+        android:id="@+id/logotitleH79"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginBottom="20dp"
+        android:contentDescription="@string/todo"
+        app:srcCompat="@drawable/age79txttelukids"
+        tools:ignore="ImageContrastCheck" />
+
+    <ImageView
+        android:id="@+id/todayH79"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:contentDescription="@string/todo"
+        app:srcCompat="@drawable/age79txttoday" />
+
+    <ImageButton
+        android:id="@+id/gmrcH79"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:backgroundTint="#00FFFFFF"
+        android:contentDescription="@string/todo"
+        android:foregroundGravity="center_horizontal"
+        app:srcCompat="@drawable/age36btntopics"
+        tools:ignore="SpeakableTextPresentCheck,ImageContrastCheck" />
+
+    <ImageButton
+        android:id="@+id/achivementsH79"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:backgroundTint="#00FFFFFF"
+        android:contentDescription="@string/todo"
+        android:foregroundGravity="center_horizontal"
+        app:srcCompat="@drawable/age36btnachieve"
+        tools:ignore="SpeakableTextPresentCheck,ImageContrastCheck" />
+  </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

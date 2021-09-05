@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DesignSurface">
+    <option name="filePathToZoomLevelMap">
+      <map>
+        <entry key="..\:/Downloads/TeluKids-v1-myr_branch/app/src/main/res/layout/activity_blue1.xml" value="0.18819655521783182" />
+        <entry key="..\:/Downloads/TeluKids-v1-myr_branch/app/src/main/res/layout/activity_blue2.xml" value="0.18819655521783182" />
+        <entry key="..\:/Downloads/TeluKids-v1-myr_branch/app/src/main/res/layout/activity_blue3.xml" value="0.18819655521783182" />
+        <entry key="..\:/Downloads/TeluKids-v1-myr_branch/app/src/main/res/layout/activity_blue4.xml" value="0.24230072463768115" />
+        <entry key="..\:/Downloads/TeluKids-v1-myr_branch/app/src/main/res/layout/activity_blue5.xml" value="0.18819655521783182" />
+        <entry key="..\:/Downloads/TeluKids-v1-myr_branch/app/src/main/res/layout/activity_blue6.xml" value="0.18819655521783182" />
+        <entry key="..\:/Downloads/TeluKids-v1-myr_branch/app/src/main/res/layout/activity_circle_page1.xml" value="0.38697916666666665" />
+        <entry key="..\:/Downloads/TeluKids-v1-myr_branch/app/src/main/res/layout/activity_rectangle_page6.xml" value="0.18819655521783182" />
+        <entry key="..\:/Downloads/TeluKids-v1-myr_branch/app/src/main/res/layout/activity_red1.xml" value="0.38697916666666665" />
+        <entry key="..\:/Downloads/TeluKids-v1-myr_branch/app/src/main/res/layout/activity_red2.xml" value="0.38697916666666665" />
+        <entry key="..\:/Downloads/TeluKids-v1-myr_branch/app/src/main/res/layout/activity_red3.xml" value="0.3729166666666667" />
+        <entry key="..\:/Downloads/TeluKids-v1-myr_branch/app/src/main/res/layout/activity_red4.xml" value="0.38697916666666665" />
+        <entry key="..\:/Downloads/TeluKids-v1-myr_branch/app/src/main/res/layout/activity_red5.xml" value="0.3729166666666667" />
+        <entry key="..\:/Downloads/TeluKids-v1-myr_branch/app/src/main/res/layout/activity_red6.xml" value="0.24230072463768115" />
+        <entry key="..\:/Downloads/TeluKids-v1-myr_branch/app/src/main/res/layout/activity_yellow1.xml" value="0.38697916666666665" />
+        <entry key="..\:/Downloads/TeluKids-v1-myr_branch/app/src/main/res/layout/activity_yellow2.xml" value="0.18819655521783182" />
+        <entry key="..\:/Downloads/TeluKids-v1-myr_branch/app/src/main/res/layout/activity_yellow3.xml" value="0.18819655521783182" />
+        <entry key="..\:/Downloads/TeluKids-v1-myr_branch/app/src/main/res/layout/activity_yellow4.xml" value="0.38697916666666665" />
+        <entry key="..\:/Downloads/TeluKids-v1-myr_branch/app/src/main/res/layout/activity_yellow5.xml" value="0.38697916666666665" />
+        <entry key="..\:/Downloads/TeluKids-v1-myr_branch/app/src/main/res/layout/activity_yellow6.xml" value="0.38697916666666665" />
+        <entry key="..\:/Projects/app/src/main/res/layout/activity_category_selection.xml" value="0.24407894736842106" />
+        <entry key="..\:/Projects/app/src/main/res/layout/activity_login.xml" value="0.1" />
+        <entry key="..\:/Projects/app/src/main/res/layout/activity_main.xml" value="0.2" />
+        <entry key="..\:/Projects/app/src/main/res/layout/activity_sign_up.xml" value="0.1" />
+        <entry key="..\:/Projects/app/src/main/res/layout/activity_sign_up_or_log_in_page.xml" value="0.11990950226244344" />
+        <entry key="..\:/Projects/app/src/main/res/layout/activity_splash_screen.xml" value="0.12807377049180327" />
+        <entry key="..\:/Projects/app/src/main/res/layout/activity_successful_login.xml" value="0.20150273224043716" />
+        <entry key="..\:/Projects/app/src/main/res/layout/activity_successful_sign_up.xml" value="0.1909153005464481" />
+        <entry key="..\:/Projects/app/src/main/res/layout/activity_successful_sign_up2.xml" value="0.2444078947368421" />
+        <entry key="..\:/TeluKids-v1/app/src/main/res/layout/achievements_ages36.xml" value="0.14144736842105263" />
+        <entry key="..\:/TeluKids-v1/app/src/main/res/layout/activity_basic_concepts.xml" value="0.25" />
+        <entry key="..\:/TeluKids-v1/app/src/main/res/layout/activity_category_selection.xml" value="0.1417763157894737" />
+        <entry key="..\:/TeluKids-v1/app/src/main/res/layout/activity_choose_mode_colors.xml" value="0.2444078947368421" />
+        <entry key="..\:/TeluKids-v1/app/src/main/res/layout/activity_choose_mode_counting.xml" value="0.18271857923497267" />
+        <entry key="..\:/TeluKids-v1/app/src/main/res/layout/activity_choose_mode_shapes.xml" value="0.33" />
+        <entry key="..\:/TeluKids-v1/app/src/main/res/layout/activity_circle_page1.xml" value="0.2312158469945355" />
+        <entry key="..\:/TeluKids-v1/app/src/main/res/layout/activity_circle_page11.xml" value="0.11816939890710383" />
+        <entry key="..\:/TeluKids-v1/app/src/main/res/layout/activity_circle_page12.xml" value="0.13717105263157894" />
+        <entry key="..\:/TeluKids-v1/app/src/main/res/layout/activity_circle_page2.xml" value="0.1417763157894737" />
+        <entry key="..\:/TeluKids-v1/app/src/main/res/layout/activity_circle_page21.xml" value="0.13717105263157894" />
+        <entry key="..\:/TeluKids-v1/app/src/main/res/layout/activity_circle_page3.xml" value="0.13717105263157894" />
+        <entry key="..\:/TeluKids-v1/app/src/main/res/layout/activity_circle_page4.xml" value="0.2444078947368421" />
+        <entry key="..\:/TeluKids-v1/app/src/main/res/layout/activity_circle_page5.xml" value="0.13289473684210526" />
+        <entry key="..\:/TeluKids-v1/app/src/main/res/layout/activity_circle_page6.xml" value="0.13717105263157894" />
+        <entry key="..\:/TeluKids-v1/app/src/main/res/layout/activity_diamond_page1.xml" value="0.1" />
+        <entry key="..\:/TeluKids-v1/app/src/main/res/layout/activity_diamond_page2.xml" value="0.1" />
+        <entry key="..\:/TeluKids-v1/app/src/main/res/layout/activity_diamond_page3.xml" value="0.1" />
+        <entry key="..\:/TeluKids-v1/app/src/main/res/layout/activity_diamond_page4.xml" value="0.14144736842105263" />
+        <entry key="..\:/TeluKids-v1/app/src/main/res/layout/activity_diamond_page5.xml" value="0.14144736842105263" />
+        <entry key="..\:/TeluKids-v1/app/src/main/res/layout/activity_diamond_page6.xml" value="0.14144736842105263" />
+        <entry key="..\:/TeluKids-v1/app/src/main/res/layout/activity_edit_profile36.xml" value="0.1417763157894737" />
+        <entry key="..\:/TeluKids-v1/app/src/main/res/layout/activity_forgot_password.xml" value="0.358695652173913" />
+        <entry key="..\:/TeluKids-v1/app/src/main/res/layout/activity_heart_page1.xml" value="0.1" />
+        <entry key="..\:/TeluKids-v1/app/src/main/res/layout/activity_heart_page2.xml" value="0.1" />
+        <entry key="..\:/TeluKids-v1/app/src/main/res/layout/activity_heart_page3.xml" value="0.1" />
+        <entry key="..\:/TeluKids-v1/app/src/main/res/layout/activity_heart_page4.xml" value="0.1" />
+        <entry key="..\:/TeluKids-v1/app/src/main/res/layout/activity_heart_page5.xml" value="0.1" />
+        <entry key="..\:/TeluKids-v1/app/src/main/res/layout/activity_heart_page6.xml" value="0.1" />
+        <entry key="..\:/TeluKids-v1/app/src/main/res/layout/activity_homepage3to6.xml" value="0.2312158469945355" />
+        <entry key="..\:/TeluKids-v1/app/src/main/res/layout/activity_homepage7to9.xml" value="0.2312158469945355" />
+        <entry key="..\:/TeluKids-v1/app/src/main/res/layout/activity_lesson_intro_colors.xml" value="0.18271857923497267" />
+        <entry key="..\:/TeluKids-v1/app/src/main/res/layout/activity_lesson_intro_counting.xml" value="0.18271857923497267" />
+        <entry key="..\:/TeluKids-v1/app/src/main/res/layout/activity_lesson_intro_shapes.xml" value="0.1" />
+        <entry key="..\:/TeluKids-v1/app/src/main/res/layout/activity_login.xml" value="0.22" />
+        <entry key="..\:/TeluKids-v1/app/src/main/res/layout/activity_numbers.xml" value="0.2444078947368421" />
+        <entry key="..\:/TeluKids-v1/app/src/main/res/layout/activity_rectangle_page1.xml" value="0.1" />
+        <entry key="..\:/TeluKids-v1/app/src/main/res/layout/activity_rectangle_page2.xml" value="0.1" />
+        <entry key="..\:/TeluKids-v1/app/src/main/res/layout/activity_rectangle_page3.xml" value="0.1" />
+        <entry key="..\:/TeluKids-v1/app/src/main/res/layout/activity_rectangle_page4.xml" value="0.1" />
+        <entry key="..\:/TeluKids-v1/app/src/main/res/layout/activity_rectangle_page5.xml" value="0.1" />
+        <entry key="..\:/TeluKids-v1/app/src/main/res/layout/activity_rectangle_page6.xml" value="0.1" />
+        <entry key="..\:/TeluKids-v1/app/src/main/res/layout/activity_shapes_congrats.xml" value="0.1417763157894737" />
+        <entry key="..\:/TeluKids-v1/app/src/main/res/layout/activity_shapes_lesson_congrats.xml" value="0.25" />
+        <entry key="..\:/TeluKids-v1/app/src/main/res/layout/activity_sign_up.xml" value="0.2" />
+        <entry key="..\:/TeluKids-v1/app/src/main/res/layout/activity_sign_up_or_log_in_page.xml" value="0.1375" />
+        <entry key="..\:/TeluKids-v1/app/src/main/res/layout/activity_splash_screen.xml" value="0.1375" />
+        <entry key="..\:/TeluKids-v1/app/src/main/res/layout/activity_square_page1.xml" value="0.13717105263157894" />
+        <entry key="..\:/TeluKids-v1/app/src/main/res/layout/activity_square_page2.xml" value="0.1" />
+        <entry key="..\:/TeluKids-v1/app/src/main/res/layout/activity_square_page3.xml" value="0.1" />
+        <entry key="..\:/TeluKids-v1/app/src/main/res/layout/activity_square_page4.xml" value="0.1" />
+        <entry key="..\:/TeluKids-v1/app/src/main/res/layout/activity_square_page5.xml" value="0.1" />
+        <entry key="..\:/TeluKids-v1/app/src/main/res/layout/activity_square_page6.xml" value="0.1" />
+        <entry key="..\:/TeluKids-v1/app/src/main/res/layout/activity_star_page1.xml" value="0.1" />
+        <entry key="..\:/TeluKids-v1/app/src/main/res/layout/activity_star_page2.xml" value="0.1" />
+        <entry key="..\:/TeluKids-v1/app/src/main/res/layout/activity_star_page3.xml" value="0.1" />
+        <entry key="..\:/TeluKids-v1/app/src/main/res/layout/activity_star_page4.xml" value="0.1" />
+        <entry key="..\:/TeluKids-v1/app/src/main/res/layout/activity_star_page5.xml" value="0.1" />
+        <entry key="..\:/TeluKids-v1/app/src/main/res/layout/activity_star_page6.xml" value="0.1" />
+        <entry key="..\:/TeluKids-v1/app/src/main/res/layout/activity_successful_login.xml" value="0.1417763157894737" />
+        <entry key="..\:/TeluKids-v1/app/src/main/res/layout/activity_successful_sign_up.xml" value="0.25" />
+        <entry key="..\:/TeluKids-v1/app/src/main/res/layout/activity_triangle_page1.xml" value="0.1" />
+        <entry key="..\:/TeluKids-v1/app/src/main/res/layout/activity_triangle_page2.xml" value="0.1" />
+        <entry key="..\:/TeluKids-v1/app/src/main/res/layout/activity_triangle_page3.xml" value="0.1" />
+        <entry key="..\:/TeluKids-v1/app/src/main/res/layout/activity_triangle_page4.xml" value="0.1" />
+        <entry key="..\:/TeluKids-v1/app/src/main/res/layout/activity_triangle_page5.xml" value="0.1" />
+        <entry key="..\:/TeluKids-v1/app/src/main/res/layout/activity_triangle_page6.xml" value="0.1" />
+        <entry key="..\:/TeluKids-v1/app/src/main/res/layout/activity_user_profile36.xml" value="0.22" />
+        <entry key="..\:/TeluKids-v1/app/src/main/res/layout/activity_user_profile79.xml" value="0.2312158469945355" />
+        <entry key="..\:/TeluKids-v1/app/src/main/res/layout/congratspage_shapes.xml" value="0.13319672131147542" />
+        <entry key="..\:/TeluKids-v1/app/src/main/res/layout/quiz_shapes.xml" value="0.12007110536522302" />
+        <entry key="..\:/TeluKids-v1/app/src/main/res/layout/results_shapes.xml" value="0.13319672131147542" />
+        <entry key="..\:/Users/User/TeluKids-082221/app/src/main/res/layout/activity_sign_up_or_log_in_page.xml" value="0.1" />
+        <entry key="..\:/Users/User/TeluKids-082221/app/src/main/res/layout/ageselection.xml" value="0.10144927536231885" />
+        <entry key="..\:/Users/User/TeluKids-082221/app/src/main/res/layout/circlepage5.xml" value="0.1" />
+        <entry key="..\:/Users/User/TeluKids-v1-09012021/app/src/main/res/layout/activity_basic_concepts.xml" value="0.1" />
+        <entry key="..\:/Users/User/TeluKids-v1-09012021/app/src/main/res/layout/congratspage_shapes.xml" value="0.10144927536231885" />
+        <entry key="..\:/Users/User/TeluKids-v1-09012021/app/src/main/res/layout/quiz_shapes.xml" value="0.10144927536231885" />
+        <entry key="..\:/Users/User/TeluKids-v1-09012021/app/src/main/res/layout/results_shapes.xml" value="0.10144927536231885" />
+        <entry key="..\:/Users/User/TeluKids-v1/app/src/main/res/layout/activity_successful_login.xml" value="0.10371376811594203" />
+      </map>
+    </option>
+  </component>
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="1.8" project-jdk-type="JavaSDK">
+    <output url="file://$PROJECT_DIR$/build/classes" />
+  </component>
+  <component name="ProjectType">
+    <option name="id" value="Android" />
+  </component>
+  <component name="SuppressKotlinCodeStyleNotification">
+    <option name="disableForAll" value="true" />
+  </component>
+</project>

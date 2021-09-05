@@ -1,0 +1,289 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.example.telukidsv1">
+
+    <uses-permission android:name="android.permission.INTERNET" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/telukidslogo"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/telukidslogo_round"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.TeluKidsV1">
+        <activity
+            android:name=".Yellow6"
+            android:exported="true" />
+        <activity
+            android:name=".Yellow5"
+            android:exported="true" />
+        <activity
+            android:name=".Yellow4"
+            android:exported="true" />
+        <activity
+            android:name=".Yellow3"
+            android:exported="true" />
+        <activity
+            android:name=".Yellow2"
+            android:exported="true" />
+        <activity
+            android:name=".Yellow1"
+            android:exported="true" />
+        <activity
+            android:name=".Blue6"
+            android:exported="true" />
+        <activity
+            android:name=".Blue5"
+            android:exported="true" />
+        <activity
+            android:name=".Blue4"
+            android:exported="true" />
+        <activity
+            android:name=".Blue3"
+            android:exported="true" />
+        <activity
+            android:name=".Blue2"
+            android:exported="true" />
+        <activity
+            android:name=".Blue1"
+            android:exported="true" />
+        <activity
+            android:name=".Red6"
+            android:exported="true" />
+        <activity
+            android:name=".Red5"
+            android:exported="true" />
+        <activity
+            android:name=".Red4"
+            android:exported="true" />
+        <activity
+            android:name=".Red3"
+            android:exported="true" />
+        <activity
+            android:name=".Red2"
+            android:exported="true" />
+        <activity
+            android:name=".Red1"
+            android:exported="true" />
+        <activity
+            android:name=".ChooseModeColors"
+            android:exported="true" />
+        <activity
+            android:name=".LessonIntroColors"
+            android:exported="true" />
+        <activity
+            android:name=".ChooseModeCounting"
+            android:exported="true" />
+        <activity
+            android:name=".LessonIntroCounting"
+            android:exported="true" />
+        <activity
+            android:name=".Numbers"
+            android:exported="true" />
+        <activity
+            android:name=".DiamondPage6"
+            android:exported="true" />
+        <activity
+            android:name=".DiamondPage5"
+            android:exported="true" />
+        <activity
+            android:name=".DiamondPage4"
+            android:exported="true" />
+        <activity
+            android:name=".DiamondPage3"
+            android:exported="true" />
+        <activity
+            android:name=".DiamondPage2"
+            android:exported="true" />
+        <activity
+            android:name=".DiamondPage1"
+            android:exported="true" />
+        <activity
+            android:name=".RectanglePage6"
+            android:exported="true" />
+        <activity
+            android:name=".RectanglePage5"
+            android:exported="true" />
+        <activity
+            android:name=".RectanglePage4"
+            android:exported="true" />
+        <activity
+            android:name=".RectanglePage3"
+            android:exported="true" />
+        <activity
+            android:name=".RectanglePage2"
+            android:exported="true" />
+        <activity
+            android:name=".RectanglePage1"
+            android:exported="true" />
+        <activity
+            android:name=".HeartPage6"
+            android:exported="true" />
+        <activity
+            android:name=".HeartPage5"
+            android:exported="true" />
+        <activity
+            android:name=".HeartPage4"
+            android:exported="true" />
+        <activity
+            android:name=".HeartPage3"
+            android:exported="true" />
+        <activity
+            android:name=".HeartPage2"
+            android:exported="true" />
+        <activity
+            android:name=".HeartPage1"
+            android:exported="true" />
+        <activity
+            android:name=".ShapesLessonCongrats"
+            android:exported="true" />
+        <activity
+            android:name=".StarPage6"
+            android:exported="true" />
+        <activity
+            android:name=".StarPage5"
+            android:exported="true" />
+        <activity
+            android:name=".StarPage4"
+            android:exported="true" />
+        <activity
+            android:name=".StarPage3"
+            android:exported="true" />
+        <activity
+            android:name=".StarPage2"
+            android:exported="true" />
+        <activity
+            android:name=".StarPage1"
+            android:exported="true" />
+        <activity
+            android:name=".TrianglePage6"
+            android:exported="true" />
+        <activity
+            android:name=".TrianglePage5"
+            android:exported="true" />
+        <activity
+            android:name=".TrianglePage4"
+            android:exported="true" />
+        <activity
+            android:name=".TrianglePage3"
+            android:exported="true" />
+        <activity
+            android:name=".TrianglePage2"
+            android:exported="true" />
+        <activity
+            android:name=".TrianglePage1"
+            android:exported="true" />
+        <activity
+            android:name=".SquarePage6"
+            android:exported="true" />
+        <activity
+            android:name=".SquarePage5"
+            android:exported="true" />
+        <activity
+            android:name=".SquarePage4"
+            android:exported="true" />
+        <activity
+            android:name=".SquarePage3"
+            android:exported="true" />
+        <activity
+            android:name=".SquarePage2"
+            android:exported="true" />
+        <activity
+            android:name=".SquarePage1"
+            android:exported="true" />
+        <activity
+            android:name=".CirclePage6"
+            android:exported="true" />
+        <activity
+            android:name=".CirclePage5"
+            android:exported="true" />
+        <activity
+            android:name=".CirclePage4"
+            android:exported="true" />
+        <activity
+            android:name=".CirclePage3"
+            android:exported="true" />
+        <activity
+            android:name=".ChooseModeShapes"
+            android:exported="true" />
+        <activity
+            android:name=".CirclePage2"
+            android:exported="true" />
+        <activity
+            android:name=".CirclePage1"
+            android:exported="true" />
+        <activity
+            android:name=".LessonIntroShapes"
+            android:exported="true" />
+        <activity
+            android:name=".BasicConcepts"
+            android:exported="true" />
+        <activity
+            android:name=".LogoutConfirmation79"
+            android:exported="true" />
+        <activity
+            android:name=".EditProfile79"
+            android:exported="true" />
+        <activity
+            android:name=".UserProfile79"
+            android:exported="true" />
+        <activity
+            android:name=".LogoutConfirmation36"
+            android:exported="true" />
+        <activity
+            android:name=".EditProfile36"
+            android:exported="true" />
+        <activity
+            android:name=".UserProfile36"
+            android:exported="true" />
+        <activity
+            android:name=".Homepage7to9"
+            android:exported="true" />
+        <activity
+            android:name=".Homepage3to6"
+            android:exported="true" />
+        <activity
+            android:name=".Achievements3to6"
+            android:exported="true" />
+        <activity
+            android:name=".ForgotPassword"
+            android:exported="true" />
+        <activity
+            android:name=".CategorySelection"
+            android:exported="true" />
+        <activity
+            android:name=".SuccessfulLogin"
+            android:exported="true" />
+        <activity
+            android:name=".SignUpOrLogInPage"
+            android:exported="true" />
+        <activity
+            android:name=".SplashScreen"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".SignUp"
+            android:exported="true" />
+        <activity
+            android:name=".SuccessfulSignUp"
+            android:exported="true" />
+        <activity
+            android:name=".login"
+            android:exported="true" />
+        <activity
+            android:name=".QuizShapes"
+            android:exported="true" />
+        <activity
+            android:name=".ResultsShapes"
+            android:exported="true" />
+        <activity
+            android:name=".CongratsPageShapes"
+            android:exported="true" />
+    </application>
+
+</manifest>

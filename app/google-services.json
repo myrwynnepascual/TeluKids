@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "296911259252",
+    "project_id": "telukidsv1",
+    "storage_bucket": "telukidsv1.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:296911259252:android:09382096f6aa53301e7321",
+        "android_client_info": {
+          "package_name": "com.example.telukidsv1"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "296911259252-f0cbtvpcdp9lpfier0ld8aoptmoa2ie1.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBdPkM5Z6j8HqS1xOb5DGpmptt7Q8ZOJI8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "296911259252-f0cbtvpcdp9lpfier0ld8aoptmoa2ie1.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
