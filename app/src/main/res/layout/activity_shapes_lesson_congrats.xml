@@ -63,30 +63,34 @@
 
         <ImageView
             android:id="@+id/congratsSLC"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
             android:contentDescription="@string/todo"
             app:srcCompat="@drawable/cltxtcongrats"
             tools:ignore="ImageContrastCheck" />
 
         <ImageView
             android:id="@+id/certificateSLC"
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
             app:srcCompat="@drawable/lessoncert" />
 
         <ImageView
             android:id="@+id/finishedSLC"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
             android:contentDescription="@string/todo"
             app:srcCompat="@drawable/cltxtfinish"
             tools:ignore="ImageContrastCheck" />
 
         <ImageButton
             android:id="@+id/asessmentbtnSLC"
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
             android:layout_marginTop="20dp"
             android:backgroundTint="#00FFFFFF"
             android:contentDescription="@string/todo"
@@ -96,8 +100,9 @@
 
         <ImageButton
             android:id="@+id/homepageSLC"
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
             android:backgroundTint="#00FFFFFF"
             android:contentDescription="@string/todo"
             android:foregroundGravity="center_horizontal"

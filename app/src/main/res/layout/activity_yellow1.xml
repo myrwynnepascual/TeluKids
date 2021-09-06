@@ -7,7 +7,7 @@
     tools:context=".Yellow1">
 
     <VideoView
-        android:id="@+id/videoYDPG1"
+        android:id="@+id/videoYEPG1"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -16,7 +16,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <LinearLayout
-        android:id="@+id/linearLayout1YDPG1"
+        android:id="@+id/linearLayout1YEPG1"
         android:layout_width="371dp"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
@@ -28,7 +28,7 @@
         app:layout_constraintHorizontal_bias="0.5">
 
         <ImageButton
-            android:id="@+id/btnbackYDPG1"
+            android:id="@+id/btnbackYEPG1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:backgroundTint="#00FFFFFF"
@@ -42,7 +42,7 @@
             android:layout_weight="1" />
 
         <ImageButton
-            android:id="@+id/nextbtnYDPG1"
+            android:id="@+id/nextbtnYEPG1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:backgroundTint="#00FFFFFF"

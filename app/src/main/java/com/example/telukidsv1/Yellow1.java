@@ -13,10 +13,10 @@ import android.widget.VideoView;
 
 public class Yellow1 extends AppCompatActivity {
 
-    VideoView videoViewYDPG1;
-    String videoPathYDPG1;
-    Uri uriYDPG1;
-    ImageButton backbtnYDPG1,nextbtnYDPG1;
+    VideoView videoViewYEPG1;
+    String videoPathYEPG1;
+    Uri uriYEPG1;
+    ImageButton backbtnYEPG1,nextbtnYEPG1;
     MediaController mediaController;
 
     @Override
@@ -24,22 +24,22 @@ public class Yellow1 extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_yellow1);
 
-        videoViewYDPG1 = findViewById(R.id.videoYDPG1);
-        backbtnYDPG1 = findViewById(R.id.btnbackYDPG1);
-        nextbtnYDPG1 = findViewById(R.id.nextbtnYDPG1);
+        videoViewYEPG1 = findViewById(R.id.videoYEPG1);
+        backbtnYEPG1 = findViewById(R.id.btnbackYEPG1);
+        nextbtnYEPG1 = findViewById(R.id.nextbtnYEPG1);
 
-        videoPathYDPG1 = "android.resource://" + getPackageName() + "/" + R.raw.yellow1;
-        uriYDPG1 = Uri.parse(videoPathYDPG1);
-        videoViewYDPG1.setVideoURI(uriYDPG1);
+        videoPathYEPG1 = "android.resource://" + getPackageName() + "/" + R.raw.yellow1;
+        uriYEPG1 = Uri.parse(videoPathYEPG1);
+        videoViewYEPG1.setVideoURI(uriYEPG1);
 
         mediaController = new MediaController(this);
-        videoViewYDPG1.setMediaController(mediaController);
+        videoViewYEPG1.setMediaController(mediaController);
         mediaController.setVisibility(View.GONE);
-        mediaController.setAnchorView(videoViewYDPG1);
+        mediaController.setAnchorView(videoViewYEPG1);
 
-        videoViewYDPG1.start();
+        videoViewYEPG1.start();
 
-        videoViewYDPG1.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+        videoViewYEPG1.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
             @Override
             public void onCompletion(MediaPlayer mp) {
 
@@ -48,7 +48,7 @@ public class Yellow1 extends AppCompatActivity {
             }
         });
 
-        backbtnYDPG1.setOnClickListener(new View.OnClickListener() {
+        backbtnYEPG1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
@@ -57,7 +57,7 @@ public class Yellow1 extends AppCompatActivity {
             }
         });
 
-        nextbtnYDPG1.setOnClickListener(new View.OnClickListener() {
+        nextbtnYEPG1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 

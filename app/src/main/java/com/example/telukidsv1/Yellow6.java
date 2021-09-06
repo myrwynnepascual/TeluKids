@@ -43,7 +43,7 @@ public class Yellow6 extends AppCompatActivity {
             @Override
             public void onCompletion(MediaPlayer mp) {
 
-                //startActivity(new Intent(Yellow6.this, Orange1.class));
+                startActivity(new Intent(Yellow6.this, Orange1.class));
 
             }
         });
@@ -61,7 +61,7 @@ public class Yellow6 extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                //startActivity(new Intent(Yellow6.this, Orange1.class));
+                startActivity(new Intent(Yellow6.this, Orange1.class));
 
             }
         });

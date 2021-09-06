@@ -12,6 +12,63 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.TeluKidsV1">
         <activity
+            android:name=".ColorsLessonCongrats"
+            android:exported="true" />
+        <activity
+            android:name=".Green6"
+            android:exported="true" />
+        <activity
+            android:name=".Green5"
+            android:exported="true" />
+        <activity
+            android:name=".Green4"
+            android:exported="true" />
+        <activity
+            android:name=".Green3"
+            android:exported="true" />
+        <activity
+            android:name=".Green2"
+            android:exported="true" />
+        <activity
+            android:name=".Green1"
+            android:exported="true" />
+        <activity
+            android:name=".Purple6"
+            android:exported="true" />
+        <activity
+            android:name=".Purple5"
+            android:exported="true" />
+        <activity
+            android:name=".Purple4"
+            android:exported="true" />
+        <activity
+            android:name=".Purple3"
+            android:exported="true" />
+        <activity
+            android:name=".Purple2"
+            android:exported="true" />
+        <activity
+            android:name=".Purple1"
+            android:exported="true" />
+        <activity
+            android:name=".Orange6"
+            android:exported="true" />
+        <activity
+            android:name=".Orange5"
+            android:exported="true" />
+        <activity
+            android:name=".Orange4"
+            android:exported="true" />
+        <activity
+            android:name=".Orange3"
+            android:exported="true" />
+        <activity
+            android:name=".Orange2"
+            android:exported="true" />
+        <activity
+            android:name=".Orange1"
+            android:exported="true" />
+        <activity
             android:name=".Yellow6"
             android:exported="true" />
         <activity
