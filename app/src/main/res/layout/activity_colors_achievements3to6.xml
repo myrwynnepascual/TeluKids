@@ -1,0 +1,926 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bg2"
+    tools:context=".ColorsAchievements3to6">
+
+    <ScrollView
+        android:layout_width="371dp"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginRight="20dp"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.024">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <ImageButton
+                android:id="@+id/backbtnAchievements36Colors"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:backgroundTint="#00FFFFFF"
+                android:contentDescription="@string/todo"
+                app:srcCompat="@drawable/subtnback"
+                tools:ignore="SpeakableTextPresentCheck,ImageContrastCheck,DuplicateSpeakableTextCheck" />
+
+            <ImageView
+                android:id="@+id/txtAchievements36Colors"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:backgroundTint="#00FFFFFF"
+                android:contentDescription="@string/todo"
+                app:srcCompat="@drawable/achievementslogo"
+                tools:ignore="SpeakableTextPresentCheck,ImageContrastCheck,DuplicateSpeakableTextCheck" />
+
+            <ImageView
+                android:id="@+id/txttrophiesColors"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:backgroundTint="#00FFFFFF"
+                android:contentDescription="@string/todo"
+                app:srcCompat="@drawable/txttrophies"
+                tools:ignore="SpeakableTextPresentCheck,ImageContrastCheck,DuplicateSpeakableTextCheck" />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:orientation="horizontal"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <ImageView
+                    android:id="@+id/trophydiscipline36Colors"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_margin="10dp"
+                    android:backgroundTint="#00FFFFFF"
+                    android:contentDescription="@string/todo"
+                    app:srcCompat="@drawable/lockedtrophy"
+                    tools:ignore="SpeakableTextPresentCheck,ImageContrastCheck,DuplicateSpeakableTextCheck" />
+
+                <ImageView
+                    android:id="@+id/trophyhonesty36Colors"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_margin="10dp"
+                    android:backgroundTint="#00FFFFFF"
+                    android:contentDescription="@string/todo"
+                    app:srcCompat="@drawable/lockedtrophy"
+                    tools:ignore="SpeakableTextPresentCheck,ImageContrastCheck,DuplicateSpeakableTextCheck" />
+
+                <ImageView
+                    android:id="@+id/trophyrespect36Colors"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+
+                    android:layout_margin="10dp"
+                    android:backgroundTint="#00FFFFFF"
+                    android:contentDescription="@string/todo"
+                    app:srcCompat="@drawable/lockedtrophy"
+                    tools:ignore="SpeakableTextPresentCheck,ImageContrastCheck,DuplicateSpeakableTextCheck" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:orientation="horizontal"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <ImageView
+                    android:id="@+id/trophysociability36Colors"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+
+                    android:layout_margin="10dp"
+                    android:backgroundTint="#00FFFFFF"
+                    android:contentDescription="@string/todo"
+                    app:srcCompat="@drawable/lockedtrophy"
+                    tools:ignore="SpeakableTextPresentCheck,ImageContrastCheck,DuplicateSpeakableTextCheck" />
+
+                <ImageView
+                    android:id="@+id/trophycompassion36Colors"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_margin="10dp"
+                    android:backgroundTint="#00FFFFFF"
+                    android:contentDescription="@string/todo"
+                    app:srcCompat="@drawable/lockedtrophy"
+                    tools:ignore="SpeakableTextPresentCheck,ImageContrastCheck,DuplicateSpeakableTextCheck" />
+
+                <ImageView
+                    android:id="@+id/trophyresponsibility36Colors"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_margin="10dp"
+                    android:backgroundTint="#00FFFFFF"
+                    android:contentDescription="@string/todo"
+                    app:srcCompat="@drawable/lockedtrophy"
+                    tools:ignore="SpeakableTextPresentCheck,ImageContrastCheck,DuplicateSpeakableTextCheck" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:orientation="horizontal"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <ImageView
+                    android:id="@+id/trophylove36Colors"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_margin="10dp"
+                    android:backgroundTint="#00FFFFFF"
+                    android:contentDescription="@string/todo"
+                    app:srcCompat="@drawable/lockedtrophy"
+                    tools:ignore="SpeakableTextPresentCheck,ImageContrastCheck,DuplicateSpeakableTextCheck" />
+
+                <ImageView
+                    android:id="@+id/trophyobedience36Colors"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_margin="10dp"
+                    android:backgroundTint="#00FFFFFF"
+                    android:contentDescription="@string/todo"
+                    app:srcCompat="@drawable/lockedtrophy"
+                    tools:ignore="SpeakableTextPresentCheck,ImageContrastCheck,DuplicateSpeakableTextCheck" />
+
+                <ImageView
+                    android:id="@+id/trophydoinggood36Colors"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_margin="10dp"
+                    android:backgroundTint="#00FFFFFF"
+                    android:contentDescription="@string/todo"
+                    app:srcCompat="@drawable/lockedtrophy"
+                    tools:ignore="SpeakableTextPresentCheck,ImageContrastCheck,DuplicateSpeakableTextCheck" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:orientation="horizontal"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <ImageView
+                    android:id="@+id/trophycolors36Colors"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_margin="10dp"
+                    android:backgroundTint="#00FFFFFF"
+                    android:contentDescription="@string/todo"
+                    app:srcCompat="@drawable/lockedtrophy"
+                    tools:ignore="SpeakableTextPresentCheck,ImageContrastCheck,DuplicateSpeakableTextCheck" />
+
+                <ImageView
+                    android:id="@+id/trophycounting36Colors"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_margin="10dp"
+                    android:backgroundTint="#00FFFFFF"
+                    android:contentDescription="@string/todo"
+                    app:srcCompat="@drawable/lockedtrophy"
+                    tools:ignore="SpeakableTextPresentCheck,ImageContrastCheck,DuplicateSpeakableTextCheck" />
+
+                <ImageView
+                    android:id="@+id/trophyaddition36Colors"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_margin="10dp"
+                    android:backgroundTint="#00FFFFFF"
+                    android:contentDescription="@string/todo"
+                    app:srcCompat="@drawable/lockedtrophy"
+                    tools:ignore="SpeakableTextPresentCheck,ImageContrastCheck,DuplicateSpeakableTextCheck" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:orientation="horizontal"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <ImageView
+                    android:id="@+id/trophysubtraction36Colors"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_margin="10dp"
+                    android:backgroundTint="#00FFFFFF"
+                    android:contentDescription="@string/todo"
+                    app:srcCompat="@drawable/lockedtrophy"
+                    tools:ignore="SpeakableTextPresentCheck,ImageContrastCheck,DuplicateSpeakableTextCheck" />
+
+                <ImageView
+                    android:id="@+id/trophyshapes36Colors"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_margin="10dp"
+                    android:backgroundTint="#00FFFFFF"
+                    android:contentDescription="@string/todo"
+                    app:srcCompat="@drawable/lockedtrophy"
+                    tools:ignore="SpeakableTextPresentCheck,ImageContrastCheck,DuplicateSpeakableTextCheck" />
+
+
+            </LinearLayout>
+
+            <ImageView
+                android:id="@+id/txtmedalsColors"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_margin="10dp"
+                android:backgroundTint="#00FFFFFF"
+                android:contentDescription="@string/todo"
+                app:srcCompat="@drawable/txtmedals"
+                tools:ignore="SpeakableTextPresentCheck,ImageContrastCheck,DuplicateSpeakableTextCheck" />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:orientation="horizontal"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <ImageView
+                    android:id="@+id/medaldiscipline36Colors"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_margin="10dp"
+                    android:backgroundTint="#00FFFFFF"
+                    android:contentDescription="@string/todo"
+                    app:srcCompat="@drawable/lockedmedal"
+                    tools:ignore="SpeakableTextPresentCheck,ImageContrastCheck,DuplicateSpeakableTextCheck" />
+
+                <ImageView
+                    android:id="@+id/medalhonesty36Colors"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_margin="10dp"
+                    android:backgroundTint="#00FFFFFF"
+                    android:contentDescription="@string/todo"
+                    app:srcCompat="@drawable/lockedmedal"
+                    tools:ignore="SpeakableTextPresentCheck,ImageContrastCheck,DuplicateSpeakableTextCheck" />
+
+                <ImageView
+                    android:id="@+id/medalrespect36Colors"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+
+                    android:layout_margin="10dp"
+                    android:backgroundTint="#00FFFFFF"
+                    android:contentDescription="@string/todo"
+                    app:srcCompat="@drawable/lockedmedal"
+                    tools:ignore="SpeakableTextPresentCheck,ImageContrastCheck,DuplicateSpeakableTextCheck" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:orientation="horizontal"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <ImageView
+                    android:id="@+id/medalsociability36Colors"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+
+                    android:layout_margin="10dp"
+                    android:backgroundTint="#00FFFFFF"
+                    android:contentDescription="@string/todo"
+                    app:srcCompat="@drawable/lockedmedal"
+                    tools:ignore="SpeakableTextPresentCheck,ImageContrastCheck,DuplicateSpeakableTextCheck" />
+
+                <ImageView
+                    android:id="@+id/medalcompassion36Colors"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_margin="10dp"
+                    android:backgroundTint="#00FFFFFF"
+                    android:contentDescription="@string/todo"
+                    app:srcCompat="@drawable/lockedmedal"
+                    tools:ignore="SpeakableTextPresentCheck,ImageContrastCheck,DuplicateSpeakableTextCheck" />
+
+                <ImageView
+                    android:id="@+id/medalresponsibility36Colors"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_margin="10dp"
+                    android:backgroundTint="#00FFFFFF"
+                    android:contentDescription="@string/todo"
+                    app:srcCompat="@drawable/lockedmedal"
+                    tools:ignore="SpeakableTextPresentCheck,ImageContrastCheck,DuplicateSpeakableTextCheck" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:orientation="horizontal"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <ImageView
+                    android:id="@+id/medallove36Colors"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_margin="10dp"
+                    android:backgroundTint="#00FFFFFF"
+                    android:contentDescription="@string/todo"
+                    app:srcCompat="@drawable/lockedmedal"
+                    tools:ignore="SpeakableTextPresentCheck,ImageContrastCheck,DuplicateSpeakableTextCheck" />
+
+                <ImageView
+                    android:id="@+id/medalobedience36Colors"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_margin="10dp"
+                    android:backgroundTint="#00FFFFFF"
+                    android:contentDescription="@string/todo"
+                    app:srcCompat="@drawable/lockedmedal"
+                    tools:ignore="SpeakableTextPresentCheck,ImageContrastCheck,DuplicateSpeakableTextCheck" />
+
+                <ImageView
+                    android:id="@+id/medaldoinggood36Colors"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_margin="10dp"
+                    android:backgroundTint="#00FFFFFF"
+                    android:contentDescription="@string/todo"
+                    app:srcCompat="@drawable/lockedmedal"
+                    tools:ignore="SpeakableTextPresentCheck,ImageContrastCheck,DuplicateSpeakableTextCheck" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:orientation="horizontal"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <ImageView
+                    android:id="@+id/medalcolors36Colors"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_margin="10dp"
+                    android:backgroundTint="#00FFFFFF"
+                    android:contentDescription="@string/todo"
+                    app:srcCompat="@drawable/lockedmedal"
+                    tools:ignore="SpeakableTextPresentCheck,ImageContrastCheck,DuplicateSpeakableTextCheck" />
+
+                <ImageView
+                    android:id="@+id/medalcounting36Colors"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_margin="10dp"
+                    android:backgroundTint="#00FFFFFF"
+                    android:contentDescription="@string/todo"
+                    app:srcCompat="@drawable/lockedmedal"
+                    tools:ignore="SpeakableTextPresentCheck,ImageContrastCheck,DuplicateSpeakableTextCheck" />
+
+                <ImageView
+                    android:id="@+id/medaladdition36Colors"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_margin="10dp"
+                    android:backgroundTint="#00FFFFFF"
+                    android:contentDescription="@string/todo"
+                    app:srcCompat="@drawable/lockedmedal"
+                    tools:ignore="SpeakableTextPresentCheck,ImageContrastCheck,DuplicateSpeakableTextCheck" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:orientation="horizontal"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <ImageView
+                    android:id="@+id/medalsubtraction36Colors"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_margin="10dp"
+                    android:backgroundTint="#00FFFFFF"
+                    android:contentDescription="@string/todo"
+                    app:srcCompat="@drawable/lockedmedal"
+                    tools:ignore="SpeakableTextPresentCheck,ImageContrastCheck,DuplicateSpeakableTextCheck" />
+
+                <ImageView
+                    android:id="@+id/medalshapes36Colors"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_margin="10dp"
+                    android:backgroundTint="#00FFFFFF"
+                    android:contentDescription="@string/todo"
+                    app:srcCompat="@drawable/lockedmedal"
+                    tools:ignore="SpeakableTextPresentCheck,ImageContrastCheck,DuplicateSpeakableTextCheck" />
+
+
+            </LinearLayout>
+
+            <ImageView
+                android:id="@+id/txtbadgesColors"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_margin="10dp"
+                android:backgroundTint="#00FFFFFF"
+                android:contentDescription="@string/todo"
+                app:srcCompat="@drawable/txtbadges"
+                tools:ignore="SpeakableTextPresentCheck,ImageContrastCheck,DuplicateSpeakableTextCheck" />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:orientation="horizontal"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <ImageView
+                    android:id="@+id/badgediscipline36Colors"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_margin="10dp"
+                    android:backgroundTint="#00FFFFFF"
+                    android:contentDescription="@string/todo"
+                    app:srcCompat="@drawable/lockedbadge"
+                    tools:ignore="SpeakableTextPresentCheck,ImageContrastCheck,DuplicateSpeakableTextCheck" />
+
+                <ImageView
+                    android:id="@+id/badgehonesty36Colors"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_margin="10dp"
+                    android:backgroundTint="#00FFFFFF"
+                    android:contentDescription="@string/todo"
+                    app:srcCompat="@drawable/lockedbadge"
+                    tools:ignore="SpeakableTextPresentCheck,ImageContrastCheck,DuplicateSpeakableTextCheck" />
+
+                <ImageView
+                    android:id="@+id/badgerespect36Colors"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+
+                    android:layout_margin="10dp"
+                    android:backgroundTint="#00FFFFFF"
+                    android:contentDescription="@string/todo"
+                    app:srcCompat="@drawable/lockedbadge"
+                    tools:ignore="SpeakableTextPresentCheck,ImageContrastCheck,DuplicateSpeakableTextCheck" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:orientation="horizontal"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <ImageView
+                    android:id="@+id/badgesociability36Colors"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+
+                    android:layout_margin="10dp"
+                    android:backgroundTint="#00FFFFFF"
+                    android:contentDescription="@string/todo"
+                    app:srcCompat="@drawable/lockedbadge"
+                    tools:ignore="SpeakableTextPresentCheck,ImageContrastCheck,DuplicateSpeakableTextCheck" />
+
+                <ImageView
+                    android:id="@+id/badgecompassion36Colors"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_margin="10dp"
+                    android:backgroundTint="#00FFFFFF"
+                    android:contentDescription="@string/todo"
+                    app:srcCompat="@drawable/lockedbadge"
+                    tools:ignore="SpeakableTextPresentCheck,ImageContrastCheck,DuplicateSpeakableTextCheck" />
+
+                <ImageView
+                    android:id="@+id/badgeresponsibility36Colors"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_margin="10dp"
+                    android:backgroundTint="#00FFFFFF"
+                    android:contentDescription="@string/todo"
+                    app:srcCompat="@drawable/lockedbadge"
+                    tools:ignore="SpeakableTextPresentCheck,ImageContrastCheck,DuplicateSpeakableTextCheck" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:orientation="horizontal"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <ImageView
+                    android:id="@+id/badgelove36Colors"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_margin="10dp"
+                    android:backgroundTint="#00FFFFFF"
+                    android:contentDescription="@string/todo"
+                    app:srcCompat="@drawable/lockedbadge"
+                    tools:ignore="SpeakableTextPresentCheck,ImageContrastCheck,DuplicateSpeakableTextCheck" />
+
+                <ImageView
+                    android:id="@+id/badgeobedience36Colors"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_margin="10dp"
+                    android:backgroundTint="#00FFFFFF"
+                    android:contentDescription="@string/todo"
+                    app:srcCompat="@drawable/lockedbadge"
+                    tools:ignore="SpeakableTextPresentCheck,ImageContrastCheck,DuplicateSpeakableTextCheck" />
+
+                <ImageView
+                    android:id="@+id/badgedoinggood36Colors"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_margin="10dp"
+                    android:backgroundTint="#00FFFFFF"
+                    android:contentDescription="@string/todo"
+                    app:srcCompat="@drawable/lockedbadge"
+                    tools:ignore="SpeakableTextPresentCheck,ImageContrastCheck,DuplicateSpeakableTextCheck" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:orientation="horizontal"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <ImageView
+                    android:id="@+id/badgecolors36Colors"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_margin="10dp"
+                    android:backgroundTint="#00FFFFFF"
+                    android:contentDescription="@string/todo"
+                    app:srcCompat="@drawable/lockedbadge"
+                    tools:ignore="SpeakableTextPresentCheck,ImageContrastCheck,DuplicateSpeakableTextCheck" />
+
+                <ImageView
+                    android:id="@+id/badgecounting36Colors"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_margin="10dp"
+                    android:backgroundTint="#00FFFFFF"
+                    android:contentDescription="@string/todo"
+                    app:srcCompat="@drawable/lockedbadge"
+                    tools:ignore="SpeakableTextPresentCheck,ImageContrastCheck,DuplicateSpeakableTextCheck" />
+
+                <ImageView
+                    android:id="@+id/badgeaddition36Colors"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_margin="10dp"
+                    android:backgroundTint="#00FFFFFF"
+                    android:contentDescription="@string/todo"
+                    app:srcCompat="@drawable/lockedbadge"
+                    tools:ignore="SpeakableTextPresentCheck,ImageContrastCheck,DuplicateSpeakableTextCheck" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:orientation="horizontal"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <ImageView
+                    android:id="@+id/badgesubtraction36Colors"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_margin="10dp"
+                    android:backgroundTint="#00FFFFFF"
+                    android:contentDescription="@string/todo"
+                    app:srcCompat="@drawable/lockedbadge"
+                    tools:ignore="SpeakableTextPresentCheck,ImageContrastCheck,DuplicateSpeakableTextCheck" />
+
+                <ImageView
+                    android:id="@+id/badgeshapes36Colors"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_margin="10dp"
+                    android:backgroundTint="#00FFFFFF"
+                    android:contentDescription="@string/todo"
+                    app:srcCompat="@drawable/lockedbadge"
+                    tools:ignore="SpeakableTextPresentCheck,ImageContrastCheck,DuplicateSpeakableTextCheck" />
+
+
+            </LinearLayout>
+
+            <ImageView
+                android:id="@+id/txtcertificatesColors"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_margin="10dp"
+                android:backgroundTint="#00FFFFFF"
+                android:contentDescription="@string/todo"
+                app:srcCompat="@drawable/txtcertificates"
+                tools:ignore="SpeakableTextPresentCheck,ImageContrastCheck,DuplicateSpeakableTextCheck" />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:orientation="horizontal"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <ImageView
+                    android:id="@+id/certificatediscipline36Colors"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_margin="10dp"
+                    android:backgroundTint="#00FFFFFF"
+                    android:contentDescription="@string/todo"
+                    app:srcCompat="@drawable/lockedcertificate"
+                    tools:ignore="SpeakableTextPresentCheck,ImageContrastCheck,DuplicateSpeakableTextCheck" />
+
+                <ImageView
+                    android:id="@+id/certificatehonesty36Colors"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_margin="10dp"
+                    android:backgroundTint="#00FFFFFF"
+                    android:contentDescription="@string/todo"
+                    app:srcCompat="@drawable/lockedcertificate"
+                    tools:ignore="SpeakableTextPresentCheck,ImageContrastCheck,DuplicateSpeakableTextCheck" />
+
+                <ImageView
+                    android:id="@+id/certificaterespect36Colors"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+
+                    android:layout_margin="10dp"
+                    android:backgroundTint="#00FFFFFF"
+                    android:contentDescription="@string/todo"
+                    app:srcCompat="@drawable/lockedcertificate"
+                    tools:ignore="SpeakableTextPresentCheck,ImageContrastCheck,DuplicateSpeakableTextCheck" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:orientation="horizontal"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <ImageView
+                    android:id="@+id/certificateociability36Colors"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+
+                    android:layout_margin="10dp"
+                    android:backgroundTint="#00FFFFFF"
+                    android:contentDescription="@string/todo"
+                    app:srcCompat="@drawable/lockedcertificate"
+                    tools:ignore="SpeakableTextPresentCheck,ImageContrastCheck,DuplicateSpeakableTextCheck" />
+
+                <ImageView
+                    android:id="@+id/certificatecompassion36Colors"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_margin="10dp"
+                    android:backgroundTint="#00FFFFFF"
+                    android:contentDescription="@string/todo"
+                    app:srcCompat="@drawable/lockedcertificate"
+                    tools:ignore="SpeakableTextPresentCheck,ImageContrastCheck,DuplicateSpeakableTextCheck" />
+
+                <ImageView
+                    android:id="@+id/certificateresponsibility36Colors"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_margin="10dp"
+                    android:backgroundTint="#00FFFFFF"
+                    android:contentDescription="@string/todo"
+                    app:srcCompat="@drawable/lockedcertificate"
+                    tools:ignore="SpeakableTextPresentCheck,ImageContrastCheck,DuplicateSpeakableTextCheck" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:orientation="horizontal"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <ImageView
+                    android:id="@+id/certificatelove36Colors"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_margin="10dp"
+                    android:backgroundTint="#00FFFFFF"
+                    android:contentDescription="@string/todo"
+                    app:srcCompat="@drawable/lockedcertificate"
+                    tools:ignore="SpeakableTextPresentCheck,ImageContrastCheck,DuplicateSpeakableTextCheck" />
+
+                <ImageView
+                    android:id="@+id/certificateobedience36Colors"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_margin="10dp"
+                    android:backgroundTint="#00FFFFFF"
+                    android:contentDescription="@string/todo"
+                    app:srcCompat="@drawable/lockedcertificate"
+                    tools:ignore="SpeakableTextPresentCheck,ImageContrastCheck,DuplicateSpeakableTextCheck" />
+
+                <ImageView
+                    android:id="@+id/certificaterdoinggood36Colors"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_margin="10dp"
+                    android:backgroundTint="#00FFFFFF"
+                    android:contentDescription="@string/todo"
+                    app:srcCompat="@drawable/lockedcertificate"
+                    tools:ignore="SpeakableTextPresentCheck,ImageContrastCheck,DuplicateSpeakableTextCheck" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:orientation="horizontal"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <ImageView
+                    android:id="@+id/certificatecolors36Colors"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_margin="10dp"
+                    android:backgroundTint="#00FFFFFF"
+                    android:contentDescription="@string/todo"
+                    app:srcCompat="@drawable/lockedcertificate"
+                    tools:ignore="SpeakableTextPresentCheck,ImageContrastCheck,DuplicateSpeakableTextCheck" />
+
+                <ImageView
+                    android:id="@+id/certificatecounting36Colors"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_margin="10dp"
+                    android:backgroundTint="#00FFFFFF"
+                    android:contentDescription="@string/todo"
+                    app:srcCompat="@drawable/lockedcertificate"
+                    tools:ignore="SpeakableTextPresentCheck,ImageContrastCheck,DuplicateSpeakableTextCheck" />
+
+                <ImageView
+                    android:id="@+id/certificateaddition36Colors"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_margin="10dp"
+                    android:backgroundTint="#00FFFFFF"
+                    android:contentDescription="@string/todo"
+                    app:srcCompat="@drawable/lockedcertificate"
+                    tools:ignore="SpeakableTextPresentCheck,ImageContrastCheck,DuplicateSpeakableTextCheck" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:orientation="horizontal"
+                android:layout_marginBottom="25dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <ImageView
+                    android:id="@+id/certificateubtraction36Colors"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_margin="10dp"
+                    android:layout_marginBottom="25dp"
+                    android:backgroundTint="#00FFFFFF"
+                    android:contentDescription="@string/todo"
+                    app:srcCompat="@drawable/lockedcertificate"
+                    tools:ignore="SpeakableTextPresentCheck,ImageContrastCheck,DuplicateSpeakableTextCheck" />
+
+                <ImageView
+                    android:id="@+id/certificateshapes36Colors"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_margin="10dp"
+                    android:backgroundTint="#00FFFFFF"
+                    android:contentDescription="@string/todo"
+                    app:srcCompat="@drawable/lockedcertificate"
+                    tools:ignore="SpeakableTextPresentCheck,ImageContrastCheck,DuplicateSpeakableTextCheck" />
+
+
+            </LinearLayout>
+
+
+        </LinearLayout>
+
+
+    </ScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

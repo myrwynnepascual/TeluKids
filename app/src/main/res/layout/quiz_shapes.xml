@@ -12,16 +12,13 @@
         android:id="@+id/quizLayout_Shapes"
         android:layout_width="371dp"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="20dp"
-        android:layout_marginTop="20dp"
-        android:layout_marginRight="20dp"
         android:orientation="vertical"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        android:gravity="center_horizontal"
-        app:layout_constraintVertical_bias="0.024">
+        app:layout_constraintVertical_bias="0.1"
+        app:layout_constraintHorizontal_bias="0.5">
 
 
         <TextView
@@ -29,6 +26,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="30dp"
+            android:layout_gravity="center_horizontal"
             android:fontFamily="@font/leaguespartanbold"
             android:text="Question #1"
             android:textColor="@android:color/holo_orange_light"
@@ -36,19 +34,20 @@
 
         <TextView
             android:id="@+id/questionLabel_Shapes"
-            android:layout_width="wrap_content"
+            android:layout_width="275dp"
             android:layout_height="wrap_content"
-            android:layout_marginTop="30dp"
+            android:layout_gravity="center_horizontal"
             android:fontFamily="@font/leaguespartanbold"
             android:text="Question"
             android:textColor="@color/white"
-            android:textSize="24sp"
+            android:textSize="20sp"
             android:textAlignment="center"/>
 
         <ImageView
             android:id="@+id/imgQuestion_Shapes"
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
             android:layout_marginTop="30dp"
             tools:srcCompat="@drawable/shapesquestion1" />
 
@@ -58,6 +57,7 @@
             android:layout_width="300dp"
             android:layout_height="60dp"
             android:layout_marginTop="20dp"
+            android:layout_gravity="center_horizontal"
             android:background="@drawable/answerbutton"
             android:fontFamily="@font/arialroundedmt"
             android:onClick="checkAnswer"
@@ -69,6 +69,7 @@
             android:layout_width="300dp"
             android:layout_height="60dp"
             android:layout_marginTop="20dp"
+            android:layout_gravity="center_horizontal"
             android:background="@drawable/answerbutton"
             android:fontFamily="@font/arialroundedmt"
             android:onClick="checkAnswer"
@@ -80,10 +81,11 @@
             android:layout_width="150dp"
             android:layout_height="60dp"
             android:layout_marginTop="30dp"
+            android:layout_gravity="center_horizontal"
             android:background="@drawable/confirmbutton"
             android:fontFamily="@font/arialroundedmt"
             android:onClick="checkAnswer"
-            android:text="Confirm Answer"
+            android:text="Submit"
             android:textColor="@color/white" />
 
     </LinearLayout>

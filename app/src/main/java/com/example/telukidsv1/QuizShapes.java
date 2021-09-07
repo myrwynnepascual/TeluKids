@@ -83,7 +83,7 @@ public class QuizShapes extends AppCompatActivity {
     }
     public void showNextQuiz(){
         //Update quizCountLabel
-        countLabel_Shapes.setText("Question #" + quizCount_Shapes);
+        countLabel_Shapes.setText("Question " + quizCount_Shapes);
         confirmClicked_Shapes = 0;
 
         //Generate random number

@@ -40,7 +40,6 @@ public class ResultsShapes extends AppCompatActivity {
         setContentView(R.layout.results_shapes);
         TextView totalScoreLabel = findViewById(R.id.totalScoreLabel_Shapes);
         ImageView imgTrophy_Shapes = findViewById(R.id.imgTrophy_Shapes);
-        Button btnNext_Quiz_Shapes = findViewById(R.id.btnNext_Quiz_Shapes);
 
         fAuth = FirebaseAuth.getInstance();
         fStore = FirebaseFirestore.getInstance();
@@ -51,15 +50,15 @@ public class ResultsShapes extends AppCompatActivity {
         totalScoreLabel.setText(score_shapes + " / 5");
 
         if (score_shapes == 0 || score_shapes == 1 || score_shapes == 2){
-            imgTrophy_Shapes.setImageResource(R.drawable.medal_good_rounded);
+            imgTrophy_Shapes.setImageResource(R.drawable.congratsbadgeshapes);
             achievement_shapes = "Shapes Beginner";
         }
         if (score_shapes == 3 || score_shapes == 4){
-            imgTrophy_Shapes.setImageResource(R.drawable.medal_verygood_rounded);
+            imgTrophy_Shapes.setImageResource(R.drawable.congratsmedalshapes);
             achievement_shapes = "Shapes Expert";
         }
         if (score_shapes == 5){
-            imgTrophy_Shapes.setImageResource(R.drawable.trophy_shapesmaster_rounded);
+            imgTrophy_Shapes.setImageResource(R.drawable.congratsbadgeshapes);
             achievement_shapes = "Shapes Master";
         }
 
@@ -74,12 +73,5 @@ public class ResultsShapes extends AppCompatActivity {
             }
         });
 
-        btnNext_Quiz_Shapes.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent proceed = new Intent(ResultsShapes.this, CongratsPageShapes.class);
-                startActivity(proceed);
-            }
-        });
     }
 }

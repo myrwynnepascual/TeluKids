@@ -3,21 +3,28 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
-        <entry key="..\:/Downloads/TeluKids-v1-myr_branch/app/src/main/res/layout/achievements_ages36.xml" value="0.25" />
+        <entry key="..\:/Downloads/TeluKids-v1-myr_branch/app/src/main/res/layout/achievements_ages36.xml" value="0.19744884400744087" />
+        <entry key="..\:/Downloads/TeluKids-v1-myr_branch/app/src/main/res/layout/activity_basic_concepts.xml" value="0.38697916666666665" />
         <entry key="..\:/Downloads/TeluKids-v1-myr_branch/app/src/main/res/layout/activity_blue1.xml" value="0.18819655521783182" />
         <entry key="..\:/Downloads/TeluKids-v1-myr_branch/app/src/main/res/layout/activity_blue2.xml" value="0.18819655521783182" />
         <entry key="..\:/Downloads/TeluKids-v1-myr_branch/app/src/main/res/layout/activity_blue3.xml" value="0.18819655521783182" />
         <entry key="..\:/Downloads/TeluKids-v1-myr_branch/app/src/main/res/layout/activity_blue4.xml" value="0.24230072463768115" />
         <entry key="..\:/Downloads/TeluKids-v1-myr_branch/app/src/main/res/layout/activity_blue5.xml" value="0.18819655521783182" />
         <entry key="..\:/Downloads/TeluKids-v1-myr_branch/app/src/main/res/layout/activity_blue6.xml" value="0.18819655521783182" />
+        <entry key="..\:/Downloads/TeluKids-v1-myr_branch/app/src/main/res/layout/activity_choose_mode_colors.xml" value="0.38697916666666665" />
+        <entry key="..\:/Downloads/TeluKids-v1-myr_branch/app/src/main/res/layout/activity_choose_mode_counting.xml" value="0.38697916666666665" />
+        <entry key="..\:/Downloads/TeluKids-v1-myr_branch/app/src/main/res/layout/activity_choose_mode_shapes.xml" value="0.38697916666666665" />
         <entry key="..\:/Downloads/TeluKids-v1-myr_branch/app/src/main/res/layout/activity_circle_page1.xml" value="0.38697916666666665" />
-        <entry key="..\:/Downloads/TeluKids-v1-myr_branch/app/src/main/res/layout/activity_colors_lesson_congrats.xml" value="0.38697916666666665" />
+        <entry key="..\:/Downloads/TeluKids-v1-myr_branch/app/src/main/res/layout/activity_colors_achievements3to6.xml" value="0.2444078947368421" />
+        <entry key="..\:/Downloads/TeluKids-v1-myr_branch/app/src/main/res/layout/activity_colors_lesson_congrats.xml" value="0.33" />
         <entry key="..\:/Downloads/TeluKids-v1-myr_branch/app/src/main/res/layout/activity_green1.xml" value="0.18819655521783182" />
         <entry key="..\:/Downloads/TeluKids-v1-myr_branch/app/src/main/res/layout/activity_green2.xml" value="0.24230072463768115" />
         <entry key="..\:/Downloads/TeluKids-v1-myr_branch/app/src/main/res/layout/activity_green3.xml" value="0.18135764944275581" />
         <entry key="..\:/Downloads/TeluKids-v1-myr_branch/app/src/main/res/layout/activity_green4.xml" value="0.18819655521783182" />
         <entry key="..\:/Downloads/TeluKids-v1-myr_branch/app/src/main/res/layout/activity_green5.xml" value="0.18819655521783182" />
         <entry key="..\:/Downloads/TeluKids-v1-myr_branch/app/src/main/res/layout/activity_green6.xml" value="0.18819655521783182" />
+        <entry key="..\:/Downloads/TeluKids-v1-myr_branch/app/src/main/res/layout/activity_homepage3to6.xml" value="0.38697916666666665" />
+        <entry key="..\:/Downloads/TeluKids-v1-myr_branch/app/src/main/res/layout/activity_homepage7to9.xml" value="0.38697916666666665" />
         <entry key="..\:/Downloads/TeluKids-v1-myr_branch/app/src/main/res/layout/activity_orange1.xml" value="0.38697916666666665" />
         <entry key="..\:/Downloads/TeluKids-v1-myr_branch/app/src/main/res/layout/activity_orange2.xml" value="0.18135764944275581" />
         <entry key="..\:/Downloads/TeluKids-v1-myr_branch/app/src/main/res/layout/activity_orange3.xml" value="0.24230072463768115" />
@@ -37,13 +44,18 @@
         <entry key="..\:/Downloads/TeluKids-v1-myr_branch/app/src/main/res/layout/activity_red4.xml" value="0.38697916666666665" />
         <entry key="..\:/Downloads/TeluKids-v1-myr_branch/app/src/main/res/layout/activity_red5.xml" value="0.3729166666666667" />
         <entry key="..\:/Downloads/TeluKids-v1-myr_branch/app/src/main/res/layout/activity_red6.xml" value="0.24230072463768115" />
-        <entry key="..\:/Downloads/TeluKids-v1-myr_branch/app/src/main/res/layout/activity_shapes_lesson_congrats.xml" value="0.38697916666666665" />
+        <entry key="..\:/Downloads/TeluKids-v1-myr_branch/app/src/main/res/layout/activity_shapes_achievements3to6.xml" value="0.2355263157894737" />
+        <entry key="..\:/Downloads/TeluKids-v1-myr_branch/app/src/main/res/layout/activity_shapes_lesson_congrats.xml" value="0.12" />
+        <entry key="..\:/Downloads/TeluKids-v1-myr_branch/app/src/main/res/layout/activity_sign_up.xml" value="0.2444078947368421" />
         <entry key="..\:/Downloads/TeluKids-v1-myr_branch/app/src/main/res/layout/activity_yellow1.xml" value="0.38697916666666665" />
         <entry key="..\:/Downloads/TeluKids-v1-myr_branch/app/src/main/res/layout/activity_yellow2.xml" value="0.18819655521783182" />
         <entry key="..\:/Downloads/TeluKids-v1-myr_branch/app/src/main/res/layout/activity_yellow3.xml" value="0.18819655521783182" />
         <entry key="..\:/Downloads/TeluKids-v1-myr_branch/app/src/main/res/layout/activity_yellow4.xml" value="0.38697916666666665" />
         <entry key="..\:/Downloads/TeluKids-v1-myr_branch/app/src/main/res/layout/activity_yellow5.xml" value="0.38697916666666665" />
         <entry key="..\:/Downloads/TeluKids-v1-myr_branch/app/src/main/res/layout/activity_yellow6.xml" value="0.38697916666666665" />
+        <entry key="..\:/Downloads/TeluKids-v1-myr_branch/app/src/main/res/layout/congratspage_shapes.xml" value="0.22" />
+        <entry key="..\:/Downloads/TeluKids-v1-myr_branch/app/src/main/res/layout/quiz_shapes.xml" value="0.2" />
+        <entry key="..\:/Downloads/TeluKids-v1-myr_branch/app/src/main/res/layout/results_shapes.xml" value="0.16" />
         <entry key="..\:/Projects/app/src/main/res/layout/activity_category_selection.xml" value="0.24407894736842106" />
         <entry key="..\:/Projects/app/src/main/res/layout/activity_login.xml" value="0.1" />
         <entry key="..\:/Projects/app/src/main/res/layout/activity_main.xml" value="0.2" />

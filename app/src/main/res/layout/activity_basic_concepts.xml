@@ -34,19 +34,10 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
-            android:contentDescription="@string/todo"
-            app:srcCompat="@drawable/teluiconsmall" />
-
-        <ImageView
-            android:id="@+id/bconceptstxtBC"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center_horizontal"
             android:layout_marginBottom="20dp"
             android:contentDescription="@string/todo"
-            app:srcCompat="@drawable/bcptxttelukids"
-            tools:ignore="ImageContrastCheck" />
-
+            app:srcCompat="@drawable/bconceptslogotitle" />
+        
         <ImageView
             android:id="@+id/choosetopictxtBC"
             android:layout_width="wrap_content"

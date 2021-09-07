@@ -46,7 +46,7 @@
                 tools:ignore="SpeakableTextPresentCheck,ImageContrastCheck,DuplicateSpeakableTextCheck" />
 
             <Space
-                android:layout_width="71dp"
+                android:layout_width="30dp"
                 android:layout_height="match_parent"
                 android:layout_weight="0" />
 
@@ -55,7 +55,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:contentDescription="@string/todo"
-                app:srcCompat="@drawable/teluiconsmall" />
+                app:srcCompat="@drawable/classroomlogotitle" />
 
             <Space
                 android:layout_width="126dp"
@@ -64,13 +64,7 @@
 
         </LinearLayout>
 
-        <ImageView
-            android:id="@+id/classroomCMS"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center_horizontal"
-            android:contentDescription="@string/todo"
-            app:srcCompat="@drawable/modetxtchoose" />
+
 
         <ImageView
             android:id="@+id/chooseCMS"

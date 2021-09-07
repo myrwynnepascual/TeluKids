@@ -24,7 +24,6 @@ public class ShapesLessonCongrats extends AppCompatActivity {
 
     ImageButton btnbackSLC,btnachievementsSLC, btnassessmentSLC, btnhomepageSLC;
     ImageView certificateSLC;
-    String userID, username, usericon;
 
     FirebaseAuth fAuth;
     FirebaseFirestore fStore;
@@ -66,7 +65,7 @@ public class ShapesLessonCongrats extends AppCompatActivity {
         btnachievementsSLC.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(ShapesLessonCongrats.this,Achievements3to6.class));
+                startActivity(new Intent(ShapesLessonCongrats.this,ShapesAchievements3to6.class));
             }
         });
 
@@ -80,7 +79,7 @@ public class ShapesLessonCongrats extends AppCompatActivity {
         btnhomepageSLC.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(ShapesLessonCongrats.this, BasicConcepts.class));
+                startActivity(new Intent(ShapesLessonCongrats.this, Homepage3to6.class));
             }
         });
 

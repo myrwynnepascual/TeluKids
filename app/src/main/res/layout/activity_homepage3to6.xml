@@ -45,8 +45,8 @@
                 android:layout_height="wrap_content"
                 android:backgroundTint="#00FFFFFF"
                 android:contentDescription="@string/todo"
-                app:srcCompat="@drawable/ctgbtnprofile"
                 android:visibility="invisible"
+                app:srcCompat="@drawable/ctgbtnprofile"
                 tools:ignore="SpeakableTextPresentCheck,ImageContrastCheck,DuplicateSpeakableTextCheck" />
 
         </LinearLayout>
@@ -57,16 +57,8 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
             android:contentDescription="@string/todo"
-            app:srcCompat="@drawable/teluiconsmall" />
+            app:srcCompat="@drawable/age36logotitle" />
 
-        <ImageView
-            android:id="@+id/logotitleH36"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center_horizontal"
-            android:contentDescription="@string/todo"
-            app:srcCompat="@drawable/age36txttelukids"
-            tools:ignore="ImageContrastCheck" />
 
         <ImageView
             android:id="@+id/todayH36"

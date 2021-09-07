@@ -12,6 +12,12 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.TeluKidsV1">
         <activity
+            android:name=".ShapesAchievements3to6"
+            android:exported="true" />
+        <activity
+            android:name=".ColorsAchievements3to6"
+            android:exported="true" />
+        <activity
             android:name=".ColorsLessonCongrats"
             android:exported="true" />
         <activity

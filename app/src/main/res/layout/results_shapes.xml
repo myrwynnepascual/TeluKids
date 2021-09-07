@@ -20,102 +20,98 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        android:gravity="center_horizontal"
         app:layout_constraintVertical_bias="0.024">
 
 
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <ImageButton
+                android:id="@+id/backbtnCLC"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:backgroundTint="#00FFFFFF"
+                android:contentDescription="@string/todo"
+                app:srcCompat="@drawable/subtnback"
+                tools:ignore="SpeakableTextPresentCheck,ImageContrastCheck,DuplicateSpeakableTextCheck" />
+
+            <Space
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_weight="1" />
+
+            <ImageButton
+                android:id="@+id/achievementsbtnCLC"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="0dp"
+                android:backgroundTint="#00FFFFFF"
+                android:contentDescription="@string/todo"
+                app:srcCompat="@drawable/clbtnachievements"
+                tools:ignore="SpeakableTextPresentCheck,ImageContrastCheck,DuplicateSpeakableTextCheck" />
+
+        </LinearLayout>
 
         <ImageView
             android:id="@+id/imageView"
-            android:layout_width="100dp"
-            android:layout_height="100dp"
-            android:src="@drawable/teluicon"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            android:layout_marginTop="50dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.076" />
-
-        <ImageView
-            android:id="@+id/imageView2"
-            android:layout_width="170dp"
-            android:layout_height="60dp"
-            android:src="@drawable/telukidstextplacement"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.498"
-            app:layout_constraintStart_toStartOf="parent"
-            android:layout_gravity="center_horizontal"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.215" />
+            android:src="@drawable/teluiconsmall"/>
 
         <ImageView
             android:id="@+id/imageView3"
-            android:layout_width="170dp"
-            android:layout_height="60dp"
-            android:src="@drawable/yourscore"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.498"
-            app:layout_constraintStart_toStartOf="parent"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
-            app:layout_constraintTop_toTopOf="parent"
-            android:layout_marginTop="10dp"
-            app:layout_constraintVertical_bias="0.215" />
+            android:src="@drawable/youearned" />
+
+        <ImageView
+            android:id="@+id/imgTrophy_Shapes"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:src="@drawable/congratstrophyshapes" />
+
 
         <TextView
             android:id="@+id/totalScoreLabel_Shapes"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
-            android:layout_marginTop="15dp"
-            android:background="@drawable/answerbutton"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/score"
             android:fontFamily="@font/arialroundedmt"
-            android:text="0 / 5"
+            android:text="0/5"
             android:textAlignment="center"
             android:textColor="@color/white"
             android:textSize="30sp" />
 
-        <ImageView
-            android:id="@+id/imageView4"
-            android:layout_width="239dp"
+        <ImageButton
+            android:id="@+id/btnReadLesson_Quiz_Shapes"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
-            android:layout_marginTop="30dp"
-            android:src="@drawable/youalsoearned"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.498"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.215" />
+            android:layout_marginTop="20dp"
+            android:backgroundTint="#00FFFFFF"
+            android:contentDescription="@string/todo"
+            android:foregroundGravity="center_horizontal"
+            app:srcCompat="@drawable/readlessonbtn"
+            tools:ignore="SpeakableTextPresentCheck,ImageContrastCheck" />
 
-        <ImageView
-            android:id="@+id/imgTrophy_Shapes"
-            android:layout_width="250dp"
-            android:layout_height="190dp"
+        <ImageButton
+            android:id="@+id/homepageCLC"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
-            android:layout_marginTop="10dp"
-            android:src="@drawable/trophy"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.498"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.215" />
+            android:backgroundTint="#00FFFFFF"
+            android:contentDescription="@string/todo"
+            android:foregroundGravity="center_horizontal"
+            app:srcCompat="@drawable/clchoice2"
+            tools:ignore="SpeakableTextPresentCheck,ImageContrastCheck" />
 
-        <Button
-            android:id="@+id/btnNext_Quiz_Shapes"
-            android:layout_width="140dp"
-            android:layout_height="50dp"
-            android:layout_gravity="center_horizontal"
-            android:layout_marginTop="10dp"
-            android:background="@drawable/nextbuttonscore"
-            android:text="Next >"
-            android:textColor="@color/white"
-            android:textSize="18dp"
-            android:fontFamily="@font/arialroundedmt"/>
+
     </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>
