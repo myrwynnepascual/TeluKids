@@ -6,10 +6,10 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/background"
-    tools:context=".ResultsShapes">
+    tools:context=".ResultsColors">
 
     <LinearLayout
-        android:id="@+id/quizLayout_Shapes"
+        android:id="@+id/quizLayout_Colors"
         android:layout_width="371dp"
         android:layout_height="wrap_content"
         android:layout_marginLeft="20dp"
@@ -29,7 +29,7 @@
             android:orientation="horizontal">
 
             <ImageButton
-                android:id="@+id/backbtnCLC_Shapes"
+                android:id="@+id/backbtnCLC_Colors"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:backgroundTint="#00FFFFFF"
@@ -69,15 +69,15 @@
             android:src="@drawable/youearned" />
 
         <ImageView
-            android:id="@+id/imgTrophy_Shapes"
+            android:id="@+id/imgTrophy_Colors"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
-            android:src="@drawable/congratstrophyshapes" />
+            android:src="@drawable/congratstrophycolors" />
 
 
         <TextView
-            android:id="@+id/totalScoreLabel_Shapes"
+            android:id="@+id/totalScoreLabel_Colors"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
@@ -90,7 +90,7 @@
             android:textSize="30sp" />
 
         <ImageButton
-            android:id="@+id/btnReadLesson_Quiz_Shapes"
+            android:id="@+id/btnReadLesson_Quiz_Colors"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
@@ -102,7 +102,7 @@
             tools:ignore="SpeakableTextPresentCheck,ImageContrastCheck" />
 
         <ImageButton
-            android:id="@+id/homepageCLC_Shapes"
+            android:id="@+id/homepageCLC_Colors"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"

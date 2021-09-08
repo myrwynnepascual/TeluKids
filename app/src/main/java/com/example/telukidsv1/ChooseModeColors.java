@@ -38,7 +38,7 @@ public class ChooseModeColors extends AppCompatActivity {
         assessCMC.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                //startActivity(new Intent(ChooseModeColors.this,QuizColors.class));
+                startActivity(new Intent(ChooseModeColors.this,QuizColors.class));
             }
         });
 

@@ -345,7 +345,16 @@
             android:name=".ResultsShapes"
             android:exported="true" />
         <activity
-            android:name=".CongratsPageShapes"
+            android:name=".QuizColors"
+            android:exported="true" />
+        <activity
+            android:name=".ResultsColors"
+            android:exported="true" />
+        <activity
+            android:name=".QuizCountingNumbers"
+            android:exported="true" />
+        <activity
+            android:name=".ResultsCountingNumbers"
             android:exported="true" />
     </application>
 

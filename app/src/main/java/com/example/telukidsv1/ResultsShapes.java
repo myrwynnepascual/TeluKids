@@ -2,34 +2,25 @@
 package com.example.telukidsv1;
 
 import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.Toast;
 
-import com.example.telukidsv1.QuizShapes;
-import com.google.android.gms.tasks.OnCompleteListener;
-import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
-import com.google.firebase.firestore.CollectionReference;
 import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.FirebaseFirestoreException;
 import com.google.firebase.firestore.Transaction;
 
-import java.util.HashMap;
-import java.util.Map;
-
 public class ResultsShapes extends AppCompatActivity {
-    private int initial_score_shapes, score_shapes;
+    private int score_shapes;
     FirebaseAuth fAuth;
     FirebaseFirestore fStore;
     FirebaseUser user;
@@ -40,6 +31,10 @@ public class ResultsShapes extends AppCompatActivity {
         setContentView(R.layout.results_shapes);
         TextView totalScoreLabel = findViewById(R.id.totalScoreLabel_Shapes);
         ImageView imgTrophy_Shapes = findViewById(R.id.imgTrophy_Shapes);
+        ImageButton btnReadLesson_Quiz_Shapes = findViewById(R.id.btnReadLesson_Quiz_Shapes);
+        ImageButton hompageCLC_Shapes = findViewById(R.id.homepageCLC);
+
+
 
         fAuth = FirebaseAuth.getInstance();
         fStore = FirebaseFirestore.getInstance();
@@ -58,7 +53,7 @@ public class ResultsShapes extends AppCompatActivity {
             achievement_shapes = "Shapes Expert";
         }
         if (score_shapes == 5){
-            imgTrophy_Shapes.setImageResource(R.drawable.congratsbadgeshapes);
+            imgTrophy_Shapes.setImageResource(R.drawable.congratstrophyshapes);
             achievement_shapes = "Shapes Master";
         }
 
@@ -70,6 +65,19 @@ public class ResultsShapes extends AppCompatActivity {
                 transaction.update(docRef, "shapes quiz score", score_shapes);
                 transaction.update(docRef, "shapes achievement", achievement_shapes);
                 return null;
+            }
+        });
+
+        btnReadLesson_Quiz_Shapes.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(ResultsShapes.this,BasicConcepts.class));
+            }
+        });
+       hompageCLC_Shapes.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(ResultsShapes.this,Homepage3to6.class));
             }
         });
 

@@ -6,10 +6,10 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/bgassessment"
-    tools:context=".QuizShapes">
+    tools:context=".QuizColors">
 
     <LinearLayout
-        android:id="@+id/quizLayout_Shapes"
+        android:id="@+id/quizLayout_Colors"
         android:layout_width="371dp"
         android:layout_height="wrap_content"
         android:orientation="vertical"
@@ -22,7 +22,7 @@
 
 
         <TextView
-            android:id="@+id/countLabel_Shapes"
+            android:id="@+id/countLabel_Colors"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="30dp"
@@ -33,7 +33,7 @@
             android:textSize="22sp" />
 
         <TextView
-            android:id="@+id/questionLabel_Shapes"
+            android:id="@+id/questionLabel_Colors"
             android:layout_width="275dp"
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
@@ -44,16 +44,16 @@
             android:textAlignment="center"/>
 
         <ImageView
-            android:id="@+id/imgQuestion_Shapes"
+            android:id="@+id/imgQuestion_Colors"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
             android:layout_marginTop="30dp"
-            tools:srcCompat="@drawable/shapesquestion1" />
+            tools:srcCompat="@drawable/colorsquestion1" />
 
         <Button
 
-            android:id="@+id/btnAnswer1_Shapes"
+            android:id="@+id/btnAnswer1_Colors"
             android:layout_width="300dp"
             android:layout_height="60dp"
             android:layout_marginTop="20dp"
@@ -65,7 +65,7 @@
             android:textColor="@color/white" />
 
         <Button
-            android:id="@+id/btnAnswer2_Shapes"
+            android:id="@+id/btnAnswer2_Colors"
             android:layout_width="300dp"
             android:layout_height="60dp"
             android:layout_marginTop="20dp"
@@ -77,7 +77,7 @@
             android:textColor="@color/white" />
 
         <Button
-            android:id="@+id/btnConfirm_Shapes"
+            android:id="@+id/btnConfirm_Colors"
             android:layout_width="150dp"
             android:layout_height="60dp"
             android:layout_marginTop="30dp"

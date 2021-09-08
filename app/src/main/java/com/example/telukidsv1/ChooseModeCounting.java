@@ -38,7 +38,7 @@ public class ChooseModeCounting extends AppCompatActivity {
         assessCMCN.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                //startActivity(new Intent(ChooseModeCounting.this,QuizCounting.class));
+                startActivity(new Intent(ChooseModeCounting.this,QuizCountingNumbers.class));
             }
         });
 
