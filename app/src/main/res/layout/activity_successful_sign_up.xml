@@ -24,15 +24,16 @@
 
         <ImageView
             android:id="@+id/successSU"
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:contentDescription="@string/todo"
             app:srcCompat="@drawable/ssutxtsuccess" />
 
         <ImageView
             android:id="@+id/iconSSU"
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
             android:layout_marginTop="20dp"
             android:layout_marginBottom="20dp"
             android:contentDescription="@string/todo"
@@ -40,8 +41,9 @@
 
         <ImageView
             android:id="@+id/greetingsSSU"
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
             android:contentDescription="@string/todo"
             app:srcCompat="@drawable/ssutxthavefun" />
 

@@ -15,7 +15,7 @@ public class ColorsAchievements3to6 extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_colors_achievements3to6);
 
-        ImageButton backbtnAchievements3to6 = findViewById(R.id.backbtnAchievements36Shapes);
+        ImageButton backbtnAchievements3to6 = findViewById(R.id.backbtnAchievements36Colors);
 
         backbtnAchievements3to6.setOnClickListener(new View.OnClickListener() {
             @Override

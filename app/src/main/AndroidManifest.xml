@@ -12,6 +12,102 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.TeluKidsV1">
         <activity
+            android:name=".AdditionAchievements3to6"
+            android:exported="true" />
+        <activity
+            android:name=".AdditionLessonCongrats"
+            android:exported="true" />
+        <activity
+            android:name=".Addition10"
+            android:exported="true" />
+        <activity
+            android:name=".Addition9"
+            android:exported="true" />
+        <activity
+            android:name=".Addition8"
+            android:exported="true" />
+        <activity
+            android:name=".Addition7"
+            android:exported="true" />
+        <activity
+            android:name=".Addition6"
+            android:exported="true" />
+        <activity
+            android:name=".Addition5"
+            android:exported="true" />
+        <activity
+            android:name=".Addition4"
+            android:exported="true" />
+        <activity
+            android:name=".Addition3"
+            android:exported="true" />
+        <activity
+            android:name=".Addition2"
+            android:exported="true" />
+        <activity
+            android:name=".Addition1"
+            android:exported="true" />
+        <activity
+            android:name=".Additionx"
+            android:exported="true" />
+        <activity
+            android:name=".LessonIntroAddition"
+            android:exported="true" />
+        <activity
+            android:name=".ChooseModeAddition"
+            android:exported="true" />
+        <activity
+            android:name=".CountingAchievements3to6"
+            android:exported="true" />
+        <activity
+            android:name=".CountingLessonCongrats"
+            android:exported="true" />
+        <activity
+            android:name=".Count20"
+            android:exported="true" />
+        <activity
+            android:name=".Count19"
+            android:exported="true" />
+        <activity
+            android:name=".Count18"
+            android:exported="true" />
+        <activity
+            android:name=".Count17"
+            android:exported="true" />
+        <activity
+            android:name=".Count16"
+            android:exported="true" />
+        <activity
+            android:name=".Count15"
+            android:exported="true" />
+        <activity
+            android:name=".Count14"
+            android:exported="true" />
+        <activity
+            android:name=".Count13"
+            android:exported="true" />
+        <activity
+            android:name=".Count12"
+            android:exported="true" />
+        <activity
+            android:name=".Count11"
+            android:exported="true" />
+        <activity
+            android:name=".Count10"
+            android:exported="true" />
+        <activity
+            android:name=".Count9"
+            android:exported="true" />
+        <activity
+            android:name=".Count8"
+            android:exported="true" />
+        <activity
+            android:name=".Count7"
+            android:exported="true" />
+        <activity
+            android:name=".Count6"
+            android:exported="true" />
+        <activity
             android:name=".Count5"
             android:exported="true" />
         <activity

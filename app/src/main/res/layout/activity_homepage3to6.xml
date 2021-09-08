@@ -10,8 +10,9 @@
 
     <LinearLayout
         android:id="@+id/linearLayout1H36"
-        android:layout_width="371dp"
-        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_margin="20dp"
         android:orientation="vertical"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -51,6 +52,7 @@
 
         </LinearLayout>
 
+
         <ImageView
             android:id="@+id/logoH36"
             android:layout_width="wrap_content"
@@ -58,7 +60,6 @@
             android:layout_gravity="center_horizontal"
             android:contentDescription="@string/todo"
             app:srcCompat="@drawable/age36logotitle" />
-
 
         <ImageView
             android:id="@+id/todayH36"

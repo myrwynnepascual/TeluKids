@@ -43,7 +43,7 @@ public class Numbers extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                //startActivity(new Intent(Numbers.this,LessonIntroAddition.class));
+                startActivity(new Intent(Numbers.this,LessonIntroAddition.class));
 
             }
         });
