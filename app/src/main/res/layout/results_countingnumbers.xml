@@ -6,10 +6,10 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/background"
-    tools:context=".ResultsShapes">
+    tools:context=".ResultsCountingNumbers">
 
     <LinearLayout
-        android:id="@+id/quizLayout_Shapes"
+        android:id="@+id/quizLayout_Counting"
         android:layout_width="371dp"
         android:layout_height="wrap_content"
         android:layout_marginLeft="20dp"
@@ -34,7 +34,7 @@
                 android:layout_weight="1" />
 
             <ImageButton
-                android:id="@+id/achievementsbtnCLC_Shapes"
+                android:id="@+id/achievementsbtnCLC_Counting"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginRight="0dp"
@@ -60,15 +60,15 @@
             android:src="@drawable/youearned" />
 
         <ImageView
-            android:id="@+id/imgTrophy_Shapes"
+            android:id="@+id/imgTrophy_Counting"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
-            android:src="@drawable/congratstrophyshapes" />
+            android:src="@drawable/congratstrophycounting" />
 
 
         <TextView
-            android:id="@+id/totalScoreLabel_Shapes"
+            android:id="@+id/totalScoreLabel_Counting"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
@@ -81,7 +81,7 @@
             android:textSize="30sp" />
 
         <ImageButton
-            android:id="@+id/btnReadLesson_Quiz_Shapes"
+            android:id="@+id/btnReadLesson_Quiz_Counting"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
@@ -93,7 +93,7 @@
             tools:ignore="SpeakableTextPresentCheck,ImageContrastCheck" />
 
         <ImageButton
-            android:id="@+id/homepageCLC_Shapes"
+            android:id="@+id/homepageCLC_Counting"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"

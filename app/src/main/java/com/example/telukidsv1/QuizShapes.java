@@ -26,8 +26,6 @@ public class QuizShapes extends AppCompatActivity {
     Button btnAnswer1_Shapes;
     Button btnAnswer2_Shapes;
     Button btnConfirm_Shapes;
-    Typeface arial_rounded;
-    Typeface league_spartan_bold;
 
     private String rightAnswer_Shapes;
     private int rightAnswerCount_Shapes = 0;
@@ -56,9 +54,6 @@ public class QuizShapes extends AppCompatActivity {
         setContentView(R.layout.quiz_shapes);
 
 
-        //arial_rounded = Typeface.createFromAsset(getAssets(), "font/arialroundedmt.ttf");
-        //league_spartan_bold = Typeface.createFromAsset(getAssets(), "font/leaguespartanbold.otf");
-
         quizLayout_Shapes = (LinearLayout)findViewById(R.id.quizLayout_Shapes);
         imgQuestion_Shapes =  (ImageView)findViewById(R.id.imgQuestion_Shapes);
         countLabel_Shapes = (TextView)findViewById(R.id.countLabel_Shapes);
@@ -83,7 +78,7 @@ public class QuizShapes extends AppCompatActivity {
     }
     public void showNextQuiz(){
         //Update quizCountLabel
-        countLabel_Shapes.setText("Question " + quizCount_Shapes);
+        countLabel_Shapes.setText("Question #" + quizCount_Shapes);
         confirmClicked_Shapes = 0;
 
         //Generate random number

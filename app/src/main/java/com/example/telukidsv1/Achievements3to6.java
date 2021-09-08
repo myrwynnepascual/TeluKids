@@ -25,9 +25,11 @@ public class Achievements3to6 extends AppCompatActivity {
     FirebaseAuth fAuth;
     FirebaseFirestore fStore;
     FirebaseUser user;
-    String achievement_numbers, achievement_colors, achievement_shapes;
-    String achievement_discipline, achievement_honesty, achievement_respect;
-    String lesson_numbers, lesson_colors, lesson_shapes;
+
+    // Ages 3-6 Achievements and Lessons
+    String achievement_counting, achievement_addition, achievement_subtraction, achievement_colors, achievement_shapes;
+    String achievement_discipline, achievement_honesty, achievement_respect, achievement_sociability, achievement_compassion;
+    String lesson_counting, lesson_addition, lesson_subtraction, lesson_colors, lesson_shapes;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -134,16 +136,73 @@ public class Achievements3to6 extends AppCompatActivity {
             public Void apply(@NonNull Transaction transaction) throws FirebaseFirestoreException {
                 DocumentSnapshot documentSnapshot = transaction.get(docRef);
 
+                //Colors
+                achievement_colors = documentSnapshot.getString("colors achievement");
+                lesson_colors = documentSnapshot.getString("colors lesson");
+
+                if (achievement_colors.equals("Colors Beginner")){
+                    imgAchievements_ColorsBadge.setImageResource(R.drawable.badgecolors);
+                }
+                if (achievement_colors.equals("Colors Expert")){
+                    imgAchievements_ColorsMedal.setImageResource(R.drawable.medalcolors);
+                    imgAchievements_ColorsBadge.setImageResource(R.drawable.badgecolors);
+                }
+                if (achievement_colors.equals("Colors Master")){
+                    imgAchievements_ColorsTrophy.setImageResource(R.drawable.trophycolors);
+                    imgAchievements_ColorsMedal.setImageResource(R.drawable.medalcolors);
+                    imgAchievements_ColorsBadge.setImageResource(R.drawable.badgecolors);
+                }
+                if (lesson_colors.equals("Completed")){
+                    imgAchievements_ColorsCertificate.setImageResource(R.drawable.certificatecolors);
+                }
+                return null;
+            }
+        });
+
+        fStore.runTransaction(new Transaction.Function<Void>() {
+            @Override
+            public Void apply(@NonNull Transaction transaction) throws FirebaseFirestoreException {
+                DocumentSnapshot documentSnapshot = transaction.get(docRef);
+
+                //Counting
+                achievement_counting = documentSnapshot.getString("counting achievement");
+                lesson_counting = documentSnapshot.getString("counting lesson");
+
+                if (achievement_counting.equals("Counting Beginner")){
+                    imgAchievements_CountingBadge.setImageResource(R.drawable.badgecounting);
+                }
+                if (achievement_counting.equals("Counting Expert")){
+                    imgAchievements_CountingMedal.setImageResource(R.drawable.medalcounting);
+                    imgAchievements_CountingBadge.setImageResource(R.drawable.badgecounting);
+                }
+                if (achievement_counting.equals("Counting Master")){
+                    imgAchievements_CountingTrophy.setImageResource(R.drawable.trophycounting);
+                    imgAchievements_CountingMedal.setImageResource(R.drawable.medalcounting);
+                    imgAchievements_CountingBadge.setImageResource(R.drawable.badgecounting);
+                }
+                if (lesson_counting.equals("Completed")){
+                    imgAchievements_CountingCertificate.setImageResource(R.drawable.certificatecounting);
+                }
+                return null;
+            }
+        });
+
+
+        fStore.runTransaction(new Transaction.Function<Void>() {
+            @Override
+            public Void apply(@NonNull Transaction transaction) throws FirebaseFirestoreException {
+                DocumentSnapshot documentSnapshot = transaction.get(docRef);
+
                 //Shapes
                 achievement_shapes = documentSnapshot.getString("shapes achievement");
                 lesson_shapes = documentSnapshot.getString("shapes lesson");
-
 
                 if (achievement_shapes.equals("Shapes Beginner")){
                     imgAchievements_ShapesBadge.setImageResource(R.drawable.badgeshapes);
                 }
                 if (achievement_shapes.equals("Shapes Expert")){
                     imgAchievements_ShapesMedal.setImageResource(R.drawable.medalshapes);
+                    imgAchievements_ShapesBadge.setImageResource(R.drawable.badgeshapes);
                 }
                 if (achievement_shapes.equals("Shapes Master")){
                     imgAchievements_ShapesTrophy.setImageResource(R.drawable.trophyshapes);
