@@ -12,6 +12,24 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.TeluKidsV1">
         <activity
+            android:name=".Count5"
+            android:exported="true" />
+        <activity
+            android:name=".Count4"
+            android:exported="true" />
+        <activity
+            android:name=".Count3"
+            android:exported="true" />
+        <activity
+            android:name=".Count2"
+            android:exported="true" />
+        <activity
+            android:name=".Count1"
+            android:exported="true" />
+        <activity
+            android:name=".Countingx"
+            android:exported="true" />
+        <activity
             android:name=".ShapesAchievements3to6"
             android:exported="true" />
         <activity
