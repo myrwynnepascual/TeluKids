@@ -28,22 +28,13 @@
             android:layout_height="wrap_content"
             android:orientation="horizontal">
 
-            <ImageButton
-                android:id="@+id/backbtnCLC_Colors"
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:backgroundTint="#00FFFFFF"
-                android:contentDescription="@string/todo"
-                app:srcCompat="@drawable/subtnback"
-                tools:ignore="SpeakableTextPresentCheck,ImageContrastCheck,DuplicateSpeakableTextCheck" />
-
             <Space
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:layout_weight="1" />
 
             <ImageButton
-                android:id="@+id/achievementsbtnCLC"
+                android:id="@+id/achievementsbtnCLC_Colors"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginRight="0dp"

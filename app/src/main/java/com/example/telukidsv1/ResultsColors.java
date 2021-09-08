@@ -31,6 +31,7 @@ public class ResultsColors extends AppCompatActivity {
         setContentView(R.layout.results_colors);
         TextView totalScoreLabel = findViewById(R.id.totalScoreLabel_Colors);
         ImageView imgTrophy_Colors = findViewById(R.id.imgTrophy_Colors);
+        ImageButton achievementsbtnCLC_Colors = findViewById(R.id.achievementsbtnCLC_Colors);
         ImageButton btnReadLesson_Quiz_Colors = findViewById(R.id.btnReadLesson_Quiz_Colors);
         ImageButton homepageCLC_Colors = findViewById(R.id.homepageCLC_Colors);
 
@@ -66,10 +67,18 @@ public class ResultsColors extends AppCompatActivity {
             }
         });
 
+        achievementsbtnCLC_Colors.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent proceed = new Intent(ResultsColors.this, BasicConcepts.class);
+                startActivity(proceed);
+            }
+        });
         btnReadLesson_Quiz_Colors.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(ResultsColors.this,BasicConcepts.class));
+                Intent proceed = new Intent(ResultsColors.this, BasicConcepts.class);
+                startActivity(proceed);
             }
         });
         homepageCLC_Colors.setOnClickListener(new View.OnClickListener() {

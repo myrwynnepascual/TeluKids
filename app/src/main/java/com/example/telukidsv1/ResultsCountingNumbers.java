@@ -31,6 +31,7 @@ public class ResultsCountingNumbers extends AppCompatActivity {
         setContentView(R.layout.results_countingnumbers);
         TextView totalScoreLabel = findViewById(R.id.totalScoreLabel_Counting);
         ImageView imgTrophy_Counting = findViewById(R.id.imgTrophy_Counting);
+        ImageButton achievementsbtnCLC_Counting = findViewById(R.id.achievementsbtnCLC_Counting);
         ImageButton btnReadLesson_Quiz_Counting = findViewById(R.id.btnReadLesson_Quiz_Counting);
         ImageButton homepageCLC_Counting = findViewById(R.id.homepageCLC_Counting);;
 
@@ -66,6 +67,13 @@ public class ResultsCountingNumbers extends AppCompatActivity {
             }
         });
 
+        achievementsbtnCLC_Counting.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent proceed = new Intent(ResultsCountingNumbers.this, BasicConcepts.class);
+                startActivity(proceed);
+            }
+        });
         btnReadLesson_Quiz_Counting.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

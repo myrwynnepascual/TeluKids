@@ -20,7 +20,7 @@ import com.google.firebase.firestore.FirebaseFirestoreException;
 import com.google.firebase.firestore.Transaction;
 
 public class ResultsShapes extends AppCompatActivity {
-    private int score_shapes;
+    private int  score_shapes;
     FirebaseAuth fAuth;
     FirebaseFirestore fStore;
     FirebaseUser user;
@@ -31,10 +31,9 @@ public class ResultsShapes extends AppCompatActivity {
         setContentView(R.layout.results_shapes);
         TextView totalScoreLabel = findViewById(R.id.totalScoreLabel_Shapes);
         ImageView imgTrophy_Shapes = findViewById(R.id.imgTrophy_Shapes);
+        ImageButton achievementsbtnCLC_Shapes = findViewById(R.id.achievementsbtnCLC_Shapes);
         ImageButton btnReadLesson_Quiz_Shapes = findViewById(R.id.btnReadLesson_Quiz_Shapes);
-        ImageButton hompageCLC_Shapes = findViewById(R.id.homepageCLC);
-
-
+        ImageButton homepageCLC_Shapes = findViewById(R.id.homepageCLC_Shapes);
 
         fAuth = FirebaseAuth.getInstance();
         fStore = FirebaseFirestore.getInstance();
@@ -68,18 +67,26 @@ public class ResultsShapes extends AppCompatActivity {
             }
         });
 
+        achievementsbtnCLC_Shapes.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent proceed = new Intent(ResultsShapes.this, BasicConcepts.class);
+                startActivity(proceed);
+            }
+        });
         btnReadLesson_Quiz_Shapes.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(ResultsShapes.this,BasicConcepts.class));
+                Intent proceed = new Intent(ResultsShapes.this, BasicConcepts.class);
+                startActivity(proceed);
             }
         });
-       hompageCLC_Shapes.setOnClickListener(new View.OnClickListener() {
+        homepageCLC_Shapes.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View v) {
-                startActivity(new Intent(ResultsShapes.this,Homepage3to6.class));
+            public void onClick(View view) {
+                Intent proceed = new Intent(ResultsShapes.this, Homepage3to6.class);
+                startActivity(proceed);
             }
         });
-
     }
 }
