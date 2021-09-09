@@ -28,7 +28,7 @@ public class Count1 extends AppCompatActivity {
         backbtnC1 = findViewById(R.id.btnbackC1);
         nextbtnC1 = findViewById(R.id.nextbtnC1);
 
-        videoPathC1 = "android.resource://" + getPackageName() + "/" + R.raw.count2;
+        videoPathC1 = "android.resource://" + getPackageName() + "/" + R.raw.count1;
         uriC1 = Uri.parse(videoPathC1);
         videoViewC1.setVideoURI(uriC1);
 
@@ -52,7 +52,7 @@ public class Count1 extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                startActivity(new Intent(Count1.this,Count1.class));
+                startActivity(new Intent(Count1.this,Countingx.class));
 
             }
         });
