@@ -18,37 +18,7 @@
             android:name=".AdditionLessonCongrats"
             android:exported="true" />
         <activity
-            android:name=".Addition10"
-            android:exported="true" />
-        <activity
-            android:name=".Addition9"
-            android:exported="true" />
-        <activity
-            android:name=".Addition8"
-            android:exported="true" />
-        <activity
-            android:name=".Addition7"
-            android:exported="true" />
-        <activity
-            android:name=".Addition6"
-            android:exported="true" />
-        <activity
-            android:name=".Addition5"
-            android:exported="true" />
-        <activity
-            android:name=".Addition4"
-            android:exported="true" />
-        <activity
-            android:name=".Addition3"
-            android:exported="true" />
-        <activity
-            android:name=".Addition2"
-            android:exported="true" />
-        <activity
-            android:name=".Addition1"
-            android:exported="true" />
-        <activity
-            android:name=".Additionx"
+            android:name=".LessonAddition"
             android:exported="true" />
         <activity
             android:name=".LessonIntroAddition"
@@ -135,112 +105,7 @@
             android:name=".ColorsLessonCongrats"
             android:exported="true" />
         <activity
-            android:name=".Green6"
-            android:exported="true" />
-        <activity
-            android:name=".Green5"
-            android:exported="true" />
-        <activity
-            android:name=".Green4"
-            android:exported="true" />
-        <activity
-            android:name=".Green3"
-            android:exported="true" />
-        <activity
-            android:name=".Green2"
-            android:exported="true" />
-        <activity
-            android:name=".Green1"
-            android:exported="true" />
-        <activity
-            android:name=".Purple6"
-            android:exported="true" />
-        <activity
-            android:name=".Purple5"
-            android:exported="true" />
-        <activity
-            android:name=".Purple4"
-            android:exported="true" />
-        <activity
-            android:name=".Purple3"
-            android:exported="true" />
-        <activity
-            android:name=".Purple2"
-            android:exported="true" />
-        <activity
-            android:name=".Purple1"
-            android:exported="true" />
-        <activity
-            android:name=".Orange6"
-            android:exported="true" />
-        <activity
-            android:name=".Orange5"
-            android:exported="true" />
-        <activity
-            android:name=".Orange4"
-            android:exported="true" />
-        <activity
-            android:name=".Orange3"
-            android:exported="true" />
-        <activity
-            android:name=".Orange2"
-            android:exported="true" />
-        <activity
-            android:name=".Orange1"
-            android:exported="true" />
-        <activity
-            android:name=".Yellow6"
-            android:exported="true" />
-        <activity
-            android:name=".Yellow5"
-            android:exported="true" />
-        <activity
-            android:name=".Yellow4"
-            android:exported="true" />
-        <activity
-            android:name=".Yellow3"
-            android:exported="true" />
-        <activity
-            android:name=".Yellow2"
-            android:exported="true" />
-        <activity
-            android:name=".Yellow1"
-            android:exported="true" />
-        <activity
-            android:name=".Blue6"
-            android:exported="true" />
-        <activity
-            android:name=".Blue5"
-            android:exported="true" />
-        <activity
-            android:name=".Blue4"
-            android:exported="true" />
-        <activity
-            android:name=".Blue3"
-            android:exported="true" />
-        <activity
-            android:name=".Blue2"
-            android:exported="true" />
-        <activity
-            android:name=".Blue1"
-            android:exported="true" />
-        <activity
-            android:name=".Red6"
-            android:exported="true" />
-        <activity
-            android:name=".Red5"
-            android:exported="true" />
-        <activity
-            android:name=".Red4"
-            android:exported="true" />
-        <activity
-            android:name=".Red3"
-            android:exported="true" />
-        <activity
-            android:name=".Red2"
-            android:exported="true" />
-        <activity
-            android:name=".Red1"
+            android:name=".LessonColors"
             android:exported="true" />
         <activity
             android:name=".ChooseModeColors"
@@ -258,136 +123,13 @@
             android:name=".Numbers"
             android:exported="true" />
         <activity
-            android:name=".DiamondPage6"
-            android:exported="true" />
-        <activity
-            android:name=".DiamondPage5"
-            android:exported="true" />
-        <activity
-            android:name=".DiamondPage4"
-            android:exported="true" />
-        <activity
-            android:name=".DiamondPage3"
-            android:exported="true" />
-        <activity
-            android:name=".DiamondPage2"
-            android:exported="true" />
-        <activity
-            android:name=".DiamondPage1"
-            android:exported="true" />
-        <activity
-            android:name=".RectanglePage6"
-            android:exported="true" />
-        <activity
-            android:name=".RectanglePage5"
-            android:exported="true" />
-        <activity
-            android:name=".RectanglePage4"
-            android:exported="true" />
-        <activity
-            android:name=".RectanglePage3"
-            android:exported="true" />
-        <activity
-            android:name=".RectanglePage2"
-            android:exported="true" />
-        <activity
-            android:name=".RectanglePage1"
-            android:exported="true" />
-        <activity
-            android:name=".HeartPage6"
-            android:exported="true" />
-        <activity
-            android:name=".HeartPage5"
-            android:exported="true" />
-        <activity
-            android:name=".HeartPage4"
-            android:exported="true" />
-        <activity
-            android:name=".HeartPage3"
-            android:exported="true" />
-        <activity
-            android:name=".HeartPage2"
-            android:exported="true" />
-        <activity
-            android:name=".HeartPage1"
-            android:exported="true" />
-        <activity
             android:name=".ShapesLessonCongrats"
-            android:exported="true" />
-        <activity
-            android:name=".StarPage6"
-            android:exported="true" />
-        <activity
-            android:name=".StarPage5"
-            android:exported="true" />
-        <activity
-            android:name=".StarPage4"
-            android:exported="true" />
-        <activity
-            android:name=".StarPage3"
-            android:exported="true" />
-        <activity
-            android:name=".StarPage2"
-            android:exported="true" />
-        <activity
-            android:name=".StarPage1"
-            android:exported="true" />
-        <activity
-            android:name=".TrianglePage6"
-            android:exported="true" />
-        <activity
-            android:name=".TrianglePage5"
-            android:exported="true" />
-        <activity
-            android:name=".TrianglePage4"
-            android:exported="true" />
-        <activity
-            android:name=".TrianglePage3"
-            android:exported="true" />
-        <activity
-            android:name=".TrianglePage2"
-            android:exported="true" />
-        <activity
-            android:name=".TrianglePage1"
-            android:exported="true" />
-        <activity
-            android:name=".SquarePage6"
-            android:exported="true" />
-        <activity
-            android:name=".SquarePage5"
-            android:exported="true" />
-        <activity
-            android:name=".SquarePage4"
-            android:exported="true" />
-        <activity
-            android:name=".SquarePage3"
-            android:exported="true" />
-        <activity
-            android:name=".SquarePage2"
-            android:exported="true" />
-        <activity
-            android:name=".SquarePage1"
-            android:exported="true" />
-        <activity
-            android:name=".CirclePage6"
-            android:exported="true" />
-        <activity
-            android:name=".CirclePage5"
-            android:exported="true" />
-        <activity
-            android:name=".CirclePage4"
-            android:exported="true" />
-        <activity
-            android:name=".CirclePage3"
             android:exported="true" />
         <activity
             android:name=".ChooseModeShapes"
             android:exported="true" />
         <activity
-            android:name=".CirclePage2"
-            android:exported="true" />
-        <activity
-            android:name=".CirclePage1"
+            android:name=".LessonShapes"
             android:exported="true" />
         <activity
             android:name=".LessonIntroShapes"
@@ -426,7 +168,7 @@
             android:name=".ForgotPassword"
             android:exported="true" />
         <activity
-            android:name=".CategorySelection"
+            android:name=".AgeCategorySelection"
             android:exported="true" />
         <activity
             android:name=".SuccessfulLogin"
@@ -450,7 +192,7 @@
             android:name=".SuccessfulSignUp"
             android:exported="true" />
         <activity
-            android:name=".login"
+            android:name=".Login"
             android:exported="true" />
         <activity
             android:name=".QuizShapes"

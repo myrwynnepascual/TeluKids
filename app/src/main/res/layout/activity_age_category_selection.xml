@@ -2,14 +2,14 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/backgroundLI"
+    android:id="@+id/backgroundCS"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/bg2"
-    tools:context=".Login">
+    tools:context=".AgeCategorySelection">
 
     <LinearLayout
-        android:id="@+id/linearLayout1LI"
+        android:id="@+id/linearLayout1CS"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_margin="20dp"
@@ -26,12 +26,14 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:backgroundTint="#00FFFFFF"
+            android:visibility="invisible"
             android:contentDescription="@string/todo"
             app:srcCompat="@drawable/subtnback"
             tools:ignore="SpeakableTextPresentCheck,ImageContrastCheck,DuplicateSpeakableTextCheck" />
 
+
         <ImageView
-            android:id="@+id/logoLI"
+            android:id="@+id/logoCS"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
@@ -39,79 +41,44 @@
             app:srcCompat="@drawable/teluiconsmall" />
 
         <ImageView
-            android:id="@+id/logintitleSU"
+            android:id="@+id/logotitleCS"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
             android:contentDescription="@string/todo"
-            app:srcCompat="@drawable/sutxtlogin"
-            tools:ignore="ImageContrastCheck" />
+            app:srcCompat="@drawable/ctgtxtagecat" />
 
-        <EditText
-            android:id="@+id/emailaddressLI"
+        <ImageView
+            android:id="@+id/welcomeCS"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
             android:layout_marginTop="20dp"
-            android:layout_marginBottom="20dp"
-            android:background="@drawable/lihdrusername"
-            android:ems="10"
-            android:fontFamily="@font/leaguespartan_bold"
-            android:hint="@string/email_address"
-            android:importantForAutofill="no"
-            android:inputType="textEmailAddress"
-            android:paddingHorizontal="15sp"
-            android:textColorHint="#D3CEB5"
-            android:textSize="12sp"
-            tools:ignore="TouchTargetSizeCheck,TextContrastCheck" />
-
-        <EditText
-            android:id="@+id/passwordLI"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center_horizontal"
-            android:layout_marginBottom="5dp"
-            android:background="@drawable/lihdrpwd"
-            android:ems="10"
-            android:fontFamily="@font/leaguespartan_bold"
-            android:hint="Password"
-            android:importantForAutofill="no"
-            android:inputType="textPassword"
-            android:paddingHorizontal="15sp"
-            android:textColorHint="#D3CEB5"
-            android:textSize="12sp"
-            tools:ignore="TouchTargetSizeCheck,TextContrastCheck" />
+            android:contentDescription="@string/todo"
+            app:srcCompat="@drawable/ctgtxtlearner" />
 
         <ImageButton
-            android:id="@+id/forgotpwLI"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center_horizontal"
-            android:backgroundTint="#00FFFFFF"
-            app:srcCompat="@drawable/txtforgotpwd" />
-
-        <TextView
-            android:id="@+id/errormsgLI"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:fontFamily="@font/leaguespartan_bold"
-            android:gravity="center_horizontal"
-            android:shadowColor="#29000000"
-            android:shadowDx="1"
-            android:shadowDy="1"
-            android:shadowRadius="2"
-            android:textColor="#E9724C" />
-
-        <ImageButton
-            android:id="@+id/loginbtnLI"
+            android:id="@+id/categoryage3to6CS"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
             android:backgroundTint="#00FFFFFF"
             android:contentDescription="@string/todo"
             android:foregroundGravity="center_horizontal"
-            app:srcCompat="@drawable/libtnlogin"
+            app:srcCompat="@drawable/ctgbtn36"
             tools:ignore="SpeakableTextPresentCheck,ImageContrastCheck" />
+
+        <ImageButton
+            android:id="@+id/categoryage7to9CS"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:backgroundTint="#00FFFFFF"
+            android:contentDescription="@string/todo"
+            android:foregroundGravity="center_horizontal"
+            app:srcCompat="@drawable/ctgbtn79"
+            tools:ignore="SpeakableTextPresentCheck,ImageContrastCheck" />
+
     </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

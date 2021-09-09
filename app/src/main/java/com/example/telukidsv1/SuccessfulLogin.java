@@ -2,7 +2,6 @@ package com.example.telukidsv1;
 
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.constraintlayout.widget.ConstraintLayout;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -76,7 +75,7 @@ public class SuccessfulLogin extends AppCompatActivity {
         handler.postDelayed(new Runnable() {
             @Override
             public void run() {
-                startActivity(new Intent(SuccessfulLogin.this,CategorySelection.class));
+                startActivity(new Intent(SuccessfulLogin.this, AgeCategorySelection.class));
                 finish();
             }
         },3000);

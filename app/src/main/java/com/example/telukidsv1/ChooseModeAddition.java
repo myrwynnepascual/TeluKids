@@ -31,7 +31,7 @@ public class ChooseModeAddition extends AppCompatActivity {
         learnCMA.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(ChooseModeAddition.this, Additionx.class));
+                startActivity(new Intent(ChooseModeAddition.this, LessonAddition.class));
             }
         });
 

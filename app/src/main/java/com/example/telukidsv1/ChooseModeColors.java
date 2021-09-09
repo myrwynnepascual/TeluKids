@@ -31,7 +31,7 @@ public class ChooseModeColors extends AppCompatActivity {
         learnCMC.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(ChooseModeColors.this, Red1.class));
+                startActivity(new Intent(ChooseModeColors.this, LessonColors.class));
             }
         });
 

@@ -1,5 +1,6 @@
 package com.example.telukidsv1;
 
+import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -9,18 +10,22 @@ import android.view.View;
 import android.widget.ImageButton;
 
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.EventListener;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.FirebaseFirestoreException;
+import com.google.firebase.firestore.Transaction;
 
 public class Homepage3to6 extends AppCompatActivity {
 
     ImageButton btnbackH36, btnUserProf36, btnBConcepts, btnGMRC36Topics, btnAchievements;
-    String userID, usericon;
+    String userID, usericon, lastpage;
+
     FirebaseFirestore fStore;
     FirebaseAuth fAuth;
+    FirebaseUser user;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -43,6 +48,7 @@ public class Homepage3to6 extends AppCompatActivity {
             @Override
             public void onEvent(@Nullable DocumentSnapshot documentSnapshot, @Nullable FirebaseFirestoreException error) {
                 usericon = documentSnapshot.getString("uicon");
+                lastpage = documentSnapshot.getString("last page");
 
                 if(usericon.equalsIgnoreCase("tiger")){
                     btnUserProf36.setImageResource(R.drawable.tigersettings);
@@ -71,15 +77,32 @@ public class Homepage3to6 extends AppCompatActivity {
 
                 btnUserProf36.setVisibility(View.VISIBLE);
 
+                btnbackH36.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+                        //startActivity(new Intent(Homepage3to6.this, AgeCategorySelection.class));
+
+                        if (lastpage.equalsIgnoreCase("age category selection")){
+
+                            startActivity(new Intent(Homepage3to6.this, AgeCategorySelection.class));
+                        }
+
+                        user = fAuth.getCurrentUser();
+                        DocumentReference docRef = fStore.collection("users").document(user.getUid());
+                        fStore.runTransaction(new Transaction.Function<Void>() {
+                            @Override
+                            public Void apply(@NonNull Transaction transaction) throws FirebaseFirestoreException {
+                                DocumentSnapshot snapshot = transaction.get(docRef);
+
+                                transaction.update(docRef, "last page", "homepage 3 to 6");
+                                return null;
+                            }
+                        });
+                    }
+                });
             }
         });
 
-        btnbackH36.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                startActivity(new Intent(Homepage3to6.this, CategorySelection.class));
-            }
-        });
 
         btnUserProf36.setOnClickListener(new View.OnClickListener() {
             @Override

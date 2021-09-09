@@ -17,7 +17,7 @@ public class SuccessfulSignUp extends AppCompatActivity {
         handler.postDelayed(new Runnable() {
             @Override
             public void run() {
-                startActivity(new Intent(SuccessfulSignUp.this,CategorySelection.class));
+                startActivity(new Intent(SuccessfulSignUp.this, AgeCategorySelection.class));
                 finish();
             }
         },3000);

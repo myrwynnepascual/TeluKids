@@ -24,7 +24,7 @@ public class SignUpOrLogInPage extends AppCompatActivity {
         fAuth = FirebaseAuth.getInstance();
 
         if(fAuth.getCurrentUser() != null){
-            startActivity(new Intent(getApplicationContext(),CategorySelection.class));
+            startActivity(new Intent(getApplicationContext(), AgeCategorySelection.class));
             finish();
         }
 
@@ -38,7 +38,7 @@ public class SignUpOrLogInPage extends AppCompatActivity {
         loginbtnSOL.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(SignUpOrLogInPage.this,login.class));
+                startActivity(new Intent(SignUpOrLogInPage.this, Login.class));
             }
         });
     };

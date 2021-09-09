@@ -31,7 +31,7 @@ public class ChooseModeShapes extends AppCompatActivity {
         learnCMS.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(ChooseModeShapes.this, CirclePage1.class));
+                startActivity(new Intent(ChooseModeShapes.this, LessonShapes.class));
             }
         });
 

@@ -74,7 +74,7 @@ public class Homepage7to9 extends AppCompatActivity {
         btnbackH79.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(Homepage7to9.this, CategorySelection.class));
+                startActivity(new Intent(Homepage7to9.this, AgeCategorySelection.class));
             }
         });
 
