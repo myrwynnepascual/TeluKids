@@ -4,10 +4,10 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Count8">
+    tools:context=".LessonCounting">
 
     <VideoView
-        android:id="@+id/videoC8"
+        android:id="@+id/videoCX"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -16,7 +16,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <LinearLayout
-        android:id="@+id/linearLayout1C8"
+        android:id="@+id/linearLayout1CX"
         android:layout_width="371dp"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
@@ -28,7 +28,7 @@
         app:layout_constraintHorizontal_bias="0.5">
 
         <ImageButton
-            android:id="@+id/btnbackC8"
+            android:id="@+id/btnbackCX"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:backgroundTint="#00FFFFFF"
@@ -42,7 +42,7 @@
             android:layout_weight="1" />
 
         <ImageButton
-            android:id="@+id/nextbtnC8"
+            android:id="@+id/nextbtnCX"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:backgroundTint="#00FFFFFF"
