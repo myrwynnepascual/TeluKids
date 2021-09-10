@@ -47,7 +47,7 @@
                 android:id="@+id/logoCMC"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="20dp"
+                android:layout_marginLeft="42dp"
                 android:contentDescription="@string/todo"
                 app:srcCompat="@drawable/classroomlogotitle" />
 

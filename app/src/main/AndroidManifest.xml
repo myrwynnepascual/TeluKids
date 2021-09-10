@@ -12,7 +12,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.TeluKidsV1">
         <activity
-            android:name=".AdditionAchievements3to6"
+            android:name=".Achievements3to6Addition"
             android:exported="true" />
         <activity
             android:name=".AdditionLessonCongrats"
@@ -27,7 +27,7 @@
             android:name=".ChooseModeAddition"
             android:exported="true" />
         <activity
-            android:name=".CountingAchievements3to6"
+            android:name=".Achievements3to6Counting"
             android:exported="true" />
         <activity
             android:name=".CountingLessonCongrats"
@@ -36,10 +36,10 @@
             android:name=".LessonCounting"
             android:exported="true" />
         <activity
-            android:name=".ShapesAchievements3to6"
+            android:name=".Achievements3to6Shapes"
             android:exported="true" />
         <activity
-            android:name=".ColorsAchievements3to6"
+            android:name=".Achievements3to6Colors"
             android:exported="true" />
         <activity
             android:name=".ColorsLessonCongrats"
@@ -102,7 +102,7 @@
             android:name=".Homepage3to6"
             android:exported="true" />
         <activity
-            android:name=".Achievements3to6"
+            android:name=".Achievements3to6Main"
             android:exported="true" />
         <activity
             android:name=".ForgotPassword"

@@ -1,15 +1,13 @@
 package com.example.telukidsv1;
 
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
+
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.ImageView;
-import android.widget.Toast;
-
-import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
 
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
@@ -19,7 +17,7 @@ import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.FirebaseFirestoreException;
 import com.google.firebase.firestore.Transaction;
 
-public class Achievements3to6 extends AppCompatActivity {
+public class Achievements3to6Counting extends AppCompatActivity {
 
     private int score_shapes;
     FirebaseAuth fAuth;
@@ -34,9 +32,9 @@ public class Achievements3to6 extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.achievements_ages36);
+        setContentView(R.layout.activity_achievements3to6_counting);
 
-        ImageButton backbtnAchievements3to6 = findViewById(R.id.backbtnAchievements36Main);
+        ImageButton backbtnAchievements3to6 = findViewById(R.id.backbtnAchievements36Counting);
 
         //Trophies
         //GMRC 3-6
@@ -218,11 +216,10 @@ public class Achievements3to6 extends AppCompatActivity {
 
         backbtnAchievements3to6.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View view) {
-                Intent proceed = new Intent(Achievements3to6.this, Homepage3to6.class);
-                startActivity(proceed);
+            public void onClick(View v) {
+
+                startActivity(new Intent(Achievements3to6Counting.this,CountingLessonCongrats.class));
             }
         });
-
     }
 }

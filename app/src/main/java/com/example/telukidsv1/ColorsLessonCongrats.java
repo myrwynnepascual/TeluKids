@@ -62,7 +62,7 @@ public class ColorsLessonCongrats extends AppCompatActivity {
         btnachievementsCLC.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(ColorsLessonCongrats.this,ColorsAchievements3to6.class));
+                startActivity(new Intent(ColorsLessonCongrats.this, Achievements3to6Colors.class));
             }
         });
 

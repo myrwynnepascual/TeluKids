@@ -10,8 +10,9 @@
 
     <LinearLayout
         android:id="@+id/linearLayout1UP79"
-        android:layout_width="371dp"
-        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_margin="20dp"
         android:orientation="vertical"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -43,7 +44,6 @@
                 android:id="@+id/helpbtnUP79"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginRight="0dp"
                 android:backgroundTint="#00FFFFFF"
                 android:contentDescription="@string/todo"
                 app:srcCompat="@drawable/setbtnhelp"
@@ -57,7 +57,7 @@
             android:orientation="horizontal">
 
             <Space
-                android:layout_width="126dp"
+                android:layout_width="140dp"
                 android:layout_height="match_parent"
                 android:layout_weight="0" />
 
@@ -70,7 +70,7 @@
                 app:srcCompat="@drawable/teluiconsmall" />
 
             <Space
-                android:layout_width="71dp"
+                android:layout_width="76dp"
                 android:layout_height="match_parent"
                 android:layout_weight="0" />
 

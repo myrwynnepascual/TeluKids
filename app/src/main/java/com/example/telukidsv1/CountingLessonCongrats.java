@@ -62,7 +62,7 @@ public class CountingLessonCongrats extends AppCompatActivity {
         btnachievementsCTLC.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(CountingLessonCongrats.this,CountingAchievements3to6.class));
+                startActivity(new Intent(CountingLessonCongrats.this, Achievements3to6Counting.class));
             }
         });
 

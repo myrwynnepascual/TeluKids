@@ -1,6 +1,5 @@
 package com.example.telukidsv1;
 
-import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -10,13 +9,11 @@ import android.view.View;
 import android.widget.ImageButton;
 
 import com.google.firebase.auth.FirebaseAuth;
-import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.EventListener;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.FirebaseFirestoreException;
-import com.google.firebase.firestore.Transaction;
 
 public class Homepage3to6 extends AppCompatActivity {
 
@@ -111,7 +108,7 @@ public class Homepage3to6 extends AppCompatActivity {
         btnAchievements.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(Homepage3to6.this, Achievements3to6.class));
+                startActivity(new Intent(Homepage3to6.this, Achievements3to6Main.class));
             }
         });
 
