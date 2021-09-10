@@ -101,16 +101,12 @@ public class QuizCountingNumbers extends AppCompatActivity {
 
         //Set Choices
         btnAnswer1_Counting.setText(quiz.get(0));
-        //btnAnswer1_Counting.setTypeface(arial_rounded);
         btnAnswer2_Counting.setText(quiz.get(1));
-        //btnAnswer2_Counting.setTypeface(arial_rounded);
 
         //Remove this quiz from array
         quizArray_Counting.remove(randomNum);
     }
-    /*
 
-     */
     public void checkAnswer(View view){
         //Get pushed button
         Button answerBtn = (Button) findViewById(view.getId());

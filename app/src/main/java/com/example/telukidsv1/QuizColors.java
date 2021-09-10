@@ -41,7 +41,7 @@ public class QuizColors extends AppCompatActivity {
             {"What is the color of the frog, leaf, and alligator?", String.valueOf(R.drawable.colorsquestion1), "Green", "Red"},
             { "Which of the following has a different color and what is its color: water, bus, and pumpkin?", String.valueOf(R.drawable.colorsquestion2),"Pumpkin, Orange", "Bus, Blue"},
             {"What is the color of the cup, curtain, and balloon?", String.valueOf(R.drawable.colorsquestion3),"Purple", "Red"},
-            {"Which of the following has a different color and what is its color: pineapple, jack in the box, and peacock?", String.valueOf(R.drawable.colorsquestion4),"Peacock, Blue", "Jack in the Box, Yellow"},
+            {"Which of the following has a different color and what is its color: pineapple, crate, and peacock?", String.valueOf(R.drawable.colorsquestion4),"Peacock, Blue", "Crate, Yellow"},
             {"What is the color of the cheese, bumblebee, and star lantern?", String.valueOf(R.drawable.colorsquestion5),"Yellow", "Green"}
 
     };
@@ -101,16 +101,13 @@ public class QuizColors extends AppCompatActivity {
 
         //Set Choices
         btnAnswer1_Colors.setText(quiz.get(0));
-        //btnAnswer1_Colors.setTypeface(arial_rounded);
         btnAnswer2_Colors.setText(quiz.get(1));
-        //btnAnswer2_Colors.setTypeface(arial_rounded);
+
 
         //Remove this quiz from array
         quizArray_Colors.remove(randomNum);
     }
-    /*
 
-     */
     public void checkAnswer(View view){
         //Get pushed button
         Button answerBtn = (Button) findViewById(view.getId());

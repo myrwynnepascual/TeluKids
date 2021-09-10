@@ -100,16 +100,12 @@ public class QuizShapes extends AppCompatActivity {
 
         //Set Choices
         btnAnswer1_Shapes.setText(quiz.get(0));
-        //btnAnswer1_Shapes.setTypeface(arial_rounded);
         btnAnswer2_Shapes.setText(quiz.get(1));
-        //btnAnswer2_Shapes.setTypeface(arial_rounded);
 
         //Remove this quiz from array
         quizArray_Shapes.remove(randomNum);
     }
-    /*
 
-     */
     public void checkAnswer(View view){
         //Get pushed button
         Button answerBtn = (Button) findViewById(view.getId());

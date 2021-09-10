@@ -106,23 +106,23 @@ public class Achievements3to6 extends AppCompatActivity {
         //Certificates
         //GMRC 3-6
         ImageView imgAchievements_DisciplineCertificate = findViewById(R.id.certificatediscipline36Main);
-        ImageView imgAchievements_HonestyCertificate = findViewById(R.id.badgehonesty36Main);
-        ImageView imgAchievements_RespectCertificate = findViewById(R.id.badgerespect36Main);
-        ImageView imgAchievements_SociabilityCertificate = findViewById(R.id.badgesociability36Main);
-        ImageView imgAchievements_CompassionCertificate = findViewById(R.id.badgecompassion36Main);
+        ImageView imgAchievements_HonestyCertificate = findViewById(R.id.certificatehonesty36Main);
+        ImageView imgAchievements_RespectCertificate = findViewById(R.id.certificaterespect36Main);
+        ImageView imgAchievements_SociabilityCertificate = findViewById(R.id.certificatesociability36Main);
+        ImageView imgAchievements_CompassionCertificate = findViewById(R.id.certificatecompassion36Main);
 
         //GMRC 7-9
-        ImageView imgAchievements_ResponsibilityCertificate = findViewById(R.id.badgeresponsibility36Main);
-        ImageView imgAchievements_LoveCertificate = findViewById(R.id.badgelove36Main);
-        ImageView imgAchievements_ObedienceCertificate = findViewById(R.id.badgeobedience36Main);
-        ImageView imgAchievements_DoingGoodCertificate = findViewById(R.id.badgedoinggood36Main);
+        ImageView imgAchievements_ResponsibilityCertificate = findViewById(R.id.certificateresponsibility36Main);
+        ImageView imgAchievements_LoveCertificate = findViewById(R.id.certificatelove36Main);
+        ImageView imgAchievements_ObedienceCertificate = findViewById(R.id.certificateobedience36Main);
+        ImageView imgAchievements_DoingGoodCertificate = findViewById(R.id.certificatedoinggood36Main);
 
         //Basic Concepts
-        ImageView imgAchievements_ColorsCertificate = findViewById(R.id.badgecolors36Main);
-        ImageView imgAchievements_CountingCertificate = findViewById(R.id.badgecounting36Main);
-        ImageView imgAchievements_AdditionCertificate = findViewById(R.id.badgeaddition36Main);
-        ImageView imgAchievements_SubtractionCertificate = findViewById(R.id.badgesubtraction36Main);
-        ImageView imgAchievements_ShapesCertificate = findViewById(R.id.badgeshapes36Main);
+        ImageView imgAchievements_ColorsCertificate = findViewById(R.id.certificatecolors36Main);
+        ImageView imgAchievements_CountingCertificate = findViewById(R.id.certificatecounting36Main);
+        ImageView imgAchievements_AdditionCertificate = findViewById(R.id.certificateaddition36Main);
+        ImageView imgAchievements_SubtractionCertificate = findViewById(R.id.certificatesubtraction36Main);
+        ImageView imgAchievements_ShapesCertificate = findViewById(R.id.certificateshapes36Main);
 
         //Firebase Firestore
         fAuth = FirebaseAuth.getInstance();
