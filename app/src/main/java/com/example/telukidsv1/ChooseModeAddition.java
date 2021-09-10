@@ -38,7 +38,7 @@ public class ChooseModeAddition extends AppCompatActivity {
         assessCMA.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                //startActivity(new Intent(ChooseModeAddition.this,QuizAdditionNumbers.class));
+                startActivity(new Intent(ChooseModeAddition.this,QuizAddition.class));
             }
         });
 

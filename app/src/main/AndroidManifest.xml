@@ -167,6 +167,13 @@
         <activity
             android:name=".ResultsCountingNumbers"
             android:exported="true" />
+        <activity
+            android:name=".QuizAddition"
+            android:exported="true" />
+        <activity
+            android:name=".ResultsAddition"
+            android:exported="true" />
+
     </application>
 
 </manifest>

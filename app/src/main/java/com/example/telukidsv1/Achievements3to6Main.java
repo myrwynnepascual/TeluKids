@@ -185,6 +185,34 @@ public class Achievements3to6Main extends AppCompatActivity {
             }
         });
 
+        fStore.runTransaction(new Transaction.Function<Void>() {
+            @Override
+            public Void apply(@NonNull Transaction transaction) throws FirebaseFirestoreException {
+                DocumentSnapshot documentSnapshot = transaction.get(docRef);
+
+                //Addition
+                achievement_addition = documentSnapshot.getString("addition achievement");
+                lesson_addition = documentSnapshot.getString("addition lesson");
+
+                if (achievement_addition.equals("Addition Beginner")){
+                    imgAchievements_AdditionBadge.setImageResource(R.drawable.badgeaddition);
+                }
+                if (achievement_addition.equals("Addition Expert")){
+                    imgAchievements_AdditionMedal.setImageResource(R.drawable.medaladdition);
+                    imgAchievements_AdditionBadge.setImageResource(R.drawable.badgeaddition);
+                }
+                if (achievement_addition.equals("Addition Master")){
+                    imgAchievements_AdditionTrophy.setImageResource(R.drawable.trophyaddition);
+                    imgAchievements_AdditionMedal.setImageResource(R.drawable.medaladdition);
+                    imgAchievements_AdditionBadge.setImageResource(R.drawable.badgeaddition);
+                }
+                if (lesson_addition.equals("Completed")){
+                    imgAchievements_AdditionCertificate.setImageResource(R.drawable.certificateaddition);
+                }
+                return null;
+            }
+        });
+
 
         fStore.runTransaction(new Transaction.Function<Void>() {
             @Override
