@@ -55,7 +55,7 @@ public class CountingLessonCongrats extends AppCompatActivity {
         btnbackCTLC.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(CountingLessonCongrats.this, BasicConcepts.class));
+                startActivity(new Intent(CountingLessonCongrats.this, Numbers.class));
             }
         });
 

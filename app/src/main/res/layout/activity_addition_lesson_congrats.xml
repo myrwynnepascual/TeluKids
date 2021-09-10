@@ -30,7 +30,7 @@
                 android:layout_height="match_parent"
                 android:backgroundTint="#00FFFFFF"
                 android:contentDescription="@string/todo"
-                app:srcCompat="@drawable/btnbconcepts"
+                app:srcCompat="@drawable/btnhomenum"
                 tools:ignore="SpeakableTextPresentCheck,ImageContrastCheck,DuplicateSpeakableTextCheck" />
 
             <Space

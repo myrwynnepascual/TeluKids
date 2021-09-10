@@ -761,7 +761,7 @@
                 app:layout_constraintTop_toTopOf="parent">
 
                 <ImageView
-                    android:id="@+id/certificateociability36Shapes"
+                    android:id="@+id/certificatesociability36Shapes"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center_horizontal"
@@ -827,7 +827,7 @@
                     tools:ignore="SpeakableTextPresentCheck,ImageContrastCheck,DuplicateSpeakableTextCheck" />
 
                 <ImageView
-                    android:id="@+id/certificaterdoinggood36Shapes"
+                    android:id="@+id/certificatedoinggood36Shapes"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center_horizontal"
@@ -892,7 +892,7 @@
                 app:layout_constraintTop_toTopOf="parent">
 
                 <ImageView
-                    android:id="@+id/certificateubtraction36Shapes"
+                    android:id="@+id/certificatesubtraction36Shapes"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center_horizontal"

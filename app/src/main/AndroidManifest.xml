@@ -12,6 +12,21 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.TeluKidsV1">
         <activity
+            android:name=".LessonIntroSubtraction"
+            android:exported="true" />
+        <activity
+            android:name=".Achievements3to6Subtraction"
+            android:exported="true" />
+        <activity
+            android:name=".SubtractionLessonCongrats"
+            android:exported="true" />
+        <activity
+            android:name=".ChooseModeSubtraction"
+            android:exported="true" />
+        <activity
+            android:name=".LessonSubtraction"
+            android:exported="true" />
+        <activity
             android:name=".Achievements3to6Addition"
             android:exported="true" />
         <activity

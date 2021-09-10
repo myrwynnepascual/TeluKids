@@ -52,7 +52,7 @@ public class Numbers extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                //startActivity(new Intent(Numbers.this,LessonIntroSubtraction.class));
+                startActivity(new Intent(Numbers.this,LessonIntroSubtraction.class));
 
             }
         });

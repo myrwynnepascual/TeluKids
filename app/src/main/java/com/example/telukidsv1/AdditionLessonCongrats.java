@@ -55,7 +55,7 @@ public class AdditionLessonCongrats extends AppCompatActivity {
         btnbackALC.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(AdditionLessonCongrats.this, BasicConcepts.class));
+                startActivity(new Intent(AdditionLessonCongrats.this, Numbers.class));
             }
         });
 
