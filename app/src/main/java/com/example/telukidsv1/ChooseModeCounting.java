@@ -31,7 +31,7 @@ public class ChooseModeCounting extends AppCompatActivity {
         learnCMCN.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(ChooseModeCounting.this, Countingx.class));
+                startActivity(new Intent(ChooseModeCounting.this, LessonCounting.class));
             }
         });
 

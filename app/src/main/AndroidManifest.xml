@@ -33,67 +33,7 @@
             android:name=".CountingLessonCongrats"
             android:exported="true" />
         <activity
-            android:name=".Count20"
-            android:exported="true" />
-        <activity
-            android:name=".Count19"
-            android:exported="true" />
-        <activity
-            android:name=".Count18"
-            android:exported="true" />
-        <activity
-            android:name=".Count17"
-            android:exported="true" />
-        <activity
-            android:name=".Count16"
-            android:exported="true" />
-        <activity
-            android:name=".Count15"
-            android:exported="true" />
-        <activity
-            android:name=".Count14"
-            android:exported="true" />
-        <activity
-            android:name=".Count13"
-            android:exported="true" />
-        <activity
-            android:name=".Count12"
-            android:exported="true" />
-        <activity
-            android:name=".Count11"
-            android:exported="true" />
-        <activity
-            android:name=".Count10"
-            android:exported="true" />
-        <activity
-            android:name=".Count9"
-            android:exported="true" />
-        <activity
-            android:name=".Count8"
-            android:exported="true" />
-        <activity
-            android:name=".Count7"
-            android:exported="true" />
-        <activity
-            android:name=".Count6"
-            android:exported="true" />
-        <activity
-            android:name=".Count5"
-            android:exported="true" />
-        <activity
-            android:name=".Count4"
-            android:exported="true" />
-        <activity
-            android:name=".Count3"
-            android:exported="true" />
-        <activity
-            android:name=".Count2"
-            android:exported="true" />
-        <activity
-            android:name=".Count1"
-            android:exported="true" />
-        <activity
-            android:name=".Countingx"
+            android:name=".LessonCounting"
             android:exported="true" />
         <activity
             android:name=".ShapesAchievements3to6"

@@ -1,5 +1,6 @@
 package com.example.telukidsv1;
 
+import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -9,18 +10,21 @@ import android.view.View;
 import android.widget.ImageButton;
 
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.EventListener;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.FirebaseFirestoreException;
+import com.google.firebase.firestore.Transaction;
 
 public class Homepage7to9 extends AppCompatActivity {
 
     ImageButton btnbackH79,btnUserProf79, btnGMRC79Topics, btnAchievements;
-    String userID, usericon;
+    String userID, usericon, lastpage;
     FirebaseFirestore fStore;
     FirebaseAuth fAuth;
+    FirebaseUser user;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -42,6 +46,7 @@ public class Homepage7to9 extends AppCompatActivity {
             @Override
             public void onEvent(@Nullable DocumentSnapshot documentSnapshot, @Nullable FirebaseFirestoreException error) {
                 usericon = documentSnapshot.getString("uicon");
+                lastpage = documentSnapshot.getString("last page");
 
                 if(usericon.equalsIgnoreCase("tiger")){
                     btnUserProf79.setImageResource(R.drawable.tigersettings);
@@ -67,16 +72,21 @@ public class Homepage7to9 extends AppCompatActivity {
                 else if(usericon.equalsIgnoreCase("chicken")){
                     btnUserProf79.setImageResource(R.drawable.chickensettings);
                 }
+
+                btnUserProf79.setVisibility(View.VISIBLE);
+
             }
         });
-
 
         btnbackH79.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
                 startActivity(new Intent(Homepage7to9.this, AgeCategorySelection.class));
+
             }
         });
+
 
         btnUserProf79.setOnClickListener(new View.OnClickListener() {
             @Override

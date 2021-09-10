@@ -1,5 +1,6 @@
 package com.example.telukidsv1;
 
+import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -11,20 +12,23 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.EventListener;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.FirebaseFirestoreException;
+import com.google.firebase.firestore.Transaction;
 
 public class UserProfile36 extends AppCompatActivity {
     ImageButton btnbackUP, btneditUP, btnlogoutUP;
     ImageView profIconUP;
     TextView greetUP;
-    String userID, username, usericon;
+    String userID, username, usericon, lastpage;
 
     FirebaseAuth fAuth;
     FirebaseFirestore fStore;
+    FirebaseUser user;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -48,6 +52,7 @@ public class UserProfile36 extends AppCompatActivity {
             public void onEvent(@Nullable DocumentSnapshot documentSnapshot, @Nullable FirebaseFirestoreException error) {
                 usericon = documentSnapshot.getString("uicon");
                 username = documentSnapshot.getString("username");
+                lastpage = documentSnapshot.getString("last page");
 
                 if(usericon.equalsIgnoreCase("tiger")){
                     profIconUP.setImageResource(R.drawable.tigerprof);
@@ -80,12 +85,12 @@ public class UserProfile36 extends AppCompatActivity {
             }
         });
 
-
-
         btnbackUP.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
                 startActivity(new Intent(UserProfile36.this,Homepage3to6.class));
+
             }
         });
 

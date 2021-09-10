@@ -20,10 +20,6 @@ public class AgeCategorySelection extends AppCompatActivity {
 
     ImageButton btnAge3to6,btnAge7to9;
 
-    FirebaseAuth fAuth;
-    FirebaseFirestore fStore;
-    FirebaseUser user;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -32,21 +28,6 @@ public class AgeCategorySelection extends AppCompatActivity {
 
         btnAge3to6 = findViewById(R.id.categoryage3to6CS);
         btnAge7to9 = findViewById(R.id.categoryage7to9CS);
-
-        fAuth = FirebaseAuth.getInstance();
-        fStore = FirebaseFirestore.getInstance();
-        user = fAuth.getCurrentUser();
-        DocumentReference docRef = fStore.collection("users").document(user.getUid());
-
-        fStore.runTransaction(new Transaction.Function<Void>() {
-            @Override
-            public Void apply(@NonNull Transaction transaction) throws FirebaseFirestoreException {
-                DocumentSnapshot snapshot = transaction.get(docRef);
-
-                transaction.update(docRef, "last page", "age category selection");
-                return null;
-            }
-        });
 
         btnAge3to6.setOnClickListener(new View.OnClickListener() {
             @Override
