@@ -70,7 +70,7 @@ public class ResultsShapes extends AppCompatActivity {
         achievementsbtnCLC_Shapes.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent proceed = new Intent(ResultsShapes.this, BasicConcepts.class);
+                Intent proceed = new Intent(ResultsShapes.this, Achievements3to6Shapes2.class);
                 startActivity(proceed);
             }
         });

@@ -70,7 +70,7 @@ public class ResultsColors extends AppCompatActivity {
         achievementsbtnCLC_Colors.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent proceed = new Intent(ResultsColors.this, BasicConcepts.class);
+                Intent proceed = new Intent(ResultsColors.this, Achievements3to6Colors2.class);
                 startActivity(proceed);
             }
         });

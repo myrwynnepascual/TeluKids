@@ -70,7 +70,7 @@ public class ResultsAddition extends AppCompatActivity {
         achievementsbtnCLC_Addition.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent proceed = new Intent(ResultsAddition.this, BasicConcepts.class);
+                Intent proceed = new Intent(ResultsAddition.this, Achievements3to6Addition2.class);
                 startActivity(proceed);
             }
         });
