@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/backgroundEP36"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bgassessment"
+    tools:context=".QuizSubtraction">
+
+    <LinearLayout
+        android:id="@+id/quizLayout_Subtraction"
+        android:layout_width="371dp"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.1"
+        app:layout_constraintHorizontal_bias="0.5">
+
+
+        <TextView
+            android:id="@+id/countLabel_Subtraction"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
+            android:layout_gravity="center_horizontal"
+            android:fontFamily="@font/leaguespartanbold"
+            android:text="Question #1"
+            android:textColor="@android:color/holo_orange_light"
+            android:textSize="22sp" />
+
+        <TextView
+            android:id="@+id/questionLabel_Subtraction"
+            android:layout_width="275dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:fontFamily="@font/leaguespartanbold"
+            android:text="Question"
+            android:textColor="@color/white"
+            android:textSize="20sp"
+            android:textAlignment="center"/>
+
+        <ImageView
+            android:id="@+id/imgQuestion_Subtraction"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="30dp"
+            tools:srcCompat="@drawable/subtractionquestion1" />
+
+        <Button
+
+            android:id="@+id/btnAnswer1_Subtraction"
+            android:layout_width="300dp"
+            android:layout_height="60dp"
+            android:layout_marginTop="20dp"
+            android:layout_gravity="center_horizontal"
+            android:background="@drawable/answerbutton"
+            android:fontFamily="@font/arialroundedmt"
+            android:onClick="checkAnswer"
+            android:text="Answer1"
+            android:textColor="@color/white" />
+
+        <Button
+            android:id="@+id/btnAnswer2_Subtraction"
+            android:layout_width="300dp"
+            android:layout_height="60dp"
+            android:layout_marginTop="20dp"
+            android:layout_gravity="center_horizontal"
+            android:background="@drawable/answerbutton"
+            android:fontFamily="@font/arialroundedmt"
+            android:onClick="checkAnswer"
+            android:text="Answer2"
+            android:textColor="@color/white" />
+
+        <Button
+            android:id="@+id/btnConfirm_Subtraction"
+            android:layout_width="150dp"
+            android:layout_height="60dp"
+            android:layout_marginTop="30dp"
+            android:layout_gravity="center_horizontal"
+            android:background="@drawable/confirmbutton"
+            android:fontFamily="@font/arialroundedmt"
+            android:onClick="checkAnswer"
+            android:text="Submit"
+            android:textColor="@color/white" />
+
+    </LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

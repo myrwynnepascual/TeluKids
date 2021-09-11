@@ -188,6 +188,12 @@
         <activity
             android:name=".ResultsAddition"
             android:exported="true" />
+        <activity
+            android:name=".QuizSubtraction"
+            android:exported="true" />
+        <activity
+            android:name=".ResultsSubtraction"
+            android:exported="true" />
     </application>
 
 </manifest>

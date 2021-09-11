@@ -38,7 +38,7 @@ public class ChooseModeSubtraction extends AppCompatActivity {
         assessCMSB.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                //startActivity(new Intent(ChooseModeSubtraction.this,QuizAdditionNumbers.class));
+                startActivity(new Intent(ChooseModeSubtraction.this,QuizSubtraction.class));
             }
         });
 
