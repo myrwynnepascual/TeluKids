@@ -70,7 +70,7 @@ public class ResultsCountingNumbers extends AppCompatActivity {
         achievementsbtnCLC_Counting.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent proceed = new Intent(ResultsCountingNumbers.this, BasicConcepts.class);
+                Intent proceed = new Intent(ResultsCountingNumbers.this, Achievements3to6Counting2.class);
                 startActivity(proceed);
             }
         });
