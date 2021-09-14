@@ -45,7 +45,7 @@ public class ChooseModeSubtraction extends AppCompatActivity {
         replayCMSB.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(ChooseModeSubtraction.this,LessonIntroAddition.class));
+                startActivity(new Intent(ChooseModeSubtraction.this,LessonIntroSubtraction.class));
             }
         });
     }
