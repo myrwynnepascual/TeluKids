@@ -22,7 +22,7 @@ public class LessonIntroAddition extends AppCompatActivity {
         setContentView(R.layout.activity_lesson_intro_addition);
 
         videoViewIA = findViewById(R.id.videoIA);
-        videoPathIA = "android.resource://" + getPackageName() + "/" + R.raw.shapesintrovideo;
+        videoPathIA = "android.resource://" + getPackageName() + "/" + R.raw.additionintrovideo;
         uriIA = Uri.parse(videoPathIA);
         videoViewIA.setVideoURI(uriIA);
 

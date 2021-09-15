@@ -22,7 +22,7 @@ public class LessonIntroSubtraction extends AppCompatActivity {
         setContentView(R.layout.activity_lesson_intro_subtraction);
 
         videoViewISB = findViewById(R.id.videoISB);
-        videoPathISB = "android.resource://" + getPackageName() + "/" + R.raw.shapesintrovideo;
+        videoPathISB = "android.resource://" + getPackageName() + "/" + R.raw.subtractionintrovideo;
         uriISB = Uri.parse(videoPathISB);
         videoViewISB.setVideoURI(uriISB);
 

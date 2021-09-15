@@ -45,7 +45,7 @@ public class ChooseModeColors extends AppCompatActivity {
         replayCMC.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(ChooseModeColors.this,LessonIntroCounting.class));
+                startActivity(new Intent(ChooseModeColors.this,LessonIntroColors.class));
             }
         });
     }

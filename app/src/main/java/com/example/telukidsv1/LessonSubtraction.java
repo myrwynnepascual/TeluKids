@@ -48,6 +48,47 @@ public class LessonSubtraction extends AppCompatActivity {
             @Override
             public void onCompletion(MediaPlayer mp) {
 
+                subtractiony();
+
+            }
+        });
+
+        backbtnS.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                startActivity(new Intent(LessonSubtraction.this,ChooseModeSubtraction.class));
+
+            }
+        });
+
+        nextbtnS.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                subtractiony();
+
+            }
+        });
+    }
+
+    public void subtractiony(){
+
+        videoPathS = "android.resource://" + getPackageName() + "/" + R.raw.subtractiony;
+        uriS = Uri.parse(videoPathS);
+        videoViewS.setVideoURI(uriS);
+
+        mediaController = new MediaController(this);
+        videoViewS.setMediaController(mediaController);
+        mediaController.setVisibility(View.GONE);
+        mediaController.setAnchorView(videoViewS);
+
+        videoViewS.start();
+
+        videoViewS.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+            @Override
+            public void onCompletion(MediaPlayer mp) {
+
                 subtraction1();
 
             }
