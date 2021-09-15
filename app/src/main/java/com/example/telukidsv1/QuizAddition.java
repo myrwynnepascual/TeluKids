@@ -171,7 +171,7 @@ public class QuizAddition extends AppCompatActivity {
                         btnAnswer2_Addition.setEnabled(false);
                         confirmClicked_Addition++;
                     } else{
-                        Toast.makeText(getApplicationContext(),"Oops! Please Select an Answer",Toast.LENGTH_SHORT).show();
+                        Toast.makeText(getApplicationContext(),"Please Select an Answer",Toast.LENGTH_SHORT).show();
                     }
                 }
             }
@@ -188,12 +188,12 @@ public class QuizAddition extends AppCompatActivity {
                 }
                 else if (!btnText.equals(btnAnswer1_Addition.getText().toString()) && !btnText.equals(btnAnswer2_Addition.getText().toString())){
                     //Check if user selected an answer
-                    Toast.makeText(getApplicationContext(),"Oops! Please Select an Answer",Toast.LENGTH_LONG).show();
+                    Toast.makeText(getApplicationContext(),"Please Select an Answer",Toast.LENGTH_LONG).show();
 
                 }
                 else if(confirmClicked_Addition == 0){
                     //Check if Confirm Answer Button was clicked
-                    Toast.makeText(getApplicationContext(),"Oops! Please Confirm your Answer",Toast.LENGTH_LONG).show();
+                    Toast.makeText(getApplicationContext(),"Please Confirm your Answer",Toast.LENGTH_LONG).show();
                 }
                 else{
                     quizCount_Addition++;

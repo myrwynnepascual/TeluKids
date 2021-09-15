@@ -171,7 +171,7 @@ public class QuizCountingNumbers extends AppCompatActivity {
                         btnAnswer2_Counting.setEnabled(false);
                         confirmClicked_Counting++;
                     } else{
-                        Toast.makeText(getApplicationContext(),"Oops! Please Select an Answer",Toast.LENGTH_SHORT).show();
+                        Toast.makeText(getApplicationContext(),"Please Select an Answer",Toast.LENGTH_SHORT).show();
                     }
                 }
             }
@@ -188,12 +188,12 @@ public class QuizCountingNumbers extends AppCompatActivity {
                 }
                 else if (!btnText.equals(btnAnswer1_Counting.getText().toString()) && !btnText.equals(btnAnswer2_Counting.getText().toString())){
                     //Check if user selected an answer
-                    Toast.makeText(getApplicationContext(),"Oops! Please Select an Answer",Toast.LENGTH_LONG).show();
+                    Toast.makeText(getApplicationContext(),"Please Select an Answer",Toast.LENGTH_LONG).show();
 
                 }
                 else if(confirmClicked_Counting == 0){
                     //Check if Confirm Answer Button was clicked
-                    Toast.makeText(getApplicationContext(),"Oops! Please Confirm your Answer",Toast.LENGTH_LONG).show();
+                    Toast.makeText(getApplicationContext(),"Please Confirm your Answer",Toast.LENGTH_LONG).show();
                 }
                 else{
                     quizCount_Counting++;

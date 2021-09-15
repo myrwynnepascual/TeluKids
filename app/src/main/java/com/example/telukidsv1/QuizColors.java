@@ -171,7 +171,7 @@ public class QuizColors extends AppCompatActivity {
                         btnAnswer2_Colors.setEnabled(false);
                         confirmClicked_Colors++;
                     } else{
-                        Toast.makeText(getApplicationContext(),"Oops! Please Select an Answer",Toast.LENGTH_SHORT).show();
+                        Toast.makeText(getApplicationContext(),"Please Select an Answer",Toast.LENGTH_SHORT).show();
                     }
                 }
             }
@@ -188,12 +188,12 @@ public class QuizColors extends AppCompatActivity {
                 }
                 else if (!btnText.equals(btnAnswer1_Colors.getText().toString()) && !btnText.equals(btnAnswer2_Colors.getText().toString())){
                     //Check if user selected an answer
-                    Toast.makeText(getApplicationContext(),"Oops! Please Select an Answer",Toast.LENGTH_LONG).show();
+                    Toast.makeText(getApplicationContext(),"Please Select an Answer",Toast.LENGTH_LONG).show();
 
                 }
                 else if(confirmClicked_Colors == 0){
                     //Check if Confirm Answer Button was clicked
-                    Toast.makeText(getApplicationContext(),"Oops! Please Confirm your Answer",Toast.LENGTH_LONG).show();
+                    Toast.makeText(getApplicationContext(),"Please Confirm your Answer",Toast.LENGTH_LONG).show();
                 }
                 else{
                     quizCount_Colors++;
