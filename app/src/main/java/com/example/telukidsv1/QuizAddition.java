@@ -3,8 +3,7 @@ package com.example.telukidsv1;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
-import android.graphics.Color;
-import android.graphics.Typeface;
+import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -23,6 +22,10 @@ public class QuizAddition extends AppCompatActivity {
     private ImageView imgQuestion_Addition;
     private LinearLayout quizLayout_Addition;
 
+    MediaPlayer voiceover;
+    MediaPlayer choice1;
+    MediaPlayer choice2;
+
     Button btnAnswer1_Addition;
     Button btnAnswer2_Addition;
     Button btnConfirm_Addition;
@@ -37,14 +40,15 @@ public class QuizAddition extends AppCompatActivity {
     ArrayList<ArrayList<String>> quizArray_Addition = new ArrayList<>();
 
     String quizData_Addition[][] = {
-            //{"Question", "Image", "Right Answer", "Wrong Answer"}
-            {"If you add 5 stars and 5 stars together, the sum would be?", String.valueOf(R.drawable.additionquestion1), "10 Stars", "5 Stars"},
-            { "What is 1 shark plus 1 shark equal to?", String.valueOf(R.drawable.additionquestion2),"2 Sharks", "4 Sharks"},
-            {"2 blue sea stars put together with another 1 sea star, how many sea stars are there in all?", String.valueOf(R.drawable.additionquestion3),"3 Blue Sea Stars", "6 Blue Sea Stars"},
-            {"If you add 3 carrots and 6 carrots together, how many carrots do you have in all?", String.valueOf(R.drawable.additionquestion4),"9 Carrots", "8 Carrots"},
-            {"What is 5 ice creams plus 2 ice creams equal to?", String.valueOf(R.drawable.additionquestion5),"7 Ice Creams", "4 Ice Creams"}
+            //{"Question", "Image", "Question Voice Over", "Right Answer", "Wrong Answer", "Choice 1 Voice Over, "Choice 2 Voice Over"}
+            {"If you add 5 stars and 5 stars together, the sum would be?", String.valueOf(R.drawable.additionquestion1), String.valueOf(R.raw.aq1), "10 Stars", "5 Stars", String.valueOf(R.raw.aq1c1), String.valueOf(R.raw.aq1c2)},
+            { "What is 1 shark plus 1 shark equal to?", String.valueOf(R.drawable.additionquestion2), String.valueOf(R.raw.aq2), "2 Sharks", "4 Sharks", String.valueOf(R.raw.aq2c1), String.valueOf(R.raw.aq2c2)},
+            {"2 blue sea stars put together with another 1 sea star, how many sea stars are there in all?", String.valueOf(R.drawable.additionquestion3), String.valueOf(R.raw.aq3), "3 Blue Sea Stars", "6 Blue Sea Stars", String.valueOf(R.raw.aq3c1), String.valueOf(R.raw.aq3c2)},
+            {"If you add 3 carrots and 6 carrots together, how many carrots do you have in all?", String.valueOf(R.drawable.additionquestion4), String.valueOf(R.raw.aq4), "9 Carrots", "8 Carrots", String.valueOf(R.raw.aq4c1), String.valueOf(R.raw.aq4c2)},
+            {"What is 5 ice creams plus 2 ice creams equal to?", String.valueOf(R.drawable.additionquestion5), String.valueOf(R.raw.aq5), "7 Ice Creams", "4 Ice Creams", String.valueOf(R.raw.aq5c1), String.valueOf(R.raw.aq5c2)}
 
     };
+
 
 
 
@@ -52,7 +56,6 @@ public class QuizAddition extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.quiz_addition);
-
 
 
         quizLayout_Addition = (LinearLayout)findViewById(R.id.quizLayout_Addition);
@@ -69,9 +72,11 @@ public class QuizAddition extends AppCompatActivity {
             ArrayList<String> tmpArray = new ArrayList<>();
             tmpArray.add(quizData_Addition[i][0]); //Question
             tmpArray.add(quizData_Addition[i][1]); //Image
-            tmpArray.add(quizData_Addition[i][2]); //Right Answer
-            tmpArray.add(quizData_Addition[i][3]); //Wrong Answer
-
+            tmpArray.add(quizData_Addition[i][2]); //Voice Over
+            tmpArray.add(quizData_Addition[i][3]); //Right Answer
+            tmpArray.add(quizData_Addition[i][4]); //Wrong Answer
+            tmpArray.add(quizData_Addition[i][5]); // Choice 1 Voice Over
+            tmpArray.add(quizData_Addition[i][6]); // Choice 2 Voice Over
             //Add tmpArray to quizArray
             quizArray_Addition.add(tmpArray);
         }
@@ -92,17 +97,23 @@ public class QuizAddition extends AppCompatActivity {
         //Set Question and Right Answer
         questionLabel_Addition.setText(quiz.get(0));
         imgQuestion_Addition.setImageResource(Integer.parseInt(quiz.get(1)));
-        rightAnswer_Addition = quiz.get(2);
+        voiceover = MediaPlayer.create(this, Integer.parseInt(quiz.get(2)));
+        voiceover.start();
+        rightAnswer_Addition = quiz.get(3);
+        choice1 = MediaPlayer.create(this, Integer.parseInt(quiz.get(5)));
+        choice2 = MediaPlayer.create(this, Integer.parseInt(quiz.get(6)));
 
         //Shuffle Choices
         quiz.remove(0);
         quiz.remove(0);
+        quiz.remove(0);
+        quiz.remove(2);
+        quiz.remove(2);
         Collections.shuffle(quiz);
 
         //Set Choices
         btnAnswer1_Addition.setText(quiz.get(0));
         btnAnswer2_Addition.setText(quiz.get(1));
-
 
         //Remove this quiz from array
         quizArray_Addition.remove(randomNum);
@@ -112,33 +123,52 @@ public class QuizAddition extends AppCompatActivity {
         //Get pushed button
         Button answerBtn = (Button) findViewById(view.getId());
         String btnText = answerBtn.getText().toString();
+        MediaPlayer correct_sound = MediaPlayer.create(this, R.raw.correctsound);
+        MediaPlayer wrong_sound =  MediaPlayer.create(this, R.raw.wrongsound);
 
         if (answerBtn == btnAnswer1_Addition){
             btnAnswer1_Addition.setBackgroundResource(R.drawable.selectedanswerbutton);
             btnAnswer2_Addition.setBackgroundResource(R.drawable.answerbutton);
-
         }
         else if (answerBtn == btnAnswer2_Addition){
             btnAnswer2_Addition.setBackgroundResource(R.drawable.selectedanswerbutton);
             btnAnswer1_Addition.setBackgroundResource(R.drawable.answerbutton);
         }
 
+        if (answerBtn.getText().equals(rightAnswer_Addition)){
+            voiceover.pause();
+            choice1.start();
+        }
+        else if (!answerBtn.getText().equals(rightAnswer_Addition)){
+            voiceover.pause();
+            choice2.start();
+        }
+
         // Confirm Users answer and shows if answer is right or wrong
         btnConfirm_Addition.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                voiceover.pause();
+                choice1.pause();
+                choice2.pause();
                 if(btnText.equals(rightAnswer_Addition)){
                     //Correct
                     answerBtn.setBackgroundResource(R.drawable.correctanswerbutton);
+                    correct_sound.start();
                     rightAnswerCount_Addition++;
                     btnConfirm_Addition.setEnabled(false);
+                    btnAnswer1_Addition.setEnabled(false);
+                    btnAnswer2_Addition.setEnabled(false);
                     confirmClicked_Addition++;
                 }
                 else if (!btnText.equals(rightAnswer_Addition) && answerBtn != btnConfirm_Addition) {
                     if (btnText.equals(btnAnswer1_Addition.getText().toString()) || btnText.equals(btnAnswer2_Addition.getText().toString()) ) {
                         //Wrong
                         answerBtn.setBackgroundResource(R.drawable.wronganswerbutton);
+                        wrong_sound.start();
                         btnConfirm_Addition.setEnabled(false);
+                        btnAnswer1_Addition.setEnabled(false);
+                        btnAnswer2_Addition.setEnabled(false);
                         confirmClicked_Addition++;
                     } else{
                         Toast.makeText(getApplicationContext(),"Oops! Please Select an Answer",Toast.LENGTH_SHORT).show();
@@ -169,7 +199,11 @@ public class QuizAddition extends AppCompatActivity {
                     quizCount_Addition++;
                     btnAnswer1_Addition.setBackgroundResource(R.drawable.answerbutton);
                     btnAnswer2_Addition.setBackgroundResource(R.drawable.answerbutton);
+                    btnAnswer1_Addition.setEnabled(true);
+                    btnAnswer2_Addition.setEnabled(true);
                     btnConfirm_Addition.setEnabled(true);
+                    correct_sound.reset();
+                    wrong_sound.reset();
                     showNextQuiz();
                 }
             }

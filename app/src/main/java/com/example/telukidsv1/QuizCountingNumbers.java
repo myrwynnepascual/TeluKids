@@ -3,32 +3,28 @@ package com.example.telukidsv1;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
-import android.graphics.Color;
-import android.graphics.Typeface;
 import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
-import android.widget.MediaController;
 import android.widget.TextView;
 import android.widget.Toast;
-
-import com.example.telukidsv1.R;
 
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Random;
 
 public class QuizCountingNumbers extends AppCompatActivity {
-
     private TextView countLabel_Counting;
     private TextView questionLabel_Counting;
     private ImageView imgQuestion_Counting;
     private LinearLayout quizLayout_Counting;
 
     MediaPlayer voiceover;
+    MediaPlayer choice1;
+    MediaPlayer choice2;
 
     Button btnAnswer1_Counting;
     Button btnAnswer2_Counting;
@@ -44,14 +40,17 @@ public class QuizCountingNumbers extends AppCompatActivity {
     ArrayList<ArrayList<String>> quizArray_Counting = new ArrayList<>();
 
     String quizData_Counting[][] = {
-            //{"Question", "Image", "Question Voiceover", "Right Answer", "Wrong Answer"}
-            {"How many boxes of crayons are there?", String.valueOf(R.drawable.countingnumbersquestion1), String.valueOf(R.raw.ctq1), "5 boxes of crayons", "6 boxes of crayons"},
-            { "How many apples and bananas are there?", String.valueOf(R.drawable.countingnumbersquestion2), String.valueOf(R.raw.ctq2), "4 Bananas and 3 apples", "1 Banana and 2 Apples"},
-            {"How many  boxes of chocolates are there?", String.valueOf(R.drawable.countingnumbersquestion3), String.valueOf(R.raw.ctq3), "10 Boxes of Chocolates", "15 Boxes of Chocolates"},
-            {"How many bumblebees and cups are there?", String.valueOf(R.drawable.countingnumbersquestion4), String.valueOf(R.raw.ctq4), "7 Bumblebees and 8 Cups", "9 Bumblebees and 13 Cups"},
-            {"How many balloons are there?", String.valueOf(R.drawable.countingnumbersquestion5), String.valueOf(R.raw.ctq5), "18 Balloons", "14 Balloons"}
+            //{"Question", "Image", "Question Voiceover", "Right Answer", "Wrong Answer", "Choice 1 Voice Over", "Choice 2 Voice Over"}
+            {"How many boxes of crayons are there?", String.valueOf(R.drawable.countingnumbersquestion1), String.valueOf(R.raw.ctq1), "5 boxes of crayons", "6 boxes of crayons", String.valueOf(R.raw.ctq1c1), String.valueOf(R.raw.ctq1c2) },
+            { "How many apples and bananas are there?", String.valueOf(R.drawable.countingnumbersquestion2), String.valueOf(R.raw.ctq2), "4 Bananas and 3 apples", "1 Banana and 2 Apples", String.valueOf(R.raw.ctq2c1), String.valueOf(R.raw.ctq2c2)},
+            {"How many  boxes of chocolates are there?", String.valueOf(R.drawable.countingnumbersquestion3), String.valueOf(R.raw.ctq3), "10 Boxes of Chocolates", "15 Boxes of Chocolates", String.valueOf(R.raw.ctq3c1), String.valueOf(R.raw.ctq3c2)},
+            {"How many bumblebees and cups are there?", String.valueOf(R.drawable.countingnumbersquestion4), String.valueOf(R.raw.ctq4), "7 Bumblebees and 8 Cups", "9 Bumblebees and 13 Cups", String.valueOf(R.raw.ctq4c1), String.valueOf(R.raw.ctq4c2)},
+            {"How many balloons are there?", String.valueOf(R.drawable.countingnumbersquestion5), String.valueOf(R.raw.ctq5), "18 Balloons", "14 Balloons", String.valueOf(R.raw.ctq5c1), String.valueOf(R.raw.ctq5c2)}
 
     };
+
+
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -76,7 +75,8 @@ public class QuizCountingNumbers extends AppCompatActivity {
             tmpArray.add(quizData_Counting[i][2]); //Voice Over
             tmpArray.add(quizData_Counting[i][3]); //Right Answer
             tmpArray.add(quizData_Counting[i][4]); //Wrong Answer
-
+            tmpArray.add(quizData_Counting[i][5]); //Choice 1 Voice Over
+            tmpArray.add(quizData_Counting[i][6]); //Choice 2 Voice Over
             //Add tmpArray to quizArray
             quizArray_Counting.add(tmpArray);
         }
@@ -100,11 +100,15 @@ public class QuizCountingNumbers extends AppCompatActivity {
         voiceover = MediaPlayer.create(this, Integer.parseInt(quiz.get(2)));
         voiceover.start();
         rightAnswer_Counting = quiz.get(3);
+        choice1 = MediaPlayer.create(this, Integer.parseInt(quiz.get(5)));
+        choice2 = MediaPlayer.create(this, Integer.parseInt(quiz.get(6)));
 
         //Shuffle Choices
         quiz.remove(0);
         quiz.remove(0);
         quiz.remove(0);
+        quiz.remove(2);
+        quiz.remove(2);
         Collections.shuffle(quiz);
 
         //Set Choices
@@ -125,22 +129,33 @@ public class QuizCountingNumbers extends AppCompatActivity {
         if (answerBtn == btnAnswer1_Counting){
             btnAnswer1_Counting.setBackgroundResource(R.drawable.selectedanswerbutton);
             btnAnswer2_Counting.setBackgroundResource(R.drawable.answerbutton);
-
         }
         else if (answerBtn == btnAnswer2_Counting){
             btnAnswer2_Counting.setBackgroundResource(R.drawable.selectedanswerbutton);
             btnAnswer1_Counting.setBackgroundResource(R.drawable.answerbutton);
         }
 
+        if (answerBtn.getText().equals(rightAnswer_Counting)){
+            voiceover.pause();
+            choice1.start();
+        }
+        else if (!answerBtn.getText().equals(rightAnswer_Counting)){
+            voiceover.pause();
+            choice2.start();
+        }
+
         // Confirm Users answer and shows if answer is right or wrong
         btnConfirm_Counting.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                voiceover.pause();
+                choice1.pause();
+                choice2.pause();
                 if(btnText.equals(rightAnswer_Counting)){
                     //Correct
                     answerBtn.setBackgroundResource(R.drawable.correctanswerbutton);
-                    rightAnswerCount_Counting++;
                     correct_sound.start();
+                    rightAnswerCount_Counting++;
                     btnConfirm_Counting.setEnabled(false);
                     btnAnswer1_Counting.setEnabled(false);
                     btnAnswer2_Counting.setEnabled(false);
@@ -187,6 +202,8 @@ public class QuizCountingNumbers extends AppCompatActivity {
                     btnAnswer1_Counting.setEnabled(true);
                     btnAnswer2_Counting.setEnabled(true);
                     btnConfirm_Counting.setEnabled(true);
+                    correct_sound.reset();
+                    wrong_sound.reset();
                     showNextQuiz();
                 }
             }

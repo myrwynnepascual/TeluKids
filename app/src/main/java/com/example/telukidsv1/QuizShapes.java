@@ -74,8 +74,8 @@ public class QuizShapes extends AppCompatActivity {
             tmpArray.add(quizData_Shapes[i][2]); //Voice Over
             tmpArray.add(quizData_Shapes[i][3]); //Right Answer
             tmpArray.add(quizData_Shapes[i][4]); //Wrong Answer
-            tmpArray.add(quizData_Shapes[i][5]);
-            tmpArray.add(quizData_Shapes[i][6]);
+            tmpArray.add(quizData_Shapes[i][5]); //Choice 1 Voice Over
+            tmpArray.add(quizData_Shapes[i][6]); //Choice 2 Voice Over
             //Add tmpArray to quizArray
             quizArray_Shapes.add(tmpArray);
         }

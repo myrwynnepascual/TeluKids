@@ -5,6 +5,7 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageButton;
@@ -21,6 +22,7 @@ import com.google.firebase.firestore.Transaction;
 
 public class ResultsAddition extends AppCompatActivity {
     private int  score_addition;
+    MediaPlayer congrats;
     FirebaseAuth fAuth;
     FirebaseFirestore fStore;
     FirebaseUser user;
@@ -34,6 +36,10 @@ public class ResultsAddition extends AppCompatActivity {
         ImageButton achievementsbtnCLC_Addition = findViewById(R.id.achievementsbtnCLC_Addition);
         ImageButton btnReadLesson_Quiz_Addition = findViewById(R.id.btnReadLesson_Quiz_Addition);
         ImageButton homepageCLC_Addition = findViewById(R.id.homepageCLC_Addition);
+
+        congrats = MediaPlayer.create(this, R.raw.yaysfx);
+        congrats.start();
+
 
         fAuth = FirebaseAuth.getInstance();
         fStore = FirebaseFirestore.getInstance();

@@ -3,19 +3,14 @@ package com.example.telukidsv1;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
-import android.graphics.Color;
-import android.graphics.Typeface;
 import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
-import android.widget.MediaController;
 import android.widget.TextView;
 import android.widget.Toast;
-
-import com.example.telukidsv1.R;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -28,6 +23,8 @@ public class QuizColors extends AppCompatActivity {
     private LinearLayout quizLayout_Colors;
 
     MediaPlayer voiceover;
+    MediaPlayer choice1;
+    MediaPlayer choice2;
 
     Button btnAnswer1_Colors;
     Button btnAnswer2_Colors;
@@ -43,14 +40,15 @@ public class QuizColors extends AppCompatActivity {
     ArrayList<ArrayList<String>> quizArray_Colors = new ArrayList<>();
 
     String quizData_Colors[][] = {
-            //{"Question", "Image", "Question Voiceover", "Right Answer", "Wrong Answer"}
-            {"What is the color of the frog, leaf, and alligator?", String.valueOf(R.drawable.colorsquestion1), String.valueOf(R.raw.clq1),"Green", "Red"},
-            { "Which of the following has a different color and what is its color: water, bus, and pumpkin?", String.valueOf(R.drawable.colorsquestion2),String.valueOf(R.raw.clq2),"Pumpkin, Orange", "Bus, Blue"},
-            {"What is the color of the cup, curtain, and balloon?", String.valueOf(R.drawable.colorsquestion3), String.valueOf(R.raw.clq3), "Purple", "Red"},
-            {"Which of the following has a different color and what is its color: pineapple, crate, and peacock?", String.valueOf(R.drawable.colorsquestion4), String.valueOf(R.raw.clq4), "Peacock, Blue", "Crate, Yellow"},
-            {"What is the color of the cheese, bumblebee, and star lantern?", String.valueOf(R.drawable.colorsquestion5), String.valueOf(R.raw.clq5), "Yellow", "Green"}
+            //{"Question", "Image", "Question Voiceover", "Right Answer", "Wrong Answer", "Choice 1 Voice Over", "Choice 2 Voice Over"}
+            {"What is the color of the frog, leaf, and alligator?", String.valueOf(R.drawable.colorsquestion1), String.valueOf(R.raw.clq1),"Green", "Red", String.valueOf(R.raw.clq1c1), String.valueOf(R.raw.clq1c2)},
+            { "Which of the following has a different color and what is its color: water, bus, and pumpkin?", String.valueOf(R.drawable.colorsquestion2),String.valueOf(R.raw.clq2),"Pumpkin, Orange", "Bus, Blue", String.valueOf(R.raw.clq2c1), String.valueOf(R.raw.clq2c2)},
+            {"What is the color of the cup, curtain, and balloon?", String.valueOf(R.drawable.colorsquestion3), String.valueOf(R.raw.clq3), "Purple", "Red", String.valueOf(R.raw.clq3c1), String.valueOf(R.raw.clq3c2)},
+            {"Which of the following has a different color and what is its color: pineapple, crate, and peacock?", String.valueOf(R.drawable.colorsquestion4), String.valueOf(R.raw.clq4), "Peacock, Blue", "Crate, Yellow", String.valueOf(R.raw.clq4c1), String.valueOf(R.raw.clq4c2)},
+            {"What is the color of the cheese, bumblebee, and star lantern?", String.valueOf(R.drawable.colorsquestion5), String.valueOf(R.raw.clq5), "Yellow", "Green", String.valueOf(R.raw.clq5c1), String.valueOf(R.raw.clq5c2)}
 
     };
+
 
 
 
@@ -77,7 +75,8 @@ public class QuizColors extends AppCompatActivity {
             tmpArray.add(quizData_Colors[i][2]); //Voice Over
             tmpArray.add(quizData_Colors[i][3]); //Right Answer
             tmpArray.add(quizData_Colors[i][4]); //Wrong Answer
-
+            tmpArray.add(quizData_Colors[i][5]); // Choice 1 Voice Over
+            tmpArray.add(quizData_Colors[i][6]); // Choice 2 Voice Over
             //Add tmpArray to quizArray
             quizArray_Colors.add(tmpArray);
         }
@@ -101,11 +100,15 @@ public class QuizColors extends AppCompatActivity {
         voiceover = MediaPlayer.create(this, Integer.parseInt(quiz.get(2)));
         voiceover.start();
         rightAnswer_Colors = quiz.get(3);
+        choice1 = MediaPlayer.create(this, Integer.parseInt(quiz.get(5)));
+        choice2 = MediaPlayer.create(this, Integer.parseInt(quiz.get(6)));
 
         //Shuffle Choices
         quiz.remove(0);
         quiz.remove(0);
         quiz.remove(0);
+        quiz.remove(2);
+        quiz.remove(2);
         Collections.shuffle(quiz);
 
         //Set Choices
@@ -126,22 +129,33 @@ public class QuizColors extends AppCompatActivity {
         if (answerBtn == btnAnswer1_Colors){
             btnAnswer1_Colors.setBackgroundResource(R.drawable.selectedanswerbutton);
             btnAnswer2_Colors.setBackgroundResource(R.drawable.answerbutton);
-
         }
         else if (answerBtn == btnAnswer2_Colors){
             btnAnswer2_Colors.setBackgroundResource(R.drawable.selectedanswerbutton);
             btnAnswer1_Colors.setBackgroundResource(R.drawable.answerbutton);
         }
 
+        if (answerBtn.getText().equals(rightAnswer_Colors)){
+            voiceover.pause();
+            choice1.start();
+        }
+        else if (!answerBtn.getText().equals(rightAnswer_Colors)){
+            voiceover.pause();
+            choice2.start();
+        }
+
         // Confirm Users answer and shows if answer is right or wrong
         btnConfirm_Colors.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                voiceover.pause();
+                choice1.pause();
+                choice2.pause();
                 if(btnText.equals(rightAnswer_Colors)){
                     //Correct
                     answerBtn.setBackgroundResource(R.drawable.correctanswerbutton);
-                    rightAnswerCount_Colors++;
                     correct_sound.start();
+                    rightAnswerCount_Colors++;
                     btnConfirm_Colors.setEnabled(false);
                     btnAnswer1_Colors.setEnabled(false);
                     btnAnswer2_Colors.setEnabled(false);
@@ -188,6 +202,8 @@ public class QuizColors extends AppCompatActivity {
                     btnAnswer1_Colors.setEnabled(true);
                     btnAnswer2_Colors.setEnabled(true);
                     btnConfirm_Colors.setEnabled(true);
+                    correct_sound.reset();
+                    wrong_sound.reset();
                     showNextQuiz();
                 }
             }
