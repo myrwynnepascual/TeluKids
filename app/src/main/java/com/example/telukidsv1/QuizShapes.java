@@ -74,8 +74,8 @@ public class QuizShapes extends AppCompatActivity {
             tmpArray.add(quizData_Shapes[i][2]); //Voice Over
             tmpArray.add(quizData_Shapes[i][3]); //Right Answer
             tmpArray.add(quizData_Shapes[i][4]); //Wrong Answer
-            tmpArray.add(quizData_Shapes[i][5]);
-            tmpArray.add(quizData_Shapes[i][6]);
+            tmpArray.add(quizData_Shapes[i][5]); //Choice 1 Voice Over
+            tmpArray.add(quizData_Shapes[i][6]); //Choice 2 Voice Over
             //Add tmpArray to quizArray
             quizArray_Shapes.add(tmpArray);
         }
@@ -170,7 +170,7 @@ public class QuizShapes extends AppCompatActivity {
                         btnAnswer2_Shapes.setEnabled(false);
                         confirmClicked_Shapes++;
                     } else{
-                        Toast.makeText(getApplicationContext(),"Oops! Please Select an Answer",Toast.LENGTH_SHORT).show();
+                        Toast.makeText(getApplicationContext(),"Please Select an Answer",Toast.LENGTH_SHORT).show();
                     }
                 }
             }
@@ -187,12 +187,12 @@ public class QuizShapes extends AppCompatActivity {
                 }
                 else if (!btnText.equals(btnAnswer1_Shapes.getText().toString()) && !btnText.equals(btnAnswer2_Shapes.getText().toString())){
                     //Check if user selected an answer
-                    Toast.makeText(getApplicationContext(),"Oops! Please Select an Answer",Toast.LENGTH_LONG).show();
+                    Toast.makeText(getApplicationContext(),"Please Select an Answer",Toast.LENGTH_LONG).show();
 
                 }
                 else if(confirmClicked_Shapes == 0){
                     //Check if Confirm Answer Button was clicked
-                    Toast.makeText(getApplicationContext(),"Oops! Please Confirm your Answer",Toast.LENGTH_LONG).show();
+                    Toast.makeText(getApplicationContext(),"Please Confirm your Answer",Toast.LENGTH_LONG).show();
                 }
                 else{
                     quizCount_Shapes++;
