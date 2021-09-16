@@ -28,6 +28,11 @@ public class LessonAddition extends AppCompatActivity {
         backbtnAX = findViewById(R.id.btnbackAX);
         nextbtnAX = findViewById(R.id.nextbtnAX);
 
+        mediaController = new MediaController(this);
+        videoViewAX.setMediaController(mediaController);
+        mediaController.setVisibility(View.GONE);
+        mediaController.setAnchorView(videoViewAX);
+
         additionx();
     }
 
@@ -36,11 +41,6 @@ public class LessonAddition extends AppCompatActivity {
         videoPathAX = "android.resource://" + getPackageName() + "/" + R.raw.additionx;
         uriAX = Uri.parse(videoPathAX);
         videoViewAX.setVideoURI(uriAX);
-
-        mediaController = new MediaController(this);
-        videoViewAX.setMediaController(mediaController);
-        mediaController.setVisibility(View.GONE);
-        mediaController.setAnchorView(videoViewAX);
 
         videoViewAX.start();
 

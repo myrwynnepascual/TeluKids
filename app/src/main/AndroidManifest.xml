@@ -12,6 +12,39 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.TeluKidsV1">
         <activity
+            android:name=".Achievements3to6Discipline"
+            android:exported="true" />
+        <activity
+            android:name=".DisciplineLessonCongrats"
+            android:exported="true" />
+        <activity
+            android:name=".Achievements3to6Honesty"
+            android:exported="true" />
+        <activity
+            android:name=".HonestyLessonCongrats"
+            android:exported="true" />
+        <activity
+            android:name=".LessonDiscipline"
+            android:exported="true" />
+        <activity
+            android:name=".LessonHonesty"
+            android:exported="true" />
+        <activity
+            android:name=".ChooseModeDiscipline"
+            android:exported="true" />
+        <activity
+            android:name=".ChooseModeHonesty"
+            android:exported="true" />
+        <activity
+            android:name=".LessonIntroHonesty"
+            android:exported="true" />
+        <activity
+            android:name=".LessonIntroDiscipline"
+            android:exported="true" />
+        <activity
+            android:name=".Gmrc3to6"
+            android:exported="true" />
+        <activity
             android:name=".Achievements3to6Subtraction2"
             android:exported="true" />
         <activity

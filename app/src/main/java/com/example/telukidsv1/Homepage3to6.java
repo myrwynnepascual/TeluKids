@@ -101,7 +101,7 @@ public class Homepage3to6 extends AppCompatActivity {
         btnGMRC36Topics.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                //startActivity(new Intent(Homepage3to6.this, GMRC36Page.class));
+                startActivity(new Intent(Homepage3to6.this, Gmrc3to6.class));
             }
         });
 
