@@ -26,6 +26,7 @@ public class Achievements3to6Main extends AppCompatActivity {
     // Ages 3-6 Achievements and Lessons
     String achievement_counting, achievement_addition, achievement_subtraction, achievement_colors, achievement_shapes;
     String achievement_discipline, achievement_honesty, achievement_respect, achievement_sociability, achievement_compassion;
+
     String lesson_counting, lesson_addition, lesson_subtraction, lesson_colors, lesson_shapes;
     String lesson_discipline, lesson_honesty, lesson_respect, lesson_sociability, lesson_compassion;
 
