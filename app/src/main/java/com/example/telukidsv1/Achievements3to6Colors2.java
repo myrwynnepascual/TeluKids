@@ -26,6 +26,7 @@ public class Achievements3to6Colors2 extends AppCompatActivity {
     // Ages 3-6 Achievements and Lessons
     String achievement_counting, achievement_addition, achievement_subtraction, achievement_colors, achievement_shapes;
     String achievement_discipline, achievement_honesty, achievement_respect, achievement_sociability, achievement_compassion;
+
     String lesson_counting, lesson_addition, lesson_subtraction, lesson_colors, lesson_shapes;
     String lesson_discipline, lesson_honesty, lesson_respect, lesson_sociability, lesson_compassion;
 
@@ -139,9 +140,8 @@ public class Achievements3to6Colors2 extends AppCompatActivity {
             public Void apply(@NonNull Transaction transaction) throws FirebaseFirestoreException {
                 DocumentSnapshot documentSnapshot = transaction.get(docRef);
 
-                //Colors
+                //Colors Achievement
                 achievement_colors = documentSnapshot.getString("colors achievement");
-                lesson_colors = documentSnapshot.getString("colors lesson");
 
                 if (achievement_colors.equals("Colors Beginner")){
                     imgAchievements_ColorsBadge.setImageResource(R.drawable.badgecolors);
@@ -155,9 +155,6 @@ public class Achievements3to6Colors2 extends AppCompatActivity {
                     imgAchievements_ColorsMedal.setImageResource(R.drawable.medalcolors);
                     imgAchievements_ColorsBadge.setImageResource(R.drawable.badgecolors);
                 }
-                if (lesson_colors.equals("Completed")){
-                    imgAchievements_ColorsCertificate.setImageResource(R.drawable.certificatecolors);
-                }
                 return null;
             }
         });
@@ -166,9 +163,23 @@ public class Achievements3to6Colors2 extends AppCompatActivity {
             public Void apply(@NonNull Transaction transaction) throws FirebaseFirestoreException {
                 DocumentSnapshot documentSnapshot = transaction.get(docRef);
 
-                //Counting
+                //Colors Lesson
+                lesson_colors = documentSnapshot.getString("colors lesson");
+
+                if (lesson_colors.equals("Completed")){
+                    imgAchievements_ColorsCertificate.setImageResource(R.drawable.certificatecolors);
+                }
+                return null;
+            }
+        });
+
+        fStore.runTransaction(new Transaction.Function<Void>() {
+            @Override
+            public Void apply(@NonNull Transaction transaction) throws FirebaseFirestoreException {
+                DocumentSnapshot documentSnapshot = transaction.get(docRef);
+
+                //Counting Achievement
                 achievement_counting = documentSnapshot.getString("counting achievement");
-                lesson_counting = documentSnapshot.getString("counting lesson");
 
                 if (achievement_counting.equals("Counting Beginner")){
                     imgAchievements_CountingBadge.setImageResource(R.drawable.badgecounting);
@@ -177,13 +188,10 @@ public class Achievements3to6Colors2 extends AppCompatActivity {
                     imgAchievements_CountingMedal.setImageResource(R.drawable.medalcounting);
                     imgAchievements_CountingBadge.setImageResource(R.drawable.badgecounting);
                 }
-                if (achievement_counting.equals("Counting Master")){
+                if (achievement_counting.equals("Counting Master")) {
                     imgAchievements_CountingTrophy.setImageResource(R.drawable.trophycounting);
                     imgAchievements_CountingMedal.setImageResource(R.drawable.medalcounting);
                     imgAchievements_CountingBadge.setImageResource(R.drawable.badgecounting);
-                }
-                if (lesson_counting.equals("Completed")){
-                    imgAchievements_CountingCertificate.setImageResource(R.drawable.certificatecounting);
                 }
                 return null;
             }
@@ -193,9 +201,23 @@ public class Achievements3to6Colors2 extends AppCompatActivity {
             public Void apply(@NonNull Transaction transaction) throws FirebaseFirestoreException {
                 DocumentSnapshot documentSnapshot = transaction.get(docRef);
 
-                //Addition
+                //Counting Lesson
+                lesson_counting = documentSnapshot.getString("counting lesson");
+
+                if (lesson_counting.equals("Completed")){
+                    imgAchievements_CountingCertificate.setImageResource(R.drawable.certificatecounting);
+                }
+                return null;
+            }
+        });
+
+        fStore.runTransaction(new Transaction.Function<Void>() {
+            @Override
+            public Void apply(@NonNull Transaction transaction) throws FirebaseFirestoreException {
+                DocumentSnapshot documentSnapshot = transaction.get(docRef);
+
+                //Addition Achievement
                 achievement_addition = documentSnapshot.getString("addition achievement");
-                lesson_addition = documentSnapshot.getString("addition lesson");
 
                 if (achievement_addition.equals("Addition Beginner")){
                     imgAchievements_AdditionBadge.setImageResource(R.drawable.badgeaddition);
@@ -204,13 +226,10 @@ public class Achievements3to6Colors2 extends AppCompatActivity {
                     imgAchievements_AdditionMedal.setImageResource(R.drawable.medaladdition);
                     imgAchievements_AdditionBadge.setImageResource(R.drawable.badgeaddition);
                 }
-                if (achievement_addition.equals("Addition Master")){
+                if (achievement_addition.equals("Addition Master")) {
                     imgAchievements_AdditionTrophy.setImageResource(R.drawable.trophyaddition);
                     imgAchievements_AdditionMedal.setImageResource(R.drawable.medaladdition);
                     imgAchievements_AdditionBadge.setImageResource(R.drawable.badgeaddition);
-                }
-                if (lesson_addition.equals("Completed")){
-                    imgAchievements_AdditionCertificate.setImageResource(R.drawable.certificateaddition);
                 }
                 return null;
             }
@@ -220,9 +239,23 @@ public class Achievements3to6Colors2 extends AppCompatActivity {
             public Void apply(@NonNull Transaction transaction) throws FirebaseFirestoreException {
                 DocumentSnapshot documentSnapshot = transaction.get(docRef);
 
-                //Subtraction
+                //Addition Lesson
+                lesson_addition = documentSnapshot.getString("addition lesson");
+
+                if (lesson_addition.equals("Completed")){
+                    imgAchievements_AdditionCertificate.setImageResource(R.drawable.certificateaddition);
+                }
+                return null;
+            }
+        });
+
+        fStore.runTransaction(new Transaction.Function<Void>() {
+            @Override
+            public Void apply(@NonNull Transaction transaction) throws FirebaseFirestoreException {
+                DocumentSnapshot documentSnapshot = transaction.get(docRef);
+
+                //Subtraction Achievement
                 achievement_subtraction = documentSnapshot.getString("subtraction achievement");
-                lesson_subtraction = documentSnapshot.getString("subtraction lesson");
 
                 if (achievement_subtraction.equals("Subtraction Beginner")){
                     imgAchievements_SubtractionBadge.setImageResource(R.drawable.badgesubtraction);
@@ -236,9 +269,6 @@ public class Achievements3to6Colors2 extends AppCompatActivity {
                     imgAchievements_SubtractionMedal.setImageResource(R.drawable.medalsubtraction);
                     imgAchievements_SubtractionBadge.setImageResource(R.drawable.badgesubtraction);
                 }
-                if (lesson_subtraction.equals("Completed")){
-                    imgAchievements_SubtractionCertificate.setImageResource(R.drawable.certificatesubtraction);
-                }
                 return null;
             }
         });
@@ -247,9 +277,23 @@ public class Achievements3to6Colors2 extends AppCompatActivity {
             public Void apply(@NonNull Transaction transaction) throws FirebaseFirestoreException {
                 DocumentSnapshot documentSnapshot = transaction.get(docRef);
 
-                //Shapes
+                //Subtraction Lesson
+                lesson_subtraction = documentSnapshot.getString("subtraction lesson");
+
+                if (lesson_subtraction.equals("Completed")){
+                    imgAchievements_SubtractionCertificate.setImageResource(R.drawable.certificatesubtraction);
+                }
+                return null;
+            }
+        });
+
+        fStore.runTransaction(new Transaction.Function<Void>() {
+            @Override
+            public Void apply(@NonNull Transaction transaction) throws FirebaseFirestoreException {
+                DocumentSnapshot documentSnapshot = transaction.get(docRef);
+
+                //Shapes Achievement
                 achievement_shapes = documentSnapshot.getString("shapes achievement");
-                lesson_shapes = documentSnapshot.getString("shapes lesson");
 
                 if (achievement_shapes.equals("Shapes Beginner")){
                     imgAchievements_ShapesBadge.setImageResource(R.drawable.badgeshapes);
@@ -269,6 +313,20 @@ public class Achievements3to6Colors2 extends AppCompatActivity {
                 return null;
             }
         });
+        fStore.runTransaction(new Transaction.Function<Void>() {
+            @Override
+            public Void apply(@NonNull Transaction transaction) throws FirebaseFirestoreException {
+                DocumentSnapshot documentSnapshot = transaction.get(docRef);
+
+                //Shapes Lesson
+                lesson_shapes = documentSnapshot.getString("shapes lesson");
+
+                if (lesson_shapes.equals("Completed")){
+                    imgAchievements_ShapesCertificate.setImageResource(R.drawable.certificateshapes);
+                }
+                return null;
+            }
+        });
 
 
         //GMRC 3-6
@@ -277,9 +335,8 @@ public class Achievements3to6Colors2 extends AppCompatActivity {
             public Void apply(@NonNull Transaction transaction) throws FirebaseFirestoreException {
                 DocumentSnapshot documentSnapshot = transaction.get(docRef);
 
-                //Discipline
+                //Discipline Achievement
                 achievement_discipline = documentSnapshot.getString("discipline achievement");
-                lesson_discipline = documentSnapshot.getString("discipline lesson");
 
                 if (achievement_discipline.equals("Discipline Beginner")){
                     imgAchievements_DisciplineBadge.setImageResource(R.drawable.badgesdiscipline);
@@ -293,9 +350,6 @@ public class Achievements3to6Colors2 extends AppCompatActivity {
                     imgAchievements_DisciplineMedal.setImageResource(R.drawable.medaldiscipline);
                     imgAchievements_DisciplineBadge.setImageResource(R.drawable.badgesdiscipline);
                 }
-                if (lesson_discipline.equals("Completed")){
-                    imgAchievements_DisciplineCertificate.setImageResource(R.drawable.certificatediscipline);
-                }
                 return null;
             }
         });
@@ -304,9 +358,22 @@ public class Achievements3to6Colors2 extends AppCompatActivity {
             public Void apply(@NonNull Transaction transaction) throws FirebaseFirestoreException {
                 DocumentSnapshot documentSnapshot = transaction.get(docRef);
 
-                //Honesty
+                //Discipline Lesson
+                lesson_discipline = documentSnapshot.getString("discipline lesson");
+                if (lesson_discipline.equals("Completed")){
+                    imgAchievements_DisciplineCertificate.setImageResource(R.drawable.certificatediscipline);
+                }
+                return null;
+            }
+        });
+
+        fStore.runTransaction(new Transaction.Function<Void>() {
+            @Override
+            public Void apply(@NonNull Transaction transaction) throws FirebaseFirestoreException {
+                DocumentSnapshot documentSnapshot = transaction.get(docRef);
+
+                //Honesty Achievement
                 achievement_honesty = documentSnapshot.getString("honesty achievement");
-                lesson_honesty = documentSnapshot.getString("honesty lesson");
 
                 if (achievement_honesty.equals("Honesty Beginner")){
                     imgAchievements_HonestyBadge.setImageResource(R.drawable.badgehonesty);
@@ -320,9 +387,6 @@ public class Achievements3to6Colors2 extends AppCompatActivity {
                     imgAchievements_HonestyMedal.setImageResource(R.drawable.medalhonesty);
                     imgAchievements_HonestyBadge.setImageResource(R.drawable.badgehonesty);
                 }
-                if (lesson_honesty.equals("Completed")){
-                    imgAchievements_HonestyCertificate.setImageResource(R.drawable.certificatehonesty);
-                }
                 return null;
             }
         });
@@ -331,9 +395,23 @@ public class Achievements3to6Colors2 extends AppCompatActivity {
             public Void apply(@NonNull Transaction transaction) throws FirebaseFirestoreException {
                 DocumentSnapshot documentSnapshot = transaction.get(docRef);
 
-                //Respect
+                //Honesty Lesson
+                lesson_honesty = documentSnapshot.getString("honesty lesson");
+
+                if (lesson_honesty.equals("Completed")){
+                    imgAchievements_HonestyCertificate.setImageResource(R.drawable.certificatehonesty);
+                }
+                return null;
+            }
+        });
+
+        fStore.runTransaction(new Transaction.Function<Void>() {
+            @Override
+            public Void apply(@NonNull Transaction transaction) throws FirebaseFirestoreException {
+                DocumentSnapshot documentSnapshot = transaction.get(docRef);
+
+                //Respect Achievement
                 achievement_respect = documentSnapshot.getString("respect achievement");
-                lesson_respect = documentSnapshot.getString("respect lesson");
 
                 if (achievement_respect.equals("Respect Beginner")){
                     imgAchievements_RespectBadge.setImageResource(R.drawable.badgerespect);
@@ -347,9 +425,7 @@ public class Achievements3to6Colors2 extends AppCompatActivity {
                     imgAchievements_RespectMedal.setImageResource(R.drawable.medalrespect);
                     imgAchievements_RespectBadge.setImageResource(R.drawable.badgerespect);
                 }
-                if (lesson_respect.equals("Completed")){
-                    imgAchievements_RespectCertificate.setImageResource(R.drawable.certificaterespect);
-                }
+
                 return null;
             }
         });
@@ -358,9 +434,23 @@ public class Achievements3to6Colors2 extends AppCompatActivity {
             public Void apply(@NonNull Transaction transaction) throws FirebaseFirestoreException {
                 DocumentSnapshot documentSnapshot = transaction.get(docRef);
 
-                //Sociability
+                //Respect Lesson
+                lesson_respect = documentSnapshot.getString("respect lesson");
+
+                if (lesson_respect.equals("Completed")){
+                    imgAchievements_RespectCertificate.setImageResource(R.drawable.certificaterespect);
+                }
+                return null;
+            }
+        });
+
+        fStore.runTransaction(new Transaction.Function<Void>() {
+            @Override
+            public Void apply(@NonNull Transaction transaction) throws FirebaseFirestoreException {
+                DocumentSnapshot documentSnapshot = transaction.get(docRef);
+
+                //Sociability Achievement
                 achievement_sociability = documentSnapshot.getString("sociability achievement");
-                lesson_sociability = documentSnapshot.getString("sociability lesson");
 
                 if (achievement_sociability.equals("Sociability Beginner")){
                     imgAchievements_SociabilityBadge.setImageResource(R.drawable.badgesociability);
@@ -374,9 +464,6 @@ public class Achievements3to6Colors2 extends AppCompatActivity {
                     imgAchievements_SociabilityMedal.setImageResource(R.drawable.medalsociability);
                     imgAchievements_SociabilityBadge.setImageResource(R.drawable.badgesociability);
                 }
-                if (lesson_sociability.equals("Completed")){
-                    imgAchievements_SociabilityCertificate.setImageResource(R.drawable.certificatesociability);
-                }
                 return null;
             }
         });
@@ -385,9 +472,23 @@ public class Achievements3to6Colors2 extends AppCompatActivity {
             public Void apply(@NonNull Transaction transaction) throws FirebaseFirestoreException {
                 DocumentSnapshot documentSnapshot = transaction.get(docRef);
 
-                //Compassion
+                //Sociability Lesson
+                lesson_sociability = documentSnapshot.getString("sociability lesson");
+
+                if (lesson_sociability.equals("Completed")){
+                    imgAchievements_SociabilityCertificate.setImageResource(R.drawable.certificatesociability);
+                }
+                return null;
+            }
+        });
+
+        fStore.runTransaction(new Transaction.Function<Void>() {
+            @Override
+            public Void apply(@NonNull Transaction transaction) throws FirebaseFirestoreException {
+                DocumentSnapshot documentSnapshot = transaction.get(docRef);
+
+                //Compassion Achievement
                 achievement_compassion = documentSnapshot.getString("compassion achievement");
-                lesson_compassion = documentSnapshot.getString("compassion lesson");
 
                 if (achievement_compassion.equals("Compassion Beginner")){
                     imgAchievements_CompassionBadge.setImageResource(R.drawable.badgecompassion);
@@ -401,6 +502,17 @@ public class Achievements3to6Colors2 extends AppCompatActivity {
                     imgAchievements_CompassionMedal.setImageResource(R.drawable.medalcompassion);
                     imgAchievements_CompassionBadge.setImageResource(R.drawable.badgecompassion);
                 }
+                return null;
+            }
+        });
+        fStore.runTransaction(new Transaction.Function<Void>() {
+            @Override
+            public Void apply(@NonNull Transaction transaction) throws FirebaseFirestoreException {
+                DocumentSnapshot documentSnapshot = transaction.get(docRef);
+
+                //Compassion Lesson
+                lesson_compassion = documentSnapshot.getString("compassion lesson");
+
                 if (lesson_compassion.equals("Completed")){
                     imgAchievements_CompassionCertificate.setImageResource(R.drawable.certificatecompassion);
                 }
@@ -415,9 +527,8 @@ public class Achievements3to6Colors2 extends AppCompatActivity {
             public Void apply(@NonNull Transaction transaction) throws FirebaseFirestoreException {
                 DocumentSnapshot documentSnapshot = transaction.get(docRef);
 
-                //Responsibility
+                //Responsibility Achievement
                 achievement_responsibility = documentSnapshot.getString("responsibility achievement");
-                lesson_responsibility = documentSnapshot.getString("responsibility lesson");
 
                 if (achievement_responsibility.equals("Responsibility Beginner")){
                     imgAchievements_ResponsibilityBadge.setImageResource(R.drawable.badgeresponsibility);
@@ -431,9 +542,6 @@ public class Achievements3to6Colors2 extends AppCompatActivity {
                     imgAchievements_ResponsibilityMedal.setImageResource(R.drawable.medalresponsibility);
                     imgAchievements_ResponsibilityBadge.setImageResource(R.drawable.badgeresponsibility);
                 }
-                if (lesson_responsibility.equals("Completed")){
-                    imgAchievements_ResponsibilityCertificate.setImageResource(R.drawable.certificateresponsibility);
-                }
                 return null;
             }
         });
@@ -442,9 +550,24 @@ public class Achievements3to6Colors2 extends AppCompatActivity {
             public Void apply(@NonNull Transaction transaction) throws FirebaseFirestoreException {
                 DocumentSnapshot documentSnapshot = transaction.get(docRef);
 
-                //Love
+                //Responsibility Lesson
+                lesson_responsibility = documentSnapshot.getString("responsibility lesson");
+
+                if (lesson_responsibility.equals("Completed")){
+                    imgAchievements_ResponsibilityCertificate.setImageResource(R.drawable.certificateresponsibility);
+                }
+                return null;
+            }
+        });
+
+
+        fStore.runTransaction(new Transaction.Function<Void>() {
+            @Override
+            public Void apply(@NonNull Transaction transaction) throws FirebaseFirestoreException {
+                DocumentSnapshot documentSnapshot = transaction.get(docRef);
+
+                //Love Achievement
                 achievement_love = documentSnapshot.getString("love achievement");
-                lesson_love = documentSnapshot.getString("love lesson");
 
                 if (achievement_love.equals("Love Beginner")){
                     imgAchievements_LoveBadge.setImageResource(R.drawable.badgelove);
@@ -458,9 +581,6 @@ public class Achievements3to6Colors2 extends AppCompatActivity {
                     imgAchievements_LoveMedal.setImageResource(R.drawable.medallove);
                     imgAchievements_LoveBadge.setImageResource(R.drawable.badgelove);
                 }
-                if (lesson_love.equals("Completed")){
-                    imgAchievements_LoveCertificate.setImageResource(R.drawable.certificatelove);
-                }
                 return null;
             }
         });
@@ -469,9 +589,23 @@ public class Achievements3to6Colors2 extends AppCompatActivity {
             public Void apply(@NonNull Transaction transaction) throws FirebaseFirestoreException {
                 DocumentSnapshot documentSnapshot = transaction.get(docRef);
 
-                //Obedience
+                //Love Lesson
+                lesson_love = documentSnapshot.getString("love lesson");
+
+                if (lesson_love.equals("Completed")){
+                    imgAchievements_LoveCertificate.setImageResource(R.drawable.certificatelove);
+                }
+                return null;
+            }
+        });
+
+        fStore.runTransaction(new Transaction.Function<Void>() {
+            @Override
+            public Void apply(@NonNull Transaction transaction) throws FirebaseFirestoreException {
+                DocumentSnapshot documentSnapshot = transaction.get(docRef);
+
+                //Obedience Achievement
                 achievement_obedience = documentSnapshot.getString("obedience achievement");
-                lesson_obedience = documentSnapshot.getString("obedience lesson");
 
                 if (achievement_obedience.equals("Obedience Beginner")){
                     imgAchievements_ObedienceBadge.setImageResource(R.drawable.badgeobedience);
@@ -493,9 +627,23 @@ public class Achievements3to6Colors2 extends AppCompatActivity {
             public Void apply(@NonNull Transaction transaction) throws FirebaseFirestoreException {
                 DocumentSnapshot documentSnapshot = transaction.get(docRef);
 
+                //Obedience Lesson
+                lesson_obedience = documentSnapshot.getString("obedience lesson");
+
+                if (lesson_obedience.equals("Completed")){
+                    imgAchievements_ObedienceCertificate.setImageResource(R.drawable.certificateobedience);
+                }
+                return null;
+            }
+        });
+
+        fStore.runTransaction(new Transaction.Function<Void>() {
+            @Override
+            public Void apply(@NonNull Transaction transaction) throws FirebaseFirestoreException {
+                DocumentSnapshot documentSnapshot = transaction.get(docRef);
+
                 //Doing Good
                 achievement_doinggood = documentSnapshot.getString("doing good achievement");
-                lesson_doinggood = documentSnapshot.getString("doing good lesson");
 
                 if (achievement_doinggood.equals("Doing Good Beginner")){
                     imgAchievements_DoingGoodBadge.setImageResource(R.drawable.badgedoinggood);
@@ -509,6 +657,17 @@ public class Achievements3to6Colors2 extends AppCompatActivity {
                     imgAchievements_DoingGoodMedal.setImageResource(R.drawable.medaldoinggood);
                     imgAchievements_DoingGoodBadge.setImageResource(R.drawable.badgedoinggood);
                 }
+                return null;
+            }
+        });
+        fStore.runTransaction(new Transaction.Function<Void>() {
+            @Override
+            public Void apply(@NonNull Transaction transaction) throws FirebaseFirestoreException {
+                DocumentSnapshot documentSnapshot = transaction.get(docRef);
+
+                //Doing Good Lesson
+                lesson_doinggood = documentSnapshot.getString("doing good lesson");
+
                 if (lesson_doinggood.equals("Completed")){
                     imgAchievements_DoingGoodCertificate.setImageResource(R.drawable.certificatedoinggood);
                 }
