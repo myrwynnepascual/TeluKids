@@ -227,6 +227,12 @@
         <activity
             android:name=".ResultsSubtraction"
             android:exported="true" />
+        <activity
+            android:name=".QuizDiscipline"
+            android:exported="true" />
+        <activity
+            android:name=".ResultsDiscipline"
+            android:exported="true" />
     </application>
 
 </manifest>

@@ -38,7 +38,7 @@ public class ChooseModeDiscipline extends AppCompatActivity {
         assessCMD36.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                //startActivity(new Intent(ChooseModeDiscipline.this,QuizDisciplineNumbers.class));
+                startActivity(new Intent(ChooseModeDiscipline.this, QuizDiscipline.class));
             }
         });
 
