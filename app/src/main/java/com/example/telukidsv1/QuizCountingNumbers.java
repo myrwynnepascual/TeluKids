@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.media.MediaPlayer;
 import android.os.Bundle;
+import android.os.Handler;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
@@ -19,6 +20,7 @@ import java.util.Random;
 public class QuizCountingNumbers extends AppCompatActivity {
     private TextView countLabel_Counting;
     private TextView questionLabel_Counting;
+    private TextView prompt_Counting;
     private ImageView imgQuestion_Counting;
     private LinearLayout quizLayout_Counting;
 
@@ -62,6 +64,7 @@ public class QuizCountingNumbers extends AppCompatActivity {
         imgQuestion_Counting =  (ImageView)findViewById(R.id.imgQuestion_Counting);
         countLabel_Counting = (TextView)findViewById(R.id.countLabel_Counting);
         questionLabel_Counting = (TextView)findViewById(R.id.questionLabel_Counting);
+        prompt_Counting = (TextView)findViewById(R.id.prompt_Counting);
         btnAnswer1_Counting = (Button)findViewById(R.id.btnAnswer1_Counting);
         btnAnswer2_Counting = (Button)findViewById(R.id.btnAnswer2_Counting);
         btnConfirm_Counting = (Button)findViewById(R.id.btnConfirm_Counting);
@@ -171,7 +174,16 @@ public class QuizCountingNumbers extends AppCompatActivity {
                         btnAnswer2_Counting.setEnabled(false);
                         confirmClicked_Counting++;
                     } else{
-                        Toast.makeText(getApplicationContext(),"Please Select an Answer",Toast.LENGTH_SHORT).show();
+                        //Toast.makeText(getApplicationContext(),"Please Select an Answer",Toast.LENGTH_SHORT).show();
+                        prompt_Counting.setText("Please select an answer");
+
+                        Handler handler = new Handler();
+                        handler.postDelayed(new Runnable() {
+                            @Override
+                            public void run() {
+                                prompt_Counting.setText("");
+                            }
+                        },3000);
                     }
                 }
             }
@@ -188,12 +200,30 @@ public class QuizCountingNumbers extends AppCompatActivity {
                 }
                 else if (!btnText.equals(btnAnswer1_Counting.getText().toString()) && !btnText.equals(btnAnswer2_Counting.getText().toString())){
                     //Check if user selected an answer
-                    Toast.makeText(getApplicationContext(),"Please Select an Answer",Toast.LENGTH_LONG).show();
+                    //Toast.makeText(getApplicationContext(),"Please Select an Answer",Toast.LENGTH_LONG).show();
+                    prompt_Counting.setText("Please select an answer");
+
+                    Handler handler = new Handler();
+                    handler.postDelayed(new Runnable() {
+                        @Override
+                        public void run() {
+                            prompt_Counting.setText("");
+                        }
+                    },3000);
 
                 }
                 else if(confirmClicked_Counting == 0){
                     //Check if Confirm Answer Button was clicked
-                    Toast.makeText(getApplicationContext(),"Please Confirm your Answer",Toast.LENGTH_LONG).show();
+                    //Toast.makeText(getApplicationContext(),"Please Confirm your Answer",Toast.LENGTH_LONG).show();
+                    prompt_Counting.setText("Please confirm your answer");
+
+                    Handler handler = new Handler();
+                    handler.postDelayed(new Runnable() {
+                        @Override
+                        public void run() {
+                            prompt_Counting.setText("");
+                        }
+                    },3000);
                 }
                 else{
                     quizCount_Counting++;

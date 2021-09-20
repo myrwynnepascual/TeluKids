@@ -48,7 +48,7 @@ public class LessonAddition extends AppCompatActivity {
             @Override
             public void onCompletion(MediaPlayer mp) {
 
-                addition1();
+                additiony();
 
             }
         });
@@ -58,6 +58,42 @@ public class LessonAddition extends AppCompatActivity {
             public void onClick(View v) {
 
                 startActivity(new Intent(LessonAddition.this,ChooseModeAddition.class));
+
+            }
+        });
+
+        nextbtnAX.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                additiony();
+
+            }
+        });
+    }
+
+    public void additiony(){
+
+        videoPathAX = "android.resource://" + getPackageName() + "/" + R.raw.additiony;
+        uriAX = Uri.parse(videoPathAX);
+        videoViewAX.setVideoURI(uriAX);
+
+        videoViewAX.start();
+
+        videoViewAX.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+            @Override
+            public void onCompletion(MediaPlayer mp) {
+
+                addition1();
+
+            }
+        });
+
+        backbtnAX.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                additionx();
 
             }
         });

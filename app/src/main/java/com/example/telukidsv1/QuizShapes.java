@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.media.MediaPlayer;
 import android.os.Bundle;
+import android.os.Handler;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
@@ -19,6 +20,7 @@ import java.util.Random;
 public class QuizShapes extends AppCompatActivity {
     private TextView countLabel_Shapes;
     private TextView questionLabel_Shapes;
+    private TextView prompt_Shapes;
     private ImageView imgQuestion_Shapes;
     private LinearLayout quizLayout_Shapes;
 
@@ -61,6 +63,7 @@ public class QuizShapes extends AppCompatActivity {
         imgQuestion_Shapes =  (ImageView)findViewById(R.id.imgQuestion_Shapes);
         countLabel_Shapes = (TextView)findViewById(R.id.countLabel_Shapes);
         questionLabel_Shapes = (TextView)findViewById(R.id.questionLabel_Shapes);
+        prompt_Shapes = (TextView)findViewById(R.id.prompt_Shapes);
         btnAnswer1_Shapes = (Button)findViewById(R.id.btnAnswer1_Shapes);
         btnAnswer2_Shapes = (Button)findViewById(R.id.btnAnswer2_Shapes);
         btnConfirm_Shapes = (Button)findViewById(R.id.btnConfirm_Shapes);
@@ -170,7 +173,16 @@ public class QuizShapes extends AppCompatActivity {
                         btnAnswer2_Shapes.setEnabled(false);
                         confirmClicked_Shapes++;
                     } else{
-                        Toast.makeText(getApplicationContext(),"Please Select an Answer",Toast.LENGTH_SHORT).show();
+                        //Toast.makeText(getApplicationContext(),"Please Select an Answer",Toast.LENGTH_SHORT).show();
+                        prompt_Shapes.setText("Please select an answer");
+
+                        Handler handler = new Handler();
+                        handler.postDelayed(new Runnable() {
+                            @Override
+                            public void run() {
+                                prompt_Shapes.setText("");
+                            }
+                        },3000);
                     }
                 }
             }
@@ -187,12 +199,30 @@ public class QuizShapes extends AppCompatActivity {
                 }
                 else if (!btnText.equals(btnAnswer1_Shapes.getText().toString()) && !btnText.equals(btnAnswer2_Shapes.getText().toString())){
                     //Check if user selected an answer
-                    Toast.makeText(getApplicationContext(),"Please Select an Answer",Toast.LENGTH_LONG).show();
+                    //Toast.makeText(getApplicationContext(),"Please Select an Answer",Toast.LENGTH_LONG).show();
+                    prompt_Shapes.setText("Please select an answer");
+
+                    Handler handler = new Handler();
+                    handler.postDelayed(new Runnable() {
+                        @Override
+                        public void run() {
+                            prompt_Shapes.setText("");
+                        }
+                    },3000);
 
                 }
                 else if(confirmClicked_Shapes == 0){
                     //Check if Confirm Answer Button was clicked
-                    Toast.makeText(getApplicationContext(),"Please Confirm your Answer",Toast.LENGTH_LONG).show();
+                    //Toast.makeText(getApplicationContext(),"Please Confirm your Answer",Toast.LENGTH_LONG).show();
+                    prompt_Shapes.setText("Please confirm your answer");
+
+                    Handler handler = new Handler();
+                    handler.postDelayed(new Runnable() {
+                        @Override
+                        public void run() {
+                            prompt_Shapes.setText("");
+                        }
+                    },3000);
                 }
                 else{
                     quizCount_Shapes++;

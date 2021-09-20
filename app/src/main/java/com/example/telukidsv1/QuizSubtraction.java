@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.media.MediaPlayer;
 import android.os.Bundle;
+import android.os.Handler;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
@@ -19,6 +20,7 @@ import java.util.Random;
 public class QuizSubtraction extends AppCompatActivity {
     private TextView countLabel_Subtraction;
     private TextView questionLabel_Subtraction;
+    private TextView prompt_Subtraction;
     private ImageView imgQuestion_Subtraction;
     private LinearLayout quizLayout_Subtraction;
 
@@ -62,6 +64,7 @@ public class QuizSubtraction extends AppCompatActivity {
         imgQuestion_Subtraction =  (ImageView)findViewById(R.id.imgQuestion_Subtraction);
         countLabel_Subtraction = (TextView)findViewById(R.id.countLabel_Subtraction);
         questionLabel_Subtraction = (TextView)findViewById(R.id.questionLabel_Subtraction);
+        prompt_Subtraction = (TextView)findViewById(R.id.prompt_Subtraction);
         btnAnswer1_Subtraction = (Button)findViewById(R.id.btnAnswer1_Subtraction);
         btnAnswer2_Subtraction = (Button)findViewById(R.id.btnAnswer2_Subtraction);
         btnConfirm_Subtraction = (Button)findViewById(R.id.btnConfirm_Subtraction);
@@ -171,7 +174,16 @@ public class QuizSubtraction extends AppCompatActivity {
                         btnAnswer2_Subtraction.setEnabled(false);
                         confirmClicked_Subtraction++;
                     } else{
-                        Toast.makeText(getApplicationContext(),"Please Select an Answer",Toast.LENGTH_SHORT).show();
+                        //Toast.makeText(getApplicationContext(),"Please Select an Answer",Toast.LENGTH_SHORT).show();
+                        prompt_Subtraction.setText("Please select an answer");
+
+                        Handler handler = new Handler();
+                        handler.postDelayed(new Runnable() {
+                            @Override
+                            public void run() {
+                                prompt_Subtraction.setText("");
+                            }
+                        },3000);
                     }
                 }
             }
@@ -188,12 +200,30 @@ public class QuizSubtraction extends AppCompatActivity {
                 }
                 else if (!btnText.equals(btnAnswer1_Subtraction.getText().toString()) && !btnText.equals(btnAnswer2_Subtraction.getText().toString())){
                     //Check if user selected an answer
-                    Toast.makeText(getApplicationContext(),"Please Select an Answer",Toast.LENGTH_LONG).show();
+                    //Toast.makeText(getApplicationContext(),"Please Select an Answer",Toast.LENGTH_LONG).show();
+                    prompt_Subtraction.setText("Please select an answer");
+
+                    Handler handler = new Handler();
+                    handler.postDelayed(new Runnable() {
+                        @Override
+                        public void run() {
+                            prompt_Subtraction.setText("");
+                        }
+                    },3000);
 
                 }
                 else if(confirmClicked_Subtraction == 0){
                     //Check if Confirm Answer Button was clicked
-                    Toast.makeText(getApplicationContext(),"Please Confirm your Answer",Toast.LENGTH_LONG).show();
+                    //Toast.makeText(getApplicationContext(),"Please Confirm your Answer",Toast.LENGTH_LONG).show();
+                    prompt_Subtraction.setText("Please confirm your answer");
+
+                    Handler handler = new Handler();
+                    handler.postDelayed(new Runnable() {
+                        @Override
+                        public void run() {
+                            prompt_Subtraction.setText("");
+                        }
+                    },3000);
                 }
                 else{
                     quizCount_Subtraction++;

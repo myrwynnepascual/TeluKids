@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.media.MediaPlayer;
 import android.os.Bundle;
+import android.os.Handler;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
@@ -19,6 +20,7 @@ import java.util.Random;
 public class QuizColors extends AppCompatActivity {
     private TextView countLabel_Colors;
     private TextView questionLabel_Colors;
+    private TextView prompt_Colors;
     private ImageView imgQuestion_Colors;
     private LinearLayout quizLayout_Colors;
 
@@ -62,6 +64,7 @@ public class QuizColors extends AppCompatActivity {
         imgQuestion_Colors =  (ImageView)findViewById(R.id.imgQuestion_Colors);
         countLabel_Colors = (TextView)findViewById(R.id.countLabel_Colors);
         questionLabel_Colors = (TextView)findViewById(R.id.questionLabel_Colors);
+        prompt_Colors = (TextView)findViewById(R.id.prompt_Colors);
         btnAnswer1_Colors = (Button)findViewById(R.id.btnAnswer1_Colors);
         btnAnswer2_Colors = (Button)findViewById(R.id.btnAnswer2_Colors);
         btnConfirm_Colors = (Button)findViewById(R.id.btnConfirm_Colors);
@@ -171,7 +174,16 @@ public class QuizColors extends AppCompatActivity {
                         btnAnswer2_Colors.setEnabled(false);
                         confirmClicked_Colors++;
                     } else{
-                        Toast.makeText(getApplicationContext(),"Please Select an Answer",Toast.LENGTH_SHORT).show();
+                        //Toast.makeText(getApplicationContext(),"Please Select an Answer",Toast.LENGTH_SHORT).show();
+                        prompt_Colors.setText("Please select an answer");
+
+                        Handler handler = new Handler();
+                        handler.postDelayed(new Runnable() {
+                            @Override
+                            public void run() {
+                                prompt_Colors.setText("");
+                            }
+                        },3000);
                     }
                 }
             }
@@ -188,12 +200,30 @@ public class QuizColors extends AppCompatActivity {
                 }
                 else if (!btnText.equals(btnAnswer1_Colors.getText().toString()) && !btnText.equals(btnAnswer2_Colors.getText().toString())){
                     //Check if user selected an answer
-                    Toast.makeText(getApplicationContext(),"Please Select an Answer",Toast.LENGTH_LONG).show();
+                    //Toast.makeText(getApplicationContext(),"Please Select an Answer",Toast.LENGTH_LONG).show();
+                    prompt_Colors.setText("Please select an answer");
+
+                    Handler handler = new Handler();
+                    handler.postDelayed(new Runnable() {
+                        @Override
+                        public void run() {
+                            prompt_Colors.setText("");
+                        }
+                    },3000);
 
                 }
                 else if(confirmClicked_Colors == 0){
                     //Check if Confirm Answer Button was clicked
-                    Toast.makeText(getApplicationContext(),"Please Confirm your Answer",Toast.LENGTH_LONG).show();
+                    //Toast.makeText(getApplicationContext(),"Please Confirm your Answer",Toast.LENGTH_LONG).show();
+                    prompt_Colors.setText("Please confirm your answer");
+
+                    Handler handler = new Handler();
+                    handler.postDelayed(new Runnable() {
+                        @Override
+                        public void run() {
+                            prompt_Colors.setText("");
+                        }
+                    },3000);
                 }
                 else{
                     quizCount_Colors++;

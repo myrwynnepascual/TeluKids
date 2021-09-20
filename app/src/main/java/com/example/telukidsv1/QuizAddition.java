@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.media.MediaPlayer;
 import android.os.Bundle;
+import android.os.Handler;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
@@ -19,6 +20,7 @@ import java.util.Random;
 public class QuizAddition extends AppCompatActivity {
     private TextView countLabel_Addition;
     private TextView questionLabel_Addition;
+    private TextView prompt_Addition;
     private ImageView imgQuestion_Addition;
     private LinearLayout quizLayout_Addition;
 
@@ -62,6 +64,7 @@ public class QuizAddition extends AppCompatActivity {
         imgQuestion_Addition =  (ImageView)findViewById(R.id.imgQuestion_Addition);
         countLabel_Addition = (TextView)findViewById(R.id.countLabel_Addition);
         questionLabel_Addition = (TextView)findViewById(R.id.questionLabel_Addition);
+        prompt_Addition = (TextView)findViewById(R.id.prompt_Addition);
         btnAnswer1_Addition = (Button)findViewById(R.id.btnAnswer1_Addition);
         btnAnswer2_Addition = (Button)findViewById(R.id.btnAnswer2_Addition);
         btnConfirm_Addition = (Button)findViewById(R.id.btnConfirm_Addition);
@@ -171,7 +174,16 @@ public class QuizAddition extends AppCompatActivity {
                         btnAnswer2_Addition.setEnabled(false);
                         confirmClicked_Addition++;
                     } else{
-                        Toast.makeText(getApplicationContext(),"Please Select an Answer",Toast.LENGTH_SHORT).show();
+                        //Toast.makeText(getApplicationContext(),"Please Select an Answer",Toast.LENGTH_SHORT).show();
+                        prompt_Addition.setText("Please select an answer");
+
+                        Handler handler = new Handler();
+                        handler.postDelayed(new Runnable() {
+                            @Override
+                            public void run() {
+                                prompt_Addition.setText("");
+                            }
+                        },3000);
                     }
                 }
             }
@@ -188,12 +200,29 @@ public class QuizAddition extends AppCompatActivity {
                 }
                 else if (!btnText.equals(btnAnswer1_Addition.getText().toString()) && !btnText.equals(btnAnswer2_Addition.getText().toString())){
                     //Check if user selected an answer
-                    Toast.makeText(getApplicationContext(),"Please Select an Answer",Toast.LENGTH_LONG).show();
+                   //Toast.makeText(getApplicationContext(),"Please Select an Answer",Toast.LENGTH_LONG).show();
+                    prompt_Addition.setText("Please select an answer");
+                    Handler handler = new Handler();
+                    handler.postDelayed(new Runnable() {
+                        @Override
+                        public void run() {
+                            prompt_Addition.setText("");
+                        }
+                    },3000);
 
                 }
                 else if(confirmClicked_Addition == 0){
                     //Check if Confirm Answer Button was clicked
-                    Toast.makeText(getApplicationContext(),"Please Confirm your Answer",Toast.LENGTH_LONG).show();
+                    //Toast.makeText(getApplicationContext(),"Please Confirm your Answer",Toast.LENGTH_LONG).show();
+                    prompt_Addition.setText("Please confirm your answer");
+
+                    Handler handler = new Handler();
+                    handler.postDelayed(new Runnable() {
+                        @Override
+                        public void run() {
+                            prompt_Addition.setText("");
+                        }
+                    },3000);
                 }
                 else{
                     quizCount_Addition++;
