@@ -7,6 +7,7 @@ import androidx.constraintlayout.widget.ConstraintSet;
 import android.content.Intent;
 import android.media.MediaPlayer;
 import android.os.Bundle;
+import android.os.Handler;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
@@ -21,6 +22,7 @@ import java.util.Random;
 public class QuizDiscipline extends AppCompatActivity {
     private TextView countLabel_Discipline;
     private TextView questionLabel_Discipline;
+    private TextView prompt_Discipline;
     private LinearLayout quizLayout_Discipline;
     private ConstraintLayout background_Discipline;
 
@@ -67,6 +69,7 @@ public class QuizDiscipline extends AppCompatActivity {
         questionLabel_Discipline = (TextView)findViewById(R.id.questionLabel_Discipline);
         btnAnswer1_Discipline = (Button)findViewById(R.id.btnAnswer1_Discipline);
         btnAnswer2_Discipline = (Button)findViewById(R.id.btnAnswer2_Discipline);
+        prompt_Discipline = (TextView)findViewById(R.id.prompt_Discipline);
         btnConfirm_Discipline = (Button)findViewById(R.id.btnConfirm_Discipline);
 
 
@@ -102,6 +105,7 @@ public class QuizDiscipline extends AppCompatActivity {
         //Set Question and Right Answer
 
         //Hide question and choices
+        quizLayout_Discipline.setVisibility(View.INVISIBLE);
         countLabel_Discipline.setVisibility(View.INVISIBLE);
         questionLabel_Discipline.setVisibility(View.INVISIBLE);
         btnAnswer1_Discipline.setVisibility(View.INVISIBLE);
@@ -118,6 +122,7 @@ public class QuizDiscipline extends AppCompatActivity {
             @Override
             public void onCompletion(MediaPlayer mediaPlayer) {
                 voiceover2.start();
+                quizLayout_Discipline.setVisibility(View.VISIBLE);
                 background_Discipline.setBackgroundResource(background_Question);
                 countLabel_Discipline.setVisibility(View.VISIBLE);
                 questionLabel_Discipline.setVisibility(View.VISIBLE);
@@ -200,7 +205,16 @@ public class QuizDiscipline extends AppCompatActivity {
                         btnAnswer2_Discipline.setEnabled(false);
                         confirmClicked_Discipline++;
                     } else{
-                        Toast.makeText(getApplicationContext(),"Please Select an Answer",Toast.LENGTH_SHORT).show();
+                        //Toast.makeText(getApplicationContext(),"Please Select an Answer",Toast.LENGTH_SHORT).show();
+                        prompt_Discipline.setText("Please select an answer");
+
+                        Handler handler = new Handler();
+                        handler.postDelayed(new Runnable() {
+                            @Override
+                            public void run() {
+                                prompt_Discipline.setText("");
+                            }
+                        },3000);
                     }
                 }
             }
@@ -217,12 +231,30 @@ public class QuizDiscipline extends AppCompatActivity {
                 }
                 else if (!btnText.equals(btnAnswer1_Discipline.getText().toString()) && !btnText.equals(btnAnswer2_Discipline.getText().toString())){
                     //Check if user selected an answer
-                    Toast.makeText(getApplicationContext(),"Please Select an Answer",Toast.LENGTH_LONG).show();
+                    //Toast.makeText(getApplicationContext(),"Please Select an Answer",Toast.LENGTH_LONG).show();
+                    prompt_Discipline.setText("Please select an answer");
+
+                    Handler handler = new Handler();
+                    handler.postDelayed(new Runnable() {
+                        @Override
+                        public void run() {
+                            prompt_Discipline.setText("");
+                        }
+                    },3000);
 
                 }
                 else if(confirmClicked_Discipline == 0){
                     //Check if Confirm Answer Button was clicked
-                    Toast.makeText(getApplicationContext(),"Please Confirm your Answer",Toast.LENGTH_LONG).show();
+                    //Toast.makeText(getApplicationContext(),"Please Confirm your Answer",Toast.LENGTH_LONG).show();
+                    prompt_Discipline.setText("Please Confirm your answer");
+
+                    Handler handler = new Handler();
+                    handler.postDelayed(new Runnable() {
+                        @Override
+                        public void run() {
+                            prompt_Discipline.setText("");
+                        }
+                    },3000);
                 }
                 else{
                     quizCount_Discipline++;
