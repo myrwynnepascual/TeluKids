@@ -33,6 +33,7 @@ public class QuizColors extends AppCompatActivity {
     Button btnConfirm_Colors;
 
     private String rightAnswer_Colors;
+    private String wrongAnswer_Colors;
     private int rightAnswerCount_Colors = 0;
     private int quizCount_Colors = 1;
     static final private int QUIZ_COUNT = 5;
@@ -50,7 +51,6 @@ public class QuizColors extends AppCompatActivity {
             {"What is the color of the cheese, bumblebee, and star lantern?", String.valueOf(R.drawable.colorsquestion5), String.valueOf(R.raw.clq5), "Yellow", "Green", String.valueOf(R.raw.clq5c1), String.valueOf(R.raw.clq5c2)}
 
     };
-
 
 
 
@@ -78,8 +78,8 @@ public class QuizColors extends AppCompatActivity {
             tmpArray.add(quizData_Colors[i][2]); //Voice Over
             tmpArray.add(quizData_Colors[i][3]); //Right Answer
             tmpArray.add(quizData_Colors[i][4]); //Wrong Answer
-            tmpArray.add(quizData_Colors[i][5]); // Choice 1 Voice Over
-            tmpArray.add(quizData_Colors[i][6]); // Choice 2 Voice Over
+            tmpArray.add(quizData_Colors[i][5]); //Choice 1 Voice Over
+            tmpArray.add(quizData_Colors[i][6]); //Choice 2 Voice Over
             //Add tmpArray to quizArray
             quizArray_Colors.add(tmpArray);
         }
@@ -103,6 +103,7 @@ public class QuizColors extends AppCompatActivity {
         voiceover = MediaPlayer.create(this, Integer.parseInt(quiz.get(2)));
         voiceover.start();
         rightAnswer_Colors = quiz.get(3);
+        wrongAnswer_Colors = quiz.get(4);
         choice1 = MediaPlayer.create(this, Integer.parseInt(quiz.get(5)));
         choice2 = MediaPlayer.create(this, Integer.parseInt(quiz.get(6)));
 
@@ -138,53 +139,83 @@ public class QuizColors extends AppCompatActivity {
             btnAnswer1_Colors.setBackgroundResource(R.drawable.answerbutton);
         }
 
+        //Play Choice 1 Voice Over
         if (answerBtn.getText().equals(rightAnswer_Colors)){
-            voiceover.pause();
+            voiceover.release();
             choice1.start();
         }
-        else if (!answerBtn.getText().equals(rightAnswer_Colors)){
-            voiceover.pause();
+        //Play Choice 2 Voice Over
+        else if (answerBtn.getText().equals(wrongAnswer_Colors) && answerBtn != btnConfirm_Colors){
+            voiceover.release();
             choice2.start();
+        }
+        //Check if user selected an answer
+        else if (!btnText.equals(rightAnswer_Colors) && !btnText.equals(wrongAnswer_Colors)){
+            prompt_Colors.setText("Please select an answer");
+
+            Handler handler = new Handler();
+            handler.postDelayed(new Runnable() {
+                @Override
+                public void run() {
+                    prompt_Colors.setText("");
+                }
+            },3000);
+
         }
 
         // Confirm Users answer and shows if answer is right or wrong
         btnConfirm_Colors.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                voiceover.pause();
-                choice1.pause();
-                choice2.pause();
                 if(btnText.equals(rightAnswer_Colors)){
                     //Correct
+                    voiceover.release();
+                    choice1.release();
+                    choice2.release();
+                    wrong_sound.release();
                     answerBtn.setBackgroundResource(R.drawable.correctanswerbutton);
                     correct_sound.start();
+                    correct_sound.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+                        @Override
+                        public void onCompletion(MediaPlayer mediaPlayer) {
+                            correct_sound.release();
+                        }
+                    });
                     rightAnswerCount_Colors++;
                     btnConfirm_Colors.setEnabled(false);
                     btnAnswer1_Colors.setEnabled(false);
                     btnAnswer2_Colors.setEnabled(false);
                     confirmClicked_Colors++;
                 }
-                else if (!btnText.equals(rightAnswer_Colors) && answerBtn != btnConfirm_Colors) {
-                    if (btnText.equals(btnAnswer1_Colors.getText().toString()) || btnText.equals(btnAnswer2_Colors.getText().toString()) ) {
-                        //Wrong
-                        answerBtn.setBackgroundResource(R.drawable.wronganswerbutton);
-                        wrong_sound.start();
-                        btnConfirm_Colors.setEnabled(false);
-                        btnAnswer1_Colors.setEnabled(false);
-                        btnAnswer2_Colors.setEnabled(false);
-                        confirmClicked_Colors++;
-                    } else{
-                        //Toast.makeText(getApplicationContext(),"Please Select an Answer",Toast.LENGTH_SHORT).show();
-                        prompt_Colors.setText("Please select an answer");
+                else if (btnText.equals(wrongAnswer_Colors) && answerBtn != btnConfirm_Colors) {
+                    //Wrong
+                    voiceover.release();
+                    choice1.release();
+                    choice2.release();
+                    correct_sound.release();
+                    answerBtn.setBackgroundResource(R.drawable.wronganswerbutton);
+                    wrong_sound.start();
+                    wrong_sound.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+                        @Override
+                        public void onCompletion(MediaPlayer mediaPlayer) {
+                            wrong_sound.release();
+                        }
+                    });
+                    btnConfirm_Colors.setEnabled(false);
+                    btnAnswer1_Colors.setEnabled(false);
+                    btnAnswer2_Colors.setEnabled(false);
+                    confirmClicked_Colors++;
+                }
+                else if (!btnText.equals(rightAnswer_Colors) && !btnText.equals(wrongAnswer_Colors)){
+                    prompt_Colors.setText("Please select an answer");
 
-                        Handler handler = new Handler();
-                        handler.postDelayed(new Runnable() {
-                            @Override
-                            public void run() {
-                                prompt_Colors.setText("");
-                            }
-                        },3000);
-                    }
+                    Handler handler = new Handler();
+                    handler.postDelayed(new Runnable() {
+                        @Override
+                        public void run() {
+                            prompt_Colors.setText("");
+                        }
+                    },3000);
                 }
             }
         });
@@ -200,7 +231,6 @@ public class QuizColors extends AppCompatActivity {
                 }
                 else if (!btnText.equals(btnAnswer1_Colors.getText().toString()) && !btnText.equals(btnAnswer2_Colors.getText().toString())){
                     //Check if user selected an answer
-                    //Toast.makeText(getApplicationContext(),"Please Select an Answer",Toast.LENGTH_LONG).show();
                     prompt_Colors.setText("Please select an answer");
 
                     Handler handler = new Handler();
@@ -214,8 +244,7 @@ public class QuizColors extends AppCompatActivity {
                 }
                 else if(confirmClicked_Colors == 0){
                     //Check if Confirm Answer Button was clicked
-                    //Toast.makeText(getApplicationContext(),"Please Confirm your Answer",Toast.LENGTH_LONG).show();
-                    prompt_Colors.setText("Please confirm your answer");
+                    prompt_Colors.setText("Please submit your answer");
 
                     Handler handler = new Handler();
                     handler.postDelayed(new Runnable() {
@@ -232,8 +261,11 @@ public class QuizColors extends AppCompatActivity {
                     btnAnswer1_Colors.setEnabled(true);
                     btnAnswer2_Colors.setEnabled(true);
                     btnConfirm_Colors.setEnabled(true);
-                    correct_sound.reset();
-                    wrong_sound.reset();
+                    voiceover.release();
+                    choice1.release();
+                    choice2.release();
+                    correct_sound.release();
+                    wrong_sound.release();
                     showNextQuiz();
                 }
             }

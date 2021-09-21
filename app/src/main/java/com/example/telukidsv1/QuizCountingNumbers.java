@@ -33,6 +33,7 @@ public class QuizCountingNumbers extends AppCompatActivity {
     Button btnConfirm_Counting;
 
     private String rightAnswer_Counting;
+    private String wrongAnswer_Counting;
     private int rightAnswerCount_Counting = 0;
     private int quizCount_Counting = 1;
     static final private int QUIZ_COUNT = 5;
@@ -50,7 +51,6 @@ public class QuizCountingNumbers extends AppCompatActivity {
             {"How many balloons are there?", String.valueOf(R.drawable.countingnumbersquestion5), String.valueOf(R.raw.ctq5), "18 Balloons", "14 Balloons", String.valueOf(R.raw.ctq5c1), String.valueOf(R.raw.ctq5c2)}
 
     };
-
 
 
 
@@ -103,6 +103,7 @@ public class QuizCountingNumbers extends AppCompatActivity {
         voiceover = MediaPlayer.create(this, Integer.parseInt(quiz.get(2)));
         voiceover.start();
         rightAnswer_Counting = quiz.get(3);
+        wrongAnswer_Counting = quiz.get(4);
         choice1 = MediaPlayer.create(this, Integer.parseInt(quiz.get(5)));
         choice2 = MediaPlayer.create(this, Integer.parseInt(quiz.get(6)));
 
@@ -138,53 +139,83 @@ public class QuizCountingNumbers extends AppCompatActivity {
             btnAnswer1_Counting.setBackgroundResource(R.drawable.answerbutton);
         }
 
+        //Play Choice 1 Voice Over
         if (answerBtn.getText().equals(rightAnswer_Counting)){
-            voiceover.pause();
+            voiceover.release();
             choice1.start();
         }
-        else if (!answerBtn.getText().equals(rightAnswer_Counting)){
-            voiceover.pause();
+        //Play Choice 2 Voice Over
+        else if (answerBtn.getText().equals(wrongAnswer_Counting) && answerBtn != btnConfirm_Counting){
+            voiceover.release();
             choice2.start();
+        }
+        //Check if user selected an answer
+        else if (!btnText.equals(rightAnswer_Counting) && !btnText.equals(wrongAnswer_Counting)){
+            prompt_Counting.setText("Please select an answer");
+
+            Handler handler = new Handler();
+            handler.postDelayed(new Runnable() {
+                @Override
+                public void run() {
+                    prompt_Counting.setText("");
+                }
+            },3000);
+
         }
 
         // Confirm Users answer and shows if answer is right or wrong
         btnConfirm_Counting.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                voiceover.pause();
-                choice1.pause();
-                choice2.pause();
                 if(btnText.equals(rightAnswer_Counting)){
                     //Correct
+                    voiceover.release();
+                    choice1.release();
+                    choice2.release();
+                    wrong_sound.release();
                     answerBtn.setBackgroundResource(R.drawable.correctanswerbutton);
                     correct_sound.start();
+                    correct_sound.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+                        @Override
+                        public void onCompletion(MediaPlayer mediaPlayer) {
+                            correct_sound.release();
+                        }
+                    });
                     rightAnswerCount_Counting++;
                     btnConfirm_Counting.setEnabled(false);
                     btnAnswer1_Counting.setEnabled(false);
                     btnAnswer2_Counting.setEnabled(false);
                     confirmClicked_Counting++;
                 }
-                else if (!btnText.equals(rightAnswer_Counting) && answerBtn != btnConfirm_Counting) {
-                    if (btnText.equals(btnAnswer1_Counting.getText().toString()) || btnText.equals(btnAnswer2_Counting.getText().toString()) ) {
-                        //Wrong
-                        answerBtn.setBackgroundResource(R.drawable.wronganswerbutton);
-                        wrong_sound.start();
-                        btnConfirm_Counting.setEnabled(false);
-                        btnAnswer1_Counting.setEnabled(false);
-                        btnAnswer2_Counting.setEnabled(false);
-                        confirmClicked_Counting++;
-                    } else{
-                        //Toast.makeText(getApplicationContext(),"Please Select an Answer",Toast.LENGTH_SHORT).show();
-                        prompt_Counting.setText("Please select an answer");
+                else if (btnText.equals(wrongAnswer_Counting) && answerBtn != btnConfirm_Counting) {
+                    //Wrong
+                    voiceover.release();
+                    choice1.release();
+                    choice2.release();
+                    correct_sound.release();
+                    answerBtn.setBackgroundResource(R.drawable.wronganswerbutton);
+                    wrong_sound.start();
+                    wrong_sound.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+                        @Override
+                        public void onCompletion(MediaPlayer mediaPlayer) {
+                            wrong_sound.release();
+                        }
+                    });
+                    btnConfirm_Counting.setEnabled(false);
+                    btnAnswer1_Counting.setEnabled(false);
+                    btnAnswer2_Counting.setEnabled(false);
+                    confirmClicked_Counting++;
+                }
+                else if (!btnText.equals(rightAnswer_Counting) && !btnText.equals(wrongAnswer_Counting)){
+                    prompt_Counting.setText("Please select an answer");
 
-                        Handler handler = new Handler();
-                        handler.postDelayed(new Runnable() {
-                            @Override
-                            public void run() {
-                                prompt_Counting.setText("");
-                            }
-                        },3000);
-                    }
+                    Handler handler = new Handler();
+                    handler.postDelayed(new Runnable() {
+                        @Override
+                        public void run() {
+                            prompt_Counting.setText("");
+                        }
+                    },3000);
                 }
             }
         });
@@ -200,7 +231,6 @@ public class QuizCountingNumbers extends AppCompatActivity {
                 }
                 else if (!btnText.equals(btnAnswer1_Counting.getText().toString()) && !btnText.equals(btnAnswer2_Counting.getText().toString())){
                     //Check if user selected an answer
-                    //Toast.makeText(getApplicationContext(),"Please Select an Answer",Toast.LENGTH_LONG).show();
                     prompt_Counting.setText("Please select an answer");
 
                     Handler handler = new Handler();
@@ -214,8 +244,7 @@ public class QuizCountingNumbers extends AppCompatActivity {
                 }
                 else if(confirmClicked_Counting == 0){
                     //Check if Confirm Answer Button was clicked
-                    //Toast.makeText(getApplicationContext(),"Please Confirm your Answer",Toast.LENGTH_LONG).show();
-                    prompt_Counting.setText("Please confirm your answer");
+                    prompt_Counting.setText("Please submit your answer");
 
                     Handler handler = new Handler();
                     handler.postDelayed(new Runnable() {
@@ -232,8 +261,11 @@ public class QuizCountingNumbers extends AppCompatActivity {
                     btnAnswer1_Counting.setEnabled(true);
                     btnAnswer2_Counting.setEnabled(true);
                     btnConfirm_Counting.setEnabled(true);
-                    correct_sound.reset();
-                    wrong_sound.reset();
+                    voiceover.release();
+                    choice1.release();
+                    choice2.release();
+                    correct_sound.release();
+                    wrong_sound.release();
                     showNextQuiz();
                 }
             }
