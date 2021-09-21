@@ -678,7 +678,7 @@ public class Achievements3to6Discipline extends AppCompatActivity {
         backbtnAchievements3to6.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent proceed = new Intent(Achievements3to6Discipline.this, Homepage3to6.class);
+                Intent proceed = new Intent(Achievements3to6Discipline.this, DisciplineLessonCongrats.class);
                 startActivity(proceed);
             }
         });

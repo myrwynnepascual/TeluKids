@@ -220,7 +220,7 @@ public class QuizDiscipline extends AppCompatActivity {
             }
         });
 
-        quizLayout_Discipline.setOnClickListener(new View.OnClickListener() {
+        background_Discipline.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 if (quizCount_Discipline == QUIZ_COUNT && confirmClicked_Discipline != 0){

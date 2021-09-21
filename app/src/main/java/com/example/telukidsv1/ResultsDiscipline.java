@@ -75,7 +75,7 @@ public class ResultsDiscipline extends AppCompatActivity {
         achievementsbtnCLC_Discipline.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent proceed = new Intent(ResultsDiscipline.this, Achievements3to6Main.class);
+                Intent proceed = new Intent(ResultsDiscipline.this, Achievements3to6Discipline2.class);
                 startActivity(proceed);
             }
         });

@@ -54,7 +54,7 @@ public class Gmrc3to6 extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                //startActivity(new Intent(Gmrc3to6.this, LessonIntroRespect.class));
+                startActivity(new Intent(Gmrc3to6.this, LessonIntroRespect.class));
 
             }
         });
@@ -63,7 +63,7 @@ public class Gmrc3to6 extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                //startActivity(new Intent(Gmrc3to6.this, LessonIntroSociability.class));
+                startActivity(new Intent(Gmrc3to6.this, LessonIntroSociability.class));
 
             }
         });

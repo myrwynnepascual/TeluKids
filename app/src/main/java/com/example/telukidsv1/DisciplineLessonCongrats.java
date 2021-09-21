@@ -69,7 +69,7 @@ public class DisciplineLessonCongrats extends AppCompatActivity {
         btnassessmentDLC.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                //startActivity(new Intent(DisciplineLessonCongrats.this, QuizDiscipline.class));
+                startActivity(new Intent(DisciplineLessonCongrats.this, QuizDiscipline.class));
             }
         });
 

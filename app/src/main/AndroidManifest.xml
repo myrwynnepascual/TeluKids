@@ -12,6 +12,45 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.TeluKidsV1">
         <activity
+            android:name=".Achievements3to6Sociability"
+            android:exported="true" />
+        <activity
+            android:name=".SociabilityLessonCongrats"
+            android:exported="true" />
+        <activity
+            android:name=".LessonSociability"
+            android:exported="true" />
+        <activity
+            android:name=".ChooseModeSociability"
+            android:exported="true" />
+        <activity
+            android:name=".LessonIntroSociability"
+            android:exported="true" />
+        <activity
+            android:name=".Achievements3to6Honesty2"
+            android:exported="true" />
+        <activity
+            android:name=".Achievements3to6Respect2"
+            android:exported="true" />
+        <activity
+            android:name=".Achievements3to6Discipline2"
+            android:exported="true" />
+        <activity
+            android:name=".Achievements3to6Respect"
+            android:exported="true" />
+        <activity
+            android:name=".RespectLessonCongrats"
+            android:exported="true" />
+        <activity
+            android:name=".LessonIntroRespect"
+            android:exported="true" />
+        <activity
+            android:name=".ChooseModeRespect"
+            android:exported="true" />
+        <activity
+            android:name=".LessonRespect"
+            android:exported="true" />
+        <activity
             android:name=".Achievements3to6Discipline"
             android:exported="true" />
         <activity
