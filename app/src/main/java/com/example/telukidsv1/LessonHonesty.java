@@ -117,7 +117,7 @@ public class LessonHonesty extends AppCompatActivity {
             @Override
             public void onCompletion(MediaPlayer mp) {
 
-                startActivity(new Intent(LessonHonesty.this, HonestyLessonCongrats.class));
+                honesty4();
 
             }
         });
@@ -127,6 +127,76 @@ public class LessonHonesty extends AppCompatActivity {
             public void onClick(View v) {
 
                 honesty2();
+
+            }
+        });
+
+        nextbtnH36.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                honesty4();
+
+            }
+        });
+    }
+
+    public void honesty4(){
+        videoPathH36 = "android.resource://" + getPackageName() + "/" + R.raw.honesty4;
+        uriH36 = Uri.parse(videoPathH36);
+        videoViewH36.setVideoURI(uriH36);
+
+        videoViewH36.start();
+
+        videoViewH36.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+            @Override
+            public void onCompletion(MediaPlayer mp) {
+
+                honesty5();
+
+            }
+        });
+
+        backbtnH36.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                honesty3();
+
+            }
+        });
+
+        nextbtnH36.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                honesty5();
+
+            }
+        });
+    }
+
+    public void honesty5(){
+        videoPathH36 = "android.resource://" + getPackageName() + "/" + R.raw.honesty5;
+        uriH36 = Uri.parse(videoPathH36);
+        videoViewH36.setVideoURI(uriH36);
+
+        videoViewH36.start();
+
+        videoViewH36.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+            @Override
+            public void onCompletion(MediaPlayer mp) {
+
+                startActivity(new Intent(LessonHonesty.this, HonestyLessonCongrats.class));
+
+            }
+        });
+
+        backbtnH36.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                honesty4();
 
             }
         });
