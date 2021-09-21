@@ -157,6 +157,7 @@ public class QuizColors extends AppCompatActivity {
             handler.postDelayed(new Runnable() {
                 @Override
                 public void run() {
+
                     prompt_Colors.setText("");
                 }
             },3000);
@@ -187,7 +188,7 @@ public class QuizColors extends AppCompatActivity {
                     btnAnswer2_Colors.setEnabled(false);
                     confirmClicked_Colors++;
                 }
-                else if (btnText.equals(wrongAnswer_Colors) && answerBtn != btnConfirm_Colors) {
+                else if (btnText.equals(wrongAnswer_Colors)) {
                     //Wrong
                     voiceover.release();
                     choice1.release();
@@ -198,6 +199,7 @@ public class QuizColors extends AppCompatActivity {
                     wrong_sound.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
                         @Override
                         public void onCompletion(MediaPlayer mediaPlayer) {
+
                             wrong_sound.release();
                         }
                     });
@@ -213,6 +215,7 @@ public class QuizColors extends AppCompatActivity {
                     handler.postDelayed(new Runnable() {
                         @Override
                         public void run() {
+
                             prompt_Colors.setText("");
                         }
                     },3000);
@@ -237,6 +240,7 @@ public class QuizColors extends AppCompatActivity {
                     handler.postDelayed(new Runnable() {
                         @Override
                         public void run() {
+
                             prompt_Colors.setText("");
                         }
                     },3000);
@@ -250,6 +254,7 @@ public class QuizColors extends AppCompatActivity {
                     handler.postDelayed(new Runnable() {
                         @Override
                         public void run() {
+
                             prompt_Colors.setText("");
                         }
                     },3000);

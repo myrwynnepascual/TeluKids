@@ -157,6 +157,7 @@ public class QuizShapes extends AppCompatActivity {
             handler.postDelayed(new Runnable() {
                 @Override
                 public void run() {
+
                     prompt_Shapes.setText("");
                 }
             },3000);
@@ -187,7 +188,7 @@ public class QuizShapes extends AppCompatActivity {
                     btnAnswer2_Shapes.setEnabled(false);
                     confirmClicked_Shapes++;
                 }
-                else if (btnText.equals(wrongAnswer_Shapes) && answerBtn != btnConfirm_Shapes) {
+                else if (btnText.equals(wrongAnswer_Shapes)) {
                     //Wrong
                     voiceover.release();
                     choice1.release();
@@ -213,6 +214,7 @@ public class QuizShapes extends AppCompatActivity {
                     handler.postDelayed(new Runnable() {
                         @Override
                         public void run() {
+
                             prompt_Shapes.setText("");
                         }
                     },3000);

@@ -73,6 +73,20 @@
             android:textColor="@color/white"
             android:visibility="invisible" />
 
+        <TextView
+            android:id="@+id/prompt_Discipline"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:fontFamily="@font/leaguespartan_bold"
+            android:gravity="center_horizontal"
+            android:shadowColor="#29000000"
+            android:shadowDx="1"
+            android:shadowDy="1"
+            android:shadowRadius="2"
+            android:text=""
+            android:textColor="@color/black" />
+
         <Button
             android:id="@+id/btnConfirm_Discipline"
             android:layout_width="150dp"

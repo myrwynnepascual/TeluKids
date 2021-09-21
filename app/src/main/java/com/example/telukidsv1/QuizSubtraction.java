@@ -158,6 +158,7 @@ public class QuizSubtraction extends AppCompatActivity {
             handler.postDelayed(new Runnable() {
                 @Override
                 public void run() {
+
                     prompt_Subtraction.setText("");
                 }
             },3000);
@@ -188,7 +189,7 @@ public class QuizSubtraction extends AppCompatActivity {
                     btnAnswer2_Subtraction.setEnabled(false);
                     confirmClicked_Subtraction++;
                 }
-                else if (btnText.equals(wrongAnswer_Subtraction) && answerBtn != btnConfirm_Subtraction) {
+                else if (btnText.equals(wrongAnswer_Subtraction)) {
                     //Wrong
                     voiceover.release();
                     choice1.release();
@@ -199,6 +200,7 @@ public class QuizSubtraction extends AppCompatActivity {
                     wrong_sound.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
                         @Override
                         public void onCompletion(MediaPlayer mediaPlayer) {
+
                             wrong_sound.release();
                         }
                     });
@@ -214,6 +216,7 @@ public class QuizSubtraction extends AppCompatActivity {
                     handler.postDelayed(new Runnable() {
                         @Override
                         public void run() {
+
                             prompt_Subtraction.setText("");
                         }
                     },3000);
@@ -238,6 +241,7 @@ public class QuizSubtraction extends AppCompatActivity {
                     handler.postDelayed(new Runnable() {
                         @Override
                         public void run() {
+
                             prompt_Subtraction.setText("");
                         }
                     },3000);
@@ -251,6 +255,7 @@ public class QuizSubtraction extends AppCompatActivity {
                     handler.postDelayed(new Runnable() {
                         @Override
                         public void run() {
+
                             prompt_Subtraction.setText("");
                         }
                     },3000);
