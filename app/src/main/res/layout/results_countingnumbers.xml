@@ -10,11 +10,9 @@
 
     <LinearLayout
         android:id="@+id/quizLayout_Counting"
-        android:layout_width="371dp"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="20dp"
-        android:layout_marginTop="20dp"
-        android:layout_marginRight="20dp"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_margin="20dp"
         android:orientation="vertical"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -23,27 +21,15 @@
         app:layout_constraintVertical_bias="0.024">
 
 
-        <LinearLayout
-            android:layout_width="match_parent"
+        <ImageButton
+            android:id="@+id/achievementsbtnCLC_Counting"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:orientation="horizontal">
-
-            <Space
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:layout_weight="1" />
-
-            <ImageButton
-                android:id="@+id/achievementsbtnCLC_Counting"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginRight="0dp"
-                android:backgroundTint="#00FFFFFF"
-                android:contentDescription="@string/todo"
-                app:srcCompat="@drawable/clbtnachievements"
-                tools:ignore="SpeakableTextPresentCheck,ImageContrastCheck,DuplicateSpeakableTextCheck" />
-
-        </LinearLayout>
+            android:layout_gravity="right"
+            android:backgroundTint="#00FFFFFF"
+            android:contentDescription="@string/todo"
+            app:srcCompat="@drawable/clbtnachievements"
+            tools:ignore="SpeakableTextPresentCheck,ImageContrastCheck,DuplicateSpeakableTextCheck" />
 
         <ImageView
             android:id="@+id/imageView"

@@ -5,6 +5,7 @@ import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageButton;
@@ -21,7 +22,7 @@ import com.google.firebase.firestore.FirebaseFirestoreException;
 import com.google.firebase.firestore.Transaction;
 
 public class UserProfile36 extends AppCompatActivity {
-    ImageButton btnbackUP, btneditUP, btnlogoutUP;
+    ImageButton btnbackUP, btneditUP, btnlogoutUP, btnsurveyUP;
     ImageView profIconUP;
     TextView greetUP;
     String userID, username, usericon, lastpage;
@@ -40,6 +41,7 @@ public class UserProfile36 extends AppCompatActivity {
         btnbackUP = findViewById(R.id.backbtnUP36);
         btneditUP = findViewById(R.id.editprofilebtnUP36);
         btnlogoutUP = findViewById(R.id.logoutbtnUP36);
+        btnsurveyUP = findViewById(R.id.surveybtnUP36);
 
         fAuth = FirebaseAuth.getInstance();
         fStore = FirebaseFirestore.getInstance();
@@ -90,6 +92,15 @@ public class UserProfile36 extends AppCompatActivity {
             public void onClick(View v) {
 
                 startActivity(new Intent(UserProfile36.this,Homepage3to6.class));
+
+            }
+        });
+
+        btnsurveyUP.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                startActivity(new Intent("android.intent.action.VIEW", Uri.parse("https://forms.gle/vHNoGH3f3oNce6FXA")));
 
             }
         });
