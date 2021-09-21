@@ -33,6 +33,7 @@ public class QuizSubtraction extends AppCompatActivity {
     Button btnConfirm_Subtraction;
 
     private String rightAnswer_Subtraction;
+    private String wrongAnswer_Subtraction;
     private int rightAnswerCount_Subtraction = 0;
     private int quizCount_Subtraction = 1;
     static final private int QUIZ_COUNT = 5;
@@ -78,8 +79,8 @@ public class QuizSubtraction extends AppCompatActivity {
             tmpArray.add(quizData_Subtraction[i][2]); //Voice Over
             tmpArray.add(quizData_Subtraction[i][3]); //Right Answer
             tmpArray.add(quizData_Subtraction[i][4]); //Wrong Answer
-            tmpArray.add(quizData_Subtraction[i][5]); // Choice 1 Voice Over
-            tmpArray.add(quizData_Subtraction[i][6]); // Choice 2 Voice Over
+            tmpArray.add(quizData_Subtraction[i][5]); //Choice 1 Voice Over
+            tmpArray.add(quizData_Subtraction[i][6]); //Choice 2 Voice Over
             //Add tmpArray to quizArray
             quizArray_Subtraction.add(tmpArray);
         }
@@ -103,6 +104,7 @@ public class QuizSubtraction extends AppCompatActivity {
         voiceover = MediaPlayer.create(this, Integer.parseInt(quiz.get(2)));
         voiceover.start();
         rightAnswer_Subtraction = quiz.get(3);
+        wrongAnswer_Subtraction = quiz.get(4);
         choice1 = MediaPlayer.create(this, Integer.parseInt(quiz.get(5)));
         choice2 = MediaPlayer.create(this, Integer.parseInt(quiz.get(6)));
 
@@ -138,53 +140,86 @@ public class QuizSubtraction extends AppCompatActivity {
             btnAnswer1_Subtraction.setBackgroundResource(R.drawable.answerbutton);
         }
 
+        //Play Choice 1 Voice Over
         if (answerBtn.getText().equals(rightAnswer_Subtraction)){
-            voiceover.pause();
+            voiceover.release();
             choice1.start();
         }
-        else if (!answerBtn.getText().equals(rightAnswer_Subtraction)){
-            voiceover.pause();
+        //Play Choice 2 Voice Over
+        else if (answerBtn.getText().equals(wrongAnswer_Subtraction) && answerBtn != btnConfirm_Subtraction){
+            voiceover.release();
             choice2.start();
+        }
+        //Check if user selected an answer
+        else if (!btnText.equals(rightAnswer_Subtraction) && !btnText.equals(wrongAnswer_Subtraction)){
+            prompt_Subtraction.setText("Please select an answer");
+
+            Handler handler = new Handler();
+            handler.postDelayed(new Runnable() {
+                @Override
+                public void run() {
+
+                    prompt_Subtraction.setText("");
+                }
+            },3000);
+
         }
 
         // Confirm Users answer and shows if answer is right or wrong
         btnConfirm_Subtraction.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                voiceover.pause();
-                choice1.pause();
-                choice2.pause();
                 if(btnText.equals(rightAnswer_Subtraction)){
                     //Correct
+                    voiceover.release();
+                    choice1.release();
+                    choice2.release();
+                    wrong_sound.release();
                     answerBtn.setBackgroundResource(R.drawable.correctanswerbutton);
                     correct_sound.start();
+                    correct_sound.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+                        @Override
+                        public void onCompletion(MediaPlayer mediaPlayer) {
+                            correct_sound.release();
+                        }
+                    });
                     rightAnswerCount_Subtraction++;
                     btnConfirm_Subtraction.setEnabled(false);
                     btnAnswer1_Subtraction.setEnabled(false);
                     btnAnswer2_Subtraction.setEnabled(false);
                     confirmClicked_Subtraction++;
                 }
-                else if (!btnText.equals(rightAnswer_Subtraction) && answerBtn != btnConfirm_Subtraction) {
-                    if (btnText.equals(btnAnswer1_Subtraction.getText().toString()) || btnText.equals(btnAnswer2_Subtraction.getText().toString()) ) {
-                        //Wrong
-                        answerBtn.setBackgroundResource(R.drawable.wronganswerbutton);
-                        wrong_sound.start();
-                        btnConfirm_Subtraction.setEnabled(false);
-                        btnAnswer1_Subtraction.setEnabled(false);
-                        btnAnswer2_Subtraction.setEnabled(false);
-                        confirmClicked_Subtraction++;
-                    } else{
-                        //Toast.makeText(getApplicationContext(),"Please Select an Answer",Toast.LENGTH_SHORT).show();
-                        prompt_Subtraction.setText("Please select an answer");
+                else if (btnText.equals(wrongAnswer_Subtraction)) {
+                    //Wrong
+                    voiceover.release();
+                    choice1.release();
+                    choice2.release();
+                    correct_sound.release();
+                    answerBtn.setBackgroundResource(R.drawable.wronganswerbutton);
+                    wrong_sound.start();
+                    wrong_sound.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+                        @Override
+                        public void onCompletion(MediaPlayer mediaPlayer) {
 
-                        Handler handler = new Handler();
-                        handler.postDelayed(new Runnable() {
-                            @Override
-                            public void run() {
-                                prompt_Subtraction.setText("");
-                            }
-                        },3000);
-                    }
+                            wrong_sound.release();
+                        }
+                    });
+                    btnConfirm_Subtraction.setEnabled(false);
+                    btnAnswer1_Subtraction.setEnabled(false);
+                    btnAnswer2_Subtraction.setEnabled(false);
+                    confirmClicked_Subtraction++;
+                }
+                else if (!btnText.equals(rightAnswer_Subtraction) && !btnText.equals(wrongAnswer_Subtraction)){
+                    prompt_Subtraction.setText("Please select an answer");
+
+                    Handler handler = new Handler();
+                    handler.postDelayed(new Runnable() {
+                        @Override
+                        public void run() {
+
+                            prompt_Subtraction.setText("");
+                        }
+                    },3000);
                 }
             }
         });
@@ -200,13 +235,13 @@ public class QuizSubtraction extends AppCompatActivity {
                 }
                 else if (!btnText.equals(btnAnswer1_Subtraction.getText().toString()) && !btnText.equals(btnAnswer2_Subtraction.getText().toString())){
                     //Check if user selected an answer
-                    //Toast.makeText(getApplicationContext(),"Please Select an Answer",Toast.LENGTH_LONG).show();
                     prompt_Subtraction.setText("Please select an answer");
 
                     Handler handler = new Handler();
                     handler.postDelayed(new Runnable() {
                         @Override
                         public void run() {
+
                             prompt_Subtraction.setText("");
                         }
                     },3000);
@@ -214,13 +249,13 @@ public class QuizSubtraction extends AppCompatActivity {
                 }
                 else if(confirmClicked_Subtraction == 0){
                     //Check if Confirm Answer Button was clicked
-                    //Toast.makeText(getApplicationContext(),"Please Confirm your Answer",Toast.LENGTH_LONG).show();
-                    prompt_Subtraction.setText("Please confirm your answer");
+                    prompt_Subtraction.setText("Please submit your answer");
 
                     Handler handler = new Handler();
                     handler.postDelayed(new Runnable() {
                         @Override
                         public void run() {
+
                             prompt_Subtraction.setText("");
                         }
                     },3000);
@@ -232,8 +267,11 @@ public class QuizSubtraction extends AppCompatActivity {
                     btnAnswer1_Subtraction.setEnabled(true);
                     btnAnswer2_Subtraction.setEnabled(true);
                     btnConfirm_Subtraction.setEnabled(true);
-                    correct_sound.reset();
-                    wrong_sound.reset();
+                    voiceover.release();
+                    choice1.release();
+                    choice2.release();
+                    correct_sound.release();
+                    wrong_sound.release();
                     showNextQuiz();
                 }
             }

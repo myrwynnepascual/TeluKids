@@ -33,6 +33,7 @@ public class QuizAddition extends AppCompatActivity {
     Button btnConfirm_Addition;
 
     private String rightAnswer_Addition;
+    private String wrongAnswer_Addition;
     private int rightAnswerCount_Addition = 0;
     private int quizCount_Addition = 1;
     static final private int QUIZ_COUNT = 5;
@@ -50,7 +51,6 @@ public class QuizAddition extends AppCompatActivity {
             {"What is 5 ice creams plus 2 ice creams equal to?", String.valueOf(R.drawable.additionquestion5), String.valueOf(R.raw.aq5), "7 Ice Creams", "4 Ice Creams", String.valueOf(R.raw.aq5c1), String.valueOf(R.raw.aq5c2)}
 
     };
-
 
 
 
@@ -78,8 +78,8 @@ public class QuizAddition extends AppCompatActivity {
             tmpArray.add(quizData_Addition[i][2]); //Voice Over
             tmpArray.add(quizData_Addition[i][3]); //Right Answer
             tmpArray.add(quizData_Addition[i][4]); //Wrong Answer
-            tmpArray.add(quizData_Addition[i][5]); // Choice 1 Voice Over
-            tmpArray.add(quizData_Addition[i][6]); // Choice 2 Voice Over
+            tmpArray.add(quizData_Addition[i][5]); //Choice 1 Voice Over
+            tmpArray.add(quizData_Addition[i][6]); //Choice 2 Voice Over
             //Add tmpArray to quizArray
             quizArray_Addition.add(tmpArray);
         }
@@ -103,6 +103,7 @@ public class QuizAddition extends AppCompatActivity {
         voiceover = MediaPlayer.create(this, Integer.parseInt(quiz.get(2)));
         voiceover.start();
         rightAnswer_Addition = quiz.get(3);
+        wrongAnswer_Addition = quiz.get(4);
         choice1 = MediaPlayer.create(this, Integer.parseInt(quiz.get(5)));
         choice2 = MediaPlayer.create(this, Integer.parseInt(quiz.get(6)));
 
@@ -138,53 +139,86 @@ public class QuizAddition extends AppCompatActivity {
             btnAnswer1_Addition.setBackgroundResource(R.drawable.answerbutton);
         }
 
+        //Play Choice 1 Voice Over
         if (answerBtn.getText().equals(rightAnswer_Addition)){
-            voiceover.pause();
+            voiceover.release();
             choice1.start();
         }
-        else if (!answerBtn.getText().equals(rightAnswer_Addition)){
-            voiceover.pause();
+        //Play Choice 2 Voice Over
+        else if (answerBtn.getText().equals(wrongAnswer_Addition) && answerBtn != btnConfirm_Addition){
+            voiceover.release();
             choice2.start();
+        }
+        //Check if user selected an answer
+        else if (!btnText.equals(rightAnswer_Addition) && !btnText.equals(wrongAnswer_Addition)){
+            prompt_Addition.setText("Please select an answer");
+
+            Handler handler = new Handler();
+            handler.postDelayed(new Runnable() {
+                @Override
+                public void run() {
+
+                    prompt_Addition.setText("");
+                }
+            },3000);
+
         }
 
         // Confirm Users answer and shows if answer is right or wrong
         btnConfirm_Addition.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                voiceover.pause();
-                choice1.pause();
-                choice2.pause();
                 if(btnText.equals(rightAnswer_Addition)){
                     //Correct
+                    voiceover.release();
+                    choice1.release();
+                    choice2.release();
+                    wrong_sound.release();
                     answerBtn.setBackgroundResource(R.drawable.correctanswerbutton);
                     correct_sound.start();
+                    correct_sound.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+                        @Override
+                        public void onCompletion(MediaPlayer mediaPlayer) {
+                            correct_sound.release();
+                        }
+                    });
                     rightAnswerCount_Addition++;
                     btnConfirm_Addition.setEnabled(false);
                     btnAnswer1_Addition.setEnabled(false);
                     btnAnswer2_Addition.setEnabled(false);
                     confirmClicked_Addition++;
                 }
-                else if (!btnText.equals(rightAnswer_Addition) && answerBtn != btnConfirm_Addition) {
-                    if (btnText.equals(btnAnswer1_Addition.getText().toString()) || btnText.equals(btnAnswer2_Addition.getText().toString()) ) {
-                        //Wrong
-                        answerBtn.setBackgroundResource(R.drawable.wronganswerbutton);
-                        wrong_sound.start();
-                        btnConfirm_Addition.setEnabled(false);
-                        btnAnswer1_Addition.setEnabled(false);
-                        btnAnswer2_Addition.setEnabled(false);
-                        confirmClicked_Addition++;
-                    } else{
-                        //Toast.makeText(getApplicationContext(),"Please Select an Answer",Toast.LENGTH_SHORT).show();
-                        prompt_Addition.setText("Please select an answer");
+                else if (btnText.equals(wrongAnswer_Addition)) {
+                    //Wrong
+                    voiceover.release();
+                    choice1.release();
+                    choice2.release();
+                    correct_sound.release();
+                    answerBtn.setBackgroundResource(R.drawable.wronganswerbutton);
+                    wrong_sound.start();
+                    wrong_sound.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+                        @Override
+                        public void onCompletion(MediaPlayer mediaPlayer) {
 
-                        Handler handler = new Handler();
-                        handler.postDelayed(new Runnable() {
-                            @Override
-                            public void run() {
-                                prompt_Addition.setText("");
-                            }
-                        },3000);
-                    }
+                            wrong_sound.release();
+                        }
+                    });
+                    btnConfirm_Addition.setEnabled(false);
+                    btnAnswer1_Addition.setEnabled(false);
+                    btnAnswer2_Addition.setEnabled(false);
+                    confirmClicked_Addition++;
+                }
+                else if (!btnText.equals(rightAnswer_Addition) && !btnText.equals(wrongAnswer_Addition)){
+                    prompt_Addition.setText("Please select an answer");
+
+                    Handler handler = new Handler();
+                    handler.postDelayed(new Runnable() {
+                        @Override
+                        public void run() {
+
+                            prompt_Addition.setText("");
+                        }
+                    },3000);
                 }
             }
         });
@@ -200,12 +234,13 @@ public class QuizAddition extends AppCompatActivity {
                 }
                 else if (!btnText.equals(btnAnswer1_Addition.getText().toString()) && !btnText.equals(btnAnswer2_Addition.getText().toString())){
                     //Check if user selected an answer
-                   //Toast.makeText(getApplicationContext(),"Please Select an Answer",Toast.LENGTH_LONG).show();
                     prompt_Addition.setText("Please select an answer");
+
                     Handler handler = new Handler();
                     handler.postDelayed(new Runnable() {
                         @Override
                         public void run() {
+
                             prompt_Addition.setText("");
                         }
                     },3000);
@@ -213,13 +248,13 @@ public class QuizAddition extends AppCompatActivity {
                 }
                 else if(confirmClicked_Addition == 0){
                     //Check if Confirm Answer Button was clicked
-                    //Toast.makeText(getApplicationContext(),"Please Confirm your Answer",Toast.LENGTH_LONG).show();
-                    prompt_Addition.setText("Please confirm your answer");
+                    prompt_Addition.setText("Please submit your answer");
 
                     Handler handler = new Handler();
                     handler.postDelayed(new Runnable() {
                         @Override
                         public void run() {
+
                             prompt_Addition.setText("");
                         }
                     },3000);
@@ -231,8 +266,11 @@ public class QuizAddition extends AppCompatActivity {
                     btnAnswer1_Addition.setEnabled(true);
                     btnAnswer2_Addition.setEnabled(true);
                     btnConfirm_Addition.setEnabled(true);
-                    correct_sound.reset();
-                    wrong_sound.reset();
+                    voiceover.release();
+                    choice1.release();
+                    choice2.release();
+                    correct_sound.release();
+                    wrong_sound.release();
                     showNextQuiz();
                 }
             }
