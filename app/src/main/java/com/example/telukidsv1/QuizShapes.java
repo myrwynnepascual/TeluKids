@@ -188,7 +188,7 @@ public class QuizShapes extends AppCompatActivity {
                     btnAnswer2_Shapes.setEnabled(false);
                     confirmClicked_Shapes++;
                 }
-                else if (btnText.equals(wrongAnswer_Shapes)) {
+                if (btnText.equals(wrongAnswer_Shapes)) {
                     //Wrong
                     voiceover.release();
                     choice1.release();

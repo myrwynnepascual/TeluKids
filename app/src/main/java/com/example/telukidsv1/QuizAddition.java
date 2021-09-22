@@ -188,7 +188,7 @@ public class QuizAddition extends AppCompatActivity {
                     btnAnswer2_Addition.setEnabled(false);
                     confirmClicked_Addition++;
                 }
-                else if (btnText.equals(wrongAnswer_Addition)) {
+               if (btnText.equals(wrongAnswer_Addition)) {
                     //Wrong
                     voiceover.release();
                     choice1.release();

@@ -188,7 +188,7 @@ public class QuizColors extends AppCompatActivity {
                     btnAnswer2_Colors.setEnabled(false);
                     confirmClicked_Colors++;
                 }
-                else if (btnText.equals(wrongAnswer_Colors)) {
+               if (btnText.equals(wrongAnswer_Colors)) {
                     //Wrong
                     voiceover.release();
                     choice1.release();

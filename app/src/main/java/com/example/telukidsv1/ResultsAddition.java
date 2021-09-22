@@ -22,6 +22,7 @@ import com.google.firebase.firestore.Transaction;
 
 public class ResultsAddition extends AppCompatActivity {
     private int  score_addition;
+    private int initialScore_addition;
     MediaPlayer congrats;
     FirebaseAuth fAuth;
     FirebaseFirestore fStore;
@@ -39,7 +40,6 @@ public class ResultsAddition extends AppCompatActivity {
 
         congrats = MediaPlayer.create(this, R.raw.yaysfx);
         congrats.start();
-
 
         fAuth = FirebaseAuth.getInstance();
         fStore = FirebaseFirestore.getInstance();
@@ -65,10 +65,16 @@ public class ResultsAddition extends AppCompatActivity {
         fStore.runTransaction(new Transaction.Function<Void>() {
             @Override
             public Void apply(@NonNull Transaction transaction) throws FirebaseFirestoreException {
-                DocumentSnapshot snapshot = transaction.get(docRef);
+                DocumentSnapshot documentSnapshot = transaction.get(docRef);
+                initialScore_addition = documentSnapshot.getLong("addition quiz score").intValue();
 
-                transaction.update(docRef, "addition quiz score", score_addition);
-                transaction.update(docRef, "addition achievement", achievement_addition);
+                if(score_addition > initialScore_addition) {
+                    transaction.update(docRef, "addition quiz score", score_addition);
+                    transaction.update(docRef, "addition achievement", achievement_addition);
+                }
+                else{
+                    transaction.update(docRef, "Addition quiz score", initialScore_addition);
+                }
                 return null;
             }
         });

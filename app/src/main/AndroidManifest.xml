@@ -272,6 +272,12 @@
         <activity
             android:name=".ResultsDiscipline"
             android:exported="true" />
+        <activity
+            android:name=".QuizHonesty"
+            android:exported="true" />
+        <activity
+            android:name=".ResultsHonesty"
+            android:exported="true" />
     </application>
 
 </manifest>

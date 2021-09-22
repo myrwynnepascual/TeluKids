@@ -189,7 +189,7 @@ public class QuizSubtraction extends AppCompatActivity {
                     btnAnswer2_Subtraction.setEnabled(false);
                     confirmClicked_Subtraction++;
                 }
-                else if (btnText.equals(wrongAnswer_Subtraction)) {
+                if (btnText.equals(wrongAnswer_Subtraction)) {
                     //Wrong
                     voiceover.release();
                     choice1.release();

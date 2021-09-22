@@ -38,7 +38,7 @@ public class ChooseModeHonesty extends AppCompatActivity {
         assessCMH36.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                //startActivity(new Intent(ChooseModeHonesty.this,QuizHonestyNumbers.class));
+                startActivity(new Intent(ChooseModeHonesty.this,QuizHonesty.class));
             }
         });
 

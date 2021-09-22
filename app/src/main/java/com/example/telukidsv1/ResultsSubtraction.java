@@ -22,6 +22,7 @@ import com.google.firebase.firestore.Transaction;
 
 public class ResultsSubtraction extends AppCompatActivity {
     private int  score_subtraction;
+    private int initialScore_subtraction;
     MediaPlayer congrats;
     FirebaseAuth fAuth;
     FirebaseFirestore fStore;
@@ -64,10 +65,16 @@ public class ResultsSubtraction extends AppCompatActivity {
         fStore.runTransaction(new Transaction.Function<Void>() {
             @Override
             public Void apply(@NonNull Transaction transaction) throws FirebaseFirestoreException {
-                DocumentSnapshot snapshot = transaction.get(docRef);
+                DocumentSnapshot documentSnapshot = transaction.get(docRef);
+                initialScore_subtraction = documentSnapshot.getLong("subtraction quiz score").intValue();
 
-                transaction.update(docRef, "subtraction quiz score", score_subtraction);
-                transaction.update(docRef, "subtraction achievement", achievement_subtraction);
+                if(score_subtraction > initialScore_subtraction) {
+                    transaction.update(docRef, "subtraction quiz score", score_subtraction);
+                    transaction.update(docRef, "subtraction achievement", achievement_subtraction);
+                }
+                else{
+                    transaction.update(docRef, "subtraction quiz score", initialScore_subtraction);
+                }
                 return null;
             }
         });
@@ -75,7 +82,7 @@ public class ResultsSubtraction extends AppCompatActivity {
         achievementsbtnCLC_Subtraction.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent proceed = new Intent(ResultsSubtraction.this, BasicConcepts.class);
+                Intent proceed = new Intent(ResultsSubtraction.this, Achievements3to6Subtraction2.class);
                 startActivity(proceed);
             }
         });

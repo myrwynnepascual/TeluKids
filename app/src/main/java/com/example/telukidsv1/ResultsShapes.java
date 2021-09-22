@@ -22,6 +22,7 @@ import com.google.firebase.firestore.Transaction;
 
 public class ResultsShapes extends AppCompatActivity {
     private int  score_shapes;
+    private int initialScore_shapes;
     MediaPlayer congrats;
     FirebaseAuth fAuth;
     FirebaseFirestore fStore;
@@ -64,10 +65,16 @@ public class ResultsShapes extends AppCompatActivity {
         fStore.runTransaction(new Transaction.Function<Void>() {
             @Override
             public Void apply(@NonNull Transaction transaction) throws FirebaseFirestoreException {
-                DocumentSnapshot snapshot = transaction.get(docRef);
+                DocumentSnapshot documentSnapshot = transaction.get(docRef);
+                initialScore_shapes = documentSnapshot.getLong("shapes quiz score").intValue();
 
-                transaction.update(docRef, "shapes quiz score", score_shapes);
-                transaction.update(docRef, "shapes achievement", achievement_shapes);
+                if(score_shapes > initialScore_shapes) {
+                    transaction.update(docRef, "shapes quiz score", score_shapes);
+                    transaction.update(docRef, "shapes achievement", achievement_shapes);
+                }
+                else{
+                    transaction.update(docRef, "shapes quiz score", initialScore_shapes);
+                }
                 return null;
             }
         });

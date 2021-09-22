@@ -21,7 +21,8 @@ import com.google.firebase.firestore.FirebaseFirestoreException;
 import com.google.firebase.firestore.Transaction;
 
 public class ResultsCountingNumbers extends AppCompatActivity {
-    private int score_counting;
+    private int  score_counting;
+    private int initialScore_counting;
     MediaPlayer congrats;
     FirebaseAuth fAuth;
     FirebaseFirestore fStore;
@@ -35,7 +36,7 @@ public class ResultsCountingNumbers extends AppCompatActivity {
         ImageView imgTrophy_Counting = findViewById(R.id.imgTrophy_Counting);
         ImageButton achievementsbtnCLC_Counting = findViewById(R.id.achievementsbtnCLC_Counting);
         ImageButton btnReadLesson_Quiz_Counting = findViewById(R.id.btnReadLesson_Quiz_Counting);
-        ImageButton homepageCLC_Counting = findViewById(R.id.homepageCLC_Counting);;
+        ImageButton homepageCLC_Counting = findViewById(R.id.homepageCLC_Counting);
 
         congrats = MediaPlayer.create(this, R.raw.yaysfx);
         congrats.start();
@@ -64,10 +65,16 @@ public class ResultsCountingNumbers extends AppCompatActivity {
         fStore.runTransaction(new Transaction.Function<Void>() {
             @Override
             public Void apply(@NonNull Transaction transaction) throws FirebaseFirestoreException {
-                DocumentSnapshot snapshot = transaction.get(docRef);
+                DocumentSnapshot documentSnapshot = transaction.get(docRef);
+                initialScore_counting = documentSnapshot.getLong("counting quiz score").intValue();
 
-                transaction.update(docRef, "counting quiz score", score_counting);
-                transaction.update(docRef, "counting achievement", achievement_counting);
+                if(score_counting > initialScore_counting) {
+                    transaction.update(docRef, "counting quiz score", score_counting);
+                    transaction.update(docRef, "counting achievement", achievement_counting);
+                }
+                else{
+                    transaction.update(docRef, "counting quiz score", initialScore_counting);
+                }
                 return null;
             }
         });
@@ -82,7 +89,8 @@ public class ResultsCountingNumbers extends AppCompatActivity {
         btnReadLesson_Quiz_Counting.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(ResultsCountingNumbers.this,BasicConcepts.class));
+                Intent proceed = new Intent(ResultsCountingNumbers.this, BasicConcepts.class);
+                startActivity(proceed);
             }
         });
         homepageCLC_Counting.setOnClickListener(new View.OnClickListener() {

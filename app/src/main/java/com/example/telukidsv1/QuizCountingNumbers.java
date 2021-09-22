@@ -188,7 +188,7 @@ public class QuizCountingNumbers extends AppCompatActivity {
                     btnAnswer2_Counting.setEnabled(false);
                     confirmClicked_Counting++;
                 }
-                else if (btnText.equals(wrongAnswer_Counting)) {
+                if (btnText.equals(wrongAnswer_Counting)) {
                     //Wrong
                     voiceover.release();
                     choice1.release();

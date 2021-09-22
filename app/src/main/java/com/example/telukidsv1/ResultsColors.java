@@ -22,6 +22,7 @@ import com.google.firebase.firestore.Transaction;
 
 public class ResultsColors extends AppCompatActivity {
     private int  score_colors;
+    private int initialScore_colors;
     MediaPlayer congrats;
     FirebaseAuth fAuth;
     FirebaseFirestore fStore;
@@ -64,10 +65,16 @@ public class ResultsColors extends AppCompatActivity {
         fStore.runTransaction(new Transaction.Function<Void>() {
             @Override
             public Void apply(@NonNull Transaction transaction) throws FirebaseFirestoreException {
-                DocumentSnapshot snapshot = transaction.get(docRef);
+                DocumentSnapshot documentSnapshot = transaction.get(docRef);
+                initialScore_colors = documentSnapshot.getLong("colors quiz score").intValue();
 
-                transaction.update(docRef, "colors quiz score", score_colors);
-                transaction.update(docRef, "colors achievement", achievement_colors);
+                if(score_colors > initialScore_colors) {
+                    transaction.update(docRef, "Colors quiz score", score_colors);
+                    transaction.update(docRef, "Colors achievement", achievement_colors);
+                }
+                else{
+                    transaction.update(docRef, "Colors quiz score", initialScore_colors);
+                }
                 return null;
             }
         });

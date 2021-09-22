@@ -14,9 +14,9 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="20dp"
+        android:background="@drawable/gquizbg"
         android:gravity="center"
         android:orientation="vertical"
-        android:background="@drawable/gquizbg"
         android:visibility="invisible"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -25,32 +25,32 @@
         app:layout_constraintTop_toTopOf="parent">
 
 
-            <TextView
-                android:id="@+id/countLabel_Discipline"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center_horizontal"
-                android:layout_marginTop="10dp"
-                android:fontFamily="@font/leaguespartanbold"
-                android:text="Question #1"
-                android:textColor="#E9724C"
-                android:textSize="30sp"
-                android:visibility="invisible" />
+        <TextView
+            android:id="@+id/countLabel_Discipline"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="10dp"
+            android:fontFamily="@font/leaguespartanbold"
+            android:text="Question #1"
+            android:textColor="#E9724C"
+            android:textSize="30sp"
+            android:visibility="invisible" />
 
-            <TextView
-                android:id="@+id/questionLabel_Discipline"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center_horizontal"
-                android:layout_marginTop="10dp"
-                android:padding="10dp"
-                android:layout_marginBottom="10dp"
-                android:fontFamily="@font/leaguespartanbold"
-                android:text="Question"
-                android:textAlignment="center"
-                android:textColor="#FFB427"
-                android:textSize="22sp"
-                android:visibility="invisible" />
+        <TextView
+            android:id="@+id/questionLabel_Discipline"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp"
+            android:fontFamily="@font/leaguespartanbold"
+            android:padding="10dp"
+            android:text="Question"
+            android:textAlignment="center"
+            android:textColor="#FFB427"
+            android:textSize="22sp"
+            android:visibility="invisible" />
 
         <Button
 

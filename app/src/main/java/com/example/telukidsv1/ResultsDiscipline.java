@@ -22,6 +22,7 @@ import com.google.firebase.firestore.Transaction;
 
 public class ResultsDiscipline extends AppCompatActivity {
     private int  score_discipline;
+    private int initialScore_discipline;
     MediaPlayer congrats;
     FirebaseAuth fAuth;
     FirebaseFirestore fStore;
@@ -64,10 +65,16 @@ public class ResultsDiscipline extends AppCompatActivity {
         fStore.runTransaction(new Transaction.Function<Void>() {
             @Override
             public Void apply(@NonNull Transaction transaction) throws FirebaseFirestoreException {
-                DocumentSnapshot snapshot = transaction.get(docRef);
+                DocumentSnapshot documentSnapshot = transaction.get(docRef);
+                initialScore_discipline = documentSnapshot.getLong("discipline quiz score").intValue();
 
-                transaction.update(docRef, "discipline quiz score", score_discipline);
-                transaction.update(docRef, "discipline achievement", achievement_discipline);
+                if(score_discipline > initialScore_discipline) {
+                    transaction.update(docRef, "discipline quiz score", score_discipline);
+                    transaction.update(docRef, "discipline achievement", achievement_discipline);
+                }
+                else{
+                    transaction.update(docRef, "discipline quiz score", initialScore_discipline);
+                }
                 return null;
             }
         });
