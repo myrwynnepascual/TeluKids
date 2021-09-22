@@ -679,8 +679,8 @@ public class Achievements3to6Honesty2 extends AppCompatActivity {
         backbtnAchievements3to6.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                //Intent proceed = new Intent(Achievements3to6Honesty2.this, ResultsHonesty.class);
-                //startActivity(proceed);
+                Intent proceed = new Intent(Achievements3to6Honesty2.this, ResultsHonesty.class);
+                startActivity(proceed);
             }
         });
     }

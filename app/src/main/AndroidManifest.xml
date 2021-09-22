@@ -12,6 +12,21 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.TeluKidsV1">
         <activity
+            android:name=".Achievements3to6Compassion"
+            android:exported="true" />
+        <activity
+            android:name=".CompassionLessonCongrats"
+            android:exported="true" />
+        <activity
+            android:name=".LessonCompassion"
+            android:exported="true" />
+        <activity
+            android:name=".ChooseModeCompassion"
+            android:exported="true" />
+        <activity
+            android:name=".LessonIntroCompassion"
+            android:exported="true" />
+        <activity
             android:name=".Achievements3to6Sociability"
             android:exported="true" />
         <activity

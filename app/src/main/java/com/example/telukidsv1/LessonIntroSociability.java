@@ -22,7 +22,7 @@ public class LessonIntroSociability extends AppCompatActivity {
         setContentView(R.layout.activity_lesson_intro_sociability);
 
         videoViewISC = findViewById(R.id.videoISC);
-        videoPathISC = "android.resource://" + getPackageName() + "/" + R.raw.shapesintrovideo;
+        videoPathISC = "android.resource://" + getPackageName() + "/" + R.raw.sociabilityintrovideo;
         uriISC = Uri.parse(videoPathISC);
         videoViewISC.setVideoURI(uriISC);
 

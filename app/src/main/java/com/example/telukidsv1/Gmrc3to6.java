@@ -72,7 +72,7 @@ public class Gmrc3to6 extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                //startActivity(new Intent(Gmrc3to6.this, LessonIntroCompassion.class));
+                startActivity(new Intent(Gmrc3to6.this, LessonIntroCompassion.class));
 
             }
         });

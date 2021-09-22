@@ -22,7 +22,7 @@ public class LessonIntroRespect extends AppCompatActivity {
         setContentView(R.layout.activity_lesson_intro_respect);
 
         videoViewIR = findViewById(R.id.videoIR);
-        videoPathIR = "android.resource://" + getPackageName() + "/" + R.raw.shapesintrovideo;
+        videoPathIR = "android.resource://" + getPackageName() + "/" + R.raw.respectintrovideo;
         uriIR = Uri.parse(videoPathIR);
         videoViewIR.setVideoURI(uriIR);
 

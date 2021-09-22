@@ -55,27 +55,33 @@
         <Button
 
             android:id="@+id/btnAnswer1_Discipline"
-            android:layout_width="315dp"
+            android:layout_width="match_parent"
             android:layout_height="80dp"
+            android:layout_marginLeft="25dp"
+            android:layout_marginRight="25dp"
             android:layout_gravity="center_horizontal"
             android:layout_marginTop="20dp"
             android:background="@drawable/answerbutton"
             android:fontFamily="@font/arialroundedmt"
             android:onClick="checkAnswer"
             android:text="Answer1"
+            android:padding="15dp"
             android:textColor="@color/white"
             android:visibility="invisible" />
 
         <Button
             android:id="@+id/btnAnswer2_Discipline"
-            android:layout_width="315dp"
+            android:layout_width="match_parent"
             android:layout_height="80dp"
+            android:layout_marginLeft="25dp"
+            android:layout_marginRight="25dp"
             android:layout_gravity="center_horizontal"
             android:layout_marginTop="20dp"
             android:background="@drawable/answerbutton"
             android:fontFamily="@font/arialroundedmt"
             android:onClick="checkAnswer"
             android:text="Answer2"
+            android:padding="15dp"
             android:textColor="@color/white"
             android:visibility="invisible" />
 
