@@ -68,11 +68,11 @@ public class ResultsSubtraction extends AppCompatActivity {
                 DocumentSnapshot documentSnapshot = transaction.get(docRef);
                 initialScore_subtraction = documentSnapshot.getLong("subtraction quiz score").intValue();
 
-                if(score_subtraction > initialScore_subtraction) {
+                if(score_subtraction >= initialScore_subtraction) {
                     transaction.update(docRef, "subtraction quiz score", score_subtraction);
                     transaction.update(docRef, "subtraction achievement", achievement_subtraction);
                 }
-                else{
+                if(score_subtraction < initialScore_subtraction){
                     transaction.update(docRef, "subtraction quiz score", initialScore_subtraction);
                 }
                 return null;

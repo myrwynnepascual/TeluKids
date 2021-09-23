@@ -68,12 +68,12 @@ public class ResultsAddition extends AppCompatActivity {
                 DocumentSnapshot documentSnapshot = transaction.get(docRef);
                 initialScore_addition = documentSnapshot.getLong("addition quiz score").intValue();
 
-                if(score_addition > initialScore_addition) {
+                if(score_addition >= initialScore_addition) {
                     transaction.update(docRef, "addition quiz score", score_addition);
                     transaction.update(docRef, "addition achievement", achievement_addition);
                 }
-                else{
-                    transaction.update(docRef, "Addition quiz score", initialScore_addition);
+                if(score_addition < initialScore_addition){
+                    transaction.update(docRef, "addition quiz score", initialScore_addition);
                 }
                 return null;
             }

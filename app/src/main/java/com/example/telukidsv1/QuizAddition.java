@@ -1,5 +1,6 @@
 package com.example.telukidsv1;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
@@ -12,6 +13,14 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.firestore.DocumentReference;
+import com.google.firebase.firestore.DocumentSnapshot;
+import com.google.firebase.firestore.FirebaseFirestore;
+import com.google.firebase.firestore.FirebaseFirestoreException;
+import com.google.firebase.firestore.Transaction;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -31,6 +40,7 @@ public class QuizAddition extends AppCompatActivity {
     Button btnAnswer1_Addition;
     Button btnAnswer2_Addition;
     Button btnConfirm_Addition;
+
 
     private String rightAnswer_Addition;
     private String wrongAnswer_Addition;
@@ -68,7 +78,6 @@ public class QuizAddition extends AppCompatActivity {
         btnAnswer1_Addition = (Button)findViewById(R.id.btnAnswer1_Addition);
         btnAnswer2_Addition = (Button)findViewById(R.id.btnAnswer2_Addition);
         btnConfirm_Addition = (Button)findViewById(R.id.btnConfirm_Addition);
-
 
         //Create quizArray from quizData
         for(int i = 0; i < quizData_Addition.length; i++){

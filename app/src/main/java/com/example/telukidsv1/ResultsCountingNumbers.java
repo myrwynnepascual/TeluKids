@@ -68,11 +68,11 @@ public class ResultsCountingNumbers extends AppCompatActivity {
                 DocumentSnapshot documentSnapshot = transaction.get(docRef);
                 initialScore_counting = documentSnapshot.getLong("counting quiz score").intValue();
 
-                if(score_counting > initialScore_counting) {
+                if(score_counting >= initialScore_counting) {
                     transaction.update(docRef, "counting quiz score", score_counting);
                     transaction.update(docRef, "counting achievement", achievement_counting);
                 }
-                else{
+                if(score_counting < initialScore_counting){
                     transaction.update(docRef, "counting quiz score", initialScore_counting);
                 }
                 return null;

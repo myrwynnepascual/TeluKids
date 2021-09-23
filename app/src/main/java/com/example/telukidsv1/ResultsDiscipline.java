@@ -68,11 +68,11 @@ public class ResultsDiscipline extends AppCompatActivity {
                 DocumentSnapshot documentSnapshot = transaction.get(docRef);
                 initialScore_discipline = documentSnapshot.getLong("discipline quiz score").intValue();
 
-                if(score_discipline > initialScore_discipline) {
+                if(score_discipline >= initialScore_discipline) {
                     transaction.update(docRef, "discipline quiz score", score_discipline);
                     transaction.update(docRef, "discipline achievement", achievement_discipline);
                 }
-                else{
+                if(score_discipline < initialScore_discipline){
                     transaction.update(docRef, "discipline quiz score", initialScore_discipline);
                 }
                 return null;

@@ -38,7 +38,7 @@ public class ChooseModeRespect extends AppCompatActivity {
         assessCMR.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                //startActivity(new Intent(ChooseModeRespect.this, QuizRespect.class));
+                startActivity(new Intent(ChooseModeRespect.this, QuizRespect.class));
             }
         });
 
