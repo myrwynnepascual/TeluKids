@@ -24,7 +24,7 @@ public class ChooseModeCompassion extends AppCompatActivity {
         backCMCP.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(ChooseModeCompassion.this,BasicConcepts.class));
+                startActivity(new Intent(ChooseModeCompassion.this, Gmrc3to6.class));
             }
         });
 
