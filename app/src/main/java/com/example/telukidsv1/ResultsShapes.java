@@ -68,11 +68,11 @@ public class ResultsShapes extends AppCompatActivity {
                 DocumentSnapshot documentSnapshot = transaction.get(docRef);
                 initialScore_shapes = documentSnapshot.getLong("shapes quiz score").intValue();
 
-                if(score_shapes > initialScore_shapes) {
+                if(score_shapes >= initialScore_shapes) {
                     transaction.update(docRef, "shapes quiz score", score_shapes);
                     transaction.update(docRef, "shapes achievement", achievement_shapes);
                 }
-                else{
+                if(score_shapes < initialScore_shapes){
                     transaction.update(docRef, "shapes quiz score", initialScore_shapes);
                 }
                 return null;

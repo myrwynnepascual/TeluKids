@@ -42,6 +42,12 @@
             android:name=".LessonIntroSociability"
             android:exported="true" />
         <activity
+            android:name=".Achievements3to6Sociability2"
+            android:exported="true" />
+        <activity
+            android:name=".Achievements3to6Compassion2"
+            android:exported="true" />
+        <activity
             android:name=".Achievements3to6Honesty2"
             android:exported="true" />
         <activity
@@ -292,6 +298,24 @@
             android:exported="true" />
         <activity
             android:name=".ResultsHonesty"
+            android:exported="true" />
+        <activity
+            android:name=".QuizRespect"
+            android:exported="true" />
+        <activity
+            android:name=".ResultsRespect"
+            android:exported="true" />
+        <activity
+            android:name=".QuizSociability"
+            android:exported="true" />
+        <activity
+            android:name=".ResultsSociability"
+            android:exported="true" />
+        <activity
+            android:name=".QuizCompassion"
+            android:exported="true" />
+        <activity
+            android:name=".ResultsCompassion"
             android:exported="true" />
     </application>
 

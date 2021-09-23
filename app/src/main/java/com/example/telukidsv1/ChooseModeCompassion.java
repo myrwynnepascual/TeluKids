@@ -38,7 +38,7 @@ public class ChooseModeCompassion extends AppCompatActivity {
         assessCMCP.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                //startActivity(new Intent(ChooseModeCompassion.this,QuizCompassion.class));
+                startActivity(new Intent(ChooseModeCompassion.this,QuizCompassion.class));
             }
         });
 

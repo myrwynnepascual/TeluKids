@@ -68,12 +68,12 @@ public class ResultsColors extends AppCompatActivity {
                 DocumentSnapshot documentSnapshot = transaction.get(docRef);
                 initialScore_colors = documentSnapshot.getLong("colors quiz score").intValue();
 
-                if(score_colors > initialScore_colors) {
-                    transaction.update(docRef, "Colors quiz score", score_colors);
-                    transaction.update(docRef, "Colors achievement", achievement_colors);
+                if(score_colors >= initialScore_colors) {
+                    transaction.update(docRef, "colors quiz score", score_colors);
+                    transaction.update(docRef, "colors achievement", achievement_colors);
                 }
-                else{
-                    transaction.update(docRef, "Colors quiz score", initialScore_colors);
+                if(score_colors < initialScore_colors){
+                    transaction.update(docRef, "colors quiz score", initialScore_colors);
                 }
                 return null;
             }

@@ -38,7 +38,7 @@ public class ChooseModeSociability extends AppCompatActivity {
         assessCMSC.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                //startActivity(new Intent(ChooseModeSociability.this, QuizSociability.class));
+                startActivity(new Intent(ChooseModeSociability.this, QuizSociability.class));
             }
         });
 

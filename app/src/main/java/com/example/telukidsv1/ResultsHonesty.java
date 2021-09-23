@@ -68,11 +68,11 @@ public class ResultsHonesty extends AppCompatActivity {
                 DocumentSnapshot documentSnapshot = transaction.get(docRef);
                 initialScore_honesty = documentSnapshot.getLong("honesty quiz score").intValue();
 
-                if(score_honesty > initialScore_honesty) {
+                if(score_honesty >= initialScore_honesty) {
                     transaction.update(docRef, "honesty quiz score", score_honesty);
                     transaction.update(docRef, "honesty achievement", achievement_honesty);
                 }
-                else{
+                if(score_honesty < initialScore_honesty){
                     transaction.update(docRef, "honesty quiz score", initialScore_honesty);
                 }
                 return null;
