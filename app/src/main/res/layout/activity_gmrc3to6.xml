@@ -8,7 +8,7 @@
     tools:context=".Gmrc3to6">
 
     <LinearLayout
-        android:id="@+id/linearLayout1BC"
+        android:id="@+id/linearLayout1G36"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_margin="20dp"

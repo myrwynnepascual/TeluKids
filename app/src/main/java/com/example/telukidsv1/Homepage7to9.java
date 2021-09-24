@@ -98,14 +98,14 @@ public class Homepage7to9 extends AppCompatActivity {
         btnGMRC79Topics.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                //startActivity(new Intent(Homepage7to9.this, GMRC79Page.class));
+                startActivity(new Intent(Homepage7to9.this, Gmrc7to9.class));
             }
         });
 
         btnAchievements.setOnClickListener(new View.OnClickListener() {
              @Override
             public void onClick(View v) {
-                 //startActivity(new Intent(Homepage7to9.this, Achivements.class));
+                 startActivity(new Intent(Homepage7to9.this, Achievements7to9Main.class));
             }
          });
 

@@ -12,6 +12,33 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.TeluKidsV1">
         <activity
+            android:name=".ChooseModeLove"
+            android:exported="true" />
+        <activity
+            android:name=".LessonIntroLove"
+            android:exported="true" />
+        <activity
+            android:name=".Achievements7to9Main"
+            android:exported="true" />
+        <activity
+            android:name=".Achievements7to9Responsibility"
+            android:exported="true" />
+        <activity
+            android:name=".ResponsibilityLessonCongrats"
+            android:exported="true" />
+        <activity
+            android:name=".LessonResponsibility"
+            android:exported="true" />
+        <activity
+            android:name=".ChooseModeResponsibility"
+            android:exported="true" />
+        <activity
+            android:name=".LessonIntroResponsibility"
+            android:exported="true" />
+        <activity
+            android:name=".Gmrc7to9"
+            android:exported="true" />
+        <activity
             android:name=".Achievements3to6Compassion"
             android:exported="true" />
         <activity
