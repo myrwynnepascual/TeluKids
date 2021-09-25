@@ -12,6 +12,15 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.TeluKidsV1">
         <activity
+            android:name=".Achievements7to9Love"
+            android:exported="true" />
+        <activity
+            android:name=".LoveLessonCongrats"
+            android:exported="true" />
+        <activity
+            android:name=".LessonLove"
+            android:exported="true" />
+        <activity
             android:name=".ChooseModeLove"
             android:exported="true" />
         <activity

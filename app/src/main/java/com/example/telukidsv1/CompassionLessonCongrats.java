@@ -69,7 +69,7 @@ public class CompassionLessonCongrats extends AppCompatActivity {
         btnassessmentCPLC.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                //startActivity(new Intent(CompassionLessonCongrats.this, QuizCompassion.class));
+                startActivity(new Intent(CompassionLessonCongrats.this, QuizCompassion.class));
             }
         });
 

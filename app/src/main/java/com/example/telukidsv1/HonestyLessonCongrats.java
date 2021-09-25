@@ -70,7 +70,7 @@ public class HonestyLessonCongrats extends AppCompatActivity {
         btnassessmentHLC.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                //startActivity(new Intent(HonestyLessonCongrats.this, QuizHonesty.class));
+                startActivity(new Intent(HonestyLessonCongrats.this, QuizHonesty.class));
             }
         });
 

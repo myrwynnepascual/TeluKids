@@ -31,7 +31,7 @@ public class ChooseModeLove extends AppCompatActivity {
         learnCML79.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                //startActivity(new Intent(ChooseModeLove.this, LessonLove.class));
+                startActivity(new Intent(ChooseModeLove.this, LessonLove.class));
             }
         });
 
