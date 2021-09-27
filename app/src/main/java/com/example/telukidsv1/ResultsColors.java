@@ -83,6 +83,7 @@ public class ResultsColors extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent proceed = new Intent(ResultsColors.this, Achievements3to6Colors2.class);
+                proceed.putExtra("RIGHT_ANSWER_COUNT_Colors", score_colors);
                 startActivity(proceed);
             }
         });

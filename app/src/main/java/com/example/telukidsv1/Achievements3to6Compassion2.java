@@ -18,6 +18,7 @@ import com.google.firebase.firestore.FirebaseFirestoreException;
 import com.google.firebase.firestore.Transaction;
 
 public class Achievements3to6Compassion2 extends AppCompatActivity {
+    private int score_compassion;
 
     FirebaseAuth fAuth;
     FirebaseFirestore fStore;
@@ -676,10 +677,12 @@ public class Achievements3to6Compassion2 extends AppCompatActivity {
             }
         });
 
+        score_compassion = getIntent().getIntExtra("RIGHT_ANSWER_COUNT_Compassion", 0);
         backbtnAchievements3to6.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent proceed = new Intent(Achievements3to6Compassion2.this, ResultsCompassion.class);
+                proceed.putExtra("RIGHT_ANSWER_COUNT_Compassion", score_compassion);
                 startActivity(proceed);
             }
         });

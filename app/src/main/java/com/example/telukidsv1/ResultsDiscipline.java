@@ -83,6 +83,7 @@ public class ResultsDiscipline extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent proceed = new Intent(ResultsDiscipline.this, Achievements3to6Discipline2.class);
+                proceed.putExtra("RIGHT_ANSWER_COUNT_Discipline", score_discipline);
                 startActivity(proceed);
             }
         });

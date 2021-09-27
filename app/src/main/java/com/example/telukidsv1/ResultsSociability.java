@@ -83,6 +83,7 @@ public class ResultsSociability extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent proceed = new Intent(ResultsSociability.this, Achievements3to6Sociability2.class);
+                proceed.putExtra("RIGHT_ANSWER_COUNT_Sociability", score_sociability);
                 startActivity(proceed);
             }
         });

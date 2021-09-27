@@ -86,6 +86,7 @@ public class ResultsCompassion extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent proceed = new Intent(ResultsCompassion.this, Achievements3to6Compassion2.class);
+                proceed.putExtra("RIGHT_ANSWER_COUNT_Compassion", score_compassion);
                 startActivity(proceed);
             }
         });

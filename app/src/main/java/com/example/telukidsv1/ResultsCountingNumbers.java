@@ -83,6 +83,7 @@ public class ResultsCountingNumbers extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent proceed = new Intent(ResultsCountingNumbers.this, Achievements3to6Counting2.class);
+                proceed.putExtra("RIGHT_ANSWER_COUNT_Counting", score_counting);
                 startActivity(proceed);
             }
         });

@@ -82,7 +82,8 @@ public class ResultsShapes extends AppCompatActivity {
         achievementsbtnCLC_Shapes.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent proceed = new Intent(ResultsShapes.this, Achievements3to6Shapes2.class);
+                Intent proceed = new Intent(getApplicationContext(), Achievements3to6Shapes2.class);
+                proceed.putExtra("RIGHT_ANSWER_COUNT_Shapes", score_shapes);
                 startActivity(proceed);
             }
         });

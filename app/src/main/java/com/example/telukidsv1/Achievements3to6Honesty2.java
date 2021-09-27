@@ -18,7 +18,7 @@ import com.google.firebase.firestore.FirebaseFirestoreException;
 import com.google.firebase.firestore.Transaction;
 
 public class Achievements3to6Honesty2 extends AppCompatActivity {
-
+    private int score_honesty;
     FirebaseAuth fAuth;
     FirebaseFirestore fStore;
     FirebaseUser user;
@@ -676,10 +676,12 @@ public class Achievements3to6Honesty2 extends AppCompatActivity {
             }
         });
 
+        score_honesty = getIntent().getIntExtra("RIGHT_ANSWER_COUNT_Honesty", 0);
         backbtnAchievements3to6.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent proceed = new Intent(Achievements3to6Honesty2.this, ResultsHonesty.class);
+                proceed.putExtra("RIGHT_ANSWER_COUNT_Honesty", score_honesty);
                 startActivity(proceed);
             }
         });
