@@ -83,6 +83,7 @@ public class ResultsHonesty extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent proceed = new Intent(ResultsHonesty.this, Achievements3to6Honesty2.class);
+                proceed.putExtra("RIGHT_ANSWER_COUNT_Honesty", score_honesty);
                 startActivity(proceed);
             }
         });

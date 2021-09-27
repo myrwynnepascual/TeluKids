@@ -83,6 +83,7 @@ public class ResultsSubtraction extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent proceed = new Intent(ResultsSubtraction.this, Achievements3to6Subtraction2.class);
+                proceed.putExtra("RIGHT_ANSWER_COUNT_Subtraction", score_subtraction);
                 startActivity(proceed);
             }
         });

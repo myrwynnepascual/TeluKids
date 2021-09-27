@@ -83,6 +83,7 @@ public class ResultsRespect extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent proceed = new Intent(ResultsRespect.this, Achievements3to6Respect2.class);
+                proceed.putExtra("RIGHT_ANSWER_COUNT_Respect", score_respect);
                 startActivity(proceed);
             }
         });

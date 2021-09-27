@@ -18,6 +18,7 @@ import com.google.firebase.firestore.FirebaseFirestoreException;
 import com.google.firebase.firestore.Transaction;
 
 public class Achievements3to6Discipline2 extends AppCompatActivity {
+    private int  score_discipline;
 
     FirebaseAuth fAuth;
     FirebaseFirestore fStore;
@@ -676,10 +677,12 @@ public class Achievements3to6Discipline2 extends AppCompatActivity {
             }
         });
 
+        score_discipline = getIntent().getIntExtra("RIGHT_ANSWER_COUNT_Discipline", 0);
         backbtnAchievements3to6.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent proceed = new Intent(Achievements3to6Discipline2.this, ResultsDiscipline.class);
+                proceed.putExtra("RIGHT_ANSWER_COUNT_Discipline", score_discipline);
                 startActivity(proceed);
             }
         });

@@ -18,6 +18,7 @@ import com.google.firebase.firestore.FirebaseFirestoreException;
 import com.google.firebase.firestore.Transaction;
 
 public class Achievements3to6Colors2 extends AppCompatActivity {
+    private int score_colors;
 
     FirebaseAuth fAuth;
     FirebaseFirestore fStore;
@@ -675,10 +676,12 @@ public class Achievements3to6Colors2 extends AppCompatActivity {
             }
         });
 
+        score_colors = getIntent().getIntExtra("RIGHT_ANSWER_COUNT_Colors", 0);
         backbtnAchievements3to6.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent proceed = new Intent(Achievements3to6Colors2.this, ResultsColors.class);
+                proceed.putExtra("RIGHT_ANSWER_COUNT_Colors", score_colors);
                 startActivity(proceed);
             }
         });

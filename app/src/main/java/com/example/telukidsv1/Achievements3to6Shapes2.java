@@ -18,6 +18,7 @@ import com.google.firebase.firestore.FirebaseFirestoreException;
 import com.google.firebase.firestore.Transaction;
 
 public class Achievements3to6Shapes2 extends AppCompatActivity {
+    private int  score_shapes;
 
     FirebaseAuth fAuth;
     FirebaseFirestore fStore;
@@ -675,10 +676,12 @@ public class Achievements3to6Shapes2 extends AppCompatActivity {
             }
         });
 
+        score_shapes = getIntent().getIntExtra("RIGHT_ANSWER_COUNT_Shapes", 0);
         backbtnAchievements3to6.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent proceed = new Intent(Achievements3to6Shapes2.this, ResultsShapes.class);
+                proceed.putExtra("RIGHT_ANSWER_COUNT_Shapes", score_shapes);
                 startActivity(proceed);
             }
         });

@@ -83,6 +83,7 @@ public class ResultsAddition extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent proceed = new Intent(ResultsAddition.this, Achievements3to6Addition2.class);
+                proceed.putExtra("RIGHT_ANSWER_COUNT_Addition", score_addition);
                 startActivity(proceed);
             }
         });
