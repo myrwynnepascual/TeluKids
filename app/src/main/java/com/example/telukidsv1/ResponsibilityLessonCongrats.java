@@ -76,7 +76,7 @@ public class ResponsibilityLessonCongrats extends AppCompatActivity {
         btnhomepageRPLC.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(ResponsibilityLessonCongrats.this, Homepage3to6.class));
+                startActivity(new Intent(ResponsibilityLessonCongrats.this, Homepage7to9.class));
             }
         });
     }

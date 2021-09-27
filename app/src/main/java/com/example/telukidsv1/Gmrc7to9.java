@@ -46,7 +46,7 @@ public class Gmrc7to9 extends AppCompatActivity {
         btnObedience.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                //startActivity(new Intent(Gmrc7to9.this, LessonIntroObedience.class));
+                startActivity(new Intent(Gmrc7to9.this, LessonIntroObedience.class));
             }
         });
 

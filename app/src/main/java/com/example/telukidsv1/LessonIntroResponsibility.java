@@ -50,5 +50,6 @@ public class LessonIntroResponsibility extends AppCompatActivity {
 
             }
         });
+
     }
 }
