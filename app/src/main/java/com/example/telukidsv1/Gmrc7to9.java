@@ -53,7 +53,7 @@ public class Gmrc7to9 extends AppCompatActivity {
         btnDoingGood.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                //startActivity(new Intent(Gmrc7to9.this, LessonIntroDoingGood.class));
+                startActivity(new Intent(Gmrc7to9.this, LessonIntroDoingGood.class));
             }
         });
 

@@ -12,10 +12,22 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.TeluKidsV1">
         <activity
-            android:name=".Achievements7to9Obedience"
+            android:name=".Achievements7to9DoingGood"
             android:exported="true" />
         <activity
-            android:name=".Achivemenets7to9Obedience"
+            android:name=".DoingGoodLessonCongrats"
+            android:exported="true" />
+        <activity
+            android:name=".LessonDoingGood"
+            android:exported="true" />
+        <activity
+            android:name=".ChooseModeDoingGood"
+            android:exported="true" />
+        <activity
+            android:name=".LessonIntroDoingGood"
+            android:exported="true" />
+        <activity
+            android:name=".Achievements7to9Obedience"
             android:exported="true" />
         <activity
             android:name=".ObedienceLessonCongrats"
