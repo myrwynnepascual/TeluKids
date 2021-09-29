@@ -125,6 +125,18 @@
             android:name=".Achievements3to6Discipline2"
             android:exported="true" />
         <activity
+            android:name=".Achievements7to9Responsibility2"
+            android:exported="true" />
+        <activity
+            android:name=".Achievements7to9Obedience2"
+            android:exported="true" />
+        <activity
+            android:name=".Achievements7to9DoingGood2"
+            android:exported="true" />
+        <activity
+            android:name=".Achievements7to9Love2"
+            android:exported="true" />
+        <activity
             android:name=".Achievements3to6Respect"
             android:exported="true" />
         <activity
@@ -384,6 +396,30 @@
             android:exported="true" />
         <activity
             android:name=".ResultsCompassion"
+            android:exported="true" />
+        <activity
+            android:name=".QuizResponsibility"
+            android:exported="true" />
+        <activity
+            android:name=".ResultsResponsibility"
+            android:exported="true" />
+        <activity
+            android:name=".QuizObedience"
+            android:exported="true" />
+        <activity
+            android:name=".ResultsObedience"
+            android:exported="true" />
+        <activity
+            android:name=".QuizDoingGood"
+            android:exported="true" />
+        <activity
+            android:name=".ResultsDoingGood"
+            android:exported="true" />
+        <activity
+            android:name=".QuizLove"
+            android:exported="true" />
+        <activity
+            android:name=".ResultsLove"
             android:exported="true" />
     </application>
 

@@ -38,7 +38,7 @@ public class ChooseModeDoingGood extends AppCompatActivity {
         assessCMDG79.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                //startActivity(new Intent(ChooseModeDoingGood.this, QuizDoingGood.class));
+                startActivity(new Intent(ChooseModeDoingGood.this, QuizDoingGood.class));
             }
         });
 

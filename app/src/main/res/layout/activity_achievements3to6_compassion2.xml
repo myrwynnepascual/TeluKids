@@ -26,7 +26,7 @@
             android:orientation="vertical">
 
             <ImageButton
-                android:id="@+id/backbtnAchievements36Compassion"
+                android:id="@+id/backbtnAchievements36Compassion2"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:backgroundTint="#00FFFFFF"
@@ -35,7 +35,7 @@
                 tools:ignore="SpeakableTextPresentCheck,ImageContrastCheck,DuplicateSpeakableTextCheck" />
 
             <ImageView
-                android:id="@+id/txtAchievements36Compassion"
+                android:id="@+id/txtAchievements36Compassion2"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"
@@ -63,7 +63,7 @@
                 app:layout_constraintTop_toTopOf="parent">
 
                 <ImageView
-                    android:id="@+id/trophydiscipline36Compassion"
+                    android:id="@+id/trophydiscipline36Compassion2"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center_horizontal"
@@ -74,7 +74,7 @@
                     tools:ignore="SpeakableTextPresentCheck,ImageContrastCheck,DuplicateSpeakableTextCheck" />
 
                 <ImageView
-                    android:id="@+id/trophyhonesty36Compassion"
+                    android:id="@+id/trophyhonesty36Compassion2"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center_horizontal"
@@ -85,7 +85,7 @@
                     tools:ignore="SpeakableTextPresentCheck,ImageContrastCheck,DuplicateSpeakableTextCheck" />
 
                 <ImageView
-                    android:id="@+id/trophyrespect36Compassion"
+                    android:id="@+id/trophyrespect36Compassion2"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center_horizontal"
@@ -107,7 +107,7 @@
                 app:layout_constraintTop_toTopOf="parent">
 
                 <ImageView
-                    android:id="@+id/trophysociability36Compassion"
+                    android:id="@+id/trophysociability36Compassion2"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center_horizontal"
@@ -119,7 +119,7 @@
                     tools:ignore="SpeakableTextPresentCheck,ImageContrastCheck,DuplicateSpeakableTextCheck" />
 
                 <ImageView
-                    android:id="@+id/trophycompassion36Compassion"
+                    android:id="@+id/trophycompassion36Compassion2"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center_horizontal"
@@ -130,50 +130,7 @@
                     tools:ignore="SpeakableTextPresentCheck,ImageContrastCheck,DuplicateSpeakableTextCheck" />
 
                 <ImageView
-                    android:id="@+id/trophyresponsibility36Compassion"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center_horizontal"
-                    android:layout_margin="10dp"
-                    android:backgroundTint="#00FFFFFF"
-                    android:contentDescription="@string/todo"
-                    app:srcCompat="@drawable/lockedtrophy"
-                    tools:ignore="SpeakableTextPresentCheck,ImageContrastCheck,DuplicateSpeakableTextCheck" />
-
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center_horizontal"
-                android:orientation="horizontal"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintTop_toTopOf="parent">
-
-                <ImageView
-                    android:id="@+id/trophylove36Compassion"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center_horizontal"
-                    android:layout_margin="10dp"
-                    android:backgroundTint="#00FFFFFF"
-                    android:contentDescription="@string/todo"
-                    app:srcCompat="@drawable/lockedtrophy"
-                    tools:ignore="SpeakableTextPresentCheck,ImageContrastCheck,DuplicateSpeakableTextCheck" />
-
-                <ImageView
-                    android:id="@+id/trophyobedience36Compassion"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center_horizontal"
-                    android:layout_margin="10dp"
-                    android:backgroundTint="#00FFFFFF"
-                    android:contentDescription="@string/todo"
-                    app:srcCompat="@drawable/lockedtrophy"
-                    tools:ignore="SpeakableTextPresentCheck,ImageContrastCheck,DuplicateSpeakableTextCheck" />
-
-                <ImageView
-                    android:id="@+id/trophydoinggood36Compassion"
+                    android:id="@+id/trophyresponsibility36Compassion2"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center_horizontal"
@@ -194,7 +151,7 @@
                 app:layout_constraintTop_toTopOf="parent">
 
                 <ImageView
-                    android:id="@+id/trophycolors36Compassion"
+                    android:id="@+id/trophylove36Compassion2"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center_horizontal"
@@ -205,7 +162,7 @@
                     tools:ignore="SpeakableTextPresentCheck,ImageContrastCheck,DuplicateSpeakableTextCheck" />
 
                 <ImageView
-                    android:id="@+id/trophycounting36Compassion"
+                    android:id="@+id/trophyobedience36Compassion2"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center_horizontal"
@@ -216,7 +173,7 @@
                     tools:ignore="SpeakableTextPresentCheck,ImageContrastCheck,DuplicateSpeakableTextCheck" />
 
                 <ImageView
-                    android:id="@+id/trophyaddition36Compassion"
+                    android:id="@+id/trophydoinggood36Compassion2"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center_horizontal"
@@ -237,7 +194,7 @@
                 app:layout_constraintTop_toTopOf="parent">
 
                 <ImageView
-                    android:id="@+id/trophysubtraction36Compassion"
+                    android:id="@+id/trophycolors36Compassion2"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center_horizontal"
@@ -248,7 +205,50 @@
                     tools:ignore="SpeakableTextPresentCheck,ImageContrastCheck,DuplicateSpeakableTextCheck" />
 
                 <ImageView
-                    android:id="@+id/trophyshapes36Compassion"
+                    android:id="@+id/trophycounting36Compassion2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_margin="10dp"
+                    android:backgroundTint="#00FFFFFF"
+                    android:contentDescription="@string/todo"
+                    app:srcCompat="@drawable/lockedtrophy"
+                    tools:ignore="SpeakableTextPresentCheck,ImageContrastCheck,DuplicateSpeakableTextCheck" />
+
+                <ImageView
+                    android:id="@+id/trophyaddition36Compassion2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_margin="10dp"
+                    android:backgroundTint="#00FFFFFF"
+                    android:contentDescription="@string/todo"
+                    app:srcCompat="@drawable/lockedtrophy"
+                    tools:ignore="SpeakableTextPresentCheck,ImageContrastCheck,DuplicateSpeakableTextCheck" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:orientation="horizontal"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <ImageView
+                    android:id="@+id/trophysubtraction36Compassion2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_margin="10dp"
+                    android:backgroundTint="#00FFFFFF"
+                    android:contentDescription="@string/todo"
+                    app:srcCompat="@drawable/lockedtrophy"
+                    tools:ignore="SpeakableTextPresentCheck,ImageContrastCheck,DuplicateSpeakableTextCheck" />
+
+                <ImageView
+                    android:id="@+id/trophyshapes36Compassion2"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center_horizontal"
@@ -281,7 +281,7 @@
                 app:layout_constraintTop_toTopOf="parent">
 
                 <ImageView
-                    android:id="@+id/medaldiscipline36Compassion"
+                    android:id="@+id/medaldiscipline36Compassion2"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center_horizontal"
@@ -292,7 +292,7 @@
                     tools:ignore="SpeakableTextPresentCheck,ImageContrastCheck,DuplicateSpeakableTextCheck" />
 
                 <ImageView
-                    android:id="@+id/medalhonesty36Compassion"
+                    android:id="@+id/medalhonesty36Compassion2"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center_horizontal"
@@ -303,7 +303,7 @@
                     tools:ignore="SpeakableTextPresentCheck,ImageContrastCheck,DuplicateSpeakableTextCheck" />
 
                 <ImageView
-                    android:id="@+id/medalrespect36Compassion"
+                    android:id="@+id/medalrespect36Compassion2"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center_horizontal"
@@ -325,7 +325,7 @@
                 app:layout_constraintTop_toTopOf="parent">
 
                 <ImageView
-                    android:id="@+id/medalsociability36Compassion"
+                    android:id="@+id/medalsociability36Compassion2"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center_horizontal"
@@ -337,7 +337,7 @@
                     tools:ignore="SpeakableTextPresentCheck,ImageContrastCheck,DuplicateSpeakableTextCheck" />
 
                 <ImageView
-                    android:id="@+id/medalcompassion36Compassion"
+                    android:id="@+id/medalcompassion36Compassion2"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center_horizontal"
@@ -348,50 +348,7 @@
                     tools:ignore="SpeakableTextPresentCheck,ImageContrastCheck,DuplicateSpeakableTextCheck" />
 
                 <ImageView
-                    android:id="@+id/medalresponsibility36Compassion"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center_horizontal"
-                    android:layout_margin="10dp"
-                    android:backgroundTint="#00FFFFFF"
-                    android:contentDescription="@string/todo"
-                    app:srcCompat="@drawable/lockedmedal"
-                    tools:ignore="SpeakableTextPresentCheck,ImageContrastCheck,DuplicateSpeakableTextCheck" />
-
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center_horizontal"
-                android:orientation="horizontal"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintTop_toTopOf="parent">
-
-                <ImageView
-                    android:id="@+id/medallove36Compassion"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center_horizontal"
-                    android:layout_margin="10dp"
-                    android:backgroundTint="#00FFFFFF"
-                    android:contentDescription="@string/todo"
-                    app:srcCompat="@drawable/lockedmedal"
-                    tools:ignore="SpeakableTextPresentCheck,ImageContrastCheck,DuplicateSpeakableTextCheck" />
-
-                <ImageView
-                    android:id="@+id/medalobedience36Compassion"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center_horizontal"
-                    android:layout_margin="10dp"
-                    android:backgroundTint="#00FFFFFF"
-                    android:contentDescription="@string/todo"
-                    app:srcCompat="@drawable/lockedmedal"
-                    tools:ignore="SpeakableTextPresentCheck,ImageContrastCheck,DuplicateSpeakableTextCheck" />
-
-                <ImageView
-                    android:id="@+id/medaldoinggood36Compassion"
+                    android:id="@+id/medalresponsibility36Compassion2"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center_horizontal"
@@ -412,7 +369,7 @@
                 app:layout_constraintTop_toTopOf="parent">
 
                 <ImageView
-                    android:id="@+id/medalcolors36Compassion"
+                    android:id="@+id/medallove36Compassion2"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center_horizontal"
@@ -423,7 +380,7 @@
                     tools:ignore="SpeakableTextPresentCheck,ImageContrastCheck,DuplicateSpeakableTextCheck" />
 
                 <ImageView
-                    android:id="@+id/medalcounting36Compassion"
+                    android:id="@+id/medalobedience36Compassion2"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center_horizontal"
@@ -434,7 +391,7 @@
                     tools:ignore="SpeakableTextPresentCheck,ImageContrastCheck,DuplicateSpeakableTextCheck" />
 
                 <ImageView
-                    android:id="@+id/medaladdition36Compassion"
+                    android:id="@+id/medaldoinggood36Compassion2"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center_horizontal"
@@ -455,7 +412,7 @@
                 app:layout_constraintTop_toTopOf="parent">
 
                 <ImageView
-                    android:id="@+id/medalsubtraction36Compassion"
+                    android:id="@+id/medalcolors36Compassion2"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center_horizontal"
@@ -466,7 +423,50 @@
                     tools:ignore="SpeakableTextPresentCheck,ImageContrastCheck,DuplicateSpeakableTextCheck" />
 
                 <ImageView
-                    android:id="@+id/medalshapes36Compassion"
+                    android:id="@+id/medalcounting36Compassion2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_margin="10dp"
+                    android:backgroundTint="#00FFFFFF"
+                    android:contentDescription="@string/todo"
+                    app:srcCompat="@drawable/lockedmedal"
+                    tools:ignore="SpeakableTextPresentCheck,ImageContrastCheck,DuplicateSpeakableTextCheck" />
+
+                <ImageView
+                    android:id="@+id/medaladdition36Compassion2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_margin="10dp"
+                    android:backgroundTint="#00FFFFFF"
+                    android:contentDescription="@string/todo"
+                    app:srcCompat="@drawable/lockedmedal"
+                    tools:ignore="SpeakableTextPresentCheck,ImageContrastCheck,DuplicateSpeakableTextCheck" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:orientation="horizontal"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <ImageView
+                    android:id="@+id/medalsubtraction36Compassion2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_margin="10dp"
+                    android:backgroundTint="#00FFFFFF"
+                    android:contentDescription="@string/todo"
+                    app:srcCompat="@drawable/lockedmedal"
+                    tools:ignore="SpeakableTextPresentCheck,ImageContrastCheck,DuplicateSpeakableTextCheck" />
+
+                <ImageView
+                    android:id="@+id/medalshapes36Compassion2"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center_horizontal"
@@ -499,7 +499,7 @@
                 app:layout_constraintTop_toTopOf="parent">
 
                 <ImageView
-                    android:id="@+id/badgediscipline36Compassion"
+                    android:id="@+id/badgediscipline36Compassion2"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center_horizontal"
@@ -510,7 +510,7 @@
                     tools:ignore="SpeakableTextPresentCheck,ImageContrastCheck,DuplicateSpeakableTextCheck" />
 
                 <ImageView
-                    android:id="@+id/badgehonesty36Compassion"
+                    android:id="@+id/badgehonesty36Compassion2"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center_horizontal"
@@ -521,7 +521,7 @@
                     tools:ignore="SpeakableTextPresentCheck,ImageContrastCheck,DuplicateSpeakableTextCheck" />
 
                 <ImageView
-                    android:id="@+id/badgerespect36Compassion"
+                    android:id="@+id/badgerespect36Compassion2"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center_horizontal"
@@ -543,7 +543,7 @@
                 app:layout_constraintTop_toTopOf="parent">
 
                 <ImageView
-                    android:id="@+id/badgesociability36Compassion"
+                    android:id="@+id/badgesociability36Compassion2"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center_horizontal"
@@ -555,7 +555,7 @@
                     tools:ignore="SpeakableTextPresentCheck,ImageContrastCheck,DuplicateSpeakableTextCheck" />
 
                 <ImageView
-                    android:id="@+id/badgecompassion36Compassion"
+                    android:id="@+id/badgecompassion36Compassion2"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center_horizontal"
@@ -566,50 +566,7 @@
                     tools:ignore="SpeakableTextPresentCheck,ImageContrastCheck,DuplicateSpeakableTextCheck" />
 
                 <ImageView
-                    android:id="@+id/badgeresponsibility36Compassion"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center_horizontal"
-                    android:layout_margin="10dp"
-                    android:backgroundTint="#00FFFFFF"
-                    android:contentDescription="@string/todo"
-                    app:srcCompat="@drawable/lockedbadge"
-                    tools:ignore="SpeakableTextPresentCheck,ImageContrastCheck,DuplicateSpeakableTextCheck" />
-
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center_horizontal"
-                android:orientation="horizontal"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintTop_toTopOf="parent">
-
-                <ImageView
-                    android:id="@+id/badgelove36Compassion"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center_horizontal"
-                    android:layout_margin="10dp"
-                    android:backgroundTint="#00FFFFFF"
-                    android:contentDescription="@string/todo"
-                    app:srcCompat="@drawable/lockedbadge"
-                    tools:ignore="SpeakableTextPresentCheck,ImageContrastCheck,DuplicateSpeakableTextCheck" />
-
-                <ImageView
-                    android:id="@+id/badgeobedience36Compassion"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center_horizontal"
-                    android:layout_margin="10dp"
-                    android:backgroundTint="#00FFFFFF"
-                    android:contentDescription="@string/todo"
-                    app:srcCompat="@drawable/lockedbadge"
-                    tools:ignore="SpeakableTextPresentCheck,ImageContrastCheck,DuplicateSpeakableTextCheck" />
-
-                <ImageView
-                    android:id="@+id/badgedoinggood36Compassion"
+                    android:id="@+id/badgeresponsibility36Compassion2"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center_horizontal"
@@ -630,7 +587,7 @@
                 app:layout_constraintTop_toTopOf="parent">
 
                 <ImageView
-                    android:id="@+id/badgecolors36Compassion"
+                    android:id="@+id/badgelove36Compassion2"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center_horizontal"
@@ -641,7 +598,7 @@
                     tools:ignore="SpeakableTextPresentCheck,ImageContrastCheck,DuplicateSpeakableTextCheck" />
 
                 <ImageView
-                    android:id="@+id/badgecounting36Compassion"
+                    android:id="@+id/badgeobedience36Compassion2"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center_horizontal"
@@ -652,7 +609,7 @@
                     tools:ignore="SpeakableTextPresentCheck,ImageContrastCheck,DuplicateSpeakableTextCheck" />
 
                 <ImageView
-                    android:id="@+id/badgeaddition36Compassion"
+                    android:id="@+id/badgedoinggood36Compassion2"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center_horizontal"
@@ -673,7 +630,7 @@
                 app:layout_constraintTop_toTopOf="parent">
 
                 <ImageView
-                    android:id="@+id/badgesubtraction36Compassion"
+                    android:id="@+id/badgecolors36Compassion2"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center_horizontal"
@@ -684,7 +641,50 @@
                     tools:ignore="SpeakableTextPresentCheck,ImageContrastCheck,DuplicateSpeakableTextCheck" />
 
                 <ImageView
-                    android:id="@+id/badgeshapes36Compassion"
+                    android:id="@+id/badgecounting36Compassion2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_margin="10dp"
+                    android:backgroundTint="#00FFFFFF"
+                    android:contentDescription="@string/todo"
+                    app:srcCompat="@drawable/lockedbadge"
+                    tools:ignore="SpeakableTextPresentCheck,ImageContrastCheck,DuplicateSpeakableTextCheck" />
+
+                <ImageView
+                    android:id="@+id/badgeaddition36Compassion2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_margin="10dp"
+                    android:backgroundTint="#00FFFFFF"
+                    android:contentDescription="@string/todo"
+                    app:srcCompat="@drawable/lockedbadge"
+                    tools:ignore="SpeakableTextPresentCheck,ImageContrastCheck,DuplicateSpeakableTextCheck" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:orientation="horizontal"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <ImageView
+                    android:id="@+id/badgesubtraction36Compassion2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_margin="10dp"
+                    android:backgroundTint="#00FFFFFF"
+                    android:contentDescription="@string/todo"
+                    app:srcCompat="@drawable/lockedbadge"
+                    tools:ignore="SpeakableTextPresentCheck,ImageContrastCheck,DuplicateSpeakableTextCheck" />
+
+                <ImageView
+                    android:id="@+id/badgeshapes36Compassion2"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center_horizontal"
@@ -717,7 +717,7 @@
                 app:layout_constraintTop_toTopOf="parent">
 
                 <ImageView
-                    android:id="@+id/certificatediscipline36Compassion"
+                    android:id="@+id/certificatediscipline36Compassion2"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center_horizontal"
@@ -728,7 +728,7 @@
                     tools:ignore="SpeakableTextPresentCheck,ImageContrastCheck,DuplicateSpeakableTextCheck" />
 
                 <ImageView
-                    android:id="@+id/certificatehonesty36Compassion"
+                    android:id="@+id/certificatehonesty36Compassion2"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center_horizontal"
@@ -739,7 +739,7 @@
                     tools:ignore="SpeakableTextPresentCheck,ImageContrastCheck,DuplicateSpeakableTextCheck" />
 
                 <ImageView
-                    android:id="@+id/certificaterespect36Compassion"
+                    android:id="@+id/certificaterespect36Compassion2"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center_horizontal"
@@ -761,7 +761,7 @@
                 app:layout_constraintTop_toTopOf="parent">
 
                 <ImageView
-                    android:id="@+id/certificatesociability36Compassion"
+                    android:id="@+id/certificatesociability36Compassion2"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center_horizontal"
@@ -773,7 +773,7 @@
                     tools:ignore="SpeakableTextPresentCheck,ImageContrastCheck,DuplicateSpeakableTextCheck" />
 
                 <ImageView
-                    android:id="@+id/certificatecompassion36Compassion"
+                    android:id="@+id/certificatecompassion36Compassion2"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center_horizontal"
@@ -784,50 +784,7 @@
                     tools:ignore="SpeakableTextPresentCheck,ImageContrastCheck,DuplicateSpeakableTextCheck" />
 
                 <ImageView
-                    android:id="@+id/certificateresponsibility36Compassion"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center_horizontal"
-                    android:layout_margin="10dp"
-                    android:backgroundTint="#00FFFFFF"
-                    android:contentDescription="@string/todo"
-                    app:srcCompat="@drawable/lockedcertificate"
-                    tools:ignore="SpeakableTextPresentCheck,ImageContrastCheck,DuplicateSpeakableTextCheck" />
-
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center_horizontal"
-                android:orientation="horizontal"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintTop_toTopOf="parent">
-
-                <ImageView
-                    android:id="@+id/certificatelove36Compassion"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center_horizontal"
-                    android:layout_margin="10dp"
-                    android:backgroundTint="#00FFFFFF"
-                    android:contentDescription="@string/todo"
-                    app:srcCompat="@drawable/lockedcertificate"
-                    tools:ignore="SpeakableTextPresentCheck,ImageContrastCheck,DuplicateSpeakableTextCheck" />
-
-                <ImageView
-                    android:id="@+id/certificateobedience36Compassion"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center_horizontal"
-                    android:layout_margin="10dp"
-                    android:backgroundTint="#00FFFFFF"
-                    android:contentDescription="@string/todo"
-                    app:srcCompat="@drawable/lockedcertificate"
-                    tools:ignore="SpeakableTextPresentCheck,ImageContrastCheck,DuplicateSpeakableTextCheck" />
-
-                <ImageView
-                    android:id="@+id/certificatedoinggood36Compassion"
+                    android:id="@+id/certificateresponsibility36Compassion2"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center_horizontal"
@@ -848,7 +805,7 @@
                 app:layout_constraintTop_toTopOf="parent">
 
                 <ImageView
-                    android:id="@+id/certificatecolors36Compassion"
+                    android:id="@+id/certificatelove36Compassion2"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center_horizontal"
@@ -859,7 +816,7 @@
                     tools:ignore="SpeakableTextPresentCheck,ImageContrastCheck,DuplicateSpeakableTextCheck" />
 
                 <ImageView
-                    android:id="@+id/certificatecounting36Compassion"
+                    android:id="@+id/certificateobedience36Compassion2"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center_horizontal"
@@ -870,7 +827,50 @@
                     tools:ignore="SpeakableTextPresentCheck,ImageContrastCheck,DuplicateSpeakableTextCheck" />
 
                 <ImageView
-                    android:id="@+id/certificateaddition36Compassion"
+                    android:id="@+id/certificatedoinggood36Compassion2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_margin="10dp"
+                    android:backgroundTint="#00FFFFFF"
+                    android:contentDescription="@string/todo"
+                    app:srcCompat="@drawable/lockedcertificate"
+                    tools:ignore="SpeakableTextPresentCheck,ImageContrastCheck,DuplicateSpeakableTextCheck" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:orientation="horizontal"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <ImageView
+                    android:id="@+id/certificatecolors36Compassion2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_margin="10dp"
+                    android:backgroundTint="#00FFFFFF"
+                    android:contentDescription="@string/todo"
+                    app:srcCompat="@drawable/lockedcertificate"
+                    tools:ignore="SpeakableTextPresentCheck,ImageContrastCheck,DuplicateSpeakableTextCheck" />
+
+                <ImageView
+                    android:id="@+id/certificatecounting36Compassion2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_margin="10dp"
+                    android:backgroundTint="#00FFFFFF"
+                    android:contentDescription="@string/todo"
+                    app:srcCompat="@drawable/lockedcertificate"
+                    tools:ignore="SpeakableTextPresentCheck,ImageContrastCheck,DuplicateSpeakableTextCheck" />
+
+                <ImageView
+                    android:id="@+id/certificateaddition36Compassion2"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center_horizontal"
@@ -892,7 +892,7 @@
                 app:layout_constraintTop_toTopOf="parent">
 
                 <ImageView
-                    android:id="@+id/certificatesubtraction36Compassion"
+                    android:id="@+id/certificatesubtraction36Compassion2"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center_horizontal"
@@ -904,7 +904,7 @@
                     tools:ignore="SpeakableTextPresentCheck,ImageContrastCheck,DuplicateSpeakableTextCheck" />
 
                 <ImageView
-                    android:id="@+id/certificateshapes36Compassion"
+                    android:id="@+id/certificateshapes36Compassion2"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center_horizontal"

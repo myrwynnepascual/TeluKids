@@ -38,7 +38,7 @@ public class ChooseModeResponsibility extends AppCompatActivity {
         assessCMRP79.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                //startActivity(new Intent(ChooseModeResponsibility.this, QuizResponsibility.class));
+                startActivity(new Intent(ChooseModeResponsibility.this, QuizResponsibility.class));
             }
         });
 
