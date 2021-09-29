@@ -6,12 +6,15 @@ import android.content.Intent;
 import android.media.MediaPlayer;
 import android.net.Uri;
 import android.os.Bundle;
+import android.os.Handler;
 import android.view.View;
+import android.widget.ImageButton;
 import android.widget.MediaController;
 import android.widget.VideoView;
 
 public class LessonIntroHonesty extends AppCompatActivity {
 
+    ImageButton btncloseIH;
     VideoView videoViewIH;
     String videoPathIH;
     Uri uriIH;
@@ -21,6 +24,7 @@ public class LessonIntroHonesty extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_lesson_intro_honesty);
 
+        btncloseIH = findViewById(R.id.btncloseIH);
         videoViewIH = findViewById(R.id.videoIH);
         videoPathIH = "android.resource://" + getPackageName() + "/" + R.raw.honestyintrovideo;
         uriIH = Uri.parse(videoPathIH);
@@ -33,7 +37,7 @@ public class LessonIntroHonesty extends AppCompatActivity {
         videoViewIH.start();
 
 
-        videoViewIH.setOnClickListener(new View.OnClickListener() {
+        btncloseIH.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
@@ -50,6 +54,14 @@ public class LessonIntroHonesty extends AppCompatActivity {
 
             }
         });
+
+        Handler handler = new Handler();
+        handler.postDelayed(new Runnable() {
+            @Override
+            public void run() {
+                btncloseIH.setVisibility(View.VISIBLE);
+            }
+        },5000);
         
     }
 }

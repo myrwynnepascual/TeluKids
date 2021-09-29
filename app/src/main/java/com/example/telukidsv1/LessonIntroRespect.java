@@ -6,12 +6,15 @@ import android.content.Intent;
 import android.media.MediaPlayer;
 import android.net.Uri;
 import android.os.Bundle;
+import android.os.Handler;
 import android.view.View;
+import android.widget.ImageButton;
 import android.widget.MediaController;
 import android.widget.VideoView;
 
 public class LessonIntroRespect extends AppCompatActivity {
 
+    ImageButton btncloseIR;
     VideoView videoViewIR;
     String videoPathIR;
     Uri uriIR;
@@ -21,6 +24,7 @@ public class LessonIntroRespect extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_lesson_intro_respect);
 
+        btncloseIR = findViewById(R.id.btncloseIR);
         videoViewIR = findViewById(R.id.videoIR);
         videoPathIR = "android.resource://" + getPackageName() + "/" + R.raw.respectintrovideo;
         uriIR = Uri.parse(videoPathIR);
@@ -33,7 +37,7 @@ public class LessonIntroRespect extends AppCompatActivity {
         videoViewIR.start();
 
 
-        videoViewIR.setOnClickListener(new View.OnClickListener() {
+        btncloseIR.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
@@ -50,5 +54,13 @@ public class LessonIntroRespect extends AppCompatActivity {
 
             }
         });
+
+        Handler handler = new Handler();
+        handler.postDelayed(new Runnable() {
+            @Override
+            public void run() {
+                btncloseIR.setVisibility(View.VISIBLE);
+            }
+        },5000);
     }
 }

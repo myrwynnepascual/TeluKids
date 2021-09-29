@@ -25,8 +25,8 @@
             android:id="@+id/telukidsLogoSOL"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_gravity="center_horizontal"
-            android:layout_marginTop="50dp"
+            android:layout_gravity="center"
+            android:layout_marginTop="100dp"
             android:layout_marginBottom="50dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
@@ -35,12 +35,16 @@
             app:layout_constraintVertical_bias="0.499"
             app:srcCompat="@drawable/teluicon1" />
 
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"/>
+
         <ImageView
             android:id="@+id/letsgetTxtSOL"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
-            android:layout_marginTop="90dp"
             app:srcCompat="@drawable/txtletsgetstarted" />
 
         <ImageButton

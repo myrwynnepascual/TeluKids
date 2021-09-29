@@ -6,12 +6,15 @@ import android.content.Intent;
 import android.media.MediaPlayer;
 import android.net.Uri;
 import android.os.Bundle;
+import android.os.Handler;
 import android.view.View;
+import android.widget.ImageButton;
 import android.widget.MediaController;
 import android.widget.VideoView;
 
 public class LessonIntroLove extends AppCompatActivity {
 
+    ImageButton btncloseL;
     VideoView videoViewL;
     String videoPathL;
     Uri uriL;
@@ -21,6 +24,7 @@ public class LessonIntroLove extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_lesson_intro_love);
 
+        btncloseL = findViewById(R.id.btncloseL79);
         videoViewL = findViewById(R.id.videoL79);
         videoPathL = "android.resource://" + getPackageName() + "/" + R.raw.loveintrovideo;
         uriL = Uri.parse(videoPathL);
@@ -33,7 +37,7 @@ public class LessonIntroLove extends AppCompatActivity {
         videoViewL.start();
 
 
-        videoViewL.setOnClickListener(new View.OnClickListener() {
+        btncloseL.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
@@ -50,5 +54,13 @@ public class LessonIntroLove extends AppCompatActivity {
 
             }
         });
+
+        Handler handler = new Handler();
+        handler.postDelayed(new Runnable() {
+            @Override
+            public void run() {
+                btncloseL.setVisibility(View.VISIBLE);
+            }
+        },5000);
     }
 }

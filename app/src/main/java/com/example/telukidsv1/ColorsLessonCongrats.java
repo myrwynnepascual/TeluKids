@@ -4,6 +4,7 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageButton;
@@ -21,6 +22,7 @@ public class ColorsLessonCongrats extends AppCompatActivity {
 
     ImageButton btnbackCLC,btnachievementsCLC, btnassessmentCLC, btnhomepageCLC;
     ImageView certificateCLC;
+    MediaPlayer congrats;
 
     FirebaseAuth fAuth;
     FirebaseFirestore fStore;
@@ -36,6 +38,9 @@ public class ColorsLessonCongrats extends AppCompatActivity {
         certificateCLC = findViewById(R.id.certificateCLC);
         btnassessmentCLC = findViewById(R.id.asessmentbtnCLC);
         btnhomepageCLC = findViewById(R.id.homepageCLC);
+
+        congrats = MediaPlayer.create(this, R.raw.yaysfx);
+        congrats.start();
 
         fAuth = FirebaseAuth.getInstance();
         fStore = FirebaseFirestore.getInstance();

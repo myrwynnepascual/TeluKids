@@ -21,6 +21,9 @@ public class ChooseModeAddition extends AppCompatActivity {
         assessCMA = findViewById(R.id.assessCMA);
         replayCMA = findViewById(R.id.replayintroCMA);
 
+        //Intent svc = new Intent(this, BackgroundSoundService.class);
+        //startService(svc);
+
         backCMA.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

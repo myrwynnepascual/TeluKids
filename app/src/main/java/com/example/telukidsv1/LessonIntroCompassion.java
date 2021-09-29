@@ -6,12 +6,15 @@ import android.content.Intent;
 import android.media.MediaPlayer;
 import android.net.Uri;
 import android.os.Bundle;
+import android.os.Handler;
 import android.view.View;
+import android.widget.ImageButton;
 import android.widget.MediaController;
 import android.widget.VideoView;
 
 public class LessonIntroCompassion extends AppCompatActivity {
 
+    ImageButton btncloseICP;
     VideoView videoViewICP;
     String videoPathICP;
     Uri uriICP;
@@ -21,6 +24,7 @@ public class LessonIntroCompassion extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_lesson_intro_compassion);
 
+        btncloseICP = findViewById(R.id.btncloseICP);
         videoViewICP = findViewById(R.id.videoICP);
         videoPathICP = "android.resource://" + getPackageName() + "/" + R.raw.compassionintrovideo;
         uriICP = Uri.parse(videoPathICP);
@@ -33,7 +37,7 @@ public class LessonIntroCompassion extends AppCompatActivity {
         videoViewICP.start();
 
 
-        videoViewICP.setOnClickListener(new View.OnClickListener() {
+       btncloseICP.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
@@ -50,5 +54,13 @@ public class LessonIntroCompassion extends AppCompatActivity {
 
             }
         });
+
+        Handler handler = new Handler();
+        handler.postDelayed(new Runnable() {
+            @Override
+            public void run() {
+                btncloseICP.setVisibility(View.VISIBLE);
+            }
+        },5000);
     }
 }

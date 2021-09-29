@@ -6,12 +6,15 @@ import android.content.Intent;
 import android.media.MediaPlayer;
 import android.net.Uri;
 import android.os.Bundle;
+import android.os.Handler;
 import android.view.View;
+import android.widget.ImageButton;
 import android.widget.MediaController;
 import android.widget.VideoView;
 
 public class LessonIntroColors extends AppCompatActivity {
 
+    ImageButton btncloseIC;
     VideoView videoViewIC;
     String videoPathIC;
     Uri uriIC;
@@ -21,6 +24,7 @@ public class LessonIntroColors extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_lesson_intro_colors);
 
+        btncloseIC = findViewById(R.id.btncloseIC);
         videoViewIC = findViewById(R.id.videoIC);
         videoPathIC = "android.resource://" + getPackageName() + "/" + R.raw.colorsintrovideo;
         uriIC = Uri.parse(videoPathIC);
@@ -33,7 +37,7 @@ public class LessonIntroColors extends AppCompatActivity {
         videoViewIC.start();
 
 
-        videoViewIC.setOnClickListener(new View.OnClickListener() {
+        btncloseIC.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
@@ -50,5 +54,13 @@ public class LessonIntroColors extends AppCompatActivity {
 
             }
         });
+
+        Handler handler = new Handler();
+        handler.postDelayed(new Runnable() {
+            @Override
+            public void run() {
+                btncloseIC.setVisibility(View.VISIBLE);
+            }
+        },5000);
     }
 }

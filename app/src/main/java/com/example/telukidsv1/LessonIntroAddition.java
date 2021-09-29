@@ -6,12 +6,15 @@ import android.content.Intent;
 import android.media.MediaPlayer;
 import android.net.Uri;
 import android.os.Bundle;
+import android.os.Handler;
 import android.view.View;
+import android.widget.ImageButton;
 import android.widget.MediaController;
 import android.widget.VideoView;
 
 public class LessonIntroAddition extends AppCompatActivity {
 
+    ImageButton btncloseIA;
     VideoView videoViewIA;
     String videoPathIA;
     Uri uriIA;
@@ -21,10 +24,13 @@ public class LessonIntroAddition extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_lesson_intro_addition);
 
+        btncloseIA = findViewById(R.id.btncloseIA);
         videoViewIA = findViewById(R.id.videoIA);
         videoPathIA = "android.resource://" + getPackageName() + "/" + R.raw.additionintrovideo;
         uriIA = Uri.parse(videoPathIA);
         videoViewIA.setVideoURI(uriIA);
+
+        //BackgroundSoundService.onPause();
 
         MediaController mediaController = new MediaController(this);
         videoViewIA.setMediaController(mediaController);
@@ -33,7 +39,7 @@ public class LessonIntroAddition extends AppCompatActivity {
         videoViewIA.start();
 
 
-        videoViewIA.setOnClickListener(new View.OnClickListener() {
+        btncloseIA.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
@@ -50,5 +56,13 @@ public class LessonIntroAddition extends AppCompatActivity {
 
             }
         });
+
+        Handler handler = new Handler();
+        handler.postDelayed(new Runnable() {
+            @Override
+            public void run() {
+                btncloseIA.setVisibility(View.VISIBLE);
+            }
+        },5000);
     }
 }

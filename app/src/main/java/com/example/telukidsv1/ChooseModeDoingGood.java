@@ -24,7 +24,7 @@ public class ChooseModeDoingGood extends AppCompatActivity {
         backCMDG79.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(ChooseModeDoingGood.this,Gmrc7to9.class));
+                startActivity(new Intent(ChooseModeDoingGood.this, Gmrc7to9.class));
             }
         });
 

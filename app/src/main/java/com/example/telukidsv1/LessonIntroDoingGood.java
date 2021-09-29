@@ -6,12 +6,15 @@ import android.content.Intent;
 import android.media.MediaPlayer;
 import android.net.Uri;
 import android.os.Bundle;
+import android.os.Handler;
 import android.view.View;
+import android.widget.ImageButton;
 import android.widget.MediaController;
 import android.widget.VideoView;
 
 public class LessonIntroDoingGood extends AppCompatActivity {
 
+    ImageButton btncloseDG;
     VideoView videoViewDG;
     String videoPathDG;
     Uri uriDG;
@@ -21,6 +24,7 @@ public class LessonIntroDoingGood extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_lesson_intro_doing_good);
 
+        btncloseDG = findViewById(R.id.btncloseDG79);
         videoViewDG = findViewById(R.id.videoDG79);
         videoPathDG = "android.resource://" + getPackageName() + "/" + R.raw.goodintrovideo;
         uriDG = Uri.parse(videoPathDG);
@@ -33,7 +37,7 @@ public class LessonIntroDoingGood extends AppCompatActivity {
         videoViewDG.start();
 
 
-        videoViewDG.setOnClickListener(new View.OnClickListener() {
+        btncloseDG.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
@@ -50,5 +54,13 @@ public class LessonIntroDoingGood extends AppCompatActivity {
 
             }
         });
+
+        Handler handler = new Handler();
+        handler.postDelayed(new Runnable() {
+            @Override
+            public void run() {
+                btncloseDG.setVisibility(View.VISIBLE);
+            }
+        },5000);
     }
 }

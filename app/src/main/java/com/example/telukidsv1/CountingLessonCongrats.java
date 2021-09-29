@@ -4,6 +4,7 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageButton;
@@ -21,6 +22,7 @@ public class CountingLessonCongrats extends AppCompatActivity {
 
     ImageButton btnbackCTLC,btnachievementsCTLC, btnassessmentCTLC, btnhomepageCTLC;
     ImageView certificateCTLC;
+    MediaPlayer congrats;
 
     FirebaseAuth fAuth;
     FirebaseFirestore fStore;
@@ -36,6 +38,9 @@ public class CountingLessonCongrats extends AppCompatActivity {
         certificateCTLC = findViewById(R.id.certificateCTLC);
         btnassessmentCTLC = findViewById(R.id.asessmentbtnCTLC);
         btnhomepageCTLC = findViewById(R.id.homepageCTLC);
+
+        congrats = MediaPlayer.create(this, R.raw.yaysfx);
+        congrats.start();
 
         fAuth = FirebaseAuth.getInstance();
         fStore = FirebaseFirestore.getInstance();

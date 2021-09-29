@@ -6,12 +6,15 @@ import android.content.Intent;
 import android.media.MediaPlayer;
 import android.net.Uri;
 import android.os.Bundle;
+import android.os.Handler;
 import android.view.View;
+import android.widget.ImageButton;
 import android.widget.MediaController;
 import android.widget.VideoView;
 
 public class LessonIntroDiscipline extends AppCompatActivity {
 
+    ImageButton btnCloseID;
     VideoView videoViewID;
     String videoPathID;
     Uri uriID;
@@ -21,6 +24,7 @@ public class LessonIntroDiscipline extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_lesson_intro_discipline);
 
+        btnCloseID = findViewById(R.id.btncloseID);
         videoViewID = findViewById(R.id.videoID);
         videoPathID = "android.resource://" + getPackageName() + "/" + R.raw.disciplineintrovideo;
         uriID = Uri.parse(videoPathID);
@@ -33,7 +37,7 @@ public class LessonIntroDiscipline extends AppCompatActivity {
         videoViewID.start();
 
 
-        videoViewID.setOnClickListener(new View.OnClickListener() {
+        btnCloseID.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
@@ -50,5 +54,13 @@ public class LessonIntroDiscipline extends AppCompatActivity {
 
             }
         });
+
+        Handler handler = new Handler();
+        handler.postDelayed(new Runnable() {
+            @Override
+            public void run() {
+                btnCloseID.setVisibility(View.VISIBLE);
+            }
+        },5000);
     }
 }

@@ -17,6 +17,7 @@ import android.widget.VideoView;
 
 public class LessonIntroShapes extends AppCompatActivity {
 
+    ImageButton btncloseIS;
     VideoView videoViewIS;
     String videoPathIS;
     Uri uriIS;
@@ -26,7 +27,7 @@ public class LessonIntroShapes extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_lesson_intro_shapes);
 
-
+        btncloseIS = findViewById(R.id.btncloseIS);
         videoViewIS = findViewById(R.id.videoIS);
         videoPathIS = "android.resource://" + getPackageName() + "/" + R.raw.shapesintrovideo;
         uriIS = Uri.parse(videoPathIS);
@@ -39,7 +40,7 @@ public class LessonIntroShapes extends AppCompatActivity {
         videoViewIS.start();
 
 
-        videoViewIS.setOnClickListener(new View.OnClickListener() {
+        btncloseIS.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
@@ -56,6 +57,14 @@ public class LessonIntroShapes extends AppCompatActivity {
 
             }
         });
+
+        Handler handler = new Handler();
+        handler.postDelayed(new Runnable() {
+            @Override
+            public void run() {
+                btncloseIS.setVisibility(View.VISIBLE);
+            }
+        },5000);
 
     }
 }
