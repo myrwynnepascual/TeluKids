@@ -74,7 +74,7 @@ public class ResponsibilityLessonCongrats extends AppCompatActivity {
         btnassessmentRPLC.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                //startActivity(new Intent(ResponsibilityLessonCongrats.this, QuizResponsibility.class));
+                startActivity(new Intent(ResponsibilityLessonCongrats.this, QuizResponsibility.class));
             }
         });
 

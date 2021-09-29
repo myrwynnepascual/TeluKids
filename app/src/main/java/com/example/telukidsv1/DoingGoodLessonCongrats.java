@@ -74,7 +74,7 @@ public class DoingGoodLessonCongrats extends AppCompatActivity {
         btnassessmentDGLC.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                //startActivity(new Intent(DoingGoodLessonCongrats.this, QuizDoingGood.class));
+                startActivity(new Intent(DoingGoodLessonCongrats.this, QuizDoingGood.class));
             }
         });
 

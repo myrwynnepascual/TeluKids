@@ -74,7 +74,7 @@ public class ObedienceLessonCongrats extends AppCompatActivity {
         btnassessmentOLC.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                //startActivity(new Intent(ObedienceLessonCongrats.this, QuizObedience.class));
+                startActivity(new Intent(ObedienceLessonCongrats.this, QuizObedience.class));
             }
         });
 
