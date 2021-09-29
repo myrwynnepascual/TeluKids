@@ -38,7 +38,7 @@ public class ChooseModeLove extends AppCompatActivity {
         assessCML79.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                //startActivity(new Intent(ChooseModeLove.this, QuizLove.class));
+                startActivity(new Intent(ChooseModeLove.this, QuizLove.class));
             }
         });
 

@@ -38,7 +38,7 @@ public class ChooseModeObedience extends AppCompatActivity {
         assessCMO79.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                //startActivity(new Intent(ChooseModeObedience.this, QuizObedience.class));
+                startActivity(new Intent(ChooseModeObedience.this, QuizObedience.class));
             }
         });
 
