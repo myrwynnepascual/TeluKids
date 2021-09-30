@@ -52,7 +52,7 @@ public class DoingGoodLessonCongrats extends AppCompatActivity {
             public Void apply(@NonNull Transaction transaction) throws FirebaseFirestoreException {
                 DocumentSnapshot snapshot = transaction.get(docRef);
 
-                transaction.update(docRef, "doingGood lesson", "Completed");
+                transaction.update(docRef, "doing good lesson", "Completed");
                 return null;
             }
         });

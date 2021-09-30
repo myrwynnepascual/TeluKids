@@ -20,7 +20,7 @@ import com.google.firebase.firestore.FirebaseFirestoreException;
 
 public class UserProfile79 extends AppCompatActivity {
 
-    ImageButton btnbackUP, btneditUP, btnlogoutUP,btnsurveyUP;
+    ImageButton btnbackUP, btneditUP, btnlogoutUP,btnsurveyUP, btnhelpUP;
     ImageView profIconUP;
     TextView greetUP;
     String userID, username, usericon;
@@ -39,6 +39,7 @@ public class UserProfile79 extends AppCompatActivity {
         btneditUP = findViewById(R.id.editprofilebtnUP79);
         btnlogoutUP = findViewById(R.id.logoutbtnUP79);
         btnsurveyUP = findViewById(R.id.surveybtnUP79);
+        btnhelpUP = findViewById(R.id.helpbtnUP79);
 
         fAuth = FirebaseAuth.getInstance();
         fStore = FirebaseFirestore.getInstance();
@@ -84,11 +85,18 @@ public class UserProfile79 extends AppCompatActivity {
         });
 
 
-
         btnbackUP.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 startActivity(new Intent(UserProfile79.this,Homepage7to9.class));
+            }
+        });
+
+        btnhelpUP.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                startActivity(new Intent(UserProfile79.this, HelpPage79.class));
             }
         });
 

@@ -74,7 +74,7 @@ public class SubtractionLessonCongrats extends AppCompatActivity {
         btnassessmentSLC.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                //startActivity(new Intent(SubtractionLessonCongrats.this, QuizSubtraction.class));
+                startActivity(new Intent(SubtractionLessonCongrats.this, QuizSubtraction.class));
             }
         });
 

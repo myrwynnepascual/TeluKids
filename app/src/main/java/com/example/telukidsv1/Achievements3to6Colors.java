@@ -36,95 +36,95 @@ public class Achievements3to6Colors extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_achievements3to6_main);
+        setContentView(R.layout.activity_achievements3to6_colors);
 
-        ImageButton backbtnAchievements3to6 = findViewById(R.id.backbtnAchievements36Main);
+        ImageButton backbtnAchievements3to6 = findViewById(R.id.backbtnAchievements36Colors);
 
         //Trophies
         //GMRC 3-6
-        ImageView imgAchievements_DisciplineTrophy = findViewById(R.id.trophydiscipline36Main);
-        ImageView imgAchievements_HonestyTrophy = findViewById(R.id.trophyhonesty36Main);
-        ImageView imgAchievements_RespectTrophy = findViewById(R.id.trophyrespect36Main);
-        ImageView imgAchievements_SociabilityTrophy = findViewById(R.id.trophysociability36Main);
-        ImageView imgAchievements_CompassionTrophy = findViewById(R.id.trophycompassion36Main);
+        ImageView imgAchievements_DisciplineTrophy = findViewById(R.id.trophydiscipline36Colors);
+        ImageView imgAchievements_HonestyTrophy = findViewById(R.id.trophyhonesty36Colors);
+        ImageView imgAchievements_RespectTrophy = findViewById(R.id.trophyrespect36Colors);
+        ImageView imgAchievements_SociabilityTrophy = findViewById(R.id.trophysociability36Colors);
+        ImageView imgAchievements_CompassionTrophy = findViewById(R.id.trophycompassion36Colors);
 
         //GMRC 7-9
-        ImageView imgAchievements_ResponsibilityTrophy = findViewById(R.id.trophyresponsibility36Main);
-        ImageView imgAchievements_LoveTrophy = findViewById(R.id.trophylove36Main);
-        ImageView imgAchievements_ObedienceTrophy = findViewById(R.id.trophyobedience36Main);
-        ImageView imgAchievements_DoingGoodTrophy = findViewById(R.id.trophydoinggood36Main);
+        ImageView imgAchievements_ResponsibilityTrophy = findViewById(R.id.trophyresponsibility36Colors);
+        ImageView imgAchievements_LoveTrophy = findViewById(R.id.trophylove36Colors);
+        ImageView imgAchievements_ObedienceTrophy = findViewById(R.id.trophyobedience36Colors);
+        ImageView imgAchievements_DoingGoodTrophy = findViewById(R.id.trophydoinggood36Colors);
 
         //Basic Concepts
-        ImageView imgAchievements_ColorsTrophy = findViewById(R.id.trophycolors36Main);
-        ImageView imgAchievements_CountingTrophy = findViewById(R.id.trophycounting36Main);
-        ImageView imgAchievements_AdditionTrophy = findViewById(R.id.trophyaddition36Main);
-        ImageView imgAchievements_SubtractionTrophy = findViewById(R.id.trophysubtraction36Main);
-        ImageView imgAchievements_ShapesTrophy = findViewById(R.id.trophyshapes36Main);
+        ImageView imgAchievements_ColorsTrophy = findViewById(R.id.trophycolors36Colors);
+        ImageView imgAchievements_CountingTrophy = findViewById(R.id.trophycounting36Colors);
+        ImageView imgAchievements_AdditionTrophy = findViewById(R.id.trophyaddition36Colors);
+        ImageView imgAchievements_SubtractionTrophy = findViewById(R.id.trophysubtraction36Colors);
+        ImageView imgAchievements_ShapesTrophy = findViewById(R.id.trophyshapes36Colors);
 
         //Medals
         //GMRC 3-6
-        ImageView imgAchievements_DisciplineMedal = findViewById(R.id.medaldiscipline36Main);
-        ImageView imgAchievements_HonestyMedal = findViewById(R.id.medalhonesty36Main);
-        ImageView imgAchievements_RespectMedal = findViewById(R.id.medalrespect36Main);
-        ImageView imgAchievements_SociabilityMedal = findViewById(R.id.medalsociability36Main);
-        ImageView imgAchievements_CompassionMedal = findViewById(R.id.medalcompassion36Main);
+        ImageView imgAchievements_DisciplineMedal = findViewById(R.id.medaldiscipline36Colors);
+        ImageView imgAchievements_HonestyMedal = findViewById(R.id.medalhonesty36Colors);
+        ImageView imgAchievements_RespectMedal = findViewById(R.id.medalrespect36Colors);
+        ImageView imgAchievements_SociabilityMedal = findViewById(R.id.medalsociability36Colors);
+        ImageView imgAchievements_CompassionMedal = findViewById(R.id.medalcompassion36Colors);
 
         //GMRC 7-9
-        ImageView imgAchievements_ResponsibilityMedal = findViewById(R.id.medalresponsibility36Main);
-        ImageView imgAchievements_LoveMedal = findViewById(R.id.medallove36Main);
-        ImageView imgAchievements_ObedienceMedal = findViewById(R.id.medalobedience36Main);
-        ImageView imgAchievements_DoingGoodMedal = findViewById(R.id.medaldoinggood36Main);
+        ImageView imgAchievements_ResponsibilityMedal = findViewById(R.id.medalresponsibility36Colors);
+        ImageView imgAchievements_LoveMedal = findViewById(R.id.medallove36Colors);
+        ImageView imgAchievements_ObedienceMedal = findViewById(R.id.medalobedience36Colors);
+        ImageView imgAchievements_DoingGoodMedal = findViewById(R.id.medaldoinggood36Colors);
 
         //Basic Concepts
-        ImageView imgAchievements_ColorsMedal = findViewById(R.id.medalcolors36Main);
-        ImageView imgAchievements_CountingMedal = findViewById(R.id.medalcounting36Main);
-        ImageView imgAchievements_AdditionMedal = findViewById(R.id.medaladdition36Main);
-        ImageView imgAchievements_SubtractionMedal = findViewById(R.id.medalsubtraction36Main);
-        ImageView imgAchievements_ShapesMedal = findViewById(R.id.medalshapes36Main);
+        ImageView imgAchievements_ColorsMedal = findViewById(R.id.medalcolors36Colors);
+        ImageView imgAchievements_CountingMedal = findViewById(R.id.medalcounting36Colors);
+        ImageView imgAchievements_AdditionMedal = findViewById(R.id.medaladdition36Colors);
+        ImageView imgAchievements_SubtractionMedal = findViewById(R.id.medalsubtraction36Colors);
+        ImageView imgAchievements_ShapesMedal = findViewById(R.id.medalshapes36Colors);
 
 
         //Badges
         //GMRC 3-6
-        ImageView imgAchievements_DisciplineBadge = findViewById(R.id.badgediscipline36Main);
-        ImageView imgAchievements_HonestyBadge = findViewById(R.id.badgehonesty36Main);
-        ImageView imgAchievements_RespectBadge = findViewById(R.id.badgerespect36Main);
-        ImageView imgAchievements_SociabilityBadge = findViewById(R.id.badgesociability36Main);
-        ImageView imgAchievements_CompassionBadge = findViewById(R.id.badgecompassion36Main);
+        ImageView imgAchievements_DisciplineBadge = findViewById(R.id.badgediscipline36Colors);
+        ImageView imgAchievements_HonestyBadge = findViewById(R.id.badgehonesty36Colors);
+        ImageView imgAchievements_RespectBadge = findViewById(R.id.badgerespect36Colors);
+        ImageView imgAchievements_SociabilityBadge = findViewById(R.id.badgesociability36Colors);
+        ImageView imgAchievements_CompassionBadge = findViewById(R.id.badgecompassion36Colors);
 
         //GMRC 7-9
-        ImageView imgAchievements_ResponsibilityBadge = findViewById(R.id.badgeresponsibility36Main);
-        ImageView imgAchievements_LoveBadge = findViewById(R.id.badgelove36Main);
-        ImageView imgAchievements_ObedienceBadge = findViewById(R.id.badgeobedience36Main);
-        ImageView imgAchievements_DoingGoodBadge = findViewById(R.id.badgedoinggood36Main);
+        ImageView imgAchievements_ResponsibilityBadge = findViewById(R.id.badgeresponsibility36Colors);
+        ImageView imgAchievements_LoveBadge = findViewById(R.id.badgelove36Colors);
+        ImageView imgAchievements_ObedienceBadge = findViewById(R.id.badgeobedience36Colors);
+        ImageView imgAchievements_DoingGoodBadge = findViewById(R.id.badgedoinggood36Colors);
 
         //Basic Concepts
-        ImageView imgAchievements_ColorsBadge = findViewById(R.id.badgecolors36Main);
-        ImageView imgAchievements_CountingBadge = findViewById(R.id.badgecounting36Main);
-        ImageView imgAchievements_AdditionBadge = findViewById(R.id.badgeaddition36Main);
-        ImageView imgAchievements_SubtractionBadge = findViewById(R.id.badgesubtraction36Main);
-        ImageView imgAchievements_ShapesBadge = findViewById(R.id.badgeshapes36Main);
+        ImageView imgAchievements_ColorsBadge = findViewById(R.id.badgecolors36Colors);
+        ImageView imgAchievements_CountingBadge = findViewById(R.id.badgecounting36Colors);
+        ImageView imgAchievements_AdditionBadge = findViewById(R.id.badgeaddition36Colors);
+        ImageView imgAchievements_SubtractionBadge = findViewById(R.id.badgesubtraction36Colors);
+        ImageView imgAchievements_ShapesBadge = findViewById(R.id.badgeshapes36Colors);
 
 
         //Certificates
         //GMRC 3-6
-        ImageView imgAchievements_DisciplineCertificate = findViewById(R.id.certificatediscipline36Main);
-        ImageView imgAchievements_HonestyCertificate = findViewById(R.id.certificatehonesty36Main);
-        ImageView imgAchievements_RespectCertificate = findViewById(R.id.certificaterespect36Main);
-        ImageView imgAchievements_SociabilityCertificate = findViewById(R.id.certificatesociability36Main);
-        ImageView imgAchievements_CompassionCertificate = findViewById(R.id.certificatecompassion36Main);
+        ImageView imgAchievements_DisciplineCertificate = findViewById(R.id.certificatediscipline36Colors);
+        ImageView imgAchievements_HonestyCertificate = findViewById(R.id.certificatehonesty36Colors);
+        ImageView imgAchievements_RespectCertificate = findViewById(R.id.certificaterespect36Colors);
+        ImageView imgAchievements_SociabilityCertificate = findViewById(R.id.certificatesociability36Colors);
+        ImageView imgAchievements_CompassionCertificate = findViewById(R.id.certificatecompassion36Colors);
 
         //GMRC 7-9
-        ImageView imgAchievements_ResponsibilityCertificate = findViewById(R.id.certificateresponsibility36Main);
-        ImageView imgAchievements_LoveCertificate = findViewById(R.id.certificatelove36Main);
-        ImageView imgAchievements_ObedienceCertificate = findViewById(R.id.certificateobedience36Main);
-        ImageView imgAchievements_DoingGoodCertificate = findViewById(R.id.certificatedoinggood36Main);
+        ImageView imgAchievements_ResponsibilityCertificate = findViewById(R.id.certificateresponsibility36Colors);
+        ImageView imgAchievements_LoveCertificate = findViewById(R.id.certificatelove36Colors);
+        ImageView imgAchievements_ObedienceCertificate = findViewById(R.id.certificateobedience36Colors);
+        ImageView imgAchievements_DoingGoodCertificate = findViewById(R.id.certificatedoinggood36Colors);
 
         //Basic Concepts
-        ImageView imgAchievements_ColorsCertificate = findViewById(R.id.certificatecolors36Main);
-        ImageView imgAchievements_CountingCertificate = findViewById(R.id.certificatecounting36Main);
-        ImageView imgAchievements_AdditionCertificate = findViewById(R.id.certificateaddition36Main);
-        ImageView imgAchievements_SubtractionCertificate = findViewById(R.id.certificatesubtraction36Main);
-        ImageView imgAchievements_ShapesCertificate = findViewById(R.id.certificateshapes36Main);
+        ImageView imgAchievements_ColorsCertificate = findViewById(R.id.certificatecolors36Colors);
+        ImageView imgAchievements_CountingCertificate = findViewById(R.id.certificatecounting36Colors);
+        ImageView imgAchievements_AdditionCertificate = findViewById(R.id.certificateaddition36Colors);
+        ImageView imgAchievements_SubtractionCertificate = findViewById(R.id.certificatesubtraction36Colors);
+        ImageView imgAchievements_ShapesCertificate = findViewById(R.id.certificateshapes36Colors);
 
         //Firebase Firestore
         fAuth = FirebaseAuth.getInstance();
@@ -678,7 +678,7 @@ public class Achievements3to6Colors extends AppCompatActivity {
         backbtnAchievements3to6.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent proceed = new Intent(Achievements3to6Colors.this, Homepage3to6.class);
+                Intent proceed = new Intent(Achievements3to6Colors.this, ColorsLessonCongrats.class);
                 startActivity(proceed);
             }
         });

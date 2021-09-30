@@ -10,11 +10,9 @@
 
     <LinearLayout
         android:id="@+id/linearLayout1UP79"
-        android:layout_width="371dp"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="20dp"
-        android:layout_marginTop="20dp"
-        android:layout_marginRight="20dp"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_margin="20dp"
         android:orientation="vertical"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -54,14 +52,14 @@
         </LinearLayout>
 
         <LinearLayout
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal">
 
             <Space
-                android:layout_width="140dp"
+                android:layout_width="wrap_content"
                 android:layout_height="match_parent"
-                android:layout_weight="0" />
+                android:layout_weight="1" />
 
             <ImageView
                 android:id="@+id/logoUP79"
@@ -72,9 +70,9 @@
                 app:srcCompat="@drawable/teluiconsmall" />
 
             <Space
-                android:layout_width="76dp"
+                android:layout_width="wrap_content"
                 android:layout_height="match_parent"
-                android:layout_weight="0" />
+                android:layout_weight="0.5" />
 
             <ImageButton
                 android:id="@+id/surveybtnUP79"
@@ -103,8 +101,8 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
-            android:visibility="invisible"
-            app:srcCompat="@drawable/tigerprof" />
+            app:srcCompat="@drawable/tigerprof"
+            android:visibility="invisible"/>
 
         <TextView
             android:id="@+id/greetingsUP79"

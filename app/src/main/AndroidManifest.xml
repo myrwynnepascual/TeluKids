@@ -11,11 +11,21 @@
         android:roundIcon="@mipmap/telukidslogo_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.TeluKidsV1">
-        <service android:enabled="true" android:name=".BackgroundSoundService" />
+        <activity
+            android:name=".HelpPage79"
+            android:exported="true" />
+        <activity
+            android:name=".HelpPage36"
+            android:exported="true" />
+
+        <service
+            android:name=".BackgroundSoundService"
+            android:enabled="true" />
+
         <activity
             android:name=".Achievements7to9DoingGood"
             android:exported="true"
-            android:screenOrientation="sensorPortrait"/>
+            android:screenOrientation="sensorPortrait" />
         <activity
             android:name=".DoingGoodLessonCongrats"
             android:exported="true" />

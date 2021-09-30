@@ -24,7 +24,7 @@ public class LessonIntroResponsibility extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_lesson_intro_responsibility);
 
-        btncloseRP = findViewById(R.id.btncloserp79);
+        btncloseRP = findViewById(R.id.btncloseRP79);
         videoViewRP = findViewById(R.id.videoRP79);
         videoPathRP = "android.resource://" + getPackageName() + "/" + R.raw.responsibilityintrovideo;
         uriRP = Uri.parse(videoPathRP);
