@@ -90,7 +90,7 @@ public class ResultsHonesty extends AppCompatActivity {
         btnReadLesson_Quiz_Honesty.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent proceed = new Intent(ResultsHonesty.this, Gmrc3to6.class);
+                Intent proceed = new Intent(ResultsHonesty.this, LessonHonesty.class);
                 startActivity(proceed);
             }
         });

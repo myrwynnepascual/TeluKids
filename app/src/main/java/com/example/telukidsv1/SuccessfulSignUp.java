@@ -54,6 +54,7 @@ public class SuccessfulSignUp extends AppCompatActivity {
                 transaction.update(docRef, "responsibility quiz score", 0);
                 transaction.update(docRef, "shapes quiz score", 0);
                 transaction.update(docRef, "sociability quiz score", 0);
+                transaction.update(docRef, "subtraction quiz score", 0);
                 return null;
             }
         });

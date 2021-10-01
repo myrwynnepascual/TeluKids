@@ -90,7 +90,7 @@ public class ResultsSociability extends AppCompatActivity {
         btnReadLesson_Quiz_Sociability.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent proceed = new Intent(ResultsSociability.this, Gmrc3to6.class);
+                Intent proceed = new Intent(ResultsSociability.this, LessonSociability.class);
                 startActivity(proceed);
             }
         });
