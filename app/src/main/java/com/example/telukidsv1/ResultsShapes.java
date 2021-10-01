@@ -90,7 +90,7 @@ public class ResultsShapes extends AppCompatActivity {
         btnReadLesson_Quiz_Shapes.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent proceed = new Intent(ResultsShapes.this, BasicConcepts.class);
+                Intent proceed = new Intent(ResultsShapes.this, LessonShapes.class);
                 startActivity(proceed);
             }
         });

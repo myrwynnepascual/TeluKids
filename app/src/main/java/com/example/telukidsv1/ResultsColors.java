@@ -90,7 +90,7 @@ public class ResultsColors extends AppCompatActivity {
         btnReadLesson_Quiz_Colors.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent proceed = new Intent(ResultsColors.this, BasicConcepts.class);
+                Intent proceed = new Intent(ResultsColors.this, LessonColors.class);
                 startActivity(proceed);
             }
         });

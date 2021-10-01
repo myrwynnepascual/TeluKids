@@ -90,7 +90,7 @@ public class ResultsLove extends AppCompatActivity {
         btnReadLesson_Quiz_Love.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent proceed = new Intent(ResultsLove.this, Gmrc7to9.class);
+                Intent proceed = new Intent(ResultsLove.this, LessonLove.class);
                 startActivity(proceed);
             }
         });

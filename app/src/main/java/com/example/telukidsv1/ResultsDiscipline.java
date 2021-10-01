@@ -90,7 +90,7 @@ public class ResultsDiscipline extends AppCompatActivity {
         btnReadLesson_Quiz_Discipline.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent proceed = new Intent(ResultsDiscipline.this, Gmrc3to6.class);
+                Intent proceed = new Intent(ResultsDiscipline.this, LessonDiscipline.class);
                 startActivity(proceed);
             }
         });

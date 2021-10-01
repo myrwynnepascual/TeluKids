@@ -90,7 +90,7 @@ public class ResultsSubtraction extends AppCompatActivity {
         btnReadLesson_Quiz_Subtraction.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent proceed = new Intent(ResultsSubtraction.this, BasicConcepts.class);
+                Intent proceed = new Intent(ResultsSubtraction.this, LessonSubtraction.class);
                 startActivity(proceed);
             }
         });
