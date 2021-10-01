@@ -250,8 +250,11 @@ public class EditProfile36 extends AppCompatActivity {
                 }
 
                 //PASSWORD
+                if((oPassword.getText().toString().isEmpty()) && ((!nPassword.getText().toString().isEmpty()) || (!nCPassword.getText().toString().isEmpty()))){
+                    oPassword.setError("Enter old password");
+                }
                 if((!oPassword.getText().toString().isEmpty()) && (nPassword.getText().toString().isEmpty())){
-                    nPassword.setError("Enter new Password");
+                    nPassword.setError("Enter new password");
                 }
 
                 if ((!nPassword.getText().toString().isEmpty()) && (nPassword.length() < 8)){
@@ -259,10 +262,10 @@ public class EditProfile36 extends AppCompatActivity {
                 }
 
                 if ((!nPassword.getText().toString().isEmpty()) && (nCPassword.getText().toString().isEmpty())){
-                    nCPassword.setError("Confirm Password is Required");
+                    nCPassword.setError("Confirm password is required");
                 }
 
-                if ((!nPassword.getText().toString().isEmpty()) && (!nCPassword.getText().toString().isEmpty())){
+                if ((!oPassword.getText().toString().isEmpty()) && ((!nPassword.getText().toString().isEmpty()) && (!nCPassword.getText().toString().isEmpty()))){
                     if(!nPassword.getText().toString().trim().equals(nCPassword.getText().toString().trim())){
                         nPassword.setError("Passwords do not match.");
                         nCPassword.setError("Passwords do not match.");
@@ -274,6 +277,7 @@ public class EditProfile36 extends AppCompatActivity {
 
                         //re-authentication
                         AuthCredential authCredential = EmailAuthProvider.getCredential(user.getEmail(),oldPassword);
+                        String currentuserEmail = user.getEmail();
                         user.reauthenticate(authCredential).addOnSuccessListener(new OnSuccessListener<Void>() {
                             @Override
                             public void onSuccess(Void aVoid) {
@@ -286,6 +290,16 @@ public class EditProfile36 extends AppCompatActivity {
                                         oPassword.getText().clear();
                                         nPassword.getText().clear();
                                         nCPassword.getText().clear();
+
+                                        SendMail mail = new SendMail("telukids.help@gmail.com","telukidsv1test",
+                                                currentuserEmail,
+                                                "TeluKids Update Password",
+                                                "Hello,\n" +
+                                                        "\n" +
+                                                        "This is to notify you that your TeluKids account's password has been updated.\n\n" + "Thanks,\n" +
+                                                        "Your TeluKids team");
+                                        mail.execute();
+
                                     }
                                 }).addOnFailureListener(new OnFailureListener() {
                                     @Override
