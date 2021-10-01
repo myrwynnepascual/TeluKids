@@ -34,6 +34,7 @@ public class ResultsDiscipline extends AppCompatActivity {
         setContentView(R.layout.results_discipline);
         TextView totalScoreLabel = findViewById(R.id.totalScoreLabel_Discipline);
         ImageView imgTrophy_Discipline = findViewById(R.id.imgTrophy_Discipline);
+        ImageButton gmrc36btn = findViewById(R.id.backbtnDR);
         ImageButton achievementsbtnCLC_Discipline = findViewById(R.id.achievementsbtnCLC_Discipline);
         ImageButton btnReadLesson_Quiz_Discipline = findViewById(R.id.btnReadLesson_Quiz_Discipline);
         ImageButton homepageCLC_Discipline = findViewById(R.id.homepageCLC_Discipline);
@@ -85,6 +86,12 @@ public class ResultsDiscipline extends AppCompatActivity {
                 Intent proceed = new Intent(ResultsDiscipline.this, Achievements3to6Discipline2.class);
                 proceed.putExtra("RIGHT_ANSWER_COUNT_Discipline", score_discipline);
                 startActivity(proceed);
+            }
+        });
+        gmrc36btn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(ResultsDiscipline.this, Gmrc3to6.class));
             }
         });
         btnReadLesson_Quiz_Discipline.setOnClickListener(new View.OnClickListener() {

@@ -5,6 +5,7 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.media.Image;
 import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.view.View;
@@ -34,6 +35,7 @@ public class ResultsRespect extends AppCompatActivity {
         setContentView(R.layout.results_respect);
         TextView totalScoreLabel = findViewById(R.id.totalScoreLabel_Respect);
         ImageView imgTrophy_Respect = findViewById(R.id.imgTrophy_Respect);
+        ImageButton gmrc36btn = findViewById(R.id.backbtnRR);
         ImageButton achievementsbtnCLC_Respect = findViewById(R.id.achievementsbtnCLC_Respect);
         ImageButton btnReadLesson_Quiz_Respect = findViewById(R.id.btnReadLesson_Quiz_Respect);
         ImageButton homepageCLC_Respect = findViewById(R.id.homepageCLC_Respect);
@@ -78,7 +80,12 @@ public class ResultsRespect extends AppCompatActivity {
                 return null;
             }
         });
-
+        gmrc36btn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(ResultsRespect.this, Gmrc3to6.class));
+            }
+        });
         achievementsbtnCLC_Respect.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

@@ -34,6 +34,7 @@ public class ResultsAddition extends AppCompatActivity {
         setContentView(R.layout.results_addition);
         TextView totalScoreLabel = findViewById(R.id.totalScoreLabel_Addition);
         ImageView imgTrophy_Addition = findViewById(R.id.imgTrophy_Addition);
+        ImageButton numbersbtnCLC_Addition = findViewById(R.id.backbtnAR);
         ImageButton achievementsbtnCLC_Addition = findViewById(R.id.achievementsbtnCLC_Addition);
         ImageButton btnReadLesson_Quiz_Addition = findViewById(R.id.btnReadLesson_Quiz_Addition);
         ImageButton homepageCLC_Addition = findViewById(R.id.homepageCLC_Addition);
@@ -85,6 +86,12 @@ public class ResultsAddition extends AppCompatActivity {
                 Intent proceed = new Intent(ResultsAddition.this, Achievements3to6Addition2.class);
                 proceed.putExtra("RIGHT_ANSWER_COUNT_Addition", score_addition);
                 startActivity(proceed);
+            }
+        });
+        numbersbtnCLC_Addition.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(ResultsAddition.this, Numbers.class));
             }
         });
         btnReadLesson_Quiz_Addition.setOnClickListener(new View.OnClickListener() {

@@ -92,8 +92,8 @@
         <entry key="..\:/Downloads/TeluKids-v1-myr_branch/app/src/main/res/layout/activity_green4.xml" value="0.18819655521783182" />
         <entry key="..\:/Downloads/TeluKids-v1-myr_branch/app/src/main/res/layout/activity_green5.xml" value="0.18819655521783182" />
         <entry key="..\:/Downloads/TeluKids-v1-myr_branch/app/src/main/res/layout/activity_green6.xml" value="0.18819655521783182" />
-        <entry key="..\:/Downloads/TeluKids-v1-myr_branch/app/src/main/res/layout/activity_help_page36.xml" value="0.19784845650140317" />
-        <entry key="..\:/Downloads/TeluKids-v1-myr_branch/app/src/main/res/layout/activity_help_page79.xml" value="0.34752104770813846" />
+        <entry key="..\:/Downloads/TeluKids-v1-myr_branch/app/src/main/res/layout/activity_help_page36.xml" value="0.1705050505050505" />
+        <entry key="..\:/Downloads/TeluKids-v1-myr_branch/app/src/main/res/layout/activity_help_page79.xml" value="0.21979166666666666" />
         <entry key="..\:/Downloads/TeluKids-v1-myr_branch/app/src/main/res/layout/activity_homepage3to6.xml" value="0.22" />
         <entry key="..\:/Downloads/TeluKids-v1-myr_branch/app/src/main/res/layout/activity_homepage7to9.xml" value="0.33" />
         <entry key="..\:/Downloads/TeluKids-v1-myr_branch/app/src/main/res/layout/activity_honesty_lesson_congrats.xml" value="0.39114583333333336" />
@@ -174,10 +174,17 @@
         <entry key="..\:/Downloads/TeluKids-v1-myr_branch/app/src/main/res/layout/quiz_subtraction.xml" value="0.39114583333333336" />
         <entry key="..\:/Downloads/TeluKids-v1-myr_branch/app/src/main/res/layout/results_addition.xml" value="0.21927083333333333" />
         <entry key="..\:/Downloads/TeluKids-v1-myr_branch/app/src/main/res/layout/results_colors.xml" value="0.38697916666666665" />
+        <entry key="..\:/Downloads/TeluKids-v1-myr_branch/app/src/main/res/layout/results_compassion.xml" value="0.38697916666666665" />
         <entry key="..\:/Downloads/TeluKids-v1-myr_branch/app/src/main/res/layout/results_countingnumbers.xml" value="0.38697916666666665" />
         <entry key="..\:/Downloads/TeluKids-v1-myr_branch/app/src/main/res/layout/results_discipline.xml" value="0.38697916666666665" />
         <entry key="..\:/Downloads/TeluKids-v1-myr_branch/app/src/main/res/layout/results_doinggood.xml" value="0.38697916666666665" />
+        <entry key="..\:/Downloads/TeluKids-v1-myr_branch/app/src/main/res/layout/results_honesty.xml" value="0.38697916666666665" />
+        <entry key="..\:/Downloads/TeluKids-v1-myr_branch/app/src/main/res/layout/results_love.xml" value="0.38697916666666665" />
+        <entry key="..\:/Downloads/TeluKids-v1-myr_branch/app/src/main/res/layout/results_obedience.xml" value="0.38697916666666665" />
+        <entry key="..\:/Downloads/TeluKids-v1-myr_branch/app/src/main/res/layout/results_respect.xml" value="0.38697916666666665" />
+        <entry key="..\:/Downloads/TeluKids-v1-myr_branch/app/src/main/res/layout/results_responsibility.xml" value="0.38697916666666665" />
         <entry key="..\:/Downloads/TeluKids-v1-myr_branch/app/src/main/res/layout/results_shapes.xml" value="0.2038934426229508" />
+        <entry key="..\:/Downloads/TeluKids-v1-myr_branch/app/src/main/res/layout/results_sociability.xml" value="0.38697916666666665" />
         <entry key="..\:/Downloads/TeluKids-v1-myr_branch/app/src/main/res/layout/results_subtraction.xml" value="0.38697916666666665" />
         <entry key="..\:/Downloads/TeluKids-v1-myr_branch/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.403125" />
         <entry key="..\:/Projects/app/src/main/res/layout/activity_category_selection.xml" value="0.24407894736842106" />

@@ -10,7 +10,8 @@
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_margin="20dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
         android:orientation="vertical"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -27,6 +28,7 @@
                 android:id="@+id/backbtnHP36"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
                 android:backgroundTint="#00FFFFFF"
                 android:contentDescription="@string/todo"
                 app:srcCompat="@drawable/subtnback"
@@ -46,13 +48,33 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"
                 android:contentDescription="@string/todo"
-                app:srcCompat="@drawable/telukidstextplacement"
+                app:srcCompat="@drawable/helptxt"
+                tools:ignore="ImageContrastCheck" />
+
+            <ImageView
+                android:id="@+id/howtousetxtHP36"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:contentDescription="@string/todo"
+                app:srcCompat="@drawable/howtousetxt"
+                tools:ignore="ImageContrastCheck" />
+
+            <ImageView
+                android:id="@+id/howtouseHP36"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:layout_gravity="center_horizontal"
+                android:contentDescription="@string/todo"
+                app:srcCompat="@drawable/howtouse"
                 tools:ignore="ImageContrastCheck" />
 
             <ImageView
                 android:id="@+id/abouttxtHP36"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
                 android:layout_gravity="center_horizontal"
                 android:contentDescription="@string/todo"
                 app:srcCompat="@drawable/abtapptxt"
@@ -81,6 +103,7 @@
                 android:id="@+id/faqsHP36"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginBottom="20dp"
                 android:layout_gravity="center_horizontal"
                 android:contentDescription="@string/todo"
                 app:srcCompat="@drawable/faq"

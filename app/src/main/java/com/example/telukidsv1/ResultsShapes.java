@@ -34,6 +34,7 @@ public class ResultsShapes extends AppCompatActivity {
         setContentView(R.layout.results_shapes);
         TextView totalScoreLabel = findViewById(R.id.totalScoreLabel_Shapes);
         ImageView imgTrophy_Shapes = findViewById(R.id.imgTrophy_Shapes);
+        ImageButton bconceptsbtn = findViewById(R.id.backbtnSR);
         ImageButton achievementsbtnCLC_Shapes = findViewById(R.id.achievementsbtnCLC_Shapes);
         ImageButton btnReadLesson_Quiz_Shapes = findViewById(R.id.btnReadLesson_Quiz_Shapes);
         ImageButton homepageCLC_Shapes = findViewById(R.id.homepageCLC_Shapes);
@@ -78,7 +79,12 @@ public class ResultsShapes extends AppCompatActivity {
                 return null;
             }
         });
-
+        bconceptsbtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(ResultsShapes.this, BasicConcepts.class));
+            }
+        });
         achievementsbtnCLC_Shapes.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

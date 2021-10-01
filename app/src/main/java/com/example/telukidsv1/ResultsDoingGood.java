@@ -34,6 +34,7 @@ public class ResultsDoingGood extends AppCompatActivity {
         setContentView(R.layout.results_doinggood);
         TextView totalScoreLabel = findViewById(R.id.totalScoreLabel_DoingGood);
         ImageView imgTrophy_DoingGood = findViewById(R.id.imgTrophy_DoingGood);
+        ImageButton gmrc79btn = findViewById(R.id.backbtnDGR);
         ImageButton achievementsbtnCLC_DoingGood = findViewById(R.id.achievementsbtnCLC_DoingGood);
         ImageButton btnReadLesson_Quiz_DoingGood = findViewById(R.id.btnReadLesson_Quiz_DoingGood);
         ImageButton homepageCLC_DoingGood = findViewById(R.id.homepageCLC_DoingGood);
@@ -85,6 +86,12 @@ public class ResultsDoingGood extends AppCompatActivity {
                 Intent proceed = new Intent(ResultsDoingGood.this, Achievements7to9DoingGood2.class);
                 proceed.putExtra("RIGHT_ANSWER_COUNT_DoingGood", score_doinggood);
                 startActivity(proceed);
+            }
+        });
+        gmrc79btn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(ResultsDoingGood.this, Gmrc7to9.class));
             }
         });
         btnReadLesson_Quiz_DoingGood.setOnClickListener(new View.OnClickListener() {

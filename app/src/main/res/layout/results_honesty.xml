@@ -28,6 +28,15 @@
             android:layout_height="wrap_content"
             android:orientation="horizontal">
 
+            <ImageButton
+                android:id="@+id/backbtnHR"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:backgroundTint="#00FFFFFF"
+                android:contentDescription="@string/todo"
+                app:srcCompat="@drawable/btngmrc"
+                tools:ignore="SpeakableTextPresentCheck,ImageContrastCheck,DuplicateSpeakableTextCheck" />
+
             <Space
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"

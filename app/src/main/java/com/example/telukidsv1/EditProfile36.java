@@ -277,7 +277,6 @@ public class EditProfile36 extends AppCompatActivity {
 
                         //re-authentication
                         AuthCredential authCredential = EmailAuthProvider.getCredential(user.getEmail(),oldPassword);
-                        String currentuserEmail = user.getEmail();
                         user.reauthenticate(authCredential).addOnSuccessListener(new OnSuccessListener<Void>() {
                             @Override
                             public void onSuccess(Void aVoid) {
@@ -292,7 +291,7 @@ public class EditProfile36 extends AppCompatActivity {
                                         nCPassword.getText().clear();
 
                                         SendMail mail = new SendMail("telukids.help@gmail.com","telukidsv1test",
-                                                currentuserEmail,
+                                                user.getEmail(),
                                                 "TeluKids Update Password",
                                                 "Hello,\n" +
                                                         "\n" +
@@ -337,6 +336,7 @@ public class EditProfile36 extends AppCompatActivity {
 
                             changesStatus.setText("Icon Updated.");
                             userIconSelected = false;
+
                         }
                     }).addOnFailureListener(new OnFailureListener() {
                         @Override
@@ -346,6 +346,8 @@ public class EditProfile36 extends AppCompatActivity {
 
                         }
                     });
+
+
                 }
 
                 //RESET EVERYTHING

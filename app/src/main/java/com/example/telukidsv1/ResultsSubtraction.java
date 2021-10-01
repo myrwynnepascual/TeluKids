@@ -5,6 +5,7 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.media.Image;
 import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.view.View;
@@ -34,6 +35,7 @@ public class ResultsSubtraction extends AppCompatActivity {
         setContentView(R.layout.results_subtraction);
         TextView totalScoreLabel = findViewById(R.id.totalScoreLabel_Subtraction);
         ImageView imgTrophy_Subtraction = findViewById(R.id.imgTrophy_Subtraction);
+        ImageButton numbersbtnCLC_Subtraction = findViewById(R.id.backbtnSBR);
         ImageButton achievementsbtnCLC_Subtraction = findViewById(R.id.achievementsbtnCLC_Subtraction);
         ImageButton btnReadLesson_Quiz_Subtraction = findViewById(R.id.btnReadLesson_Quiz_Subtraction);
         ImageButton homepageCLC_Subtraction = findViewById(R.id.homepageCLC_Subtraction);
@@ -85,6 +87,12 @@ public class ResultsSubtraction extends AppCompatActivity {
                 Intent proceed = new Intent(ResultsSubtraction.this, Achievements3to6Subtraction2.class);
                 proceed.putExtra("RIGHT_ANSWER_COUNT_Subtraction", score_subtraction);
                 startActivity(proceed);
+            }
+        });
+        numbersbtnCLC_Subtraction.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(ResultsSubtraction.this, Numbers.class));
             }
         });
         btnReadLesson_Quiz_Subtraction.setOnClickListener(new View.OnClickListener() {

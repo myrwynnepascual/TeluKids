@@ -34,6 +34,7 @@ public class ResultsCountingNumbers extends AppCompatActivity {
         setContentView(R.layout.results_countingnumbers);
         TextView totalScoreLabel = findViewById(R.id.totalScoreLabel_Counting);
         ImageView imgTrophy_Counting = findViewById(R.id.imgTrophy_Counting);
+        ImageButton numbersbtnCLC_Counting = findViewById(R.id.backbtnCTR);
         ImageButton achievementsbtnCLC_Counting = findViewById(R.id.achievementsbtnCLC_Counting);
         ImageButton btnReadLesson_Quiz_Counting = findViewById(R.id.btnReadLesson_Quiz_Counting);
         ImageButton homepageCLC_Counting = findViewById(R.id.homepageCLC_Counting);
@@ -85,6 +86,12 @@ public class ResultsCountingNumbers extends AppCompatActivity {
                 Intent proceed = new Intent(ResultsCountingNumbers.this, Achievements3to6Counting2.class);
                 proceed.putExtra("RIGHT_ANSWER_COUNT_Counting", score_counting);
                 startActivity(proceed);
+            }
+        });
+        numbersbtnCLC_Counting.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(ResultsCountingNumbers.this, Numbers.class));
             }
         });
         btnReadLesson_Quiz_Counting.setOnClickListener(new View.OnClickListener() {

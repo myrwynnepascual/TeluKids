@@ -34,6 +34,7 @@ public class ResultsSociability extends AppCompatActivity {
         setContentView(R.layout.results_sociability);
         TextView totalScoreLabel = findViewById(R.id.totalScoreLabel_Sociability);
         ImageView imgTrophy_Sociability = findViewById(R.id.imgTrophy_Sociability);
+        ImageButton gmrc36btn = findViewById(R.id.backbtnSCR);
         ImageButton achievementsbtnCLC_Sociability = findViewById(R.id.achievementsbtnCLC_Sociability);
         ImageButton btnReadLesson_Quiz_Sociability = findViewById(R.id.btnReadLesson_Quiz_Sociability);
         ImageButton homepageCLC_Sociability = findViewById(R.id.homepageCLC_Sociability);
@@ -78,7 +79,12 @@ public class ResultsSociability extends AppCompatActivity {
                 return null;
             }
         });
-
+        gmrc36btn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(ResultsSociability.this,Gmrc3to6.class));
+            }
+        });
         achievementsbtnCLC_Sociability.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

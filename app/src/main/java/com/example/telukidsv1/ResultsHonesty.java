@@ -34,6 +34,7 @@ public class ResultsHonesty extends AppCompatActivity {
         setContentView(R.layout.results_honesty);
         TextView totalScoreLabel = findViewById(R.id.totalScoreLabel_Honesty);
         ImageView imgTrophy_Honesty = findViewById(R.id.imgTrophy_Honesty);
+        ImageButton gmrc36btn = findViewById(R.id.backbtnHR);
         ImageButton achievementsbtnCLC_Honesty = findViewById(R.id.achievementsbtnCLC_Honesty);
         ImageButton btnReadLesson_Quiz_Honesty = findViewById(R.id.btnReadLesson_Quiz_Honesty);
         ImageButton homepageCLC_Honesty = findViewById(R.id.homepageCLC_Honesty);
@@ -78,7 +79,12 @@ public class ResultsHonesty extends AppCompatActivity {
                 return null;
             }
         });
-
+        gmrc36btn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(ResultsHonesty.this,Gmrc3to6.class));
+            }
+        });
         achievementsbtnCLC_Honesty.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

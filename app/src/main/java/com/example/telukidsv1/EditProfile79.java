@@ -246,6 +246,9 @@ public class EditProfile79 extends AppCompatActivity {
                 }
 
                 //PASSWORD
+                if((oPassword.getText().toString().isEmpty()) && ((!nPassword.getText().toString().isEmpty()) || (!nCPassword.getText().toString().isEmpty()))){
+                    oPassword.setError("Enter old password");
+                }
                 if((!oPassword.getText().toString().isEmpty()) && (nPassword.getText().toString().isEmpty())){
                     nPassword.setError("Enter new Password");
                 }
@@ -282,6 +285,15 @@ public class EditProfile79 extends AppCompatActivity {
                                         oPassword.getText().clear();
                                         nPassword.getText().clear();
                                         nCPassword.getText().clear();
+
+                                        SendMail mail = new SendMail("telukids.help@gmail.com","telukidsv1test",
+                                                user.getEmail(),
+                                                "TeluKids Update Password",
+                                                "Hello,\n" +
+                                                        "\n" +
+                                                        "This is to notify you that your TeluKids account's password has been updated.\n\n" + "Thanks,\n" +
+                                                        "Your TeluKids team");
+                                        mail.execute();
                                     }
                                 }).addOnFailureListener(new OnFailureListener() {
                                     @Override

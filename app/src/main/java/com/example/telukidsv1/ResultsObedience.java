@@ -34,6 +34,7 @@ public class ResultsObedience extends AppCompatActivity {
         setContentView(R.layout.results_obedience);
         TextView totalScoreLabel = findViewById(R.id.totalScoreLabel_Obedience);
         ImageView imgTrophy_Obedience = findViewById(R.id.imgTrophy_Obedience);
+        ImageButton gmrc79btn = findViewById(R.id.backbtnOR);
         ImageButton achievementsbtnCLC_Obedience = findViewById(R.id.achievementsbtnCLC_Obedience);
         ImageButton btnReadLesson_Quiz_Obedience = findViewById(R.id.btnReadLesson_Quiz_Obedience);
         ImageButton homepageCLC_Obedience = findViewById(R.id.homepageCLC_Obedience);
@@ -78,7 +79,12 @@ public class ResultsObedience extends AppCompatActivity {
                 return null;
             }
         });
-
+        gmrc79btn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(ResultsObedience.this, Gmrc7to9.class));
+            }
+        });
         achievementsbtnCLC_Obedience.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

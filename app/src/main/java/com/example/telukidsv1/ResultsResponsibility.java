@@ -34,6 +34,7 @@ public class ResultsResponsibility extends AppCompatActivity {
         setContentView(R.layout.results_responsibility);
         TextView totalScoreLabel = findViewById(R.id.totalScoreLabel_Responsibility);
         ImageView imgTrophy_Responsibility = findViewById(R.id.imgTrophy_Responsibility);
+        ImageButton gmrc79btn = findViewById(R.id.backbtnRPR);
         ImageButton achievementsbtnCLC_Responsibility = findViewById(R.id.achievementsbtnCLC_Responsibility);
         ImageButton btnReadLesson_Quiz_Responsibility = findViewById(R.id.btnReadLesson_Quiz_Responsibility);
         ImageButton homepageCLC_Responsibility = findViewById(R.id.homepageCLC_Responsibility);
@@ -78,7 +79,12 @@ public class ResultsResponsibility extends AppCompatActivity {
                 return null;
             }
         });
-
+        gmrc79btn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(ResultsResponsibility.this,Gmrc7to9.class));
+            }
+        });
         achievementsbtnCLC_Responsibility.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
