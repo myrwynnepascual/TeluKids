@@ -618,7 +618,7 @@ public class Achievements7to9DoingGood extends AppCompatActivity {
                 if (achievement_obedience.equals("Obedience Master")){
                     imgAchievements_ObedienceTrophy.setImageResource(R.drawable.trophyobedience);
                     imgAchievements_ObedienceMedal.setImageResource(R.drawable.medalobedience);
-                    imgAchievements_ObedienceBadge.setImageResource(R.drawable.certificateobedience);
+                    imgAchievements_ObedienceBadge.setImageResource(R.drawable.badgeobedience);
                 }
                 return null;
             }
@@ -632,7 +632,7 @@ public class Achievements7to9DoingGood extends AppCompatActivity {
                 lesson_obedience = documentSnapshot.getString("obedience lesson");
 
                 if (lesson_obedience.equals("Completed")){
-                    imgAchievements_ObedienceCertificate.setImageResource(R.drawable.certificateobedience);
+                    imgAchievements_ObedienceCertificate.setImageResource(R.drawable.badgeobedience);
                 }
                 return null;
             }

@@ -617,7 +617,7 @@ public class Achievements7to9DoingGood2 extends AppCompatActivity {
                 if (achievement_obedience.equals("Obedience Master")){
                     imgAchievements_ObedienceTrophy.setImageResource(R.drawable.trophyobedience);
                     imgAchievements_ObedienceMedal.setImageResource(R.drawable.medalobedience);
-                    imgAchievements_ObedienceBadge.setImageResource(R.drawable.certificateobedience);
+                    imgAchievements_ObedienceBadge.setImageResource(R.drawable.badgeobedience);
                 }
                 return null;
             }
