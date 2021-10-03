@@ -30,7 +30,7 @@ public class LessonIntroAddition extends AppCompatActivity {
         uriIA = Uri.parse(videoPathIA);
         videoViewIA.setVideoURI(uriIA);
 
-        //BackgroundSoundService.onPause();
+        BackgroundSoundService.onPause();
 
         MediaController mediaController = new MediaController(this);
         videoViewIA.setMediaController(mediaController);

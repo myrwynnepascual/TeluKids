@@ -28,6 +28,8 @@ public class Homepage3to6 extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_homepage3to6);
 
+        BackgroundSoundService.lowerVolume();
+        BackgroundSoundService.onResume();
 
         btnbackH36 = findViewById(R.id.backbtnH36);
         btnUserProf36 = findViewById(R.id.userprofilebtn);
@@ -112,5 +114,17 @@ public class Homepage3to6 extends AppCompatActivity {
             }
         });
 
+    }
+
+    @Override
+    protected void onPause(){
+        BackgroundSoundService.onPause();
+        super.onPause();
+    }
+
+    @Override
+    protected void onResume(){
+        BackgroundSoundService.onResume();
+        super.onResume();
     }
 }

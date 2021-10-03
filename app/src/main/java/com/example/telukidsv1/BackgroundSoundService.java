@@ -12,6 +12,7 @@ import androidx.annotation.Nullable;
 public class BackgroundSoundService extends Service {
     private static final String TAG = null;
     public static MediaPlayer player;
+    public static int length;
     //MediaPlayer player;
     public IBinder onBind(Intent arg0) {
 
@@ -22,7 +23,7 @@ public class BackgroundSoundService extends Service {
         super.onCreate();
         player = MediaPlayer.create(this, R.raw.bgmusic1);
         player.setLooping(true); // Set looping
-        player.setVolume(50,50);
+        player.setVolume(100,100);
 
     }
     public int onStartCommand(Intent intent, int flags, int startId) {
@@ -38,20 +39,23 @@ public class BackgroundSoundService extends Service {
         return null;
     }
 
-    public void onStop() {
-
+    public static void lowerVolume() {
+        player.setVolume(10,10);
     }
+
     public static void onPause() {
         player.pause();
+        length = player.getCurrentPosition();
     }
+
+    public static void onResume(){
+        player.seekTo(length);
+        player.start();
+    }
+
     @Override
     public void onDestroy() {
         player.stop();
         player.release();
-    }
-
-    @Override
-    public void onLowMemory() {
-
     }
 }

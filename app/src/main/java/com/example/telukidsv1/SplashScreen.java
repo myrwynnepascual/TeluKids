@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.media.MediaPlayer;
+import android.os.Build;
 import android.os.Bundle;
 import android.os.Handler;
 import android.provider.Settings;
@@ -19,8 +20,8 @@ public class SplashScreen extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_splash_screen);
 
-        //Intent svc = new Intent(this, BackgroundSoundService.class);
-        //startService(svc);
+        Intent svc = new Intent(this, BackgroundSoundService.class);
+        startService(svc);
 
         Handler handler = new Handler();
         handler.postDelayed(new Runnable() {
@@ -30,6 +31,12 @@ public class SplashScreen extends AppCompatActivity {
                 finish();
             }
         },5000);
+    }
+
+    @Override
+    protected void onPause(){
+        BackgroundSoundService.onPause();
+        super.onPause();
     }
 
 }
