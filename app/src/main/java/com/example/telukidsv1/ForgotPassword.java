@@ -4,6 +4,7 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
@@ -31,11 +32,15 @@ public class ForgotPassword extends AppCompatActivity {
         backbtnFP = findViewById(R.id.backbtnFP);
         changepwFP = findViewById(R.id.changepwbtnFP);
 
+        MediaPlayer sfx = MediaPlayer.create(this, R.raw.btnsfx);
+
+
         fAuth = FirebaseAuth.getInstance();
 
         backbtnFP.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                sfx.start();
                 startActivity(new Intent(ForgotPassword.this, Login.class));
             }
         });
@@ -43,6 +48,8 @@ public class ForgotPassword extends AppCompatActivity {
         changepwFP.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
+                sfx.start();
 
                 String mail = emailFP.getText().toString();
                 fAuth.sendPasswordResetEmail(mail).addOnSuccessListener(new OnSuccessListener<Void>() {

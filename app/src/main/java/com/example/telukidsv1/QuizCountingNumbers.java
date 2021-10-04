@@ -68,6 +68,8 @@ public class QuizCountingNumbers extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.quiz_countingnumbers);
 
+        BackgroundSoundService.onPause();
+
 
         quizLayout_Counting = (LinearLayout)findViewById(R.id.quizLayout_Counting);
         imgQuestion_Counting =  (ImageView)findViewById(R.id.imgQuestion_Counting);

@@ -4,6 +4,7 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.util.Log;
@@ -27,6 +28,7 @@ public class SignUp extends AppCompatActivity {
     FirebaseAuth fAuth;
     FirebaseFirestore fStore;
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -41,14 +43,18 @@ public class SignUp extends AppCompatActivity {
         emessageSU = findViewById(R.id.errormsgSU);
         backbtnSU = findViewById(R.id.backbtnSU);
         signupbtnSU = findViewById(R.id.signupbtnSU);
+        MediaPlayer sfx = MediaPlayer.create(this, R.raw.btnsfx);
 
         fAuth = FirebaseAuth.getInstance();
         fStore = FirebaseFirestore.getInstance();
 
 
-        backbtnSU.setOnClickListener(v -> startActivity(new Intent(SignUp.this,SignUpOrLogInPage.class)));
+        backbtnSU.setOnClickListener(v ->  {sfx.start();
+        startActivity(new Intent(SignUp.this,SignUpOrLogInPage.class));});
 
         signupbtnSU.setOnClickListener(v -> {
+            sfx.start();
+
             String fname = fnameSU.getText().toString();
             String lname = lnameSU.getText().toString();
             String email = emailSU.getText().toString().trim();

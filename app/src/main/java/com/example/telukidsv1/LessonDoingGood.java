@@ -27,6 +27,8 @@ public class LessonDoingGood extends AppCompatActivity {
         backbtnDG79 = findViewById(R.id.btnbackDG79);
         nextbtnDG79 = findViewById(R.id.nextbtnDG79);
 
+        BackgroundSoundService.onPause();
+
         mediaController = new MediaController(this);
         videoViewDG79.setMediaController(mediaController);
         mediaController.setVisibility(View.GONE);
@@ -39,6 +41,7 @@ public class LessonDoingGood extends AppCompatActivity {
         videoPathDG79 = "android.resource://" + getPackageName() + "/" + R.raw.good1;
         uriDG79 = Uri.parse(videoPathDG79);
         videoViewDG79.setVideoURI(uriDG79);
+        MediaPlayer sfx = MediaPlayer.create(this, R.raw.btnsfx);
 
         videoViewDG79.start();
 
@@ -55,6 +58,7 @@ public class LessonDoingGood extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
+                sfx.start();
                 startActivity(new Intent(LessonDoingGood.this,ChooseModeDoingGood.class));
 
             }
@@ -64,6 +68,7 @@ public class LessonDoingGood extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
+                sfx.start();
                 good2();
 
             }
@@ -74,6 +79,7 @@ public class LessonDoingGood extends AppCompatActivity {
         videoPathDG79 = "android.resource://" + getPackageName() + "/" + R.raw.good2;
         uriDG79 = Uri.parse(videoPathDG79);
         videoViewDG79.setVideoURI(uriDG79);
+        MediaPlayer sfx = MediaPlayer.create(this, R.raw.btnsfx);
 
         videoViewDG79.start();
 
@@ -90,6 +96,7 @@ public class LessonDoingGood extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
+                sfx.start();
                 good1();
 
             }
@@ -99,6 +106,7 @@ public class LessonDoingGood extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
+                sfx.start();
                 good3();
 
             }
@@ -109,6 +117,7 @@ public class LessonDoingGood extends AppCompatActivity {
         videoPathDG79 = "android.resource://" + getPackageName() + "/" + R.raw.good3;
         uriDG79 = Uri.parse(videoPathDG79);
         videoViewDG79.setVideoURI(uriDG79);
+        MediaPlayer sfx = MediaPlayer.create(this, R.raw.btnsfx);
 
         videoViewDG79.start();
 
@@ -125,6 +134,7 @@ public class LessonDoingGood extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
+                sfx.start();
                 good2();
 
             }
@@ -134,6 +144,7 @@ public class LessonDoingGood extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
+                sfx.start();
                 good4();
 
             }
@@ -144,6 +155,7 @@ public class LessonDoingGood extends AppCompatActivity {
         videoPathDG79 = "android.resource://" + getPackageName() + "/" + R.raw.good4;
         uriDG79 = Uri.parse(videoPathDG79);
         videoViewDG79.setVideoURI(uriDG79);
+        MediaPlayer sfx = MediaPlayer.create(this, R.raw.btnsfx);
 
         videoViewDG79.start();
 
@@ -160,6 +172,7 @@ public class LessonDoingGood extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
+                sfx.start();
                 good3();
 
             }
@@ -169,6 +182,7 @@ public class LessonDoingGood extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
+                sfx.start();
                 startActivity(new Intent(LessonDoingGood.this, DoingGoodLessonCongrats.class));
 
             }

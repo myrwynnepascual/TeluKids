@@ -32,11 +32,4 @@ public class SplashScreen extends AppCompatActivity {
             }
         },5000);
     }
-
-    @Override
-    protected void onPause(){
-        BackgroundSoundService.onPause();
-        super.onPause();
-    }
-
 }

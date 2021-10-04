@@ -69,6 +69,8 @@ public class QuizShapes extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.quiz_shapes);
 
+        BackgroundSoundService.onPause();
+
 
         quizLayout_Shapes = (LinearLayout)findViewById(R.id.quizLayout_Shapes);
         imgQuestion_Shapes =  (ImageView)findViewById(R.id.imgQuestion_Shapes);

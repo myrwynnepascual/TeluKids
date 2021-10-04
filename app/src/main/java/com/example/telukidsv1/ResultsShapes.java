@@ -28,6 +28,7 @@ public class ResultsShapes extends AppCompatActivity {
     FirebaseFirestore fStore;
     FirebaseUser user;
     String achievement_shapes;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -38,6 +39,7 @@ public class ResultsShapes extends AppCompatActivity {
         ImageButton achievementsbtnCLC_Shapes = findViewById(R.id.achievementsbtnCLC_Shapes);
         ImageButton btnReadLesson_Quiz_Shapes = findViewById(R.id.btnReadLesson_Quiz_Shapes);
         ImageButton homepageCLC_Shapes = findViewById(R.id.homepageCLC_Shapes);
+        MediaPlayer sfx = MediaPlayer.create(this, R.raw.btnsfx);
 
         congrats = MediaPlayer.create(this, R.raw.yaysfx);
         congrats.start();
@@ -82,12 +84,14 @@ public class ResultsShapes extends AppCompatActivity {
         bconceptsbtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                sfx.start();
                 startActivity(new Intent(ResultsShapes.this, BasicConcepts.class));
             }
         });
         achievementsbtnCLC_Shapes.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                sfx.start();
                 Intent proceed = new Intent(getApplicationContext(), Achievements3to6Shapes2.class);
                 proceed.putExtra("RIGHT_ANSWER_COUNT_Shapes", score_shapes);
                 startActivity(proceed);
@@ -96,6 +100,7 @@ public class ResultsShapes extends AppCompatActivity {
         btnReadLesson_Quiz_Shapes.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                sfx.start();
                 Intent proceed = new Intent(ResultsShapes.this, LessonShapes.class);
                 startActivity(proceed);
             }
@@ -103,6 +108,7 @@ public class ResultsShapes extends AppCompatActivity {
         homepageCLC_Shapes.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                sfx.start();
                 Intent proceed = new Intent(ResultsShapes.this, Homepage3to6.class);
                 startActivity(proceed);
             }

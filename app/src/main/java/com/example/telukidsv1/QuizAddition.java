@@ -69,6 +69,7 @@ public class QuizAddition extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.quiz_addition);
 
+        BackgroundSoundService.onPause();
 
         quizLayout_Addition = (LinearLayout)findViewById(R.id.quizLayout_Addition);
         imgQuestion_Addition =  (ImageView)findViewById(R.id.imgQuestion_Addition);

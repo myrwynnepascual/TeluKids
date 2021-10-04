@@ -76,6 +76,8 @@ public class QuizResponsibility extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.quiz_responsibility);
 
+        BackgroundSoundService.onPause();
+
         background_Responsibility = (ConstraintLayout) findViewById(R.id.background_Responsibility);
         quizLayout_Responsibility = (LinearLayout)findViewById(R.id.quizLayout_Responsibility);
         countLabel_Responsibility = (TextView)findViewById(R.id.countLabel_Responsibility);

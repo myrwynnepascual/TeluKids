@@ -3,6 +3,7 @@ package com.example.telukidsv1;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageButton;
@@ -21,9 +22,15 @@ public class ChooseModeResponsibility extends AppCompatActivity {
         assessCMRP79 = findViewById(R.id.assessCMRP79);
         replayCMRP79 = findViewById(R.id.replayintroCMRP79);
 
+        BackgroundSoundService.onResume();
+
+        MediaPlayer sfx = MediaPlayer.create(this, R.raw.btnsfx);
+
+
         backCMRP79.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                sfx.start();
                 startActivity(new Intent(ChooseModeResponsibility.this,Gmrc7to9.class));
             }
         });
@@ -31,6 +38,7 @@ public class ChooseModeResponsibility extends AppCompatActivity {
         learnCMRP79.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                sfx.start();
                 startActivity(new Intent(ChooseModeResponsibility.this, LessonResponsibility.class));
             }
         });
@@ -38,6 +46,7 @@ public class ChooseModeResponsibility extends AppCompatActivity {
         assessCMRP79.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                sfx.start();
                 startActivity(new Intent(ChooseModeResponsibility.this, QuizResponsibility.class));
             }
         });
@@ -45,6 +54,7 @@ public class ChooseModeResponsibility extends AppCompatActivity {
         replayCMRP79.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                sfx.start();
                 startActivity(new Intent(ChooseModeResponsibility.this,LessonIntroResponsibility.class));
             }
         });

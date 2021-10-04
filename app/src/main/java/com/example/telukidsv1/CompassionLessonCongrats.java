@@ -42,6 +42,9 @@ public class CompassionLessonCongrats extends AppCompatActivity {
         congrats = MediaPlayer.create(this, R.raw.yaysfx);
         congrats.start();
 
+        MediaPlayer sfx = MediaPlayer.create(this, R.raw.btnsfx);
+
+
         fAuth = FirebaseAuth.getInstance();
         fStore = FirebaseFirestore.getInstance();
         user = fAuth.getCurrentUser();
@@ -60,6 +63,7 @@ public class CompassionLessonCongrats extends AppCompatActivity {
         btnbackCPLC.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                sfx.start();
                 startActivity(new Intent(CompassionLessonCongrats.this, Gmrc3to6.class));
             }
         });
@@ -67,6 +71,7 @@ public class CompassionLessonCongrats extends AppCompatActivity {
         btnachievementsCPLC.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                sfx.start();
                 startActivity(new Intent(CompassionLessonCongrats.this, Achievements3to6Compassion.class));
             }
         });
@@ -74,6 +79,7 @@ public class CompassionLessonCongrats extends AppCompatActivity {
         btnassessmentCPLC.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                sfx.start();
                 startActivity(new Intent(CompassionLessonCongrats.this, QuizCompassion.class));
             }
         });
@@ -81,8 +87,15 @@ public class CompassionLessonCongrats extends AppCompatActivity {
         btnhomepageCPLC.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                sfx.start();
                 startActivity(new Intent(CompassionLessonCongrats.this, Homepage3to6.class));
             }
         });
+    }
+
+    @Override
+    protected void onUserLeaveHint(){
+        congrats.stop();
+        congrats.release();
     }
 }

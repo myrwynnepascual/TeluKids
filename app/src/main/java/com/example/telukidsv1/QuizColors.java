@@ -68,6 +68,7 @@ public class QuizColors extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.quiz_colors);
 
+        BackgroundSoundService.onPause();
 
         quizLayout_Colors = (LinearLayout)findViewById(R.id.quizLayout_Colors);
         imgQuestion_Colors =  (ImageView)findViewById(R.id.imgQuestion_Colors);

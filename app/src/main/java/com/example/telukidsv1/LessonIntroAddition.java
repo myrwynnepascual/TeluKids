@@ -29,6 +29,7 @@ public class LessonIntroAddition extends AppCompatActivity {
         videoPathIA = "android.resource://" + getPackageName() + "/" + R.raw.additionintrovideo;
         uriIA = Uri.parse(videoPathIA);
         videoViewIA.setVideoURI(uriIA);
+        MediaPlayer sfx = MediaPlayer.create(this, R.raw.btnsfx);
 
         BackgroundSoundService.onPause();
 
@@ -43,6 +44,7 @@ public class LessonIntroAddition extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
+                sfx.start();
                 startActivity(new Intent(LessonIntroAddition.this,ChooseModeAddition.class));
 
             }
@@ -56,13 +58,5 @@ public class LessonIntroAddition extends AppCompatActivity {
 
             }
         });
-
-        Handler handler = new Handler();
-        handler.postDelayed(new Runnable() {
-            @Override
-            public void run() {
-                btncloseIA.setVisibility(View.VISIBLE);
-            }
-        },5000);
     }
 }

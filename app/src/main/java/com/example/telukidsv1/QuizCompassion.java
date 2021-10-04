@@ -71,6 +71,8 @@ public class QuizCompassion extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.quiz_compassion);
 
+        BackgroundSoundService.onPause();
+
         background_Compassion = (ConstraintLayout) findViewById(R.id.background_Compassion);
         quizLayout_Compassion = (LinearLayout)findViewById(R.id.quizLayout_Compassion);
         countLabel_Compassion = (TextView)findViewById(R.id.countLabel_Compassion);

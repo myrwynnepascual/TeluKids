@@ -5,6 +5,7 @@ import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageButton;
@@ -35,6 +36,10 @@ public class Homepage7to9 extends AppCompatActivity {
         btnUserProf79 = findViewById(R.id.userprofilebtn79);
         btnGMRC79Topics = findViewById(R.id.gmrcH79);
         btnAchievements = findViewById(R.id.achivementsH79);
+
+        MediaPlayer sfx = MediaPlayer.create(this, R.raw.btnsfx);
+
+
 
         fAuth = FirebaseAuth.getInstance();
         fStore = FirebaseFirestore.getInstance();
@@ -81,7 +86,7 @@ public class Homepage7to9 extends AppCompatActivity {
         btnbackH79.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                sfx.start();
                 startActivity(new Intent(Homepage7to9.this, AgeCategorySelection.class));
 
             }
@@ -91,6 +96,7 @@ public class Homepage7to9 extends AppCompatActivity {
         btnUserProf79.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                sfx.start();
                 startActivity(new Intent(Homepage7to9.this, UserProfile79.class));
             }
         });
@@ -98,6 +104,7 @@ public class Homepage7to9 extends AppCompatActivity {
         btnGMRC79Topics.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                sfx.start();
                 startActivity(new Intent(Homepage7to9.this, Gmrc7to9.class));
             }
         });
@@ -105,6 +112,7 @@ public class Homepage7to9 extends AppCompatActivity {
         btnAchievements.setOnClickListener(new View.OnClickListener() {
              @Override
             public void onClick(View v) {
+                 sfx.start();
                  startActivity(new Intent(Homepage7to9.this, Achievements7to9Main.class));
             }
          });

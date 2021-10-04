@@ -38,6 +38,7 @@ public class ResultsDiscipline extends AppCompatActivity {
         ImageButton achievementsbtnCLC_Discipline = findViewById(R.id.achievementsbtnCLC_Discipline);
         ImageButton btnReadLesson_Quiz_Discipline = findViewById(R.id.btnReadLesson_Quiz_Discipline);
         ImageButton homepageCLC_Discipline = findViewById(R.id.homepageCLC_Discipline);
+        MediaPlayer sfx = MediaPlayer.create(this, R.raw.btnsfx);
 
         congrats = MediaPlayer.create(this, R.raw.yaysfx);
         congrats.start();
@@ -83,6 +84,7 @@ public class ResultsDiscipline extends AppCompatActivity {
         achievementsbtnCLC_Discipline.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                sfx.start();
                 Intent proceed = new Intent(ResultsDiscipline.this, Achievements3to6Discipline2.class);
                 proceed.putExtra("RIGHT_ANSWER_COUNT_Discipline", score_discipline);
                 startActivity(proceed);
@@ -91,12 +93,14 @@ public class ResultsDiscipline extends AppCompatActivity {
         gmrc36btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                sfx.start();
                 startActivity(new Intent(ResultsDiscipline.this, Gmrc3to6.class));
             }
         });
         btnReadLesson_Quiz_Discipline.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                sfx.start();
                 Intent proceed = new Intent(ResultsDiscipline.this, LessonDiscipline.class);
                 startActivity(proceed);
             }
@@ -104,6 +108,7 @@ public class ResultsDiscipline extends AppCompatActivity {
         homepageCLC_Discipline.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                sfx.start();
                 Intent proceed = new Intent(ResultsDiscipline.this, Homepage3to6.class);
                 startActivity(proceed);
             }

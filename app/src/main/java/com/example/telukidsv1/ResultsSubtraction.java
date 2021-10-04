@@ -29,6 +29,7 @@ public class ResultsSubtraction extends AppCompatActivity {
     FirebaseFirestore fStore;
     FirebaseUser user;
     String achievement_subtraction;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -39,6 +40,7 @@ public class ResultsSubtraction extends AppCompatActivity {
         ImageButton achievementsbtnCLC_Subtraction = findViewById(R.id.achievementsbtnCLC_Subtraction);
         ImageButton btnReadLesson_Quiz_Subtraction = findViewById(R.id.btnReadLesson_Quiz_Subtraction);
         ImageButton homepageCLC_Subtraction = findViewById(R.id.homepageCLC_Subtraction);
+        MediaPlayer sfx = MediaPlayer.create(this, R.raw.btnsfx);
 
         congrats = MediaPlayer.create(this, R.raw.yaysfx);
         congrats.start();
@@ -84,6 +86,7 @@ public class ResultsSubtraction extends AppCompatActivity {
         achievementsbtnCLC_Subtraction.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                sfx.start();
                 Intent proceed = new Intent(ResultsSubtraction.this, Achievements3to6Subtraction2.class);
                 proceed.putExtra("RIGHT_ANSWER_COUNT_Subtraction", score_subtraction);
                 startActivity(proceed);
@@ -92,12 +95,14 @@ public class ResultsSubtraction extends AppCompatActivity {
         numbersbtnCLC_Subtraction.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                sfx.start();
                 startActivity(new Intent(ResultsSubtraction.this, Numbers.class));
             }
         });
         btnReadLesson_Quiz_Subtraction.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                sfx.start();
                 Intent proceed = new Intent(ResultsSubtraction.this, LessonSubtraction.class);
                 startActivity(proceed);
             }
@@ -105,6 +110,7 @@ public class ResultsSubtraction extends AppCompatActivity {
         homepageCLC_Subtraction.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                sfx.start();
                 Intent proceed = new Intent(ResultsSubtraction.this, Homepage3to6.class);
                 startActivity(proceed);
             }

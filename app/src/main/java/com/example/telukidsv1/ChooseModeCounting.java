@@ -3,6 +3,7 @@ package com.example.telukidsv1;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageButton;
@@ -21,9 +22,15 @@ public class ChooseModeCounting extends AppCompatActivity {
         assessCMCN = findViewById(R.id.assessCMCN);
         replayCMCN = findViewById(R.id.replayintroCMCN);
 
+        BackgroundSoundService.onResume();
+
+        MediaPlayer sfx = MediaPlayer.create(this, R.raw.btnsfx);
+
+
         backCMCN.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                sfx.start();
                 startActivity(new Intent(ChooseModeCounting.this,Numbers.class));
             }
         });
@@ -31,6 +38,7 @@ public class ChooseModeCounting extends AppCompatActivity {
         learnCMCN.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                sfx.start();
                 startActivity(new Intent(ChooseModeCounting.this, LessonCounting.class));
             }
         });
@@ -38,6 +46,7 @@ public class ChooseModeCounting extends AppCompatActivity {
         assessCMCN.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                sfx.start();
                 startActivity(new Intent(ChooseModeCounting.this,QuizCountingNumbers.class));
             }
         });
@@ -45,6 +54,7 @@ public class ChooseModeCounting extends AppCompatActivity {
         replayCMCN.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                sfx.start();
                 startActivity(new Intent(ChooseModeCounting.this,LessonIntroCounting.class));
             }
         });

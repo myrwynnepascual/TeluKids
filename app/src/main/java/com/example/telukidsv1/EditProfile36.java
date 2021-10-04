@@ -4,6 +4,7 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -62,6 +63,9 @@ public class EditProfile36 extends AppCompatActivity {
         icon7EP36 = findViewById(R.id.icon7EP36);
         icon8EP36 = findViewById(R.id.icon8EP36);
 
+        MediaPlayer sfx = MediaPlayer.create(this, R.raw.btnsfx);
+
+
         fAuth = FirebaseAuth.getInstance();
         fStore = FirebaseFirestore.getInstance();
         user = fAuth.getCurrentUser();
@@ -71,6 +75,7 @@ public class EditProfile36 extends AppCompatActivity {
         btnBackEP36.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                sfx.start();
                 startActivity(new Intent(EditProfile36.this,UserProfile36.class));
             }
         });
@@ -79,6 +84,7 @@ public class EditProfile36 extends AppCompatActivity {
         icon1EP36.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                sfx.start();
                 icon1EP36.setImageResource(R.drawable.tigerselected);
                 icon2EP36.setImageResource(R.drawable.owlselect);
                 icon3EP36.setImageResource(R.drawable.lionselect);
@@ -96,6 +102,7 @@ public class EditProfile36 extends AppCompatActivity {
         icon2EP36.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                sfx.start();
                 icon1EP36.setImageResource(R.drawable.tigerselect);
                 icon2EP36.setImageResource(R.drawable.owlselected);
                 icon3EP36.setImageResource(R.drawable.lionselect);
@@ -113,6 +120,7 @@ public class EditProfile36 extends AppCompatActivity {
         icon3EP36.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                sfx.start();
                 icon1EP36.setImageResource(R.drawable.tigerselect);
                 icon2EP36.setImageResource(R.drawable.owlselect);
                 icon3EP36.setImageResource(R.drawable.lionselected);
@@ -130,6 +138,7 @@ public class EditProfile36 extends AppCompatActivity {
         icon4EP36.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                sfx.start();
                 icon1EP36.setImageResource(R.drawable.tigerselect);
                 icon2EP36.setImageResource(R.drawable.owlselect);
                 icon3EP36.setImageResource(R.drawable.lionselect);
@@ -147,6 +156,7 @@ public class EditProfile36 extends AppCompatActivity {
         icon5EP36.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                sfx.start();
                 icon1EP36.setImageResource(R.drawable.tigerselect);
                 icon2EP36.setImageResource(R.drawable.owlselect);
                 icon3EP36.setImageResource(R.drawable.lionselect);
@@ -164,6 +174,7 @@ public class EditProfile36 extends AppCompatActivity {
         icon6EP36.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                sfx.start();
                 icon1EP36.setImageResource(R.drawable.tigerselect);
                 icon2EP36.setImageResource(R.drawable.owlselect);
                 icon3EP36.setImageResource(R.drawable.lionselect);
@@ -181,6 +192,7 @@ public class EditProfile36 extends AppCompatActivity {
         icon7EP36.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                sfx.start();
                 icon1EP36.setImageResource(R.drawable.tigerselect);
                 icon2EP36.setImageResource(R.drawable.owlselect);
                 icon3EP36.setImageResource(R.drawable.lionselect);
@@ -198,6 +210,7 @@ public class EditProfile36 extends AppCompatActivity {
         icon8EP36.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                sfx.start();
                 icon1EP36.setImageResource(R.drawable.tigerselect);
                 icon2EP36.setImageResource(R.drawable.owlselect);
                 icon3EP36.setImageResource(R.drawable.lionselect);
@@ -215,6 +228,8 @@ public class EditProfile36 extends AppCompatActivity {
         btnSaveEP36.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
+                sfx.start();
 
                 //USERNAME
                 if (!nUsername.getText().toString().isEmpty()){

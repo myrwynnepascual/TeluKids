@@ -5,6 +5,7 @@ import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.media.MediaPlayer;
 import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
@@ -27,6 +28,7 @@ public class UserProfile36 extends AppCompatActivity {
     TextView greetUP;
     String userID, username, usericon, lastpage;
 
+
     FirebaseAuth fAuth;
     FirebaseFirestore fStore;
     FirebaseUser user;
@@ -43,6 +45,7 @@ public class UserProfile36 extends AppCompatActivity {
         btnlogoutUP = findViewById(R.id.logoutbtnUP36);
         btnsurveyUP = findViewById(R.id.surveybtnUP36);
         btnhelpUP = findViewById(R.id.helpbtnUP36);
+        MediaPlayer sfx = MediaPlayer.create(this, R.raw.btnsfx);
 
         fAuth = FirebaseAuth.getInstance();
         fStore = FirebaseFirestore.getInstance();
@@ -92,6 +95,7 @@ public class UserProfile36 extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
+                sfx.start();
                 startActivity(new Intent(UserProfile36.this,Homepage3to6.class));
 
             }
@@ -101,6 +105,7 @@ public class UserProfile36 extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
+                sfx.start();
                 startActivity(new Intent(UserProfile36.this, HelpPage36.class));
             }
         });
@@ -109,6 +114,7 @@ public class UserProfile36 extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
+                sfx.start();
                 startActivity(new Intent("android.intent.action.VIEW", Uri.parse("https://forms.gle/vHNoGH3f3oNce6FXA")));
 
             }
@@ -117,6 +123,7 @@ public class UserProfile36 extends AppCompatActivity {
         btneditUP.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                sfx.start();
                 startActivity(new Intent(UserProfile36.this, EditProfile36.class));
             }
         });
@@ -125,6 +132,7 @@ public class UserProfile36 extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
+                sfx.start();
                 startActivity(new Intent(UserProfile36.this, LogoutConfirmation36.class));
 
             }

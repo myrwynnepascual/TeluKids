@@ -4,6 +4,7 @@ import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.media.MediaPlayer;
 import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
@@ -40,6 +41,7 @@ public class UserProfile79 extends AppCompatActivity {
         btnlogoutUP = findViewById(R.id.logoutbtnUP79);
         btnsurveyUP = findViewById(R.id.surveybtnUP79);
         btnhelpUP = findViewById(R.id.helpbtnUP79);
+        MediaPlayer sfx = MediaPlayer.create(this, R.raw.btnsfx);
 
         fAuth = FirebaseAuth.getInstance();
         fStore = FirebaseFirestore.getInstance();
@@ -88,6 +90,7 @@ public class UserProfile79 extends AppCompatActivity {
         btnbackUP.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                sfx.start();
                 startActivity(new Intent(UserProfile79.this,Homepage7to9.class));
             }
         });
@@ -96,6 +99,7 @@ public class UserProfile79 extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
+                sfx.start();
                 startActivity(new Intent(UserProfile79.this, HelpPage79.class));
             }
         });
@@ -104,6 +108,7 @@ public class UserProfile79 extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
+                sfx.start();
                 startActivity(new Intent("android.intent.action.VIEW", Uri.parse("https://forms.gle/vHNoGH3f3oNce6FXA")));
 
             }
@@ -112,6 +117,7 @@ public class UserProfile79 extends AppCompatActivity {
         btneditUP.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                sfx.start();
                 startActivity(new Intent(UserProfile79.this, EditProfile79.class));
             }
         });
@@ -120,6 +126,7 @@ public class UserProfile79 extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
+                sfx.start();
                 startActivity(new Intent(UserProfile79.this, LogoutConfirmation36.class));
 
             }

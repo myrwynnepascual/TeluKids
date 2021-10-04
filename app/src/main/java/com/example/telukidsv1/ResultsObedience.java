@@ -28,6 +28,7 @@ public class ResultsObedience extends AppCompatActivity {
     FirebaseFirestore fStore;
     FirebaseUser user;
     String achievement_obedience;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -38,6 +39,7 @@ public class ResultsObedience extends AppCompatActivity {
         ImageButton achievementsbtnCLC_Obedience = findViewById(R.id.achievementsbtnCLC_Obedience);
         ImageButton btnReadLesson_Quiz_Obedience = findViewById(R.id.btnReadLesson_Quiz_Obedience);
         ImageButton homepageCLC_Obedience = findViewById(R.id.homepageCLC_Obedience);
+        MediaPlayer sfx = MediaPlayer.create(this, R.raw.btnsfx);
 
         congrats = MediaPlayer.create(this, R.raw.yaysfx);
         congrats.start();
@@ -82,12 +84,14 @@ public class ResultsObedience extends AppCompatActivity {
         gmrc79btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                sfx.start();
                 startActivity(new Intent(ResultsObedience.this, Gmrc7to9.class));
             }
         });
         achievementsbtnCLC_Obedience.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                sfx.start();
                 Intent proceed = new Intent(ResultsObedience.this, Achievements7to9Obedience2.class);
                 proceed.putExtra("RIGHT_ANSWER_COUNT_Obedience", score_obedience);
                 startActivity(proceed);
@@ -96,6 +100,7 @@ public class ResultsObedience extends AppCompatActivity {
         btnReadLesson_Quiz_Obedience.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                sfx.start();
                 Intent proceed = new Intent(ResultsObedience.this, LessonObedience.class);
                 startActivity(proceed);
             }
@@ -103,6 +108,7 @@ public class ResultsObedience extends AppCompatActivity {
         homepageCLC_Obedience.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                sfx.start();
                 Intent proceed = new Intent(ResultsObedience.this, Homepage7to9.class);
                 startActivity(proceed);
             }

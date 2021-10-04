@@ -28,6 +28,7 @@ public class ResultsSociability extends AppCompatActivity {
     FirebaseFirestore fStore;
     FirebaseUser user;
     String achievement_sociability;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -38,6 +39,7 @@ public class ResultsSociability extends AppCompatActivity {
         ImageButton achievementsbtnCLC_Sociability = findViewById(R.id.achievementsbtnCLC_Sociability);
         ImageButton btnReadLesson_Quiz_Sociability = findViewById(R.id.btnReadLesson_Quiz_Sociability);
         ImageButton homepageCLC_Sociability = findViewById(R.id.homepageCLC_Sociability);
+        MediaPlayer sfx = MediaPlayer.create(this, R.raw.btnsfx);
 
         congrats = MediaPlayer.create(this, R.raw.yaysfx);
         congrats.start();
@@ -82,12 +84,14 @@ public class ResultsSociability extends AppCompatActivity {
         gmrc36btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                sfx.start();
                 startActivity(new Intent(ResultsSociability.this,Gmrc3to6.class));
             }
         });
         achievementsbtnCLC_Sociability.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                sfx.start();
                 Intent proceed = new Intent(ResultsSociability.this, Achievements3to6Sociability2.class);
                 proceed.putExtra("RIGHT_ANSWER_COUNT_Sociability", score_sociability);
                 startActivity(proceed);
@@ -96,6 +100,7 @@ public class ResultsSociability extends AppCompatActivity {
         btnReadLesson_Quiz_Sociability.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                sfx.start();
                 Intent proceed = new Intent(ResultsSociability.this, LessonSociability.class);
                 startActivity(proceed);
             }
@@ -103,6 +108,7 @@ public class ResultsSociability extends AppCompatActivity {
         homepageCLC_Sociability.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                sfx.start();
                 Intent proceed = new Intent(ResultsSociability.this, Homepage3to6.class);
                 startActivity(proceed);
             }

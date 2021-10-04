@@ -27,6 +27,9 @@ public class LessonHonesty extends AppCompatActivity {
         videoViewH36 = findViewById(R.id.videoH36);
         backbtnH36 = findViewById(R.id.btnbackH36);
         nextbtnH36 = findViewById(R.id.nextbtnH36);
+        MediaPlayer sfx = MediaPlayer.create(this, R.raw.btnsfx);
+
+        BackgroundSoundService.onPause();
 
         mediaController = new MediaController(this);
         videoViewH36.setMediaController(mediaController);
@@ -40,6 +43,7 @@ public class LessonHonesty extends AppCompatActivity {
         videoPathH36 = "android.resource://" + getPackageName() + "/" + R.raw.honesty1;
         uriH36 = Uri.parse(videoPathH36);
         videoViewH36.setVideoURI(uriH36);
+        MediaPlayer sfx = MediaPlayer.create(this, R.raw.btnsfx);
 
         videoViewH36.start();
 
@@ -56,6 +60,7 @@ public class LessonHonesty extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
+                sfx.start();
                 startActivity(new Intent(LessonHonesty.this, ChooseModeHonesty.class));
 
             }
@@ -65,6 +70,7 @@ public class LessonHonesty extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
+                sfx.start();
                 honesty2();
 
             }
@@ -75,6 +81,7 @@ public class LessonHonesty extends AppCompatActivity {
         videoPathH36 = "android.resource://" + getPackageName() + "/" + R.raw.honesty2;
         uriH36 = Uri.parse(videoPathH36);
         videoViewH36.setVideoURI(uriH36);
+        MediaPlayer sfx = MediaPlayer.create(this, R.raw.btnsfx);
 
         videoViewH36.start();
 
@@ -91,6 +98,7 @@ public class LessonHonesty extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
+                sfx.start();
                 honesty1();
 
             }
@@ -100,6 +108,7 @@ public class LessonHonesty extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
+                sfx.start();
                 honesty3();
 
             }
@@ -110,6 +119,7 @@ public class LessonHonesty extends AppCompatActivity {
         videoPathH36 = "android.resource://" + getPackageName() + "/" + R.raw.honesty3;
         uriH36 = Uri.parse(videoPathH36);
         videoViewH36.setVideoURI(uriH36);
+        MediaPlayer sfx = MediaPlayer.create(this, R.raw.btnsfx);
 
         videoViewH36.start();
 
@@ -126,6 +136,7 @@ public class LessonHonesty extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
+                sfx.start();
                 honesty2();
 
             }
@@ -135,6 +146,7 @@ public class LessonHonesty extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
+                sfx.start();
                 honesty4();
 
             }
@@ -145,6 +157,7 @@ public class LessonHonesty extends AppCompatActivity {
         videoPathH36 = "android.resource://" + getPackageName() + "/" + R.raw.honesty4;
         uriH36 = Uri.parse(videoPathH36);
         videoViewH36.setVideoURI(uriH36);
+        MediaPlayer sfx = MediaPlayer.create(this, R.raw.btnsfx);
 
         videoViewH36.start();
 
@@ -161,6 +174,7 @@ public class LessonHonesty extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
+                sfx.start();
                 honesty3();
 
             }
@@ -170,6 +184,7 @@ public class LessonHonesty extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
+                sfx.start();
                 honesty5();
 
             }
@@ -180,6 +195,7 @@ public class LessonHonesty extends AppCompatActivity {
         videoPathH36 = "android.resource://" + getPackageName() + "/" + R.raw.honesty5;
         uriH36 = Uri.parse(videoPathH36);
         videoViewH36.setVideoURI(uriH36);
+        MediaPlayer sfx = MediaPlayer.create(this, R.raw.btnsfx);
 
         videoViewH36.start();
 
@@ -196,6 +212,7 @@ public class LessonHonesty extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
+                sfx.start();
                 honesty4();
 
             }
@@ -205,6 +222,7 @@ public class LessonHonesty extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
+                sfx.start();
                 startActivity(new Intent(LessonHonesty.this, HonestyLessonCongrats.class));
 
             }

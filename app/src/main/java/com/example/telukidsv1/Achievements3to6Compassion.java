@@ -4,6 +4,7 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageButton;
@@ -23,6 +24,8 @@ public class Achievements3to6Compassion extends AppCompatActivity {
     FirebaseFirestore fStore;
     FirebaseUser user;
 
+    MediaPlayer sfx;
+
     // Ages 3-6 Achievements and Lessons
     String achievement_counting, achievement_addition, achievement_subtraction, achievement_colors, achievement_shapes;
     String achievement_discipline, achievement_honesty, achievement_respect, achievement_sociability, achievement_compassion;
@@ -40,6 +43,8 @@ public class Achievements3to6Compassion extends AppCompatActivity {
         setContentView(R.layout.activity_achievements3to6_compassion);
 
         ImageButton backbtnAchievements3to6 = findViewById(R.id.backbtnAchievements36Compassion);
+
+        sfx = MediaPlayer.create(this, R.raw.btnsfx);
 
         //Trophies
         //GMRC 3-6
@@ -679,6 +684,7 @@ public class Achievements3to6Compassion extends AppCompatActivity {
         backbtnAchievements3to6.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                sfx.start();
                 Intent proceed = new Intent(Achievements3to6Compassion.this, CompassionLessonCongrats.class);
                 startActivity(proceed);
             }

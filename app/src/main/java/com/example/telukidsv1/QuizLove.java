@@ -72,6 +72,8 @@ public class QuizLove extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.quiz_love);
 
+        BackgroundSoundService.onPause();
+
         background_Love = (ConstraintLayout) findViewById(R.id.background_Love);
         quizLayout_Love = (LinearLayout)findViewById(R.id.quizLayout_Love);
         countLabel_Love = (TextView)findViewById(R.id.countLabel_Love);

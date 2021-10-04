@@ -27,6 +27,9 @@ public class LessonSociability extends AppCompatActivity {
         videoViewSC36 = findViewById(R.id.videoSC36);
         backbtnSC36 = findViewById(R.id.btnbackSC36);
         nextbtnSC36 = findViewById(R.id.nextbtnSC36);
+        MediaPlayer sfx = MediaPlayer.create(this, R.raw.btnsfx);
+
+        BackgroundSoundService.onPause();
 
         mediaController = new MediaController(this);
         videoViewSC36.setMediaController(mediaController);
@@ -40,6 +43,7 @@ public class LessonSociability extends AppCompatActivity {
         videoPathSC36 = "android.resource://" + getPackageName() + "/" + R.raw.sociability1;
         uriSC36 = Uri.parse(videoPathSC36);
         videoViewSC36.setVideoURI(uriSC36);
+        MediaPlayer sfx = MediaPlayer.create(this, R.raw.btnsfx);
 
         videoViewSC36.start();
 
@@ -56,6 +60,7 @@ public class LessonSociability extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
+                sfx.start();
                 startActivity(new Intent(LessonSociability.this,ChooseModeSociability.class));
 
             }
@@ -65,6 +70,7 @@ public class LessonSociability extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
+                sfx.start();
                 sociability2();
 
             }
@@ -75,6 +81,7 @@ public class LessonSociability extends AppCompatActivity {
         videoPathSC36 = "android.resource://" + getPackageName() + "/" + R.raw.sociability2;
         uriSC36 = Uri.parse(videoPathSC36);
         videoViewSC36.setVideoURI(uriSC36);
+        MediaPlayer sfx = MediaPlayer.create(this, R.raw.btnsfx);
 
         videoViewSC36.start();
 
@@ -91,6 +98,7 @@ public class LessonSociability extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
+                sfx.start();
                 sociability1();
 
             }
@@ -100,6 +108,7 @@ public class LessonSociability extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
+                sfx.start();
                 sociability3();
 
             }
@@ -110,6 +119,7 @@ public class LessonSociability extends AppCompatActivity {
         videoPathSC36 = "android.resource://" + getPackageName() + "/" + R.raw.sociability3;
         uriSC36 = Uri.parse(videoPathSC36);
         videoViewSC36.setVideoURI(uriSC36);
+        MediaPlayer sfx = MediaPlayer.create(this, R.raw.btnsfx);
 
         videoViewSC36.start();
 
@@ -126,6 +136,7 @@ public class LessonSociability extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
+                sfx.start();
                 sociability2();
 
             }
@@ -135,6 +146,7 @@ public class LessonSociability extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
+                sfx.start();
                 sociability4();
 
             }
@@ -145,6 +157,7 @@ public class LessonSociability extends AppCompatActivity {
         videoPathSC36 = "android.resource://" + getPackageName() + "/" + R.raw.sociability4;
         uriSC36 = Uri.parse(videoPathSC36);
         videoViewSC36.setVideoURI(uriSC36);
+        MediaPlayer sfx = MediaPlayer.create(this, R.raw.btnsfx);
 
         videoViewSC36.start();
 
@@ -161,6 +174,7 @@ public class LessonSociability extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
+                sfx.start();
                 sociability3();
 
             }
@@ -170,6 +184,7 @@ public class LessonSociability extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
+                sfx.start();
                 startActivity(new Intent(LessonSociability.this, SociabilityLessonCongrats.class));
 
             }

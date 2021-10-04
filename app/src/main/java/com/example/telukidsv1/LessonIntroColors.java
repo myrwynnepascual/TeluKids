@@ -30,6 +30,10 @@ public class LessonIntroColors extends AppCompatActivity {
         uriIC = Uri.parse(videoPathIC);
         videoViewIC.setVideoURI(uriIC);
 
+        BackgroundSoundService.onPause();
+
+        MediaPlayer sfx = MediaPlayer.create(this, R.raw.btnsfx);
+
         MediaController mediaController = new MediaController(this);
         videoViewIC.setMediaController(mediaController);
         mediaController.setAnchorView(videoViewIC);
@@ -41,6 +45,7 @@ public class LessonIntroColors extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
+                sfx.start();
                 startActivity(new Intent(LessonIntroColors.this,ChooseModeColors.class));
 
             }
@@ -54,13 +59,5 @@ public class LessonIntroColors extends AppCompatActivity {
 
             }
         });
-
-        Handler handler = new Handler();
-        handler.postDelayed(new Runnable() {
-            @Override
-            public void run() {
-                btncloseIC.setVisibility(View.VISIBLE);
-            }
-        },5000);
     }
 }

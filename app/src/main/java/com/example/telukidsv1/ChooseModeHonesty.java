@@ -3,6 +3,7 @@ package com.example.telukidsv1;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageButton;
@@ -21,9 +22,15 @@ public class ChooseModeHonesty extends AppCompatActivity {
         assessCMH36 = findViewById(R.id.assessCMH36);
         replayCMH36 = findViewById(R.id.replayintroCMH36);
 
+        BackgroundSoundService.onResume();
+
+        MediaPlayer sfx = MediaPlayer.create(this, R.raw.btnsfx);
+
+
         backCMH36.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                sfx.start();
                 startActivity(new Intent(ChooseModeHonesty.this,Gmrc3to6.class));
             }
         });
@@ -31,6 +38,7 @@ public class ChooseModeHonesty extends AppCompatActivity {
         learnCMH36.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                sfx.start();
                 startActivity(new Intent(ChooseModeHonesty.this, LessonHonesty.class));
             }
         });
@@ -38,6 +46,7 @@ public class ChooseModeHonesty extends AppCompatActivity {
         assessCMH36.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                sfx.start();
                 startActivity(new Intent(ChooseModeHonesty.this,QuizHonesty.class));
             }
         });
@@ -45,6 +54,7 @@ public class ChooseModeHonesty extends AppCompatActivity {
         replayCMH36.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                sfx.start();
                 startActivity(new Intent(ChooseModeHonesty.this,LessonIntroHonesty.class));
             }
         });

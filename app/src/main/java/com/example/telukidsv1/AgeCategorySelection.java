@@ -27,13 +27,10 @@ public class AgeCategorySelection extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_age_category_selection);
 
-        super.onResume();
-
         btnAge3to6 = findViewById(R.id.categoryage3to6CS);
         btnAge7to9 = findViewById(R.id.categoryage7to9CS);
 
         sfx = MediaPlayer.create(this, R.raw.btnsfx);
-
 
         btnAge3to6.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -46,21 +43,10 @@ public class AgeCategorySelection extends AppCompatActivity {
        btnAge7to9.setOnClickListener(new View.OnClickListener() {
            @Override
            public void onClick(View v) {
+               sfx.start();
                startActivity(new Intent(AgeCategorySelection.this, Homepage7to9.class));
            }
        });
 
-    }
-
-    @Override
-    protected void onPause(){
-        BackgroundSoundService.onPause();
-        super.onPause();
-    }
-
-    @Override
-    protected void onResume(){
-        BackgroundSoundService.onResume();
-        super.onResume();
     }
 }

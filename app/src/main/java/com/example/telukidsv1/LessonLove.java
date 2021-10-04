@@ -27,6 +27,9 @@ public class LessonLove extends AppCompatActivity {
         videoViewL79 = findViewById(R.id.videoL79);
         backbtnL79 = findViewById(R.id.btnbackL79);
         nextbtnL79 = findViewById(R.id.nextbtnL79);
+        MediaPlayer sfx = MediaPlayer.create(this, R.raw.btnsfx);
+
+        BackgroundSoundService.onPause();
 
         mediaController = new MediaController(this);
         videoViewL79.setMediaController(mediaController);
@@ -40,6 +43,7 @@ public class LessonLove extends AppCompatActivity {
         videoPathL79 = "android.resource://" + getPackageName() + "/" + R.raw.love1;
         uriL79 = Uri.parse(videoPathL79);
         videoViewL79.setVideoURI(uriL79);
+        MediaPlayer sfx = MediaPlayer.create(this, R.raw.btnsfx);
 
         videoViewL79.start();
 
@@ -56,6 +60,7 @@ public class LessonLove extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
+                sfx.start();
                 startActivity(new Intent(LessonLove.this,ChooseModeLove.class));
 
             }
@@ -65,6 +70,7 @@ public class LessonLove extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
+                sfx.start();
                 love2();
 
             }
@@ -75,6 +81,7 @@ public class LessonLove extends AppCompatActivity {
         videoPathL79 = "android.resource://" + getPackageName() + "/" + R.raw.love2;
         uriL79 = Uri.parse(videoPathL79);
         videoViewL79.setVideoURI(uriL79);
+        MediaPlayer sfx = MediaPlayer.create(this, R.raw.btnsfx);
 
         videoViewL79.start();
 
@@ -91,6 +98,7 @@ public class LessonLove extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
+                sfx.start();
                 love1();
 
             }
@@ -100,6 +108,7 @@ public class LessonLove extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
+                sfx.start();
                 love3();
 
             }
@@ -110,6 +119,7 @@ public class LessonLove extends AppCompatActivity {
         videoPathL79 = "android.resource://" + getPackageName() + "/" + R.raw.love3;
         uriL79 = Uri.parse(videoPathL79);
         videoViewL79.setVideoURI(uriL79);
+        MediaPlayer sfx = MediaPlayer.create(this, R.raw.btnsfx);
 
         videoViewL79.start();
 
@@ -126,6 +136,7 @@ public class LessonLove extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
+                sfx.start();
                 love2();
 
             }
@@ -135,6 +146,7 @@ public class LessonLove extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
+                sfx.start();
                 love4();
 
             }
@@ -145,6 +157,7 @@ public class LessonLove extends AppCompatActivity {
         videoPathL79 = "android.resource://" + getPackageName() + "/" + R.raw.love4;
         uriL79 = Uri.parse(videoPathL79);
         videoViewL79.setVideoURI(uriL79);
+        MediaPlayer sfx = MediaPlayer.create(this, R.raw.btnsfx);
 
         videoViewL79.start();
 
@@ -161,6 +174,7 @@ public class LessonLove extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
+                sfx.start();
                 love3();
 
             }
@@ -170,6 +184,7 @@ public class LessonLove extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
+                sfx.start();
                 love5();
 
             }
@@ -181,6 +196,7 @@ public class LessonLove extends AppCompatActivity {
         videoPathL79 = "android.resource://" + getPackageName() + "/" + R.raw.love5;
         uriL79 = Uri.parse(videoPathL79);
         videoViewL79.setVideoURI(uriL79);
+        MediaPlayer sfx = MediaPlayer.create(this, R.raw.btnsfx);
 
         videoViewL79.start();
 
@@ -197,6 +213,7 @@ public class LessonLove extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
+                sfx.start();
                 love5();
 
             }
@@ -206,6 +223,7 @@ public class LessonLove extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
+                sfx.start();
                 startActivity(new Intent(LessonLove.this, LoveLessonCongrats.class));
 
             }

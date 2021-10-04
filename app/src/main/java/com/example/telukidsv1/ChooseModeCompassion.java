@@ -3,6 +3,7 @@ package com.example.telukidsv1;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageButton;
@@ -21,9 +22,15 @@ public class ChooseModeCompassion extends AppCompatActivity {
         assessCMCP = findViewById(R.id.assessCMCP);
         replayCMCP = findViewById(R.id.replayintroCMCP);
 
+        BackgroundSoundService.onResume();
+
+        MediaPlayer sfx = MediaPlayer.create(this, R.raw.btnsfx);
+
+
         backCMCP.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                sfx.start();
                 startActivity(new Intent(ChooseModeCompassion.this, Gmrc3to6.class));
             }
         });
@@ -31,6 +38,7 @@ public class ChooseModeCompassion extends AppCompatActivity {
         learnCMCP.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                sfx.start();
                 startActivity(new Intent(ChooseModeCompassion.this, LessonCompassion.class));
             }
         });
@@ -38,6 +46,7 @@ public class ChooseModeCompassion extends AppCompatActivity {
         assessCMCP.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                sfx.start();
                 startActivity(new Intent(ChooseModeCompassion.this,QuizCompassion.class));
             }
         });
@@ -45,6 +54,7 @@ public class ChooseModeCompassion extends AppCompatActivity {
         replayCMCP.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                sfx.start();
                 startActivity(new Intent(ChooseModeCompassion.this,LessonIntroCompassion.class));
             }
         });

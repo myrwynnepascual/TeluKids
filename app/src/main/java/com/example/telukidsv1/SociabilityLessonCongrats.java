@@ -38,6 +38,7 @@ public class SociabilityLessonCongrats extends AppCompatActivity {
         certificateSCLC = findViewById(R.id.certificateSCLC);
         btnassessmentSCLC = findViewById(R.id.asessmentbtnSCLC);
         btnhomepageSCLC = findViewById(R.id.homepageSCLC);
+        MediaPlayer sfx = MediaPlayer.create(this, R.raw.btnsfx);
 
         congrats = MediaPlayer.create(this, R.raw.yaysfx);
         congrats.start();
@@ -60,6 +61,7 @@ public class SociabilityLessonCongrats extends AppCompatActivity {
         btnbackSCLC.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                sfx.start();
                 startActivity(new Intent(SociabilityLessonCongrats.this, Gmrc3to6.class));
             }
         });
@@ -67,6 +69,7 @@ public class SociabilityLessonCongrats extends AppCompatActivity {
         btnachievementsSCLC.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                sfx.start();
                 startActivity(new Intent(SociabilityLessonCongrats.this, Achievements3to6Sociability.class));
             }
         });
@@ -74,6 +77,7 @@ public class SociabilityLessonCongrats extends AppCompatActivity {
         btnassessmentSCLC.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                sfx.start();
                 startActivity(new Intent(SociabilityLessonCongrats.this, QuizSociability.class));
             }
         });
@@ -81,8 +85,15 @@ public class SociabilityLessonCongrats extends AppCompatActivity {
         btnhomepageSCLC.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                sfx.start();
                 startActivity(new Intent(SociabilityLessonCongrats.this, Homepage3to6.class));
             }
         });
+    }
+
+    @Override
+    protected void onUserLeaveHint(){
+        congrats.stop();
+        congrats.release();
     }
 }

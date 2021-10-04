@@ -27,6 +27,14 @@ public class LessonColors extends AppCompatActivity {
         videoViewRDPG1 = findViewById(R.id.videoRDPG1);
         backbtnRDPG1 = findViewById(R.id.btnbackRDPG1);
         nextbtnRDPG1 = findViewById(R.id.nextbtnRDPG1);
+        MediaPlayer sfx = MediaPlayer.create(this, R.raw.btnsfx);
+
+        BackgroundSoundService.onPause();
+
+        mediaController = new MediaController(this);
+        videoViewRDPG1.setMediaController(mediaController);
+        mediaController.setVisibility(View.GONE);
+        mediaController.setAnchorView(videoViewRDPG1);
 
         red1();
     }
@@ -36,6 +44,7 @@ public class LessonColors extends AppCompatActivity {
         videoPathRDPG1 = "android.resource://" + getPackageName() + "/" + R.raw.red1;
         uriRDPG1 = Uri.parse(videoPathRDPG1);
         videoViewRDPG1.setVideoURI(uriRDPG1);
+        MediaPlayer sfx = MediaPlayer.create(this, R.raw.btnsfx);
 
         mediaController = new MediaController(this);
         videoViewRDPG1.setMediaController(mediaController);
@@ -57,6 +66,7 @@ public class LessonColors extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
+                sfx.start();
                 startActivity(new Intent(LessonColors.this,ChooseModeColors.class));
 
             }
@@ -66,6 +76,7 @@ public class LessonColors extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
+               sfx.start();
                red2();
 
             }
@@ -77,6 +88,7 @@ public class LessonColors extends AppCompatActivity {
         videoPathRDPG1 = "android.resource://" + getPackageName() + "/" + R.raw.red2;
         uriRDPG1 = Uri.parse(videoPathRDPG1);
         videoViewRDPG1.setVideoURI(uriRDPG1);
+        MediaPlayer sfx = MediaPlayer.create(this, R.raw.btnsfx);
 
         mediaController = new MediaController(this);
         videoViewRDPG1.setMediaController(mediaController);
@@ -98,6 +110,7 @@ public class LessonColors extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
+                sfx.start();
                 red1();
 
             }
@@ -107,6 +120,7 @@ public class LessonColors extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
+                sfx.start();
                 red3();
 
             }
@@ -118,6 +132,7 @@ public class LessonColors extends AppCompatActivity {
         videoPathRDPG1 = "android.resource://" + getPackageName() + "/" + R.raw.red3;
         uriRDPG1 = Uri.parse(videoPathRDPG1);
         videoViewRDPG1.setVideoURI(uriRDPG1);
+        MediaPlayer sfx = MediaPlayer.create(this, R.raw.btnsfx);
 
         mediaController = new MediaController(this);
         videoViewRDPG1.setMediaController(mediaController);
@@ -139,6 +154,7 @@ public class LessonColors extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
+                sfx.start();
                 red2();
 
             }
@@ -148,6 +164,7 @@ public class LessonColors extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
+                sfx.start();
                 red4();
 
             }
@@ -159,6 +176,7 @@ public class LessonColors extends AppCompatActivity {
         videoPathRDPG1 = "android.resource://" + getPackageName() + "/" + R.raw.red4;
         uriRDPG1 = Uri.parse(videoPathRDPG1);
         videoViewRDPG1.setVideoURI(uriRDPG1);
+        MediaPlayer sfx = MediaPlayer.create(this, R.raw.btnsfx);
 
         mediaController = new MediaController(this);
         videoViewRDPG1.setMediaController(mediaController);
@@ -180,6 +198,7 @@ public class LessonColors extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
+                sfx.start();
                 red3();
 
             }
@@ -189,6 +208,7 @@ public class LessonColors extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
+                sfx.start();
                 red5();
 
             }
@@ -200,6 +220,7 @@ public class LessonColors extends AppCompatActivity {
         videoPathRDPG1 = "android.resource://" + getPackageName() + "/" + R.raw.red5;
         uriRDPG1 = Uri.parse(videoPathRDPG1);
         videoViewRDPG1.setVideoURI(uriRDPG1);
+        MediaPlayer sfx = MediaPlayer.create(this, R.raw.btnsfx);
 
         mediaController = new MediaController(this);
         videoViewRDPG1.setMediaController(mediaController);
@@ -221,6 +242,7 @@ public class LessonColors extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
+                sfx.start();
                 red4();
 
             }
@@ -230,6 +252,7 @@ public class LessonColors extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
+                sfx.start();
                 red6();
 
             }
@@ -241,6 +264,7 @@ public class LessonColors extends AppCompatActivity {
         videoPathRDPG1 = "android.resource://" + getPackageName() + "/" + R.raw.red6;
         uriRDPG1 = Uri.parse(videoPathRDPG1);
         videoViewRDPG1.setVideoURI(uriRDPG1);
+        MediaPlayer sfx = MediaPlayer.create(this, R.raw.btnsfx);
 
         mediaController = new MediaController(this);
         videoViewRDPG1.setMediaController(mediaController);
@@ -262,6 +286,7 @@ public class LessonColors extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
+                sfx.start();
                 red5();
 
             }
@@ -271,6 +296,7 @@ public class LessonColors extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
+                sfx.start();
                 blue1();
 
             }
@@ -282,6 +308,7 @@ public class LessonColors extends AppCompatActivity {
         videoPathRDPG1 = "android.resource://" + getPackageName() + "/" + R.raw.blue1;
         uriRDPG1 = Uri.parse(videoPathRDPG1);
         videoViewRDPG1.setVideoURI(uriRDPG1);
+        MediaPlayer sfx = MediaPlayer.create(this, R.raw.btnsfx);
 
         mediaController = new MediaController(this);
         videoViewRDPG1.setMediaController(mediaController);
@@ -303,6 +330,7 @@ public class LessonColors extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
+                sfx.start();
                 red6();
 
             }
@@ -312,6 +340,7 @@ public class LessonColors extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
+                sfx.start();
                 blue2();
 
             }
@@ -323,6 +352,7 @@ public class LessonColors extends AppCompatActivity {
         videoPathRDPG1 = "android.resource://" + getPackageName() + "/" + R.raw.blue2;
         uriRDPG1 = Uri.parse(videoPathRDPG1);
         videoViewRDPG1.setVideoURI(uriRDPG1);
+        MediaPlayer sfx = MediaPlayer.create(this, R.raw.btnsfx);
 
         mediaController = new MediaController(this);
         videoViewRDPG1.setMediaController(mediaController);
@@ -344,6 +374,7 @@ public class LessonColors extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
+                sfx.start();
                 blue1();
 
             }
@@ -353,6 +384,7 @@ public class LessonColors extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
+                sfx.start();
                 blue3();
 
             }
@@ -364,6 +396,7 @@ public class LessonColors extends AppCompatActivity {
         videoPathRDPG1 = "android.resource://" + getPackageName() + "/" + R.raw.blue3;
         uriRDPG1 = Uri.parse(videoPathRDPG1);
         videoViewRDPG1.setVideoURI(uriRDPG1);
+        MediaPlayer sfx = MediaPlayer.create(this, R.raw.btnsfx);
 
         mediaController = new MediaController(this);
         videoViewRDPG1.setMediaController(mediaController);
@@ -385,6 +418,7 @@ public class LessonColors extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
+                sfx.start();
                 blue2();
 
             }
@@ -394,6 +428,7 @@ public class LessonColors extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
+                sfx.start();
                 blue4();
 
             }
@@ -405,6 +440,7 @@ public class LessonColors extends AppCompatActivity {
         videoPathRDPG1 = "android.resource://" + getPackageName() + "/" + R.raw.blue4;
         uriRDPG1 = Uri.parse(videoPathRDPG1);
         videoViewRDPG1.setVideoURI(uriRDPG1);
+        MediaPlayer sfx = MediaPlayer.create(this, R.raw.btnsfx);
 
         mediaController = new MediaController(this);
         videoViewRDPG1.setMediaController(mediaController);
@@ -426,6 +462,7 @@ public class LessonColors extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
+                sfx.start();
                 blue3();
 
             }
@@ -435,6 +472,7 @@ public class LessonColors extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
+                sfx.start();
                 blue5();
 
             }
@@ -446,6 +484,7 @@ public class LessonColors extends AppCompatActivity {
         videoPathRDPG1 = "android.resource://" + getPackageName() + "/" + R.raw.blue5;
         uriRDPG1 = Uri.parse(videoPathRDPG1);
         videoViewRDPG1.setVideoURI(uriRDPG1);
+        MediaPlayer sfx = MediaPlayer.create(this, R.raw.btnsfx);
 
         mediaController = new MediaController(this);
         videoViewRDPG1.setMediaController(mediaController);
@@ -467,6 +506,7 @@ public class LessonColors extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
+                sfx.start();
                 blue4();
 
             }
@@ -476,6 +516,7 @@ public class LessonColors extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
+                sfx.start();
                 blue6();
 
             }
@@ -487,6 +528,7 @@ public class LessonColors extends AppCompatActivity {
         videoPathRDPG1 = "android.resource://" + getPackageName() + "/" + R.raw.blue6;
         uriRDPG1 = Uri.parse(videoPathRDPG1);
         videoViewRDPG1.setVideoURI(uriRDPG1);
+        MediaPlayer sfx = MediaPlayer.create(this, R.raw.btnsfx);
 
         mediaController = new MediaController(this);
         videoViewRDPG1.setMediaController(mediaController);
@@ -508,6 +550,7 @@ public class LessonColors extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
+                sfx.start();
                 blue5();
 
             }
@@ -517,6 +560,7 @@ public class LessonColors extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
+                sfx.start();
                 yellow1();
 
             }
@@ -528,6 +572,7 @@ public class LessonColors extends AppCompatActivity {
         videoPathRDPG1 = "android.resource://" + getPackageName() + "/" + R.raw.yellow1;
         uriRDPG1 = Uri.parse(videoPathRDPG1);
         videoViewRDPG1.setVideoURI(uriRDPG1);
+        MediaPlayer sfx = MediaPlayer.create(this, R.raw.btnsfx);
 
         mediaController = new MediaController(this);
         videoViewRDPG1.setMediaController(mediaController);
@@ -549,6 +594,7 @@ public class LessonColors extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
+                sfx.start();
                 blue6();
 
             }
@@ -558,6 +604,7 @@ public class LessonColors extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
+                sfx.start();
                 yellow2();
 
             }
@@ -569,6 +616,7 @@ public class LessonColors extends AppCompatActivity {
         videoPathRDPG1 = "android.resource://" + getPackageName() + "/" + R.raw.yellow2;
         uriRDPG1 = Uri.parse(videoPathRDPG1);
         videoViewRDPG1.setVideoURI(uriRDPG1);
+        MediaPlayer sfx = MediaPlayer.create(this, R.raw.btnsfx);
 
         mediaController = new MediaController(this);
         videoViewRDPG1.setMediaController(mediaController);
@@ -590,6 +638,7 @@ public class LessonColors extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
+                sfx.start();
                 yellow1();
 
             }
@@ -599,6 +648,7 @@ public class LessonColors extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
+                sfx.start();
                 yellow3();
 
             }
@@ -610,6 +660,7 @@ public class LessonColors extends AppCompatActivity {
         videoPathRDPG1 = "android.resource://" + getPackageName() + "/" + R.raw.yellow3;
         uriRDPG1 = Uri.parse(videoPathRDPG1);
         videoViewRDPG1.setVideoURI(uriRDPG1);
+        MediaPlayer sfx = MediaPlayer.create(this, R.raw.btnsfx);
 
         mediaController = new MediaController(this);
         videoViewRDPG1.setMediaController(mediaController);
@@ -631,6 +682,7 @@ public class LessonColors extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
+                sfx.start();
                 yellow2();
 
             }
@@ -640,6 +692,7 @@ public class LessonColors extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
+                sfx.start();
                 yellow4();
 
             }
@@ -651,6 +704,7 @@ public class LessonColors extends AppCompatActivity {
         videoPathRDPG1 = "android.resource://" + getPackageName() + "/" + R.raw.yellow4;
         uriRDPG1 = Uri.parse(videoPathRDPG1);
         videoViewRDPG1.setVideoURI(uriRDPG1);
+        MediaPlayer sfx = MediaPlayer.create(this, R.raw.btnsfx);
 
         mediaController = new MediaController(this);
         videoViewRDPG1.setMediaController(mediaController);
@@ -672,6 +726,7 @@ public class LessonColors extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
+                sfx.start();
                 yellow3();
 
             }
@@ -681,6 +736,7 @@ public class LessonColors extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
+                sfx.start();
                 yellow5();
 
             }
@@ -692,6 +748,7 @@ public class LessonColors extends AppCompatActivity {
         videoPathRDPG1 = "android.resource://" + getPackageName() + "/" + R.raw.yellow5;
         uriRDPG1 = Uri.parse(videoPathRDPG1);
         videoViewRDPG1.setVideoURI(uriRDPG1);
+        MediaPlayer sfx = MediaPlayer.create(this, R.raw.btnsfx);
 
         mediaController = new MediaController(this);
         videoViewRDPG1.setMediaController(mediaController);
@@ -713,6 +770,7 @@ public class LessonColors extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
+                sfx.start();
                 yellow4();
 
             }
@@ -722,6 +780,7 @@ public class LessonColors extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
+                sfx.start();
                 yellow6();
 
             }
@@ -733,6 +792,7 @@ public class LessonColors extends AppCompatActivity {
         videoPathRDPG1 = "android.resource://" + getPackageName() + "/" + R.raw.yellow6;
         uriRDPG1 = Uri.parse(videoPathRDPG1);
         videoViewRDPG1.setVideoURI(uriRDPG1);
+        MediaPlayer sfx = MediaPlayer.create(this, R.raw.btnsfx);
 
         mediaController = new MediaController(this);
         videoViewRDPG1.setMediaController(mediaController);
@@ -754,6 +814,7 @@ public class LessonColors extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
+                sfx.start();
                 yellow5();
 
             }
@@ -763,6 +824,7 @@ public class LessonColors extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
+                sfx.start();
                 orange1();
 
             }
@@ -774,6 +836,7 @@ public class LessonColors extends AppCompatActivity {
         videoPathRDPG1 = "android.resource://" + getPackageName() + "/" + R.raw.orange1;
         uriRDPG1 = Uri.parse(videoPathRDPG1);
         videoViewRDPG1.setVideoURI(uriRDPG1);
+        MediaPlayer sfx = MediaPlayer.create(this, R.raw.btnsfx);
 
         mediaController = new MediaController(this);
         videoViewRDPG1.setMediaController(mediaController);
@@ -795,6 +858,7 @@ public class LessonColors extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
+                sfx.start();
                 yellow6();
 
             }
@@ -804,6 +868,7 @@ public class LessonColors extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
+                sfx.start();
                 orange2();
 
             }
@@ -815,6 +880,7 @@ public class LessonColors extends AppCompatActivity {
         videoPathRDPG1 = "android.resource://" + getPackageName() + "/" + R.raw.orange2;
         uriRDPG1 = Uri.parse(videoPathRDPG1);
         videoViewRDPG1.setVideoURI(uriRDPG1);
+        MediaPlayer sfx = MediaPlayer.create(this, R.raw.btnsfx);
 
         mediaController = new MediaController(this);
         videoViewRDPG1.setMediaController(mediaController);
@@ -836,6 +902,7 @@ public class LessonColors extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
+                sfx.start();
                 orange1();
 
             }
@@ -845,6 +912,7 @@ public class LessonColors extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
+                sfx.start();
                 orange3();
 
             }
@@ -856,6 +924,7 @@ public class LessonColors extends AppCompatActivity {
         videoPathRDPG1 = "android.resource://" + getPackageName() + "/" + R.raw.orange3;
         uriRDPG1 = Uri.parse(videoPathRDPG1);
         videoViewRDPG1.setVideoURI(uriRDPG1);
+        MediaPlayer sfx = MediaPlayer.create(this, R.raw.btnsfx);
 
         mediaController = new MediaController(this);
         videoViewRDPG1.setMediaController(mediaController);
@@ -877,6 +946,7 @@ public class LessonColors extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
+                sfx.start();
                 orange2();
 
             }
@@ -886,6 +956,7 @@ public class LessonColors extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
+                sfx.start();
                 orange4();
 
             }
@@ -897,6 +968,7 @@ public class LessonColors extends AppCompatActivity {
         videoPathRDPG1 = "android.resource://" + getPackageName() + "/" + R.raw.orange4;
         uriRDPG1 = Uri.parse(videoPathRDPG1);
         videoViewRDPG1.setVideoURI(uriRDPG1);
+        MediaPlayer sfx = MediaPlayer.create(this, R.raw.btnsfx);
 
         mediaController = new MediaController(this);
         videoViewRDPG1.setMediaController(mediaController);
@@ -918,6 +990,7 @@ public class LessonColors extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
+                sfx.start();
                 orange3();
 
             }
@@ -927,6 +1000,7 @@ public class LessonColors extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
+                sfx.start();
                 orange5();
 
             }
@@ -938,6 +1012,7 @@ public class LessonColors extends AppCompatActivity {
         videoPathRDPG1 = "android.resource://" + getPackageName() + "/" + R.raw.orange5;
         uriRDPG1 = Uri.parse(videoPathRDPG1);
         videoViewRDPG1.setVideoURI(uriRDPG1);
+        MediaPlayer sfx = MediaPlayer.create(this, R.raw.btnsfx);
 
         mediaController = new MediaController(this);
         videoViewRDPG1.setMediaController(mediaController);
@@ -959,6 +1034,7 @@ public class LessonColors extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
+                sfx.start();
                 orange4();
 
             }
@@ -968,6 +1044,7 @@ public class LessonColors extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
+                sfx.start();
                 orange6();
 
             }
@@ -979,6 +1056,7 @@ public class LessonColors extends AppCompatActivity {
         videoPathRDPG1 = "android.resource://" + getPackageName() + "/" + R.raw.orange6;
         uriRDPG1 = Uri.parse(videoPathRDPG1);
         videoViewRDPG1.setVideoURI(uriRDPG1);
+        MediaPlayer sfx = MediaPlayer.create(this, R.raw.btnsfx);
 
         mediaController = new MediaController(this);
         videoViewRDPG1.setMediaController(mediaController);
@@ -1000,6 +1078,7 @@ public class LessonColors extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
+                sfx.start();
                 orange5();
 
             }
@@ -1009,6 +1088,7 @@ public class LessonColors extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
+                sfx.start();
                 purple1();
 
             }
@@ -1020,6 +1100,7 @@ public class LessonColors extends AppCompatActivity {
         videoPathRDPG1 = "android.resource://" + getPackageName() + "/" + R.raw.purple1;
         uriRDPG1 = Uri.parse(videoPathRDPG1);
         videoViewRDPG1.setVideoURI(uriRDPG1);
+        MediaPlayer sfx = MediaPlayer.create(this, R.raw.btnsfx);
 
         mediaController = new MediaController(this);
         videoViewRDPG1.setMediaController(mediaController);
@@ -1041,6 +1122,7 @@ public class LessonColors extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
+                sfx.start();
                 orange6();
 
             }
@@ -1050,6 +1132,7 @@ public class LessonColors extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
+                sfx.start();
                 purple2();
 
             }
@@ -1061,6 +1144,7 @@ public class LessonColors extends AppCompatActivity {
         videoPathRDPG1 = "android.resource://" + getPackageName() + "/" + R.raw.purple2;
         uriRDPG1 = Uri.parse(videoPathRDPG1);
         videoViewRDPG1.setVideoURI(uriRDPG1);
+        MediaPlayer sfx = MediaPlayer.create(this, R.raw.btnsfx);
 
         mediaController = new MediaController(this);
         videoViewRDPG1.setMediaController(mediaController);
@@ -1082,6 +1166,7 @@ public class LessonColors extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
+                sfx.start();
                 purple1();
 
             }
@@ -1091,6 +1176,7 @@ public class LessonColors extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
+                sfx.start();
                 purple3();
 
             }
@@ -1102,6 +1188,7 @@ public class LessonColors extends AppCompatActivity {
         videoPathRDPG1 = "android.resource://" + getPackageName() + "/" + R.raw.purple3;
         uriRDPG1 = Uri.parse(videoPathRDPG1);
         videoViewRDPG1.setVideoURI(uriRDPG1);
+        MediaPlayer sfx = MediaPlayer.create(this, R.raw.btnsfx);
 
         mediaController = new MediaController(this);
         videoViewRDPG1.setMediaController(mediaController);
@@ -1123,6 +1210,7 @@ public class LessonColors extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
+                sfx.start();
                 purple2();
 
             }
@@ -1132,6 +1220,7 @@ public class LessonColors extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
+                sfx.start();
                 purple4();
 
             }
@@ -1143,6 +1232,7 @@ public class LessonColors extends AppCompatActivity {
         videoPathRDPG1 = "android.resource://" + getPackageName() + "/" + R.raw.purple4;
         uriRDPG1 = Uri.parse(videoPathRDPG1);
         videoViewRDPG1.setVideoURI(uriRDPG1);
+        MediaPlayer sfx = MediaPlayer.create(this, R.raw.btnsfx);
 
         mediaController = new MediaController(this);
         videoViewRDPG1.setMediaController(mediaController);
@@ -1164,6 +1254,7 @@ public class LessonColors extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
+                sfx.start();
                 purple3();
 
             }
@@ -1173,6 +1264,7 @@ public class LessonColors extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
+                sfx.start();
                 purple5();
 
             }
@@ -1184,6 +1276,7 @@ public class LessonColors extends AppCompatActivity {
         videoPathRDPG1 = "android.resource://" + getPackageName() + "/" + R.raw.purple5;
         uriRDPG1 = Uri.parse(videoPathRDPG1);
         videoViewRDPG1.setVideoURI(uriRDPG1);
+        MediaPlayer sfx = MediaPlayer.create(this, R.raw.btnsfx);
 
         mediaController = new MediaController(this);
         videoViewRDPG1.setMediaController(mediaController);
@@ -1205,6 +1298,7 @@ public class LessonColors extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
+                sfx.start();
                 purple4();
 
             }
@@ -1214,6 +1308,7 @@ public class LessonColors extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
+                sfx.start();
                 purple6();
 
             }
@@ -1225,6 +1320,7 @@ public class LessonColors extends AppCompatActivity {
         videoPathRDPG1 = "android.resource://" + getPackageName() + "/" + R.raw.purple6;
         uriRDPG1 = Uri.parse(videoPathRDPG1);
         videoViewRDPG1.setVideoURI(uriRDPG1);
+        MediaPlayer sfx = MediaPlayer.create(this, R.raw.btnsfx);
 
         mediaController = new MediaController(this);
         videoViewRDPG1.setMediaController(mediaController);
@@ -1246,6 +1342,7 @@ public class LessonColors extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
+                sfx.start();
                 purple5();
 
             }
@@ -1255,6 +1352,7 @@ public class LessonColors extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
+                sfx.start();
                 green1();
 
             }
@@ -1266,6 +1364,7 @@ public class LessonColors extends AppCompatActivity {
         videoPathRDPG1 = "android.resource://" + getPackageName() + "/" + R.raw.green1;
         uriRDPG1 = Uri.parse(videoPathRDPG1);
         videoViewRDPG1.setVideoURI(uriRDPG1);
+        MediaPlayer sfx = MediaPlayer.create(this, R.raw.btnsfx);
 
         mediaController = new MediaController(this);
         videoViewRDPG1.setMediaController(mediaController);
@@ -1287,6 +1386,7 @@ public class LessonColors extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
+                sfx.start();
                 purple6();
 
             }
@@ -1296,6 +1396,7 @@ public class LessonColors extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
+                sfx.start();
                 green2();
 
             }
@@ -1307,6 +1408,7 @@ public class LessonColors extends AppCompatActivity {
         videoPathRDPG1 = "android.resource://" + getPackageName() + "/" + R.raw.green2;
         uriRDPG1 = Uri.parse(videoPathRDPG1);
         videoViewRDPG1.setVideoURI(uriRDPG1);
+        MediaPlayer sfx = MediaPlayer.create(this, R.raw.btnsfx);
 
         mediaController = new MediaController(this);
         videoViewRDPG1.setMediaController(mediaController);
@@ -1328,6 +1430,7 @@ public class LessonColors extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
+                sfx.start();
                 green1();
 
             }
@@ -1337,6 +1440,7 @@ public class LessonColors extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
+                sfx.start();
                 green3();
 
             }
@@ -1348,6 +1452,7 @@ public class LessonColors extends AppCompatActivity {
         videoPathRDPG1 = "android.resource://" + getPackageName() + "/" + R.raw.green3;
         uriRDPG1 = Uri.parse(videoPathRDPG1);
         videoViewRDPG1.setVideoURI(uriRDPG1);
+        MediaPlayer sfx = MediaPlayer.create(this, R.raw.btnsfx);
 
         mediaController = new MediaController(this);
         videoViewRDPG1.setMediaController(mediaController);
@@ -1369,6 +1474,7 @@ public class LessonColors extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
+                sfx.start();
                 green2();
 
             }
@@ -1378,6 +1484,7 @@ public class LessonColors extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
+                sfx.start();
                 green4();
 
             }
@@ -1389,6 +1496,7 @@ public class LessonColors extends AppCompatActivity {
         videoPathRDPG1 = "android.resource://" + getPackageName() + "/" + R.raw.green4;
         uriRDPG1 = Uri.parse(videoPathRDPG1);
         videoViewRDPG1.setVideoURI(uriRDPG1);
+        MediaPlayer sfx = MediaPlayer.create(this, R.raw.btnsfx);
 
         mediaController = new MediaController(this);
         videoViewRDPG1.setMediaController(mediaController);
@@ -1410,6 +1518,7 @@ public class LessonColors extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
+                sfx.start();
                 green3();
 
             }
@@ -1419,6 +1528,7 @@ public class LessonColors extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
+                sfx.start();
                 green5();
 
             }
@@ -1430,6 +1540,7 @@ public class LessonColors extends AppCompatActivity {
         videoPathRDPG1 = "android.resource://" + getPackageName() + "/" + R.raw.green5;
         uriRDPG1 = Uri.parse(videoPathRDPG1);
         videoViewRDPG1.setVideoURI(uriRDPG1);
+        MediaPlayer sfx = MediaPlayer.create(this, R.raw.btnsfx);
 
         mediaController = new MediaController(this);
         videoViewRDPG1.setMediaController(mediaController);
@@ -1451,6 +1562,7 @@ public class LessonColors extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
+                sfx.start();
                 green4();
 
             }
@@ -1460,6 +1572,7 @@ public class LessonColors extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
+                sfx.start();
                 green6();
 
             }
@@ -1471,6 +1584,7 @@ public class LessonColors extends AppCompatActivity {
         videoPathRDPG1 = "android.resource://" + getPackageName() + "/" + R.raw.green6;
         uriRDPG1 = Uri.parse(videoPathRDPG1);
         videoViewRDPG1.setVideoURI(uriRDPG1);
+        MediaPlayer sfx = MediaPlayer.create(this, R.raw.btnsfx);
 
         mediaController = new MediaController(this);
         videoViewRDPG1.setMediaController(mediaController);
@@ -1492,6 +1606,7 @@ public class LessonColors extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
+                sfx.start();
                 green5();
 
             }
@@ -1501,6 +1616,7 @@ public class LessonColors extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
+                sfx.start();
                 startActivity(new Intent(LessonColors.this,ColorsLessonCongrats.class));
 
             }

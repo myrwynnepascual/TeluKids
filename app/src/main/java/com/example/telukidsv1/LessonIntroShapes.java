@@ -32,6 +32,9 @@ public class LessonIntroShapes extends AppCompatActivity {
         videoPathIS = "android.resource://" + getPackageName() + "/" + R.raw.shapesintrovideo;
         uriIS = Uri.parse(videoPathIS);
         videoViewIS.setVideoURI(uriIS);
+        MediaPlayer sfx = MediaPlayer.create(this, R.raw.btnsfx);
+
+        BackgroundSoundService.onPause();
 
         MediaController mediaController = new MediaController(this);
         videoViewIS.setMediaController(mediaController);
@@ -44,6 +47,7 @@ public class LessonIntroShapes extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
+                sfx.start();
                 startActivity(new Intent(LessonIntroShapes.this,ChooseModeShapes.class));
 
             }
@@ -57,14 +61,6 @@ public class LessonIntroShapes extends AppCompatActivity {
 
             }
         });
-
-        Handler handler = new Handler();
-        handler.postDelayed(new Runnable() {
-            @Override
-            public void run() {
-                btncloseIS.setVisibility(View.VISIBLE);
-            }
-        },5000);
 
     }
 }

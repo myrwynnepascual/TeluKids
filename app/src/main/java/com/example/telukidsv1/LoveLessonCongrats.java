@@ -38,6 +38,7 @@ public class LoveLessonCongrats extends AppCompatActivity {
         certificateLLC = findViewById(R.id.certificateLLC);
         btnassessmentLLC = findViewById(R.id.asessmentbtnLLC);
         btnhomepageLLC = findViewById(R.id.homepageLLC);
+        MediaPlayer sfx = MediaPlayer.create(this, R.raw.btnsfx);
 
         congrats = MediaPlayer.create(this, R.raw.yaysfx);
         congrats.start();
@@ -60,6 +61,7 @@ public class LoveLessonCongrats extends AppCompatActivity {
         btnbackLLC.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                sfx.start();
                 startActivity(new Intent(LoveLessonCongrats.this, Gmrc7to9.class));
             }
         });
@@ -67,6 +69,7 @@ public class LoveLessonCongrats extends AppCompatActivity {
         btnachievementsLLC.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                sfx.start();
                 startActivity(new Intent(LoveLessonCongrats.this, Achievements7to9Love.class));
             }
         });
@@ -74,6 +77,7 @@ public class LoveLessonCongrats extends AppCompatActivity {
         btnassessmentLLC.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                sfx.start();
                 startActivity(new Intent(LoveLessonCongrats.this, QuizLove.class));
             }
         });
@@ -81,8 +85,15 @@ public class LoveLessonCongrats extends AppCompatActivity {
         btnhomepageLLC.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                sfx.start();
                 startActivity(new Intent(LoveLessonCongrats.this, Homepage3to6.class));
             }
         });
+    }
+
+    @Override
+    protected void onUserLeaveHint(){
+        congrats.stop();
+        congrats.release();
     }
 }

@@ -43,6 +43,10 @@ public class HonestyLessonCongrats extends AppCompatActivity {
         congrats = MediaPlayer.create(this, R.raw.yaysfx);
         congrats.start();
 
+        MediaPlayer sfx = MediaPlayer.create(this, R.raw.btnsfx);
+
+
+
         fAuth = FirebaseAuth.getInstance();
         fStore = FirebaseFirestore.getInstance();
         user = fAuth.getCurrentUser();
@@ -61,6 +65,7 @@ public class HonestyLessonCongrats extends AppCompatActivity {
         btnbackHLC.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                sfx.start();
                 startActivity(new Intent(HonestyLessonCongrats.this, Gmrc3to6.class));
             }
         });
@@ -68,6 +73,7 @@ public class HonestyLessonCongrats extends AppCompatActivity {
         btnachievementsHLC.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                sfx.start();
                 startActivity(new Intent(HonestyLessonCongrats.this, Achievements3to6Honesty.class));
             }
         });
@@ -75,6 +81,7 @@ public class HonestyLessonCongrats extends AppCompatActivity {
         btnassessmentHLC.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                sfx.start();
                 startActivity(new Intent(HonestyLessonCongrats.this, QuizHonesty.class));
             }
         });
@@ -82,8 +89,15 @@ public class HonestyLessonCongrats extends AppCompatActivity {
         btnhomepageHLC.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                sfx.start();
                 startActivity(new Intent(HonestyLessonCongrats.this, Homepage3to6.class));
             }
         });
+    }
+
+    @Override
+    protected void onUserLeaveHint(){
+        congrats.stop();
+        congrats.release();
     }
 }

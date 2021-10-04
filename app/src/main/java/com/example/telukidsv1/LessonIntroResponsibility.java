@@ -29,6 +29,9 @@ public class LessonIntroResponsibility extends AppCompatActivity {
         videoPathRP = "android.resource://" + getPackageName() + "/" + R.raw.responsibilityintrovideo;
         uriRP = Uri.parse(videoPathRP);
         videoViewRP.setVideoURI(uriRP);
+        MediaPlayer sfx = MediaPlayer.create(this, R.raw.btnsfx);
+
+        BackgroundSoundService.onPause();
 
         MediaController mediaController = new MediaController(this);
         videoViewRP.setMediaController(mediaController);
@@ -41,6 +44,7 @@ public class LessonIntroResponsibility extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
+                sfx.start();
                 startActivity(new Intent(LessonIntroResponsibility.this,ChooseModeResponsibility.class));
 
             }
@@ -54,14 +58,6 @@ public class LessonIntroResponsibility extends AppCompatActivity {
 
             }
         });
-
-        Handler handler = new Handler();
-        handler.postDelayed(new Runnable() {
-            @Override
-            public void run() {
-                btncloseRP.setVisibility(View.VISIBLE);
-            }
-        },5000);
 
     }
 }

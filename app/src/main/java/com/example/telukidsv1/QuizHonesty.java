@@ -71,6 +71,8 @@ public class QuizHonesty extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.quiz_honesty);
 
+        BackgroundSoundService.onPause();
+
         background_Honesty = (ConstraintLayout) findViewById(R.id.background_Honesty);
         quizLayout_Honesty = (LinearLayout)findViewById(R.id.quizLayout_Honesty);
         countLabel_Honesty = (TextView)findViewById(R.id.countLabel_Honesty);

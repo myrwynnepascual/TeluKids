@@ -3,6 +3,7 @@ package com.example.telukidsv1;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageButton;
@@ -21,9 +22,15 @@ public class ChooseModeRespect extends AppCompatActivity {
         assessCMR = findViewById(R.id.assessCMR);
         replayCMR = findViewById(R.id.replayintroCMR);
 
+        BackgroundSoundService.onResume();
+
+        MediaPlayer sfx = MediaPlayer.create(this, R.raw.btnsfx);
+
+
         backCMR.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                sfx.start();
                 startActivity(new Intent(ChooseModeRespect.this,Gmrc3to6.class));
             }
         });
@@ -31,6 +38,7 @@ public class ChooseModeRespect extends AppCompatActivity {
         learnCMR.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                sfx.start();
                 startActivity(new Intent(ChooseModeRespect.this, LessonRespect.class));
             }
         });
@@ -38,6 +46,7 @@ public class ChooseModeRespect extends AppCompatActivity {
         assessCMR.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                sfx.start();
                 startActivity(new Intent(ChooseModeRespect.this, QuizRespect.class));
             }
         });
@@ -45,6 +54,7 @@ public class ChooseModeRespect extends AppCompatActivity {
         replayCMR.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                sfx.start();
                 startActivity(new Intent(ChooseModeRespect.this,LessonIntroRespect.class));
             }
         });

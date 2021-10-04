@@ -3,6 +3,7 @@ package com.example.telukidsv1;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageButton;
@@ -23,10 +24,14 @@ public class Gmrc3to6 extends AppCompatActivity {
         btnSociability = findViewById(R.id.btnSociabilityG36);
         btnCompassion = findViewById(R.id.btnCompassionG36);
 
+        MediaPlayer sfx = MediaPlayer.create(this, R.raw.btnsfx);
+
+
         btnBack.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
+                sfx.start();
                 startActivity(new Intent(Gmrc3to6.this, Homepage3to6.class));
 
             }
@@ -36,6 +41,7 @@ public class Gmrc3to6 extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
+                sfx.start();
                 startActivity(new Intent(Gmrc3to6.this, LessonIntroDiscipline.class));
 
             }
@@ -45,6 +51,7 @@ public class Gmrc3to6 extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
+                sfx.start();
                 startActivity(new Intent(Gmrc3to6.this, LessonIntroHonesty.class));
 
             }
@@ -54,6 +61,7 @@ public class Gmrc3to6 extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
+                sfx.start();
                 startActivity(new Intent(Gmrc3to6.this, LessonIntroRespect.class));
 
             }
@@ -63,6 +71,7 @@ public class Gmrc3to6 extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
+                sfx.start();
                 startActivity(new Intent(Gmrc3to6.this, LessonIntroSociability.class));
 
             }
@@ -72,6 +81,7 @@ public class Gmrc3to6 extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
+                sfx.start();
                 startActivity(new Intent(Gmrc3to6.this, LessonIntroCompassion.class));
 
             }

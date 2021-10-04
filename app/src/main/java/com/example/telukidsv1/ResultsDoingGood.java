@@ -28,6 +28,7 @@ public class ResultsDoingGood extends AppCompatActivity {
     FirebaseFirestore fStore;
     FirebaseUser user;
     String achievement_doinggood;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -38,6 +39,7 @@ public class ResultsDoingGood extends AppCompatActivity {
         ImageButton achievementsbtnCLC_DoingGood = findViewById(R.id.achievementsbtnCLC_DoingGood);
         ImageButton btnReadLesson_Quiz_DoingGood = findViewById(R.id.btnReadLesson_Quiz_DoingGood);
         ImageButton homepageCLC_DoingGood = findViewById(R.id.homepageCLC_DoingGood);
+        MediaPlayer sfx = MediaPlayer.create(this, R.raw.btnsfx);
 
         congrats = MediaPlayer.create(this, R.raw.yaysfx);
         congrats.start();
@@ -83,6 +85,7 @@ public class ResultsDoingGood extends AppCompatActivity {
         achievementsbtnCLC_DoingGood.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                sfx.start();
                 Intent proceed = new Intent(ResultsDoingGood.this, Achievements7to9DoingGood2.class);
                 proceed.putExtra("RIGHT_ANSWER_COUNT_DoingGood", score_doinggood);
                 startActivity(proceed);
@@ -91,12 +94,14 @@ public class ResultsDoingGood extends AppCompatActivity {
         gmrc79btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                sfx.start();
                 startActivity(new Intent(ResultsDoingGood.this, Gmrc7to9.class));
             }
         });
         btnReadLesson_Quiz_DoingGood.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                sfx.start();
                 Intent proceed = new Intent(ResultsDoingGood.this, LessonDoingGood.class);
                 startActivity(proceed);
             }
@@ -104,6 +109,7 @@ public class ResultsDoingGood extends AppCompatActivity {
         homepageCLC_DoingGood.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                sfx.start();
                 Intent proceed = new Intent(ResultsDoingGood.this, Homepage7to9.class);
                 startActivity(proceed);
             }

@@ -4,6 +4,7 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.util.Patterns;
@@ -23,7 +24,6 @@ public class Login extends AppCompatActivity {
     ImageButton backbtnLI,forgotpwLI,loginbtnLI;
     FirebaseAuth fAuth;
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -39,9 +39,12 @@ public class Login extends AppCompatActivity {
         forgotpwLI = findViewById(R.id.forgotpwLI);
         loginbtnLI = findViewById(R.id.loginbtnLI);
 
+        MediaPlayer sfx = MediaPlayer.create(this, R.raw.btnsfx);
+
         backbtnLI.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                sfx.start();
                 startActivity(new Intent(Login.this,SignUpOrLogInPage.class));
             }
         });
@@ -50,6 +53,7 @@ public class Login extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
+                sfx.start();
                 startActivity(new Intent(Login.this,ForgotPassword.class));
             }
         });
@@ -59,6 +63,7 @@ public class Login extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
+                sfx.start();
                 String email = emailLI.getText().toString().trim();
                 String password = passwordLI.getText().toString().trim();
 

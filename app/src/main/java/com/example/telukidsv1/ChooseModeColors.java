@@ -3,6 +3,7 @@ package com.example.telukidsv1;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageButton;
@@ -21,9 +22,15 @@ public class ChooseModeColors extends AppCompatActivity {
         assessCMC = findViewById(R.id.assessCMC);
         replayCMC = findViewById(R.id.replayintroCMC);
 
+        BackgroundSoundService.onResume();
+
+        MediaPlayer sfx = MediaPlayer.create(this, R.raw.btnsfx);
+
+
         backCMC.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                sfx.start();
                 startActivity(new Intent(ChooseModeColors.this,BasicConcepts.class));
             }
         });
@@ -31,6 +38,7 @@ public class ChooseModeColors extends AppCompatActivity {
         learnCMC.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                sfx.start();
                 startActivity(new Intent(ChooseModeColors.this, LessonColors.class));
             }
         });
@@ -38,6 +46,7 @@ public class ChooseModeColors extends AppCompatActivity {
         assessCMC.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                sfx.start();
                 startActivity(new Intent(ChooseModeColors.this,QuizColors.class));
             }
         });
@@ -45,6 +54,7 @@ public class ChooseModeColors extends AppCompatActivity {
         replayCMC.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                sfx.start();
                 startActivity(new Intent(ChooseModeColors.this,LessonIntroColors.class));
             }
         });

@@ -29,6 +29,9 @@ public class LessonIntroSubtraction extends AppCompatActivity {
         videoPathISB = "android.resource://" + getPackageName() + "/" + R.raw.subtractionintrovideo;
         uriISB = Uri.parse(videoPathISB);
         videoViewISB.setVideoURI(uriISB);
+        MediaPlayer sfx = MediaPlayer.create(this, R.raw.btnsfx);
+
+        BackgroundSoundService.onPause();
 
         MediaController mediaController = new MediaController(this);
         videoViewISB.setMediaController(mediaController);
@@ -41,6 +44,7 @@ public class LessonIntroSubtraction extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
+                sfx.start();
                 startActivity(new Intent(LessonIntroSubtraction.this,ChooseModeSubtraction.class));
 
             }
@@ -54,13 +58,5 @@ public class LessonIntroSubtraction extends AppCompatActivity {
 
             }
         });
-
-        Handler handler = new Handler();
-        handler.postDelayed(new Runnable() {
-            @Override
-            public void run() {
-                btncloseISB.setVisibility(View.VISIBLE);
-            }
-        },5000);
     }
 }

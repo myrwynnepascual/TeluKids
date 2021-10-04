@@ -29,6 +29,9 @@ public class LessonIntroDiscipline extends AppCompatActivity {
         videoPathID = "android.resource://" + getPackageName() + "/" + R.raw.disciplineintrovideo;
         uriID = Uri.parse(videoPathID);
         videoViewID.setVideoURI(uriID);
+        MediaPlayer sfx = MediaPlayer.create(this, R.raw.btnsfx);
+
+        BackgroundSoundService.onPause();
 
         MediaController mediaController = new MediaController(this);
         videoViewID.setMediaController(mediaController);
@@ -41,6 +44,7 @@ public class LessonIntroDiscipline extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
+                sfx.start();
                 startActivity(new Intent(LessonIntroDiscipline.this,ChooseModeDiscipline.class));
 
             }
@@ -54,13 +58,5 @@ public class LessonIntroDiscipline extends AppCompatActivity {
 
             }
         });
-
-        Handler handler = new Handler();
-        handler.postDelayed(new Runnable() {
-            @Override
-            public void run() {
-                btnCloseID.setVisibility(View.VISIBLE);
-            }
-        },5000);
     }
 }

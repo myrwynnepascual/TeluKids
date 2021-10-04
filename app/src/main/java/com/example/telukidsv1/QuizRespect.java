@@ -72,6 +72,8 @@ public class QuizRespect extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.quiz_respect);
 
+        BackgroundSoundService.onPause();
+
         background_Respect = (ConstraintLayout) findViewById(R.id.background_Respect);
         quizLayout_Respect = (LinearLayout)findViewById(R.id.quizLayout_Respect);
         countLabel_Respect = (TextView)findViewById(R.id.countLabel_Respect);

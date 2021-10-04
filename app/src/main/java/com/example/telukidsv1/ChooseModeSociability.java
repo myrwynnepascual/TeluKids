@@ -3,6 +3,7 @@ package com.example.telukidsv1;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageButton;
@@ -21,9 +22,15 @@ public class ChooseModeSociability extends AppCompatActivity {
         assessCMSC = findViewById(R.id.assessCMSC);
         replayCMSC = findViewById(R.id.replayintroCMSC);
 
+        BackgroundSoundService.onResume();
+
+        MediaPlayer sfx = MediaPlayer.create(this, R.raw.btnsfx);
+
+
         backCMSC.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                sfx.start();
                 startActivity(new Intent(ChooseModeSociability.this,Gmrc3to6.class));
             }
         });
@@ -31,6 +38,7 @@ public class ChooseModeSociability extends AppCompatActivity {
         learnCMSC.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                sfx.start();
                 startActivity(new Intent(ChooseModeSociability.this, LessonSociability.class));
             }
         });
@@ -38,6 +46,7 @@ public class ChooseModeSociability extends AppCompatActivity {
         assessCMSC.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                sfx.start();
                 startActivity(new Intent(ChooseModeSociability.this, QuizSociability.class));
             }
         });
@@ -45,6 +54,7 @@ public class ChooseModeSociability extends AppCompatActivity {
         replayCMSC.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                sfx.start();
                 startActivity(new Intent(ChooseModeSociability.this,LessonIntroSociability.class));
             }
         });

@@ -18,7 +18,7 @@ public class LessonRespect extends AppCompatActivity {
     Uri uriR36;
     ImageButton backbtnR36,nextbtnR36;
     MediaController mediaController;
-    
+
     
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -28,6 +28,9 @@ public class LessonRespect extends AppCompatActivity {
         videoViewR36 = findViewById(R.id.videoR36);
         backbtnR36 = findViewById(R.id.btnbackR36);
         nextbtnR36 = findViewById(R.id.nextbtnR36);
+        MediaPlayer sfx = MediaPlayer.create(this, R.raw.btnsfx);
+
+        BackgroundSoundService.onPause();
 
         mediaController = new MediaController(this);
         videoViewR36.setMediaController(mediaController);
@@ -41,6 +44,7 @@ public class LessonRespect extends AppCompatActivity {
         videoPathR36 = "android.resource://" + getPackageName() + "/" + R.raw.respect1;
         uriR36 = Uri.parse(videoPathR36);
         videoViewR36.setVideoURI(uriR36);
+        MediaPlayer sfx = MediaPlayer.create(this, R.raw.btnsfx);
 
         videoViewR36.start();
 
@@ -57,6 +61,7 @@ public class LessonRespect extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
+                sfx.start();
                 startActivity(new Intent(LessonRespect.this,ChooseModeRespect.class));
 
             }
@@ -66,6 +71,7 @@ public class LessonRespect extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
+                sfx.start();
                 respect2();
 
             }
@@ -76,6 +82,7 @@ public class LessonRespect extends AppCompatActivity {
         videoPathR36 = "android.resource://" + getPackageName() + "/" + R.raw.respect2;
         uriR36 = Uri.parse(videoPathR36);
         videoViewR36.setVideoURI(uriR36);
+        MediaPlayer sfx = MediaPlayer.create(this, R.raw.btnsfx);
 
         videoViewR36.start();
 
@@ -92,6 +99,7 @@ public class LessonRespect extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
+                sfx.start();
                 respect1();
 
             }
@@ -101,6 +109,7 @@ public class LessonRespect extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
+                sfx.start();
                 respect3();
 
             }
@@ -111,6 +120,7 @@ public class LessonRespect extends AppCompatActivity {
         videoPathR36 = "android.resource://" + getPackageName() + "/" + R.raw.respect3;
         uriR36 = Uri.parse(videoPathR36);
         videoViewR36.setVideoURI(uriR36);
+        MediaPlayer sfx = MediaPlayer.create(this, R.raw.btnsfx);
 
         videoViewR36.start();
 
@@ -127,6 +137,7 @@ public class LessonRespect extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
+                sfx.start();
                 respect2();
 
             }
@@ -136,6 +147,7 @@ public class LessonRespect extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
+                sfx.start();
                 respect4();
 
             }
@@ -146,6 +158,7 @@ public class LessonRespect extends AppCompatActivity {
         videoPathR36 = "android.resource://" + getPackageName() + "/" + R.raw.respect4;
         uriR36 = Uri.parse(videoPathR36);
         videoViewR36.setVideoURI(uriR36);
+        MediaPlayer sfx = MediaPlayer.create(this, R.raw.btnsfx);
 
         videoViewR36.start();
 
@@ -162,6 +175,7 @@ public class LessonRespect extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
+                sfx.start();
                 respect3();
 
             }
@@ -171,6 +185,7 @@ public class LessonRespect extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
+                sfx.start();
                 startActivity(new Intent(LessonRespect.this, RespectLessonCongrats.class));
 
             }

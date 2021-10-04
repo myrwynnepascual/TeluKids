@@ -73,6 +73,8 @@ public class QuizSociability extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.quiz_sociability);
 
+        BackgroundSoundService.onPause();
+
         background_Sociability = (ConstraintLayout) findViewById(R.id.background_Sociability);
         quizLayout_Sociability = (LinearLayout)findViewById(R.id.quizLayout_Sociability);
         countLabel_Sociability = (TextView)findViewById(R.id.countLabel_Sociability);

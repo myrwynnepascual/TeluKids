@@ -3,6 +3,7 @@ package com.example.telukidsv1;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageButton;
@@ -21,9 +22,15 @@ public class ChooseModeDiscipline extends AppCompatActivity {
         assessCMD36 = findViewById(R.id.assessCMD36);
         replayCMD36 = findViewById(R.id.replayintroCMD36);
 
+        BackgroundSoundService.onResume();
+
+        MediaPlayer sfx = MediaPlayer.create(this, R.raw.btnsfx);
+
+
         backCMD36.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                sfx.start();
                 startActivity(new Intent(ChooseModeDiscipline.this,Gmrc3to6.class));
             }
         });
@@ -31,6 +38,7 @@ public class ChooseModeDiscipline extends AppCompatActivity {
         learnCMD36.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                sfx.start();
                 startActivity(new Intent(ChooseModeDiscipline.this, LessonDiscipline.class));
             }
         });
@@ -38,6 +46,7 @@ public class ChooseModeDiscipline extends AppCompatActivity {
         assessCMD36.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                sfx.start();
                 startActivity(new Intent(ChooseModeDiscipline.this, QuizDiscipline.class));
             }
         });
@@ -45,6 +54,7 @@ public class ChooseModeDiscipline extends AppCompatActivity {
         replayCMD36.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                sfx.start();
                 startActivity(new Intent(ChooseModeDiscipline.this,LessonIntroDiscipline.class));
             }
         });

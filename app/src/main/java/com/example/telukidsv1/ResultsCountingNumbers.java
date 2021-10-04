@@ -28,6 +28,7 @@ public class ResultsCountingNumbers extends AppCompatActivity {
     FirebaseFirestore fStore;
     FirebaseUser user;
     String achievement_counting;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -38,6 +39,7 @@ public class ResultsCountingNumbers extends AppCompatActivity {
         ImageButton achievementsbtnCLC_Counting = findViewById(R.id.achievementsbtnCLC_Counting);
         ImageButton btnReadLesson_Quiz_Counting = findViewById(R.id.btnReadLesson_Quiz_Counting);
         ImageButton homepageCLC_Counting = findViewById(R.id.homepageCLC_Counting);
+        MediaPlayer sfx = MediaPlayer.create(this, R.raw.btnsfx);
 
         congrats = MediaPlayer.create(this, R.raw.yaysfx);
         congrats.start();
@@ -83,6 +85,7 @@ public class ResultsCountingNumbers extends AppCompatActivity {
         achievementsbtnCLC_Counting.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                sfx.start();
                 Intent proceed = new Intent(ResultsCountingNumbers.this, Achievements3to6Counting2.class);
                 proceed.putExtra("RIGHT_ANSWER_COUNT_Counting", score_counting);
                 startActivity(proceed);
@@ -91,12 +94,14 @@ public class ResultsCountingNumbers extends AppCompatActivity {
         numbersbtnCLC_Counting.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                sfx.start();
                 startActivity(new Intent(ResultsCountingNumbers.this, Numbers.class));
             }
         });
         btnReadLesson_Quiz_Counting.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                sfx.start();
                 Intent proceed = new Intent(ResultsCountingNumbers.this, LessonCounting.class);
                 startActivity(proceed);
             }
@@ -104,6 +109,7 @@ public class ResultsCountingNumbers extends AppCompatActivity {
         homepageCLC_Counting.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                sfx.start();
                 Intent proceed = new Intent(ResultsCountingNumbers.this, Homepage3to6.class);
                 startActivity(proceed);
             }

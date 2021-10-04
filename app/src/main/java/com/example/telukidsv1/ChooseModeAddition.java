@@ -3,6 +3,7 @@ package com.example.telukidsv1;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageButton;
@@ -21,12 +22,15 @@ public class ChooseModeAddition extends AppCompatActivity {
         assessCMA = findViewById(R.id.assessCMA);
         replayCMA = findViewById(R.id.replayintroCMA);
 
-        //Intent svc = new Intent(this, BackgroundSoundService.class);
-        //startService(svc);
+        BackgroundSoundService.onResume();
+
+        MediaPlayer sfx = MediaPlayer.create(this, R.raw.btnsfx);
+
 
         backCMA.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                sfx.start();
                 startActivity(new Intent(ChooseModeAddition.this,Numbers.class));
             }
         });
@@ -34,6 +38,7 @@ public class ChooseModeAddition extends AppCompatActivity {
         learnCMA.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                sfx.start();
                 startActivity(new Intent(ChooseModeAddition.this, LessonAddition.class));
             }
         });
@@ -41,6 +46,7 @@ public class ChooseModeAddition extends AppCompatActivity {
         assessCMA.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                sfx.start();
                 startActivity(new Intent(ChooseModeAddition.this,QuizAddition.class));
             }
         });
@@ -48,6 +54,7 @@ public class ChooseModeAddition extends AppCompatActivity {
         replayCMA.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                sfx.start();
                 startActivity(new Intent(ChooseModeAddition.this,LessonIntroAddition.class));
             }
         });

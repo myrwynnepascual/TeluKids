@@ -38,6 +38,7 @@ public class RespectLessonCongrats extends AppCompatActivity {
         certificateRLC = findViewById(R.id.certificateRLC);
         btnassessmentRLC = findViewById(R.id.asessmentbtnRLC);
         btnhomepageRLC = findViewById(R.id.homepageRLC);
+        MediaPlayer sfx = MediaPlayer.create(this, R.raw.btnsfx);
 
         congrats = MediaPlayer.create(this, R.raw.yaysfx);
         congrats.start();
@@ -60,6 +61,7 @@ public class RespectLessonCongrats extends AppCompatActivity {
         btnbackRLC.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                sfx.start();
                 startActivity(new Intent(RespectLessonCongrats.this, Gmrc3to6.class));
             }
         });
@@ -67,6 +69,7 @@ public class RespectLessonCongrats extends AppCompatActivity {
         btnachievementsRLC.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                sfx.start();
                 startActivity(new Intent(RespectLessonCongrats.this, Achievements3to6Respect.class));
             }
         });
@@ -74,6 +77,7 @@ public class RespectLessonCongrats extends AppCompatActivity {
         btnassessmentRLC.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                sfx.start();
                 startActivity(new Intent(RespectLessonCongrats.this, QuizRespect.class));
             }
         });
@@ -81,8 +85,15 @@ public class RespectLessonCongrats extends AppCompatActivity {
         btnhomepageRLC.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                sfx.start();
                 startActivity(new Intent(RespectLessonCongrats.this, Homepage3to6.class));
             }
         });
+    }
+
+    @Override
+    protected void onUserLeaveHint(){
+        congrats.stop();
+        congrats.release();
     }
 }

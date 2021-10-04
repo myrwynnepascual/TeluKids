@@ -38,6 +38,7 @@ public class ObedienceLessonCongrats extends AppCompatActivity {
         certificateOLC = findViewById(R.id.certificateOLC);
         btnassessmentOLC = findViewById(R.id.asessmentbtnOLC);
         btnhomepageOLC = findViewById(R.id.homepageOLC);
+        MediaPlayer sfx = MediaPlayer.create(this, R.raw.btnsfx);
 
         congrats = MediaPlayer.create(this, R.raw.yaysfx);
         congrats.start();
@@ -60,6 +61,7 @@ public class ObedienceLessonCongrats extends AppCompatActivity {
         btnbackOLC.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                sfx.start();
                 startActivity(new Intent(ObedienceLessonCongrats.this, Gmrc7to9.class));
             }
         });
@@ -67,6 +69,7 @@ public class ObedienceLessonCongrats extends AppCompatActivity {
         btnachievementsOLC.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                sfx.start();
                 startActivity(new Intent(ObedienceLessonCongrats.this, Achievements7to9Obedience.class));
             }
         });
@@ -74,6 +77,7 @@ public class ObedienceLessonCongrats extends AppCompatActivity {
         btnassessmentOLC.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                sfx.start();
                 startActivity(new Intent(ObedienceLessonCongrats.this, QuizObedience.class));
             }
         });
@@ -81,8 +85,15 @@ public class ObedienceLessonCongrats extends AppCompatActivity {
         btnhomepageOLC.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                sfx.start();
                 startActivity(new Intent(ObedienceLessonCongrats.this, Homepage7to9.class));
             }
         });
+    }
+
+    @Override
+    protected void onUserLeaveHint(){
+        congrats.stop();
+        congrats.release();
     }
 }

@@ -28,6 +28,7 @@ public class ResultsColors extends AppCompatActivity {
     FirebaseFirestore fStore;
     FirebaseUser user;
     String achievement_colors;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -38,6 +39,7 @@ public class ResultsColors extends AppCompatActivity {
         ImageButton achievementsbtnCLC_Colors = findViewById(R.id.achievementsbtnCLC_Colors);
         ImageButton btnReadLesson_Quiz_Colors = findViewById(R.id.btnReadLesson_Quiz_Colors);
         ImageButton homepageCLC_Colors = findViewById(R.id.homepageCLC_Colors);
+        MediaPlayer sfx = MediaPlayer.create(this, R.raw.btnsfx);
 
         congrats = MediaPlayer.create(this, R.raw.yaysfx);
         congrats.start();
@@ -83,6 +85,7 @@ public class ResultsColors extends AppCompatActivity {
         achievementsbtnCLC_Colors.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                sfx.start();
                 Intent proceed = new Intent(ResultsColors.this, Achievements3to6Colors2.class);
                 proceed.putExtra("RIGHT_ANSWER_COUNT_Colors", score_colors);
                 startActivity(proceed);
@@ -91,12 +94,14 @@ public class ResultsColors extends AppCompatActivity {
         bconceptsbtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                sfx.start();
                 startActivity(new Intent(ResultsColors.this,BasicConcepts.class));
             }
         });
         btnReadLesson_Quiz_Colors.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                sfx.start();
                 Intent proceed = new Intent(ResultsColors.this, LessonColors.class);
                 startActivity(proceed);
             }
@@ -104,6 +109,7 @@ public class ResultsColors extends AppCompatActivity {
         homepageCLC_Colors.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                sfx.start();
                 Intent proceed = new Intent(ResultsColors.this, Homepage3to6.class);
                 startActivity(proceed);
             }

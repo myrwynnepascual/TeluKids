@@ -30,6 +30,9 @@ public class LessonIntroSociability extends AppCompatActivity {
         videoPathISC = "android.resource://" + getPackageName() + "/" + R.raw.sociabilityintrovideo;
         uriISC = Uri.parse(videoPathISC);
         videoViewISC.setVideoURI(uriISC);
+        MediaPlayer sfx = MediaPlayer.create(this, R.raw.btnsfx);
+
+        BackgroundSoundService.onPause();
 
         MediaController mediaController = new MediaController(this);
         videoViewISC.setMediaController(mediaController);
@@ -42,6 +45,7 @@ public class LessonIntroSociability extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
+                sfx.start();
                 startActivity(new Intent(LessonIntroSociability.this,ChooseModeSociability.class));
 
             }
@@ -55,13 +59,5 @@ public class LessonIntroSociability extends AppCompatActivity {
 
             }
         });
-
-        Handler handler = new Handler();
-        handler.postDelayed(new Runnable() {
-            @Override
-            public void run() {
-                btncloseICS.setVisibility(View.VISIBLE);
-            }
-        },5000);
     }
 }

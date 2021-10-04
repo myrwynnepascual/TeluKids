@@ -4,6 +4,7 @@ import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageButton;
@@ -28,14 +29,16 @@ public class Homepage3to6 extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_homepage3to6);
 
-        BackgroundSoundService.lowerVolume();
-        BackgroundSoundService.onResume();
 
         btnbackH36 = findViewById(R.id.backbtnH36);
         btnUserProf36 = findViewById(R.id.userprofilebtn);
         btnBConcepts = findViewById(R.id.basicconceptsH36);
         btnGMRC36Topics = findViewById(R.id.gmrcH36);
         btnAchievements = findViewById(R.id.achivementsH36);
+
+        MediaPlayer sfx = MediaPlayer.create(this, R.raw.btnsfx);
+
+
 
         fAuth = FirebaseAuth.getInstance();
         fStore = FirebaseFirestore.getInstance();
@@ -79,7 +82,7 @@ public class Homepage3to6 extends AppCompatActivity {
         btnbackH36.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
+                sfx.start();
                 startActivity(new Intent(Homepage3to6.this, AgeCategorySelection.class));
 
             }
@@ -89,6 +92,7 @@ public class Homepage3to6 extends AppCompatActivity {
         btnUserProf36.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                sfx.start();
                 startActivity(new Intent(Homepage3to6.this, UserProfile36.class));
             }
         });
@@ -96,6 +100,7 @@ public class Homepage3to6 extends AppCompatActivity {
         btnBConcepts.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                sfx.start();
                 startActivity(new Intent(Homepage3to6.this, BasicConcepts.class));
             }
         });
@@ -103,6 +108,7 @@ public class Homepage3to6 extends AppCompatActivity {
         btnGMRC36Topics.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                sfx.start();
                 startActivity(new Intent(Homepage3to6.this, Gmrc3to6.class));
             }
         });
@@ -110,21 +116,10 @@ public class Homepage3to6 extends AppCompatActivity {
         btnAchievements.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                sfx.start();
                 startActivity(new Intent(Homepage3to6.this, Achievements3to6Main.class));
             }
         });
 
-    }
-
-    @Override
-    protected void onPause(){
-        BackgroundSoundService.onPause();
-        super.onPause();
-    }
-
-    @Override
-    protected void onResume(){
-        BackgroundSoundService.onResume();
-        super.onResume();
     }
 }

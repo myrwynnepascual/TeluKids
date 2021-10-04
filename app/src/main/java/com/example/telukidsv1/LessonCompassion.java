@@ -27,6 +27,9 @@ public class LessonCompassion extends AppCompatActivity {
         videoViewCP36 = findViewById(R.id.videoCP36);
         backbtnCP36 = findViewById(R.id.btnbackCP36);
         nextbtnCP36 = findViewById(R.id.nextbtnCP36);
+        MediaPlayer sfx = MediaPlayer.create(this, R.raw.btnsfx);
+
+        BackgroundSoundService.onPause();
 
         mediaController = new MediaController(this);
         videoViewCP36.setMediaController(mediaController);
@@ -40,6 +43,7 @@ public class LessonCompassion extends AppCompatActivity {
         videoPathCP36 = "android.resource://" + getPackageName() + "/" + R.raw.compassion1;
         uriCP36 = Uri.parse(videoPathCP36);
         videoViewCP36.setVideoURI(uriCP36);
+        MediaPlayer sfx = MediaPlayer.create(this, R.raw.btnsfx);
 
         videoViewCP36.start();
 
@@ -56,6 +60,7 @@ public class LessonCompassion extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
+                sfx.start();
                 startActivity(new Intent(LessonCompassion.this, ChooseModeCompassion.class));
 
             }
@@ -65,6 +70,7 @@ public class LessonCompassion extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
+                sfx.start();
                 compassion2();
 
             }
@@ -75,6 +81,7 @@ public class LessonCompassion extends AppCompatActivity {
         videoPathCP36 = "android.resource://" + getPackageName() + "/" + R.raw.compassion2;
         uriCP36 = Uri.parse(videoPathCP36);
         videoViewCP36.setVideoURI(uriCP36);
+        MediaPlayer sfx = MediaPlayer.create(this, R.raw.btnsfx);
 
         videoViewCP36.start();
 
@@ -91,6 +98,7 @@ public class LessonCompassion extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
+                sfx.start();
                 compassion1();
 
             }
@@ -100,6 +108,7 @@ public class LessonCompassion extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
+                sfx.start();
                 compassion3();
 
             }
@@ -110,6 +119,7 @@ public class LessonCompassion extends AppCompatActivity {
         videoPathCP36 = "android.resource://" + getPackageName() + "/" + R.raw.compassion3;
         uriCP36 = Uri.parse(videoPathCP36);
         videoViewCP36.setVideoURI(uriCP36);
+        MediaPlayer sfx = MediaPlayer.create(this, R.raw.btnsfx);
 
         videoViewCP36.start();
 
@@ -126,6 +136,7 @@ public class LessonCompassion extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
+                sfx.start();
                 compassion2();
 
             }
@@ -135,6 +146,7 @@ public class LessonCompassion extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
+                sfx.start();
                 compassion4();
 
             }
@@ -145,6 +157,7 @@ public class LessonCompassion extends AppCompatActivity {
         videoPathCP36 = "android.resource://" + getPackageName() + "/" + R.raw.compassion4;
         uriCP36 = Uri.parse(videoPathCP36);
         videoViewCP36.setVideoURI(uriCP36);
+        MediaPlayer sfx = MediaPlayer.create(this, R.raw.btnsfx);
 
         videoViewCP36.start();
 
@@ -161,6 +174,7 @@ public class LessonCompassion extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
+                sfx.start();
                 compassion3();
 
             }
@@ -170,6 +184,7 @@ public class LessonCompassion extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
+                sfx.start();
                 compassion5();
 
             }
@@ -180,6 +195,7 @@ public class LessonCompassion extends AppCompatActivity {
         videoPathCP36 = "android.resource://" + getPackageName() + "/" + R.raw.compassion5;
         uriCP36 = Uri.parse(videoPathCP36);
         videoViewCP36.setVideoURI(uriCP36);
+        MediaPlayer sfx = MediaPlayer.create(this, R.raw.btnsfx);
 
         videoViewCP36.start();
 
@@ -196,6 +212,7 @@ public class LessonCompassion extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
+                sfx.start();
                 compassion4();
 
             }
@@ -205,6 +222,7 @@ public class LessonCompassion extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
+                sfx.start();
                 startActivity(new Intent(LessonCompassion.this, CompassionLessonCongrats.class));
 
             }

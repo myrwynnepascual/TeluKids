@@ -29,6 +29,9 @@ public class LessonIntroObedience extends AppCompatActivity {
         videoPathO = "android.resource://" + getPackageName() + "/" + R.raw.obedienceintrovideo;
         uriO = Uri.parse(videoPathO);
         videoViewO.setVideoURI(uriO);
+        MediaPlayer sfx = MediaPlayer.create(this, R.raw.btnsfx);
+
+        BackgroundSoundService.onPause();
 
         MediaController mediaController = new MediaController(this);
         videoViewO.setMediaController(mediaController);
@@ -41,6 +44,7 @@ public class LessonIntroObedience extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
+                sfx.start();
                 startActivity(new Intent(LessonIntroObedience.this,ChooseModeObedience.class));
 
             }
@@ -54,13 +58,5 @@ public class LessonIntroObedience extends AppCompatActivity {
 
             }
         });
-
-        Handler handler = new Handler();
-        handler.postDelayed(new Runnable() {
-            @Override
-            public void run() {
-                btncloseO.setVisibility(View.VISIBLE);
-            }
-        },5000);
     }
 }

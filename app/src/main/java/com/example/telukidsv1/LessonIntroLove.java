@@ -29,6 +29,9 @@ public class LessonIntroLove extends AppCompatActivity {
         videoPathL = "android.resource://" + getPackageName() + "/" + R.raw.loveintrovideo;
         uriL = Uri.parse(videoPathL);
         videoViewL.setVideoURI(uriL);
+        MediaPlayer sfx = MediaPlayer.create(this, R.raw.btnsfx);
+
+        BackgroundSoundService.onPause();
 
         MediaController mediaController = new MediaController(this);
         videoViewL.setMediaController(mediaController);
@@ -41,6 +44,7 @@ public class LessonIntroLove extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
+                sfx.start();
                 startActivity(new Intent(LessonIntroLove.this,ChooseModeLove.class));
 
             }
@@ -54,13 +58,5 @@ public class LessonIntroLove extends AppCompatActivity {
 
             }
         });
-
-        Handler handler = new Handler();
-        handler.postDelayed(new Runnable() {
-            @Override
-            public void run() {
-                btncloseL.setVisibility(View.VISIBLE);
-            }
-        },5000);
     }
 }

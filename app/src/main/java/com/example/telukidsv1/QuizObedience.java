@@ -74,6 +74,8 @@ public class QuizObedience extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.quiz_obedience);
 
+        BackgroundSoundService.onPause();
+
         background_Obedience = (ConstraintLayout) findViewById(R.id.background_Obedience);
         quizLayout_Obedience = (LinearLayout)findViewById(R.id.quizLayout_Obedience);
         countLabel_Obedience = (TextView)findViewById(R.id.countLabel_Obedience);

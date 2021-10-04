@@ -28,6 +28,7 @@ public class ResultsAddition extends AppCompatActivity {
     FirebaseFirestore fStore;
     FirebaseUser user;
     String achievement_addition;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -38,6 +39,7 @@ public class ResultsAddition extends AppCompatActivity {
         ImageButton achievementsbtnCLC_Addition = findViewById(R.id.achievementsbtnCLC_Addition);
         ImageButton btnReadLesson_Quiz_Addition = findViewById(R.id.btnReadLesson_Quiz_Addition);
         ImageButton homepageCLC_Addition = findViewById(R.id.homepageCLC_Addition);
+        MediaPlayer sfx = MediaPlayer.create(this, R.raw.btnsfx);
 
         congrats = MediaPlayer.create(this, R.raw.yaysfx);
         congrats.start();
@@ -83,6 +85,7 @@ public class ResultsAddition extends AppCompatActivity {
         achievementsbtnCLC_Addition.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                sfx.start();
                 Intent proceed = new Intent(ResultsAddition.this, Achievements3to6Addition2.class);
                 proceed.putExtra("RIGHT_ANSWER_COUNT_Addition", score_addition);
                 startActivity(proceed);
@@ -91,12 +94,14 @@ public class ResultsAddition extends AppCompatActivity {
         numbersbtnCLC_Addition.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                sfx.start();
                 startActivity(new Intent(ResultsAddition.this, Numbers.class));
             }
         });
         btnReadLesson_Quiz_Addition.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                sfx.start();
                 Intent proceed = new Intent(ResultsAddition.this, LessonAddition.class);
                 startActivity(proceed);
             }
@@ -104,6 +109,7 @@ public class ResultsAddition extends AppCompatActivity {
         homepageCLC_Addition.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                sfx.start();
                 Intent proceed = new Intent(ResultsAddition.this, Homepage3to6.class);
                 startActivity(proceed);
             }

@@ -27,6 +27,14 @@ public class LessonShapes extends AppCompatActivity {
         videoViewCPG1 = findViewById(R.id.videoCPG1);
         backbtnCPG1 = findViewById(R.id.btnbackCPG1);
         nextbtnCPG1 = findViewById(R.id.nextbtnCPG1);
+        MediaPlayer sfx = MediaPlayer.create(this, R.raw.btnsfx);
+
+        BackgroundSoundService.onPause();
+
+        mediaController = new MediaController(this);
+        videoViewCPG1.setMediaController(mediaController);
+        mediaController.setVisibility(View.GONE);
+        mediaController.setAnchorView(videoViewCPG1);
 
         circle1();
 
@@ -37,6 +45,7 @@ public class LessonShapes extends AppCompatActivity {
         videoPathCPG1 = "android.resource://" + getPackageName() + "/" + R.raw.circle1;
         uriCPG1 = Uri.parse(videoPathCPG1);
         videoViewCPG1.setVideoURI(uriCPG1);
+        MediaPlayer sfx = MediaPlayer.create(this, R.raw.btnsfx);
 
         mediaController = new MediaController(this);
         videoViewCPG1.setMediaController(mediaController);
@@ -58,6 +67,7 @@ public class LessonShapes extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
+                sfx.start();
                 startActivity(new Intent(LessonShapes.this,ChooseModeShapes.class));
 
             }
@@ -67,7 +77,8 @@ public class LessonShapes extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-               circle2();
+                sfx.start();
+                circle2();
 
             }
         });
@@ -78,6 +89,7 @@ public class LessonShapes extends AppCompatActivity {
         videoPathCPG1 = "android.resource://" + getPackageName() + "/" + R.raw.circle2;
         uriCPG1 = Uri.parse(videoPathCPG1);
         videoViewCPG1.setVideoURI(uriCPG1);
+        MediaPlayer sfx = MediaPlayer.create(this, R.raw.btnsfx);
 
         mediaController = new MediaController(this);
         videoViewCPG1.setMediaController(mediaController);
@@ -99,6 +111,7 @@ public class LessonShapes extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
+                sfx.start();
                 circle1();
 
             }
@@ -108,6 +121,7 @@ public class LessonShapes extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
+                sfx.start();
                 circle3();
 
             }
@@ -119,6 +133,7 @@ public class LessonShapes extends AppCompatActivity {
         videoPathCPG1 = "android.resource://" + getPackageName() + "/" + R.raw.circle3;
         uriCPG1 = Uri.parse(videoPathCPG1);
         videoViewCPG1.setVideoURI(uriCPG1);
+        MediaPlayer sfx = MediaPlayer.create(this, R.raw.btnsfx);
 
         mediaController = new MediaController(this);
         videoViewCPG1.setMediaController(mediaController);
@@ -140,6 +155,7 @@ public class LessonShapes extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
+                sfx.start();
                 circle2();
 
             }
@@ -149,6 +165,7 @@ public class LessonShapes extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
+                sfx.start();
                 circle4();
 
             }
@@ -160,6 +177,7 @@ public class LessonShapes extends AppCompatActivity {
         videoPathCPG1 = "android.resource://" + getPackageName() + "/" + R.raw.circle4;
         uriCPG1 = Uri.parse(videoPathCPG1);
         videoViewCPG1.setVideoURI(uriCPG1);
+        MediaPlayer sfx = MediaPlayer.create(this, R.raw.btnsfx);
 
         mediaController = new MediaController(this);
         videoViewCPG1.setMediaController(mediaController);
@@ -181,6 +199,7 @@ public class LessonShapes extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
+                sfx.start();
                 circle3();
 
             }
@@ -190,6 +209,7 @@ public class LessonShapes extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
+                sfx.start();
                 circle5();
 
             }
@@ -201,6 +221,7 @@ public class LessonShapes extends AppCompatActivity {
         videoPathCPG1 = "android.resource://" + getPackageName() + "/" + R.raw.circle5;
         uriCPG1 = Uri.parse(videoPathCPG1);
         videoViewCPG1.setVideoURI(uriCPG1);
+        MediaPlayer sfx = MediaPlayer.create(this, R.raw.btnsfx);
 
         mediaController = new MediaController(this);
         videoViewCPG1.setMediaController(mediaController);
@@ -222,6 +243,7 @@ public class LessonShapes extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
+                sfx.start();
                 circle4();
 
             }
@@ -231,6 +253,7 @@ public class LessonShapes extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
+                sfx.start();
                 circle6();
 
             }
@@ -242,6 +265,7 @@ public class LessonShapes extends AppCompatActivity {
         videoPathCPG1 = "android.resource://" + getPackageName() + "/" + R.raw.circle6;
         uriCPG1 = Uri.parse(videoPathCPG1);
         videoViewCPG1.setVideoURI(uriCPG1);
+        MediaPlayer sfx = MediaPlayer.create(this, R.raw.btnsfx);
 
         mediaController = new MediaController(this);
         videoViewCPG1.setMediaController(mediaController);
@@ -263,6 +287,7 @@ public class LessonShapes extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
+                sfx.start();
                 circle5();
 
             }
@@ -272,6 +297,7 @@ public class LessonShapes extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
+                sfx.start();
                 square1();
 
             }
@@ -283,6 +309,7 @@ public class LessonShapes extends AppCompatActivity {
         videoPathCPG1 = "android.resource://" + getPackageName() + "/" + R.raw.square1;
         uriCPG1 = Uri.parse(videoPathCPG1);
         videoViewCPG1.setVideoURI(uriCPG1);
+        MediaPlayer sfx = MediaPlayer.create(this, R.raw.btnsfx);
 
         mediaController = new MediaController(this);
         videoViewCPG1.setMediaController(mediaController);
@@ -304,6 +331,7 @@ public class LessonShapes extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
+                sfx.start();
                 circle6();
 
             }
@@ -313,6 +341,7 @@ public class LessonShapes extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
+                sfx.start();
                 square2();
 
             }
@@ -324,6 +353,7 @@ public class LessonShapes extends AppCompatActivity {
         videoPathCPG1 = "android.resource://" + getPackageName() + "/" + R.raw.square2;
         uriCPG1 = Uri.parse(videoPathCPG1);
         videoViewCPG1.setVideoURI(uriCPG1);
+        MediaPlayer sfx = MediaPlayer.create(this, R.raw.btnsfx);
 
         mediaController = new MediaController(this);
         videoViewCPG1.setMediaController(mediaController);
@@ -345,6 +375,7 @@ public class LessonShapes extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
+                sfx.start();
                 square1();
 
             }
@@ -354,6 +385,7 @@ public class LessonShapes extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
+                sfx.start();
                 square3();
 
             }
@@ -365,6 +397,7 @@ public class LessonShapes extends AppCompatActivity {
         videoPathCPG1 = "android.resource://" + getPackageName() + "/" + R.raw.square3;
         uriCPG1 = Uri.parse(videoPathCPG1);
         videoViewCPG1.setVideoURI(uriCPG1);
+        MediaPlayer sfx = MediaPlayer.create(this, R.raw.btnsfx);
 
         mediaController = new MediaController(this);
         videoViewCPG1.setMediaController(mediaController);
@@ -386,6 +419,7 @@ public class LessonShapes extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
+                sfx.start();
                 square2();
 
             }
@@ -395,6 +429,7 @@ public class LessonShapes extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
+                sfx.start();
                 square4();
 
             }
@@ -406,6 +441,7 @@ public class LessonShapes extends AppCompatActivity {
         videoPathCPG1 = "android.resource://" + getPackageName() + "/" + R.raw.square4;
         uriCPG1 = Uri.parse(videoPathCPG1);
         videoViewCPG1.setVideoURI(uriCPG1);
+        MediaPlayer sfx = MediaPlayer.create(this, R.raw.btnsfx);
 
         mediaController = new MediaController(this);
         videoViewCPG1.setMediaController(mediaController);
@@ -427,6 +463,7 @@ public class LessonShapes extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
+                sfx.start();
                 square3();
 
             }
@@ -436,6 +473,7 @@ public class LessonShapes extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
+                sfx.start();
                 square5();
 
             }
@@ -447,6 +485,7 @@ public class LessonShapes extends AppCompatActivity {
         videoPathCPG1 = "android.resource://" + getPackageName() + "/" + R.raw.square5;
         uriCPG1 = Uri.parse(videoPathCPG1);
         videoViewCPG1.setVideoURI(uriCPG1);
+        MediaPlayer sfx = MediaPlayer.create(this, R.raw.btnsfx);
 
         mediaController = new MediaController(this);
         videoViewCPG1.setMediaController(mediaController);
@@ -468,6 +507,7 @@ public class LessonShapes extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
+                sfx.start();
                 square4();
 
             }
@@ -477,6 +517,7 @@ public class LessonShapes extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
+                sfx.start();
                 square6();
 
             }
@@ -488,6 +529,7 @@ public class LessonShapes extends AppCompatActivity {
         videoPathCPG1 = "android.resource://" + getPackageName() + "/" + R.raw.square6;
         uriCPG1 = Uri.parse(videoPathCPG1);
         videoViewCPG1.setVideoURI(uriCPG1);
+        MediaPlayer sfx = MediaPlayer.create(this, R.raw.btnsfx);
 
         mediaController = new MediaController(this);
         videoViewCPG1.setMediaController(mediaController);
@@ -509,6 +551,7 @@ public class LessonShapes extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
+                sfx.start();
                 square5();
 
             }
@@ -518,6 +561,7 @@ public class LessonShapes extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
+                sfx.start();
                 triangle1();
 
             }
@@ -529,6 +573,7 @@ public class LessonShapes extends AppCompatActivity {
         videoPathCPG1 = "android.resource://" + getPackageName() + "/" + R.raw.triangle1;
         uriCPG1 = Uri.parse(videoPathCPG1);
         videoViewCPG1.setVideoURI(uriCPG1);
+        MediaPlayer sfx = MediaPlayer.create(this, R.raw.btnsfx);
 
         mediaController = new MediaController(this);
         videoViewCPG1.setMediaController(mediaController);
@@ -550,6 +595,7 @@ public class LessonShapes extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
+                sfx.start();
                 square6();
 
             }
@@ -559,6 +605,7 @@ public class LessonShapes extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
+                sfx.start();
                 triangle2();
 
             }
@@ -570,6 +617,7 @@ public class LessonShapes extends AppCompatActivity {
         videoPathCPG1 = "android.resource://" + getPackageName() + "/" + R.raw.triangle2;
         uriCPG1 = Uri.parse(videoPathCPG1);
         videoViewCPG1.setVideoURI(uriCPG1);
+        MediaPlayer sfx = MediaPlayer.create(this, R.raw.btnsfx);
 
         mediaController = new MediaController(this);
         videoViewCPG1.setMediaController(mediaController);
@@ -591,6 +639,7 @@ public class LessonShapes extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
+                sfx.start();
                 triangle1();
 
             }
@@ -600,6 +649,7 @@ public class LessonShapes extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
+                sfx.start();
                 triangle3();
 
             }
@@ -611,6 +661,7 @@ public class LessonShapes extends AppCompatActivity {
         videoPathCPG1 = "android.resource://" + getPackageName() + "/" + R.raw.triangle3;
         uriCPG1 = Uri.parse(videoPathCPG1);
         videoViewCPG1.setVideoURI(uriCPG1);
+        MediaPlayer sfx = MediaPlayer.create(this, R.raw.btnsfx);
 
         mediaController = new MediaController(this);
         videoViewCPG1.setMediaController(mediaController);
@@ -632,6 +683,7 @@ public class LessonShapes extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
+                sfx.start();
                 triangle2();
 
             }
@@ -641,6 +693,7 @@ public class LessonShapes extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
+                sfx.start();
                 triangle4();
 
             }
@@ -652,6 +705,7 @@ public class LessonShapes extends AppCompatActivity {
         videoPathCPG1 = "android.resource://" + getPackageName() + "/" + R.raw.triangle4;
         uriCPG1 = Uri.parse(videoPathCPG1);
         videoViewCPG1.setVideoURI(uriCPG1);
+        MediaPlayer sfx = MediaPlayer.create(this, R.raw.btnsfx);
 
         mediaController = new MediaController(this);
         videoViewCPG1.setMediaController(mediaController);
@@ -673,6 +727,7 @@ public class LessonShapes extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
+                sfx.start();
                 triangle3();
 
             }
@@ -682,6 +737,7 @@ public class LessonShapes extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
+                sfx.start();
                 triangle5();
 
             }
@@ -693,6 +749,7 @@ public class LessonShapes extends AppCompatActivity {
         videoPathCPG1 = "android.resource://" + getPackageName() + "/" + R.raw.triangle5;
         uriCPG1 = Uri.parse(videoPathCPG1);
         videoViewCPG1.setVideoURI(uriCPG1);
+        MediaPlayer sfx = MediaPlayer.create(this, R.raw.btnsfx);
 
         mediaController = new MediaController(this);
         videoViewCPG1.setMediaController(mediaController);
@@ -714,6 +771,7 @@ public class LessonShapes extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
+                sfx.start();
                 triangle4();
 
             }
@@ -723,6 +781,7 @@ public class LessonShapes extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
+                sfx.start();
                 triangle6();
 
             }
@@ -734,6 +793,7 @@ public class LessonShapes extends AppCompatActivity {
         videoPathCPG1 = "android.resource://" + getPackageName() + "/" + R.raw.triangle6;
         uriCPG1 = Uri.parse(videoPathCPG1);
         videoViewCPG1.setVideoURI(uriCPG1);
+        MediaPlayer sfx = MediaPlayer.create(this, R.raw.btnsfx);
 
         mediaController = new MediaController(this);
         videoViewCPG1.setMediaController(mediaController);
@@ -755,6 +815,7 @@ public class LessonShapes extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
+                sfx.start();
                 triangle5();
 
             }
@@ -764,6 +825,7 @@ public class LessonShapes extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
+                sfx.start();
                 star1();
 
             }
@@ -775,6 +837,7 @@ public class LessonShapes extends AppCompatActivity {
         videoPathCPG1 = "android.resource://" + getPackageName() + "/" + R.raw.star1;
         uriCPG1 = Uri.parse(videoPathCPG1);
         videoViewCPG1.setVideoURI(uriCPG1);
+        MediaPlayer sfx = MediaPlayer.create(this, R.raw.btnsfx);
 
         mediaController = new MediaController(this);
         videoViewCPG1.setMediaController(mediaController);
@@ -796,6 +859,7 @@ public class LessonShapes extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
+                sfx.start();
                 triangle6();
 
             }
@@ -805,6 +869,7 @@ public class LessonShapes extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
+                sfx.start();
                 star2();
 
             }
@@ -816,6 +881,7 @@ public class LessonShapes extends AppCompatActivity {
         videoPathCPG1 = "android.resource://" + getPackageName() + "/" + R.raw.star2;
         uriCPG1 = Uri.parse(videoPathCPG1);
         videoViewCPG1.setVideoURI(uriCPG1);
+        MediaPlayer sfx = MediaPlayer.create(this, R.raw.btnsfx);
 
         mediaController = new MediaController(this);
         videoViewCPG1.setMediaController(mediaController);
@@ -837,6 +903,7 @@ public class LessonShapes extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
+                sfx.start();
                 star1();
 
             }
@@ -846,6 +913,7 @@ public class LessonShapes extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
+                sfx.start();
                 star3();
 
             }
@@ -857,6 +925,7 @@ public class LessonShapes extends AppCompatActivity {
         videoPathCPG1 = "android.resource://" + getPackageName() + "/" + R.raw.star3;
         uriCPG1 = Uri.parse(videoPathCPG1);
         videoViewCPG1.setVideoURI(uriCPG1);
+        MediaPlayer sfx = MediaPlayer.create(this, R.raw.btnsfx);
 
         mediaController = new MediaController(this);
         videoViewCPG1.setMediaController(mediaController);
@@ -878,6 +947,7 @@ public class LessonShapes extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
+                sfx.start();
                 star2();
 
             }
@@ -887,6 +957,7 @@ public class LessonShapes extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
+                sfx.start();
                 star4();
 
             }
@@ -898,6 +969,7 @@ public class LessonShapes extends AppCompatActivity {
         videoPathCPG1 = "android.resource://" + getPackageName() + "/" + R.raw.star4;
         uriCPG1 = Uri.parse(videoPathCPG1);
         videoViewCPG1.setVideoURI(uriCPG1);
+        MediaPlayer sfx = MediaPlayer.create(this, R.raw.btnsfx);
 
         mediaController = new MediaController(this);
         videoViewCPG1.setMediaController(mediaController);
@@ -919,6 +991,7 @@ public class LessonShapes extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
+                sfx.start();
                 star3();
 
             }
@@ -928,6 +1001,7 @@ public class LessonShapes extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
+                sfx.start();
                 star5();
 
             }
@@ -939,6 +1013,7 @@ public class LessonShapes extends AppCompatActivity {
         videoPathCPG1 = "android.resource://" + getPackageName() + "/" + R.raw.star5;
         uriCPG1 = Uri.parse(videoPathCPG1);
         videoViewCPG1.setVideoURI(uriCPG1);
+        MediaPlayer sfx = MediaPlayer.create(this, R.raw.btnsfx);
 
         mediaController = new MediaController(this);
         videoViewCPG1.setMediaController(mediaController);
@@ -960,6 +1035,7 @@ public class LessonShapes extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
+                sfx.start();
                 star4();
 
             }
@@ -969,6 +1045,7 @@ public class LessonShapes extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
+                sfx.start();
                 star6();
 
             }
@@ -980,6 +1057,7 @@ public class LessonShapes extends AppCompatActivity {
         videoPathCPG1 = "android.resource://" + getPackageName() + "/" + R.raw.star6;
         uriCPG1 = Uri.parse(videoPathCPG1);
         videoViewCPG1.setVideoURI(uriCPG1);
+        MediaPlayer sfx = MediaPlayer.create(this, R.raw.btnsfx);
 
         mediaController = new MediaController(this);
         videoViewCPG1.setMediaController(mediaController);
@@ -1001,6 +1079,7 @@ public class LessonShapes extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
+                sfx.start();
                 star5();
 
             }
@@ -1010,6 +1089,7 @@ public class LessonShapes extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
+                sfx.start();
                 heart1();
 
             }
@@ -1021,6 +1101,7 @@ public class LessonShapes extends AppCompatActivity {
         videoPathCPG1 = "android.resource://" + getPackageName() + "/" + R.raw.heart1;
         uriCPG1 = Uri.parse(videoPathCPG1);
         videoViewCPG1.setVideoURI(uriCPG1);
+        MediaPlayer sfx = MediaPlayer.create(this, R.raw.btnsfx);
 
         mediaController = new MediaController(this);
         videoViewCPG1.setMediaController(mediaController);
@@ -1042,6 +1123,7 @@ public class LessonShapes extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
+                sfx.start();
                 star6();
 
             }
@@ -1051,6 +1133,7 @@ public class LessonShapes extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
+                sfx.start();
                 heart2();
 
             }
@@ -1062,6 +1145,7 @@ public class LessonShapes extends AppCompatActivity {
         videoPathCPG1 = "android.resource://" + getPackageName() + "/" + R.raw.heart2;
         uriCPG1 = Uri.parse(videoPathCPG1);
         videoViewCPG1.setVideoURI(uriCPG1);
+        MediaPlayer sfx = MediaPlayer.create(this, R.raw.btnsfx);
 
         mediaController = new MediaController(this);
         videoViewCPG1.setMediaController(mediaController);
@@ -1083,6 +1167,7 @@ public class LessonShapes extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
+                sfx.start();
                 heart1();
 
             }
@@ -1092,6 +1177,7 @@ public class LessonShapes extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
+                sfx.start();
                 heart3();
 
             }
@@ -1103,6 +1189,7 @@ public class LessonShapes extends AppCompatActivity {
         videoPathCPG1 = "android.resource://" + getPackageName() + "/" + R.raw.heart3;
         uriCPG1 = Uri.parse(videoPathCPG1);
         videoViewCPG1.setVideoURI(uriCPG1);
+        MediaPlayer sfx = MediaPlayer.create(this, R.raw.btnsfx);
 
         mediaController = new MediaController(this);
         videoViewCPG1.setMediaController(mediaController);
@@ -1124,6 +1211,7 @@ public class LessonShapes extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
+                sfx.start();
                 heart2();
 
             }
@@ -1133,6 +1221,7 @@ public class LessonShapes extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
+                sfx.start();
                 heart4();
 
             }
@@ -1144,6 +1233,7 @@ public class LessonShapes extends AppCompatActivity {
         videoPathCPG1 = "android.resource://" + getPackageName() + "/" + R.raw.heart4;
         uriCPG1 = Uri.parse(videoPathCPG1);
         videoViewCPG1.setVideoURI(uriCPG1);
+        MediaPlayer sfx = MediaPlayer.create(this, R.raw.btnsfx);
 
         mediaController = new MediaController(this);
         videoViewCPG1.setMediaController(mediaController);
@@ -1165,6 +1255,7 @@ public class LessonShapes extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
+                sfx.start();
                 heart3();
 
             }
@@ -1174,6 +1265,7 @@ public class LessonShapes extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
+                sfx.start();
                 heart5();
 
             }
@@ -1185,6 +1277,7 @@ public class LessonShapes extends AppCompatActivity {
         videoPathCPG1 = "android.resource://" + getPackageName() + "/" + R.raw.heart5;
         uriCPG1 = Uri.parse(videoPathCPG1);
         videoViewCPG1.setVideoURI(uriCPG1);
+        MediaPlayer sfx = MediaPlayer.create(this, R.raw.btnsfx);
 
         mediaController = new MediaController(this);
         videoViewCPG1.setMediaController(mediaController);
@@ -1206,6 +1299,7 @@ public class LessonShapes extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
+                sfx.start();
                 heart4();
 
             }
@@ -1215,6 +1309,7 @@ public class LessonShapes extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
+                sfx.start();
                 heart6();
 
             }
@@ -1226,6 +1321,7 @@ public class LessonShapes extends AppCompatActivity {
         videoPathCPG1 = "android.resource://" + getPackageName() + "/" + R.raw.heart6;
         uriCPG1 = Uri.parse(videoPathCPG1);
         videoViewCPG1.setVideoURI(uriCPG1);
+        MediaPlayer sfx = MediaPlayer.create(this, R.raw.btnsfx);
 
         mediaController = new MediaController(this);
         videoViewCPG1.setMediaController(mediaController);
@@ -1247,6 +1343,7 @@ public class LessonShapes extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
+                sfx.start();
                 heart5();
 
             }
@@ -1256,6 +1353,7 @@ public class LessonShapes extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
+                sfx.start();
                 rectangle1();
 
             }
@@ -1267,6 +1365,7 @@ public class LessonShapes extends AppCompatActivity {
         videoPathCPG1 = "android.resource://" + getPackageName() + "/" + R.raw.rectangle1;
         uriCPG1 = Uri.parse(videoPathCPG1);
         videoViewCPG1.setVideoURI(uriCPG1);
+        MediaPlayer sfx = MediaPlayer.create(this, R.raw.btnsfx);
 
         mediaController = new MediaController(this);
         videoViewCPG1.setMediaController(mediaController);
@@ -1288,6 +1387,7 @@ public class LessonShapes extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
+                sfx.start();
                 heart6();
 
             }
@@ -1297,6 +1397,7 @@ public class LessonShapes extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
+                sfx.start();
                 rectangle2();
 
             }
@@ -1308,6 +1409,7 @@ public class LessonShapes extends AppCompatActivity {
         videoPathCPG1 = "android.resource://" + getPackageName() + "/" + R.raw.rectangle2;
         uriCPG1 = Uri.parse(videoPathCPG1);
         videoViewCPG1.setVideoURI(uriCPG1);
+        MediaPlayer sfx = MediaPlayer.create(this, R.raw.btnsfx);
 
         mediaController = new MediaController(this);
         videoViewCPG1.setMediaController(mediaController);
@@ -1329,6 +1431,7 @@ public class LessonShapes extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
+                sfx.start();
                 rectangle1();
 
             }
@@ -1338,6 +1441,7 @@ public class LessonShapes extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
+                sfx.start();
                 rectangle3();
 
             }
@@ -1349,6 +1453,7 @@ public class LessonShapes extends AppCompatActivity {
         videoPathCPG1 = "android.resource://" + getPackageName() + "/" + R.raw.rectangle3;
         uriCPG1 = Uri.parse(videoPathCPG1);
         videoViewCPG1.setVideoURI(uriCPG1);
+        MediaPlayer sfx = MediaPlayer.create(this, R.raw.btnsfx);
 
         mediaController = new MediaController(this);
         videoViewCPG1.setMediaController(mediaController);
@@ -1370,6 +1475,7 @@ public class LessonShapes extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
+                sfx.start();
                 rectangle2();
 
             }
@@ -1379,6 +1485,7 @@ public class LessonShapes extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
+                sfx.start();
                 rectangle4();
 
             }
@@ -1390,6 +1497,7 @@ public class LessonShapes extends AppCompatActivity {
         videoPathCPG1 = "android.resource://" + getPackageName() + "/" + R.raw.rectangle4;
         uriCPG1 = Uri.parse(videoPathCPG1);
         videoViewCPG1.setVideoURI(uriCPG1);
+        MediaPlayer sfx = MediaPlayer.create(this, R.raw.btnsfx);
 
         mediaController = new MediaController(this);
         videoViewCPG1.setMediaController(mediaController);
@@ -1411,6 +1519,7 @@ public class LessonShapes extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
+                sfx.start();
                 rectangle3();
 
             }
@@ -1420,6 +1529,7 @@ public class LessonShapes extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
+                sfx.start();
                 rectangle5();
 
             }
@@ -1431,6 +1541,7 @@ public class LessonShapes extends AppCompatActivity {
         videoPathCPG1 = "android.resource://" + getPackageName() + "/" + R.raw.rectangle5;
         uriCPG1 = Uri.parse(videoPathCPG1);
         videoViewCPG1.setVideoURI(uriCPG1);
+        MediaPlayer sfx = MediaPlayer.create(this, R.raw.btnsfx);
 
         mediaController = new MediaController(this);
         videoViewCPG1.setMediaController(mediaController);
@@ -1452,6 +1563,7 @@ public class LessonShapes extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
+                sfx.start();
                 rectangle4();
 
             }
@@ -1461,6 +1573,7 @@ public class LessonShapes extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
+                sfx.start();
                 rectangle6();
 
             }
@@ -1472,6 +1585,7 @@ public class LessonShapes extends AppCompatActivity {
         videoPathCPG1 = "android.resource://" + getPackageName() + "/" + R.raw.rectangle6;
         uriCPG1 = Uri.parse(videoPathCPG1);
         videoViewCPG1.setVideoURI(uriCPG1);
+        MediaPlayer sfx = MediaPlayer.create(this, R.raw.btnsfx);
 
         mediaController = new MediaController(this);
         videoViewCPG1.setMediaController(mediaController);
@@ -1493,6 +1607,7 @@ public class LessonShapes extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
+                sfx.start();
                 rectangle5();
 
             }
@@ -1502,6 +1617,7 @@ public class LessonShapes extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
+                sfx.start();
                 diamond1();
 
             }
@@ -1513,6 +1629,7 @@ public class LessonShapes extends AppCompatActivity {
         videoPathCPG1 = "android.resource://" + getPackageName() + "/" + R.raw.diamond1;
         uriCPG1 = Uri.parse(videoPathCPG1);
         videoViewCPG1.setVideoURI(uriCPG1);
+        MediaPlayer sfx = MediaPlayer.create(this, R.raw.btnsfx);
 
         mediaController = new MediaController(this);
         videoViewCPG1.setMediaController(mediaController);
@@ -1534,6 +1651,7 @@ public class LessonShapes extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
+                sfx.start();
                 rectangle6();
 
             }
@@ -1543,6 +1661,7 @@ public class LessonShapes extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
+                sfx.start();
                 diamond2();
 
             }
@@ -1554,6 +1673,7 @@ public class LessonShapes extends AppCompatActivity {
         videoPathCPG1 = "android.resource://" + getPackageName() + "/" + R.raw.diamond2;
         uriCPG1 = Uri.parse(videoPathCPG1);
         videoViewCPG1.setVideoURI(uriCPG1);
+        MediaPlayer sfx = MediaPlayer.create(this, R.raw.btnsfx);
 
         mediaController = new MediaController(this);
         videoViewCPG1.setMediaController(mediaController);
@@ -1575,6 +1695,7 @@ public class LessonShapes extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
+                sfx.start();
                 diamond1();
 
             }
@@ -1584,6 +1705,7 @@ public class LessonShapes extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
+                sfx.start();
                 diamond3();
 
             }
@@ -1595,6 +1717,7 @@ public class LessonShapes extends AppCompatActivity {
         videoPathCPG1 = "android.resource://" + getPackageName() + "/" + R.raw.diamond3;
         uriCPG1 = Uri.parse(videoPathCPG1);
         videoViewCPG1.setVideoURI(uriCPG1);
+        MediaPlayer sfx = MediaPlayer.create(this, R.raw.btnsfx);
 
         mediaController = new MediaController(this);
         videoViewCPG1.setMediaController(mediaController);
@@ -1616,6 +1739,7 @@ public class LessonShapes extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
+                sfx.start();
                 diamond2();
 
             }
@@ -1625,6 +1749,7 @@ public class LessonShapes extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
+                sfx.start();
                 diamond4();
 
             }
@@ -1636,6 +1761,7 @@ public class LessonShapes extends AppCompatActivity {
         videoPathCPG1 = "android.resource://" + getPackageName() + "/" + R.raw.diamond4;
         uriCPG1 = Uri.parse(videoPathCPG1);
         videoViewCPG1.setVideoURI(uriCPG1);
+        MediaPlayer sfx = MediaPlayer.create(this, R.raw.btnsfx);
 
         mediaController = new MediaController(this);
         videoViewCPG1.setMediaController(mediaController);
@@ -1657,6 +1783,7 @@ public class LessonShapes extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
+                sfx.start();
                 diamond3();
 
             }
@@ -1666,6 +1793,7 @@ public class LessonShapes extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
+                sfx.start();
                 diamond5();
 
             }
@@ -1677,6 +1805,7 @@ public class LessonShapes extends AppCompatActivity {
         videoPathCPG1 = "android.resource://" + getPackageName() + "/" + R.raw.diamond5;
         uriCPG1 = Uri.parse(videoPathCPG1);
         videoViewCPG1.setVideoURI(uriCPG1);
+        MediaPlayer sfx = MediaPlayer.create(this, R.raw.btnsfx);
 
         mediaController = new MediaController(this);
         videoViewCPG1.setMediaController(mediaController);
@@ -1698,6 +1827,7 @@ public class LessonShapes extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
+                sfx.start();
                 diamond4();
 
             }
@@ -1707,6 +1837,7 @@ public class LessonShapes extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
+                sfx.start();
                 diamond6();
 
             }
@@ -1718,6 +1849,7 @@ public class LessonShapes extends AppCompatActivity {
         videoPathCPG1 = "android.resource://" + getPackageName() + "/" + R.raw.diamond6;
         uriCPG1 = Uri.parse(videoPathCPG1);
         videoViewCPG1.setVideoURI(uriCPG1);
+        MediaPlayer sfx = MediaPlayer.create(this, R.raw.btnsfx);
 
         mediaController = new MediaController(this);
         videoViewCPG1.setMediaController(mediaController);
@@ -1739,6 +1871,7 @@ public class LessonShapes extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
+                sfx.start();
                 diamond5();
 
             }
@@ -1748,6 +1881,7 @@ public class LessonShapes extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
+                sfx.start();
                 startActivity(new Intent(LessonShapes.this,ShapesLessonCongrats.class));
 
             }

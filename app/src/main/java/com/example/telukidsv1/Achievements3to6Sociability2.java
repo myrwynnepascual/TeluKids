@@ -4,6 +4,7 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageButton;
@@ -41,6 +42,8 @@ public class Achievements3to6Sociability2 extends AppCompatActivity {
         setContentView(R.layout.activity_achievements3to6_sociability2);
 
         ImageButton backbtnAchievements3to6 = findViewById(R.id.backbtnAchievements36Sociability2);
+
+        MediaPlayer sfx = MediaPlayer.create(this, R.raw.btnsfx);
 
         //Trophies
         //GMRC 3-6
@@ -681,6 +684,7 @@ public class Achievements3to6Sociability2 extends AppCompatActivity {
         backbtnAchievements3to6.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                sfx.start();
                 Intent proceed = new Intent(Achievements3to6Sociability2.this, ResultsSociability.class);
                 proceed.putExtra("RIGHT_ANSWER_COUNT_Sociability", score_sociability);
                 startActivity(proceed);

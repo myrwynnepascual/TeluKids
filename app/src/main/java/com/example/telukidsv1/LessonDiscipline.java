@@ -27,6 +27,9 @@ public class LessonDiscipline extends AppCompatActivity {
         videoViewD36 = findViewById(R.id.videoD36);
         backbtnD36 = findViewById(R.id.btnbackD36);
         nextbtnD36 = findViewById(R.id.nextbtnD36);
+        MediaPlayer sfx = MediaPlayer.create(this, R.raw.btnsfx);
+
+        BackgroundSoundService.onPause();
 
         mediaController = new MediaController(this);
         videoViewD36.setMediaController(mediaController);
@@ -40,6 +43,7 @@ public class LessonDiscipline extends AppCompatActivity {
         videoPathD36 = "android.resource://" + getPackageName() + "/" + R.raw.discipline1;
         uriD36 = Uri.parse(videoPathD36);
         videoViewD36.setVideoURI(uriD36);
+        MediaPlayer sfx = MediaPlayer.create(this, R.raw.btnsfx);
 
         videoViewD36.start();
 
@@ -56,6 +60,7 @@ public class LessonDiscipline extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
+                sfx.start();
                 startActivity(new Intent(LessonDiscipline.this,ChooseModeDiscipline.class));
 
             }
@@ -65,6 +70,7 @@ public class LessonDiscipline extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
+                sfx.start();
                 discipline2();
 
             }
@@ -75,6 +81,7 @@ public class LessonDiscipline extends AppCompatActivity {
         videoPathD36 = "android.resource://" + getPackageName() + "/" + R.raw.discipline2;
         uriD36 = Uri.parse(videoPathD36);
         videoViewD36.setVideoURI(uriD36);
+        MediaPlayer sfx = MediaPlayer.create(this, R.raw.btnsfx);
 
         videoViewD36.start();
 
@@ -91,6 +98,7 @@ public class LessonDiscipline extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
+                sfx.start();
                 discipline1();
 
             }
@@ -100,6 +108,7 @@ public class LessonDiscipline extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
+                sfx.start();
                 discipline3();
 
             }
@@ -110,6 +119,7 @@ public class LessonDiscipline extends AppCompatActivity {
         videoPathD36 = "android.resource://" + getPackageName() + "/" + R.raw.discipline3;
         uriD36 = Uri.parse(videoPathD36);
         videoViewD36.setVideoURI(uriD36);
+        MediaPlayer sfx = MediaPlayer.create(this, R.raw.btnsfx);
 
         videoViewD36.start();
 
@@ -126,6 +136,7 @@ public class LessonDiscipline extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
+                sfx.start();
                 discipline2();
 
             }
@@ -135,6 +146,7 @@ public class LessonDiscipline extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
+                sfx.start();
                 discipline4();
 
             }
@@ -145,6 +157,7 @@ public class LessonDiscipline extends AppCompatActivity {
         videoPathD36 = "android.resource://" + getPackageName() + "/" + R.raw.discipline4;
         uriD36 = Uri.parse(videoPathD36);
         videoViewD36.setVideoURI(uriD36);
+        MediaPlayer sfx = MediaPlayer.create(this, R.raw.btnsfx);
 
         videoViewD36.start();
 
@@ -161,6 +174,7 @@ public class LessonDiscipline extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
+                sfx.start();
                 discipline3();
 
             }
@@ -170,6 +184,7 @@ public class LessonDiscipline extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
+                sfx.start();
                 discipline5();
 
             }
@@ -180,6 +195,7 @@ public class LessonDiscipline extends AppCompatActivity {
         videoPathD36 = "android.resource://" + getPackageName() + "/" + R.raw.discipline5;
         uriD36 = Uri.parse(videoPathD36);
         videoViewD36.setVideoURI(uriD36);
+        MediaPlayer sfx = MediaPlayer.create(this, R.raw.btnsfx);
 
         videoViewD36.start();
 
@@ -196,6 +212,7 @@ public class LessonDiscipline extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
+                sfx.start();
                 discipline4();
 
             }
@@ -205,6 +222,7 @@ public class LessonDiscipline extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
+                sfx.start();
                 discipline6();
 
             }
@@ -215,6 +233,7 @@ public class LessonDiscipline extends AppCompatActivity {
         videoPathD36 = "android.resource://" + getPackageName() + "/" + R.raw.discipline6;
         uriD36 = Uri.parse(videoPathD36);
         videoViewD36.setVideoURI(uriD36);
+        MediaPlayer sfx = MediaPlayer.create(this, R.raw.btnsfx);
 
         videoViewD36.start();
 
@@ -231,6 +250,7 @@ public class LessonDiscipline extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
+                sfx.start();
                 discipline5();
 
             }
@@ -240,6 +260,7 @@ public class LessonDiscipline extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
+                sfx.start();
                 startActivity(new Intent(LessonDiscipline.this, DisciplineLessonCongrats.class));
 
             }

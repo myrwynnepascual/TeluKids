@@ -73,6 +73,8 @@ public class QuizDiscipline extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.quiz_discipline);
 
+        BackgroundSoundService.onPause();
+
         background_Discipline = (ConstraintLayout) findViewById(R.id.background_Discipline);
         quizLayout_Discipline = (LinearLayout)findViewById(R.id.quizLayout_Discipline);
         countLabel_Discipline = (TextView)findViewById(R.id.countLabel_Discipline);

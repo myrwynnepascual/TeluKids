@@ -28,6 +28,9 @@ public class LessonObedience extends AppCompatActivity {
         videoViewO79 = findViewById(R.id.videoO79);
         backbtnO79 = findViewById(R.id.btnbackO79);
         nextbtnO79 = findViewById(R.id.nextbtnO79);
+        MediaPlayer sfx = MediaPlayer.create(this, R.raw.btnsfx);
+
+        BackgroundSoundService.onPause();
 
         mediaController = new MediaController(this);
         videoViewO79.setMediaController(mediaController);
@@ -41,6 +44,7 @@ public class LessonObedience extends AppCompatActivity {
         videoPathO79 = "android.resource://" + getPackageName() + "/" + R.raw.obedience1;
         uriO79 = Uri.parse(videoPathO79);
         videoViewO79.setVideoURI(uriO79);
+        MediaPlayer sfx = MediaPlayer.create(this, R.raw.btnsfx);
 
         videoViewO79.start();
 
@@ -57,6 +61,7 @@ public class LessonObedience extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
+                sfx.start();
                 startActivity(new Intent(LessonObedience.this,ChooseModeObedience.class));
 
             }
@@ -66,6 +71,7 @@ public class LessonObedience extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
+                sfx.start();
                 obedience2();
 
             }
@@ -76,6 +82,7 @@ public class LessonObedience extends AppCompatActivity {
         videoPathO79 = "android.resource://" + getPackageName() + "/" + R.raw.obedience2;
         uriO79 = Uri.parse(videoPathO79);
         videoViewO79.setVideoURI(uriO79);
+        MediaPlayer sfx = MediaPlayer.create(this, R.raw.btnsfx);
 
         videoViewO79.start();
 
@@ -92,6 +99,7 @@ public class LessonObedience extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
+                sfx.start();
                 obedience1();
 
             }
@@ -101,6 +109,7 @@ public class LessonObedience extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
+                sfx.start();
                 obedience3();
 
             }
@@ -111,6 +120,7 @@ public class LessonObedience extends AppCompatActivity {
         videoPathO79 = "android.resource://" + getPackageName() + "/" + R.raw.obedience3;
         uriO79 = Uri.parse(videoPathO79);
         videoViewO79.setVideoURI(uriO79);
+        MediaPlayer sfx = MediaPlayer.create(this, R.raw.btnsfx);
 
         videoViewO79.start();
 
@@ -127,6 +137,7 @@ public class LessonObedience extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
+                sfx.start();
                 obedience2();
 
             }
@@ -136,6 +147,7 @@ public class LessonObedience extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
+                sfx.start();
                 obedience4();
 
             }
@@ -146,6 +158,7 @@ public class LessonObedience extends AppCompatActivity {
         videoPathO79 = "android.resource://" + getPackageName() + "/" + R.raw.obedience4;
         uriO79 = Uri.parse(videoPathO79);
         videoViewO79.setVideoURI(uriO79);
+        MediaPlayer sfx = MediaPlayer.create(this, R.raw.btnsfx);
 
         videoViewO79.start();
 
@@ -162,6 +175,7 @@ public class LessonObedience extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
+                sfx.start();
                 obedience3();
 
             }
@@ -171,6 +185,7 @@ public class LessonObedience extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
+                sfx.start();
                 obedience5();
 
             }
@@ -181,6 +196,7 @@ public class LessonObedience extends AppCompatActivity {
         videoPathO79 = "android.resource://" + getPackageName() + "/" + R.raw.obedience5;
         uriO79 = Uri.parse(videoPathO79);
         videoViewO79.setVideoURI(uriO79);
+        MediaPlayer sfx = MediaPlayer.create(this, R.raw.btnsfx);
 
         videoViewO79.start();
 
@@ -197,6 +213,7 @@ public class LessonObedience extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
+                sfx.start();
                 obedience4();
 
             }
@@ -206,6 +223,7 @@ public class LessonObedience extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
+                sfx.start();
                 obedience6();
 
             }
@@ -216,6 +234,7 @@ public class LessonObedience extends AppCompatActivity {
         videoPathO79 = "android.resource://" + getPackageName() + "/" + R.raw.obedience6;
         uriO79 = Uri.parse(videoPathO79);
         videoViewO79.setVideoURI(uriO79);
+        MediaPlayer sfx = MediaPlayer.create(this, R.raw.btnsfx);
 
         videoViewO79.start();
 
@@ -232,6 +251,7 @@ public class LessonObedience extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
+                sfx.start();
                 obedience5();
 
             }
@@ -241,6 +261,7 @@ public class LessonObedience extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
+                sfx.start();
                 obedience7();
 
             }
@@ -251,6 +272,7 @@ public class LessonObedience extends AppCompatActivity {
         videoPathO79 = "android.resource://" + getPackageName() + "/" + R.raw.obedience7;
         uriO79 = Uri.parse(videoPathO79);
         videoViewO79.setVideoURI(uriO79);
+        MediaPlayer sfx = MediaPlayer.create(this, R.raw.btnsfx);
 
         videoViewO79.start();
 
@@ -267,6 +289,7 @@ public class LessonObedience extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
+                sfx.start();
                 obedience7();
 
             }
@@ -276,6 +299,7 @@ public class LessonObedience extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
+                sfx.start();
                 startActivity(new Intent(LessonObedience.this, ObedienceLessonCongrats.class));
 
             }

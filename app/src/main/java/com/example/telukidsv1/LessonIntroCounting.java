@@ -29,6 +29,9 @@ public class LessonIntroCounting extends AppCompatActivity {
         videoPathICN = "android.resource://" + getPackageName() + "/" + R.raw.countingintrovideo;
         uriICN = Uri.parse(videoPathICN);
         videoViewICN.setVideoURI(uriICN);
+        MediaPlayer sfx = MediaPlayer.create(this, R.raw.btnsfx);
+
+        BackgroundSoundService.onPause();
 
         MediaController mediaController = new MediaController(this);
         videoViewICN.setMediaController(mediaController);
@@ -41,6 +44,7 @@ public class LessonIntroCounting extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
+                sfx.start();
                 startActivity(new Intent(LessonIntroCounting.this,ChooseModeCounting.class));
 
             }
@@ -54,13 +58,5 @@ public class LessonIntroCounting extends AppCompatActivity {
 
             }
         });
-
-        Handler handler = new Handler();
-        handler.postDelayed(new Runnable() {
-            @Override
-            public void run() {
-                btnCloseICN.setVisibility(View.VISIBLE);
-            }
-        },5000);
     }
 }

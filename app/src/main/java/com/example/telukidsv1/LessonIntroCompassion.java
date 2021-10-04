@@ -29,6 +29,9 @@ public class LessonIntroCompassion extends AppCompatActivity {
         videoPathICP = "android.resource://" + getPackageName() + "/" + R.raw.compassionintrovideo;
         uriICP = Uri.parse(videoPathICP);
         videoViewICP.setVideoURI(uriICP);
+        MediaPlayer sfx = MediaPlayer.create(this, R.raw.btnsfx);
+
+        BackgroundSoundService.onPause();
 
         MediaController mediaController = new MediaController(this);
         videoViewICP.setMediaController(mediaController);
@@ -41,6 +44,7 @@ public class LessonIntroCompassion extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
+                sfx.start();
                 startActivity(new Intent(LessonIntroCompassion.this,ChooseModeCompassion.class));
 
             }
@@ -54,13 +58,5 @@ public class LessonIntroCompassion extends AppCompatActivity {
 
             }
         });
-
-        Handler handler = new Handler();
-        handler.postDelayed(new Runnable() {
-            @Override
-            public void run() {
-                btncloseICP.setVisibility(View.VISIBLE);
-            }
-        },5000);
     }
 }

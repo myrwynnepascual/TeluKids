@@ -38,6 +38,7 @@ public class ShapesLessonCongrats extends AppCompatActivity {
         certificateSLC = findViewById(R.id.certificateSLC);
         btnassessmentSLC = findViewById(R.id.asessmentbtnSLC);
         btnhomepageSLC = findViewById(R.id.homepageSLC);
+        MediaPlayer sfx = MediaPlayer.create(this, R.raw.btnsfx);
 
         congrats = MediaPlayer.create(this, R.raw.yaysfx);
         congrats.start();
@@ -60,6 +61,7 @@ public class ShapesLessonCongrats extends AppCompatActivity {
         btnbackSLC.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                sfx.start();
                 startActivity(new Intent(ShapesLessonCongrats.this, BasicConcepts.class));
             }
         });
@@ -67,6 +69,7 @@ public class ShapesLessonCongrats extends AppCompatActivity {
         btnachievementsSLC.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                sfx.start();
                 startActivity(new Intent(ShapesLessonCongrats.this, Achievements3to6Shapes.class));
             }
         });
@@ -74,6 +77,7 @@ public class ShapesLessonCongrats extends AppCompatActivity {
         btnassessmentSLC.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                sfx.start();
                 startActivity(new Intent(ShapesLessonCongrats.this, QuizShapes.class));
             }
         });
@@ -81,9 +85,16 @@ public class ShapesLessonCongrats extends AppCompatActivity {
         btnhomepageSLC.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                sfx.start();
                 startActivity(new Intent(ShapesLessonCongrats.this, Homepage3to6.class));
             }
         });
 
+    }
+
+    @Override
+    protected void onUserLeaveHint(){
+        congrats.stop();
+        congrats.release();
     }
 }

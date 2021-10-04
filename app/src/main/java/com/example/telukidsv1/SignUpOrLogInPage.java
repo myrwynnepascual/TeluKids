@@ -18,10 +18,13 @@ public class SignUpOrLogInPage extends AppCompatActivity {
 
     private MediaPlayer bgm;
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_sign_up_or_log_in_page);
+
+        MediaPlayer sfx = MediaPlayer.create(this, R.raw.btnsfx);
 
         signupbtnSOL = findViewById(R.id.signupbtnSOL);
         loginbtnSOL = findViewById(R.id.loginbtnSOL);
@@ -36,6 +39,7 @@ public class SignUpOrLogInPage extends AppCompatActivity {
         signupbtnSOL.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                sfx.start();
                 startActivity(new Intent(SignUpOrLogInPage.this,SignUp.class));
             }
         });
@@ -43,8 +47,9 @@ public class SignUpOrLogInPage extends AppCompatActivity {
         loginbtnSOL.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                sfx.start();
                 startActivity(new Intent(SignUpOrLogInPage.this, Login.class));
             }
         });
-    };
     }
+}

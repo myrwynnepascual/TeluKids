@@ -29,6 +29,9 @@ public class LessonIntroHonesty extends AppCompatActivity {
         videoPathIH = "android.resource://" + getPackageName() + "/" + R.raw.honestyintrovideo;
         uriIH = Uri.parse(videoPathIH);
         videoViewIH.setVideoURI(uriIH);
+        MediaPlayer sfx = MediaPlayer.create(this, R.raw.btnsfx);
+
+        BackgroundSoundService.onPause();
 
         MediaController mediaController = new MediaController(this);
         videoViewIH.setMediaController(mediaController);
@@ -41,6 +44,7 @@ public class LessonIntroHonesty extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
+                sfx.start();
                 startActivity(new Intent(LessonIntroHonesty.this,ChooseModeHonesty.class));
 
             }
@@ -54,14 +58,6 @@ public class LessonIntroHonesty extends AppCompatActivity {
 
             }
         });
-
-        Handler handler = new Handler();
-        handler.postDelayed(new Runnable() {
-            @Override
-            public void run() {
-                btncloseIH.setVisibility(View.VISIBLE);
-            }
-        },5000);
         
     }
 }

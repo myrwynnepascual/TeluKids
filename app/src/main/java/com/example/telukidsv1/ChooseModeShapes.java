@@ -3,6 +3,7 @@ package com.example.telukidsv1;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageButton;
@@ -21,9 +22,15 @@ public class ChooseModeShapes extends AppCompatActivity {
         assessCMS = findViewById(R.id.assessCMS);
         replayCMS = findViewById(R.id.replayintroCMS);
 
+        BackgroundSoundService.onResume();
+
+        MediaPlayer sfx = MediaPlayer.create(this, R.raw.btnsfx);
+
+
         backCMS.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                sfx.start();
                 startActivity(new Intent(ChooseModeShapes.this,BasicConcepts.class));
             }
         });
@@ -31,6 +38,7 @@ public class ChooseModeShapes extends AppCompatActivity {
         learnCMS.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                sfx.start();
                 startActivity(new Intent(ChooseModeShapes.this, LessonShapes.class));
             }
         });
@@ -38,6 +46,7 @@ public class ChooseModeShapes extends AppCompatActivity {
         assessCMS.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                sfx.start();
                 startActivity(new Intent(ChooseModeShapes.this,QuizShapes.class));
             }
         });
@@ -45,6 +54,7 @@ public class ChooseModeShapes extends AppCompatActivity {
         replayCMS.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                sfx.start();
                 startActivity(new Intent(ChooseModeShapes.this,LessonIntroShapes.class));
             }
         });

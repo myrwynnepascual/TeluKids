@@ -31,6 +31,7 @@ public class ResultsCompassion extends AppCompatActivity {
     FirebaseFirestore fStore;
     FirebaseUser user;
     String achievement_compassion;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -41,6 +42,7 @@ public class ResultsCompassion extends AppCompatActivity {
         ImageButton achievementsbtnCLC_Compassion = findViewById(R.id.achievementsbtnCLC_Compassion);
         ImageButton btnReadLesson_Quiz_Compassion = findViewById(R.id.btnReadLesson_Quiz_Compassion);
         ImageButton homepageCLC_Compassion = findViewById(R.id.homepageCLC_Compassion);
+        MediaPlayer sfx = MediaPlayer.create(this, R.raw.btnsfx);
 
         congrats = MediaPlayer.create(this, R.raw.yaysfx);
         congrats.start();
@@ -86,6 +88,7 @@ public class ResultsCompassion extends AppCompatActivity {
         achievementsbtnCLC_Compassion.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                sfx.start();
                 Intent proceed = new Intent(ResultsCompassion.this, Achievements3to6Compassion2.class);
                 proceed.putExtra("RIGHT_ANSWER_COUNT_Compassion", score_compassion);
                 startActivity(proceed);
@@ -94,12 +97,14 @@ public class ResultsCompassion extends AppCompatActivity {
         gmrc36btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                sfx.start();
                 startActivity(new Intent(ResultsCompassion.this, Gmrc3to6.class));
             }
         });
         btnReadLesson_Quiz_Compassion.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                sfx.start();
                 Intent proceed = new Intent(ResultsCompassion.this, LessonCompassion.class);
                 startActivity(proceed);
             }
@@ -107,6 +112,7 @@ public class ResultsCompassion extends AppCompatActivity {
         homepageCLC_Compassion.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                sfx.start();
                 Intent proceed = new Intent(ResultsCompassion.this, Homepage3to6.class);
                 startActivity(proceed);
             }

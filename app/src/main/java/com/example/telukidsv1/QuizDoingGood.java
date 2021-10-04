@@ -72,6 +72,8 @@ public class QuizDoingGood extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.quiz_doinggood);
 
+        BackgroundSoundService.onPause();
+
         background_DoingGood = (ConstraintLayout) findViewById(R.id.background_DoingGood);
         quizLayout_DoingGood = (LinearLayout)findViewById(R.id.quizLayout_DoingGood);
         countLabel_DoingGood = (TextView)findViewById(R.id.countLabel_DoingGood);

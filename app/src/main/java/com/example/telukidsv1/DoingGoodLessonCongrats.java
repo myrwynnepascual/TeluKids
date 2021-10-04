@@ -42,6 +42,9 @@ public class DoingGoodLessonCongrats extends AppCompatActivity {
         congrats = MediaPlayer.create(this, R.raw.yaysfx);
         congrats.start();
 
+        MediaPlayer sfx = MediaPlayer.create(this, R.raw.btnsfx);
+
+
         fAuth = FirebaseAuth.getInstance();
         fStore = FirebaseFirestore.getInstance();
         user = fAuth.getCurrentUser();
@@ -60,6 +63,7 @@ public class DoingGoodLessonCongrats extends AppCompatActivity {
         btnbackDGLC.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                sfx.start();
                 startActivity(new Intent(DoingGoodLessonCongrats.this, Gmrc7to9.class));
             }
         });
@@ -67,6 +71,7 @@ public class DoingGoodLessonCongrats extends AppCompatActivity {
         btnachievementsDGLC.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                sfx.start();
                 startActivity(new Intent(DoingGoodLessonCongrats.this, Achievements7to9DoingGood.class));
             }
         });
@@ -74,6 +79,7 @@ public class DoingGoodLessonCongrats extends AppCompatActivity {
         btnassessmentDGLC.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                sfx.start();
                 startActivity(new Intent(DoingGoodLessonCongrats.this, QuizDoingGood.class));
             }
         });
@@ -81,8 +87,15 @@ public class DoingGoodLessonCongrats extends AppCompatActivity {
         btnhomepageDGLC.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                sfx.start();
                 startActivity(new Intent(DoingGoodLessonCongrats.this, Homepage7to9.class));
             }
         });
+    }
+
+    @Override
+    protected void onUserLeaveHint(){
+        congrats.stop();
+        congrats.release();
     }
 }

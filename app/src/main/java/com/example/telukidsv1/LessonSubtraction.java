@@ -27,6 +27,9 @@ public class LessonSubtraction extends AppCompatActivity {
         videoViewS = findViewById(R.id.videoS);
         backbtnS = findViewById(R.id.btnbackS);
         nextbtnS = findViewById(R.id.nextbtnS);
+        MediaPlayer sfx = MediaPlayer.create(this, R.raw.btnsfx);
+
+        BackgroundSoundService.onPause();
 
         subtractionx();
     }
@@ -36,6 +39,7 @@ public class LessonSubtraction extends AppCompatActivity {
         videoPathS = "android.resource://" + getPackageName() + "/" + R.raw.subtractionx;
         uriS = Uri.parse(videoPathS);
         videoViewS.setVideoURI(uriS);
+        MediaPlayer sfx = MediaPlayer.create(this, R.raw.btnsfx);
 
         mediaController = new MediaController(this);
         videoViewS.setMediaController(mediaController);
@@ -57,6 +61,7 @@ public class LessonSubtraction extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
+                sfx.start();
                 startActivity(new Intent(LessonSubtraction.this,ChooseModeSubtraction.class));
 
             }
@@ -66,6 +71,7 @@ public class LessonSubtraction extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
+                sfx.start();
                 subtractiony();
 
             }
@@ -77,6 +83,7 @@ public class LessonSubtraction extends AppCompatActivity {
         videoPathS = "android.resource://" + getPackageName() + "/" + R.raw.subtractiony;
         uriS = Uri.parse(videoPathS);
         videoViewS.setVideoURI(uriS);
+        MediaPlayer sfx = MediaPlayer.create(this, R.raw.btnsfx);
 
         mediaController = new MediaController(this);
         videoViewS.setMediaController(mediaController);
@@ -98,6 +105,7 @@ public class LessonSubtraction extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
+                sfx.start();
                 startActivity(new Intent(LessonSubtraction.this,ChooseModeSubtraction.class));
 
             }
@@ -107,6 +115,7 @@ public class LessonSubtraction extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
+                sfx.start();
                 subtraction1();
 
             }
@@ -117,6 +126,7 @@ public class LessonSubtraction extends AppCompatActivity {
         videoPathS = "android.resource://" + getPackageName() + "/" + R.raw.subtraction1;
         uriS = Uri.parse(videoPathS);
         videoViewS.setVideoURI(uriS);
+        MediaPlayer sfx = MediaPlayer.create(this, R.raw.btnsfx);
 
         videoViewS.start();
 
@@ -133,6 +143,7 @@ public class LessonSubtraction extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
+                sfx.start();
                 subtractionx();
 
             }
@@ -142,6 +153,7 @@ public class LessonSubtraction extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
+                sfx.start();
                 subtraction2();
 
             }
@@ -152,6 +164,7 @@ public class LessonSubtraction extends AppCompatActivity {
         videoPathS = "android.resource://" + getPackageName() + "/" + R.raw.subtraction2;
         uriS = Uri.parse(videoPathS);
         videoViewS.setVideoURI(uriS);
+        MediaPlayer sfx = MediaPlayer.create(this, R.raw.btnsfx);
 
         videoViewS.start();
 
@@ -168,6 +181,7 @@ public class LessonSubtraction extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
+                sfx.start();
                 subtraction1();
 
             }
@@ -177,6 +191,7 @@ public class LessonSubtraction extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
+                sfx.start();
                 subtraction3();
 
             }
@@ -187,6 +202,7 @@ public class LessonSubtraction extends AppCompatActivity {
         videoPathS = "android.resource://" + getPackageName() + "/" + R.raw.subtraction3;
         uriS = Uri.parse(videoPathS);
         videoViewS.setVideoURI(uriS);
+        MediaPlayer sfx = MediaPlayer.create(this, R.raw.btnsfx);
 
         videoViewS.start();
 
@@ -203,6 +219,7 @@ public class LessonSubtraction extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
+                sfx.start();
                 subtraction2();
 
             }
@@ -212,6 +229,7 @@ public class LessonSubtraction extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
+                sfx.start();
                 subtraction4();
 
             }
@@ -222,6 +240,7 @@ public class LessonSubtraction extends AppCompatActivity {
         videoPathS = "android.resource://" + getPackageName() + "/" + R.raw.subtraction4;
         uriS = Uri.parse(videoPathS);
         videoViewS.setVideoURI(uriS);
+        MediaPlayer sfx = MediaPlayer.create(this, R.raw.btnsfx);
 
         videoViewS.start();
 
@@ -238,6 +257,7 @@ public class LessonSubtraction extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
+                sfx.start();
                 subtraction3();
 
             }
@@ -247,6 +267,7 @@ public class LessonSubtraction extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
+                sfx.start();
                 subtraction5();
 
             }
@@ -257,6 +278,7 @@ public class LessonSubtraction extends AppCompatActivity {
         videoPathS = "android.resource://" + getPackageName() + "/" + R.raw.subtraction5;
         uriS = Uri.parse(videoPathS);
         videoViewS.setVideoURI(uriS);
+        MediaPlayer sfx = MediaPlayer.create(this, R.raw.btnsfx);
 
         videoViewS.start();
 
@@ -273,6 +295,7 @@ public class LessonSubtraction extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
+                sfx.start();
                 subtraction4();
 
             }
@@ -282,6 +305,7 @@ public class LessonSubtraction extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
+                sfx.start();
                 subtraction6();
 
             }
@@ -292,6 +316,7 @@ public class LessonSubtraction extends AppCompatActivity {
         videoPathS = "android.resource://" + getPackageName() + "/" + R.raw.subtraction6;
         uriS = Uri.parse(videoPathS);
         videoViewS.setVideoURI(uriS);
+        MediaPlayer sfx = MediaPlayer.create(this, R.raw.btnsfx);
 
         videoViewS.start();
 
@@ -308,6 +333,7 @@ public class LessonSubtraction extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
+                sfx.start();
                 subtraction5();
 
             }
@@ -317,6 +343,7 @@ public class LessonSubtraction extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
+                sfx.start();
                 subtraction7();
 
             }
@@ -327,6 +354,7 @@ public class LessonSubtraction extends AppCompatActivity {
         videoPathS = "android.resource://" + getPackageName() + "/" + R.raw.subtraction7;
         uriS = Uri.parse(videoPathS);
         videoViewS.setVideoURI(uriS);
+        MediaPlayer sfx = MediaPlayer.create(this, R.raw.btnsfx);
 
         videoViewS.start();
 
@@ -343,6 +371,7 @@ public class LessonSubtraction extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
+                sfx.start();
                 subtraction6();
 
             }
@@ -352,6 +381,7 @@ public class LessonSubtraction extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
+                sfx.start();
                 subtraction8();
 
             }
@@ -362,6 +392,7 @@ public class LessonSubtraction extends AppCompatActivity {
         videoPathS = "android.resource://" + getPackageName() + "/" + R.raw.subtraction8;
         uriS = Uri.parse(videoPathS);
         videoViewS.setVideoURI(uriS);
+        MediaPlayer sfx = MediaPlayer.create(this, R.raw.btnsfx);
 
         videoViewS.start();
 
@@ -378,6 +409,7 @@ public class LessonSubtraction extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
+                sfx.start();
                 subtraction7();
 
             }
@@ -387,6 +419,7 @@ public class LessonSubtraction extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
+                sfx.start();
                 subtraction9();
 
             }
@@ -397,6 +430,7 @@ public class LessonSubtraction extends AppCompatActivity {
         videoPathS = "android.resource://" + getPackageName() + "/" + R.raw.subtraction9;
         uriS = Uri.parse(videoPathS);
         videoViewS.setVideoURI(uriS);
+        MediaPlayer sfx = MediaPlayer.create(this, R.raw.btnsfx);
 
         videoViewS.start();
 
@@ -413,6 +447,7 @@ public class LessonSubtraction extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
+                sfx.start();
                 subtraction8();
 
             }
@@ -422,6 +457,7 @@ public class LessonSubtraction extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
+                sfx.start();
                 subtraction10();
 
             }
@@ -432,6 +468,7 @@ public class LessonSubtraction extends AppCompatActivity {
         videoPathS = "android.resource://" + getPackageName() + "/" + R.raw.subtraction10;
         uriS = Uri.parse(videoPathS);
         videoViewS.setVideoURI(uriS);
+        MediaPlayer sfx = MediaPlayer.create(this, R.raw.btnsfx);
 
         videoViewS.start();
 
@@ -448,6 +485,7 @@ public class LessonSubtraction extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
+                sfx.start();
                 subtraction9();
 
             }
@@ -457,6 +495,7 @@ public class LessonSubtraction extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
+                sfx.start();
                 startActivity(new Intent(LessonSubtraction.this,SubtractionLessonCongrats.class));
 
             }

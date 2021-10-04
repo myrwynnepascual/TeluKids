@@ -3,6 +3,7 @@ package com.example.telukidsv1;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageButton;
@@ -21,9 +22,15 @@ public class ChooseModeDoingGood extends AppCompatActivity {
         assessCMDG79 = findViewById(R.id.assessCMDG79);
         replayCMDG79 = findViewById(R.id.replayintroCMDG79);
 
+        BackgroundSoundService.onResume();
+
+        MediaPlayer sfx = MediaPlayer.create(this, R.raw.btnsfx);
+
+
         backCMDG79.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                sfx.start();
                 startActivity(new Intent(ChooseModeDoingGood.this, Gmrc7to9.class));
             }
         });
@@ -31,6 +38,7 @@ public class ChooseModeDoingGood extends AppCompatActivity {
         learnCMDG79.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                sfx.start();
                 startActivity(new Intent(ChooseModeDoingGood.this, LessonDoingGood.class));
             }
         });
@@ -38,6 +46,7 @@ public class ChooseModeDoingGood extends AppCompatActivity {
         assessCMDG79.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                sfx.start();
                 startActivity(new Intent(ChooseModeDoingGood.this, QuizDoingGood.class));
             }
         });
@@ -45,6 +54,7 @@ public class ChooseModeDoingGood extends AppCompatActivity {
         replayCMDG79.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                sfx.start();
                 startActivity(new Intent(ChooseModeDoingGood.this,LessonIntroDoingGood.class));
             }
         });

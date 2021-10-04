@@ -38,6 +38,7 @@ public class ResponsibilityLessonCongrats extends AppCompatActivity {
         certificateRPLC = findViewById(R.id.certificateRPLC);
         btnassessmentRPLC = findViewById(R.id.asessmentbtnRPLC);
         btnhomepageRPLC = findViewById(R.id.homepageRPLC);
+        MediaPlayer sfx = MediaPlayer.create(this, R.raw.btnsfx);
 
         congrats = MediaPlayer.create(this, R.raw.yaysfx);
         congrats.start();
@@ -60,6 +61,7 @@ public class ResponsibilityLessonCongrats extends AppCompatActivity {
         btnbackRPLC.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                sfx.start();
                 startActivity(new Intent(ResponsibilityLessonCongrats.this, Gmrc7to9.class));
             }
         });
@@ -67,6 +69,7 @@ public class ResponsibilityLessonCongrats extends AppCompatActivity {
         btnachievementsRPLC.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                sfx.start();
                 startActivity(new Intent(ResponsibilityLessonCongrats.this, Achievements7to9Responsibility.class));
             }
         });
@@ -74,6 +77,7 @@ public class ResponsibilityLessonCongrats extends AppCompatActivity {
         btnassessmentRPLC.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                sfx.start();
                 startActivity(new Intent(ResponsibilityLessonCongrats.this, QuizResponsibility.class));
             }
         });
@@ -81,8 +85,15 @@ public class ResponsibilityLessonCongrats extends AppCompatActivity {
         btnhomepageRPLC.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                sfx.start();
                 startActivity(new Intent(ResponsibilityLessonCongrats.this, Homepage7to9.class));
             }
         });
+    }
+
+    @Override
+    protected void onUserLeaveHint(){
+        congrats.stop();
+        congrats.release();
     }
 }

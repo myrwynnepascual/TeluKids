@@ -1,6 +1,7 @@
 package com.example.telukidsv1;
 
 import android.content.Intent;
+import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageButton;
@@ -39,6 +40,8 @@ public class Achievements7to9DoingGood2 extends AppCompatActivity {
         setContentView(R.layout.activity_achievements7to9_doing_good2);
 
         ImageButton backbtnAchievements7to9= findViewById(R.id.backbtnAchievements79DoingGood2);
+
+        MediaPlayer sfx = MediaPlayer.create(this, R.raw.btnsfx);
 
         //Trophies
         //GMRC 3-6
@@ -679,6 +682,7 @@ public class Achievements7to9DoingGood2 extends AppCompatActivity {
         backbtnAchievements7to9.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                sfx.start();
                 Intent proceed = new Intent(Achievements7to9DoingGood2.this, ResultsDoingGood.class);
                 proceed.putExtra("RIGHT_ANSWER_COUNT_DoingGood", score_doinggood);
                 startActivity(proceed);

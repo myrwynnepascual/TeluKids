@@ -42,6 +42,9 @@ public class DisciplineLessonCongrats extends AppCompatActivity {
         congrats = MediaPlayer.create(this, R.raw.yaysfx);
         congrats.start();
 
+        MediaPlayer sfx = MediaPlayer.create(this, R.raw.btnsfx);
+
+
         fAuth = FirebaseAuth.getInstance();
         fStore = FirebaseFirestore.getInstance();
         user = fAuth.getCurrentUser();
@@ -60,6 +63,7 @@ public class DisciplineLessonCongrats extends AppCompatActivity {
         btnbackDLC.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                sfx.start();
                 startActivity(new Intent(DisciplineLessonCongrats.this, Gmrc3to6.class));
             }
         });
@@ -67,6 +71,7 @@ public class DisciplineLessonCongrats extends AppCompatActivity {
         btnachievementsDLC.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                sfx.start();
                 startActivity(new Intent(DisciplineLessonCongrats.this, Achievements3to6Discipline.class));
             }
         });
@@ -74,6 +79,7 @@ public class DisciplineLessonCongrats extends AppCompatActivity {
         btnassessmentDLC.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                sfx.start();
                 startActivity(new Intent(DisciplineLessonCongrats.this, QuizDiscipline.class));
             }
         });
@@ -81,8 +87,15 @@ public class DisciplineLessonCongrats extends AppCompatActivity {
         btnhomepageDLC.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                sfx.start();
                 startActivity(new Intent(DisciplineLessonCongrats.this, Homepage3to6.class));
             }
         });
+    }
+
+    @Override
+    protected void onUserLeaveHint(){
+        congrats.stop();
+        congrats.release();
     }
 }

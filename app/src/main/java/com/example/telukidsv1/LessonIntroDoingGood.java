@@ -29,6 +29,9 @@ public class LessonIntroDoingGood extends AppCompatActivity {
         videoPathDG = "android.resource://" + getPackageName() + "/" + R.raw.goodintrovideo;
         uriDG = Uri.parse(videoPathDG);
         videoViewDG.setVideoURI(uriDG);
+        MediaPlayer sfx = MediaPlayer.create(this, R.raw.btnsfx);
+
+        BackgroundSoundService.onPause();
 
         MediaController mediaController = new MediaController(this);
         videoViewDG.setMediaController(mediaController);
@@ -41,6 +44,7 @@ public class LessonIntroDoingGood extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
+                sfx.start();
                 startActivity(new Intent(LessonIntroDoingGood.this,ChooseModeDoingGood.class));
 
             }
@@ -54,13 +58,5 @@ public class LessonIntroDoingGood extends AppCompatActivity {
 
             }
         });
-
-        Handler handler = new Handler();
-        handler.postDelayed(new Runnable() {
-            @Override
-            public void run() {
-                btncloseDG.setVisibility(View.VISIBLE);
-            }
-        },5000);
     }
 }

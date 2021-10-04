@@ -18,6 +18,7 @@ public class LessonResponsibility extends AppCompatActivity {
     Uri uriRP79;
     ImageButton backbtnRP79,nextbtnRP79;
     MediaController mediaController;
+    MediaPlayer sfx = MediaPlayer.create(this, R.raw.btnsfx);
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -27,6 +28,8 @@ public class LessonResponsibility extends AppCompatActivity {
         videoViewRP79 = findViewById(R.id.videoRP79);
         backbtnRP79 = findViewById(R.id.btnbackRP79);
         nextbtnRP79 = findViewById(R.id.nextbtnRP79);
+
+        BackgroundSoundService.onPause();
 
         mediaController = new MediaController(this);
         videoViewRP79.setMediaController(mediaController);
@@ -56,6 +59,7 @@ public class LessonResponsibility extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
+                sfx.start();
                 startActivity(new Intent(LessonResponsibility.this,ChooseModeResponsibility.class));
 
             }
@@ -65,6 +69,7 @@ public class LessonResponsibility extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
+                sfx.start();
                 responsibility2();
 
             }
@@ -91,6 +96,7 @@ public class LessonResponsibility extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
+                sfx.start();
                 responsibility1();
 
             }
@@ -100,6 +106,7 @@ public class LessonResponsibility extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
+                sfx.start();
                 responsibility3();
 
             }
@@ -126,6 +133,7 @@ public class LessonResponsibility extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
+                sfx.start();
                 responsibility2();
 
             }
@@ -135,6 +143,7 @@ public class LessonResponsibility extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
+                sfx.start();
                 responsibility4();
 
             }
@@ -161,6 +170,7 @@ public class LessonResponsibility extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
+                sfx.start();
                 responsibility3();
 
             }
@@ -170,6 +180,7 @@ public class LessonResponsibility extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
+                sfx.start();
                 responsibility5();
 
             }
@@ -196,6 +207,7 @@ public class LessonResponsibility extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
+                sfx.start();
                 responsibility4();
 
             }
@@ -205,6 +217,7 @@ public class LessonResponsibility extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
+                sfx.start();
                 responsibility6();
 
             }
@@ -231,6 +244,7 @@ public class LessonResponsibility extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
+                sfx.start();
                 responsibility5();
 
             }
@@ -240,6 +254,7 @@ public class LessonResponsibility extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
+                sfx.start();
                 responsibility7();
 
             }
@@ -266,6 +281,7 @@ public class LessonResponsibility extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
+                sfx.start();
                 responsibility6();
 
             }
@@ -275,6 +291,7 @@ public class LessonResponsibility extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
+                sfx.start();
                 responsibility8();
 
             }
@@ -301,6 +318,7 @@ public class LessonResponsibility extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
+                sfx.start();
                 responsibility7();
 
             }
@@ -310,6 +328,7 @@ public class LessonResponsibility extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
+                sfx.start();
                 startActivity(new Intent(LessonResponsibility.this, ResponsibilityLessonCongrats.class));
 
             }

@@ -29,6 +29,7 @@ public class ResultsLove extends AppCompatActivity {
     FirebaseFirestore fStore;
     FirebaseUser user;
     String achievement_love;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -39,6 +40,7 @@ public class ResultsLove extends AppCompatActivity {
         ImageButton achievementsbtnCLC_Love = findViewById(R.id.achievementsbtnCLC_Love);
         ImageButton btnReadLesson_Quiz_Love = findViewById(R.id.btnReadLesson_Quiz_Love);
         ImageButton homepageCLC_Love = findViewById(R.id.homepageCLC_Love);
+        MediaPlayer sfx = MediaPlayer.create(this, R.raw.btnsfx);
 
         congrats = MediaPlayer.create(this, R.raw.yaysfx);
         congrats.start();
@@ -83,12 +85,14 @@ public class ResultsLove extends AppCompatActivity {
         gmrc79btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                sfx.start();
                 startActivity(new Intent(ResultsLove.this, Gmrc7to9.class));
             }
         });
         achievementsbtnCLC_Love.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                sfx.start();
                 Intent proceed = new Intent(ResultsLove.this, Achievements7to9Love2.class);
                 proceed.putExtra("RIGHT_ANSWER_COUNT_Love", score_love);
                 startActivity(proceed);
@@ -97,6 +101,7 @@ public class ResultsLove extends AppCompatActivity {
         btnReadLesson_Quiz_Love.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                sfx.start();
                 Intent proceed = new Intent(ResultsLove.this, LessonLove.class);
                 startActivity(proceed);
             }
@@ -104,6 +109,7 @@ public class ResultsLove extends AppCompatActivity {
         homepageCLC_Love.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                sfx.start();
                 Intent proceed = new Intent(ResultsLove.this, Homepage7to9.class);
                 startActivity(proceed);
             }

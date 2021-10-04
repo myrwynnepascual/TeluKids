@@ -60,6 +60,8 @@ public class QuizSubtraction extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.quiz_subtraction);
 
+        BackgroundSoundService.onPause();
+
 
         quizLayout_Subtraction = (LinearLayout)findViewById(R.id.quizLayout_Subtraction);
         imgQuestion_Subtraction =  (ImageView)findViewById(R.id.imgQuestion_Subtraction);

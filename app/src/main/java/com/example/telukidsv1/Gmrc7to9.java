@@ -3,6 +3,7 @@ package com.example.telukidsv1;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageButton;
@@ -22,9 +23,14 @@ public class Gmrc7to9 extends AppCompatActivity {
         btnObedience = findViewById(R.id.btnObedienceG79);
         btnDoingGood = findViewById(R.id.btnDoingGoodG79);
 
+        MediaPlayer sfx = MediaPlayer.create(this, R.raw.btnsfx);
+
+
+
         btnBack.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                sfx.start();
                 startActivity(new Intent(Gmrc7to9.this, Homepage7to9.class));
             }
         });
@@ -32,6 +38,7 @@ public class Gmrc7to9 extends AppCompatActivity {
         btnResponsibility.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                sfx.start();
                 startActivity(new Intent(Gmrc7to9.this, LessonIntroResponsibility.class));
             }
         });
@@ -39,6 +46,7 @@ public class Gmrc7to9 extends AppCompatActivity {
         btnLove.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                sfx.start();
                 startActivity(new Intent(Gmrc7to9.this, LessonIntroLove.class));
             }
         });
@@ -46,6 +54,7 @@ public class Gmrc7to9 extends AppCompatActivity {
         btnObedience.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                sfx.start();
                 startActivity(new Intent(Gmrc7to9.this, LessonIntroObedience.class));
             }
         });
@@ -53,6 +62,7 @@ public class Gmrc7to9 extends AppCompatActivity {
         btnDoingGood.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                sfx.start();
                 startActivity(new Intent(Gmrc7to9.this, LessonIntroDoingGood.class));
             }
         });

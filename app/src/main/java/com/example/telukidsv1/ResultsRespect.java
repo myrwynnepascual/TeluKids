@@ -29,6 +29,7 @@ public class ResultsRespect extends AppCompatActivity {
     FirebaseFirestore fStore;
     FirebaseUser user;
     String achievement_respect;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -39,6 +40,7 @@ public class ResultsRespect extends AppCompatActivity {
         ImageButton achievementsbtnCLC_Respect = findViewById(R.id.achievementsbtnCLC_Respect);
         ImageButton btnReadLesson_Quiz_Respect = findViewById(R.id.btnReadLesson_Quiz_Respect);
         ImageButton homepageCLC_Respect = findViewById(R.id.homepageCLC_Respect);
+        MediaPlayer sfx = MediaPlayer.create(this, R.raw.btnsfx);
 
         congrats = MediaPlayer.create(this, R.raw.yaysfx);
         congrats.start();
@@ -83,12 +85,14 @@ public class ResultsRespect extends AppCompatActivity {
         gmrc36btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                sfx.start();
                 startActivity(new Intent(ResultsRespect.this, Gmrc3to6.class));
             }
         });
         achievementsbtnCLC_Respect.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                sfx.start();
                 Intent proceed = new Intent(ResultsRespect.this, Achievements3to6Respect2.class);
                 proceed.putExtra("RIGHT_ANSWER_COUNT_Respect", score_respect);
                 startActivity(proceed);
@@ -97,6 +101,7 @@ public class ResultsRespect extends AppCompatActivity {
         btnReadLesson_Quiz_Respect.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                sfx.start();
                 Intent proceed = new Intent(ResultsRespect.this, LessonRespect.class);
                 startActivity(proceed);
             }
@@ -104,6 +109,7 @@ public class ResultsRespect extends AppCompatActivity {
         homepageCLC_Respect.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                sfx.start();
                 Intent proceed = new Intent(ResultsRespect.this, Homepage3to6.class);
                 startActivity(proceed);
             }
