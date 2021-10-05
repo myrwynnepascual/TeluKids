@@ -6,6 +6,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.media.MediaPlayer;
 import android.os.Bundle;
+import android.os.Handler;
 import android.text.TextUtils;
 import android.util.Patterns;
 import android.view.View;
@@ -69,35 +70,41 @@ public class Login extends AppCompatActivity {
 
                 if(TextUtils.isEmpty(email)){
                     emailLI.setError("Email is Required.");
-                    return;
                 }
-
-                if(!Patterns.EMAIL_ADDRESS.matcher(email).matches()){
-                    emailLI.setError("Enter a valid email address.");
-                    return;
+                else{
+                    if(!Patterns.EMAIL_ADDRESS.matcher(email).matches()){
+                        emailLI.setError("Enter a valid email address.");
+                    }
                 }
 
                 if(TextUtils.isEmpty(password)){
                     passwordLI.setError("Password is Required.");
-                    return;
                 }
-
-                if(password.length() < 8){
+                else if(password.length() < 8){
                     passwordLI.setError("Password must be at least 8 characters.");
-                    return;
                 }
 
-                fAuth.signInWithEmailAndPassword(email,password).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
-                    @Override
-                    public void onComplete(@NonNull Task<AuthResult> task) {
-                        if(task.isSuccessful()){
-                            startActivity(new Intent(getApplicationContext(),SuccessfulLogin.class));
+                if((!TextUtils.isEmpty(email)) && (!TextUtils.isEmpty(password))){
+                    fAuth.signInWithEmailAndPassword(email,password).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
+                        @Override
+                        public void onComplete(@NonNull Task<AuthResult> task) {
+                            if(task.isSuccessful()){
+                                startActivity(new Intent(getApplicationContext(),SuccessfulLogin.class));
+                            }
+                            else{
+                                emessageLI.setText(task.getException().getMessage());
+                                Handler handler = new Handler();
+                                handler.postDelayed(new Runnable() {
+                                    @Override
+                                    public void run() {
+
+                                        emessageLI.setText("");
+                                    }
+                                },3000);;
+                            }
                         }
-                        else{
-                            emessageLI.setText(task.getException().getMessage());
-                        }
-                    }
-                });
+                    });
+                }
 
 
             }

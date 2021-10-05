@@ -100,7 +100,7 @@ public class QuizDiscipline extends AppCompatActivity {
             //Add tmpArray to quizArray
             quizArray_Discipline.add(tmpArray);
         }
-        showNextQuiz();
+        assessmenttitle();
     }
     public void showNextQuiz(){
         //Update quizCountLabel
@@ -344,5 +344,16 @@ public class QuizDiscipline extends AppCompatActivity {
                 }
             }
         });
+    }
+
+    public void assessmenttitle(){
+        background_Discipline.setBackgroundResource(R.drawable.disciplinetitle);
+        Handler handler = new Handler();
+        handler.postDelayed(new Runnable() {
+            @Override
+            public void run() {
+                showNextQuiz();
+            }
+        },2000);
     }
 }

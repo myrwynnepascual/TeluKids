@@ -14,37 +14,37 @@
         <activity
             android:name=".HelpPage79"
             android:exported="true"
-            android:screenOrientation="portrait"  />
+            android:screenOrientation="portrait" />
         <activity
             android:name=".HelpPage36"
             android:exported="true"
-            android:screenOrientation="portrait"  />
+            android:screenOrientation="portrait" />
 
         <service
             android:name=".BackgroundSoundService"
             android:enabled="true"
-            android:screenOrientation="portrait"  />
+            android:screenOrientation="portrait" />
 
         <activity
             android:name=".Achievements7to9DoingGood"
             android:exported="true"
-            android:screenOrientation="portrait"  />
+            android:screenOrientation="portrait" />
         <activity
             android:name=".DoingGoodLessonCongrats"
             android:exported="true"
-            android:screenOrientation="portrait"  />
+            android:screenOrientation="portrait" />
         <activity
             android:name=".LessonDoingGood"
             android:exported="true"
-            android:screenOrientation="portrait"  />
+            android:screenOrientation="portrait" />
         <activity
             android:name=".ChooseModeDoingGood"
             android:exported="true"
-            android:screenOrientation="portrait"  />
+            android:screenOrientation="portrait" />
         <activity
             android:name=".LessonIntroDoingGood"
             android:exported="true"
-            android:screenOrientation="portrait"  />
+            android:screenOrientation="portrait" />
         <activity
             android:name=".Achievements7to9Obedience"
             android:exported="true"
@@ -56,35 +56,35 @@
         <activity
             android:name=".LessonObedience"
             android:exported="true"
-            android:screenOrientation="portrait"  />
+            android:screenOrientation="portrait" />
         <activity
             android:name=".ChooseModeObedience"
             android:exported="true"
-            android:screenOrientation="portrait"  />
+            android:screenOrientation="portrait" />
         <activity
             android:name=".LessonIntroObedience"
             android:exported="true"
-            android:screenOrientation="portrait"  />
+            android:screenOrientation="portrait" />
         <activity
             android:name=".Achievements7to9Love"
             android:exported="true"
-            android:screenOrientation="portrait"  />
+            android:screenOrientation="portrait" />
         <activity
             android:name=".LoveLessonCongrats"
             android:exported="true"
-            android:screenOrientation="portrait"  />
+            android:screenOrientation="portrait" />
         <activity
             android:name=".LessonLove"
             android:exported="true"
-            android:screenOrientation="portrait"  />
+            android:screenOrientation="portrait" />
         <activity
             android:name=".ChooseModeLove"
             android:exported="true"
-            android:screenOrientation="portrait"  />
+            android:screenOrientation="portrait" />
         <activity
             android:name=".LessonIntroLove"
             android:exported="true"
-            android:screenOrientation="portrait"  />
+            android:screenOrientation="portrait" />
         <activity
             android:name=".Achievements7to9Main"
             android:exported="true"
@@ -96,11 +96,11 @@
         <activity
             android:name=".ResponsibilityLessonCongrats"
             android:exported="true"
-            android:screenOrientation="portrait"  />
+            android:screenOrientation="portrait" />
         <activity
             android:name=".LessonResponsibility"
             android:exported="true"
-            android:screenOrientation="portrait"  />
+            android:screenOrientation="portrait" />
         <activity
             android:name=".ChooseModeResponsibility"
             android:exported="true"
@@ -108,7 +108,7 @@
         <activity
             android:name=".LessonIntroResponsibility"
             android:exported="true"
-            android:screenOrientation="portrait"  />
+            android:screenOrientation="portrait" />
         <activity
             android:name=".Gmrc7to9"
             android:exported="true"
@@ -116,7 +116,7 @@
         <activity
             android:name=".Achievements3to6Compassion"
             android:exported="true"
-            android:screenOrientation="portrait"  />
+            android:screenOrientation="portrait" />
         <activity
             android:name=".CompassionLessonCongrats"
             android:exported="true"
@@ -124,11 +124,11 @@
         <activity
             android:name=".LessonCompassion"
             android:exported="true"
-            android:screenOrientation="portrait"  />
+            android:screenOrientation="portrait" />
         <activity
             android:name=".ChooseModeCompassion"
             android:exported="true"
-            android:screenOrientation="portrait"  />
+            android:screenOrientation="portrait" />
         <activity
             android:name=".LessonIntroCompassion"
             android:exported="true"
@@ -136,27 +136,27 @@
         <activity
             android:name=".Achievements3to6Sociability"
             android:exported="true"
-            android:screenOrientation="portrait"  />
+            android:screenOrientation="portrait" />
         <activity
             android:name=".SociabilityLessonCongrats"
             android:exported="true"
-            android:screenOrientation="portrait"  />
+            android:screenOrientation="portrait" />
         <activity
             android:name=".LessonSociability"
             android:exported="true"
-            android:screenOrientation="portrait"  />
+            android:screenOrientation="portrait" />
         <activity
             android:name=".ChooseModeSociability"
             android:exported="true"
-            android:screenOrientation="portrait"  />
+            android:screenOrientation="portrait" />
         <activity
             android:name=".LessonIntroSociability"
             android:exported="true"
-            android:screenOrientation="portrait"  />
+            android:screenOrientation="portrait" />
         <activity
             android:name=".Achievements3to6Sociability2"
             android:exported="true"
-            android:screenOrientation="portrait"  />
+            android:screenOrientation="portrait" />
         <activity
             android:name=".Achievements3to6Compassion2"
             android:exported="true"
@@ -168,11 +168,11 @@
         <activity
             android:name=".Achievements3to6Respect2"
             android:exported="true"
-            android:screenOrientation="portrait"  />
+            android:screenOrientation="portrait" />
         <activity
             android:name=".Achievements3to6Discipline2"
             android:exported="true"
-            android:screenOrientation="portrait"  />
+            android:screenOrientation="portrait" />
         <activity
             android:name=".Achievements7to9Responsibility2"
             android:exported="true"
@@ -180,11 +180,11 @@
         <activity
             android:name=".Achievements7to9Obedience2"
             android:exported="true"
-            android:screenOrientation="portrait"  />
+            android:screenOrientation="portrait" />
         <activity
             android:name=".Achievements7to9DoingGood2"
             android:exported="true"
-            android:screenOrientation="portrait"  />
+            android:screenOrientation="portrait" />
         <activity
             android:name=".Achievements7to9Love2"
             android:exported="true"
@@ -192,75 +192,75 @@
         <activity
             android:name=".Achievements3to6Respect"
             android:exported="true"
-            android:screenOrientation="portrait"  />
+            android:screenOrientation="portrait" />
         <activity
             android:name=".RespectLessonCongrats"
             android:exported="true"
-            android:screenOrientation="portrait"  />
+            android:screenOrientation="portrait" />
         <activity
             android:name=".LessonIntroRespect"
             android:exported="true"
-            android:screenOrientation="portrait"  />
+            android:screenOrientation="portrait" />
         <activity
             android:name=".ChooseModeRespect"
             android:exported="true"
-            android:screenOrientation="portrait"  />
+            android:screenOrientation="portrait" />
         <activity
             android:name=".LessonRespect"
             android:exported="true"
-            android:screenOrientation="portrait"  />
+            android:screenOrientation="portrait" />
         <activity
             android:name=".Achievements3to6Discipline"
             android:exported="true"
-            android:screenOrientation="portrait"  />
+            android:screenOrientation="portrait" />
         <activity
             android:name=".DisciplineLessonCongrats"
             android:exported="true"
-            android:screenOrientation="portrait"  />
+            android:screenOrientation="portrait" />
         <activity
             android:name=".Achievements3to6Honesty"
             android:exported="true"
-            android:screenOrientation="portrait"  />
+            android:screenOrientation="portrait" />
         <activity
             android:name=".HonestyLessonCongrats"
             android:exported="true"
-            android:screenOrientation="portrait"  />
+            android:screenOrientation="portrait" />
         <activity
             android:name=".LessonDiscipline"
             android:exported="true"
-            android:screenOrientation="portrait"  />
+            android:screenOrientation="portrait" />
         <activity
             android:name=".LessonHonesty"
             android:exported="true"
-            android:screenOrientation="portrait"  />
+            android:screenOrientation="portrait" />
         <activity
             android:name=".ChooseModeDiscipline"
             android:exported="true"
-            android:screenOrientation="portrait"  />
+            android:screenOrientation="portrait" />
         <activity
             android:name=".ChooseModeHonesty"
             android:exported="true"
-            android:screenOrientation="portrait"  />
+            android:screenOrientation="portrait" />
         <activity
             android:name=".LessonIntroHonesty"
             android:exported="true"
-            android:screenOrientation="portrait"  />
+            android:screenOrientation="portrait" />
         <activity
             android:name=".LessonIntroDiscipline"
             android:exported="true"
-            android:screenOrientation="portrait"  />
+            android:screenOrientation="portrait" />
         <activity
             android:name=".Gmrc3to6"
             android:exported="true"
-            android:screenOrientation="portrait"  />
+            android:screenOrientation="portrait" />
         <activity
             android:name=".Achievements3to6Subtraction2"
             android:exported="true"
-            android:screenOrientation="portrait"  />
+            android:screenOrientation="portrait" />
         <activity
             android:name=".Achievements3to6Shapes2"
             android:exported="true"
-            android:screenOrientation="portrait"  />
+            android:screenOrientation="portrait" />
         <activity
             android:name=".Achievements3to6Counting2"
             android:exported="true"
@@ -272,7 +272,7 @@
         <activity
             android:name=".Achievements3to6Addition2"
             android:exported="true"
-            android:screenOrientation="portrait"  />
+            android:screenOrientation="portrait" />
         <activity
             android:name=".LessonIntroSubtraction"
             android:exported="true"
@@ -284,7 +284,7 @@
         <activity
             android:name=".SubtractionLessonCongrats"
             android:exported="true"
-            android:screenOrientation="portrait"  />
+            android:screenOrientation="portrait" />
         <activity
             android:name=".ChooseModeSubtraction"
             android:exported="true"
@@ -292,7 +292,7 @@
         <activity
             android:name=".LessonSubtraction"
             android:exported="true"
-            android:screenOrientation="portrait"  />
+            android:screenOrientation="portrait" />
         <activity
             android:name=".Achievements3to6Addition"
             android:exported="true"
@@ -308,7 +308,7 @@
         <activity
             android:name=".LessonIntroAddition"
             android:exported="true"
-            android:screenOrientation="portrait"  />
+            android:screenOrientation="portrait" />
         <activity
             android:name=".ChooseModeAddition"
             android:exported="true"
@@ -328,7 +328,7 @@
         <activity
             android:name=".Achievements3to6Shapes"
             android:exported="true"
-            android:screenOrientation="portrait"  />
+            android:screenOrientation="portrait" />
         <activity
             android:name=".Achievements3to6Colors"
             android:exported="true"
@@ -352,7 +352,7 @@
         <activity
             android:name=".ChooseModeCounting"
             android:exported="true"
-            android:screenOrientation="portrait"  />
+            android:screenOrientation="portrait" />
         <activity
             android:name=".LessonIntroCounting"
             android:exported="true"
@@ -360,7 +360,7 @@
         <activity
             android:name=".Numbers"
             android:exported="true"
-            android:screenOrientation="portrait"  />
+            android:screenOrientation="portrait" />
         <activity
             android:name=".ShapesLessonCongrats"
             android:exported="true"
@@ -368,7 +368,7 @@
         <activity
             android:name=".ChooseModeShapes"
             android:exported="true"
-            android:screenOrientation="portrait"  />
+            android:screenOrientation="portrait" />
         <activity
             android:name=".LessonShapes"
             android:exported="true"
@@ -376,27 +376,27 @@
         <activity
             android:name=".LessonIntroShapes"
             android:exported="true"
-            android:screenOrientation="portrait"  />
+            android:screenOrientation="portrait" />
         <activity
             android:name=".BasicConcepts"
             android:exported="true"
-            android:screenOrientation="portrait"  />
+            android:screenOrientation="portrait" />
         <activity
             android:name=".LogoutConfirmation79"
             android:exported="true"
-            android:screenOrientation="portrait"  />
+            android:screenOrientation="portrait" />
         <activity
             android:name=".EditProfile79"
             android:exported="true"
-            android:screenOrientation="portrait"  />
+            android:screenOrientation="portrait" />
         <activity
             android:name=".UserProfile79"
             android:exported="true"
-            android:screenOrientation="portrait"  />
+            android:screenOrientation="portrait" />
         <activity
             android:name=".LogoutConfirmation36"
             android:exported="true"
-            android:screenOrientation="portrait"  />
+            android:screenOrientation="portrait" />
         <activity
             android:name=".EditProfile36"
             android:exported="true"
@@ -416,11 +416,11 @@
         <activity
             android:name=".Achievements3to6Main"
             android:exported="true"
-            android:screenOrientation="portrait"  />
+            android:screenOrientation="portrait" />
         <activity
             android:name=".ForgotPassword"
             android:exported="true"
-            android:screenOrientation="portrait"  />
+            android:screenOrientation="portrait" />
         <activity
             android:name=".AgeCategorySelection"
             android:exported="true"
@@ -428,15 +428,15 @@
         <activity
             android:name=".SuccessfulLogin"
             android:exported="true"
-            android:screenOrientation="portrait"  />
+            android:screenOrientation="portrait" />
         <activity
             android:name=".SignUpOrLogInPage"
             android:exported="true"
-            android:screenOrientation="portrait"  />
+            android:screenOrientation="portrait" />
         <activity
             android:name=".SplashScreen"
             android:exported="true"
-            android:screenOrientation="portrait" >
+            android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -454,7 +454,7 @@
         <activity
             android:name=".Login"
             android:exported="true"
-            android:screenOrientation="portrait"  />
+            android:screenOrientation="portrait" />
         <activity
             android:name=".QuizShapes"
             android:exported="true"
@@ -470,7 +470,7 @@
         <activity
             android:name=".ResultsColors"
             android:exported="true"
-            android:screenOrientation="portrait"  />
+            android:screenOrientation="portrait" />
         <activity
             android:name=".QuizCountingNumbers"
             android:exported="true"
@@ -478,7 +478,7 @@
         <activity
             android:name=".ResultsCountingNumbers"
             android:exported="true"
-            android:screenOrientation="portrait"  />
+            android:screenOrientation="portrait" />
         <activity
             android:name=".QuizAddition"
             android:exported="true"
@@ -494,7 +494,7 @@
         <activity
             android:name=".ResultsSubtraction"
             android:exported="true"
-            android:screenOrientation="portrait"  />
+            android:screenOrientation="portrait" />
         <activity
             android:name=".QuizDiscipline"
             android:exported="true"
@@ -502,7 +502,7 @@
         <activity
             android:name=".ResultsDiscipline"
             android:exported="true"
-            android:screenOrientation="portrait"  />
+            android:screenOrientation="portrait" />
         <activity
             android:name=".QuizHonesty"
             android:exported="true"
@@ -510,7 +510,7 @@
         <activity
             android:name=".ResultsHonesty"
             android:exported="true"
-            android:screenOrientation="portrait"  />
+            android:screenOrientation="portrait" />
         <activity
             android:name=".QuizRespect"
             android:exported="true"
@@ -518,11 +518,11 @@
         <activity
             android:name=".ResultsRespect"
             android:exported="true"
-            android:screenOrientation="portrait"  />
+            android:screenOrientation="portrait" />
         <activity
             android:name=".QuizSociability"
             android:exported="true"
-            android:screenOrientation="portrait"  />
+            android:screenOrientation="portrait" />
         <activity
             android:name=".ResultsSociability"
             android:exported="true"
@@ -530,7 +530,7 @@
         <activity
             android:name=".QuizCompassion"
             android:exported="true"
-            android:screenOrientation="portrait"  />
+            android:screenOrientation="portrait" />
         <activity
             android:name=".ResultsCompassion"
             android:exported="true"
@@ -538,15 +538,15 @@
         <activity
             android:name=".QuizResponsibility"
             android:exported="true"
-            android:screenOrientation="portrait"  />
+            android:screenOrientation="portrait" />
         <activity
             android:name=".ResultsResponsibility"
             android:exported="true"
-            android:screenOrientation="portrait"  />
+            android:screenOrientation="portrait" />
         <activity
             android:name=".QuizObedience"
             android:exported="true"
-            android:screenOrientation="portrait"  />
+            android:screenOrientation="portrait" />
         <activity
             android:name=".ResultsObedience"
             android:exported="true"
@@ -562,7 +562,7 @@
         <activity
             android:name=".QuizLove"
             android:exported="true"
-            android:screenOrientation="portrait"  />
+            android:screenOrientation="portrait" />
         <activity
             android:name=".ResultsLove"
             android:exported="true"

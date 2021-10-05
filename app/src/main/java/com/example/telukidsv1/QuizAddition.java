@@ -1,6 +1,7 @@
 package com.example.telukidsv1;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.constraintlayout.widget.ConstraintLayout;
 
 import android.content.Intent;
 import android.media.MediaPlayer;
@@ -23,6 +24,7 @@ public class QuizAddition extends AppCompatActivity {
     private TextView prompt_Addition;
     private ImageView imgQuestion_Addition;
     private LinearLayout quizLayout_Addition;
+    private ConstraintLayout background_Addition;
 
     MediaPlayer voiceover;
     MediaPlayer choice1;
@@ -62,6 +64,7 @@ public class QuizAddition extends AppCompatActivity {
 
         BackgroundSoundService.onPause();
 
+        background_Addition = (ConstraintLayout) findViewById(R.id.background_Addition);
         quizLayout_Addition = (LinearLayout)findViewById(R.id.quizLayout_Addition);
         imgQuestion_Addition =  (ImageView)findViewById(R.id.imgQuestion_Addition);
         countLabel_Addition = (TextView)findViewById(R.id.countLabel_Addition);
@@ -85,9 +88,11 @@ public class QuizAddition extends AppCompatActivity {
             //Add tmpArray to quizArray
             quizArray_Addition.add(tmpArray);
         }
-        showNextQuiz();
+        assessmenttitle();
     }
     public void showNextQuiz(){
+        quizLayout_Addition.setVisibility(View.VISIBLE);
+
         btnAnswer1_Addition.setBackgroundResource(R.drawable.answerbutton);
         btnAnswer2_Addition.setBackgroundResource(R.drawable.answerbutton);
         btnAnswer1_Addition.setEnabled(true);
@@ -300,5 +305,17 @@ public class QuizAddition extends AppCompatActivity {
 
         });
 
+    }
+
+    public void assessmenttitle(){
+        background_Addition.setBackgroundResource(R.drawable.additiontitle);
+        Handler handler = new Handler();
+        handler.postDelayed(new Runnable() {
+            @Override
+            public void run() {
+                background_Addition.setBackgroundResource(R.drawable.bgassessment);
+                showNextQuiz();
+            }
+        },2000);
     }
 }

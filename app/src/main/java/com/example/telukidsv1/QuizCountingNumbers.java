@@ -1,6 +1,7 @@
 package com.example.telukidsv1;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.constraintlayout.widget.ConstraintLayout;
 
 import android.content.Intent;
 import android.media.MediaPlayer;
@@ -23,6 +24,7 @@ public class QuizCountingNumbers extends AppCompatActivity {
     private TextView prompt_Counting;
     private ImageView imgQuestion_Counting;
     private LinearLayout quizLayout_Counting;
+    private ConstraintLayout background_Count;
 
     MediaPlayer voiceover;
     MediaPlayer choice1;
@@ -61,7 +63,7 @@ public class QuizCountingNumbers extends AppCompatActivity {
 
         BackgroundSoundService.onPause();
 
-
+        background_Count = (ConstraintLayout)findViewById(R.id.background_Count);
         quizLayout_Counting = (LinearLayout)findViewById(R.id.quizLayout_Counting);
         imgQuestion_Counting =  (ImageView)findViewById(R.id.imgQuestion_Counting);
         countLabel_Counting = (TextView)findViewById(R.id.countLabel_Counting);
@@ -85,9 +87,12 @@ public class QuizCountingNumbers extends AppCompatActivity {
             //Add tmpArray to quizArray
             quizArray_Counting.add(tmpArray);
         }
-        showNextQuiz();
+        assessmenttitle();
     }
     public void showNextQuiz(){
+
+        quizLayout_Counting.setVisibility(View.VISIBLE);
+
         btnAnswer1_Counting.setBackgroundResource(R.drawable.answerbutton);
         btnAnswer2_Counting.setBackgroundResource(R.drawable.answerbutton);
         btnAnswer1_Counting.setEnabled(true);
@@ -300,5 +305,17 @@ public class QuizCountingNumbers extends AppCompatActivity {
 
         });
 
+    }
+
+    public void assessmenttitle() {
+        background_Count.setBackgroundResource(R.drawable.counttitle);
+        Handler handler = new Handler();
+        handler.postDelayed(new Runnable() {
+            @Override
+            public void run() {
+                background_Count.setBackgroundResource(R.drawable.bgassessment);
+                showNextQuiz();
+            }
+        }, 2000);
     }
 }

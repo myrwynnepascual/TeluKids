@@ -18,7 +18,6 @@ public class LessonResponsibility extends AppCompatActivity {
     Uri uriRP79;
     ImageButton backbtnRP79,nextbtnRP79;
     MediaController mediaController;
-    MediaPlayer sfx = MediaPlayer.create(this, R.raw.btnsfx);
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -28,6 +27,8 @@ public class LessonResponsibility extends AppCompatActivity {
         videoViewRP79 = findViewById(R.id.videoRP79);
         backbtnRP79 = findViewById(R.id.btnbackRP79);
         nextbtnRP79 = findViewById(R.id.nextbtnRP79);
+
+        MediaPlayer sfx = MediaPlayer.create(this, R.raw.btnsfx);
 
         BackgroundSoundService.onPause();
 
@@ -43,6 +44,8 @@ public class LessonResponsibility extends AppCompatActivity {
         videoPathRP79 = "android.resource://" + getPackageName() + "/" + R.raw.responsibility1;
         uriRP79 = Uri.parse(videoPathRP79);
         videoViewRP79.setVideoURI(uriRP79);
+
+        MediaPlayer sfx = MediaPlayer.create(this, R.raw.btnsfx);
 
         videoViewRP79.start();
 
@@ -81,6 +84,8 @@ public class LessonResponsibility extends AppCompatActivity {
         uriRP79 = Uri.parse(videoPathRP79);
         videoViewRP79.setVideoURI(uriRP79);
 
+        MediaPlayer sfx = MediaPlayer.create(this, R.raw.btnsfx);
+
         videoViewRP79.start();
 
         videoViewRP79.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
@@ -117,6 +122,8 @@ public class LessonResponsibility extends AppCompatActivity {
         videoPathRP79 = "android.resource://" + getPackageName() + "/" + R.raw.responsibility3;
         uriRP79 = Uri.parse(videoPathRP79);
         videoViewRP79.setVideoURI(uriRP79);
+
+        MediaPlayer sfx = MediaPlayer.create(this, R.raw.btnsfx);
 
         videoViewRP79.start();
 
@@ -155,6 +162,8 @@ public class LessonResponsibility extends AppCompatActivity {
         uriRP79 = Uri.parse(videoPathRP79);
         videoViewRP79.setVideoURI(uriRP79);
 
+        MediaPlayer sfx = MediaPlayer.create(this, R.raw.btnsfx);
+
         videoViewRP79.start();
 
         videoViewRP79.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
@@ -191,6 +200,8 @@ public class LessonResponsibility extends AppCompatActivity {
         videoPathRP79 = "android.resource://" + getPackageName() + "/" + R.raw.responsibility5;
         uriRP79 = Uri.parse(videoPathRP79);
         videoViewRP79.setVideoURI(uriRP79);
+
+        MediaPlayer sfx = MediaPlayer.create(this, R.raw.btnsfx);
 
         videoViewRP79.start();
 
@@ -229,6 +240,8 @@ public class LessonResponsibility extends AppCompatActivity {
         uriRP79 = Uri.parse(videoPathRP79);
         videoViewRP79.setVideoURI(uriRP79);
 
+        MediaPlayer sfx = MediaPlayer.create(this, R.raw.btnsfx);
+
         videoViewRP79.start();
 
         videoViewRP79.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
@@ -266,6 +279,8 @@ public class LessonResponsibility extends AppCompatActivity {
         uriRP79 = Uri.parse(videoPathRP79);
         videoViewRP79.setVideoURI(uriRP79);
 
+        MediaPlayer sfx = MediaPlayer.create(this, R.raw.btnsfx);
+
         videoViewRP79.start();
 
         videoViewRP79.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
@@ -302,6 +317,8 @@ public class LessonResponsibility extends AppCompatActivity {
         videoPathRP79 = "android.resource://" + getPackageName() + "/" + R.raw.responsibility8;
         uriRP79 = Uri.parse(videoPathRP79);
         videoViewRP79.setVideoURI(uriRP79);
+
+        MediaPlayer sfx = MediaPlayer.create(this, R.raw.btnsfx);
 
         videoViewRP79.start();
 

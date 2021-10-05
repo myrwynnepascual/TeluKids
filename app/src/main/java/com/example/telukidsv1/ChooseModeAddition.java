@@ -47,7 +47,7 @@ public class ChooseModeAddition extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 sfx.start();
-                startActivity(new Intent(ChooseModeAddition.this,QuizAddition.class));
+                startActivity(new Intent(ChooseModeAddition.this, QuizAddition.class));
             }
         });
 

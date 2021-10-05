@@ -1,6 +1,7 @@
 package com.example.telukidsv1;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.constraintlayout.widget.ConstraintLayout;
 
 import android.content.Intent;
 import android.media.MediaPlayer;
@@ -23,6 +24,7 @@ public class QuizSubtraction extends AppCompatActivity {
     private TextView prompt_Subtraction;
     private ImageView imgQuestion_Subtraction;
     private LinearLayout quizLayout_Subtraction;
+    private ConstraintLayout background_Subtraction;
 
     MediaPlayer voiceover;
     MediaPlayer choice1;
@@ -61,7 +63,7 @@ public class QuizSubtraction extends AppCompatActivity {
 
         BackgroundSoundService.onPause();
 
-
+        background_Subtraction = (ConstraintLayout)findViewById(R.id.background_Subtraction);
         quizLayout_Subtraction = (LinearLayout)findViewById(R.id.quizLayout_Subtraction);
         imgQuestion_Subtraction =  (ImageView)findViewById(R.id.imgQuestion_Subtraction);
         countLabel_Subtraction = (TextView)findViewById(R.id.countLabel_Subtraction);
@@ -85,9 +87,12 @@ public class QuizSubtraction extends AppCompatActivity {
             //Add tmpArray to quizArray
             quizArray_Subtraction.add(tmpArray);
         }
-        showNextQuiz();
+        assessmenttitle();
     }
     public void showNextQuiz(){
+
+        quizLayout_Subtraction.setVisibility(View.VISIBLE);
+
         btnAnswer1_Subtraction.setBackgroundResource(R.drawable.answerbutton);
         btnAnswer2_Subtraction.setBackgroundResource(R.drawable.answerbutton);
         btnAnswer1_Subtraction.setEnabled(true);
@@ -300,5 +305,17 @@ public class QuizSubtraction extends AppCompatActivity {
 
         });
 
+    }
+
+    public void assessmenttitle() {
+        background_Subtraction.setBackgroundResource(R.drawable.subtractiontitle);
+        Handler handler = new Handler();
+        handler.postDelayed(new Runnable() {
+            @Override
+            public void run() {
+                background_Subtraction.setBackgroundResource(R.drawable.bgassessment);
+                showNextQuiz();
+            }
+        }, 2000);
     }
 }

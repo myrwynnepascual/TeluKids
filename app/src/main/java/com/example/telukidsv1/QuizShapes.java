@@ -1,6 +1,7 @@
 package com.example.telukidsv1;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.constraintlayout.widget.ConstraintLayout;
 
 import android.content.Intent;
 import android.media.MediaPlayer;
@@ -23,6 +24,7 @@ public class QuizShapes extends AppCompatActivity {
     private TextView prompt_Shapes;
     private ImageView imgQuestion_Shapes;
     private LinearLayout quizLayout_Shapes;
+    private ConstraintLayout background_Shapes;
 
     MediaPlayer voiceover;
     MediaPlayer choice1;
@@ -61,7 +63,7 @@ public class QuizShapes extends AppCompatActivity {
 
         BackgroundSoundService.onPause();
 
-
+        background_Shapes = (ConstraintLayout)findViewById(R.id.background_Shapes);
         quizLayout_Shapes = (LinearLayout)findViewById(R.id.quizLayout_Shapes);
         imgQuestion_Shapes =  (ImageView)findViewById(R.id.imgQuestion_Shapes);
         countLabel_Shapes = (TextView)findViewById(R.id.countLabel_Shapes);
@@ -85,9 +87,12 @@ public class QuizShapes extends AppCompatActivity {
             //Add tmpArray to quizArray
             quizArray_Shapes.add(tmpArray);
         }
-        showNextQuiz();
+        assessmenttitle();
     }
     public void showNextQuiz(){
+
+        quizLayout_Shapes.setVisibility(View.VISIBLE);
+
         btnAnswer1_Shapes.setBackgroundResource(R.drawable.answerbutton);
         btnAnswer2_Shapes.setBackgroundResource(R.drawable.answerbutton);
         btnAnswer1_Shapes.setEnabled(true);
@@ -300,5 +305,17 @@ public class QuizShapes extends AppCompatActivity {
 
         });
 
+    }
+
+    public void assessmenttitle() {
+        background_Shapes.setBackgroundResource(R.drawable.shapestitle);
+        Handler handler = new Handler();
+        handler.postDelayed(new Runnable() {
+            @Override
+            public void run() {
+                background_Shapes.setBackgroundResource(R.drawable.bgassessment);
+                showNextQuiz();
+            }
+        }, 2000);
     }
 }

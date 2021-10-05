@@ -1,6 +1,7 @@
 package com.example.telukidsv1;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.constraintlayout.widget.ConstraintLayout;
 
 import android.content.Intent;
 import android.media.MediaPlayer;
@@ -23,6 +24,7 @@ public class QuizColors extends AppCompatActivity {
     private TextView prompt_Colors;
     private ImageView imgQuestion_Colors;
     private LinearLayout quizLayout_Colors;
+    private ConstraintLayout background_Colors;
 
     MediaPlayer voiceover;
     MediaPlayer choice1;
@@ -62,6 +64,7 @@ public class QuizColors extends AppCompatActivity {
 
         BackgroundSoundService.onPause();
 
+        background_Colors = (ConstraintLayout)findViewById(R.id.background_Colors);
         quizLayout_Colors = (LinearLayout)findViewById(R.id.quizLayout_Colors);
         imgQuestion_Colors =  (ImageView)findViewById(R.id.imgQuestion_Colors);
         countLabel_Colors = (TextView)findViewById(R.id.countLabel_Colors);
@@ -85,9 +88,12 @@ public class QuizColors extends AppCompatActivity {
             //Add tmpArray to quizArray
             quizArray_Colors.add(tmpArray);
         }
-        showNextQuiz();
+        assessmenttitle();
     }
     public void showNextQuiz(){
+
+        quizLayout_Colors.setVisibility(View.VISIBLE);
+
         btnAnswer1_Colors.setBackgroundResource(R.drawable.answerbutton);
         btnAnswer2_Colors.setBackgroundResource(R.drawable.answerbutton);
         btnAnswer1_Colors.setEnabled(true);
@@ -300,5 +306,17 @@ public class QuizColors extends AppCompatActivity {
 
         });
 
+    }
+
+    public void assessmenttitle() {
+        background_Colors.setBackgroundResource(R.drawable.colortitle);
+        Handler handler = new Handler();
+        handler.postDelayed(new Runnable() {
+            @Override
+            public void run() {
+                background_Colors.setBackgroundResource(R.drawable.bgassessment);
+                showNextQuiz();
+            }
+        }, 2000);
     }
 }
