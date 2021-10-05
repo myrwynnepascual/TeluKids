@@ -1,6 +1,5 @@
 package com.example.telukidsv1;
 
-import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
@@ -13,14 +12,6 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
-
-import com.google.firebase.auth.FirebaseAuth;
-import com.google.firebase.auth.FirebaseUser;
-import com.google.firebase.firestore.DocumentReference;
-import com.google.firebase.firestore.DocumentSnapshot;
-import com.google.firebase.firestore.FirebaseFirestore;
-import com.google.firebase.firestore.FirebaseFirestoreException;
-import com.google.firebase.firestore.Transaction;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -45,7 +36,7 @@ public class QuizCountingNumbers extends AppCompatActivity {
     private String wrongAnswer_Counting;
     private int rightAnswerCount_Counting = 0;
     private int quizCount_Counting = 1;
-    static final private int QUIZ_COUNT = 5;
+    static final private int QUIZ_COUNT = 6;
     private int confirmClicked_Counting = 0;
 
 
@@ -97,6 +88,12 @@ public class QuizCountingNumbers extends AppCompatActivity {
         showNextQuiz();
     }
     public void showNextQuiz(){
+        btnAnswer1_Counting.setBackgroundResource(R.drawable.answerbutton);
+        btnAnswer2_Counting.setBackgroundResource(R.drawable.answerbutton);
+        btnAnswer1_Counting.setEnabled(true);
+        btnAnswer2_Counting.setEnabled(true);
+        btnConfirm_Counting.setEnabled(true);
+
         //Update quizCountLabel
         countLabel_Counting.setText("Question #" + quizCount_Counting);
         confirmClicked_Counting = 0;
@@ -150,17 +147,15 @@ public class QuizCountingNumbers extends AppCompatActivity {
             btnAnswer1_Counting.setBackgroundResource(R.drawable.answerbutton);
         }
 
-        //Play Choice 1 Voice Over
+
         if (answerBtn.getText().equals(rightAnswer_Counting)){
             voiceover.release();
             choice1.start();
         }
-        //Play Choice 2 Voice Over
         else if (answerBtn.getText().equals(wrongAnswer_Counting) && answerBtn != btnConfirm_Counting){
             voiceover.release();
             choice2.start();
         }
-        //Check if user selected an answer
         else if (!btnText.equals(rightAnswer_Counting) && !btnText.equals(wrongAnswer_Counting)){
             prompt_Counting.setText("Please select an answer");
 
@@ -168,7 +163,6 @@ public class QuizCountingNumbers extends AppCompatActivity {
             handler.postDelayed(new Runnable() {
                 @Override
                 public void run() {
-
                     prompt_Counting.setText("");
                 }
             },3000);
@@ -198,8 +192,29 @@ public class QuizCountingNumbers extends AppCompatActivity {
                     btnAnswer1_Counting.setEnabled(false);
                     btnAnswer2_Counting.setEnabled(false);
                     confirmClicked_Counting++;
+                    quizCount_Counting++;
+                    if (quizCount_Counting == QUIZ_COUNT && confirmClicked_Counting != 0){
+                        //Show Result
+                        new Handler().postDelayed(new Runnable() {
+                            @Override
+                            public void run() {
+                                Intent intent = new Intent(getApplicationContext(), ResultsCountingNumbers.class);
+                                intent.putExtra("RIGHT_ANSWER_COUNT_Counting", rightAnswerCount_Counting);
+                                startActivity(intent);
+                            }
+                        }, 2000);
+                    }
+                    else {
+                        new Handler().postDelayed(new Runnable() {
+                            @Override
+                            public void run() {
+
+                                showNextQuiz();
+                            }
+                        }, 2000);
+                    }
                 }
-                if (btnText.equals(wrongAnswer_Counting)) {
+                else if (btnText.equals(wrongAnswer_Counting)) {
                     //Wrong
                     voiceover.release();
                     choice1.release();
@@ -210,7 +225,6 @@ public class QuizCountingNumbers extends AppCompatActivity {
                     wrong_sound.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
                         @Override
                         public void onCompletion(MediaPlayer mediaPlayer) {
-
                             wrong_sound.release();
                         }
                     });
@@ -218,6 +232,26 @@ public class QuizCountingNumbers extends AppCompatActivity {
                     btnAnswer1_Counting.setEnabled(false);
                     btnAnswer2_Counting.setEnabled(false);
                     confirmClicked_Counting++;
+                    quizCount_Counting++;
+                    if (quizCount_Counting == QUIZ_COUNT && confirmClicked_Counting != 0){
+                        //Show Result
+                        new Handler().postDelayed(new Runnable() {
+                            @Override
+                            public void run() {
+                                Intent intent = new Intent(getApplicationContext(), ResultsCountingNumbers.class);
+                                intent.putExtra("RIGHT_ANSWER_COUNT_Counting", rightAnswerCount_Counting);
+                                startActivity(intent);
+                            }
+                        }, 2000);
+                    }
+                    else {
+                        new Handler().postDelayed(new Runnable() {
+                            @Override
+                            public void run() {
+                                showNextQuiz();
+                            }
+                        }, 2000);
+                    }
                 }
                 else if (!btnText.equals(rightAnswer_Counting) && !btnText.equals(wrongAnswer_Counting)){
                     prompt_Counting.setText("Please select an answer");
@@ -226,7 +260,6 @@ public class QuizCountingNumbers extends AppCompatActivity {
                     handler.postDelayed(new Runnable() {
                         @Override
                         public void run() {
-
                             prompt_Counting.setText("");
                         }
                     },3000);
@@ -237,21 +270,15 @@ public class QuizCountingNumbers extends AppCompatActivity {
         quizLayout_Counting.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if (quizCount_Counting == QUIZ_COUNT && confirmClicked_Counting != 0){
-                    //Show Result
-                    Intent intent = new Intent(getApplicationContext(), ResultsCountingNumbers.class);
-                    intent.putExtra("RIGHT_ANSWER_COUNT_Counting", rightAnswerCount_Counting);
-                    startActivity(intent);
-                }
-                else if (!btnText.equals(btnAnswer1_Counting.getText().toString()) && !btnText.equals(btnAnswer2_Counting.getText().toString())){
+                if (!btnText.equals(btnAnswer1_Counting.getText().toString()) && !btnText.equals(btnAnswer2_Counting.getText().toString())){
                     //Check if user selected an answer
+                    //Toast.makeText(getApplicationContext(),"Please Select an Answer",Toast.LENGTH_LONG).show();
                     prompt_Counting.setText("Please select an answer");
 
                     Handler handler = new Handler();
                     handler.postDelayed(new Runnable() {
                         @Override
                         public void run() {
-
                             prompt_Counting.setText("");
                         }
                     },3000);
@@ -265,26 +292,13 @@ public class QuizCountingNumbers extends AppCompatActivity {
                     handler.postDelayed(new Runnable() {
                         @Override
                         public void run() {
-
                             prompt_Counting.setText("");
                         }
                     },3000);
                 }
-                else{
-                    quizCount_Counting++;
-                    btnAnswer1_Counting.setBackgroundResource(R.drawable.answerbutton);
-                    btnAnswer2_Counting.setBackgroundResource(R.drawable.answerbutton);
-                    btnAnswer1_Counting.setEnabled(true);
-                    btnAnswer2_Counting.setEnabled(true);
-                    btnConfirm_Counting.setEnabled(true);
-                    voiceover.release();
-                    choice1.release();
-                    choice2.release();
-                    correct_sound.release();
-                    wrong_sound.release();
-                    showNextQuiz();
-                }
             }
+
         });
+
     }
 }

@@ -50,7 +50,7 @@ public class QuizLove extends AppCompatActivity {
     private String wrongAnswer_Love;
     private int rightAnswerCount_Love = 0;
     private int quizCount_Love = 1;
-    static final private int QUIZ_COUNT = 5;
+    static final private int QUIZ_COUNT = 6;
     private int confirmClicked_Love = 0;
 
 
@@ -64,6 +64,7 @@ public class QuizLove extends AppCompatActivity {
             {"What should Marga do?", String.valueOf(R.drawable.l4bg1), String.valueOf(R.raw.lq4_1), String.valueOf(R.drawable.l4bg2), String.valueOf(R.raw.lq4_2), "Help her teacher", "Ignore her teacher", String.valueOf(R.raw.lq4c1), String.valueOf(R.raw.lq4c2) },
             {"How can Joey show generosity?", String.valueOf(R.drawable.c3bg1), String.valueOf(R.raw.lq5_1), String.valueOf(R.drawable.c3bg2), String.valueOf(R.raw.lq5_2), "Give 1 apple to his seatmate", "Ignore his seatmate and let her starve", String.valueOf(R.raw.lq5c1), String.valueOf(R.raw.lq5c2) }
     };
+
 
 
 
@@ -122,6 +123,11 @@ public class QuizLove extends AppCompatActivity {
         btnAnswer1_Love.setVisibility(View.INVISIBLE);
         btnAnswer2_Love.setVisibility(View.INVISIBLE);
         btnConfirm_Love.setVisibility(View.INVISIBLE);
+        btnAnswer1_Love.setBackgroundResource(R.drawable.answerbutton);
+        btnAnswer2_Love.setBackgroundResource(R.drawable.answerbutton);
+        btnAnswer1_Love.setEnabled(true);
+        btnAnswer2_Love.setEnabled(true);
+        btnConfirm_Love.setEnabled(true);
 
         questionLabel_Love.setText(quiz.get(0));
         background_Love.setBackgroundResource(Integer.parseInt(quiz.get(1)));
@@ -231,6 +237,27 @@ public class QuizLove extends AppCompatActivity {
                     btnAnswer1_Love.setEnabled(false);
                     btnAnswer2_Love.setEnabled(false);
                     confirmClicked_Love++;
+                    quizCount_Love++;
+                    if (quizCount_Love == QUIZ_COUNT && confirmClicked_Love != 0){
+                        //Show Result
+                        new Handler().postDelayed(new Runnable() {
+                            @Override
+                            public void run() {
+                                Intent intent = new Intent(getApplicationContext(), ResultsLove.class);
+                                intent.putExtra("RIGHT_ANSWER_COUNT_Love", rightAnswerCount_Love);
+                                startActivity(intent);
+                            }
+                        }, 2000);
+                    }
+                    else {
+                        new Handler().postDelayed(new Runnable() {
+                            @Override
+                            public void run() {
+
+                                showNextQuiz();
+                            }
+                        }, 2000);
+                    }
                 }
                 if (btnText.equals(wrongAnswer_Love)) {
                     //Wrong
@@ -252,6 +279,27 @@ public class QuizLove extends AppCompatActivity {
                     btnAnswer1_Love.setEnabled(false);
                     btnAnswer2_Love.setEnabled(false);
                     confirmClicked_Love++;
+                    quizCount_Love++;
+                    if (quizCount_Love == QUIZ_COUNT && confirmClicked_Love != 0){
+                        //Show Result
+                        new Handler().postDelayed(new Runnable() {
+                            @Override
+                            public void run() {
+                                Intent intent = new Intent(getApplicationContext(), ResultsLove.class);
+                                intent.putExtra("RIGHT_ANSWER_COUNT_Love", rightAnswerCount_Love);
+                                startActivity(intent);
+                            }
+                        }, 2000);
+                    }
+                    else {
+                        new Handler().postDelayed(new Runnable() {
+                            @Override
+                            public void run() {
+
+                                showNextQuiz();
+                            }
+                        }, 2000);
+                    }
                 }
                 else if (!btnText.equals(rightAnswer_Love) && !btnText.equals(wrongAnswer_Love)){
                     prompt_Love.setText("Please select an answer");
@@ -270,13 +318,7 @@ public class QuizLove extends AppCompatActivity {
         background_Love.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if (quizCount_Love == QUIZ_COUNT && confirmClicked_Love != 0){
-                    //Show Result
-                    Intent intent = new Intent(getApplicationContext(), ResultsLove.class);
-                    intent.putExtra("RIGHT_ANSWER_COUNT_Love", rightAnswerCount_Love);
-                    startActivity(intent);
-                }
-                else if (!btnText.equals(btnAnswer1_Love.getText().toString()) && !btnText.equals(btnAnswer2_Love.getText().toString())){
+                if (!btnText.equals(btnAnswer1_Love.getText().toString()) && !btnText.equals(btnAnswer2_Love.getText().toString())){
                     //Check if user selected an answer
                     prompt_Love.setText("Please select an answer");
 
@@ -299,21 +341,6 @@ public class QuizLove extends AppCompatActivity {
                             prompt_Love.setText("");
                         }
                     },3000);
-                }
-                else{
-                    quizCount_Love++;
-                    btnAnswer1_Love.setBackgroundResource(R.drawable.answerbutton);
-                    btnAnswer2_Love.setBackgroundResource(R.drawable.answerbutton);
-                    btnAnswer1_Love.setEnabled(true);
-                    btnAnswer2_Love.setEnabled(true);
-                    btnConfirm_Love.setEnabled(true);
-                    voiceover1.release();
-                    voiceover2.release();
-                    choice1.release();
-                    choice2.release();
-                    correct_sound.release();
-                    wrong_sound.release();
-                    showNextQuiz();
                 }
             }
         });

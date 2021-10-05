@@ -16,6 +16,8 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.telukidsv1.R;
+import com.example.telukidsv1.ResultsCompassion;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.firestore.DocumentReference;
@@ -50,7 +52,7 @@ public class QuizCompassion extends AppCompatActivity {
     private String wrongAnswer_Compassion;
     private int rightAnswerCount_Compassion = 0;
     private int quizCount_Compassion = 1;
-    static final private int QUIZ_COUNT = 5;
+    static final private int QUIZ_COUNT = 6;
     private int confirmClicked_Compassion = 0;
 
 
@@ -64,6 +66,7 @@ public class QuizCompassion extends AppCompatActivity {
             {"What should be Marga's answer?", String.valueOf(R.drawable.c4bg1), String.valueOf(R.raw.cq4_1), String.valueOf(R.drawable.c4bg2), String.valueOf(R.raw.cq4_2), "It's okay I can share it with you", "This is mine, go ask your parents to buy you one", String.valueOf(R.raw.cq4c1), String.valueOf(R.raw.cq4c2) },
             {"What should Max do?", String.valueOf(R.drawable.c5bg1), String.valueOf(R.raw.cq5_1), String.valueOf(R.drawable.c5bg2), String.valueOf(R.raw.cq5_2), "Offer Joey to share his other crayons", "Stay silent and don't lend Joey his crayons", String.valueOf(R.raw.cq5c1), String.valueOf(R.raw.cq5c2) },
     };
+
 
 
     @Override
@@ -121,6 +124,11 @@ public class QuizCompassion extends AppCompatActivity {
         btnAnswer1_Compassion.setVisibility(View.INVISIBLE);
         btnAnswer2_Compassion.setVisibility(View.INVISIBLE);
         btnConfirm_Compassion.setVisibility(View.INVISIBLE);
+        btnAnswer1_Compassion.setBackgroundResource(R.drawable.answerbutton);
+        btnAnswer2_Compassion.setBackgroundResource(R.drawable.answerbutton);
+        btnAnswer1_Compassion.setEnabled(true);
+        btnAnswer2_Compassion.setEnabled(true);
+        btnConfirm_Compassion.setEnabled(true);
 
         questionLabel_Compassion.setText(quiz.get(0));
         background_Compassion.setBackgroundResource(Integer.parseInt(quiz.get(1)));
@@ -230,6 +238,27 @@ public class QuizCompassion extends AppCompatActivity {
                     btnAnswer1_Compassion.setEnabled(false);
                     btnAnswer2_Compassion.setEnabled(false);
                     confirmClicked_Compassion++;
+                    quizCount_Compassion++;
+                    if (quizCount_Compassion == QUIZ_COUNT && confirmClicked_Compassion != 0){
+                        //Show Result
+                        new Handler().postDelayed(new Runnable() {
+                            @Override
+                            public void run() {
+                                Intent intent = new Intent(getApplicationContext(), ResultsCompassion.class);
+                                intent.putExtra("RIGHT_ANSWER_COUNT_Compassion", rightAnswerCount_Compassion);
+                                startActivity(intent);
+                            }
+                        }, 2000);
+                    }
+                    else {
+                        new Handler().postDelayed(new Runnable() {
+                            @Override
+                            public void run() {
+
+                                showNextQuiz();
+                            }
+                        }, 2000);
+                    }
                 }
                 if (btnText.equals(wrongAnswer_Compassion)) {
                     //Wrong
@@ -251,6 +280,27 @@ public class QuizCompassion extends AppCompatActivity {
                     btnAnswer1_Compassion.setEnabled(false);
                     btnAnswer2_Compassion.setEnabled(false);
                     confirmClicked_Compassion++;
+                    quizCount_Compassion++;
+                    if (quizCount_Compassion == QUIZ_COUNT && confirmClicked_Compassion != 0){
+                        //Show Result
+                        new Handler().postDelayed(new Runnable() {
+                            @Override
+                            public void run() {
+                                Intent intent = new Intent(getApplicationContext(), ResultsCompassion.class);
+                                intent.putExtra("RIGHT_ANSWER_COUNT_Compassion", rightAnswerCount_Compassion);
+                                startActivity(intent);
+                            }
+                        }, 2000);
+                    }
+                    else {
+                        new Handler().postDelayed(new Runnable() {
+                            @Override
+                            public void run() {
+
+                                showNextQuiz();
+                            }
+                        }, 2000);
+                    }
                 }
                 else if (!btnText.equals(rightAnswer_Compassion) && !btnText.equals(wrongAnswer_Compassion)){
                     prompt_Compassion.setText("Please select an answer");
@@ -269,13 +319,7 @@ public class QuizCompassion extends AppCompatActivity {
         background_Compassion.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if (quizCount_Compassion == QUIZ_COUNT && confirmClicked_Compassion != 0){
-                    //Show Result
-                    Intent intent = new Intent(getApplicationContext(), ResultsCompassion.class);
-                    intent.putExtra("RIGHT_ANSWER_COUNT_Compassion", rightAnswerCount_Compassion);
-                    startActivity(intent);
-                }
-                else if (!btnText.equals(btnAnswer1_Compassion.getText().toString()) && !btnText.equals(btnAnswer2_Compassion.getText().toString())){
+                if (!btnText.equals(btnAnswer1_Compassion.getText().toString()) && !btnText.equals(btnAnswer2_Compassion.getText().toString())){
                     //Check if user selected an answer
                     prompt_Compassion.setText("Please select an answer");
 
@@ -298,21 +342,6 @@ public class QuizCompassion extends AppCompatActivity {
                             prompt_Compassion.setText("");
                         }
                     },3000);
-                }
-                else{
-                    quizCount_Compassion++;
-                    btnAnswer1_Compassion.setBackgroundResource(R.drawable.answerbutton);
-                    btnAnswer2_Compassion.setBackgroundResource(R.drawable.answerbutton);
-                    btnAnswer1_Compassion.setEnabled(true);
-                    btnAnswer2_Compassion.setEnabled(true);
-                    btnConfirm_Compassion.setEnabled(true);
-                    voiceover1.release();
-                    voiceover2.release();
-                    choice1.release();
-                    choice2.release();
-                    correct_sound.release();
-                    wrong_sound.release();
-                    showNextQuiz();
                 }
             }
         });

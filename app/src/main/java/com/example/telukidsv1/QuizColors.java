@@ -1,6 +1,5 @@
 package com.example.telukidsv1;
 
-import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
@@ -13,14 +12,6 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
-
-import com.google.firebase.auth.FirebaseAuth;
-import com.google.firebase.auth.FirebaseUser;
-import com.google.firebase.firestore.DocumentReference;
-import com.google.firebase.firestore.DocumentSnapshot;
-import com.google.firebase.firestore.FirebaseFirestore;
-import com.google.firebase.firestore.FirebaseFirestoreException;
-import com.google.firebase.firestore.Transaction;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -45,7 +36,7 @@ public class QuizColors extends AppCompatActivity {
     private String wrongAnswer_Colors;
     private int rightAnswerCount_Colors = 0;
     private int quizCount_Colors = 1;
-    static final private int QUIZ_COUNT = 5;
+    static final private int QUIZ_COUNT = 6;
     private int confirmClicked_Colors = 0;
 
 
@@ -60,6 +51,7 @@ public class QuizColors extends AppCompatActivity {
             {"What is the color of the cheese, bumblebee, and star lantern?", String.valueOf(R.drawable.colorsquestion5), String.valueOf(R.raw.clq5), "Yellow", "Green", String.valueOf(R.raw.clq5c1), String.valueOf(R.raw.clq5c2)}
 
     };
+
 
 
 
@@ -96,6 +88,12 @@ public class QuizColors extends AppCompatActivity {
         showNextQuiz();
     }
     public void showNextQuiz(){
+        btnAnswer1_Colors.setBackgroundResource(R.drawable.answerbutton);
+        btnAnswer2_Colors.setBackgroundResource(R.drawable.answerbutton);
+        btnAnswer1_Colors.setEnabled(true);
+        btnAnswer2_Colors.setEnabled(true);
+        btnConfirm_Colors.setEnabled(true);
+
         //Update quizCountLabel
         countLabel_Colors.setText("Question #" + quizCount_Colors);
         confirmClicked_Colors = 0;
@@ -149,17 +147,15 @@ public class QuizColors extends AppCompatActivity {
             btnAnswer1_Colors.setBackgroundResource(R.drawable.answerbutton);
         }
 
-        //Play Choice 1 Voice Over
+
         if (answerBtn.getText().equals(rightAnswer_Colors)){
             voiceover.release();
             choice1.start();
         }
-        //Play Choice 2 Voice Over
         else if (answerBtn.getText().equals(wrongAnswer_Colors) && answerBtn != btnConfirm_Colors){
             voiceover.release();
             choice2.start();
         }
-        //Check if user selected an answer
         else if (!btnText.equals(rightAnswer_Colors) && !btnText.equals(wrongAnswer_Colors)){
             prompt_Colors.setText("Please select an answer");
 
@@ -167,7 +163,6 @@ public class QuizColors extends AppCompatActivity {
             handler.postDelayed(new Runnable() {
                 @Override
                 public void run() {
-
                     prompt_Colors.setText("");
                 }
             },3000);
@@ -197,8 +192,29 @@ public class QuizColors extends AppCompatActivity {
                     btnAnswer1_Colors.setEnabled(false);
                     btnAnswer2_Colors.setEnabled(false);
                     confirmClicked_Colors++;
+                    quizCount_Colors++;
+                    if (quizCount_Colors == QUIZ_COUNT && confirmClicked_Colors != 0){
+                        //Show Result
+                        new Handler().postDelayed(new Runnable() {
+                            @Override
+                            public void run() {
+                                Intent intent = new Intent(getApplicationContext(), ResultsColors.class);
+                                intent.putExtra("RIGHT_ANSWER_COUNT_Colors", rightAnswerCount_Colors);
+                                startActivity(intent);
+                            }
+                        }, 2000);
+                    }
+                    else {
+                        new Handler().postDelayed(new Runnable() {
+                            @Override
+                            public void run() {
+
+                                showNextQuiz();
+                            }
+                        }, 2000);
+                    }
                 }
-               if (btnText.equals(wrongAnswer_Colors)) {
+                else if (btnText.equals(wrongAnswer_Colors)) {
                     //Wrong
                     voiceover.release();
                     choice1.release();
@@ -209,7 +225,6 @@ public class QuizColors extends AppCompatActivity {
                     wrong_sound.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
                         @Override
                         public void onCompletion(MediaPlayer mediaPlayer) {
-
                             wrong_sound.release();
                         }
                     });
@@ -217,6 +232,26 @@ public class QuizColors extends AppCompatActivity {
                     btnAnswer1_Colors.setEnabled(false);
                     btnAnswer2_Colors.setEnabled(false);
                     confirmClicked_Colors++;
+                    quizCount_Colors++;
+                    if (quizCount_Colors == QUIZ_COUNT && confirmClicked_Colors != 0){
+                        //Show Result
+                        new Handler().postDelayed(new Runnable() {
+                            @Override
+                            public void run() {
+                                Intent intent = new Intent(getApplicationContext(), ResultsColors.class);
+                                intent.putExtra("RIGHT_ANSWER_COUNT_Colors", rightAnswerCount_Colors);
+                                startActivity(intent);
+                            }
+                        }, 2000);
+                    }
+                    else {
+                        new Handler().postDelayed(new Runnable() {
+                            @Override
+                            public void run() {
+                                showNextQuiz();
+                            }
+                        }, 2000);
+                    }
                 }
                 else if (!btnText.equals(rightAnswer_Colors) && !btnText.equals(wrongAnswer_Colors)){
                     prompt_Colors.setText("Please select an answer");
@@ -225,7 +260,6 @@ public class QuizColors extends AppCompatActivity {
                     handler.postDelayed(new Runnable() {
                         @Override
                         public void run() {
-
                             prompt_Colors.setText("");
                         }
                     },3000);
@@ -236,21 +270,15 @@ public class QuizColors extends AppCompatActivity {
         quizLayout_Colors.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if (quizCount_Colors == QUIZ_COUNT && confirmClicked_Colors != 0){
-                    //Show Result
-                    Intent intent = new Intent(getApplicationContext(), ResultsColors.class);
-                    intent.putExtra("RIGHT_ANSWER_COUNT_Colors", rightAnswerCount_Colors);
-                    startActivity(intent);
-                }
-                else if (!btnText.equals(btnAnswer1_Colors.getText().toString()) && !btnText.equals(btnAnswer2_Colors.getText().toString())){
+                if (!btnText.equals(btnAnswer1_Colors.getText().toString()) && !btnText.equals(btnAnswer2_Colors.getText().toString())){
                     //Check if user selected an answer
+                    //Toast.makeText(getApplicationContext(),"Please Select an Answer",Toast.LENGTH_LONG).show();
                     prompt_Colors.setText("Please select an answer");
 
                     Handler handler = new Handler();
                     handler.postDelayed(new Runnable() {
                         @Override
                         public void run() {
-
                             prompt_Colors.setText("");
                         }
                     },3000);
@@ -264,26 +292,13 @@ public class QuizColors extends AppCompatActivity {
                     handler.postDelayed(new Runnable() {
                         @Override
                         public void run() {
-
                             prompt_Colors.setText("");
                         }
                     },3000);
                 }
-                else{
-                    quizCount_Colors++;
-                    btnAnswer1_Colors.setBackgroundResource(R.drawable.answerbutton);
-                    btnAnswer2_Colors.setBackgroundResource(R.drawable.answerbutton);
-                    btnAnswer1_Colors.setEnabled(true);
-                    btnAnswer2_Colors.setEnabled(true);
-                    btnConfirm_Colors.setEnabled(true);
-                    voiceover.release();
-                    choice1.release();
-                    choice2.release();
-                    correct_sound.release();
-                    wrong_sound.release();
-                    showNextQuiz();
-                }
             }
+
         });
+
     }
 }

@@ -50,7 +50,7 @@ public class QuizHonesty extends AppCompatActivity {
     private String wrongAnswer_Honesty;
     private int rightAnswerCount_Honesty = 0;
     private int quizCount_Honesty = 1;
-    static final private int QUIZ_COUNT = 5;
+    static final private int QUIZ_COUNT = 6;
     private int confirmClicked_Honesty = 0;
 
 
@@ -64,7 +64,6 @@ public class QuizHonesty extends AppCompatActivity {
             {"What should Julie do?", String.valueOf(R.drawable.h4bg1), String.valueOf(R.raw.hq4_1), String.valueOf(R.drawable.h4bg2), String.valueOf(R.raw.hq4_2), "Take it home but return in the next time she sees Marga", "Take it home and never return it", String.valueOf(R.raw.hq4c1), String.valueOf(R.raw.hq4c2) },
             {"What should Joey do?", String.valueOf(R.drawable.h5bg1), String.valueOf(R.raw.hq5_1), String.valueOf(R.drawable.h5bg2), String.valueOf(R.raw.hq5_2), "Ask permission if he can borrow the pencil", "Take the pencil immediately", String.valueOf(R.raw.hq5c1), String.valueOf(R.raw.hq5c2) },
     };
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -121,6 +120,11 @@ public class QuizHonesty extends AppCompatActivity {
         btnAnswer1_Honesty.setVisibility(View.INVISIBLE);
         btnAnswer2_Honesty.setVisibility(View.INVISIBLE);
         btnConfirm_Honesty.setVisibility(View.INVISIBLE);
+        btnAnswer1_Honesty.setBackgroundResource(R.drawable.answerbutton);
+        btnAnswer2_Honesty.setBackgroundResource(R.drawable.answerbutton);
+        btnAnswer1_Honesty.setEnabled(true);
+        btnAnswer2_Honesty.setEnabled(true);
+        btnConfirm_Honesty.setEnabled(true);
 
         questionLabel_Honesty.setText(quiz.get(0));
         background_Honesty.setBackgroundResource(Integer.parseInt(quiz.get(1)));
@@ -230,6 +234,27 @@ public class QuizHonesty extends AppCompatActivity {
                     btnAnswer1_Honesty.setEnabled(false);
                     btnAnswer2_Honesty.setEnabled(false);
                     confirmClicked_Honesty++;
+                    quizCount_Honesty++;
+                    if (quizCount_Honesty == QUIZ_COUNT && confirmClicked_Honesty != 0){
+                        //Show Result
+                        new Handler().postDelayed(new Runnable() {
+                            @Override
+                            public void run() {
+                                Intent intent = new Intent(getApplicationContext(), ResultsHonesty.class);
+                                intent.putExtra("RIGHT_ANSWER_COUNT_Honesty", rightAnswerCount_Honesty);
+                                startActivity(intent);
+                            }
+                        }, 2000);
+                    }
+                    else {
+                        new Handler().postDelayed(new Runnable() {
+                            @Override
+                            public void run() {
+
+                                showNextQuiz();
+                            }
+                        }, 2000);
+                    }
                 }
                 if (btnText.equals(wrongAnswer_Honesty)) {
                     //Wrong
@@ -251,6 +276,27 @@ public class QuizHonesty extends AppCompatActivity {
                     btnAnswer1_Honesty.setEnabled(false);
                     btnAnswer2_Honesty.setEnabled(false);
                     confirmClicked_Honesty++;
+                    quizCount_Honesty++;
+                    if (quizCount_Honesty == QUIZ_COUNT && confirmClicked_Honesty != 0){
+                        //Show Result
+                        new Handler().postDelayed(new Runnable() {
+                            @Override
+                            public void run() {
+                                Intent intent = new Intent(getApplicationContext(), ResultsHonesty.class);
+                                intent.putExtra("RIGHT_ANSWER_COUNT_Honesty", rightAnswerCount_Honesty);
+                                startActivity(intent);
+                            }
+                        }, 2000);
+                    }
+                    else {
+                        new Handler().postDelayed(new Runnable() {
+                            @Override
+                            public void run() {
+
+                                showNextQuiz();
+                            }
+                        }, 2000);
+                    }
                 }
                 else if (!btnText.equals(rightAnswer_Honesty) && !btnText.equals(wrongAnswer_Honesty)){
                     prompt_Honesty.setText("Please select an answer");
@@ -269,13 +315,7 @@ public class QuizHonesty extends AppCompatActivity {
         background_Honesty.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if (quizCount_Honesty == QUIZ_COUNT && confirmClicked_Honesty != 0){
-                    //Show Result
-                    Intent intent = new Intent(getApplicationContext(), ResultsHonesty.class);
-                    intent.putExtra("RIGHT_ANSWER_COUNT_Honesty", rightAnswerCount_Honesty);
-                    startActivity(intent);
-                }
-                else if (!btnText.equals(btnAnswer1_Honesty.getText().toString()) && !btnText.equals(btnAnswer2_Honesty.getText().toString())){
+                if (!btnText.equals(btnAnswer1_Honesty.getText().toString()) && !btnText.equals(btnAnswer2_Honesty.getText().toString())){
                     //Check if user selected an answer
                     prompt_Honesty.setText("Please select an answer");
 
@@ -298,21 +338,6 @@ public class QuizHonesty extends AppCompatActivity {
                             prompt_Honesty.setText("");
                         }
                     },3000);
-                }
-                else{
-                    quizCount_Honesty++;
-                    btnAnswer1_Honesty.setBackgroundResource(R.drawable.answerbutton);
-                    btnAnswer2_Honesty.setBackgroundResource(R.drawable.answerbutton);
-                    btnAnswer1_Honesty.setEnabled(true);
-                    btnAnswer2_Honesty.setEnabled(true);
-                    btnConfirm_Honesty.setEnabled(true);
-                    voiceover1.release();
-                    voiceover2.release();
-                    choice1.release();
-                    choice2.release();
-                    correct_sound.release();
-                    wrong_sound.release();
-                    showNextQuiz();
                 }
             }
         });
