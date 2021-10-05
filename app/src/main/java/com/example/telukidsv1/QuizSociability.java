@@ -46,12 +46,11 @@ public class QuizSociability extends AppCompatActivity {
     Button btnAnswer2_Sociability;
     Button btnConfirm_Sociability;
 
-
     private String rightAnswer_Sociability;
     private String wrongAnswer_Sociability;
     private int rightAnswerCount_Sociability = 0;
     private int quizCount_Sociability = 1;
-    static final private int QUIZ_COUNT = 5;
+    static final private int QUIZ_COUNT = 6;
     private int confirmClicked_Sociability = 0;
 
 
@@ -65,6 +64,7 @@ public class QuizSociability extends AppCompatActivity {
             {"What is the right thing to do?", String.valueOf(R.drawable.sc4n5bg1), String.valueOf(R.raw.scq4_1), String.valueOf(R.drawable.sc4n5bg2), String.valueOf(R.raw.scq4_2), "Be a sport and say 'Oh well, maybe I should hide better next time. Congrats, Joey!'", "Be upset and say 'This is unfair. You're cheating, Joey!'", String.valueOf(R.raw.scq4c1), String.valueOf(R.raw.scq4c2)},
             {"What should be Joey's attitude?", String.valueOf(R.drawable.sc4n5bg1), String.valueOf(R.raw.scq5_1), String.valueOf(R.drawable.sc4n5bg2), String.valueOf(R.raw.scq5_2), "Stay humble and say 'You also did great in hiding, Julie!'", "Be boastful and say 'You’re so bad at this game, Julie! I don’t want to play with you anymore!'", String.valueOf(R.raw.scq5c1), String.valueOf(R.raw.scq5c2) }
     };
+
 
 
 
@@ -123,6 +123,11 @@ public class QuizSociability extends AppCompatActivity {
         btnAnswer1_Sociability.setVisibility(View.INVISIBLE);
         btnAnswer2_Sociability.setVisibility(View.INVISIBLE);
         btnConfirm_Sociability.setVisibility(View.INVISIBLE);
+        btnAnswer1_Sociability.setBackgroundResource(R.drawable.answerbutton);
+        btnAnswer2_Sociability.setBackgroundResource(R.drawable.answerbutton);
+        btnAnswer1_Sociability.setEnabled(true);
+        btnAnswer2_Sociability.setEnabled(true);
+        btnConfirm_Sociability.setEnabled(true);
 
         questionLabel_Sociability.setText(quiz.get(0));
         background_Sociability.setBackgroundResource(Integer.parseInt(quiz.get(1)));
@@ -232,6 +237,27 @@ public class QuizSociability extends AppCompatActivity {
                     btnAnswer1_Sociability.setEnabled(false);
                     btnAnswer2_Sociability.setEnabled(false);
                     confirmClicked_Sociability++;
+                    quizCount_Sociability++;
+                    if (quizCount_Sociability == QUIZ_COUNT && confirmClicked_Sociability != 0){
+                        //Show Result
+                        new Handler().postDelayed(new Runnable() {
+                            @Override
+                            public void run() {
+                                Intent intent = new Intent(getApplicationContext(), ResultsSociability.class);
+                                intent.putExtra("RIGHT_ANSWER_COUNT_Sociability", rightAnswerCount_Sociability);
+                                startActivity(intent);
+                            }
+                        }, 2000);
+                    }
+                    else {
+                        new Handler().postDelayed(new Runnable() {
+                            @Override
+                            public void run() {
+
+                                showNextQuiz();
+                            }
+                        }, 2000);
+                    }
                 }
                 if (btnText.equals(wrongAnswer_Sociability)) {
                     //Wrong
@@ -253,6 +279,27 @@ public class QuizSociability extends AppCompatActivity {
                     btnAnswer1_Sociability.setEnabled(false);
                     btnAnswer2_Sociability.setEnabled(false);
                     confirmClicked_Sociability++;
+                    quizCount_Sociability++;
+                    if (quizCount_Sociability == QUIZ_COUNT && confirmClicked_Sociability != 0){
+                        //Show Result
+                        new Handler().postDelayed(new Runnable() {
+                            @Override
+                            public void run() {
+                                Intent intent = new Intent(getApplicationContext(), ResultsSociability.class);
+                                intent.putExtra("RIGHT_ANSWER_COUNT_Sociability", rightAnswerCount_Sociability);
+                                startActivity(intent);
+                            }
+                        }, 2000);
+                    }
+                    else {
+                        new Handler().postDelayed(new Runnable() {
+                            @Override
+                            public void run() {
+
+                                showNextQuiz();
+                            }
+                        }, 2000);
+                    }
                 }
                 else if (!btnText.equals(rightAnswer_Sociability) && !btnText.equals(wrongAnswer_Sociability)){
                     prompt_Sociability.setText("Please select an answer");
@@ -271,13 +318,7 @@ public class QuizSociability extends AppCompatActivity {
         background_Sociability.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if (quizCount_Sociability == QUIZ_COUNT && confirmClicked_Sociability != 0){
-                    //Show Result
-                    Intent intent = new Intent(getApplicationContext(), ResultsSociability.class);
-                    intent.putExtra("RIGHT_ANSWER_COUNT_Sociability", rightAnswerCount_Sociability);
-                    startActivity(intent);
-                }
-                else if (!btnText.equals(btnAnswer1_Sociability.getText().toString()) && !btnText.equals(btnAnswer2_Sociability.getText().toString())){
+                if (!btnText.equals(btnAnswer1_Sociability.getText().toString()) && !btnText.equals(btnAnswer2_Sociability.getText().toString())){
                     //Check if user selected an answer
                     prompt_Sociability.setText("Please select an answer");
 
@@ -300,21 +341,6 @@ public class QuizSociability extends AppCompatActivity {
                             prompt_Sociability.setText("");
                         }
                     },3000);
-                }
-                else{
-                    quizCount_Sociability++;
-                    btnAnswer1_Sociability.setBackgroundResource(R.drawable.answerbutton);
-                    btnAnswer2_Sociability.setBackgroundResource(R.drawable.answerbutton);
-                    btnAnswer1_Sociability.setEnabled(true);
-                    btnAnswer2_Sociability.setEnabled(true);
-                    btnConfirm_Sociability.setEnabled(true);
-                    voiceover1.release();
-                    voiceover2.release();
-                    choice1.release();
-                    choice2.release();
-                    correct_sound.release();
-                    wrong_sound.release();
-                    showNextQuiz();
                 }
             }
         });

@@ -50,7 +50,7 @@ public class QuizRespect extends AppCompatActivity {
     private String wrongAnswer_Respect;
     private int rightAnswerCount_Respect = 0;
     private int quizCount_Respect = 1;
-    static final private int QUIZ_COUNT = 5;
+    static final private int QUIZ_COUNT = 6;
     private int confirmClicked_Respect = 0;
 
 
@@ -122,6 +122,11 @@ public class QuizRespect extends AppCompatActivity {
         btnAnswer1_Respect.setVisibility(View.INVISIBLE);
         btnAnswer2_Respect.setVisibility(View.INVISIBLE);
         btnConfirm_Respect.setVisibility(View.INVISIBLE);
+        btnAnswer1_Respect.setBackgroundResource(R.drawable.answerbutton);
+        btnAnswer2_Respect.setBackgroundResource(R.drawable.answerbutton);
+        btnAnswer1_Respect.setEnabled(true);
+        btnAnswer2_Respect.setEnabled(true);
+        btnConfirm_Respect.setEnabled(true);
 
         questionLabel_Respect.setText(quiz.get(0));
         background_Respect.setBackgroundResource(Integer.parseInt(quiz.get(1)));
@@ -231,6 +236,27 @@ public class QuizRespect extends AppCompatActivity {
                     btnAnswer1_Respect.setEnabled(false);
                     btnAnswer2_Respect.setEnabled(false);
                     confirmClicked_Respect++;
+                    quizCount_Respect++;
+                    if (quizCount_Respect == QUIZ_COUNT && confirmClicked_Respect != 0){
+                        //Show Result
+                        new Handler().postDelayed(new Runnable() {
+                            @Override
+                            public void run() {
+                                Intent intent = new Intent(getApplicationContext(), ResultsRespect.class);
+                                intent.putExtra("RIGHT_ANSWER_COUNT_Respect", rightAnswerCount_Respect);
+                                startActivity(intent);
+                            }
+                        }, 2000);
+                    }
+                    else {
+                        new Handler().postDelayed(new Runnable() {
+                            @Override
+                            public void run() {
+
+                                showNextQuiz();
+                            }
+                        }, 2000);
+                    }
                 }
                 if (btnText.equals(wrongAnswer_Respect)) {
                     //Wrong
@@ -252,6 +278,27 @@ public class QuizRespect extends AppCompatActivity {
                     btnAnswer1_Respect.setEnabled(false);
                     btnAnswer2_Respect.setEnabled(false);
                     confirmClicked_Respect++;
+                    quizCount_Respect++;
+                    if (quizCount_Respect == QUIZ_COUNT && confirmClicked_Respect != 0){
+                        //Show Result
+                        new Handler().postDelayed(new Runnable() {
+                            @Override
+                            public void run() {
+                                Intent intent = new Intent(getApplicationContext(), ResultsRespect.class);
+                                intent.putExtra("RIGHT_ANSWER_COUNT_Respect", rightAnswerCount_Respect);
+                                startActivity(intent);
+                            }
+                        }, 2000);
+                    }
+                    else {
+                        new Handler().postDelayed(new Runnable() {
+                            @Override
+                            public void run() {
+
+                                showNextQuiz();
+                            }
+                        }, 2000);
+                    }
                 }
                 else if (!btnText.equals(rightAnswer_Respect) && !btnText.equals(wrongAnswer_Respect)){
                     prompt_Respect.setText("Please select an answer");
@@ -270,13 +317,7 @@ public class QuizRespect extends AppCompatActivity {
         background_Respect.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if (quizCount_Respect == QUIZ_COUNT && confirmClicked_Respect != 0){
-                    //Show Result
-                    Intent intent = new Intent(getApplicationContext(), ResultsRespect.class);
-                    intent.putExtra("RIGHT_ANSWER_COUNT_Respect", rightAnswerCount_Respect);
-                    startActivity(intent);
-                }
-                else if (!btnText.equals(btnAnswer1_Respect.getText().toString()) && !btnText.equals(btnAnswer2_Respect.getText().toString())){
+                if (!btnText.equals(btnAnswer1_Respect.getText().toString()) && !btnText.equals(btnAnswer2_Respect.getText().toString())){
                     //Check if user selected an answer
                     prompt_Respect.setText("Please select an answer");
 
@@ -299,21 +340,6 @@ public class QuizRespect extends AppCompatActivity {
                             prompt_Respect.setText("");
                         }
                     },3000);
-                }
-                else{
-                    quizCount_Respect++;
-                    btnAnswer1_Respect.setBackgroundResource(R.drawable.answerbutton);
-                    btnAnswer2_Respect.setBackgroundResource(R.drawable.answerbutton);
-                    btnAnswer1_Respect.setEnabled(true);
-                    btnAnswer2_Respect.setEnabled(true);
-                    btnConfirm_Respect.setEnabled(true);
-                    voiceover1.release();
-                    voiceover2.release();
-                    choice1.release();
-                    choice2.release();
-                    correct_sound.release();
-                    wrong_sound.release();
-                    showNextQuiz();
                 }
             }
         });

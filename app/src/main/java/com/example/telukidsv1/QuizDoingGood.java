@@ -50,7 +50,7 @@ public class QuizDoingGood extends AppCompatActivity {
     private String wrongAnswer_DoingGood;
     private int rightAnswerCount_DoingGood = 0;
     private int quizCount_DoingGood = 1;
-    static final private int QUIZ_COUNT = 5;
+    static final private int QUIZ_COUNT = 6;
     private int confirmClicked_DoingGood = 0;
 
 
@@ -64,7 +64,6 @@ public class QuizDoingGood extends AppCompatActivity {
             {"What should Joey do?", String.valueOf(R.drawable.o5bg1), String.valueOf(R.raw.dgq4_1), String.valueOf(R.drawable.o5bg2), String.valueOf(R.raw.dgq4_2), "Volunteer and help other people", "Ignore the donation drive", String.valueOf(R.raw.dgq4c1), String.valueOf(R.raw.dgq4c2) },
             {"What should Marga do?", String.valueOf(R.drawable.dg5bg1), String.valueOf(R.raw.dgq5_1), String.valueOf(R.drawable.dg5bg2), String.valueOf(R.raw.dgq5_2), "Pray to God for strength and guidance", "Refuse to go to school tomorrow", String.valueOf(R.raw.dgq5c1), String.valueOf(R.raw.dgq5c2) }
     };
-
 
 
     @Override
@@ -122,6 +121,11 @@ public class QuizDoingGood extends AppCompatActivity {
         btnAnswer1_DoingGood.setVisibility(View.INVISIBLE);
         btnAnswer2_DoingGood.setVisibility(View.INVISIBLE);
         btnConfirm_DoingGood.setVisibility(View.INVISIBLE);
+        btnAnswer1_DoingGood.setBackgroundResource(R.drawable.answerbutton);
+        btnAnswer2_DoingGood.setBackgroundResource(R.drawable.answerbutton);
+        btnAnswer1_DoingGood.setEnabled(true);
+        btnAnswer2_DoingGood.setEnabled(true);
+        btnConfirm_DoingGood.setEnabled(true);
 
         questionLabel_DoingGood.setText(quiz.get(0));
         background_DoingGood.setBackgroundResource(Integer.parseInt(quiz.get(1)));
@@ -231,6 +235,27 @@ public class QuizDoingGood extends AppCompatActivity {
                     btnAnswer1_DoingGood.setEnabled(false);
                     btnAnswer2_DoingGood.setEnabled(false);
                     confirmClicked_DoingGood++;
+                    quizCount_DoingGood++;
+                    if (quizCount_DoingGood == QUIZ_COUNT && confirmClicked_DoingGood != 0){
+                        //Show Result
+                        new Handler().postDelayed(new Runnable() {
+                            @Override
+                            public void run() {
+                                Intent intent = new Intent(getApplicationContext(), ResultsDoingGood.class);
+                                intent.putExtra("RIGHT_ANSWER_COUNT_DoingGood", rightAnswerCount_DoingGood);
+                                startActivity(intent);
+                            }
+                        }, 2000);
+                    }
+                    else {
+                        new Handler().postDelayed(new Runnable() {
+                            @Override
+                            public void run() {
+
+                                showNextQuiz();
+                            }
+                        }, 2000);
+                    }
                 }
                 if (btnText.equals(wrongAnswer_DoingGood)) {
                     //Wrong
@@ -252,6 +277,27 @@ public class QuizDoingGood extends AppCompatActivity {
                     btnAnswer1_DoingGood.setEnabled(false);
                     btnAnswer2_DoingGood.setEnabled(false);
                     confirmClicked_DoingGood++;
+                    quizCount_DoingGood++;
+                    if (quizCount_DoingGood == QUIZ_COUNT && confirmClicked_DoingGood != 0){
+                        //Show Result
+                        new Handler().postDelayed(new Runnable() {
+                            @Override
+                            public void run() {
+                                Intent intent = new Intent(getApplicationContext(), ResultsDoingGood.class);
+                                intent.putExtra("RIGHT_ANSWER_COUNT_DoingGood", rightAnswerCount_DoingGood);
+                                startActivity(intent);
+                            }
+                        }, 2000);
+                    }
+                    else {
+                        new Handler().postDelayed(new Runnable() {
+                            @Override
+                            public void run() {
+
+                                showNextQuiz();
+                            }
+                        }, 2000);
+                    }
                 }
                 else if (!btnText.equals(rightAnswer_DoingGood) && !btnText.equals(wrongAnswer_DoingGood)){
                     prompt_DoingGood.setText("Please select an answer");
@@ -270,13 +316,7 @@ public class QuizDoingGood extends AppCompatActivity {
         background_DoingGood.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if (quizCount_DoingGood == QUIZ_COUNT && confirmClicked_DoingGood != 0){
-                    //Show Result
-                    Intent intent = new Intent(getApplicationContext(), ResultsDoingGood.class);
-                    intent.putExtra("RIGHT_ANSWER_COUNT_DoingGood", rightAnswerCount_DoingGood);
-                    startActivity(intent);
-                }
-                else if (!btnText.equals(btnAnswer1_DoingGood.getText().toString()) && !btnText.equals(btnAnswer2_DoingGood.getText().toString())){
+                if (!btnText.equals(btnAnswer1_DoingGood.getText().toString()) && !btnText.equals(btnAnswer2_DoingGood.getText().toString())){
                     //Check if user selected an answer
                     prompt_DoingGood.setText("Please select an answer");
 
@@ -299,21 +339,6 @@ public class QuizDoingGood extends AppCompatActivity {
                             prompt_DoingGood.setText("");
                         }
                     },3000);
-                }
-                else{
-                    quizCount_DoingGood++;
-                    btnAnswer1_DoingGood.setBackgroundResource(R.drawable.answerbutton);
-                    btnAnswer2_DoingGood.setBackgroundResource(R.drawable.answerbutton);
-                    btnAnswer1_DoingGood.setEnabled(true);
-                    btnAnswer2_DoingGood.setEnabled(true);
-                    btnConfirm_DoingGood.setEnabled(true);
-                    voiceover1.release();
-                    voiceover2.release();
-                    choice1.release();
-                    choice2.release();
-                    correct_sound.release();
-                    wrong_sound.release();
-                    showNextQuiz();
                 }
             }
         });

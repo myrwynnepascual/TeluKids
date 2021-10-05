@@ -50,7 +50,7 @@ public class QuizObedience extends AppCompatActivity {
     private String wrongAnswer_Obedience;
     private int rightAnswerCount_Obedience = 0;
     private int quizCount_Obedience = 1;
-    static final private int QUIZ_COUNT = 5;
+    static final private int QUIZ_COUNT = 6;
     private int confirmClicked_Obedience = 0;
 
 
@@ -66,6 +66,7 @@ public class QuizObedience extends AppCompatActivity {
             {"What should Julie do?", String.valueOf(R.drawable.o6bg1), String.valueOf(R.raw.oq6_1), String.valueOf(R.drawable.o6bg2), String.valueOf(R.raw.oq6_2), "Look for a trash bin", "Throw it randomly", String.valueOf(R.raw.oq6c1), String.valueOf(R.raw.oq6c2) },
             {"What should Max do?", String.valueOf(R.drawable.o7bg1), String.valueOf(R.raw.oq7_1), String.valueOf(R.drawable.o7bg2), String.valueOf(R.raw.oq7_2), "Make sure everything is prepared and ready for any disaster", "Panic and do not plan anything", String.valueOf(R.raw.oq7c1), String.valueOf(R.raw.oq7c2) }
     };
+
 
 
 
@@ -124,6 +125,11 @@ public class QuizObedience extends AppCompatActivity {
         btnAnswer1_Obedience.setVisibility(View.INVISIBLE);
         btnAnswer2_Obedience.setVisibility(View.INVISIBLE);
         btnConfirm_Obedience.setVisibility(View.INVISIBLE);
+        btnAnswer1_Obedience.setBackgroundResource(R.drawable.answerbutton);
+        btnAnswer2_Obedience.setBackgroundResource(R.drawable.answerbutton);
+        btnAnswer1_Obedience.setEnabled(true);
+        btnAnswer2_Obedience.setEnabled(true);
+        btnConfirm_Obedience.setEnabled(true);
 
         questionLabel_Obedience.setText(quiz.get(0));
         background_Obedience.setBackgroundResource(Integer.parseInt(quiz.get(1)));
@@ -233,6 +239,27 @@ public class QuizObedience extends AppCompatActivity {
                     btnAnswer1_Obedience.setEnabled(false);
                     btnAnswer2_Obedience.setEnabled(false);
                     confirmClicked_Obedience++;
+                    quizCount_Obedience++;
+                    if (quizCount_Obedience == QUIZ_COUNT && confirmClicked_Obedience != 0){
+                        //Show Result
+                        new Handler().postDelayed(new Runnable() {
+                            @Override
+                            public void run() {
+                                Intent intent = new Intent(getApplicationContext(), ResultsObedience.class);
+                                intent.putExtra("RIGHT_ANSWER_COUNT_Obedience", rightAnswerCount_Obedience);
+                                startActivity(intent);
+                            }
+                        }, 2000);
+                    }
+                    else {
+                        new Handler().postDelayed(new Runnable() {
+                            @Override
+                            public void run() {
+
+                                showNextQuiz();
+                            }
+                        }, 2000);
+                    }
                 }
                 if (btnText.equals(wrongAnswer_Obedience)) {
                     //Wrong
@@ -254,6 +281,27 @@ public class QuizObedience extends AppCompatActivity {
                     btnAnswer1_Obedience.setEnabled(false);
                     btnAnswer2_Obedience.setEnabled(false);
                     confirmClicked_Obedience++;
+                    quizCount_Obedience++;
+                    if (quizCount_Obedience == QUIZ_COUNT && confirmClicked_Obedience != 0){
+                        //Show Result
+                        new Handler().postDelayed(new Runnable() {
+                            @Override
+                            public void run() {
+                                Intent intent = new Intent(getApplicationContext(), ResultsObedience.class);
+                                intent.putExtra("RIGHT_ANSWER_COUNT_Obedience", rightAnswerCount_Obedience);
+                                startActivity(intent);
+                            }
+                        }, 2000);
+                    }
+                    else {
+                        new Handler().postDelayed(new Runnable() {
+                            @Override
+                            public void run() {
+
+                                showNextQuiz();
+                            }
+                        }, 2000);
+                    }
                 }
                 else if (!btnText.equals(rightAnswer_Obedience) && !btnText.equals(wrongAnswer_Obedience)){
                     prompt_Obedience.setText("Please select an answer");
@@ -272,13 +320,7 @@ public class QuizObedience extends AppCompatActivity {
         background_Obedience.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if (quizCount_Obedience == QUIZ_COUNT && confirmClicked_Obedience != 0){
-                    //Show Result
-                    Intent intent = new Intent(getApplicationContext(), ResultsObedience.class);
-                    intent.putExtra("RIGHT_ANSWER_COUNT_Obedience", rightAnswerCount_Obedience);
-                    startActivity(intent);
-                }
-                else if (!btnText.equals(btnAnswer1_Obedience.getText().toString()) && !btnText.equals(btnAnswer2_Obedience.getText().toString())){
+                if (!btnText.equals(btnAnswer1_Obedience.getText().toString()) && !btnText.equals(btnAnswer2_Obedience.getText().toString())){
                     //Check if user selected an answer
                     prompt_Obedience.setText("Please select an answer");
 
@@ -301,21 +343,6 @@ public class QuizObedience extends AppCompatActivity {
                             prompt_Obedience.setText("");
                         }
                     },3000);
-                }
-                else{
-                    quizCount_Obedience++;
-                    btnAnswer1_Obedience.setBackgroundResource(R.drawable.answerbutton);
-                    btnAnswer2_Obedience.setBackgroundResource(R.drawable.answerbutton);
-                    btnAnswer1_Obedience.setEnabled(true);
-                    btnAnswer2_Obedience.setEnabled(true);
-                    btnConfirm_Obedience.setEnabled(true);
-                    voiceover1.release();
-                    voiceover2.release();
-                    choice1.release();
-                    choice2.release();
-                    correct_sound.release();
-                    wrong_sound.release();
-                    showNextQuiz();
                 }
             }
         });

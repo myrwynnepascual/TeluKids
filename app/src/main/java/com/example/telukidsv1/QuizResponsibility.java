@@ -50,7 +50,7 @@ public class QuizResponsibility extends AppCompatActivity {
     private String wrongAnswer_Responsibility;
     private int rightAnswerCount_Responsibility = 0;
     private int quizCount_Responsibility = 1;
-    static final private int QUIZ_COUNT = 5;
+    static final private int QUIZ_COUNT = 6;
     private int confirmClicked_Responsibility = 0;
 
 
@@ -58,7 +58,7 @@ public class QuizResponsibility extends AppCompatActivity {
 
     String quizData_Responsibility[][] = {
             //{"Question", "Background Image 1", "Question Voice Over 1", "Background Image 2", "Question Voice Over 2" "Right Answer", "Wrong Answer", "Choice 1 Voice Over", "Choice 2 Voice Over"}
-            {"What should Marga do?", String.valueOf(R.drawable.rp1bg1), String.valueOf(R.raw.rpq1_1), String.valueOf(R.drawable.rp1bg2), String.valueOf(R.raw.rpq1_2), "Keep up the good work", "Ignore math because she finds it hard", String.valueOf(R.raw.rpq1c1), String.valueOf(R.raw.rpq1c2) },
+            {"What should Marga do?", String.valueOf(R.drawable.rp1bg1), String.valueOf(R.raw.rpq1_1), String.valueOf(R.drawable.rp1bg2), String.valueOf(R.raw.rpq1_2), "Keep up the good work and study harder for math", "Ignore math because she finds it hard", String.valueOf(R.raw.rpq1c1), String.valueOf(R.raw.rpq1c2) },
             {"What should Max do?", String.valueOf(R.drawable.rp2bg1), String.valueOf(R.raw.rpq2_1), String.valueOf(R.drawable.rp2bg2), String.valueOf(R.raw.rpq2_2), "Trust himself and keep moving forward", "Doubt himself and back out", String.valueOf(R.raw.rpq2c1), String.valueOf(R.raw.rpq2c2) },
             {"What should Julie practice?", String.valueOf(R.drawable.rp3bg1), String.valueOf(R.raw.rpq3_1), String.valueOf(R.drawable.rp3bg2), String.valueOf(R.raw.rpq3_2), "Practice good hand washing technique", "Not care about her health at all", String.valueOf(R.raw.rpq3c1), String.valueOf(R.raw.rpq3c2) },
             {"What should Julie do?", String.valueOf(R.drawable.rp4bg1), String.valueOf(R.raw.rpq4_1), String.valueOf(R.drawable.rp4bg2), String.valueOf(R.raw.rpq4_2), "Follow her doctor's instructions", "Refuse to take the vitamins and just sleep", String.valueOf(R.raw.rpq4c1), String.valueOf(R.raw.rpq4c2) },
@@ -126,6 +126,11 @@ public class QuizResponsibility extends AppCompatActivity {
         btnAnswer1_Responsibility.setVisibility(View.INVISIBLE);
         btnAnswer2_Responsibility.setVisibility(View.INVISIBLE);
         btnConfirm_Responsibility.setVisibility(View.INVISIBLE);
+        btnAnswer1_Responsibility.setBackgroundResource(R.drawable.answerbutton);
+        btnAnswer2_Responsibility.setBackgroundResource(R.drawable.answerbutton);
+        btnAnswer1_Responsibility.setEnabled(true);
+        btnAnswer2_Responsibility.setEnabled(true);
+        btnConfirm_Responsibility.setEnabled(true);
 
         questionLabel_Responsibility.setText(quiz.get(0));
         background_Responsibility.setBackgroundResource(Integer.parseInt(quiz.get(1)));
@@ -235,6 +240,27 @@ public class QuizResponsibility extends AppCompatActivity {
                     btnAnswer1_Responsibility.setEnabled(false);
                     btnAnswer2_Responsibility.setEnabled(false);
                     confirmClicked_Responsibility++;
+                    quizCount_Responsibility++;
+                    if (quizCount_Responsibility == QUIZ_COUNT && confirmClicked_Responsibility != 0){
+                        //Show Result
+                        new Handler().postDelayed(new Runnable() {
+                            @Override
+                            public void run() {
+                                Intent intent = new Intent(getApplicationContext(), ResultsResponsibility.class);
+                                intent.putExtra("RIGHT_ANSWER_COUNT_Responsibility", rightAnswerCount_Responsibility);
+                                startActivity(intent);
+                            }
+                        }, 2000);
+                    }
+                    else {
+                        new Handler().postDelayed(new Runnable() {
+                            @Override
+                            public void run() {
+
+                                showNextQuiz();
+                            }
+                        }, 2000);
+                    }
                 }
                 if (btnText.equals(wrongAnswer_Responsibility)) {
                     //Wrong
@@ -256,6 +282,27 @@ public class QuizResponsibility extends AppCompatActivity {
                     btnAnswer1_Responsibility.setEnabled(false);
                     btnAnswer2_Responsibility.setEnabled(false);
                     confirmClicked_Responsibility++;
+                    quizCount_Responsibility++;
+                    if (quizCount_Responsibility == QUIZ_COUNT && confirmClicked_Responsibility != 0){
+                        //Show Result
+                        new Handler().postDelayed(new Runnable() {
+                            @Override
+                            public void run() {
+                                Intent intent = new Intent(getApplicationContext(), ResultsResponsibility.class);
+                                intent.putExtra("RIGHT_ANSWER_COUNT_Responsibility", rightAnswerCount_Responsibility);
+                                startActivity(intent);
+                            }
+                        }, 2000);
+                    }
+                    else {
+                        new Handler().postDelayed(new Runnable() {
+                            @Override
+                            public void run() {
+
+                                showNextQuiz();
+                            }
+                        }, 2000);
+                    }
                 }
                 else if (!btnText.equals(rightAnswer_Responsibility) && !btnText.equals(wrongAnswer_Responsibility)){
                     prompt_Responsibility.setText("Please select an answer");
@@ -274,13 +321,7 @@ public class QuizResponsibility extends AppCompatActivity {
         background_Responsibility.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if (quizCount_Responsibility == QUIZ_COUNT && confirmClicked_Responsibility != 0){
-                    //Show Result
-                    Intent intent = new Intent(getApplicationContext(), ResultsResponsibility.class);
-                    intent.putExtra("RIGHT_ANSWER_COUNT_Responsibility", rightAnswerCount_Responsibility);
-                    startActivity(intent);
-                }
-                else if (!btnText.equals(btnAnswer1_Responsibility.getText().toString()) && !btnText.equals(btnAnswer2_Responsibility.getText().toString())){
+                if (!btnText.equals(btnAnswer1_Responsibility.getText().toString()) && !btnText.equals(btnAnswer2_Responsibility.getText().toString())){
                     //Check if user selected an answer
                     prompt_Responsibility.setText("Please select an answer");
 
@@ -303,21 +344,6 @@ public class QuizResponsibility extends AppCompatActivity {
                             prompt_Responsibility.setText("");
                         }
                     },3000);
-                }
-                else{
-                    quizCount_Responsibility++;
-                    btnAnswer1_Responsibility.setBackgroundResource(R.drawable.answerbutton);
-                    btnAnswer2_Responsibility.setBackgroundResource(R.drawable.answerbutton);
-                    btnAnswer1_Responsibility.setEnabled(true);
-                    btnAnswer2_Responsibility.setEnabled(true);
-                    btnConfirm_Responsibility.setEnabled(true);
-                    voiceover1.release();
-                    voiceover2.release();
-                    choice1.release();
-                    choice2.release();
-                    correct_sound.release();
-                    wrong_sound.release();
-                    showNextQuiz();
                 }
             }
         });

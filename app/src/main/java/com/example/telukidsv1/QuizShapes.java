@@ -1,6 +1,5 @@
 package com.example.telukidsv1;
 
-import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
@@ -13,15 +12,6 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
-
-import com.google.android.gms.tasks.OnCompleteListener;
-import com.google.firebase.auth.FirebaseAuth;
-import com.google.firebase.auth.FirebaseUser;
-import com.google.firebase.firestore.DocumentReference;
-import com.google.firebase.firestore.DocumentSnapshot;
-import com.google.firebase.firestore.FirebaseFirestore;
-import com.google.firebase.firestore.FirebaseFirestoreException;
-import com.google.firebase.firestore.Transaction;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -46,7 +36,7 @@ public class QuizShapes extends AppCompatActivity {
     private String wrongAnswer_Shapes;
     private int rightAnswerCount_Shapes = 0;
     private int quizCount_Shapes = 1;
-    static final private int QUIZ_COUNT = 5;
+    static final private int QUIZ_COUNT = 6;
     private int confirmClicked_Shapes = 0;
 
 
@@ -98,6 +88,12 @@ public class QuizShapes extends AppCompatActivity {
         showNextQuiz();
     }
     public void showNextQuiz(){
+        btnAnswer1_Shapes.setBackgroundResource(R.drawable.answerbutton);
+        btnAnswer2_Shapes.setBackgroundResource(R.drawable.answerbutton);
+        btnAnswer1_Shapes.setEnabled(true);
+        btnAnswer2_Shapes.setEnabled(true);
+        btnConfirm_Shapes.setEnabled(true);
+
         //Update quizCountLabel
         countLabel_Shapes.setText("Question #" + quizCount_Shapes);
         confirmClicked_Shapes = 0;
@@ -151,17 +147,15 @@ public class QuizShapes extends AppCompatActivity {
             btnAnswer1_Shapes.setBackgroundResource(R.drawable.answerbutton);
         }
 
-        //Play Choice 1 Voice Over
+
         if (answerBtn.getText().equals(rightAnswer_Shapes)){
             voiceover.release();
             choice1.start();
         }
-        //Play Choice 2 Voice Over
         else if (answerBtn.getText().equals(wrongAnswer_Shapes) && answerBtn != btnConfirm_Shapes){
             voiceover.release();
             choice2.start();
         }
-        //Check if user selected an answer
         else if (!btnText.equals(rightAnswer_Shapes) && !btnText.equals(wrongAnswer_Shapes)){
             prompt_Shapes.setText("Please select an answer");
 
@@ -169,7 +163,6 @@ public class QuizShapes extends AppCompatActivity {
             handler.postDelayed(new Runnable() {
                 @Override
                 public void run() {
-
                     prompt_Shapes.setText("");
                 }
             },3000);
@@ -199,8 +192,29 @@ public class QuizShapes extends AppCompatActivity {
                     btnAnswer1_Shapes.setEnabled(false);
                     btnAnswer2_Shapes.setEnabled(false);
                     confirmClicked_Shapes++;
+                    quizCount_Shapes++;
+                    if (quizCount_Shapes == QUIZ_COUNT && confirmClicked_Shapes != 0){
+                        //Show Result
+                        new Handler().postDelayed(new Runnable() {
+                            @Override
+                            public void run() {
+                                Intent intent = new Intent(getApplicationContext(), ResultsShapes.class);
+                                intent.putExtra("RIGHT_ANSWER_COUNT_Shapes", rightAnswerCount_Shapes);
+                                startActivity(intent);
+                            }
+                        }, 2000);
+                    }
+                    else {
+                        new Handler().postDelayed(new Runnable() {
+                            @Override
+                            public void run() {
+
+                                showNextQuiz();
+                            }
+                        }, 2000);
+                    }
                 }
-                if (btnText.equals(wrongAnswer_Shapes)) {
+                else if (btnText.equals(wrongAnswer_Shapes)) {
                     //Wrong
                     voiceover.release();
                     choice1.release();
@@ -218,6 +232,26 @@ public class QuizShapes extends AppCompatActivity {
                     btnAnswer1_Shapes.setEnabled(false);
                     btnAnswer2_Shapes.setEnabled(false);
                     confirmClicked_Shapes++;
+                    quizCount_Shapes++;
+                    if (quizCount_Shapes == QUIZ_COUNT && confirmClicked_Shapes != 0){
+                        //Show Result
+                        new Handler().postDelayed(new Runnable() {
+                            @Override
+                            public void run() {
+                                Intent intent = new Intent(getApplicationContext(), ResultsShapes.class);
+                                intent.putExtra("RIGHT_ANSWER_COUNT_Shapes", rightAnswerCount_Shapes);
+                                startActivity(intent);
+                            }
+                        }, 2000);
+                    }
+                    else {
+                        new Handler().postDelayed(new Runnable() {
+                            @Override
+                            public void run() {
+                                showNextQuiz();
+                            }
+                        }, 2000);
+                    }
                 }
                 else if (!btnText.equals(rightAnswer_Shapes) && !btnText.equals(wrongAnswer_Shapes)){
                     prompt_Shapes.setText("Please select an answer");
@@ -226,7 +260,6 @@ public class QuizShapes extends AppCompatActivity {
                     handler.postDelayed(new Runnable() {
                         @Override
                         public void run() {
-
                             prompt_Shapes.setText("");
                         }
                     },3000);
@@ -237,14 +270,9 @@ public class QuizShapes extends AppCompatActivity {
         quizLayout_Shapes.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if (quizCount_Shapes == QUIZ_COUNT && confirmClicked_Shapes != 0){
-                    //Show Result
-                    Intent intent = new Intent(getApplicationContext(), ResultsShapes.class);
-                    intent.putExtra("RIGHT_ANSWER_COUNT_Shapes", rightAnswerCount_Shapes);
-                    startActivity(intent);
-                }
-                else if (!btnText.equals(btnAnswer1_Shapes.getText().toString()) && !btnText.equals(btnAnswer2_Shapes.getText().toString())){
+                if (!btnText.equals(btnAnswer1_Shapes.getText().toString()) && !btnText.equals(btnAnswer2_Shapes.getText().toString())){
                     //Check if user selected an answer
+                    //Toast.makeText(getApplicationContext(),"Please Select an Answer",Toast.LENGTH_LONG).show();
                     prompt_Shapes.setText("Please select an answer");
 
                     Handler handler = new Handler();
@@ -268,21 +296,9 @@ public class QuizShapes extends AppCompatActivity {
                         }
                     },3000);
                 }
-                else{
-                    quizCount_Shapes++;
-                    btnAnswer1_Shapes.setBackgroundResource(R.drawable.answerbutton);
-                    btnAnswer2_Shapes.setBackgroundResource(R.drawable.answerbutton);
-                    btnAnswer1_Shapes.setEnabled(true);
-                    btnAnswer2_Shapes.setEnabled(true);
-                    btnConfirm_Shapes.setEnabled(true);
-                    voiceover.release();
-                    choice1.release();
-                    choice2.release();
-                    correct_sound.release();
-                    wrong_sound.release();
-                    showNextQuiz();
-                }
             }
+
         });
+
     }
 }

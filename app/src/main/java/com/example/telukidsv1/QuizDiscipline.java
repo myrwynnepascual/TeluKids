@@ -50,7 +50,7 @@ public class QuizDiscipline extends AppCompatActivity {
     private String wrongAnswer_Discipline;
     private int rightAnswerCount_Discipline = 0;
     private int quizCount_Discipline = 1;
-    static final private int QUIZ_COUNT = 5;
+    static final private int QUIZ_COUNT = 6;
     private int confirmClicked_Discipline = 0;
 
 
@@ -123,6 +123,11 @@ public class QuizDiscipline extends AppCompatActivity {
         btnAnswer1_Discipline.setVisibility(View.INVISIBLE);
         btnAnswer2_Discipline.setVisibility(View.INVISIBLE);
         btnConfirm_Discipline.setVisibility(View.INVISIBLE);
+        btnAnswer1_Discipline.setBackgroundResource(R.drawable.answerbutton);
+        btnAnswer2_Discipline.setBackgroundResource(R.drawable.answerbutton);
+        btnAnswer1_Discipline.setEnabled(true);
+        btnAnswer2_Discipline.setEnabled(true);
+        btnConfirm_Discipline.setEnabled(true);
 
         questionLabel_Discipline.setText(quiz.get(0));
         background_Discipline.setBackgroundResource(Integer.parseInt(quiz.get(1)));
@@ -232,6 +237,27 @@ public class QuizDiscipline extends AppCompatActivity {
                     btnAnswer1_Discipline.setEnabled(false);
                     btnAnswer2_Discipline.setEnabled(false);
                     confirmClicked_Discipline++;
+                    quizCount_Discipline++;
+                    if (quizCount_Discipline == QUIZ_COUNT && confirmClicked_Discipline != 0){
+                        //Show Result
+                        new Handler().postDelayed(new Runnable() {
+                            @Override
+                            public void run() {
+                                Intent intent = new Intent(getApplicationContext(), ResultsDiscipline.class);
+                                intent.putExtra("RIGHT_ANSWER_COUNT_Discipline", rightAnswerCount_Discipline);
+                                startActivity(intent);
+                            }
+                        }, 2000);
+                    }
+                    else {
+                        new Handler().postDelayed(new Runnable() {
+                            @Override
+                            public void run() {
+
+                                showNextQuiz();
+                            }
+                        }, 2000);
+                    }
                 }
                 if (btnText.equals(wrongAnswer_Discipline)) {
                     //Wrong
@@ -253,6 +279,27 @@ public class QuizDiscipline extends AppCompatActivity {
                     btnAnswer1_Discipline.setEnabled(false);
                     btnAnswer2_Discipline.setEnabled(false);
                     confirmClicked_Discipline++;
+                    quizCount_Discipline++;
+                    if (quizCount_Discipline == QUIZ_COUNT && confirmClicked_Discipline != 0){
+                        //Show Result
+                        new Handler().postDelayed(new Runnable() {
+                            @Override
+                            public void run() {
+                                Intent intent = new Intent(getApplicationContext(), ResultsDiscipline.class);
+                                intent.putExtra("RIGHT_ANSWER_COUNT_Discipline", rightAnswerCount_Discipline);
+                                startActivity(intent);
+                            }
+                        }, 2000);
+                    }
+                    else {
+                        new Handler().postDelayed(new Runnable() {
+                            @Override
+                            public void run() {
+
+                                showNextQuiz();
+                            }
+                        }, 2000);
+                    }
                 }
                 else if (!btnText.equals(rightAnswer_Discipline) && !btnText.equals(wrongAnswer_Discipline)){
                     prompt_Discipline.setText("Please select an answer");
@@ -271,13 +318,7 @@ public class QuizDiscipline extends AppCompatActivity {
         background_Discipline.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if (quizCount_Discipline == QUIZ_COUNT && confirmClicked_Discipline != 0){
-                    //Show Result
-                    Intent intent = new Intent(getApplicationContext(), ResultsDiscipline.class);
-                    intent.putExtra("RIGHT_ANSWER_COUNT_Discipline", rightAnswerCount_Discipline);
-                    startActivity(intent);
-                }
-                else if (!btnText.equals(btnAnswer1_Discipline.getText().toString()) && !btnText.equals(btnAnswer2_Discipline.getText().toString())){
+                if (!btnText.equals(btnAnswer1_Discipline.getText().toString()) && !btnText.equals(btnAnswer2_Discipline.getText().toString())){
                     //Check if user selected an answer
                     prompt_Discipline.setText("Please select an answer");
 
@@ -300,21 +341,6 @@ public class QuizDiscipline extends AppCompatActivity {
                             prompt_Discipline.setText("");
                         }
                     },3000);
-                }
-                else{
-                    quizCount_Discipline++;
-                    btnAnswer1_Discipline.setBackgroundResource(R.drawable.answerbutton);
-                    btnAnswer2_Discipline.setBackgroundResource(R.drawable.answerbutton);
-                    btnAnswer1_Discipline.setEnabled(true);
-                    btnAnswer2_Discipline.setEnabled(true);
-                    btnConfirm_Discipline.setEnabled(true);
-                    voiceover1.release();
-                    voiceover2.release();
-                    choice1.release();
-                    choice2.release();
-                    correct_sound.release();
-                    wrong_sound.release();
-                    showNextQuiz();
                 }
             }
         });
