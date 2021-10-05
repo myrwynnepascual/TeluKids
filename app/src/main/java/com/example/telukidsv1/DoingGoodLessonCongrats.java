@@ -42,6 +42,8 @@ public class DoingGoodLessonCongrats extends AppCompatActivity {
         congrats = MediaPlayer.create(this, R.raw.yaysfx);
         congrats.start();
 
+        BackgroundSoundService.onResume();
+
         MediaPlayer sfx = MediaPlayer.create(this, R.raw.btnsfx);
 
 

@@ -6,6 +6,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.media.MediaPlayer;
 import android.os.Bundle;
+import android.os.Handler;
 import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
@@ -251,6 +252,15 @@ public class EditProfile36 extends AppCompatActivity {
                             changesStatus.setText("Username Updated.");
                             nUsername.getText().clear();
 
+                            Handler handler = new Handler();
+                            handler.postDelayed(new Runnable() {
+                                @Override
+                                public void run() {
+
+                                    changesStatus.setText("");
+                                }
+                            },3000);;
+
                         }
                     }).addOnFailureListener(new OnFailureListener() {
                         @Override
@@ -258,6 +268,15 @@ public class EditProfile36 extends AppCompatActivity {
 
                             changesStatus.setText("Username Update Failed.");
                             nUsername.getText().clear();
+
+                            Handler handler = new Handler();
+                            handler.postDelayed(new Runnable() {
+                                @Override
+                                public void run() {
+
+                                    changesStatus.setText("");
+                                }
+                            },3000);;
 
                         }
                     });
@@ -301,6 +320,15 @@ public class EditProfile36 extends AppCompatActivity {
 
                                         changesStatus.setText("Password Updated.");
 
+                                        Handler handler = new Handler();
+                                        handler.postDelayed(new Runnable() {
+                                            @Override
+                                            public void run() {
+
+                                                changesStatus.setText("");
+                                            }
+                                        },3000);;
+
                                         oPassword.getText().clear();
                                         nPassword.getText().clear();
                                         nCPassword.getText().clear();
@@ -321,6 +349,15 @@ public class EditProfile36 extends AppCompatActivity {
 
                                         changesStatus.setText(e.getMessage());
 
+                                        Handler handler = new Handler();
+                                        handler.postDelayed(new Runnable() {
+                                            @Override
+                                            public void run() {
+
+                                                changesStatus.setText("");
+                                            }
+                                        },3000);;
+
                                     }
                                 });
                             }
@@ -329,6 +366,15 @@ public class EditProfile36 extends AppCompatActivity {
                             public void onFailure(@NonNull Exception e) {
 
                                 changesStatus.setText(e.getMessage());
+
+                                Handler handler = new Handler();
+                                handler.postDelayed(new Runnable() {
+                                    @Override
+                                    public void run() {
+
+                                        changesStatus.setText("");
+                                    }
+                                },3000);;
                             }
                         });
                     }
@@ -350,6 +396,16 @@ public class EditProfile36 extends AppCompatActivity {
                         public void onSuccess(Void aVoid) {
 
                             changesStatus.setText("Icon Updated.");
+
+                            Handler handler = new Handler();
+                            handler.postDelayed(new Runnable() {
+                                @Override
+                                public void run() {
+
+                                    changesStatus.setText("");
+                                }
+                            },3000);;
+
                             userIconSelected = false;
 
                         }
@@ -358,6 +414,15 @@ public class EditProfile36 extends AppCompatActivity {
                         public void onFailure(@NonNull Exception e) {
 
                             changesStatus.setText("Icon Update Failed.");
+
+                            Handler handler = new Handler();
+                            handler.postDelayed(new Runnable() {
+                                @Override
+                                public void run() {
+
+                                    changesStatus.setText("");
+                                }
+                            },3000);;
 
                         }
                     });

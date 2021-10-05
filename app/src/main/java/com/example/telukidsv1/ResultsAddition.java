@@ -44,6 +44,8 @@ public class ResultsAddition extends AppCompatActivity {
         congrats = MediaPlayer.create(this, R.raw.yaysfx);
         congrats.start();
 
+        BackgroundSoundService.onResume();
+
         fAuth = FirebaseAuth.getInstance();
         fStore = FirebaseFirestore.getInstance();
         user = fAuth.getCurrentUser();
