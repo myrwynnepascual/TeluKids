@@ -6,6 +6,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.media.MediaPlayer;
 import android.os.Bundle;
+import android.text.TextUtils;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.ImageButton;
@@ -51,20 +52,28 @@ public class ForgotPassword extends AppCompatActivity {
 
                 sfx.start();
 
-                String mail = emailFP.getText().toString();
-                fAuth.sendPasswordResetEmail(mail).addOnSuccessListener(new OnSuccessListener<Void>() {
-                    @Override
-                    public void onSuccess(Void aVoid) {
-                        //Toast.makeText(login.this, "Reset link sent to email.", Toast.LENGTH_SHORT).show();
-                        emessageFP.setText("Reset link sent to email.");
-                    }
-                }).addOnFailureListener(new OnFailureListener() {
-                    @Override
-                    public void onFailure(@NonNull Exception e) {
-                        //Toast.makeText(login.this,"Error: " +e.getMessage(), Toast.LENGTH_SHORT).show();
-                        emessageFP.setText(e.getMessage());
-                    }
-                });
+                String email = emailFP.getText().toString().trim();
+
+                if(TextUtils.isEmpty(email)){
+                    emailFP.setError("Enter a valid email address.");
+                }
+
+                else{
+                    String mail = emailFP.getText().toString();
+                    fAuth.sendPasswordResetEmail(mail).addOnSuccessListener(new OnSuccessListener<Void>() {
+                        @Override
+                        public void onSuccess(Void aVoid) {
+                            //Toast.makeText(login.this, "Reset link sent to email.", Toast.LENGTH_SHORT).show();
+                            emessageFP.setText("Reset link sent to email.");
+                        }
+                    }).addOnFailureListener(new OnFailureListener() {
+                        @Override
+                        public void onFailure(@NonNull Exception e) {
+                            //Toast.makeText(login.this,"Error: " +e.getMessage(), Toast.LENGTH_SHORT).show();
+                            emessageFP.setText(e.getMessage());
+                        }
+                    });
+                }
             }
         });
 

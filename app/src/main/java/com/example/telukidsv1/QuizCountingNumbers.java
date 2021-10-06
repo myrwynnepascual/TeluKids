@@ -7,6 +7,7 @@ import android.content.Intent;
 import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.os.Handler;
+import android.view.Gravity;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
@@ -317,5 +318,15 @@ public class QuizCountingNumbers extends AppCompatActivity {
                 showNextQuiz();
             }
         }, 2000);
+    }
+
+    @Override
+    public void onBackPressed(){
+
+        Toast toast = Toast.makeText(this, "Uh oh! Back button is disabled! Please continue the quiz ✌", Toast.LENGTH_SHORT);
+        TextView v = (TextView) toast.getView().findViewById(android.R.id.message);
+        if( v != null) v.setGravity(Gravity.CENTER);
+        toast.show();
+
     }
 }
