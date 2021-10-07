@@ -46,6 +46,11 @@ public class LessonAddition extends AppCompatActivity {
         uriAX = Uri.parse(videoPathAX);
         videoViewAX.setVideoURI(uriAX);
 
+        mediaController = new MediaController(this);
+        videoViewAX.setMediaController(mediaController);
+        mediaController.setVisibility(View.GONE);
+        mediaController.setAnchorView(videoViewAX);
+
         MediaPlayer sfx = MediaPlayer.create(this, R.raw.btnsfx);
 
         videoViewAX.start();
@@ -86,6 +91,11 @@ public class LessonAddition extends AppCompatActivity {
         uriAX = Uri.parse(videoPathAX);
         videoViewAX.setVideoURI(uriAX);
 
+        mediaController = new MediaController(this);
+        videoViewAX.setMediaController(mediaController);
+        mediaController.setVisibility(View.GONE);
+        mediaController.setAnchorView(videoViewAX);
+
         MediaPlayer sfx = MediaPlayer.create(this, R.raw.btnsfx);
 
         videoViewAX.start();
@@ -124,6 +134,11 @@ public class LessonAddition extends AppCompatActivity {
         videoPathAX = "android.resource://" + getPackageName() + "/" + R.raw.addition1;
         uriAX = Uri.parse(videoPathAX);
         videoViewAX.setVideoURI(uriAX);
+
+        mediaController = new MediaController(this);
+        videoViewAX.setMediaController(mediaController);
+        mediaController.setVisibility(View.GONE);
+        mediaController.setAnchorView(videoViewAX);
 
         MediaPlayer sfx = MediaPlayer.create(this, R.raw.btnsfx);
 
@@ -164,6 +179,11 @@ public class LessonAddition extends AppCompatActivity {
         uriAX = Uri.parse(videoPathAX);
         videoViewAX.setVideoURI(uriAX);
 
+        mediaController = new MediaController(this);
+        videoViewAX.setMediaController(mediaController);
+        mediaController.setVisibility(View.GONE);
+        mediaController.setAnchorView(videoViewAX);
+
         MediaPlayer sfx = MediaPlayer.create(this, R.raw.btnsfx);
 
         videoViewAX.start();
@@ -202,6 +222,11 @@ public class LessonAddition extends AppCompatActivity {
         videoPathAX = "android.resource://" + getPackageName() + "/" + R.raw.addition3;
         uriAX = Uri.parse(videoPathAX);
         videoViewAX.setVideoURI(uriAX);
+
+        mediaController = new MediaController(this);
+        videoViewAX.setMediaController(mediaController);
+        mediaController.setVisibility(View.GONE);
+        mediaController.setAnchorView(videoViewAX);
 
         MediaPlayer sfx = MediaPlayer.create(this, R.raw.btnsfx);
 
@@ -242,6 +267,11 @@ public class LessonAddition extends AppCompatActivity {
         uriAX = Uri.parse(videoPathAX);
         videoViewAX.setVideoURI(uriAX);
 
+        mediaController = new MediaController(this);
+        videoViewAX.setMediaController(mediaController);
+        mediaController.setVisibility(View.GONE);
+        mediaController.setAnchorView(videoViewAX);
+
         MediaPlayer sfx = MediaPlayer.create(this, R.raw.btnsfx);
 
         videoViewAX.start();
@@ -280,6 +310,11 @@ public class LessonAddition extends AppCompatActivity {
         videoPathAX = "android.resource://" + getPackageName() + "/" + R.raw.addition5;
         uriAX = Uri.parse(videoPathAX);
         videoViewAX.setVideoURI(uriAX);
+
+        mediaController = new MediaController(this);
+        videoViewAX.setMediaController(mediaController);
+        mediaController.setVisibility(View.GONE);
+        mediaController.setAnchorView(videoViewAX);
 
         MediaPlayer sfx = MediaPlayer.create(this, R.raw.btnsfx);
 
@@ -320,6 +355,11 @@ public class LessonAddition extends AppCompatActivity {
         uriAX = Uri.parse(videoPathAX);
         videoViewAX.setVideoURI(uriAX);
 
+        mediaController = new MediaController(this);
+        videoViewAX.setMediaController(mediaController);
+        mediaController.setVisibility(View.GONE);
+        mediaController.setAnchorView(videoViewAX);
+
         MediaPlayer sfx = MediaPlayer.create(this, R.raw.btnsfx);
 
         videoViewAX.start();
@@ -358,6 +398,11 @@ public class LessonAddition extends AppCompatActivity {
         videoPathAX = "android.resource://" + getPackageName() + "/" + R.raw.addition7;
         uriAX = Uri.parse(videoPathAX);
         videoViewAX.setVideoURI(uriAX);
+
+        mediaController = new MediaController(this);
+        videoViewAX.setMediaController(mediaController);
+        mediaController.setVisibility(View.GONE);
+        mediaController.setAnchorView(videoViewAX);
 
         MediaPlayer sfx = MediaPlayer.create(this, R.raw.btnsfx);
 
@@ -398,6 +443,11 @@ public class LessonAddition extends AppCompatActivity {
         uriAX = Uri.parse(videoPathAX);
         videoViewAX.setVideoURI(uriAX);
 
+        mediaController = new MediaController(this);
+        videoViewAX.setMediaController(mediaController);
+        mediaController.setVisibility(View.GONE);
+        mediaController.setAnchorView(videoViewAX);
+
         MediaPlayer sfx = MediaPlayer.create(this, R.raw.btnsfx);
 
         videoViewAX.start();
@@ -437,6 +487,11 @@ public class LessonAddition extends AppCompatActivity {
         uriAX = Uri.parse(videoPathAX);
         videoViewAX.setVideoURI(uriAX);
 
+        mediaController = new MediaController(this);
+        videoViewAX.setMediaController(mediaController);
+        mediaController.setVisibility(View.GONE);
+        mediaController.setAnchorView(videoViewAX);
+
         MediaPlayer sfx = MediaPlayer.create(this, R.raw.btnsfx);
 
         videoViewAX.start();
@@ -475,6 +530,11 @@ public class LessonAddition extends AppCompatActivity {
         videoPathAX = "android.resource://" + getPackageName() + "/" + R.raw.addition10;
         uriAX = Uri.parse(videoPathAX);
         videoViewAX.setVideoURI(uriAX);
+
+        mediaController = new MediaController(this);
+        videoViewAX.setMediaController(mediaController);
+        mediaController.setVisibility(View.GONE);
+        mediaController.setAnchorView(videoViewAX);
 
         MediaPlayer sfx = MediaPlayer.create(this, R.raw.btnsfx);
 
