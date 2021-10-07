@@ -6,7 +6,6 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.media.MediaPlayer;
 import android.os.Bundle;
-import android.os.Handler;
 import android.text.TextUtils;
 import android.util.Log;
 import android.util.Patterns;
@@ -66,76 +65,73 @@ public class SignUp extends AppCompatActivity {
 
             if(TextUtils.isEmpty(fname)){
                 fnameSU.setError("First Name is Required.");
+                return;
             }
 
             if(TextUtils.isEmpty(lname)){
                 lnameSU.setError("Last Name is Required.");
+                return;
             }
 
             if(TextUtils.isEmpty(email)){
                 emailSU.setError("Email is Required.");
-            }
-            else{
-                if(!Patterns.EMAIL_ADDRESS.matcher(email).matches()){
-                    emailSU.setError("Enter a valid email address.");
-                }
+                return;
             }
 
+            if(!Patterns.EMAIL_ADDRESS.matcher(email).matches()){
+                emailSU.setError("Enter a valid email address.");
+                return;
+            }
 
             if(TextUtils.isEmpty(username)){
                 usernameSU.setError("Username is Required.");
+                return;
             }
 
             if(TextUtils.isEmpty(password)){
                 passwordSU.setError("Password is Required.");
+                return;
             }
 
             if(password.length() < 8){
                 passwordSU.setError("Password must be at least 8 characters.");
+                return;
             }
 
             if(TextUtils.isEmpty(password2)){
                 confirmpwSU.setError("Confirm Password is Required.");
+                return;
             }
 
             if(!password.equals(password2)){
                 passwordSU.setError("Passwords do not match.");
                 confirmpwSU.setError("Passwords do not match.");
+                return;
             }
 
-            if((!TextUtils.isEmpty(fname)) && (!TextUtils.isEmpty(lname)) && (!TextUtils.isEmpty(email) && (!TextUtils.isEmpty(username)) && (!TextUtils.isEmpty(password)) && (!TextUtils.isEmpty(password2)))){
-                fAuth.createUserWithEmailAndPassword(email,password).addOnCompleteListener(task -> {
-                    if(task.isSuccessful()){
+            fAuth.createUserWithEmailAndPassword(email,password).addOnCompleteListener(task -> {
+                if(task.isSuccessful()){
 
-                        //store user profile data in firebase firestore
-                        userID = fAuth.getCurrentUser().getUid(); // get current user
-                        DocumentReference documentReference = fStore.collection("users").document(userID);
+                    //store user profile data in firebase firestore
+                    userID = fAuth.getCurrentUser().getUid(); // get current user
+                    DocumentReference documentReference = fStore.collection("users").document(userID);
 
-                        Map<String,Object> user = new HashMap<>();
-                        user.put("fname",fname);
-                        user.put("lname",lname);
-                        user.put("email",email);
-                        user.put("username",username);
-                        user.put("uicon",uicon);
+                    Map<String,Object> user = new HashMap<>();
+                    user.put("fname",fname);
+                    user.put("lname",lname);
+                    user.put("email",email);
+                    user.put("username",username);
+                    user.put("uicon",uicon);
 
-                        documentReference.set(user).addOnSuccessListener(aVoid -> Log.d("TAG","onSuccess: user profile is created for " +userID));
+                    documentReference.set(user).addOnSuccessListener(aVoid -> Log.d("TAG","onSuccess: user profile is created for " +userID));
 
-                        startActivity(new Intent(getApplicationContext(),SuccessfulSignUp.class));
-                    }
+                    startActivity(new Intent(getApplicationContext(),SuccessfulSignUp.class));
+                }
 
-                    else {
-                        emessageSU.setText(task.getException().getMessage());
-                        Handler handler = new Handler();
-                        handler.postDelayed(new Runnable() {
-                            @Override
-                            public void run() {
-
-                                emessageSU.setText("");
-                            }
-                        },3000);;
-                    }
-                });
-            }
+                else {
+                    emessageSU.setText(task.getException().getMessage());
+                }
+            });
         });
     }
 }
