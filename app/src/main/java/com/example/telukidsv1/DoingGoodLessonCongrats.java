@@ -66,6 +66,14 @@ public class DoingGoodLessonCongrats extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 sfx.start();
+
+                sfx.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+                    @Override
+                    public void onCompletion(MediaPlayer mp) {
+                        sfx.release();
+                    }
+                });
+
                 startActivity(new Intent(DoingGoodLessonCongrats.this, Gmrc7to9.class));
             }
         });
@@ -74,6 +82,14 @@ public class DoingGoodLessonCongrats extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 sfx.start();
+
+                sfx.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+                    @Override
+                    public void onCompletion(MediaPlayer mp) {
+                        sfx.release();
+                    }
+                });
+
                 startActivity(new Intent(DoingGoodLessonCongrats.this, Achievements7to9DoingGood.class));
             }
         });
@@ -82,6 +98,14 @@ public class DoingGoodLessonCongrats extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 sfx.start();
+
+                sfx.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+                    @Override
+                    public void onCompletion(MediaPlayer mp) {
+                        sfx.release();
+                    }
+                });
+
                 startActivity(new Intent(DoingGoodLessonCongrats.this, QuizDoingGood.class));
             }
         });
@@ -90,6 +114,14 @@ public class DoingGoodLessonCongrats extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 sfx.start();
+
+                sfx.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+                    @Override
+                    public void onCompletion(MediaPlayer mp) {
+                        sfx.release();
+                    }
+                });
+
                 startActivity(new Intent(DoingGoodLessonCongrats.this, Homepage7to9.class));
             }
         });

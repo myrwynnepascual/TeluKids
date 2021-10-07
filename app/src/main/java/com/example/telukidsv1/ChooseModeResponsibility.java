@@ -31,6 +31,14 @@ public class ChooseModeResponsibility extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 sfx.start();
+
+                sfx.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+                    @Override
+                    public void onCompletion(MediaPlayer mp) {
+                        sfx.release();
+                    }
+                });
+
                 startActivity(new Intent(ChooseModeResponsibility.this,Gmrc7to9.class));
             }
         });
@@ -39,6 +47,14 @@ public class ChooseModeResponsibility extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 sfx.start();
+
+                sfx.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+                    @Override
+                    public void onCompletion(MediaPlayer mp) {
+                        sfx.release();
+                    }
+                });
+
                 startActivity(new Intent(ChooseModeResponsibility.this, LessonResponsibility.class));
             }
         });
@@ -47,6 +63,14 @@ public class ChooseModeResponsibility extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 sfx.start();
+
+                sfx.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+                    @Override
+                    public void onCompletion(MediaPlayer mp) {
+                        sfx.release();
+                    }
+                });
+
                 startActivity(new Intent(ChooseModeResponsibility.this, QuizResponsibility.class));
             }
         });
@@ -55,6 +79,14 @@ public class ChooseModeResponsibility extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 sfx.start();
+
+                sfx.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+                    @Override
+                    public void onCompletion(MediaPlayer mp) {
+                        sfx.release();
+                    }
+                });
+
                 startActivity(new Intent(ChooseModeResponsibility.this,LessonIntroResponsibility.class));
             }
         });

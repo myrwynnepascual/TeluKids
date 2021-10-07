@@ -31,6 +31,14 @@ public class ChooseModeShapes extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 sfx.start();
+
+                sfx.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+                    @Override
+                    public void onCompletion(MediaPlayer mp) {
+                        sfx.release();
+                    }
+                });
+
                 startActivity(new Intent(ChooseModeShapes.this,BasicConcepts.class));
             }
         });
@@ -39,6 +47,14 @@ public class ChooseModeShapes extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 sfx.start();
+
+                sfx.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+                    @Override
+                    public void onCompletion(MediaPlayer mp) {
+                        sfx.release();
+                    }
+                });
+
                 startActivity(new Intent(ChooseModeShapes.this, LessonShapes.class));
             }
         });
@@ -47,6 +63,14 @@ public class ChooseModeShapes extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 sfx.start();
+
+                sfx.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+                    @Override
+                    public void onCompletion(MediaPlayer mp) {
+                        sfx.release();
+                    }
+                });
+
                 startActivity(new Intent(ChooseModeShapes.this,QuizShapes.class));
             }
         });
@@ -55,6 +79,14 @@ public class ChooseModeShapes extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 sfx.start();
+
+                sfx.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+                    @Override
+                    public void onCompletion(MediaPlayer mp) {
+                        sfx.release();
+                    }
+                });
+
                 startActivity(new Intent(ChooseModeShapes.this,LessonIntroShapes.class));
             }
         });

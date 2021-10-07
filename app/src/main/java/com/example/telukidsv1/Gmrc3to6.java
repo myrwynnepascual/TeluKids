@@ -32,6 +32,14 @@ public class Gmrc3to6 extends AppCompatActivity {
             public void onClick(View v) {
 
                 sfx.start();
+
+                sfx.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+                    @Override
+                    public void onCompletion(MediaPlayer mp) {
+                        sfx.release();
+                    }
+                });
+
                 startActivity(new Intent(Gmrc3to6.this, Homepage3to6.class));
 
             }
@@ -42,6 +50,14 @@ public class Gmrc3to6 extends AppCompatActivity {
             public void onClick(View v) {
 
                 sfx.start();
+
+                sfx.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+                    @Override
+                    public void onCompletion(MediaPlayer mp) {
+                        sfx.release();
+                    }
+                });
+
                 startActivity(new Intent(Gmrc3to6.this, LessonIntroDiscipline.class));
 
             }
@@ -52,6 +68,14 @@ public class Gmrc3to6 extends AppCompatActivity {
             public void onClick(View v) {
 
                 sfx.start();
+
+                sfx.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+                    @Override
+                    public void onCompletion(MediaPlayer mp) {
+                        sfx.release();
+                    }
+                });
+
                 startActivity(new Intent(Gmrc3to6.this, LessonIntroHonesty.class));
 
             }
@@ -62,6 +86,14 @@ public class Gmrc3to6 extends AppCompatActivity {
             public void onClick(View v) {
 
                 sfx.start();
+
+                sfx.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+                    @Override
+                    public void onCompletion(MediaPlayer mp) {
+                        sfx.release();
+                    }
+                });
+
                 startActivity(new Intent(Gmrc3to6.this, LessonIntroRespect.class));
 
             }
@@ -72,6 +104,14 @@ public class Gmrc3to6 extends AppCompatActivity {
             public void onClick(View v) {
 
                 sfx.start();
+
+                sfx.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+                    @Override
+                    public void onCompletion(MediaPlayer mp) {
+                        sfx.release();
+                    }
+                });
+
                 startActivity(new Intent(Gmrc3to6.this, LessonIntroSociability.class));
 
             }
@@ -82,6 +122,14 @@ public class Gmrc3to6 extends AppCompatActivity {
             public void onClick(View v) {
 
                 sfx.start();
+
+                sfx.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+                    @Override
+                    public void onCompletion(MediaPlayer mp) {
+                        sfx.release();
+                    }
+                });
+
                 startActivity(new Intent(Gmrc3to6.this, LessonIntroCompassion.class));
 
             }

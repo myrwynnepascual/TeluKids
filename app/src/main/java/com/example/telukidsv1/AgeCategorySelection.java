@@ -36,6 +36,14 @@ public class AgeCategorySelection extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 sfx.start();
+
+                sfx.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+                    @Override
+                    public void onCompletion(MediaPlayer mp) {
+                        sfx.release();
+                    }
+                });
+
                 startActivity(new Intent(AgeCategorySelection.this, Homepage3to6.class));
             }
         });
@@ -44,6 +52,14 @@ public class AgeCategorySelection extends AppCompatActivity {
            @Override
            public void onClick(View v) {
                sfx.start();
+
+               sfx.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+                   @Override
+                   public void onCompletion(MediaPlayer mp) {
+                       sfx.release();
+                   }
+               });
+
                startActivity(new Intent(AgeCategorySelection.this, Homepage7to9.class));
            }
        });

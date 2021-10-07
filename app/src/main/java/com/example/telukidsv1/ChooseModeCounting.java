@@ -31,6 +31,14 @@ public class ChooseModeCounting extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 sfx.start();
+
+                sfx.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+                    @Override
+                    public void onCompletion(MediaPlayer mp) {
+                        sfx.release();
+                    }
+                });
+
                 startActivity(new Intent(ChooseModeCounting.this,Numbers.class));
             }
         });
@@ -39,6 +47,14 @@ public class ChooseModeCounting extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 sfx.start();
+
+                sfx.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+                    @Override
+                    public void onCompletion(MediaPlayer mp) {
+                        sfx.release();
+                    }
+                });
+
                 startActivity(new Intent(ChooseModeCounting.this, LessonCounting.class));
             }
         });
@@ -47,6 +63,14 @@ public class ChooseModeCounting extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 sfx.start();
+
+                sfx.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+                    @Override
+                    public void onCompletion(MediaPlayer mp) {
+                        sfx.release();
+                    }
+                });
+
                 startActivity(new Intent(ChooseModeCounting.this,QuizCountingNumbers.class));
             }
         });
@@ -55,6 +79,14 @@ public class ChooseModeCounting extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 sfx.start();
+
+                sfx.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+                    @Override
+                    public void onCompletion(MediaPlayer mp) {
+                        sfx.release();
+                    }
+                });
+
                 startActivity(new Intent(ChooseModeCounting.this,LessonIntroCounting.class));
             }
         });

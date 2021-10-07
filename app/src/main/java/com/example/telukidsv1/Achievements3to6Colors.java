@@ -684,6 +684,14 @@ public class Achievements3to6Colors extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 sfx.start();
+
+                sfx.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+                    @Override
+                    public void onCompletion(MediaPlayer mp) {
+                        sfx.release();
+                    }
+                });
+
                 Intent proceed = new Intent(Achievements3to6Colors.this, ColorsLessonCongrats.class);
                 startActivity(proceed);
             }

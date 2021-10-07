@@ -68,6 +68,14 @@ public class HonestyLessonCongrats extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 sfx.start();
+
+                sfx.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+                    @Override
+                    public void onCompletion(MediaPlayer mp) {
+                        sfx.release();
+                    }
+                });
+
                 startActivity(new Intent(HonestyLessonCongrats.this, Gmrc3to6.class));
             }
         });
@@ -76,6 +84,14 @@ public class HonestyLessonCongrats extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 sfx.start();
+
+                sfx.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+                    @Override
+                    public void onCompletion(MediaPlayer mp) {
+                        sfx.release();
+                    }
+                });
+
                 startActivity(new Intent(HonestyLessonCongrats.this, Achievements3to6Honesty.class));
             }
         });
@@ -84,6 +100,14 @@ public class HonestyLessonCongrats extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 sfx.start();
+
+                sfx.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+                    @Override
+                    public void onCompletion(MediaPlayer mp) {
+                        sfx.release();
+                    }
+                });
+
                 startActivity(new Intent(HonestyLessonCongrats.this, QuizHonesty.class));
             }
         });
@@ -92,6 +116,14 @@ public class HonestyLessonCongrats extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 sfx.start();
+
+                sfx.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+                    @Override
+                    public void onCompletion(MediaPlayer mp) {
+                        sfx.release();
+                    }
+                });
+
                 startActivity(new Intent(HonestyLessonCongrats.this, Homepage3to6.class));
             }
         });

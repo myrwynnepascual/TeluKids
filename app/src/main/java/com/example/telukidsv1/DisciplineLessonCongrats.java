@@ -66,6 +66,14 @@ public class DisciplineLessonCongrats extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 sfx.start();
+
+                sfx.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+                    @Override
+                    public void onCompletion(MediaPlayer mp) {
+                        sfx.release();
+                    }
+                });
+
                 startActivity(new Intent(DisciplineLessonCongrats.this, Gmrc3to6.class));
             }
         });
@@ -74,6 +82,14 @@ public class DisciplineLessonCongrats extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 sfx.start();
+
+                sfx.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+                    @Override
+                    public void onCompletion(MediaPlayer mp) {
+                        sfx.release();
+                    }
+                });
+
                 startActivity(new Intent(DisciplineLessonCongrats.this, Achievements3to6Discipline.class));
             }
         });
@@ -82,6 +98,14 @@ public class DisciplineLessonCongrats extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 sfx.start();
+
+                sfx.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+                    @Override
+                    public void onCompletion(MediaPlayer mp) {
+                        sfx.release();
+                    }
+                });
+
                 startActivity(new Intent(DisciplineLessonCongrats.this, QuizDiscipline.class));
             }
         });
@@ -90,6 +114,14 @@ public class DisciplineLessonCongrats extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 sfx.start();
+
+                sfx.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+                    @Override
+                    public void onCompletion(MediaPlayer mp) {
+                        sfx.release();
+                    }
+                });
+
                 startActivity(new Intent(DisciplineLessonCongrats.this, Homepage3to6.class));
             }
         });

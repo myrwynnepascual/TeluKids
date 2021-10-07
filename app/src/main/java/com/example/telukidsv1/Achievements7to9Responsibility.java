@@ -683,6 +683,14 @@ public class Achievements7to9Responsibility extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 sfx.start();
+
+                sfx.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+                    @Override
+                    public void onCompletion(MediaPlayer mp) {
+                        sfx.release();
+                    }
+                });
+
                 Intent proceed = new Intent(Achievements7to9Responsibility.this, ResponsibilityLessonCongrats.class);
                 startActivity(proceed);
             }

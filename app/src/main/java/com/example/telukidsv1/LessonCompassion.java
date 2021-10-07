@@ -75,6 +75,15 @@ public class LessonCompassion extends AppCompatActivity {
 
             }
         });
+
+        sfx.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+            @Override
+            public void onCompletion(MediaPlayer mp) {
+                sfx.release();
+            }
+        });
+
+
     }
 
     public void compassion2(){

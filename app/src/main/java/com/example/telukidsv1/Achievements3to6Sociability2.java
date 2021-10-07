@@ -685,6 +685,14 @@ public class Achievements3to6Sociability2 extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 sfx.start();
+
+                sfx.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+                    @Override
+                    public void onCompletion(MediaPlayer mp) {
+                        sfx.release();
+                    }
+                });
+
                 Intent proceed = new Intent(Achievements3to6Sociability2.this, ResultsSociability.class);
                 proceed.putExtra("RIGHT_ANSWER_COUNT_Sociability", score_sociability);
                 startActivity(proceed);

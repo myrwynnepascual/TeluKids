@@ -42,6 +42,14 @@ public class ForgotPassword extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 sfx.start();
+
+                sfx.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+                    @Override
+                    public void onCompletion(MediaPlayer mp) {
+                        sfx.release();
+                    }
+                });
+
                 startActivity(new Intent(ForgotPassword.this, Login.class));
             }
         });
@@ -51,6 +59,14 @@ public class ForgotPassword extends AppCompatActivity {
             public void onClick(View v) {
 
                 sfx.start();
+
+                sfx.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+                    @Override
+                    public void onCompletion(MediaPlayer mp) {
+                        sfx.release();
+                    }
+                });
+
 
                 String email = emailFP.getText().toString().trim();
 

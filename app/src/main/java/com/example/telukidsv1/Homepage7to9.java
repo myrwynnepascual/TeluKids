@@ -87,6 +87,14 @@ public class Homepage7to9 extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 sfx.start();
+
+                sfx.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+                    @Override
+                    public void onCompletion(MediaPlayer mp) {
+                        sfx.release();
+                    }
+                });
+
                 startActivity(new Intent(Homepage7to9.this, AgeCategorySelection.class));
 
             }
@@ -97,6 +105,14 @@ public class Homepage7to9 extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 sfx.start();
+
+                sfx.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+                    @Override
+                    public void onCompletion(MediaPlayer mp) {
+                        sfx.release();
+                    }
+                });
+
                 startActivity(new Intent(Homepage7to9.this, UserProfile79.class));
             }
         });
@@ -105,6 +121,14 @@ public class Homepage7to9 extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 sfx.start();
+
+                sfx.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+                    @Override
+                    public void onCompletion(MediaPlayer mp) {
+                        sfx.release();
+                    }
+                });
+
                 startActivity(new Intent(Homepage7to9.this, Gmrc7to9.class));
             }
         });
@@ -113,6 +137,14 @@ public class Homepage7to9 extends AppCompatActivity {
              @Override
             public void onClick(View v) {
                  sfx.start();
+
+                 sfx.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+                     @Override
+                     public void onCompletion(MediaPlayer mp) {
+                         sfx.release();
+                     }
+                 });
+
                  startActivity(new Intent(Homepage7to9.this, Achievements7to9Main.class));
             }
          });

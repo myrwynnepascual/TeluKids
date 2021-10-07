@@ -29,6 +29,14 @@ public class BasicConcepts extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 sfx.start();
+
+                sfx.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+                    @Override
+                    public void onCompletion(MediaPlayer mp) {
+                        sfx.release();
+                    }
+                });
+
                 startActivity(new Intent(BasicConcepts.this, Homepage3to6.class));
             }
         });
@@ -36,6 +44,14 @@ public class BasicConcepts extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 sfx.start();
+
+                sfx.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+                    @Override
+                    public void onCompletion(MediaPlayer mp) {
+                        sfx.release();
+                    }
+                });
+
                 startActivity(new Intent(BasicConcepts.this, LessonIntroColors.class));
             }
         });
@@ -43,6 +59,14 @@ public class BasicConcepts extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 sfx.start();
+
+                sfx.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+                    @Override
+                    public void onCompletion(MediaPlayer mp) {
+                        sfx.release();
+                    }
+                });
+
                 startActivity(new Intent(BasicConcepts.this, Numbers.class));
             }
         });
@@ -50,6 +74,14 @@ public class BasicConcepts extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 sfx.start();
+
+                sfx.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+                    @Override
+                    public void onCompletion(MediaPlayer mp) {
+                        sfx.release();
+                    }
+                });
+
                 startActivity(new Intent(BasicConcepts.this, LessonIntroShapes.class));
 
             }

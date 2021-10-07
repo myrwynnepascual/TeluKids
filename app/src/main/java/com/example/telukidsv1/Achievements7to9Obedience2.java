@@ -685,6 +685,14 @@ public class Achievements7to9Obedience2 extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 sfx.start();
+
+                sfx.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+                    @Override
+                    public void onCompletion(MediaPlayer mp) {
+                        sfx.release();
+                    }
+                });
+
                 Intent proceed = new Intent(Achievements7to9Obedience2.this, ResultsObedience.class);
                 proceed.putExtra("RIGHT_ANSWER_COUNT_Obedience", score_obedience);
                 startActivity(proceed);

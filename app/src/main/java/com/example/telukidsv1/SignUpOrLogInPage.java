@@ -6,9 +6,12 @@ import android.content.Intent;
 import android.media.MediaPlayer;
 import android.os.Build;
 import android.os.Bundle;
+import android.view.Gravity;
 import android.view.View;
 import android.view.WindowManager;
 import android.widget.ImageButton;
+import android.widget.TextView;
+import android.widget.Toast;
 
 import com.google.firebase.auth.FirebaseAuth;
 
@@ -16,15 +19,14 @@ public class SignUpOrLogInPage extends AppCompatActivity {
     ImageButton signupbtnSOL,loginbtnSOL;
     FirebaseAuth fAuth;
 
-    private MediaPlayer bgm;
-
+    MediaPlayer sfx;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_sign_up_or_log_in_page);
 
-        MediaPlayer sfx = MediaPlayer.create(this, R.raw.btnsfx);
+        sfx = MediaPlayer.create(this, R.raw.btnsfx);
 
         signupbtnSOL = findViewById(R.id.signupbtnSOL);
         loginbtnSOL = findViewById(R.id.loginbtnSOL);
@@ -40,7 +42,16 @@ public class SignUpOrLogInPage extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 sfx.start();
-                startActivity(new Intent(SignUpOrLogInPage.this,SignUp.class));
+
+                sfx.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+                    @Override
+                    public void onCompletion(MediaPlayer mp) {
+                        sfx.release();
+                    }
+                });
+
+                startActivity(new Intent(SignUpOrLogInPage.this, SignUp.class));
+
             }
         });
 
@@ -48,6 +59,14 @@ public class SignUpOrLogInPage extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 sfx.start();
+
+                sfx.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+                    @Override
+                    public void onCompletion(MediaPlayer mp) {
+                        sfx.release();
+                    }
+                });
+
                 startActivity(new Intent(SignUpOrLogInPage.this, Login.class));
             }
         });

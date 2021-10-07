@@ -77,6 +77,14 @@ public class EditProfile36 extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 sfx.start();
+
+                sfx.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+                    @Override
+                    public void onCompletion(MediaPlayer mp) {
+                        sfx.release();
+                    }
+                });
+
                 startActivity(new Intent(EditProfile36.this,UserProfile36.class));
             }
         });
@@ -86,6 +94,14 @@ public class EditProfile36 extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 sfx.start();
+
+                sfx.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+                    @Override
+                    public void onCompletion(MediaPlayer mp) {
+                        sfx.release();
+                    }
+                });
+
                 icon1EP36.setImageResource(R.drawable.tigerselected);
                 icon2EP36.setImageResource(R.drawable.owlselect);
                 icon3EP36.setImageResource(R.drawable.lionselect);
@@ -104,6 +120,14 @@ public class EditProfile36 extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 sfx.start();
+
+                sfx.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+                    @Override
+                    public void onCompletion(MediaPlayer mp) {
+                        sfx.release();
+                    }
+                });
+
                 icon1EP36.setImageResource(R.drawable.tigerselect);
                 icon2EP36.setImageResource(R.drawable.owlselected);
                 icon3EP36.setImageResource(R.drawable.lionselect);
@@ -122,6 +146,14 @@ public class EditProfile36 extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 sfx.start();
+
+                sfx.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+                    @Override
+                    public void onCompletion(MediaPlayer mp) {
+                        sfx.release();
+                    }
+                });
+
                 icon1EP36.setImageResource(R.drawable.tigerselect);
                 icon2EP36.setImageResource(R.drawable.owlselect);
                 icon3EP36.setImageResource(R.drawable.lionselected);
@@ -140,6 +172,14 @@ public class EditProfile36 extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 sfx.start();
+
+                sfx.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+                    @Override
+                    public void onCompletion(MediaPlayer mp) {
+                        sfx.release();
+                    }
+                });
+
                 icon1EP36.setImageResource(R.drawable.tigerselect);
                 icon2EP36.setImageResource(R.drawable.owlselect);
                 icon3EP36.setImageResource(R.drawable.lionselect);
@@ -158,6 +198,14 @@ public class EditProfile36 extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 sfx.start();
+
+                sfx.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+                    @Override
+                    public void onCompletion(MediaPlayer mp) {
+                        sfx.release();
+                    }
+                });
+
                 icon1EP36.setImageResource(R.drawable.tigerselect);
                 icon2EP36.setImageResource(R.drawable.owlselect);
                 icon3EP36.setImageResource(R.drawable.lionselect);
@@ -176,6 +224,14 @@ public class EditProfile36 extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 sfx.start();
+
+                sfx.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+                    @Override
+                    public void onCompletion(MediaPlayer mp) {
+                        sfx.release();
+                    }
+                });
+
                 icon1EP36.setImageResource(R.drawable.tigerselect);
                 icon2EP36.setImageResource(R.drawable.owlselect);
                 icon3EP36.setImageResource(R.drawable.lionselect);
@@ -194,6 +250,14 @@ public class EditProfile36 extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 sfx.start();
+
+                sfx.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+                    @Override
+                    public void onCompletion(MediaPlayer mp) {
+                        sfx.release();
+                    }
+                });
+
                 icon1EP36.setImageResource(R.drawable.tigerselect);
                 icon2EP36.setImageResource(R.drawable.owlselect);
                 icon3EP36.setImageResource(R.drawable.lionselect);
@@ -212,6 +276,14 @@ public class EditProfile36 extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 sfx.start();
+
+                sfx.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+                    @Override
+                    public void onCompletion(MediaPlayer mp) {
+                        sfx.release();
+                    }
+                });
+
                 icon1EP36.setImageResource(R.drawable.tigerselect);
                 icon2EP36.setImageResource(R.drawable.owlselect);
                 icon3EP36.setImageResource(R.drawable.lionselect);
@@ -231,6 +303,14 @@ public class EditProfile36 extends AppCompatActivity {
             public void onClick(View v) {
 
                 sfx.start();
+
+                sfx.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+                    @Override
+                    public void onCompletion(MediaPlayer mp) {
+                        sfx.release();
+                    }
+                });
+
 
                 //USERNAME
                 if (!nUsername.getText().toString().isEmpty()){

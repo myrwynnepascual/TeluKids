@@ -67,6 +67,14 @@ public class LessonColors extends AppCompatActivity {
             public void onClick(View v) {
 
                 sfx.start();
+
+                sfx.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+                    @Override
+                    public void onCompletion(MediaPlayer mp) {
+                        sfx.release();
+                    }
+                });
+
                 startActivity(new Intent(LessonColors.this,ChooseModeColors.class));
 
             }
@@ -77,7 +85,16 @@ public class LessonColors extends AppCompatActivity {
             public void onClick(View v) {
 
                sfx.start();
-               red2();
+
+                sfx.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+                    @Override
+                    public void onCompletion(MediaPlayer mp) {
+                        sfx.release();
+                    }
+                });
+
+
+                red2();
 
             }
         });
@@ -111,6 +128,15 @@ public class LessonColors extends AppCompatActivity {
             public void onClick(View v) {
 
                 sfx.start();
+
+                sfx.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+                    @Override
+                    public void onCompletion(MediaPlayer mp) {
+                        sfx.release();
+                    }
+                });
+
+
                 red1();
 
             }
@@ -121,6 +147,15 @@ public class LessonColors extends AppCompatActivity {
             public void onClick(View v) {
 
                 sfx.start();
+
+                sfx.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+                    @Override
+                    public void onCompletion(MediaPlayer mp) {
+                        sfx.release();
+                    }
+                });
+
+
                 red3();
 
             }
@@ -155,6 +190,15 @@ public class LessonColors extends AppCompatActivity {
             public void onClick(View v) {
 
                 sfx.start();
+
+                sfx.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+                    @Override
+                    public void onCompletion(MediaPlayer mp) {
+                        sfx.release();
+                    }
+                });
+
+
                 red2();
 
             }
@@ -165,6 +209,15 @@ public class LessonColors extends AppCompatActivity {
             public void onClick(View v) {
 
                 sfx.start();
+
+                sfx.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+                    @Override
+                    public void onCompletion(MediaPlayer mp) {
+                        sfx.release();
+                    }
+                });
+
+
                 red4();
 
             }
@@ -199,6 +252,15 @@ public class LessonColors extends AppCompatActivity {
             public void onClick(View v) {
 
                 sfx.start();
+
+                sfx.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+                    @Override
+                    public void onCompletion(MediaPlayer mp) {
+                        sfx.release();
+                    }
+                });
+
+
                 red3();
 
             }
@@ -209,6 +271,14 @@ public class LessonColors extends AppCompatActivity {
             public void onClick(View v) {
 
                 sfx.start();
+
+                sfx.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+                    @Override
+                    public void onCompletion(MediaPlayer mp) {
+                        sfx.release();
+                    }
+                });
+
                 red5();
 
             }
@@ -243,6 +313,15 @@ public class LessonColors extends AppCompatActivity {
             public void onClick(View v) {
 
                 sfx.start();
+
+                sfx.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+                    @Override
+                    public void onCompletion(MediaPlayer mp) {
+                        sfx.release();
+                    }
+                });
+
+
                 red4();
 
             }
@@ -253,6 +332,15 @@ public class LessonColors extends AppCompatActivity {
             public void onClick(View v) {
 
                 sfx.start();
+
+                sfx.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+                    @Override
+                    public void onCompletion(MediaPlayer mp) {
+                        sfx.release();
+                    }
+                });
+
+
                 red6();
 
             }
@@ -287,6 +375,15 @@ public class LessonColors extends AppCompatActivity {
             public void onClick(View v) {
 
                 sfx.start();
+
+                sfx.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+                    @Override
+                    public void onCompletion(MediaPlayer mp) {
+                        sfx.release();
+                    }
+                });
+
+
                 red5();
 
             }
@@ -297,6 +394,15 @@ public class LessonColors extends AppCompatActivity {
             public void onClick(View v) {
 
                 sfx.start();
+
+                sfx.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+                    @Override
+                    public void onCompletion(MediaPlayer mp) {
+                        sfx.release();
+                    }
+                });
+
+
                 blue1();
 
             }
@@ -331,6 +437,15 @@ public class LessonColors extends AppCompatActivity {
             public void onClick(View v) {
 
                 sfx.start();
+
+                sfx.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+                    @Override
+                    public void onCompletion(MediaPlayer mp) {
+                        sfx.release();
+                    }
+                });
+
+
                 red6();
 
             }
@@ -341,6 +456,15 @@ public class LessonColors extends AppCompatActivity {
             public void onClick(View v) {
 
                 sfx.start();
+
+                sfx.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+                    @Override
+                    public void onCompletion(MediaPlayer mp) {
+                        sfx.release();
+                    }
+                });
+
+
                 blue2();
 
             }
@@ -375,6 +499,15 @@ public class LessonColors extends AppCompatActivity {
             public void onClick(View v) {
 
                 sfx.start();
+
+                sfx.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+                    @Override
+                    public void onCompletion(MediaPlayer mp) {
+                        sfx.release();
+                    }
+                });
+
+
                 blue1();
 
             }
@@ -385,6 +518,15 @@ public class LessonColors extends AppCompatActivity {
             public void onClick(View v) {
 
                 sfx.start();
+
+                sfx.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+                    @Override
+                    public void onCompletion(MediaPlayer mp) {
+                        sfx.release();
+                    }
+                });
+
+
                 blue3();
 
             }
@@ -419,6 +561,15 @@ public class LessonColors extends AppCompatActivity {
             public void onClick(View v) {
 
                 sfx.start();
+
+                sfx.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+                    @Override
+                    public void onCompletion(MediaPlayer mp) {
+                        sfx.release();
+                    }
+                });
+
+
                 blue2();
 
             }
@@ -429,6 +580,15 @@ public class LessonColors extends AppCompatActivity {
             public void onClick(View v) {
 
                 sfx.start();
+
+                sfx.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+                    @Override
+                    public void onCompletion(MediaPlayer mp) {
+                        sfx.release();
+                    }
+                });
+
+
                 blue4();
 
             }
@@ -463,6 +623,15 @@ public class LessonColors extends AppCompatActivity {
             public void onClick(View v) {
 
                 sfx.start();
+
+                sfx.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+                    @Override
+                    public void onCompletion(MediaPlayer mp) {
+                        sfx.release();
+                    }
+                });
+
+
                 blue3();
 
             }
@@ -473,6 +642,15 @@ public class LessonColors extends AppCompatActivity {
             public void onClick(View v) {
 
                 sfx.start();
+
+                sfx.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+                    @Override
+                    public void onCompletion(MediaPlayer mp) {
+                        sfx.release();
+                    }
+                });
+
+
                 blue5();
 
             }
@@ -507,6 +685,15 @@ public class LessonColors extends AppCompatActivity {
             public void onClick(View v) {
 
                 sfx.start();
+
+                sfx.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+                    @Override
+                    public void onCompletion(MediaPlayer mp) {
+                        sfx.release();
+                    }
+                });
+
+
                 blue4();
 
             }
@@ -517,6 +704,15 @@ public class LessonColors extends AppCompatActivity {
             public void onClick(View v) {
 
                 sfx.start();
+
+                sfx.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+                    @Override
+                    public void onCompletion(MediaPlayer mp) {
+                        sfx.release();
+                    }
+                });
+
+
                 blue6();
 
             }
@@ -551,6 +747,15 @@ public class LessonColors extends AppCompatActivity {
             public void onClick(View v) {
 
                 sfx.start();
+
+                sfx.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+                    @Override
+                    public void onCompletion(MediaPlayer mp) {
+                        sfx.release();
+                    }
+                });
+
+
                 blue5();
 
             }
@@ -561,6 +766,15 @@ public class LessonColors extends AppCompatActivity {
             public void onClick(View v) {
 
                 sfx.start();
+
+                sfx.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+                    @Override
+                    public void onCompletion(MediaPlayer mp) {
+                        sfx.release();
+                    }
+                });
+
+
                 yellow1();
 
             }
@@ -595,6 +809,15 @@ public class LessonColors extends AppCompatActivity {
             public void onClick(View v) {
 
                 sfx.start();
+
+                sfx.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+                    @Override
+                    public void onCompletion(MediaPlayer mp) {
+                        sfx.release();
+                    }
+                });
+
+
                 blue6();
 
             }
@@ -605,6 +828,15 @@ public class LessonColors extends AppCompatActivity {
             public void onClick(View v) {
 
                 sfx.start();
+
+                sfx.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+                    @Override
+                    public void onCompletion(MediaPlayer mp) {
+                        sfx.release();
+                    }
+                });
+
+
                 yellow2();
 
             }
@@ -639,6 +871,15 @@ public class LessonColors extends AppCompatActivity {
             public void onClick(View v) {
 
                 sfx.start();
+
+                sfx.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+                    @Override
+                    public void onCompletion(MediaPlayer mp) {
+                        sfx.release();
+                    }
+                });
+
+
                 yellow1();
 
             }
@@ -649,6 +890,15 @@ public class LessonColors extends AppCompatActivity {
             public void onClick(View v) {
 
                 sfx.start();
+
+                sfx.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+                    @Override
+                    public void onCompletion(MediaPlayer mp) {
+                        sfx.release();
+                    }
+                });
+
+
                 yellow3();
 
             }
@@ -683,6 +933,15 @@ public class LessonColors extends AppCompatActivity {
             public void onClick(View v) {
 
                 sfx.start();
+
+                sfx.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+                    @Override
+                    public void onCompletion(MediaPlayer mp) {
+                        sfx.release();
+                    }
+                });
+
+
                 yellow2();
 
             }
@@ -693,6 +952,15 @@ public class LessonColors extends AppCompatActivity {
             public void onClick(View v) {
 
                 sfx.start();
+
+                sfx.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+                    @Override
+                    public void onCompletion(MediaPlayer mp) {
+                        sfx.release();
+                    }
+                });
+
+
                 yellow4();
 
             }
@@ -727,6 +995,15 @@ public class LessonColors extends AppCompatActivity {
             public void onClick(View v) {
 
                 sfx.start();
+
+                sfx.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+                    @Override
+                    public void onCompletion(MediaPlayer mp) {
+                        sfx.release();
+                    }
+                });
+
+
                 yellow3();
 
             }
@@ -737,6 +1014,15 @@ public class LessonColors extends AppCompatActivity {
             public void onClick(View v) {
 
                 sfx.start();
+
+                sfx.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+                    @Override
+                    public void onCompletion(MediaPlayer mp) {
+                        sfx.release();
+                    }
+                });
+
+
                 yellow5();
 
             }
@@ -771,6 +1057,15 @@ public class LessonColors extends AppCompatActivity {
             public void onClick(View v) {
 
                 sfx.start();
+
+                sfx.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+                    @Override
+                    public void onCompletion(MediaPlayer mp) {
+                        sfx.release();
+                    }
+                });
+
+
                 yellow4();
 
             }
@@ -781,6 +1076,15 @@ public class LessonColors extends AppCompatActivity {
             public void onClick(View v) {
 
                 sfx.start();
+
+                sfx.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+                    @Override
+                    public void onCompletion(MediaPlayer mp) {
+                        sfx.release();
+                    }
+                });
+
+
                 yellow6();
 
             }
@@ -815,6 +1119,15 @@ public class LessonColors extends AppCompatActivity {
             public void onClick(View v) {
 
                 sfx.start();
+
+                sfx.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+                    @Override
+                    public void onCompletion(MediaPlayer mp) {
+                        sfx.release();
+                    }
+                });
+
+
                 yellow5();
 
             }
@@ -825,6 +1138,15 @@ public class LessonColors extends AppCompatActivity {
             public void onClick(View v) {
 
                 sfx.start();
+
+                sfx.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+                    @Override
+                    public void onCompletion(MediaPlayer mp) {
+                        sfx.release();
+                    }
+                });
+
+
                 orange1();
 
             }
@@ -859,6 +1181,15 @@ public class LessonColors extends AppCompatActivity {
             public void onClick(View v) {
 
                 sfx.start();
+
+                sfx.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+                    @Override
+                    public void onCompletion(MediaPlayer mp) {
+                        sfx.release();
+                    }
+                });
+
+
                 yellow6();
 
             }
@@ -869,6 +1200,15 @@ public class LessonColors extends AppCompatActivity {
             public void onClick(View v) {
 
                 sfx.start();
+
+                sfx.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+                    @Override
+                    public void onCompletion(MediaPlayer mp) {
+                        sfx.release();
+                    }
+                });
+
+
                 orange2();
 
             }
@@ -903,6 +1243,15 @@ public class LessonColors extends AppCompatActivity {
             public void onClick(View v) {
 
                 sfx.start();
+
+                sfx.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+                    @Override
+                    public void onCompletion(MediaPlayer mp) {
+                        sfx.release();
+                    }
+                });
+
+
                 orange1();
 
             }
@@ -913,6 +1262,15 @@ public class LessonColors extends AppCompatActivity {
             public void onClick(View v) {
 
                 sfx.start();
+
+                sfx.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+                    @Override
+                    public void onCompletion(MediaPlayer mp) {
+                        sfx.release();
+                    }
+                });
+
+
                 orange3();
 
             }
@@ -947,6 +1305,15 @@ public class LessonColors extends AppCompatActivity {
             public void onClick(View v) {
 
                 sfx.start();
+
+                sfx.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+                    @Override
+                    public void onCompletion(MediaPlayer mp) {
+                        sfx.release();
+                    }
+                });
+
+
                 orange2();
 
             }
@@ -957,6 +1324,15 @@ public class LessonColors extends AppCompatActivity {
             public void onClick(View v) {
 
                 sfx.start();
+
+                sfx.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+                    @Override
+                    public void onCompletion(MediaPlayer mp) {
+                        sfx.release();
+                    }
+                });
+
+
                 orange4();
 
             }
@@ -991,6 +1367,15 @@ public class LessonColors extends AppCompatActivity {
             public void onClick(View v) {
 
                 sfx.start();
+
+                sfx.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+                    @Override
+                    public void onCompletion(MediaPlayer mp) {
+                        sfx.release();
+                    }
+                });
+
+
                 orange3();
 
             }
@@ -1001,6 +1386,15 @@ public class LessonColors extends AppCompatActivity {
             public void onClick(View v) {
 
                 sfx.start();
+
+                sfx.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+                    @Override
+                    public void onCompletion(MediaPlayer mp) {
+                        sfx.release();
+                    }
+                });
+
+
                 orange5();
 
             }
@@ -1035,6 +1429,15 @@ public class LessonColors extends AppCompatActivity {
             public void onClick(View v) {
 
                 sfx.start();
+
+                sfx.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+                    @Override
+                    public void onCompletion(MediaPlayer mp) {
+                        sfx.release();
+                    }
+                });
+
+
                 orange4();
 
             }
@@ -1045,6 +1448,15 @@ public class LessonColors extends AppCompatActivity {
             public void onClick(View v) {
 
                 sfx.start();
+
+                sfx.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+                    @Override
+                    public void onCompletion(MediaPlayer mp) {
+                        sfx.release();
+                    }
+                });
+
+
                 orange6();
 
             }
@@ -1079,6 +1491,15 @@ public class LessonColors extends AppCompatActivity {
             public void onClick(View v) {
 
                 sfx.start();
+
+                sfx.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+                    @Override
+                    public void onCompletion(MediaPlayer mp) {
+                        sfx.release();
+                    }
+                });
+
+
                 orange5();
 
             }
@@ -1089,6 +1510,15 @@ public class LessonColors extends AppCompatActivity {
             public void onClick(View v) {
 
                 sfx.start();
+
+                sfx.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+                    @Override
+                    public void onCompletion(MediaPlayer mp) {
+                        sfx.release();
+                    }
+                });
+
+
                 purple1();
 
             }
@@ -1123,6 +1553,15 @@ public class LessonColors extends AppCompatActivity {
             public void onClick(View v) {
 
                 sfx.start();
+
+                sfx.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+                    @Override
+                    public void onCompletion(MediaPlayer mp) {
+                        sfx.release();
+                    }
+                });
+
+
                 orange6();
 
             }
@@ -1133,6 +1572,15 @@ public class LessonColors extends AppCompatActivity {
             public void onClick(View v) {
 
                 sfx.start();
+
+                sfx.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+                    @Override
+                    public void onCompletion(MediaPlayer mp) {
+                        sfx.release();
+                    }
+                });
+
+
                 purple2();
 
             }
@@ -1167,6 +1615,15 @@ public class LessonColors extends AppCompatActivity {
             public void onClick(View v) {
 
                 sfx.start();
+
+                sfx.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+                    @Override
+                    public void onCompletion(MediaPlayer mp) {
+                        sfx.release();
+                    }
+                });
+
+
                 purple1();
 
             }
@@ -1177,6 +1634,15 @@ public class LessonColors extends AppCompatActivity {
             public void onClick(View v) {
 
                 sfx.start();
+
+                sfx.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+                    @Override
+                    public void onCompletion(MediaPlayer mp) {
+                        sfx.release();
+                    }
+                });
+
+
                 purple3();
 
             }
@@ -1211,6 +1677,15 @@ public class LessonColors extends AppCompatActivity {
             public void onClick(View v) {
 
                 sfx.start();
+
+                sfx.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+                    @Override
+                    public void onCompletion(MediaPlayer mp) {
+                        sfx.release();
+                    }
+                });
+
+
                 purple2();
 
             }
@@ -1221,6 +1696,15 @@ public class LessonColors extends AppCompatActivity {
             public void onClick(View v) {
 
                 sfx.start();
+
+                sfx.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+                    @Override
+                    public void onCompletion(MediaPlayer mp) {
+                        sfx.release();
+                    }
+                });
+
+
                 purple4();
 
             }
@@ -1255,6 +1739,15 @@ public class LessonColors extends AppCompatActivity {
             public void onClick(View v) {
 
                 sfx.start();
+
+                sfx.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+                    @Override
+                    public void onCompletion(MediaPlayer mp) {
+                        sfx.release();
+                    }
+                });
+
+
                 purple3();
 
             }
@@ -1265,6 +1758,15 @@ public class LessonColors extends AppCompatActivity {
             public void onClick(View v) {
 
                 sfx.start();
+
+                sfx.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+                    @Override
+                    public void onCompletion(MediaPlayer mp) {
+                        sfx.release();
+                    }
+                });
+
+
                 purple5();
 
             }
@@ -1299,6 +1801,15 @@ public class LessonColors extends AppCompatActivity {
             public void onClick(View v) {
 
                 sfx.start();
+
+                sfx.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+                    @Override
+                    public void onCompletion(MediaPlayer mp) {
+                        sfx.release();
+                    }
+                });
+
+
                 purple4();
 
             }
@@ -1309,6 +1820,15 @@ public class LessonColors extends AppCompatActivity {
             public void onClick(View v) {
 
                 sfx.start();
+
+                sfx.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+                    @Override
+                    public void onCompletion(MediaPlayer mp) {
+                        sfx.release();
+                    }
+                });
+
+
                 purple6();
 
             }
@@ -1343,6 +1863,15 @@ public class LessonColors extends AppCompatActivity {
             public void onClick(View v) {
 
                 sfx.start();
+
+                sfx.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+                    @Override
+                    public void onCompletion(MediaPlayer mp) {
+                        sfx.release();
+                    }
+                });
+
+
                 purple5();
 
             }
@@ -1353,6 +1882,15 @@ public class LessonColors extends AppCompatActivity {
             public void onClick(View v) {
 
                 sfx.start();
+
+                sfx.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+                    @Override
+                    public void onCompletion(MediaPlayer mp) {
+                        sfx.release();
+                    }
+                });
+
+
                 green1();
 
             }
@@ -1387,6 +1925,15 @@ public class LessonColors extends AppCompatActivity {
             public void onClick(View v) {
 
                 sfx.start();
+
+                sfx.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+                    @Override
+                    public void onCompletion(MediaPlayer mp) {
+                        sfx.release();
+                    }
+                });
+
+
                 purple6();
 
             }
@@ -1397,6 +1944,15 @@ public class LessonColors extends AppCompatActivity {
             public void onClick(View v) {
 
                 sfx.start();
+
+                sfx.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+                    @Override
+                    public void onCompletion(MediaPlayer mp) {
+                        sfx.release();
+                    }
+                });
+
+
                 green2();
 
             }
@@ -1431,6 +1987,15 @@ public class LessonColors extends AppCompatActivity {
             public void onClick(View v) {
 
                 sfx.start();
+
+                sfx.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+                    @Override
+                    public void onCompletion(MediaPlayer mp) {
+                        sfx.release();
+                    }
+                });
+
+
                 green1();
 
             }
@@ -1441,6 +2006,15 @@ public class LessonColors extends AppCompatActivity {
             public void onClick(View v) {
 
                 sfx.start();
+
+                sfx.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+                    @Override
+                    public void onCompletion(MediaPlayer mp) {
+                        sfx.release();
+                    }
+                });
+
+
                 green3();
 
             }
@@ -1475,6 +2049,15 @@ public class LessonColors extends AppCompatActivity {
             public void onClick(View v) {
 
                 sfx.start();
+
+                sfx.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+                    @Override
+                    public void onCompletion(MediaPlayer mp) {
+                        sfx.release();
+                    }
+                });
+
+
                 green2();
 
             }
@@ -1485,6 +2068,15 @@ public class LessonColors extends AppCompatActivity {
             public void onClick(View v) {
 
                 sfx.start();
+
+                sfx.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+                    @Override
+                    public void onCompletion(MediaPlayer mp) {
+                        sfx.release();
+                    }
+                });
+
+
                 green4();
 
             }
@@ -1519,6 +2111,15 @@ public class LessonColors extends AppCompatActivity {
             public void onClick(View v) {
 
                 sfx.start();
+
+                sfx.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+                    @Override
+                    public void onCompletion(MediaPlayer mp) {
+                        sfx.release();
+                    }
+                });
+
+
                 green3();
 
             }
@@ -1529,6 +2130,15 @@ public class LessonColors extends AppCompatActivity {
             public void onClick(View v) {
 
                 sfx.start();
+
+                sfx.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+                    @Override
+                    public void onCompletion(MediaPlayer mp) {
+                        sfx.release();
+                    }
+                });
+
+
                 green5();
 
             }
@@ -1563,6 +2173,15 @@ public class LessonColors extends AppCompatActivity {
             public void onClick(View v) {
 
                 sfx.start();
+
+                sfx.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+                    @Override
+                    public void onCompletion(MediaPlayer mp) {
+                        sfx.release();
+                    }
+                });
+
+
                 green4();
 
             }
@@ -1573,6 +2192,15 @@ public class LessonColors extends AppCompatActivity {
             public void onClick(View v) {
 
                 sfx.start();
+
+                sfx.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+                    @Override
+                    public void onCompletion(MediaPlayer mp) {
+                        sfx.release();
+                    }
+                });
+
+
                 green6();
 
             }
@@ -1607,6 +2235,15 @@ public class LessonColors extends AppCompatActivity {
             public void onClick(View v) {
 
                 sfx.start();
+
+                sfx.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+                    @Override
+                    public void onCompletion(MediaPlayer mp) {
+                        sfx.release();
+                    }
+                });
+
+
                 green5();
 
             }
@@ -1617,6 +2254,15 @@ public class LessonColors extends AppCompatActivity {
             public void onClick(View v) {
 
                 sfx.start();
+
+                sfx.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+                    @Override
+                    public void onCompletion(MediaPlayer mp) {
+                        sfx.release();
+                    }
+                });
+
+
                 startActivity(new Intent(LessonColors.this,ColorsLessonCongrats.class));
 
             }
