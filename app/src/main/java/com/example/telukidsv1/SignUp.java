@@ -122,6 +122,22 @@ public class SignUp extends AppCompatActivity {
                     user.put("email",email);
                     user.put("username",username);
                     user.put("uicon",uicon);
+                    user.put("addition quiz score",0);
+                    user.put("colors quiz score",0);
+                    user.put("compassion quiz score",0);
+                    user.put("counting quiz score",0);
+                    user.put("discipline quiz score",0);
+                    user.put("doing good quiz score",0);
+                    user.put("honesty quiz score",0);
+                    user.put("love quiz score",0);
+                    user.put("obedience quiz score",0);
+                    user.put("respect quiz score",0);
+                    user.put("responsibility quiz score",0);
+                    user.put("shapes quiz score",0);
+                    user.put("sociability quiz score",0);
+                    user.put("subtraction quiz score",0);
+
+
 
                     documentReference.set(user).addOnSuccessListener(aVoid -> Log.d("TAG","onSuccess: user profile is created for " +userID));
 
