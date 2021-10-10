@@ -18,6 +18,7 @@ public class LessonShapes extends AppCompatActivity {
     Uri uriCPG1;
     ImageButton backbtnCPG1,nextbtnCPG1;
     MediaController mediaController;
+    MediaPlayer sfx;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -27,14 +28,13 @@ public class LessonShapes extends AppCompatActivity {
         videoViewCPG1 = findViewById(R.id.videoCPG1);
         backbtnCPG1 = findViewById(R.id.btnbackCPG1);
         nextbtnCPG1 = findViewById(R.id.nextbtnCPG1);
-        MediaPlayer sfx = MediaPlayer.create(this, R.raw.btnsfx);
-
-        BackgroundSoundService.onPause();
 
         mediaController = new MediaController(this);
         videoViewCPG1.setMediaController(mediaController);
         mediaController.setVisibility(View.GONE);
         mediaController.setAnchorView(videoViewCPG1);
+
+        BackgroundSoundService.onPause();
 
         circle1();
 
@@ -45,19 +45,22 @@ public class LessonShapes extends AppCompatActivity {
         videoPathCPG1 = "android.resource://" + getPackageName() + "/" + R.raw.circle1;
         uriCPG1 = Uri.parse(videoPathCPG1);
         videoViewCPG1.setVideoURI(uriCPG1);
-        MediaPlayer sfx = MediaPlayer.create(this, R.raw.btnsfx);
+        sfx = MediaPlayer.create(this, R.raw.btnsfx);
 
-        mediaController = new MediaController(this);
-        videoViewCPG1.setMediaController(mediaController);
-        mediaController.setVisibility(View.GONE);
-        mediaController.setAnchorView(videoViewCPG1);
-
-        videoViewCPG1.start();
+        videoViewCPG1.setOnPreparedListener(new MediaPlayer.OnPreparedListener() {
+            @Override
+            public void onPrepared(MediaPlayer mp) {
+                
+                videoViewCPG1.start();
+                
+            }
+        });
 
         videoViewCPG1.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
             @Override
             public void onCompletion(MediaPlayer mp) {
 
+                videoViewCPG1.stopPlayback();
                 circle2();
 
             }
@@ -68,6 +71,7 @@ public class LessonShapes extends AppCompatActivity {
             public void onClick(View v) {
 
                 sfx.start();
+                videoViewCPG1.stopPlayback();
                 startActivity(new Intent(LessonShapes.this,ChooseModeShapes.class));
 
             }
@@ -78,8 +82,16 @@ public class LessonShapes extends AppCompatActivity {
             public void onClick(View v) {
 
                 sfx.start();
+                videoViewCPG1.stopPlayback();
                 circle2();
 
+            }
+        });
+
+        sfx.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+            @Override
+            public void onCompletion(MediaPlayer mp) {
+                sfx.release();
             }
         });
     }
@@ -89,19 +101,22 @@ public class LessonShapes extends AppCompatActivity {
         videoPathCPG1 = "android.resource://" + getPackageName() + "/" + R.raw.circle2;
         uriCPG1 = Uri.parse(videoPathCPG1);
         videoViewCPG1.setVideoURI(uriCPG1);
-        MediaPlayer sfx = MediaPlayer.create(this, R.raw.btnsfx);
+        sfx = MediaPlayer.create(this, R.raw.btnsfx); 
 
-        mediaController = new MediaController(this);
-        videoViewCPG1.setMediaController(mediaController);
-        mediaController.setVisibility(View.GONE);
-        mediaController.setAnchorView(videoViewCPG1);
-
-        videoViewCPG1.start();
+         videoViewCPG1.setOnPreparedListener(new MediaPlayer.OnPreparedListener() {
+            @Override
+            public void onPrepared(MediaPlayer mp) {
+                
+                videoViewCPG1.start();
+                
+            }
+        });
 
         videoViewCPG1.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
             @Override
             public void onCompletion(MediaPlayer mp) {
 
+                videoViewCPG1.stopPlayback();
                 circle3();
 
             }
@@ -112,6 +127,7 @@ public class LessonShapes extends AppCompatActivity {
             public void onClick(View v) {
 
                 sfx.start();
+                videoViewCPG1.stopPlayback();
                 circle1();
 
             }
@@ -122,8 +138,16 @@ public class LessonShapes extends AppCompatActivity {
             public void onClick(View v) {
 
                 sfx.start();
+                videoViewCPG1.stopPlayback();
                 circle3();
 
+            }
+        });
+
+        sfx.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+            @Override
+            public void onCompletion(MediaPlayer mp) {
+                sfx.release();
             }
         });
     }
@@ -133,19 +157,22 @@ public class LessonShapes extends AppCompatActivity {
         videoPathCPG1 = "android.resource://" + getPackageName() + "/" + R.raw.circle3;
         uriCPG1 = Uri.parse(videoPathCPG1);
         videoViewCPG1.setVideoURI(uriCPG1);
-        MediaPlayer sfx = MediaPlayer.create(this, R.raw.btnsfx);
+        sfx = MediaPlayer.create(this, R.raw.btnsfx); 
 
-        mediaController = new MediaController(this);
-        videoViewCPG1.setMediaController(mediaController);
-        mediaController.setVisibility(View.GONE);
-        mediaController.setAnchorView(videoViewCPG1);
-
-        videoViewCPG1.start();
+         videoViewCPG1.setOnPreparedListener(new MediaPlayer.OnPreparedListener() {
+            @Override
+            public void onPrepared(MediaPlayer mp) {
+                
+                videoViewCPG1.start();
+                
+            }
+        });
 
         videoViewCPG1.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
             @Override
             public void onCompletion(MediaPlayer mp) {
 
+                videoViewCPG1.stopPlayback();
                 circle4();
 
             }
@@ -156,6 +183,7 @@ public class LessonShapes extends AppCompatActivity {
             public void onClick(View v) {
 
                 sfx.start();
+                videoViewCPG1.stopPlayback();
                 circle2();
 
             }
@@ -166,8 +194,16 @@ public class LessonShapes extends AppCompatActivity {
             public void onClick(View v) {
 
                 sfx.start();
+                videoViewCPG1.stopPlayback();
                 circle4();
 
+            }
+        });
+
+        sfx.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+            @Override
+            public void onCompletion(MediaPlayer mp) {
+                sfx.release();
             }
         });
     }
@@ -177,19 +213,22 @@ public class LessonShapes extends AppCompatActivity {
         videoPathCPG1 = "android.resource://" + getPackageName() + "/" + R.raw.circle4;
         uriCPG1 = Uri.parse(videoPathCPG1);
         videoViewCPG1.setVideoURI(uriCPG1);
-        MediaPlayer sfx = MediaPlayer.create(this, R.raw.btnsfx);
+        sfx = MediaPlayer.create(this, R.raw.btnsfx); 
 
-        mediaController = new MediaController(this);
-        videoViewCPG1.setMediaController(mediaController);
-        mediaController.setVisibility(View.GONE);
-        mediaController.setAnchorView(videoViewCPG1);
+         videoViewCPG1.setOnPreparedListener(new MediaPlayer.OnPreparedListener() {
+            @Override
+            public void onPrepared(MediaPlayer mp) {
 
-        videoViewCPG1.start();
+                videoViewCPG1.start();
+                
+            }
+        });
 
         videoViewCPG1.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
             @Override
             public void onCompletion(MediaPlayer mp) {
 
+                videoViewCPG1.stopPlayback();
                 circle5();
 
             }
@@ -200,6 +239,7 @@ public class LessonShapes extends AppCompatActivity {
             public void onClick(View v) {
 
                 sfx.start();
+                videoViewCPG1.stopPlayback();
                 circle3();
 
             }
@@ -210,8 +250,16 @@ public class LessonShapes extends AppCompatActivity {
             public void onClick(View v) {
 
                 sfx.start();
+                videoViewCPG1.stopPlayback();
                 circle5();
 
+            }
+        });
+
+        sfx.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+            @Override
+            public void onCompletion(MediaPlayer mp) {
+                sfx.release();
             }
         });
     }
@@ -221,19 +269,22 @@ public class LessonShapes extends AppCompatActivity {
         videoPathCPG1 = "android.resource://" + getPackageName() + "/" + R.raw.circle5;
         uriCPG1 = Uri.parse(videoPathCPG1);
         videoViewCPG1.setVideoURI(uriCPG1);
-        MediaPlayer sfx = MediaPlayer.create(this, R.raw.btnsfx);
+        sfx = MediaPlayer.create(this, R.raw.btnsfx); 
 
-        mediaController = new MediaController(this);
-        videoViewCPG1.setMediaController(mediaController);
-        mediaController.setVisibility(View.GONE);
-        mediaController.setAnchorView(videoViewCPG1);
-
-        videoViewCPG1.start();
+         videoViewCPG1.setOnPreparedListener(new MediaPlayer.OnPreparedListener() {
+            @Override
+            public void onPrepared(MediaPlayer mp) {
+                
+                videoViewCPG1.start();
+                
+            }
+        });
 
         videoViewCPG1.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
             @Override
             public void onCompletion(MediaPlayer mp) {
 
+                videoViewCPG1.stopPlayback();
                 circle6();
 
             }
@@ -244,6 +295,7 @@ public class LessonShapes extends AppCompatActivity {
             public void onClick(View v) {
 
                 sfx.start();
+                videoViewCPG1.stopPlayback();
                 circle4();
 
             }
@@ -254,8 +306,16 @@ public class LessonShapes extends AppCompatActivity {
             public void onClick(View v) {
 
                 sfx.start();
+                videoViewCPG1.stopPlayback();
                 circle6();
 
+            }
+        });
+
+        sfx.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+            @Override
+            public void onCompletion(MediaPlayer mp) {
+                sfx.release();
             }
         });
     }
@@ -265,19 +325,22 @@ public class LessonShapes extends AppCompatActivity {
         videoPathCPG1 = "android.resource://" + getPackageName() + "/" + R.raw.circle6;
         uriCPG1 = Uri.parse(videoPathCPG1);
         videoViewCPG1.setVideoURI(uriCPG1);
-        MediaPlayer sfx = MediaPlayer.create(this, R.raw.btnsfx);
+        sfx = MediaPlayer.create(this, R.raw.btnsfx); 
 
-        mediaController = new MediaController(this);
-        videoViewCPG1.setMediaController(mediaController);
-        mediaController.setVisibility(View.GONE);
-        mediaController.setAnchorView(videoViewCPG1);
-
-        videoViewCPG1.start();
+         videoViewCPG1.setOnPreparedListener(new MediaPlayer.OnPreparedListener() {
+            @Override
+            public void onPrepared(MediaPlayer mp) {
+                
+                videoViewCPG1.start();
+                
+            }
+        });
 
         videoViewCPG1.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
             @Override
             public void onCompletion(MediaPlayer mp) {
 
+                videoViewCPG1.stopPlayback();
                 square1();
 
             }
@@ -288,6 +351,7 @@ public class LessonShapes extends AppCompatActivity {
             public void onClick(View v) {
 
                 sfx.start();
+                videoViewCPG1.stopPlayback();
                 circle5();
 
             }
@@ -298,8 +362,16 @@ public class LessonShapes extends AppCompatActivity {
             public void onClick(View v) {
 
                 sfx.start();
+                videoViewCPG1.stopPlayback();
                 square1();
 
+            }
+        });
+
+        sfx.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+            @Override
+            public void onCompletion(MediaPlayer mp) {
+                sfx.release();
             }
         });
     }
@@ -309,19 +381,22 @@ public class LessonShapes extends AppCompatActivity {
         videoPathCPG1 = "android.resource://" + getPackageName() + "/" + R.raw.square1;
         uriCPG1 = Uri.parse(videoPathCPG1);
         videoViewCPG1.setVideoURI(uriCPG1);
-        MediaPlayer sfx = MediaPlayer.create(this, R.raw.btnsfx);
+        sfx = MediaPlayer.create(this, R.raw.btnsfx); 
 
-        mediaController = new MediaController(this);
-        videoViewCPG1.setMediaController(mediaController);
-        mediaController.setVisibility(View.GONE);
-        mediaController.setAnchorView(videoViewCPG1);
-
-        videoViewCPG1.start();
+         videoViewCPG1.setOnPreparedListener(new MediaPlayer.OnPreparedListener() {
+            @Override
+            public void onPrepared(MediaPlayer mp) {
+                
+                videoViewCPG1.start();
+                
+            }
+        });
 
         videoViewCPG1.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
             @Override
             public void onCompletion(MediaPlayer mp) {
 
+                videoViewCPG1.stopPlayback();
                 square2();
 
             }
@@ -332,6 +407,7 @@ public class LessonShapes extends AppCompatActivity {
             public void onClick(View v) {
 
                 sfx.start();
+                videoViewCPG1.stopPlayback();
                 circle6();
 
             }
@@ -342,8 +418,16 @@ public class LessonShapes extends AppCompatActivity {
             public void onClick(View v) {
 
                 sfx.start();
+                videoViewCPG1.stopPlayback();
                 square2();
 
+            }
+        });
+
+        sfx.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+            @Override
+            public void onCompletion(MediaPlayer mp) {
+                sfx.release();
             }
         });
     }
@@ -353,19 +437,22 @@ public class LessonShapes extends AppCompatActivity {
         videoPathCPG1 = "android.resource://" + getPackageName() + "/" + R.raw.square2;
         uriCPG1 = Uri.parse(videoPathCPG1);
         videoViewCPG1.setVideoURI(uriCPG1);
-        MediaPlayer sfx = MediaPlayer.create(this, R.raw.btnsfx);
+        sfx = MediaPlayer.create(this, R.raw.btnsfx); 
 
-        mediaController = new MediaController(this);
-        videoViewCPG1.setMediaController(mediaController);
-        mediaController.setVisibility(View.GONE);
-        mediaController.setAnchorView(videoViewCPG1);
-
-        videoViewCPG1.start();
+         videoViewCPG1.setOnPreparedListener(new MediaPlayer.OnPreparedListener() {
+            @Override
+            public void onPrepared(MediaPlayer mp) {
+                
+                videoViewCPG1.start();
+                
+            }
+        });
 
         videoViewCPG1.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
             @Override
             public void onCompletion(MediaPlayer mp) {
 
+                videoViewCPG1.stopPlayback();
                 square3();
 
             }
@@ -376,6 +463,7 @@ public class LessonShapes extends AppCompatActivity {
             public void onClick(View v) {
 
                 sfx.start();
+                videoViewCPG1.stopPlayback();
                 square1();
 
             }
@@ -386,8 +474,16 @@ public class LessonShapes extends AppCompatActivity {
             public void onClick(View v) {
 
                 sfx.start();
+                videoViewCPG1.stopPlayback();
                 square3();
 
+            }
+        });
+
+        sfx.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+            @Override
+            public void onCompletion(MediaPlayer mp) {
+                sfx.release();
             }
         });
     }
@@ -397,19 +493,22 @@ public class LessonShapes extends AppCompatActivity {
         videoPathCPG1 = "android.resource://" + getPackageName() + "/" + R.raw.square3;
         uriCPG1 = Uri.parse(videoPathCPG1);
         videoViewCPG1.setVideoURI(uriCPG1);
-        MediaPlayer sfx = MediaPlayer.create(this, R.raw.btnsfx);
+        sfx = MediaPlayer.create(this, R.raw.btnsfx); 
 
-        mediaController = new MediaController(this);
-        videoViewCPG1.setMediaController(mediaController);
-        mediaController.setVisibility(View.GONE);
-        mediaController.setAnchorView(videoViewCPG1);
-
-        videoViewCPG1.start();
+         videoViewCPG1.setOnPreparedListener(new MediaPlayer.OnPreparedListener() {
+            @Override
+            public void onPrepared(MediaPlayer mp) {
+                
+                videoViewCPG1.start();
+                
+            }
+        });
 
         videoViewCPG1.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
             @Override
             public void onCompletion(MediaPlayer mp) {
 
+                videoViewCPG1.stopPlayback();
                 square4();
 
             }
@@ -420,6 +519,7 @@ public class LessonShapes extends AppCompatActivity {
             public void onClick(View v) {
 
                 sfx.start();
+                videoViewCPG1.stopPlayback();
                 square2();
 
             }
@@ -430,8 +530,16 @@ public class LessonShapes extends AppCompatActivity {
             public void onClick(View v) {
 
                 sfx.start();
+                videoViewCPG1.stopPlayback();
                 square4();
 
+            }
+        });
+
+        sfx.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+            @Override
+            public void onCompletion(MediaPlayer mp) {
+                sfx.release();
             }
         });
     }
@@ -441,19 +549,22 @@ public class LessonShapes extends AppCompatActivity {
         videoPathCPG1 = "android.resource://" + getPackageName() + "/" + R.raw.square4;
         uriCPG1 = Uri.parse(videoPathCPG1);
         videoViewCPG1.setVideoURI(uriCPG1);
-        MediaPlayer sfx = MediaPlayer.create(this, R.raw.btnsfx);
+        sfx = MediaPlayer.create(this, R.raw.btnsfx); 
 
-        mediaController = new MediaController(this);
-        videoViewCPG1.setMediaController(mediaController);
-        mediaController.setVisibility(View.GONE);
-        mediaController.setAnchorView(videoViewCPG1);
-
-        videoViewCPG1.start();
+         videoViewCPG1.setOnPreparedListener(new MediaPlayer.OnPreparedListener() {
+            @Override
+            public void onPrepared(MediaPlayer mp) {
+                
+                videoViewCPG1.start();
+                
+            }
+        });
 
         videoViewCPG1.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
             @Override
             public void onCompletion(MediaPlayer mp) {
 
+                videoViewCPG1.stopPlayback();
                 square5();
 
             }
@@ -464,6 +575,7 @@ public class LessonShapes extends AppCompatActivity {
             public void onClick(View v) {
 
                 sfx.start();
+                videoViewCPG1.stopPlayback();
                 square3();
 
             }
@@ -474,8 +586,16 @@ public class LessonShapes extends AppCompatActivity {
             public void onClick(View v) {
 
                 sfx.start();
+                videoViewCPG1.stopPlayback();
                 square5();
 
+            }
+        });
+
+        sfx.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+            @Override
+            public void onCompletion(MediaPlayer mp) {
+                sfx.release();
             }
         });
     }
@@ -485,19 +605,22 @@ public class LessonShapes extends AppCompatActivity {
         videoPathCPG1 = "android.resource://" + getPackageName() + "/" + R.raw.square5;
         uriCPG1 = Uri.parse(videoPathCPG1);
         videoViewCPG1.setVideoURI(uriCPG1);
-        MediaPlayer sfx = MediaPlayer.create(this, R.raw.btnsfx);
+        sfx = MediaPlayer.create(this, R.raw.btnsfx); 
 
-        mediaController = new MediaController(this);
-        videoViewCPG1.setMediaController(mediaController);
-        mediaController.setVisibility(View.GONE);
-        mediaController.setAnchorView(videoViewCPG1);
-
-        videoViewCPG1.start();
+         videoViewCPG1.setOnPreparedListener(new MediaPlayer.OnPreparedListener() {
+            @Override
+            public void onPrepared(MediaPlayer mp) {
+                
+                videoViewCPG1.start();
+                
+            }
+        });
 
         videoViewCPG1.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
             @Override
             public void onCompletion(MediaPlayer mp) {
 
+                videoViewCPG1.stopPlayback();
                 square6();
 
             }
@@ -508,6 +631,7 @@ public class LessonShapes extends AppCompatActivity {
             public void onClick(View v) {
 
                 sfx.start();
+                videoViewCPG1.stopPlayback();
                 square4();
 
             }
@@ -518,8 +642,16 @@ public class LessonShapes extends AppCompatActivity {
             public void onClick(View v) {
 
                 sfx.start();
+                videoViewCPG1.stopPlayback();
                 square6();
 
+            }
+        });
+
+        sfx.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+            @Override
+            public void onCompletion(MediaPlayer mp) {
+                sfx.release();
             }
         });
     }
@@ -529,19 +661,22 @@ public class LessonShapes extends AppCompatActivity {
         videoPathCPG1 = "android.resource://" + getPackageName() + "/" + R.raw.square6;
         uriCPG1 = Uri.parse(videoPathCPG1);
         videoViewCPG1.setVideoURI(uriCPG1);
-        MediaPlayer sfx = MediaPlayer.create(this, R.raw.btnsfx);
+        sfx = MediaPlayer.create(this, R.raw.btnsfx); 
 
-        mediaController = new MediaController(this);
-        videoViewCPG1.setMediaController(mediaController);
-        mediaController.setVisibility(View.GONE);
-        mediaController.setAnchorView(videoViewCPG1);
-
-        videoViewCPG1.start();
+         videoViewCPG1.setOnPreparedListener(new MediaPlayer.OnPreparedListener() {
+            @Override
+            public void onPrepared(MediaPlayer mp) {
+                
+                videoViewCPG1.start();
+                
+            }
+        });
 
         videoViewCPG1.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
             @Override
             public void onCompletion(MediaPlayer mp) {
 
+                videoViewCPG1.stopPlayback();
                 triangle1();
 
             }
@@ -552,6 +687,7 @@ public class LessonShapes extends AppCompatActivity {
             public void onClick(View v) {
 
                 sfx.start();
+                videoViewCPG1.stopPlayback();
                 square5();
 
             }
@@ -562,8 +698,16 @@ public class LessonShapes extends AppCompatActivity {
             public void onClick(View v) {
 
                 sfx.start();
+                videoViewCPG1.stopPlayback();
                 triangle1();
 
+            }
+        });
+
+        sfx.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+            @Override
+            public void onCompletion(MediaPlayer mp) {
+                sfx.release();
             }
         });
     }
@@ -573,19 +717,22 @@ public class LessonShapes extends AppCompatActivity {
         videoPathCPG1 = "android.resource://" + getPackageName() + "/" + R.raw.triangle1;
         uriCPG1 = Uri.parse(videoPathCPG1);
         videoViewCPG1.setVideoURI(uriCPG1);
-        MediaPlayer sfx = MediaPlayer.create(this, R.raw.btnsfx);
+        sfx = MediaPlayer.create(this, R.raw.btnsfx); 
 
-        mediaController = new MediaController(this);
-        videoViewCPG1.setMediaController(mediaController);
-        mediaController.setVisibility(View.GONE);
-        mediaController.setAnchorView(videoViewCPG1);
-
-        videoViewCPG1.start();
+         videoViewCPG1.setOnPreparedListener(new MediaPlayer.OnPreparedListener() {
+            @Override
+            public void onPrepared(MediaPlayer mp) {
+                
+                videoViewCPG1.start();
+                
+            }
+        });
 
         videoViewCPG1.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
             @Override
             public void onCompletion(MediaPlayer mp) {
 
+                videoViewCPG1.stopPlayback();
                 triangle2();
 
             }
@@ -596,6 +743,7 @@ public class LessonShapes extends AppCompatActivity {
             public void onClick(View v) {
 
                 sfx.start();
+                videoViewCPG1.stopPlayback();
                 square6();
 
             }
@@ -606,8 +754,16 @@ public class LessonShapes extends AppCompatActivity {
             public void onClick(View v) {
 
                 sfx.start();
+                videoViewCPG1.stopPlayback();
                 triangle2();
 
+            }
+        });
+
+        sfx.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+            @Override
+            public void onCompletion(MediaPlayer mp) {
+                sfx.release();
             }
         });
     }
@@ -617,19 +773,22 @@ public class LessonShapes extends AppCompatActivity {
         videoPathCPG1 = "android.resource://" + getPackageName() + "/" + R.raw.triangle2;
         uriCPG1 = Uri.parse(videoPathCPG1);
         videoViewCPG1.setVideoURI(uriCPG1);
-        MediaPlayer sfx = MediaPlayer.create(this, R.raw.btnsfx);
+        sfx = MediaPlayer.create(this, R.raw.btnsfx); 
 
-        mediaController = new MediaController(this);
-        videoViewCPG1.setMediaController(mediaController);
-        mediaController.setVisibility(View.GONE);
-        mediaController.setAnchorView(videoViewCPG1);
-
-        videoViewCPG1.start();
+         videoViewCPG1.setOnPreparedListener(new MediaPlayer.OnPreparedListener() {
+            @Override
+            public void onPrepared(MediaPlayer mp) {
+                
+                videoViewCPG1.start();
+                
+            }
+        });
 
         videoViewCPG1.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
             @Override
             public void onCompletion(MediaPlayer mp) {
 
+                videoViewCPG1.stopPlayback();
                 triangle3();
 
             }
@@ -640,6 +799,7 @@ public class LessonShapes extends AppCompatActivity {
             public void onClick(View v) {
 
                 sfx.start();
+                videoViewCPG1.stopPlayback();
                 triangle1();
 
             }
@@ -650,8 +810,16 @@ public class LessonShapes extends AppCompatActivity {
             public void onClick(View v) {
 
                 sfx.start();
+                videoViewCPG1.stopPlayback();
                 triangle3();
 
+            }
+        });
+
+        sfx.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+            @Override
+            public void onCompletion(MediaPlayer mp) {
+                sfx.release();
             }
         });
     }
@@ -661,19 +829,22 @@ public class LessonShapes extends AppCompatActivity {
         videoPathCPG1 = "android.resource://" + getPackageName() + "/" + R.raw.triangle3;
         uriCPG1 = Uri.parse(videoPathCPG1);
         videoViewCPG1.setVideoURI(uriCPG1);
-        MediaPlayer sfx = MediaPlayer.create(this, R.raw.btnsfx);
+        sfx = MediaPlayer.create(this, R.raw.btnsfx); 
 
-        mediaController = new MediaController(this);
-        videoViewCPG1.setMediaController(mediaController);
-        mediaController.setVisibility(View.GONE);
-        mediaController.setAnchorView(videoViewCPG1);
-
-        videoViewCPG1.start();
+         videoViewCPG1.setOnPreparedListener(new MediaPlayer.OnPreparedListener() {
+            @Override
+            public void onPrepared(MediaPlayer mp) {
+                
+                videoViewCPG1.start();
+                
+            }
+        });
 
         videoViewCPG1.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
             @Override
             public void onCompletion(MediaPlayer mp) {
 
+                videoViewCPG1.stopPlayback();
                 triangle4();
 
             }
@@ -684,6 +855,7 @@ public class LessonShapes extends AppCompatActivity {
             public void onClick(View v) {
 
                 sfx.start();
+                videoViewCPG1.stopPlayback();
                 triangle2();
 
             }
@@ -694,8 +866,16 @@ public class LessonShapes extends AppCompatActivity {
             public void onClick(View v) {
 
                 sfx.start();
+                videoViewCPG1.stopPlayback();
                 triangle4();
 
+            }
+        });
+
+        sfx.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+            @Override
+            public void onCompletion(MediaPlayer mp) {
+                sfx.release();
             }
         });
     }
@@ -705,19 +885,22 @@ public class LessonShapes extends AppCompatActivity {
         videoPathCPG1 = "android.resource://" + getPackageName() + "/" + R.raw.triangle4;
         uriCPG1 = Uri.parse(videoPathCPG1);
         videoViewCPG1.setVideoURI(uriCPG1);
-        MediaPlayer sfx = MediaPlayer.create(this, R.raw.btnsfx);
+        sfx = MediaPlayer.create(this, R.raw.btnsfx); 
 
-        mediaController = new MediaController(this);
-        videoViewCPG1.setMediaController(mediaController);
-        mediaController.setVisibility(View.GONE);
-        mediaController.setAnchorView(videoViewCPG1);
-
-        videoViewCPG1.start();
+         videoViewCPG1.setOnPreparedListener(new MediaPlayer.OnPreparedListener() {
+            @Override
+            public void onPrepared(MediaPlayer mp) {
+                
+                videoViewCPG1.start();
+                
+            }
+        });
 
         videoViewCPG1.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
             @Override
             public void onCompletion(MediaPlayer mp) {
 
+                videoViewCPG1.stopPlayback();
                 triangle5();
 
             }
@@ -728,6 +911,7 @@ public class LessonShapes extends AppCompatActivity {
             public void onClick(View v) {
 
                 sfx.start();
+                videoViewCPG1.stopPlayback();
                 triangle3();
 
             }
@@ -738,8 +922,16 @@ public class LessonShapes extends AppCompatActivity {
             public void onClick(View v) {
 
                 sfx.start();
+                videoViewCPG1.stopPlayback();
                 triangle5();
 
+            }
+        });
+
+        sfx.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+            @Override
+            public void onCompletion(MediaPlayer mp) {
+                sfx.release();
             }
         });
     }
@@ -749,19 +941,22 @@ public class LessonShapes extends AppCompatActivity {
         videoPathCPG1 = "android.resource://" + getPackageName() + "/" + R.raw.triangle5;
         uriCPG1 = Uri.parse(videoPathCPG1);
         videoViewCPG1.setVideoURI(uriCPG1);
-        MediaPlayer sfx = MediaPlayer.create(this, R.raw.btnsfx);
+        sfx = MediaPlayer.create(this, R.raw.btnsfx); 
 
-        mediaController = new MediaController(this);
-        videoViewCPG1.setMediaController(mediaController);
-        mediaController.setVisibility(View.GONE);
-        mediaController.setAnchorView(videoViewCPG1);
-
-        videoViewCPG1.start();
+         videoViewCPG1.setOnPreparedListener(new MediaPlayer.OnPreparedListener() {
+            @Override
+            public void onPrepared(MediaPlayer mp) {
+                
+                videoViewCPG1.start();
+                
+            }
+        });
 
         videoViewCPG1.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
             @Override
             public void onCompletion(MediaPlayer mp) {
 
+                videoViewCPG1.stopPlayback();
                 triangle6();
 
             }
@@ -772,6 +967,7 @@ public class LessonShapes extends AppCompatActivity {
             public void onClick(View v) {
 
                 sfx.start();
+                videoViewCPG1.stopPlayback();
                 triangle4();
 
             }
@@ -782,8 +978,16 @@ public class LessonShapes extends AppCompatActivity {
             public void onClick(View v) {
 
                 sfx.start();
+                videoViewCPG1.stopPlayback();
                 triangle6();
 
+            }
+        });
+
+        sfx.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+            @Override
+            public void onCompletion(MediaPlayer mp) {
+                sfx.release();
             }
         });
     }
@@ -793,19 +997,22 @@ public class LessonShapes extends AppCompatActivity {
         videoPathCPG1 = "android.resource://" + getPackageName() + "/" + R.raw.triangle6;
         uriCPG1 = Uri.parse(videoPathCPG1);
         videoViewCPG1.setVideoURI(uriCPG1);
-        MediaPlayer sfx = MediaPlayer.create(this, R.raw.btnsfx);
+        sfx = MediaPlayer.create(this, R.raw.btnsfx); 
 
-        mediaController = new MediaController(this);
-        videoViewCPG1.setMediaController(mediaController);
-        mediaController.setVisibility(View.GONE);
-        mediaController.setAnchorView(videoViewCPG1);
-
-        videoViewCPG1.start();
+         videoViewCPG1.setOnPreparedListener(new MediaPlayer.OnPreparedListener() {
+            @Override
+            public void onPrepared(MediaPlayer mp) {
+                
+                videoViewCPG1.start();
+                
+            }
+        });
 
         videoViewCPG1.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
             @Override
             public void onCompletion(MediaPlayer mp) {
 
+                videoViewCPG1.stopPlayback();
                 star1();
 
             }
@@ -816,6 +1023,7 @@ public class LessonShapes extends AppCompatActivity {
             public void onClick(View v) {
 
                 sfx.start();
+                videoViewCPG1.stopPlayback();
                 triangle5();
 
             }
@@ -826,8 +1034,16 @@ public class LessonShapes extends AppCompatActivity {
             public void onClick(View v) {
 
                 sfx.start();
+                videoViewCPG1.stopPlayback();
                 star1();
 
+            }
+        });
+
+        sfx.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+            @Override
+            public void onCompletion(MediaPlayer mp) {
+                sfx.release();
             }
         });
     }
@@ -837,19 +1053,22 @@ public class LessonShapes extends AppCompatActivity {
         videoPathCPG1 = "android.resource://" + getPackageName() + "/" + R.raw.star1;
         uriCPG1 = Uri.parse(videoPathCPG1);
         videoViewCPG1.setVideoURI(uriCPG1);
-        MediaPlayer sfx = MediaPlayer.create(this, R.raw.btnsfx);
+        sfx = MediaPlayer.create(this, R.raw.btnsfx); 
 
-        mediaController = new MediaController(this);
-        videoViewCPG1.setMediaController(mediaController);
-        mediaController.setVisibility(View.GONE);
-        mediaController.setAnchorView(videoViewCPG1);
-
-        videoViewCPG1.start();
+         videoViewCPG1.setOnPreparedListener(new MediaPlayer.OnPreparedListener() {
+            @Override
+            public void onPrepared(MediaPlayer mp) {
+                
+                videoViewCPG1.start();
+                
+            }
+        });
 
         videoViewCPG1.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
             @Override
             public void onCompletion(MediaPlayer mp) {
 
+                videoViewCPG1.stopPlayback();
                 star2();
 
             }
@@ -860,6 +1079,7 @@ public class LessonShapes extends AppCompatActivity {
             public void onClick(View v) {
 
                 sfx.start();
+                videoViewCPG1.stopPlayback();
                 triangle6();
 
             }
@@ -870,8 +1090,16 @@ public class LessonShapes extends AppCompatActivity {
             public void onClick(View v) {
 
                 sfx.start();
+                videoViewCPG1.stopPlayback();
                 star2();
 
+            }
+        });
+
+        sfx.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+            @Override
+            public void onCompletion(MediaPlayer mp) {
+                sfx.release();
             }
         });
     }
@@ -881,19 +1109,22 @@ public class LessonShapes extends AppCompatActivity {
         videoPathCPG1 = "android.resource://" + getPackageName() + "/" + R.raw.star2;
         uriCPG1 = Uri.parse(videoPathCPG1);
         videoViewCPG1.setVideoURI(uriCPG1);
-        MediaPlayer sfx = MediaPlayer.create(this, R.raw.btnsfx);
+        sfx = MediaPlayer.create(this, R.raw.btnsfx); 
 
-        mediaController = new MediaController(this);
-        videoViewCPG1.setMediaController(mediaController);
-        mediaController.setVisibility(View.GONE);
-        mediaController.setAnchorView(videoViewCPG1);
-
-        videoViewCPG1.start();
+         videoViewCPG1.setOnPreparedListener(new MediaPlayer.OnPreparedListener() {
+            @Override
+            public void onPrepared(MediaPlayer mp) {
+                
+                videoViewCPG1.start();
+                
+            }
+        });
 
         videoViewCPG1.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
             @Override
             public void onCompletion(MediaPlayer mp) {
 
+                videoViewCPG1.stopPlayback();
                 star3();
 
             }
@@ -904,6 +1135,7 @@ public class LessonShapes extends AppCompatActivity {
             public void onClick(View v) {
 
                 sfx.start();
+                videoViewCPG1.stopPlayback();
                 star1();
 
             }
@@ -914,8 +1146,16 @@ public class LessonShapes extends AppCompatActivity {
             public void onClick(View v) {
 
                 sfx.start();
+                videoViewCPG1.stopPlayback();
                 star3();
 
+            }
+        });
+
+        sfx.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+            @Override
+            public void onCompletion(MediaPlayer mp) {
+                sfx.release();
             }
         });
     }
@@ -925,19 +1165,22 @@ public class LessonShapes extends AppCompatActivity {
         videoPathCPG1 = "android.resource://" + getPackageName() + "/" + R.raw.star3;
         uriCPG1 = Uri.parse(videoPathCPG1);
         videoViewCPG1.setVideoURI(uriCPG1);
-        MediaPlayer sfx = MediaPlayer.create(this, R.raw.btnsfx);
+        sfx = MediaPlayer.create(this, R.raw.btnsfx); 
 
-        mediaController = new MediaController(this);
-        videoViewCPG1.setMediaController(mediaController);
-        mediaController.setVisibility(View.GONE);
-        mediaController.setAnchorView(videoViewCPG1);
-
-        videoViewCPG1.start();
+         videoViewCPG1.setOnPreparedListener(new MediaPlayer.OnPreparedListener() {
+            @Override
+            public void onPrepared(MediaPlayer mp) {
+                
+                videoViewCPG1.start();
+                
+            }
+        });
 
         videoViewCPG1.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
             @Override
             public void onCompletion(MediaPlayer mp) {
 
+                videoViewCPG1.stopPlayback();
                 star4();
 
             }
@@ -948,6 +1191,7 @@ public class LessonShapes extends AppCompatActivity {
             public void onClick(View v) {
 
                 sfx.start();
+                videoViewCPG1.stopPlayback();
                 star2();
 
             }
@@ -958,8 +1202,16 @@ public class LessonShapes extends AppCompatActivity {
             public void onClick(View v) {
 
                 sfx.start();
+                videoViewCPG1.stopPlayback();
                 star4();
 
+            }
+        });
+
+        sfx.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+            @Override
+            public void onCompletion(MediaPlayer mp) {
+                sfx.release();
             }
         });
     }
@@ -969,19 +1221,22 @@ public class LessonShapes extends AppCompatActivity {
         videoPathCPG1 = "android.resource://" + getPackageName() + "/" + R.raw.star4;
         uriCPG1 = Uri.parse(videoPathCPG1);
         videoViewCPG1.setVideoURI(uriCPG1);
-        MediaPlayer sfx = MediaPlayer.create(this, R.raw.btnsfx);
+        sfx = MediaPlayer.create(this, R.raw.btnsfx); 
 
-        mediaController = new MediaController(this);
-        videoViewCPG1.setMediaController(mediaController);
-        mediaController.setVisibility(View.GONE);
-        mediaController.setAnchorView(videoViewCPG1);
-
-        videoViewCPG1.start();
+         videoViewCPG1.setOnPreparedListener(new MediaPlayer.OnPreparedListener() {
+            @Override
+            public void onPrepared(MediaPlayer mp) {
+                
+                videoViewCPG1.start();
+                
+            }
+        });
 
         videoViewCPG1.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
             @Override
             public void onCompletion(MediaPlayer mp) {
 
+                videoViewCPG1.stopPlayback();
                 star5();
 
             }
@@ -992,6 +1247,7 @@ public class LessonShapes extends AppCompatActivity {
             public void onClick(View v) {
 
                 sfx.start();
+                videoViewCPG1.stopPlayback();
                 star3();
 
             }
@@ -1002,8 +1258,16 @@ public class LessonShapes extends AppCompatActivity {
             public void onClick(View v) {
 
                 sfx.start();
+                videoViewCPG1.stopPlayback();
                 star5();
 
+            }
+        });
+
+        sfx.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+            @Override
+            public void onCompletion(MediaPlayer mp) {
+                sfx.release();
             }
         });
     }
@@ -1013,19 +1277,22 @@ public class LessonShapes extends AppCompatActivity {
         videoPathCPG1 = "android.resource://" + getPackageName() + "/" + R.raw.star5;
         uriCPG1 = Uri.parse(videoPathCPG1);
         videoViewCPG1.setVideoURI(uriCPG1);
-        MediaPlayer sfx = MediaPlayer.create(this, R.raw.btnsfx);
+        sfx = MediaPlayer.create(this, R.raw.btnsfx); 
 
-        mediaController = new MediaController(this);
-        videoViewCPG1.setMediaController(mediaController);
-        mediaController.setVisibility(View.GONE);
-        mediaController.setAnchorView(videoViewCPG1);
-
-        videoViewCPG1.start();
+         videoViewCPG1.setOnPreparedListener(new MediaPlayer.OnPreparedListener() {
+            @Override
+            public void onPrepared(MediaPlayer mp) {
+                
+                videoViewCPG1.start();
+                
+            }
+        });
 
         videoViewCPG1.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
             @Override
             public void onCompletion(MediaPlayer mp) {
 
+                videoViewCPG1.stopPlayback();
                 star6();
 
             }
@@ -1036,6 +1303,7 @@ public class LessonShapes extends AppCompatActivity {
             public void onClick(View v) {
 
                 sfx.start();
+                videoViewCPG1.stopPlayback();
                 star4();
 
             }
@@ -1046,8 +1314,16 @@ public class LessonShapes extends AppCompatActivity {
             public void onClick(View v) {
 
                 sfx.start();
+                videoViewCPG1.stopPlayback();
                 star6();
 
+            }
+        });
+
+        sfx.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+            @Override
+            public void onCompletion(MediaPlayer mp) {
+                sfx.release();
             }
         });
     }
@@ -1057,19 +1333,22 @@ public class LessonShapes extends AppCompatActivity {
         videoPathCPG1 = "android.resource://" + getPackageName() + "/" + R.raw.star6;
         uriCPG1 = Uri.parse(videoPathCPG1);
         videoViewCPG1.setVideoURI(uriCPG1);
-        MediaPlayer sfx = MediaPlayer.create(this, R.raw.btnsfx);
+        sfx = MediaPlayer.create(this, R.raw.btnsfx); 
 
-        mediaController = new MediaController(this);
-        videoViewCPG1.setMediaController(mediaController);
-        mediaController.setVisibility(View.GONE);
-        mediaController.setAnchorView(videoViewCPG1);
-
-        videoViewCPG1.start();
+         videoViewCPG1.setOnPreparedListener(new MediaPlayer.OnPreparedListener() {
+            @Override
+            public void onPrepared(MediaPlayer mp) {
+                
+                videoViewCPG1.start();
+                
+            }
+        });
 
         videoViewCPG1.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
             @Override
             public void onCompletion(MediaPlayer mp) {
 
+                videoViewCPG1.stopPlayback();
                 heart1();
 
             }
@@ -1080,6 +1359,7 @@ public class LessonShapes extends AppCompatActivity {
             public void onClick(View v) {
 
                 sfx.start();
+                videoViewCPG1.stopPlayback();
                 star5();
 
             }
@@ -1090,8 +1370,16 @@ public class LessonShapes extends AppCompatActivity {
             public void onClick(View v) {
 
                 sfx.start();
+                videoViewCPG1.stopPlayback();
                 heart1();
 
+            }
+        });
+
+        sfx.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+            @Override
+            public void onCompletion(MediaPlayer mp) {
+                sfx.release();
             }
         });
     }
@@ -1101,19 +1389,22 @@ public class LessonShapes extends AppCompatActivity {
         videoPathCPG1 = "android.resource://" + getPackageName() + "/" + R.raw.heart1;
         uriCPG1 = Uri.parse(videoPathCPG1);
         videoViewCPG1.setVideoURI(uriCPG1);
-        MediaPlayer sfx = MediaPlayer.create(this, R.raw.btnsfx);
+        sfx = MediaPlayer.create(this, R.raw.btnsfx); 
 
-        mediaController = new MediaController(this);
-        videoViewCPG1.setMediaController(mediaController);
-        mediaController.setVisibility(View.GONE);
-        mediaController.setAnchorView(videoViewCPG1);
-
-        videoViewCPG1.start();
+         videoViewCPG1.setOnPreparedListener(new MediaPlayer.OnPreparedListener() {
+            @Override
+            public void onPrepared(MediaPlayer mp) {
+                
+                videoViewCPG1.start();
+                
+            }
+        });
 
         videoViewCPG1.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
             @Override
             public void onCompletion(MediaPlayer mp) {
 
+                videoViewCPG1.stopPlayback();
                 heart2();
 
             }
@@ -1124,6 +1415,7 @@ public class LessonShapes extends AppCompatActivity {
             public void onClick(View v) {
 
                 sfx.start();
+                videoViewCPG1.stopPlayback();
                 star6();
 
             }
@@ -1134,8 +1426,16 @@ public class LessonShapes extends AppCompatActivity {
             public void onClick(View v) {
 
                 sfx.start();
+                videoViewCPG1.stopPlayback();
                 heart2();
 
+            }
+        });
+
+        sfx.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+            @Override
+            public void onCompletion(MediaPlayer mp) {
+                sfx.release();
             }
         });
     }
@@ -1145,19 +1445,22 @@ public class LessonShapes extends AppCompatActivity {
         videoPathCPG1 = "android.resource://" + getPackageName() + "/" + R.raw.heart2;
         uriCPG1 = Uri.parse(videoPathCPG1);
         videoViewCPG1.setVideoURI(uriCPG1);
-        MediaPlayer sfx = MediaPlayer.create(this, R.raw.btnsfx);
+        sfx = MediaPlayer.create(this, R.raw.btnsfx); 
 
-        mediaController = new MediaController(this);
-        videoViewCPG1.setMediaController(mediaController);
-        mediaController.setVisibility(View.GONE);
-        mediaController.setAnchorView(videoViewCPG1);
-
-        videoViewCPG1.start();
+         videoViewCPG1.setOnPreparedListener(new MediaPlayer.OnPreparedListener() {
+            @Override
+            public void onPrepared(MediaPlayer mp) {
+                
+                videoViewCPG1.start();
+                
+            }
+        });
 
         videoViewCPG1.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
             @Override
             public void onCompletion(MediaPlayer mp) {
 
+                videoViewCPG1.stopPlayback();
                 heart3();
 
             }
@@ -1168,6 +1471,7 @@ public class LessonShapes extends AppCompatActivity {
             public void onClick(View v) {
 
                 sfx.start();
+                videoViewCPG1.stopPlayback();
                 heart1();
 
             }
@@ -1178,8 +1482,16 @@ public class LessonShapes extends AppCompatActivity {
             public void onClick(View v) {
 
                 sfx.start();
+                videoViewCPG1.stopPlayback();
                 heart3();
 
+            }
+        });
+
+        sfx.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+            @Override
+            public void onCompletion(MediaPlayer mp) {
+                sfx.release();
             }
         });
     }
@@ -1189,19 +1501,22 @@ public class LessonShapes extends AppCompatActivity {
         videoPathCPG1 = "android.resource://" + getPackageName() + "/" + R.raw.heart3;
         uriCPG1 = Uri.parse(videoPathCPG1);
         videoViewCPG1.setVideoURI(uriCPG1);
-        MediaPlayer sfx = MediaPlayer.create(this, R.raw.btnsfx);
+        sfx = MediaPlayer.create(this, R.raw.btnsfx); 
 
-        mediaController = new MediaController(this);
-        videoViewCPG1.setMediaController(mediaController);
-        mediaController.setVisibility(View.GONE);
-        mediaController.setAnchorView(videoViewCPG1);
-
-        videoViewCPG1.start();
+         videoViewCPG1.setOnPreparedListener(new MediaPlayer.OnPreparedListener() {
+            @Override
+            public void onPrepared(MediaPlayer mp) {
+                
+                videoViewCPG1.start();
+                
+            }
+        });
 
         videoViewCPG1.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
             @Override
             public void onCompletion(MediaPlayer mp) {
 
+                videoViewCPG1.stopPlayback();
                 heart4();
 
             }
@@ -1212,6 +1527,7 @@ public class LessonShapes extends AppCompatActivity {
             public void onClick(View v) {
 
                 sfx.start();
+                videoViewCPG1.stopPlayback();
                 heart2();
 
             }
@@ -1222,8 +1538,16 @@ public class LessonShapes extends AppCompatActivity {
             public void onClick(View v) {
 
                 sfx.start();
+                videoViewCPG1.stopPlayback();
                 heart4();
 
+            }
+        });
+
+        sfx.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+            @Override
+            public void onCompletion(MediaPlayer mp) {
+                sfx.release();
             }
         });
     }
@@ -1233,19 +1557,22 @@ public class LessonShapes extends AppCompatActivity {
         videoPathCPG1 = "android.resource://" + getPackageName() + "/" + R.raw.heart4;
         uriCPG1 = Uri.parse(videoPathCPG1);
         videoViewCPG1.setVideoURI(uriCPG1);
-        MediaPlayer sfx = MediaPlayer.create(this, R.raw.btnsfx);
+        sfx = MediaPlayer.create(this, R.raw.btnsfx); 
 
-        mediaController = new MediaController(this);
-        videoViewCPG1.setMediaController(mediaController);
-        mediaController.setVisibility(View.GONE);
-        mediaController.setAnchorView(videoViewCPG1);
-
-        videoViewCPG1.start();
+         videoViewCPG1.setOnPreparedListener(new MediaPlayer.OnPreparedListener() {
+            @Override
+            public void onPrepared(MediaPlayer mp) {
+                
+                videoViewCPG1.start();
+                
+            }
+        });
 
         videoViewCPG1.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
             @Override
             public void onCompletion(MediaPlayer mp) {
 
+                videoViewCPG1.stopPlayback();
                 heart5();
 
             }
@@ -1256,6 +1583,7 @@ public class LessonShapes extends AppCompatActivity {
             public void onClick(View v) {
 
                 sfx.start();
+                videoViewCPG1.stopPlayback();
                 heart3();
 
             }
@@ -1266,8 +1594,16 @@ public class LessonShapes extends AppCompatActivity {
             public void onClick(View v) {
 
                 sfx.start();
+                videoViewCPG1.stopPlayback();
                 heart5();
 
+            }
+        });
+
+        sfx.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+            @Override
+            public void onCompletion(MediaPlayer mp) {
+                sfx.release();
             }
         });
     }
@@ -1277,19 +1613,22 @@ public class LessonShapes extends AppCompatActivity {
         videoPathCPG1 = "android.resource://" + getPackageName() + "/" + R.raw.heart5;
         uriCPG1 = Uri.parse(videoPathCPG1);
         videoViewCPG1.setVideoURI(uriCPG1);
-        MediaPlayer sfx = MediaPlayer.create(this, R.raw.btnsfx);
+        sfx = MediaPlayer.create(this, R.raw.btnsfx); 
 
-        mediaController = new MediaController(this);
-        videoViewCPG1.setMediaController(mediaController);
-        mediaController.setVisibility(View.GONE);
-        mediaController.setAnchorView(videoViewCPG1);
-
-        videoViewCPG1.start();
+         videoViewCPG1.setOnPreparedListener(new MediaPlayer.OnPreparedListener() {
+            @Override
+            public void onPrepared(MediaPlayer mp) {
+                
+                videoViewCPG1.start();
+                
+            }
+        });
 
         videoViewCPG1.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
             @Override
             public void onCompletion(MediaPlayer mp) {
 
+                videoViewCPG1.stopPlayback();
                 heart6();
 
             }
@@ -1300,6 +1639,7 @@ public class LessonShapes extends AppCompatActivity {
             public void onClick(View v) {
 
                 sfx.start();
+                videoViewCPG1.stopPlayback();
                 heart4();
 
             }
@@ -1310,8 +1650,16 @@ public class LessonShapes extends AppCompatActivity {
             public void onClick(View v) {
 
                 sfx.start();
+                videoViewCPG1.stopPlayback();
                 heart6();
 
+            }
+        });
+
+        sfx.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+            @Override
+            public void onCompletion(MediaPlayer mp) {
+                sfx.release();
             }
         });
     }
@@ -1321,19 +1669,22 @@ public class LessonShapes extends AppCompatActivity {
         videoPathCPG1 = "android.resource://" + getPackageName() + "/" + R.raw.heart6;
         uriCPG1 = Uri.parse(videoPathCPG1);
         videoViewCPG1.setVideoURI(uriCPG1);
-        MediaPlayer sfx = MediaPlayer.create(this, R.raw.btnsfx);
+        sfx = MediaPlayer.create(this, R.raw.btnsfx); 
 
-        mediaController = new MediaController(this);
-        videoViewCPG1.setMediaController(mediaController);
-        mediaController.setVisibility(View.GONE);
-        mediaController.setAnchorView(videoViewCPG1);
-
-        videoViewCPG1.start();
+         videoViewCPG1.setOnPreparedListener(new MediaPlayer.OnPreparedListener() {
+            @Override
+            public void onPrepared(MediaPlayer mp) {
+                
+                videoViewCPG1.start();
+                
+            }
+        });
 
         videoViewCPG1.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
             @Override
             public void onCompletion(MediaPlayer mp) {
 
+                videoViewCPG1.stopPlayback();
                 rectangle1();
 
             }
@@ -1344,6 +1695,7 @@ public class LessonShapes extends AppCompatActivity {
             public void onClick(View v) {
 
                 sfx.start();
+                videoViewCPG1.stopPlayback();
                 heart5();
 
             }
@@ -1354,8 +1706,16 @@ public class LessonShapes extends AppCompatActivity {
             public void onClick(View v) {
 
                 sfx.start();
+                videoViewCPG1.stopPlayback();
                 rectangle1();
 
+            }
+        });
+
+        sfx.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+            @Override
+            public void onCompletion(MediaPlayer mp) {
+                sfx.release();
             }
         });
     }
@@ -1365,19 +1725,22 @@ public class LessonShapes extends AppCompatActivity {
         videoPathCPG1 = "android.resource://" + getPackageName() + "/" + R.raw.rectangle1;
         uriCPG1 = Uri.parse(videoPathCPG1);
         videoViewCPG1.setVideoURI(uriCPG1);
-        MediaPlayer sfx = MediaPlayer.create(this, R.raw.btnsfx);
+        sfx = MediaPlayer.create(this, R.raw.btnsfx); 
 
-        mediaController = new MediaController(this);
-        videoViewCPG1.setMediaController(mediaController);
-        mediaController.setVisibility(View.GONE);
-        mediaController.setAnchorView(videoViewCPG1);
-
-        videoViewCPG1.start();
+         videoViewCPG1.setOnPreparedListener(new MediaPlayer.OnPreparedListener() {
+            @Override
+            public void onPrepared(MediaPlayer mp) {
+                
+                videoViewCPG1.start();
+                
+            }
+        });
 
         videoViewCPG1.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
             @Override
             public void onCompletion(MediaPlayer mp) {
 
+                videoViewCPG1.stopPlayback();
                 rectangle2();
 
             }
@@ -1388,6 +1751,7 @@ public class LessonShapes extends AppCompatActivity {
             public void onClick(View v) {
 
                 sfx.start();
+                videoViewCPG1.stopPlayback();
                 heart6();
 
             }
@@ -1398,8 +1762,16 @@ public class LessonShapes extends AppCompatActivity {
             public void onClick(View v) {
 
                 sfx.start();
+                videoViewCPG1.stopPlayback();
                 rectangle2();
 
+            }
+        });
+
+        sfx.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+            @Override
+            public void onCompletion(MediaPlayer mp) {
+                sfx.release();
             }
         });
     }
@@ -1409,19 +1781,22 @@ public class LessonShapes extends AppCompatActivity {
         videoPathCPG1 = "android.resource://" + getPackageName() + "/" + R.raw.rectangle2;
         uriCPG1 = Uri.parse(videoPathCPG1);
         videoViewCPG1.setVideoURI(uriCPG1);
-        MediaPlayer sfx = MediaPlayer.create(this, R.raw.btnsfx);
+        sfx = MediaPlayer.create(this, R.raw.btnsfx); 
 
-        mediaController = new MediaController(this);
-        videoViewCPG1.setMediaController(mediaController);
-        mediaController.setVisibility(View.GONE);
-        mediaController.setAnchorView(videoViewCPG1);
-
-        videoViewCPG1.start();
+         videoViewCPG1.setOnPreparedListener(new MediaPlayer.OnPreparedListener() {
+            @Override
+            public void onPrepared(MediaPlayer mp) {
+                
+                videoViewCPG1.start();
+                
+            }
+        });
 
         videoViewCPG1.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
             @Override
             public void onCompletion(MediaPlayer mp) {
 
+                videoViewCPG1.stopPlayback();
                 rectangle3();
 
             }
@@ -1432,6 +1807,7 @@ public class LessonShapes extends AppCompatActivity {
             public void onClick(View v) {
 
                 sfx.start();
+                videoViewCPG1.stopPlayback();
                 rectangle1();
 
             }
@@ -1442,8 +1818,16 @@ public class LessonShapes extends AppCompatActivity {
             public void onClick(View v) {
 
                 sfx.start();
+                videoViewCPG1.stopPlayback();
                 rectangle3();
 
+            }
+        });
+
+        sfx.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+            @Override
+            public void onCompletion(MediaPlayer mp) {
+                sfx.release();
             }
         });
     }
@@ -1453,19 +1837,22 @@ public class LessonShapes extends AppCompatActivity {
         videoPathCPG1 = "android.resource://" + getPackageName() + "/" + R.raw.rectangle3;
         uriCPG1 = Uri.parse(videoPathCPG1);
         videoViewCPG1.setVideoURI(uriCPG1);
-        MediaPlayer sfx = MediaPlayer.create(this, R.raw.btnsfx);
+        sfx = MediaPlayer.create(this, R.raw.btnsfx); 
 
-        mediaController = new MediaController(this);
-        videoViewCPG1.setMediaController(mediaController);
-        mediaController.setVisibility(View.GONE);
-        mediaController.setAnchorView(videoViewCPG1);
-
-        videoViewCPG1.start();
+         videoViewCPG1.setOnPreparedListener(new MediaPlayer.OnPreparedListener() {
+            @Override
+            public void onPrepared(MediaPlayer mp) {
+                
+                videoViewCPG1.start();
+                
+            }
+        });
 
         videoViewCPG1.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
             @Override
             public void onCompletion(MediaPlayer mp) {
 
+                videoViewCPG1.stopPlayback();
                 rectangle4();
 
             }
@@ -1476,6 +1863,7 @@ public class LessonShapes extends AppCompatActivity {
             public void onClick(View v) {
 
                 sfx.start();
+                videoViewCPG1.stopPlayback();
                 rectangle2();
 
             }
@@ -1486,8 +1874,16 @@ public class LessonShapes extends AppCompatActivity {
             public void onClick(View v) {
 
                 sfx.start();
+                videoViewCPG1.stopPlayback();
                 rectangle4();
 
+            }
+        });
+
+        sfx.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+            @Override
+            public void onCompletion(MediaPlayer mp) {
+                sfx.release();
             }
         });
     }
@@ -1497,19 +1893,22 @@ public class LessonShapes extends AppCompatActivity {
         videoPathCPG1 = "android.resource://" + getPackageName() + "/" + R.raw.rectangle4;
         uriCPG1 = Uri.parse(videoPathCPG1);
         videoViewCPG1.setVideoURI(uriCPG1);
-        MediaPlayer sfx = MediaPlayer.create(this, R.raw.btnsfx);
+        sfx = MediaPlayer.create(this, R.raw.btnsfx); 
 
-        mediaController = new MediaController(this);
-        videoViewCPG1.setMediaController(mediaController);
-        mediaController.setVisibility(View.GONE);
-        mediaController.setAnchorView(videoViewCPG1);
-
-        videoViewCPG1.start();
+         videoViewCPG1.setOnPreparedListener(new MediaPlayer.OnPreparedListener() {
+            @Override
+            public void onPrepared(MediaPlayer mp) {
+                
+                videoViewCPG1.start();
+                
+            }
+        });
 
         videoViewCPG1.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
             @Override
             public void onCompletion(MediaPlayer mp) {
 
+                videoViewCPG1.stopPlayback();
                 rectangle5();
 
             }
@@ -1520,6 +1919,7 @@ public class LessonShapes extends AppCompatActivity {
             public void onClick(View v) {
 
                 sfx.start();
+                videoViewCPG1.stopPlayback();
                 rectangle3();
 
             }
@@ -1530,8 +1930,16 @@ public class LessonShapes extends AppCompatActivity {
             public void onClick(View v) {
 
                 sfx.start();
+                videoViewCPG1.stopPlayback();
                 rectangle5();
 
+            }
+        });
+
+        sfx.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+            @Override
+            public void onCompletion(MediaPlayer mp) {
+                sfx.release();
             }
         });
     }
@@ -1541,19 +1949,22 @@ public class LessonShapes extends AppCompatActivity {
         videoPathCPG1 = "android.resource://" + getPackageName() + "/" + R.raw.rectangle5;
         uriCPG1 = Uri.parse(videoPathCPG1);
         videoViewCPG1.setVideoURI(uriCPG1);
-        MediaPlayer sfx = MediaPlayer.create(this, R.raw.btnsfx);
+        sfx = MediaPlayer.create(this, R.raw.btnsfx); 
 
-        mediaController = new MediaController(this);
-        videoViewCPG1.setMediaController(mediaController);
-        mediaController.setVisibility(View.GONE);
-        mediaController.setAnchorView(videoViewCPG1);
-
-        videoViewCPG1.start();
+         videoViewCPG1.setOnPreparedListener(new MediaPlayer.OnPreparedListener() {
+            @Override
+            public void onPrepared(MediaPlayer mp) {
+                
+                videoViewCPG1.start();
+                
+            }
+        });
 
         videoViewCPG1.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
             @Override
             public void onCompletion(MediaPlayer mp) {
 
+                videoViewCPG1.stopPlayback();
                 rectangle6();
 
             }
@@ -1564,6 +1975,7 @@ public class LessonShapes extends AppCompatActivity {
             public void onClick(View v) {
 
                 sfx.start();
+                videoViewCPG1.stopPlayback();
                 rectangle4();
 
             }
@@ -1574,8 +1986,16 @@ public class LessonShapes extends AppCompatActivity {
             public void onClick(View v) {
 
                 sfx.start();
+                videoViewCPG1.stopPlayback();
                 rectangle6();
 
+            }
+        });
+
+        sfx.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+            @Override
+            public void onCompletion(MediaPlayer mp) {
+                sfx.release();
             }
         });
     }
@@ -1585,19 +2005,22 @@ public class LessonShapes extends AppCompatActivity {
         videoPathCPG1 = "android.resource://" + getPackageName() + "/" + R.raw.rectangle6;
         uriCPG1 = Uri.parse(videoPathCPG1);
         videoViewCPG1.setVideoURI(uriCPG1);
-        MediaPlayer sfx = MediaPlayer.create(this, R.raw.btnsfx);
+        sfx = MediaPlayer.create(this, R.raw.btnsfx); 
 
-        mediaController = new MediaController(this);
-        videoViewCPG1.setMediaController(mediaController);
-        mediaController.setVisibility(View.GONE);
-        mediaController.setAnchorView(videoViewCPG1);
-
-        videoViewCPG1.start();
+         videoViewCPG1.setOnPreparedListener(new MediaPlayer.OnPreparedListener() {
+            @Override
+            public void onPrepared(MediaPlayer mp) {
+                
+                videoViewCPG1.start();
+                
+            }
+        });
 
         videoViewCPG1.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
             @Override
             public void onCompletion(MediaPlayer mp) {
 
+                videoViewCPG1.stopPlayback();
                 diamond1();
 
             }
@@ -1608,6 +2031,7 @@ public class LessonShapes extends AppCompatActivity {
             public void onClick(View v) {
 
                 sfx.start();
+                videoViewCPG1.stopPlayback();
                 rectangle5();
 
             }
@@ -1618,8 +2042,16 @@ public class LessonShapes extends AppCompatActivity {
             public void onClick(View v) {
 
                 sfx.start();
+                videoViewCPG1.stopPlayback();
                 diamond1();
 
+            }
+        });
+
+        sfx.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+            @Override
+            public void onCompletion(MediaPlayer mp) {
+                sfx.release();
             }
         });
     }
@@ -1629,19 +2061,22 @@ public class LessonShapes extends AppCompatActivity {
         videoPathCPG1 = "android.resource://" + getPackageName() + "/" + R.raw.diamond1;
         uriCPG1 = Uri.parse(videoPathCPG1);
         videoViewCPG1.setVideoURI(uriCPG1);
-        MediaPlayer sfx = MediaPlayer.create(this, R.raw.btnsfx);
+        sfx = MediaPlayer.create(this, R.raw.btnsfx); 
 
-        mediaController = new MediaController(this);
-        videoViewCPG1.setMediaController(mediaController);
-        mediaController.setVisibility(View.GONE);
-        mediaController.setAnchorView(videoViewCPG1);
-
-        videoViewCPG1.start();
+         videoViewCPG1.setOnPreparedListener(new MediaPlayer.OnPreparedListener() {
+            @Override
+            public void onPrepared(MediaPlayer mp) {
+                
+                videoViewCPG1.start();
+                
+            }
+        });
 
         videoViewCPG1.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
             @Override
             public void onCompletion(MediaPlayer mp) {
 
+                videoViewCPG1.stopPlayback();
                 diamond2();
 
             }
@@ -1652,6 +2087,7 @@ public class LessonShapes extends AppCompatActivity {
             public void onClick(View v) {
 
                 sfx.start();
+                videoViewCPG1.stopPlayback();
                 rectangle6();
 
             }
@@ -1662,8 +2098,16 @@ public class LessonShapes extends AppCompatActivity {
             public void onClick(View v) {
 
                 sfx.start();
+                videoViewCPG1.stopPlayback();
                 diamond2();
 
+            }
+        });
+
+        sfx.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+            @Override
+            public void onCompletion(MediaPlayer mp) {
+                sfx.release();
             }
         });
     }
@@ -1673,19 +2117,22 @@ public class LessonShapes extends AppCompatActivity {
         videoPathCPG1 = "android.resource://" + getPackageName() + "/" + R.raw.diamond2;
         uriCPG1 = Uri.parse(videoPathCPG1);
         videoViewCPG1.setVideoURI(uriCPG1);
-        MediaPlayer sfx = MediaPlayer.create(this, R.raw.btnsfx);
+        sfx = MediaPlayer.create(this, R.raw.btnsfx); 
 
-        mediaController = new MediaController(this);
-        videoViewCPG1.setMediaController(mediaController);
-        mediaController.setVisibility(View.GONE);
-        mediaController.setAnchorView(videoViewCPG1);
-
-        videoViewCPG1.start();
+         videoViewCPG1.setOnPreparedListener(new MediaPlayer.OnPreparedListener() {
+            @Override
+            public void onPrepared(MediaPlayer mp) {
+                
+                videoViewCPG1.start();
+                
+            }
+        });
 
         videoViewCPG1.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
             @Override
             public void onCompletion(MediaPlayer mp) {
 
+                videoViewCPG1.stopPlayback();
                 diamond3();
 
             }
@@ -1696,6 +2143,7 @@ public class LessonShapes extends AppCompatActivity {
             public void onClick(View v) {
 
                 sfx.start();
+                videoViewCPG1.stopPlayback();
                 diamond1();
 
             }
@@ -1706,8 +2154,16 @@ public class LessonShapes extends AppCompatActivity {
             public void onClick(View v) {
 
                 sfx.start();
+                videoViewCPG1.stopPlayback();
                 diamond3();
 
+            }
+        });
+
+        sfx.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+            @Override
+            public void onCompletion(MediaPlayer mp) {
+                sfx.release();
             }
         });
     }
@@ -1717,19 +2173,22 @@ public class LessonShapes extends AppCompatActivity {
         videoPathCPG1 = "android.resource://" + getPackageName() + "/" + R.raw.diamond3;
         uriCPG1 = Uri.parse(videoPathCPG1);
         videoViewCPG1.setVideoURI(uriCPG1);
-        MediaPlayer sfx = MediaPlayer.create(this, R.raw.btnsfx);
+        sfx = MediaPlayer.create(this, R.raw.btnsfx); 
 
-        mediaController = new MediaController(this);
-        videoViewCPG1.setMediaController(mediaController);
-        mediaController.setVisibility(View.GONE);
-        mediaController.setAnchorView(videoViewCPG1);
-
-        videoViewCPG1.start();
+         videoViewCPG1.setOnPreparedListener(new MediaPlayer.OnPreparedListener() {
+            @Override
+            public void onPrepared(MediaPlayer mp) {
+                
+                videoViewCPG1.start();
+                
+            }
+        });
 
         videoViewCPG1.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
             @Override
             public void onCompletion(MediaPlayer mp) {
 
+                videoViewCPG1.stopPlayback();
                 diamond4();
 
             }
@@ -1740,6 +2199,7 @@ public class LessonShapes extends AppCompatActivity {
             public void onClick(View v) {
 
                 sfx.start();
+                videoViewCPG1.stopPlayback();
                 diamond2();
 
             }
@@ -1750,8 +2210,16 @@ public class LessonShapes extends AppCompatActivity {
             public void onClick(View v) {
 
                 sfx.start();
+                videoViewCPG1.stopPlayback();
                 diamond4();
 
+            }
+        });
+
+        sfx.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+            @Override
+            public void onCompletion(MediaPlayer mp) {
+                sfx.release();
             }
         });
     }
@@ -1761,19 +2229,22 @@ public class LessonShapes extends AppCompatActivity {
         videoPathCPG1 = "android.resource://" + getPackageName() + "/" + R.raw.diamond4;
         uriCPG1 = Uri.parse(videoPathCPG1);
         videoViewCPG1.setVideoURI(uriCPG1);
-        MediaPlayer sfx = MediaPlayer.create(this, R.raw.btnsfx);
+        sfx = MediaPlayer.create(this, R.raw.btnsfx); 
 
-        mediaController = new MediaController(this);
-        videoViewCPG1.setMediaController(mediaController);
-        mediaController.setVisibility(View.GONE);
-        mediaController.setAnchorView(videoViewCPG1);
-
-        videoViewCPG1.start();
+         videoViewCPG1.setOnPreparedListener(new MediaPlayer.OnPreparedListener() {
+            @Override
+            public void onPrepared(MediaPlayer mp) {
+                
+                videoViewCPG1.start();
+                
+            }
+        });
 
         videoViewCPG1.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
             @Override
             public void onCompletion(MediaPlayer mp) {
 
+                videoViewCPG1.stopPlayback();
                 diamond5();
 
             }
@@ -1784,6 +2255,7 @@ public class LessonShapes extends AppCompatActivity {
             public void onClick(View v) {
 
                 sfx.start();
+                videoViewCPG1.stopPlayback();
                 diamond3();
 
             }
@@ -1794,8 +2266,16 @@ public class LessonShapes extends AppCompatActivity {
             public void onClick(View v) {
 
                 sfx.start();
+                videoViewCPG1.stopPlayback();
                 diamond5();
 
+            }
+        });
+
+        sfx.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+            @Override
+            public void onCompletion(MediaPlayer mp) {
+                sfx.release();
             }
         });
     }
@@ -1805,19 +2285,22 @@ public class LessonShapes extends AppCompatActivity {
         videoPathCPG1 = "android.resource://" + getPackageName() + "/" + R.raw.diamond5;
         uriCPG1 = Uri.parse(videoPathCPG1);
         videoViewCPG1.setVideoURI(uriCPG1);
-        MediaPlayer sfx = MediaPlayer.create(this, R.raw.btnsfx);
+        sfx = MediaPlayer.create(this, R.raw.btnsfx); 
 
-        mediaController = new MediaController(this);
-        videoViewCPG1.setMediaController(mediaController);
-        mediaController.setVisibility(View.GONE);
-        mediaController.setAnchorView(videoViewCPG1);
-
-        videoViewCPG1.start();
+         videoViewCPG1.setOnPreparedListener(new MediaPlayer.OnPreparedListener() {
+            @Override
+            public void onPrepared(MediaPlayer mp) {
+                
+                videoViewCPG1.start();
+                
+            }
+        });
 
         videoViewCPG1.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
             @Override
             public void onCompletion(MediaPlayer mp) {
 
+                videoViewCPG1.stopPlayback();
                 diamond6();
 
             }
@@ -1828,6 +2311,7 @@ public class LessonShapes extends AppCompatActivity {
             public void onClick(View v) {
 
                 sfx.start();
+                videoViewCPG1.stopPlayback();
                 diamond4();
 
             }
@@ -1838,8 +2322,16 @@ public class LessonShapes extends AppCompatActivity {
             public void onClick(View v) {
 
                 sfx.start();
+                videoViewCPG1.stopPlayback();
                 diamond6();
 
+            }
+        });
+
+        sfx.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+            @Override
+            public void onCompletion(MediaPlayer mp) {
+                sfx.release();
             }
         });
     }
@@ -1849,19 +2341,22 @@ public class LessonShapes extends AppCompatActivity {
         videoPathCPG1 = "android.resource://" + getPackageName() + "/" + R.raw.diamond6;
         uriCPG1 = Uri.parse(videoPathCPG1);
         videoViewCPG1.setVideoURI(uriCPG1);
-        MediaPlayer sfx = MediaPlayer.create(this, R.raw.btnsfx);
+        sfx = MediaPlayer.create(this, R.raw.btnsfx); 
 
-        mediaController = new MediaController(this);
-        videoViewCPG1.setMediaController(mediaController);
-        mediaController.setVisibility(View.GONE);
-        mediaController.setAnchorView(videoViewCPG1);
-
-        videoViewCPG1.start();
+         videoViewCPG1.setOnPreparedListener(new MediaPlayer.OnPreparedListener() {
+            @Override
+            public void onPrepared(MediaPlayer mp) {
+                
+                videoViewCPG1.start();
+                
+            }
+        });
 
         videoViewCPG1.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
             @Override
             public void onCompletion(MediaPlayer mp) {
 
+                videoViewCPG1.stopPlayback();
                 startActivity(new Intent(LessonShapes.this,ShapesLessonCongrats.class));
 
             }
@@ -1872,6 +2367,7 @@ public class LessonShapes extends AppCompatActivity {
             public void onClick(View v) {
 
                 sfx.start();
+                videoViewCPG1.stopPlayback();
                 diamond5();
 
             }
@@ -1882,8 +2378,16 @@ public class LessonShapes extends AppCompatActivity {
             public void onClick(View v) {
 
                 sfx.start();
+                videoViewCPG1.stopPlayback();
                 startActivity(new Intent(LessonShapes.this,ShapesLessonCongrats.class));
 
+            }
+        });
+
+        sfx.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+            @Override
+            public void onCompletion(MediaPlayer mp) {
+                sfx.release();
             }
         });
     }

@@ -28,7 +28,7 @@ import com.google.firebase.firestore.Transaction;
 public class ResultsCompassion extends AppCompatActivity {
     private int  score_compassion;
     private int initialScore_compassion;
-    MediaPlayer congrats;
+    MediaPlayer congrats,sfx;
     FirebaseAuth fAuth;
     FirebaseFirestore fStore;
     FirebaseUser user;
@@ -44,7 +44,7 @@ public class ResultsCompassion extends AppCompatActivity {
         ImageButton achievementsbtnCLC_Compassion = findViewById(R.id.achievementsbtnCLC_Compassion);
         ImageButton btnReadLesson_Quiz_Compassion = findViewById(R.id.btnReadLesson_Quiz_Compassion);
         ImageButton homepageCLC_Compassion = findViewById(R.id.homepageCLC_Compassion);
-        MediaPlayer sfx = MediaPlayer.create(this, R.raw.btnsfx);
+        sfx = MediaPlayer.create(this, R.raw.btnsfx);
 
         congrats = MediaPlayer.create(this, R.raw.yaysfx);
         congrats.start();
@@ -119,6 +119,13 @@ public class ResultsCompassion extends AppCompatActivity {
                 sfx.start();
                 Intent proceed = new Intent(ResultsCompassion.this, Homepage3to6.class);
                 startActivity(proceed);
+            }
+        });
+
+        sfx.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+            @Override
+            public void onCompletion(MediaPlayer mp) {
+                sfx.release();
             }
         });
     }

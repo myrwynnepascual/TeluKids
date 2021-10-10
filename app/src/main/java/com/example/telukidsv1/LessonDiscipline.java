@@ -18,6 +18,7 @@ public class LessonDiscipline extends AppCompatActivity {
     Uri uriD36;
     ImageButton backbtnD36,nextbtnD36;
     MediaController mediaController;
+    MediaPlayer sfx;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -27,14 +28,13 @@ public class LessonDiscipline extends AppCompatActivity {
         videoViewD36 = findViewById(R.id.videoD36);
         backbtnD36 = findViewById(R.id.btnbackD36);
         nextbtnD36 = findViewById(R.id.nextbtnD36);
-        MediaPlayer sfx = MediaPlayer.create(this, R.raw.btnsfx);
-
-        BackgroundSoundService.onPause();
 
         mediaController = new MediaController(this);
         videoViewD36.setMediaController(mediaController);
         mediaController.setVisibility(View.GONE);
         mediaController.setAnchorView(videoViewD36);
+
+        BackgroundSoundService.onPause();
 
         discipline1();
     }
@@ -43,14 +43,22 @@ public class LessonDiscipline extends AppCompatActivity {
         videoPathD36 = "android.resource://" + getPackageName() + "/" + R.raw.discipline1;
         uriD36 = Uri.parse(videoPathD36);
         videoViewD36.setVideoURI(uriD36);
-        MediaPlayer sfx = MediaPlayer.create(this, R.raw.btnsfx);
+        sfx = MediaPlayer.create(this, R.raw.btnsfx);     
 
-        videoViewD36.start();
+        videoViewD36.setOnPreparedListener(new MediaPlayer.OnPreparedListener() {
+            @Override
+            public void onPrepared(MediaPlayer mp) {
+
+                videoViewD36.start();
+                
+            }
+        });
 
         videoViewD36.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
             @Override
             public void onCompletion(MediaPlayer mp) {
 
+                videoViewD36.stopPlayback();
                 discipline2();
 
             }
@@ -61,6 +69,7 @@ public class LessonDiscipline extends AppCompatActivity {
             public void onClick(View v) {
 
                 sfx.start();
+                videoViewD36.stopPlayback();
                 startActivity(new Intent(LessonDiscipline.this,ChooseModeDiscipline.class));
 
             }
@@ -71,8 +80,16 @@ public class LessonDiscipline extends AppCompatActivity {
             public void onClick(View v) {
 
                 sfx.start();
+                videoViewD36.stopPlayback();
                 discipline2();
 
+            }
+        });
+
+        sfx.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+            @Override
+            public void onCompletion(MediaPlayer mp) {
+                sfx.release();
             }
         });
     }
@@ -81,14 +98,22 @@ public class LessonDiscipline extends AppCompatActivity {
         videoPathD36 = "android.resource://" + getPackageName() + "/" + R.raw.discipline2;
         uriD36 = Uri.parse(videoPathD36);
         videoViewD36.setVideoURI(uriD36);
-        MediaPlayer sfx = MediaPlayer.create(this, R.raw.btnsfx);
+        sfx = MediaPlayer.create(this, R.raw.btnsfx);     
 
-        videoViewD36.start();
+        videoViewD36.setOnPreparedListener(new MediaPlayer.OnPreparedListener() {
+            @Override
+            public void onPrepared(MediaPlayer mp) {
+
+                videoViewD36.start();
+                
+            }
+        });
 
         videoViewD36.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
             @Override
             public void onCompletion(MediaPlayer mp) {
 
+                videoViewD36.stopPlayback();
                 discipline3();
 
             }
@@ -99,6 +124,7 @@ public class LessonDiscipline extends AppCompatActivity {
             public void onClick(View v) {
 
                 sfx.start();
+                videoViewD36.stopPlayback();
                 discipline1();
 
             }
@@ -109,8 +135,16 @@ public class LessonDiscipline extends AppCompatActivity {
             public void onClick(View v) {
 
                 sfx.start();
+                videoViewD36.stopPlayback();
                 discipline3();
 
+            }
+        });
+
+        sfx.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+            @Override
+            public void onCompletion(MediaPlayer mp) {
+                sfx.release();
             }
         });
     }
@@ -119,14 +153,22 @@ public class LessonDiscipline extends AppCompatActivity {
         videoPathD36 = "android.resource://" + getPackageName() + "/" + R.raw.discipline3;
         uriD36 = Uri.parse(videoPathD36);
         videoViewD36.setVideoURI(uriD36);
-        MediaPlayer sfx = MediaPlayer.create(this, R.raw.btnsfx);
+        sfx = MediaPlayer.create(this, R.raw.btnsfx);     
 
-        videoViewD36.start();
+        videoViewD36.setOnPreparedListener(new MediaPlayer.OnPreparedListener() {
+            @Override
+            public void onPrepared(MediaPlayer mp) {
+
+                videoViewD36.start();
+                
+            }
+        });
 
         videoViewD36.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
             @Override
             public void onCompletion(MediaPlayer mp) {
 
+                videoViewD36.stopPlayback();
                 discipline4();
 
             }
@@ -137,6 +179,7 @@ public class LessonDiscipline extends AppCompatActivity {
             public void onClick(View v) {
 
                 sfx.start();
+                videoViewD36.stopPlayback();
                 discipline2();
 
             }
@@ -147,8 +190,16 @@ public class LessonDiscipline extends AppCompatActivity {
             public void onClick(View v) {
 
                 sfx.start();
+                videoViewD36.stopPlayback();
                 discipline4();
 
+            }
+        });
+
+        sfx.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+            @Override
+            public void onCompletion(MediaPlayer mp) {
+                sfx.release();
             }
         });
     }
@@ -157,14 +208,22 @@ public class LessonDiscipline extends AppCompatActivity {
         videoPathD36 = "android.resource://" + getPackageName() + "/" + R.raw.discipline4;
         uriD36 = Uri.parse(videoPathD36);
         videoViewD36.setVideoURI(uriD36);
-        MediaPlayer sfx = MediaPlayer.create(this, R.raw.btnsfx);
+        sfx = MediaPlayer.create(this, R.raw.btnsfx);     
 
-        videoViewD36.start();
+        videoViewD36.setOnPreparedListener(new MediaPlayer.OnPreparedListener() {
+            @Override
+            public void onPrepared(MediaPlayer mp) {
+
+                videoViewD36.start();
+                
+            }
+        });
 
         videoViewD36.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
             @Override
             public void onCompletion(MediaPlayer mp) {
 
+                videoViewD36.stopPlayback();
                 discipline5();
 
             }
@@ -175,6 +234,7 @@ public class LessonDiscipline extends AppCompatActivity {
             public void onClick(View v) {
 
                 sfx.start();
+                videoViewD36.stopPlayback();
                 discipline3();
 
             }
@@ -185,8 +245,16 @@ public class LessonDiscipline extends AppCompatActivity {
             public void onClick(View v) {
 
                 sfx.start();
+                videoViewD36.stopPlayback();
                 discipline5();
 
+            }
+        });
+
+        sfx.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+            @Override
+            public void onCompletion(MediaPlayer mp) {
+                sfx.release();
             }
         });
     }
@@ -195,14 +263,22 @@ public class LessonDiscipline extends AppCompatActivity {
         videoPathD36 = "android.resource://" + getPackageName() + "/" + R.raw.discipline5;
         uriD36 = Uri.parse(videoPathD36);
         videoViewD36.setVideoURI(uriD36);
-        MediaPlayer sfx = MediaPlayer.create(this, R.raw.btnsfx);
+        sfx = MediaPlayer.create(this, R.raw.btnsfx);     
 
-        videoViewD36.start();
+        videoViewD36.setOnPreparedListener(new MediaPlayer.OnPreparedListener() {
+            @Override
+            public void onPrepared(MediaPlayer mp) {
+
+                videoViewD36.start();
+                
+            }
+        });
 
         videoViewD36.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
             @Override
             public void onCompletion(MediaPlayer mp) {
 
+                videoViewD36.stopPlayback();
                 discipline6();
 
             }
@@ -213,6 +289,7 @@ public class LessonDiscipline extends AppCompatActivity {
             public void onClick(View v) {
 
                 sfx.start();
+                videoViewD36.stopPlayback();
                 discipline4();
 
             }
@@ -223,8 +300,16 @@ public class LessonDiscipline extends AppCompatActivity {
             public void onClick(View v) {
 
                 sfx.start();
+                videoViewD36.stopPlayback();
                 discipline6();
 
+            }
+        });
+
+        sfx.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+            @Override
+            public void onCompletion(MediaPlayer mp) {
+                sfx.release();
             }
         });
     }
@@ -233,14 +318,22 @@ public class LessonDiscipline extends AppCompatActivity {
         videoPathD36 = "android.resource://" + getPackageName() + "/" + R.raw.discipline6;
         uriD36 = Uri.parse(videoPathD36);
         videoViewD36.setVideoURI(uriD36);
-        MediaPlayer sfx = MediaPlayer.create(this, R.raw.btnsfx);
+        sfx = MediaPlayer.create(this, R.raw.btnsfx);     
 
-        videoViewD36.start();
+        videoViewD36.setOnPreparedListener(new MediaPlayer.OnPreparedListener() {
+            @Override
+            public void onPrepared(MediaPlayer mp) {
+
+                videoViewD36.start();
+                
+            }
+        });
 
         videoViewD36.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
             @Override
             public void onCompletion(MediaPlayer mp) {
 
+                videoViewD36.stopPlayback();
                 startActivity(new Intent(LessonDiscipline.this, DisciplineLessonCongrats.class));
 
             }
@@ -251,6 +344,7 @@ public class LessonDiscipline extends AppCompatActivity {
             public void onClick(View v) {
 
                 sfx.start();
+                videoViewD36.stopPlayback();
                 discipline5();
 
             }
@@ -261,8 +355,16 @@ public class LessonDiscipline extends AppCompatActivity {
             public void onClick(View v) {
 
                 sfx.start();
+                videoViewD36.stopPlayback();
                 startActivity(new Intent(LessonDiscipline.this, DisciplineLessonCongrats.class));
 
+            }
+        });
+
+        sfx.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+            @Override
+            public void onCompletion(MediaPlayer mp) {
+                sfx.release();
             }
         });
     }

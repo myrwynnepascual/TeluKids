@@ -13,11 +13,12 @@ import android.widget.VideoView;
 
 public class LessonAddition extends AppCompatActivity {
 
-    VideoView videoViewAX;
+    VideoView videoViewAX = null;
     String videoPathAX;
     Uri uriAX;
     ImageButton backbtnAX,nextbtnAX;
     MediaController mediaController;
+    MediaPlayer sfx;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -28,14 +29,12 @@ public class LessonAddition extends AppCompatActivity {
         backbtnAX = findViewById(R.id.btnbackAX);
         nextbtnAX = findViewById(R.id.nextbtnAX);
 
-        BackgroundSoundService.onPause();
-
-        MediaPlayer sfx = MediaPlayer.create(this, R.raw.btnsfx);
-
         mediaController = new MediaController(this);
         videoViewAX.setMediaController(mediaController);
         mediaController.setVisibility(View.GONE);
         mediaController.setAnchorView(videoViewAX);
+
+        BackgroundSoundService.onPause();
 
         additionx();
     }
@@ -44,14 +43,9 @@ public class LessonAddition extends AppCompatActivity {
 
         videoPathAX = "android.resource://" + getPackageName() + "/" + R.raw.additionx;
         uriAX = Uri.parse(videoPathAX);
-        videoViewAX.setVideoURI(uriAX);
+        videoViewAX.setVideoURI(uriAX); 
 
-        mediaController = new MediaController(this);
-        videoViewAX.setMediaController(mediaController);
-        mediaController.setVisibility(View.GONE);
-        mediaController.setAnchorView(videoViewAX);
-
-        MediaPlayer sfx = MediaPlayer.create(this, R.raw.btnsfx);
+        sfx = MediaPlayer.create(this, R.raw.btnsfx);
 
         videoViewAX.setOnPreparedListener(new MediaPlayer.OnPreparedListener() {
             @Override
@@ -65,7 +59,6 @@ public class LessonAddition extends AppCompatActivity {
             public void onCompletion(MediaPlayer mp) {
 
                 videoViewAX.stopPlayback();
-
                 additiony();
 
             }
@@ -76,16 +69,7 @@ public class LessonAddition extends AppCompatActivity {
             public void onClick(View v) {
 
                 sfx.start();
-
-                sfx.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
-                    @Override
-                    public void onCompletion(MediaPlayer mp) {
-                        sfx.release();
-                    }
-                });
-
                 videoViewAX.stopPlayback();
-
                 startActivity(new Intent(LessonAddition.this,ChooseModeAddition.class));
 
             }
@@ -96,34 +80,28 @@ public class LessonAddition extends AppCompatActivity {
             public void onClick(View v) {
 
                 sfx.start();
-
-                sfx.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
-                    @Override
-                    public void onCompletion(MediaPlayer mp) {
-                        sfx.release();
-                    }
-                });
-
                 videoViewAX.stopPlayback();
-
                 additiony();
 
             }
         });
+
+        sfx.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+            @Override
+            public void onCompletion(MediaPlayer mp) {
+                sfx.release();
+            }
+        });
+
     }
 
     public void additiony(){
 
         videoPathAX = "android.resource://" + getPackageName() + "/" + R.raw.additiony;
         uriAX = Uri.parse(videoPathAX);
-        videoViewAX.setVideoURI(uriAX);
+        videoViewAX.setVideoURI(uriAX); 
 
-        mediaController = new MediaController(this);
-        videoViewAX.setMediaController(mediaController);
-        mediaController.setVisibility(View.GONE);
-        mediaController.setAnchorView(videoViewAX);
-
-        MediaPlayer sfx = MediaPlayer.create(this, R.raw.btnsfx);
+        sfx = MediaPlayer.create(this, R.raw.btnsfx);
 
         videoViewAX.setOnPreparedListener(new MediaPlayer.OnPreparedListener() {
             @Override
@@ -147,16 +125,7 @@ public class LessonAddition extends AppCompatActivity {
             public void onClick(View v) {
 
                 sfx.start();
-
-                sfx.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
-                    @Override
-                    public void onCompletion(MediaPlayer mp) {
-                        sfx.release();
-                    }
-                });
-
                 videoViewAX.stopPlayback();
-
                 additionx();
 
             }
@@ -167,20 +136,19 @@ public class LessonAddition extends AppCompatActivity {
             public void onClick(View v) {
 
                 sfx.start();
-
-                sfx.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
-                    @Override
-                    public void onCompletion(MediaPlayer mp) {
-                        sfx.release();
-                    }
-                });
-
                 videoViewAX.stopPlayback();
-
                 addition1();
 
             }
         });
+
+        sfx.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+            @Override
+            public void onCompletion(MediaPlayer mp) {
+                sfx.release();
+            }
+        });
+
     }
 
     public void addition1(){
@@ -188,12 +156,7 @@ public class LessonAddition extends AppCompatActivity {
         uriAX = Uri.parse(videoPathAX);
         videoViewAX.setVideoURI(uriAX);
 
-        mediaController = new MediaController(this);
-        videoViewAX.setMediaController(mediaController);
-        mediaController.setVisibility(View.GONE);
-        mediaController.setAnchorView(videoViewAX);
-
-        MediaPlayer sfx = MediaPlayer.create(this, R.raw.btnsfx);
+        sfx = MediaPlayer.create(this, R.raw.btnsfx);
 
         videoViewAX.setOnPreparedListener(new MediaPlayer.OnPreparedListener() {
             @Override
@@ -207,7 +170,6 @@ public class LessonAddition extends AppCompatActivity {
             public void onCompletion(MediaPlayer mp) {
 
                 videoViewAX.stopPlayback();
-
                 addition2();
 
             }
@@ -218,16 +180,7 @@ public class LessonAddition extends AppCompatActivity {
             public void onClick(View v) {
 
                 sfx.start();
-
-                sfx.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
-                    @Override
-                    public void onCompletion(MediaPlayer mp) {
-                        sfx.release();
-                    }
-                });
-
                 videoViewAX.stopPlayback();
-
                 additionx();
 
             }
@@ -238,33 +191,27 @@ public class LessonAddition extends AppCompatActivity {
             public void onClick(View v) {
 
                 sfx.start();
-
-                sfx.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
-                    @Override
-                    public void onCompletion(MediaPlayer mp) {
-                        sfx.release();
-                    }
-                });
-
                 videoViewAX.stopPlayback();
-
                 addition2();
 
             }
         });
+
+        sfx.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+            @Override
+            public void onCompletion(MediaPlayer mp) {
+                sfx.release();
+            }
+        });
+
     }
 
     public void addition2(){
         videoPathAX = "android.resource://" + getPackageName() + "/" + R.raw.addition2;
         uriAX = Uri.parse(videoPathAX);
-        videoViewAX.setVideoURI(uriAX);
+        videoViewAX.setVideoURI(uriAX); 
 
-        mediaController = new MediaController(this);
-        videoViewAX.setMediaController(mediaController);
-        mediaController.setVisibility(View.GONE);
-        mediaController.setAnchorView(videoViewAX);
-
-        MediaPlayer sfx = MediaPlayer.create(this, R.raw.btnsfx);
+        sfx = MediaPlayer.create(this, R.raw.btnsfx);
 
         videoViewAX.setOnPreparedListener(new MediaPlayer.OnPreparedListener() {
             @Override
@@ -278,7 +225,6 @@ public class LessonAddition extends AppCompatActivity {
             public void onCompletion(MediaPlayer mp) {
 
                 videoViewAX.stopPlayback();
-
                 addition3();
 
             }
@@ -289,16 +235,7 @@ public class LessonAddition extends AppCompatActivity {
             public void onClick(View v) {
 
                 sfx.start();
-
-                sfx.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
-                    @Override
-                    public void onCompletion(MediaPlayer mp) {
-                        sfx.release();
-                    }
-                });
-
                 videoViewAX.stopPlayback();
-
                 addition1();
 
             }
@@ -309,33 +246,27 @@ public class LessonAddition extends AppCompatActivity {
             public void onClick(View v) {
 
                 sfx.start();
-
-                sfx.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
-                    @Override
-                    public void onCompletion(MediaPlayer mp) {
-                        sfx.release();
-                    }
-                });
-
                 videoViewAX.stopPlayback();
-
                 addition3();
 
             }
         });
+
+        sfx.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+            @Override
+            public void onCompletion(MediaPlayer mp) {
+                sfx.release();
+            }
+        });
+
     }
 
     public void addition3(){
         videoPathAX = "android.resource://" + getPackageName() + "/" + R.raw.addition3;
         uriAX = Uri.parse(videoPathAX);
-        videoViewAX.setVideoURI(uriAX);
+        videoViewAX.setVideoURI(uriAX); 
 
-        mediaController = new MediaController(this);
-        videoViewAX.setMediaController(mediaController);
-        mediaController.setVisibility(View.GONE);
-        mediaController.setAnchorView(videoViewAX);
-
-        MediaPlayer sfx = MediaPlayer.create(this, R.raw.btnsfx);
+        sfx = MediaPlayer.create(this, R.raw.btnsfx);
 
         videoViewAX.setOnPreparedListener(new MediaPlayer.OnPreparedListener() {
             @Override
@@ -349,7 +280,6 @@ public class LessonAddition extends AppCompatActivity {
             public void onCompletion(MediaPlayer mp) {
 
                 videoViewAX.stopPlayback();
-
                 addition4();
 
             }
@@ -360,16 +290,7 @@ public class LessonAddition extends AppCompatActivity {
             public void onClick(View v) {
 
                 sfx.start();
-
-                sfx.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
-                    @Override
-                    public void onCompletion(MediaPlayer mp) {
-                        sfx.release();
-                    }
-                });
-
                 videoViewAX.stopPlayback();
-
                 addition2();
 
             }
@@ -380,33 +301,27 @@ public class LessonAddition extends AppCompatActivity {
             public void onClick(View v) {
 
                 sfx.start();
-
-                sfx.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
-                    @Override
-                    public void onCompletion(MediaPlayer mp) {
-                        sfx.release();
-                    }
-                });
-
                 videoViewAX.stopPlayback();
-
                 addition4();
 
             }
         });
+
+        sfx.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+            @Override
+            public void onCompletion(MediaPlayer mp) {
+                sfx.release();
+            }
+        });
+
     }
 
     public void addition4(){
         videoPathAX = "android.resource://" + getPackageName() + "/" + R.raw.addition4;
         uriAX = Uri.parse(videoPathAX);
-        videoViewAX.setVideoURI(uriAX);
+        videoViewAX.setVideoURI(uriAX); 
 
-        mediaController = new MediaController(this);
-        videoViewAX.setMediaController(mediaController);
-        mediaController.setVisibility(View.GONE);
-        mediaController.setAnchorView(videoViewAX);
-
-        MediaPlayer sfx = MediaPlayer.create(this, R.raw.btnsfx);
+        sfx = MediaPlayer.create(this, R.raw.btnsfx);
 
         videoViewAX.setOnPreparedListener(new MediaPlayer.OnPreparedListener() {
             @Override
@@ -420,9 +335,7 @@ public class LessonAddition extends AppCompatActivity {
             public void onCompletion(MediaPlayer mp) {
 
                 videoViewAX.stopPlayback();
-
                 addition5();
-
             }
         });
 
@@ -431,16 +344,7 @@ public class LessonAddition extends AppCompatActivity {
             public void onClick(View v) {
 
                 sfx.start();
-
-                sfx.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
-                    @Override
-                    public void onCompletion(MediaPlayer mp) {
-                        sfx.release();
-                    }
-                });
-
                 videoViewAX.stopPlayback();
-
                 addition3();
 
             }
@@ -451,33 +355,27 @@ public class LessonAddition extends AppCompatActivity {
             public void onClick(View v) {
 
                 sfx.start();
-
-                sfx.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
-                    @Override
-                    public void onCompletion(MediaPlayer mp) {
-                        sfx.release();
-                    }
-                });
-
                 videoViewAX.stopPlayback();
-
                 addition5();
 
             }
         });
+
+        sfx.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+            @Override
+            public void onCompletion(MediaPlayer mp) {
+                sfx.release();
+            }
+        });
+
     }
 
     public void addition5(){
         videoPathAX = "android.resource://" + getPackageName() + "/" + R.raw.addition5;
         uriAX = Uri.parse(videoPathAX);
-        videoViewAX.setVideoURI(uriAX);
+        videoViewAX.setVideoURI(uriAX); 
 
-        mediaController = new MediaController(this);
-        videoViewAX.setMediaController(mediaController);
-        mediaController.setVisibility(View.GONE);
-        mediaController.setAnchorView(videoViewAX);
-
-        MediaPlayer sfx = MediaPlayer.create(this, R.raw.btnsfx);
+        sfx = MediaPlayer.create(this, R.raw.btnsfx);
 
         videoViewAX.setOnPreparedListener(new MediaPlayer.OnPreparedListener() {
             @Override
@@ -491,7 +389,6 @@ public class LessonAddition extends AppCompatActivity {
             public void onCompletion(MediaPlayer mp) {
 
                 videoViewAX.stopPlayback();
-
                 addition6();
 
             }
@@ -502,16 +399,7 @@ public class LessonAddition extends AppCompatActivity {
             public void onClick(View v) {
 
                 sfx.start();
-
-                sfx.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
-                    @Override
-                    public void onCompletion(MediaPlayer mp) {
-                        sfx.release();
-                    }
-                });
-
                 videoViewAX.stopPlayback();
-
                 addition4();
 
             }
@@ -522,33 +410,27 @@ public class LessonAddition extends AppCompatActivity {
             public void onClick(View v) {
 
                 sfx.start();
-
-                sfx.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
-                    @Override
-                    public void onCompletion(MediaPlayer mp) {
-                        sfx.release();
-                    }
-                });
-
                 videoViewAX.stopPlayback();
-
                 addition6();
 
             }
         });
+
+        sfx.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+            @Override
+            public void onCompletion(MediaPlayer mp) {
+                sfx.release();
+            }
+        });
+
     }
 
     public void addition6(){
         videoPathAX = "android.resource://" + getPackageName() + "/" + R.raw.addition6;
         uriAX = Uri.parse(videoPathAX);
-        videoViewAX.setVideoURI(uriAX);
+        videoViewAX.setVideoURI(uriAX); 
 
-        mediaController = new MediaController(this);
-        videoViewAX.setMediaController(mediaController);
-        mediaController.setVisibility(View.GONE);
-        mediaController.setAnchorView(videoViewAX);
-
-        MediaPlayer sfx = MediaPlayer.create(this, R.raw.btnsfx);
+        sfx = MediaPlayer.create(this, R.raw.btnsfx);
 
         videoViewAX.setOnPreparedListener(new MediaPlayer.OnPreparedListener() {
             @Override
@@ -562,7 +444,6 @@ public class LessonAddition extends AppCompatActivity {
             public void onCompletion(MediaPlayer mp) {
 
                 videoViewAX.stopPlayback();
-
                 addition7();
 
             }
@@ -573,16 +454,7 @@ public class LessonAddition extends AppCompatActivity {
             public void onClick(View v) {
 
                 sfx.start();
-
-                sfx.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
-                    @Override
-                    public void onCompletion(MediaPlayer mp) {
-                        sfx.release();
-                    }
-                });
-
                 videoViewAX.stopPlayback();
-
                 addition5();
 
             }
@@ -593,33 +465,27 @@ public class LessonAddition extends AppCompatActivity {
             public void onClick(View v) {
 
                 sfx.start();
-
-                sfx.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
-                    @Override
-                    public void onCompletion(MediaPlayer mp) {
-                        sfx.release();
-                    }
-                });
-
                 videoViewAX.stopPlayback();
-
                 addition7();
 
             }
         });
+
+        sfx.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+            @Override
+            public void onCompletion(MediaPlayer mp) {
+                sfx.release();
+            }
+        });
+
     }
 
     public void addition7(){
         videoPathAX = "android.resource://" + getPackageName() + "/" + R.raw.addition7;
         uriAX = Uri.parse(videoPathAX);
-        videoViewAX.setVideoURI(uriAX);
+        videoViewAX.setVideoURI(uriAX); 
 
-        mediaController = new MediaController(this);
-        videoViewAX.setMediaController(mediaController);
-        mediaController.setVisibility(View.GONE);
-        mediaController.setAnchorView(videoViewAX);
-
-        MediaPlayer sfx = MediaPlayer.create(this, R.raw.btnsfx);
+        sfx = MediaPlayer.create(this, R.raw.btnsfx);
 
         videoViewAX.setOnPreparedListener(new MediaPlayer.OnPreparedListener() {
             @Override
@@ -633,7 +499,6 @@ public class LessonAddition extends AppCompatActivity {
             public void onCompletion(MediaPlayer mp) {
 
                 videoViewAX.stopPlayback();
-
                 addition8();
 
             }
@@ -644,16 +509,7 @@ public class LessonAddition extends AppCompatActivity {
             public void onClick(View v) {
 
                 sfx.start();
-
-                sfx.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
-                    @Override
-                    public void onCompletion(MediaPlayer mp) {
-                        sfx.release();
-                    }
-                });
-
                 videoViewAX.stopPlayback();
-
                 addition6();
 
             }
@@ -664,33 +520,27 @@ public class LessonAddition extends AppCompatActivity {
             public void onClick(View v) {
 
                 sfx.start();
-
-                sfx.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
-                    @Override
-                    public void onCompletion(MediaPlayer mp) {
-                        sfx.release();
-                    }
-                });
-
                 videoViewAX.stopPlayback();
-
                 addition8();
 
             }
         });
+
+        sfx.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+            @Override
+            public void onCompletion(MediaPlayer mp) {
+                sfx.release();
+            }
+        });
+
     }
 
     public void addition8(){
         videoPathAX = "android.resource://" + getPackageName() + "/" + R.raw.addition8;
         uriAX = Uri.parse(videoPathAX);
-        videoViewAX.setVideoURI(uriAX);
+        videoViewAX.setVideoURI(uriAX); 
 
-        mediaController = new MediaController(this);
-        videoViewAX.setMediaController(mediaController);
-        mediaController.setVisibility(View.GONE);
-        mediaController.setAnchorView(videoViewAX);
-
-        MediaPlayer sfx = MediaPlayer.create(this, R.raw.btnsfx);
+        sfx = MediaPlayer.create(this, R.raw.btnsfx);
 
         videoViewAX.setOnPreparedListener(new MediaPlayer.OnPreparedListener() {
             @Override
@@ -704,7 +554,6 @@ public class LessonAddition extends AppCompatActivity {
             public void onCompletion(MediaPlayer mp) {
 
                 videoViewAX.stopPlayback();
-
                 addition9();
 
             }
@@ -715,16 +564,7 @@ public class LessonAddition extends AppCompatActivity {
             public void onClick(View v) {
 
                 sfx.start();
-
-                sfx.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
-                    @Override
-                    public void onCompletion(MediaPlayer mp) {
-                        sfx.release();
-                    }
-                });
-
                 videoViewAX.stopPlayback();
-
                 addition7();
 
             }
@@ -735,33 +575,27 @@ public class LessonAddition extends AppCompatActivity {
             public void onClick(View v) {
 
                 sfx.start();
-
-                sfx.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
-                    @Override
-                    public void onCompletion(MediaPlayer mp) {
-                        sfx.release();
-                    }
-                });
-
                 videoViewAX.stopPlayback();
-
                 addition9();
 
             }
         });
+
+        sfx.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+            @Override
+            public void onCompletion(MediaPlayer mp) {
+                sfx.release();
+            }
+        });
+
     }
 
     public void addition9(){
         videoPathAX = "android.resource://" + getPackageName() + "/" + R.raw.addition9;
         uriAX = Uri.parse(videoPathAX);
-        videoViewAX.setVideoURI(uriAX);
+        videoViewAX.setVideoURI(uriAX); 
 
-        mediaController = new MediaController(this);
-        videoViewAX.setMediaController(mediaController);
-        mediaController.setVisibility(View.GONE);
-        mediaController.setAnchorView(videoViewAX);
-
-        MediaPlayer sfx = MediaPlayer.create(this, R.raw.btnsfx);
+        sfx = MediaPlayer.create(this, R.raw.btnsfx);
 
         videoViewAX.setOnPreparedListener(new MediaPlayer.OnPreparedListener() {
             @Override
@@ -775,7 +609,6 @@ public class LessonAddition extends AppCompatActivity {
             public void onCompletion(MediaPlayer mp) {
 
                 videoViewAX.stopPlayback();
-
                 addition10();
 
             }
@@ -786,16 +619,7 @@ public class LessonAddition extends AppCompatActivity {
             public void onClick(View v) {
 
                 sfx.start();
-
-                sfx.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
-                    @Override
-                    public void onCompletion(MediaPlayer mp) {
-                        sfx.release();
-                    }
-                });
-
                 videoViewAX.stopPlayback();
-
                 addition8();
 
             }
@@ -806,33 +630,27 @@ public class LessonAddition extends AppCompatActivity {
             public void onClick(View v) {
 
                 sfx.start();
-
-                sfx.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
-                    @Override
-                    public void onCompletion(MediaPlayer mp) {
-                        sfx.release();
-                    }
-                });
-
                 videoViewAX.stopPlayback();
-
                 addition10();
 
             }
         });
+
+        sfx.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+            @Override
+            public void onCompletion(MediaPlayer mp) {
+                sfx.release();
+            }
+        });
+
     }
 
     public void addition10(){
         videoPathAX = "android.resource://" + getPackageName() + "/" + R.raw.addition10;
         uriAX = Uri.parse(videoPathAX);
-        videoViewAX.setVideoURI(uriAX);
+        videoViewAX.setVideoURI(uriAX); 
 
-        mediaController = new MediaController(this);
-        videoViewAX.setMediaController(mediaController);
-        mediaController.setVisibility(View.GONE);
-        mediaController.setAnchorView(videoViewAX);
-
-        MediaPlayer sfx = MediaPlayer.create(this, R.raw.btnsfx);
+        sfx = MediaPlayer.create(this, R.raw.btnsfx);
 
         videoViewAX.setOnPreparedListener(new MediaPlayer.OnPreparedListener() {
             @Override
@@ -846,7 +664,6 @@ public class LessonAddition extends AppCompatActivity {
             public void onCompletion(MediaPlayer mp) {
 
                 videoViewAX.stopPlayback();
-
                 startActivity(new Intent(LessonAddition.this,AdditionLessonCongrats.class));
 
             }
@@ -857,16 +674,7 @@ public class LessonAddition extends AppCompatActivity {
             public void onClick(View v) {
 
                 sfx.start();
-
-                sfx.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
-                    @Override
-                    public void onCompletion(MediaPlayer mp) {
-                        sfx.release();
-                    }
-                });
-
                 videoViewAX.stopPlayback();
-
                 addition9();
 
             }
@@ -877,19 +685,18 @@ public class LessonAddition extends AppCompatActivity {
             public void onClick(View v) {
 
                 sfx.start();
-
-                sfx.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
-                    @Override
-                    public void onCompletion(MediaPlayer mp) {
-                        sfx.release();
-                    }
-                });
-
                 videoViewAX.stopPlayback();
-
                 startActivity(new Intent(LessonAddition.this,AdditionLessonCongrats.class));
 
             }
         });
+
+        sfx.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+            @Override
+            public void onCompletion(MediaPlayer mp) {
+                sfx.release();
+            }
+        });
+
     }
 }

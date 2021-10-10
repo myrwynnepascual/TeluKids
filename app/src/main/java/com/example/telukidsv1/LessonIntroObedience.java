@@ -18,6 +18,7 @@ public class LessonIntroObedience extends AppCompatActivity {
     VideoView videoViewO;
     String videoPathO;
     Uri uriO;
+    MediaPlayer sfx;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -29,24 +30,31 @@ public class LessonIntroObedience extends AppCompatActivity {
         videoPathO = "android.resource://" + getPackageName() + "/" + R.raw.obedienceintrovideo;
         uriO = Uri.parse(videoPathO);
         videoViewO.setVideoURI(uriO);
-        MediaPlayer sfx = MediaPlayer.create(this, R.raw.btnsfx);
-
-        BackgroundSoundService.onPause();
 
         MediaController mediaController = new MediaController(this);
         videoViewO.setMediaController(mediaController);
         mediaController.setAnchorView(videoViewO);
 
-        videoViewO.start();
+        sfx = MediaPlayer.create(this, R.raw.btnsfx);
 
+        BackgroundSoundService.onPause();
+
+
+        videoViewO.setOnPreparedListener(new MediaPlayer.OnPreparedListener() {
+            @Override
+            public void onPrepared(MediaPlayer mp) {
+
+                videoViewO.start();
+
+            }
+        });
 
         btncloseO.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
                 sfx.start();
+                videoViewO.stopPlayback();
                 startActivity(new Intent(LessonIntroObedience.this,ChooseModeObedience.class));
-
             }
         });
 
@@ -54,8 +62,15 @@ public class LessonIntroObedience extends AppCompatActivity {
             @Override
             public void onCompletion(MediaPlayer mp) {
 
+                videoViewO.stopPlayback();
                 startActivity(new Intent(LessonIntroObedience.this,ChooseModeObedience.class));
+            }
+        });
 
+        sfx.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+            @Override
+            public void onCompletion(MediaPlayer mp) {
+                sfx.release();
             }
         });
     }

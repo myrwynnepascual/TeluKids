@@ -11,6 +11,7 @@ import android.widget.ImageButton;
 public class ChooseModeDoingGood extends AppCompatActivity {
 
     ImageButton backCMDG79,learnCMDG79,assessCMDG79,replayCMDG79;
+    MediaPlayer sfx;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -24,21 +25,13 @@ public class ChooseModeDoingGood extends AppCompatActivity {
 
         BackgroundSoundService.onResume();
 
-        MediaPlayer sfx = MediaPlayer.create(this, R.raw.btnsfx);
+        sfx = MediaPlayer.create(this, R.raw.btnsfx);
 
 
         backCMDG79.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 sfx.start();
-
-                sfx.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
-                    @Override
-                    public void onCompletion(MediaPlayer mp) {
-                        sfx.release();
-                    }
-                });
-
                 startActivity(new Intent(ChooseModeDoingGood.this, Gmrc7to9.class));
             }
         });
@@ -47,14 +40,6 @@ public class ChooseModeDoingGood extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 sfx.start();
-
-                sfx.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
-                    @Override
-                    public void onCompletion(MediaPlayer mp) {
-                        sfx.release();
-                    }
-                });
-
                 startActivity(new Intent(ChooseModeDoingGood.this, LessonDoingGood.class));
             }
         });
@@ -63,14 +48,6 @@ public class ChooseModeDoingGood extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 sfx.start();
-
-                sfx.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
-                    @Override
-                    public void onCompletion(MediaPlayer mp) {
-                        sfx.release();
-                    }
-                });
-
                 startActivity(new Intent(ChooseModeDoingGood.this, QuizDoingGood.class));
             }
         });
@@ -79,16 +56,16 @@ public class ChooseModeDoingGood extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 sfx.start();
-
-                sfx.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
-                    @Override
-                    public void onCompletion(MediaPlayer mp) {
-                        sfx.release();
-                    }
-                });
-
                 startActivity(new Intent(ChooseModeDoingGood.this,LessonIntroDoingGood.class));
             }
         });
+
+        sfx.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+            @Override
+            public void onCompletion(MediaPlayer mp) {
+                sfx.release();
+            }
+        });
+
     }
 }

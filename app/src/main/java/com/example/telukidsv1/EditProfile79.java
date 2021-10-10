@@ -35,6 +35,7 @@ public class EditProfile79 extends AppCompatActivity {
     FirebaseAuth fAuth;
     FirebaseFirestore fStore;
     FirebaseUser user;
+    MediaPlayer sfx;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -60,7 +61,7 @@ public class EditProfile79 extends AppCompatActivity {
         icon7EP79 = findViewById(R.id.icon7EP79);
         icon8EP79 = findViewById(R.id.icon8EP79);
 
-        MediaPlayer sfx = MediaPlayer.create(this, R.raw.btnsfx);
+        sfx = MediaPlayer.create(this, R.raw.btnsfx);
 
 
         fAuth = FirebaseAuth.getInstance();
@@ -73,14 +74,6 @@ public class EditProfile79 extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 sfx.start();
-
-                sfx.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
-                    @Override
-                    public void onCompletion(MediaPlayer mp) {
-                        sfx.release();
-                    }
-                });
-
                 startActivity(new Intent(EditProfile79.this,UserProfile79.class));
             }
         });
@@ -90,13 +83,6 @@ public class EditProfile79 extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 sfx.start();
-
-                sfx.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
-                    @Override
-                    public void onCompletion(MediaPlayer mp) {
-                        sfx.release();
-                    }
-                });
 
                 icon1EP79.setImageResource(R.drawable.tigerselected);
                 icon2EP79.setImageResource(R.drawable.owlselect);
@@ -117,13 +103,6 @@ public class EditProfile79 extends AppCompatActivity {
             public void onClick(View v) {
                 sfx.start();
 
-                sfx.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
-                    @Override
-                    public void onCompletion(MediaPlayer mp) {
-                        sfx.release();
-                    }
-                });
-
                 icon1EP79.setImageResource(R.drawable.tigerselect);
                 icon2EP79.setImageResource(R.drawable.owlselected);
                 icon3EP79.setImageResource(R.drawable.lionselect);
@@ -142,13 +121,6 @@ public class EditProfile79 extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 sfx.start();
-
-                sfx.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
-                    @Override
-                    public void onCompletion(MediaPlayer mp) {
-                        sfx.release();
-                    }
-                });
 
                 icon1EP79.setImageResource(R.drawable.tigerselect);
                 icon2EP79.setImageResource(R.drawable.owlselect);
@@ -169,13 +141,6 @@ public class EditProfile79 extends AppCompatActivity {
             public void onClick(View v) {
                 sfx.start();
 
-                sfx.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
-                    @Override
-                    public void onCompletion(MediaPlayer mp) {
-                        sfx.release();
-                    }
-                });
-
                 icon1EP79.setImageResource(R.drawable.tigerselect);
                 icon2EP79.setImageResource(R.drawable.owlselect);
                 icon3EP79.setImageResource(R.drawable.lionselect);
@@ -194,13 +159,6 @@ public class EditProfile79 extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 sfx.start();
-
-                sfx.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
-                    @Override
-                    public void onCompletion(MediaPlayer mp) {
-                        sfx.release();
-                    }
-                });
 
                 icon1EP79.setImageResource(R.drawable.tigerselect);
                 icon2EP79.setImageResource(R.drawable.owlselect);
@@ -221,13 +179,6 @@ public class EditProfile79 extends AppCompatActivity {
             public void onClick(View v) {
                 sfx.start();
 
-                sfx.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
-                    @Override
-                    public void onCompletion(MediaPlayer mp) {
-                        sfx.release();
-                    }
-                });
-
                 icon1EP79.setImageResource(R.drawable.tigerselect);
                 icon2EP79.setImageResource(R.drawable.owlselect);
                 icon3EP79.setImageResource(R.drawable.lionselect);
@@ -246,13 +197,6 @@ public class EditProfile79 extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 sfx.start();
-
-                sfx.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
-                    @Override
-                    public void onCompletion(MediaPlayer mp) {
-                        sfx.release();
-                    }
-                });
 
                 icon1EP79.setImageResource(R.drawable.tigerselect);
                 icon2EP79.setImageResource(R.drawable.owlselect);
@@ -273,13 +217,6 @@ public class EditProfile79 extends AppCompatActivity {
             public void onClick(View v) {
                 sfx.start();
 
-                sfx.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
-                    @Override
-                    public void onCompletion(MediaPlayer mp) {
-                        sfx.release();
-                    }
-                });
-
                 icon1EP79.setImageResource(R.drawable.tigerselect);
                 icon2EP79.setImageResource(R.drawable.owlselect);
                 icon3EP79.setImageResource(R.drawable.lionselect);
@@ -299,13 +236,6 @@ public class EditProfile79 extends AppCompatActivity {
             public void onClick(View v) {
 
                 sfx.start();
-
-                sfx.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
-                    @Override
-                    public void onCompletion(MediaPlayer mp) {
-                        sfx.release();
-                    }
-                });
 
 
                 //USERNAME
@@ -503,5 +433,13 @@ public class EditProfile79 extends AppCompatActivity {
                 icon8EP79.setImageResource(R.drawable.chickenselect);
             }
         });
+
+        sfx.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+            @Override
+            public void onCompletion(MediaPlayer mp) {
+                sfx.release();
+            }
+        });
+
     }
 }

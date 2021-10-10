@@ -11,6 +11,7 @@ import android.widget.ImageButton;
 public class ChooseModeSociability extends AppCompatActivity {
 
     ImageButton backCMSC,learnCMSC,assessCMSC,replayCMSC;
+    MediaPlayer sfx;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -24,21 +25,13 @@ public class ChooseModeSociability extends AppCompatActivity {
 
         BackgroundSoundService.onResume();
 
-        MediaPlayer sfx = MediaPlayer.create(this, R.raw.btnsfx);
+        sfx = MediaPlayer.create(this, R.raw.btnsfx);
 
 
         backCMSC.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 sfx.start();
-
-                sfx.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
-                    @Override
-                    public void onCompletion(MediaPlayer mp) {
-                        sfx.release();
-                    }
-                });
-
                 startActivity(new Intent(ChooseModeSociability.this,Gmrc3to6.class));
             }
         });
@@ -47,14 +40,6 @@ public class ChooseModeSociability extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 sfx.start();
-
-                sfx.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
-                    @Override
-                    public void onCompletion(MediaPlayer mp) {
-                        sfx.release();
-                    }
-                });
-
                 startActivity(new Intent(ChooseModeSociability.this, LessonSociability.class));
             }
         });
@@ -63,14 +48,6 @@ public class ChooseModeSociability extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 sfx.start();
-
-                sfx.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
-                    @Override
-                    public void onCompletion(MediaPlayer mp) {
-                        sfx.release();
-                    }
-                });
-
                 startActivity(new Intent(ChooseModeSociability.this, QuizSociability.class));
             }
         });
@@ -79,16 +56,16 @@ public class ChooseModeSociability extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 sfx.start();
-
-                sfx.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
-                    @Override
-                    public void onCompletion(MediaPlayer mp) {
-                        sfx.release();
-                    }
-                });
-
                 startActivity(new Intent(ChooseModeSociability.this,LessonIntroSociability.class));
             }
         });
+
+        sfx.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+            @Override
+            public void onCompletion(MediaPlayer mp) {
+                sfx.release();
+            }
+        });
+
     }
 }

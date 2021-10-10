@@ -3,6 +3,7 @@ package com.example.telukidsv1;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.media.MediaParser;
 import android.media.MediaPlayer;
 import android.net.Uri;
 import android.os.Bundle;
@@ -18,6 +19,7 @@ public class LessonIntroColors extends AppCompatActivity {
     VideoView videoViewIC;
     String videoPathIC;
     Uri uriIC;
+    MediaPlayer sfx;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -30,22 +32,30 @@ public class LessonIntroColors extends AppCompatActivity {
         uriIC = Uri.parse(videoPathIC);
         videoViewIC.setVideoURI(uriIC);
 
-        BackgroundSoundService.onPause();
-
-        MediaPlayer sfx = MediaPlayer.create(this, R.raw.btnsfx);
-
         MediaController mediaController = new MediaController(this);
         videoViewIC.setMediaController(mediaController);
         mediaController.setAnchorView(videoViewIC);
 
-        videoViewIC.start();
+        sfx = MediaPlayer.create(this, R.raw.btnsfx);
 
+        BackgroundSoundService.onPause();
+
+
+        videoViewIC.setOnPreparedListener(new MediaPlayer.OnPreparedListener() {
+            @Override
+            public void onPrepared(MediaPlayer mp) {
+
+                videoViewIC.start();
+
+            }
+        });
 
         btncloseIC.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
                 sfx.start();
+                videoViewIC.stopPlayback();
                 startActivity(new Intent(LessonIntroColors.this,ChooseModeColors.class));
 
             }
@@ -55,8 +65,15 @@ public class LessonIntroColors extends AppCompatActivity {
             @Override
             public void onCompletion(MediaPlayer mp) {
 
+                videoViewIC.stopPlayback();
                 startActivity(new Intent(LessonIntroColors.this,ChooseModeColors.class));
+            }
+        });
 
+        sfx.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+            @Override
+            public void onCompletion(MediaPlayer mp) {
+                sfx.release();
             }
         });
     }

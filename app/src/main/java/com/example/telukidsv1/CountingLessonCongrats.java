@@ -22,7 +22,7 @@ public class CountingLessonCongrats extends AppCompatActivity {
 
     ImageButton btnbackCTLC,btnachievementsCTLC, btnassessmentCTLC, btnhomepageCTLC;
     ImageView certificateCTLC;
-    MediaPlayer congrats;
+    MediaPlayer congrats,sfx;
 
     FirebaseAuth fAuth;
     FirebaseFirestore fStore;
@@ -44,7 +44,7 @@ public class CountingLessonCongrats extends AppCompatActivity {
 
         BackgroundSoundService.onResume();
 
-        MediaPlayer sfx = MediaPlayer.create(this, R.raw.btnsfx);
+        sfx = MediaPlayer.create(this, R.raw.btnsfx);
 
 
         fAuth = FirebaseAuth.getInstance();
@@ -66,14 +66,6 @@ public class CountingLessonCongrats extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 sfx.start();
-
-                sfx.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
-                    @Override
-                    public void onCompletion(MediaPlayer mp) {
-                        sfx.release();
-                    }
-                });
-
                 startActivity(new Intent(CountingLessonCongrats.this, Numbers.class));
             }
         });
@@ -82,14 +74,6 @@ public class CountingLessonCongrats extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 sfx.start();
-
-                sfx.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
-                    @Override
-                    public void onCompletion(MediaPlayer mp) {
-                        sfx.release();
-                    }
-                });
-
                 startActivity(new Intent(CountingLessonCongrats.this, Achievements3to6Counting.class));
             }
         });
@@ -98,14 +82,6 @@ public class CountingLessonCongrats extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 sfx.start();
-
-                sfx.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
-                    @Override
-                    public void onCompletion(MediaPlayer mp) {
-                        sfx.release();
-                    }
-                });
-
                 startActivity(new Intent(CountingLessonCongrats.this, QuizCountingNumbers.class));
             }
         });
@@ -114,17 +90,17 @@ public class CountingLessonCongrats extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 sfx.start();
-
-                sfx.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
-                    @Override
-                    public void onCompletion(MediaPlayer mp) {
-                        sfx.release();
-                    }
-                });
-
                 startActivity(new Intent(CountingLessonCongrats.this, Homepage3to6.class));
             }
         });
+
+        sfx.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+            @Override
+            public void onCompletion(MediaPlayer mp) {
+                sfx.release();
+            }
+        });
+
     }
 
     @Override

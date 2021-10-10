@@ -38,97 +38,97 @@ public class Achievements7to9Responsibility extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_achievements7to9_responsibility);
+        setContentView(R.layout.activity_achievements7to9_main);
 
-        ImageButton backbtnAchievements3to6 = findViewById(R.id.backbtnAchievements79Responsibility);
+        ImageButton backbtnAchievements3to6 = findViewById(R.id.backbtnAchievements79Main);
 
         MediaPlayer sfx = MediaPlayer.create(this, R.raw.btnsfx);
 
         //Trophies
         //GMRC 3-6
-        ImageView imgAchievements_DisciplineTrophy = findViewById(R.id.trophydiscipline79Responsibility);
-        ImageView imgAchievements_HonestyTrophy = findViewById(R.id.trophyhonesty79Responsibility);
-        ImageView imgAchievements_RespectTrophy = findViewById(R.id.trophyrespect79Responsibility);
-        ImageView imgAchievements_SociabilityTrophy = findViewById(R.id.trophysociability79Responsibility);
-        ImageView imgAchievements_CompassionTrophy = findViewById(R.id.trophycompassion79Responsibility);
+        ImageView imgAchievements_DisciplineTrophy = findViewById(R.id.trophydiscipline79Main);
+        ImageView imgAchievements_HonestyTrophy = findViewById(R.id.trophyhonesty79Main);
+        ImageView imgAchievements_RespectTrophy = findViewById(R.id.trophyrespect79Main);
+        ImageView imgAchievements_SociabilityTrophy = findViewById(R.id.trophysociability79Main);
+        ImageView imgAchievements_CompassionTrophy = findViewById(R.id.trophycompassion79Main);
 
         //GMRC 7-9
-        ImageView imgAchievements_ResponsibilityTrophy = findViewById(R.id.trophyresponsibility79Responsibility);
-        ImageView imgAchievements_LoveTrophy = findViewById(R.id.trophylove79Responsibility);
-        ImageView imgAchievements_ObedienceTrophy = findViewById(R.id.trophyobedience79Responsibility);
-        ImageView imgAchievements_DoingGoodTrophy = findViewById(R.id.trophydoinggood79Responsibility);
+        ImageView imgAchievements_ResponsibilityTrophy = findViewById(R.id.trophyresponsibility79Main);
+        ImageView imgAchievements_LoveTrophy = findViewById(R.id.trophylove79Main);
+        ImageView imgAchievements_ObedienceTrophy = findViewById(R.id.trophyobedience79Main);
+        ImageView imgAchievements_DoingGoodTrophy = findViewById(R.id.trophydoinggood79Main);
 
         //Basic Concepts
-        ImageView imgAchievements_ColorsTrophy = findViewById(R.id.trophycolors79Responsibility);
-        ImageView imgAchievements_CountingTrophy = findViewById(R.id.trophycounting79Responsibility);
-        ImageView imgAchievements_AdditionTrophy = findViewById(R.id.trophyaddition79Responsibility);
-        ImageView imgAchievements_SubtractionTrophy = findViewById(R.id.trophysubtraction79Responsibility);
-        ImageView imgAchievements_ShapesTrophy = findViewById(R.id.trophyshapes79Responsibility);
+        ImageView imgAchievements_ColorsTrophy = findViewById(R.id.trophycolors79Main);
+        ImageView imgAchievements_CountingTrophy = findViewById(R.id.trophycounting79Main);
+        ImageView imgAchievements_AdditionTrophy = findViewById(R.id.trophyaddition79Main);
+        ImageView imgAchievements_SubtractionTrophy = findViewById(R.id.trophysubtraction79Main);
+        ImageView imgAchievements_ShapesTrophy = findViewById(R.id.trophyshapes79Main);
 
         //Medals
         //GMRC 3-6
-        ImageView imgAchievements_DisciplineMedal = findViewById(R.id.medaldiscipline79Responsibility);
-        ImageView imgAchievements_HonestyMedal = findViewById(R.id.medalhonesty79Responsibility);
-        ImageView imgAchievements_RespectMedal = findViewById(R.id.medalrespect79Responsibility);
-        ImageView imgAchievements_SociabilityMedal = findViewById(R.id.medalsociability79Responsibility);
-        ImageView imgAchievements_CompassionMedal = findViewById(R.id.medalcompassion79Responsibility);
+        ImageView imgAchievements_DisciplineMedal = findViewById(R.id.medaldiscipline79Main);
+        ImageView imgAchievements_HonestyMedal = findViewById(R.id.medalhonesty79Main);
+        ImageView imgAchievements_RespectMedal = findViewById(R.id.medalrespect79Main);
+        ImageView imgAchievements_SociabilityMedal = findViewById(R.id.medalsociability79Main);
+        ImageView imgAchievements_CompassionMedal = findViewById(R.id.medalcompassion79Main);
 
         //GMRC 7-9
-        ImageView imgAchievements_ResponsibilityMedal = findViewById(R.id.medalresponsibility79Responsibility);
-        ImageView imgAchievements_LoveMedal = findViewById(R.id.medallove79Responsibility);
-        ImageView imgAchievements_ObedienceMedal = findViewById(R.id.medalobedience79Responsibility);
-        ImageView imgAchievements_DoingGoodMedal = findViewById(R.id.medaldoinggood79Responsibility);
+        ImageView imgAchievements_ResponsibilityMedal = findViewById(R.id.medalresponsibility79Main);
+        ImageView imgAchievements_LoveMedal = findViewById(R.id.medallove79Main);
+        ImageView imgAchievements_ObedienceMedal = findViewById(R.id.medalobedience79Main);
+        ImageView imgAchievements_DoingGoodMedal = findViewById(R.id.medaldoinggood79Main);
 
         //Basic Concepts
-        ImageView imgAchievements_ColorsMedal = findViewById(R.id.medalcolors79Responsibility);
-        ImageView imgAchievements_CountingMedal = findViewById(R.id.medalcounting79Responsibility);
-        ImageView imgAchievements_AdditionMedal = findViewById(R.id.medaladdition79Responsibility);
-        ImageView imgAchievements_SubtractionMedal = findViewById(R.id.medalsubtraction79Responsibility);
-        ImageView imgAchievements_ShapesMedal = findViewById(R.id.medalshapes79Responsibility);
+        ImageView imgAchievements_ColorsMedal = findViewById(R.id.medalcolors79Main);
+        ImageView imgAchievements_CountingMedal = findViewById(R.id.medalcounting79Main);
+        ImageView imgAchievements_AdditionMedal = findViewById(R.id.medaladdition79Main);
+        ImageView imgAchievements_SubtractionMedal = findViewById(R.id.medalsubtraction79Main);
+        ImageView imgAchievements_ShapesMedal = findViewById(R.id.medalshapes79Main);
 
 
         //Badges
         //GMRC 3-6
-        ImageView imgAchievements_DisciplineBadge = findViewById(R.id.badgediscipline79Responsibility);
-        ImageView imgAchievements_HonestyBadge = findViewById(R.id.badgehonesty79Responsibility);
-        ImageView imgAchievements_RespectBadge = findViewById(R.id.badgerespect79Responsibility);
-        ImageView imgAchievements_SociabilityBadge = findViewById(R.id.badgesociability79Responsibility);
-        ImageView imgAchievements_CompassionBadge = findViewById(R.id.badgecompassion79Responsibility);
+        ImageView imgAchievements_DisciplineBadge = findViewById(R.id.badgediscipline79Main);
+        ImageView imgAchievements_HonestyBadge = findViewById(R.id.badgehonesty79Main);
+        ImageView imgAchievements_RespectBadge = findViewById(R.id.badgerespect79Main);
+        ImageView imgAchievements_SociabilityBadge = findViewById(R.id.badgesociability79Main);
+        ImageView imgAchievements_CompassionBadge = findViewById(R.id.badgecompassion79Main);
 
         //GMRC 7-9
-        ImageView imgAchievements_ResponsibilityBadge = findViewById(R.id.badgeresponsibility79Responsibility);
-        ImageView imgAchievements_LoveBadge = findViewById(R.id.badgelove79Responsibility);
-        ImageView imgAchievements_ObedienceBadge = findViewById(R.id.badgeobedience79Responsibility);
-        ImageView imgAchievements_DoingGoodBadge = findViewById(R.id.badgedoinggood79Responsibility);
+        ImageView imgAchievements_ResponsibilityBadge = findViewById(R.id.badgeresponsibility79Main);
+        ImageView imgAchievements_LoveBadge = findViewById(R.id.badgelove79Main);
+        ImageView imgAchievements_ObedienceBadge = findViewById(R.id.badgeobedience79Main);
+        ImageView imgAchievements_DoingGoodBadge = findViewById(R.id.badgedoinggood79Main);
 
         //Basic Concepts
-        ImageView imgAchievements_ColorsBadge = findViewById(R.id.badgecolors79Responsibility);
-        ImageView imgAchievements_CountingBadge = findViewById(R.id.badgecounting79Responsibility);
-        ImageView imgAchievements_AdditionBadge = findViewById(R.id.badgeaddition79Responsibility);
-        ImageView imgAchievements_SubtractionBadge = findViewById(R.id.badgesubtraction79Responsibility);
-        ImageView imgAchievements_ShapesBadge = findViewById(R.id.badgeshapes79Responsibility);
+        ImageView imgAchievements_ColorsBadge = findViewById(R.id.badgecolors79Main);
+        ImageView imgAchievements_CountingBadge = findViewById(R.id.badgecounting79Main);
+        ImageView imgAchievements_AdditionBadge = findViewById(R.id.badgeaddition79Main);
+        ImageView imgAchievements_SubtractionBadge = findViewById(R.id.badgesubtraction79Main);
+        ImageView imgAchievements_ShapesBadge = findViewById(R.id.badgeshapes79Main);
 
 
         //Certificates
         //GMRC 3-6
-        ImageView imgAchievements_DisciplineCertificate = findViewById(R.id.certificatediscipline79Responsibility);
-        ImageView imgAchievements_HonestyCertificate = findViewById(R.id.certificatehonesty79Responsibility);
-        ImageView imgAchievements_RespectCertificate = findViewById(R.id.certificaterespect79Responsibility);
-        ImageView imgAchievements_SociabilityCertificate = findViewById(R.id.certificatesociability79Responsibility);
-        ImageView imgAchievements_CompassionCertificate = findViewById(R.id.certificatecompassion79Responsibility);
+        ImageView imgAchievements_DisciplineCertificate = findViewById(R.id.certificatediscipline79Main);
+        ImageView imgAchievements_HonestyCertificate = findViewById(R.id.certificatehonesty79Main);
+        ImageView imgAchievements_RespectCertificate = findViewById(R.id.certificaterespect79Main);
+        ImageView imgAchievements_SociabilityCertificate = findViewById(R.id.certificatesociability79Main);
+        ImageView imgAchievements_CompassionCertificate = findViewById(R.id.certificatecompassion79Main);
 
         //GMRC 7-9
-        ImageView imgAchievements_ResponsibilityCertificate = findViewById(R.id.certificateresponsibility79Responsibility);
-        ImageView imgAchievements_LoveCertificate = findViewById(R.id.certificatelove79Responsibility);
-        ImageView imgAchievements_ObedienceCertificate = findViewById(R.id.certificateobedience79Responsibility);
-        ImageView imgAchievements_DoingGoodCertificate = findViewById(R.id.certificatedoinggood79Responsibility);
+        ImageView imgAchievements_ResponsibilityCertificate = findViewById(R.id.certificateresponsibility79Main);
+        ImageView imgAchievements_LoveCertificate = findViewById(R.id.certificatelove79Main);
+        ImageView imgAchievements_ObedienceCertificate = findViewById(R.id.certificateobedience79Main);
+        ImageView imgAchievements_DoingGoodCertificate = findViewById(R.id.certificatedoinggood79Main);
 
         //Basic Concepts
-        ImageView imgAchievements_ColorsCertificate = findViewById(R.id.certificatecolors79Responsibility);
-        ImageView imgAchievements_CountingCertificate = findViewById(R.id.certificatecounting79Responsibility);
-        ImageView imgAchievements_AdditionCertificate = findViewById(R.id.certificateaddition79Responsibility);
-        ImageView imgAchievements_SubtractionCertificate = findViewById(R.id.certificatesubtraction79Responsibility);
-        ImageView imgAchievements_ShapesCertificate = findViewById(R.id.certificateshapes79Responsibility);
+        ImageView imgAchievements_ColorsCertificate = findViewById(R.id.certificatecolors79Main);
+        ImageView imgAchievements_CountingCertificate = findViewById(R.id.certificatecounting79Main);
+        ImageView imgAchievements_AdditionCertificate = findViewById(R.id.certificateaddition79Main);
+        ImageView imgAchievements_SubtractionCertificate = findViewById(R.id.certificatesubtraction79Main);
+        ImageView imgAchievements_ShapesCertificate = findViewById(R.id.certificateshapes79Main);
 
         //Firebase Firestore
         fAuth = FirebaseAuth.getInstance();

@@ -25,7 +25,7 @@ import com.google.firebase.firestore.Transaction;
 public class ResultsDoingGood extends AppCompatActivity {
     private int  score_doinggood;
     private int initialScore_doinggood;
-    MediaPlayer congrats;
+    MediaPlayer congrats,sfx;
     FirebaseAuth fAuth;
     FirebaseFirestore fStore;
     FirebaseUser user;
@@ -41,7 +41,7 @@ public class ResultsDoingGood extends AppCompatActivity {
         ImageButton achievementsbtnCLC_DoingGood = findViewById(R.id.achievementsbtnCLC_DoingGood);
         ImageButton btnReadLesson_Quiz_DoingGood = findViewById(R.id.btnReadLesson_Quiz_DoingGood);
         ImageButton homepageCLC_DoingGood = findViewById(R.id.homepageCLC_DoingGood);
-        MediaPlayer sfx = MediaPlayer.create(this, R.raw.btnsfx);
+        sfx = MediaPlayer.create(this, R.raw.btnsfx);
 
         congrats = MediaPlayer.create(this, R.raw.yaysfx);
         congrats.start();
@@ -116,6 +116,13 @@ public class ResultsDoingGood extends AppCompatActivity {
                 sfx.start();
                 Intent proceed = new Intent(ResultsDoingGood.this, Homepage7to9.class);
                 startActivity(proceed);
+            }
+        });
+
+        sfx.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+            @Override
+            public void onCompletion(MediaPlayer mp) {
+                sfx.release();
             }
         });
     }

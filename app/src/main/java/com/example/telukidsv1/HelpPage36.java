@@ -11,6 +11,7 @@ import android.widget.ImageButton;
 public class HelpPage36 extends AppCompatActivity {
 
     ImageButton btnback;
+    MediaPlayer sfx;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -19,24 +20,23 @@ public class HelpPage36 extends AppCompatActivity {
 
         btnback = findViewById(R.id.backbtnHP36);
 
-        MediaPlayer sfx = MediaPlayer.create(this, R.raw.btnsfx);
-
+        sfx = MediaPlayer.create(this, R.raw.btnsfx);
 
 
         btnback.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 sfx.start();
-
-                sfx.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
-                    @Override
-                    public void onCompletion(MediaPlayer mp) {
-                        sfx.release();
-                    }
-                });
-
                 startActivity(new Intent(HelpPage36.this, UserProfile36.class));
             }
         });
+
+        sfx.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+            @Override
+            public void onCompletion(MediaPlayer mp) {
+                sfx.release();
+            }
+        });
+
     }
 }

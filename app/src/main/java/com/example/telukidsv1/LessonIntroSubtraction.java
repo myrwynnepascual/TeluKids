@@ -18,6 +18,7 @@ public class LessonIntroSubtraction extends AppCompatActivity {
     VideoView videoViewISB;
     String videoPathISB;
     Uri uriISB;
+    MediaPlayer sfx;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -29,22 +30,31 @@ public class LessonIntroSubtraction extends AppCompatActivity {
         videoPathISB = "android.resource://" + getPackageName() + "/" + R.raw.subtractionintrovideo;
         uriISB = Uri.parse(videoPathISB);
         videoViewISB.setVideoURI(uriISB);
-        MediaPlayer sfx = MediaPlayer.create(this, R.raw.btnsfx);
-
-        BackgroundSoundService.onPause();
 
         MediaController mediaController = new MediaController(this);
         videoViewISB.setMediaController(mediaController);
         mediaController.setAnchorView(videoViewISB);
 
-        videoViewISB.start();
+        sfx = MediaPlayer.create(this, R.raw.btnsfx);
 
+        BackgroundSoundService.onPause();
+
+
+        videoViewISB.setOnPreparedListener(new MediaPlayer.OnPreparedListener() {
+            @Override
+            public void onPrepared(MediaPlayer mp) {
+
+                videoViewISB.start();
+
+            }
+        });
 
         btncloseISB.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
                 sfx.start();
+                videoViewISB.stopPlayback();
                 startActivity(new Intent(LessonIntroSubtraction.this,ChooseModeSubtraction.class));
 
             }
@@ -54,8 +64,16 @@ public class LessonIntroSubtraction extends AppCompatActivity {
             @Override
             public void onCompletion(MediaPlayer mp) {
 
+                videoViewISB.stopPlayback();
                 startActivity(new Intent(LessonIntroSubtraction.this,ChooseModeSubtraction.class));
 
+            }
+        });
+
+        sfx.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+            @Override
+            public void onCompletion(MediaPlayer mp) {
+                sfx.release();
             }
         });
     }

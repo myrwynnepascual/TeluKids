@@ -11,6 +11,7 @@ import android.widget.ImageButton;
 public class ChooseModeSubtraction extends AppCompatActivity {
 
     ImageButton backCMSB,learnCMSB,assessCMSB,replayCMSB;
+    MediaPlayer sfx;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -24,21 +25,13 @@ public class ChooseModeSubtraction extends AppCompatActivity {
 
         BackgroundSoundService.onResume();
 
-        MediaPlayer sfx = MediaPlayer.create(this, R.raw.btnsfx);
+        sfx = MediaPlayer.create(this, R.raw.btnsfx);
 
 
         backCMSB.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 sfx.start();
-
-                sfx.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
-                    @Override
-                    public void onCompletion(MediaPlayer mp) {
-                        sfx.release();
-                    }
-                });
-
                 startActivity(new Intent(ChooseModeSubtraction.this,Numbers.class));
             }
         });
@@ -47,14 +40,6 @@ public class ChooseModeSubtraction extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 sfx.start();
-
-                sfx.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
-                    @Override
-                    public void onCompletion(MediaPlayer mp) {
-                        sfx.release();
-                    }
-                });
-
                 startActivity(new Intent(ChooseModeSubtraction.this, LessonSubtraction.class));
             }
         });
@@ -63,14 +48,6 @@ public class ChooseModeSubtraction extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 sfx.start();
-
-                sfx.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
-                    @Override
-                    public void onCompletion(MediaPlayer mp) {
-                        sfx.release();
-                    }
-                });
-
                 startActivity(new Intent(ChooseModeSubtraction.this,QuizSubtraction.class));
             }
         });
@@ -79,16 +56,16 @@ public class ChooseModeSubtraction extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 sfx.start();
-
-                sfx.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
-                    @Override
-                    public void onCompletion(MediaPlayer mp) {
-                        sfx.release();
-                    }
-                });
-
                 startActivity(new Intent(ChooseModeSubtraction.this,LessonIntroSubtraction.class));
             }
         });
+
+        sfx.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+            @Override
+            public void onCompletion(MediaPlayer mp) {
+                sfx.release();
+            }
+        });
+
     }
 }

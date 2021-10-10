@@ -11,6 +11,7 @@ import android.widget.ImageButton;
 public class ChooseModeLove extends AppCompatActivity {
 
     ImageButton backCML79,learnCML79,assessCML79,replayCML79;
+    MediaPlayer sfx ;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -24,21 +25,13 @@ public class ChooseModeLove extends AppCompatActivity {
 
         BackgroundSoundService.onResume();
 
-        MediaPlayer sfx = MediaPlayer.create(this, R.raw.btnsfx);
+        sfx = MediaPlayer.create(this, R.raw.btnsfx);
 
 
         backCML79.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 sfx.start();
-
-                sfx.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
-                    @Override
-                    public void onCompletion(MediaPlayer mp) {
-                        sfx.release();
-                    }
-                });
-
                 startActivity(new Intent(ChooseModeLove.this,Gmrc7to9.class));
             }
         });
@@ -47,14 +40,6 @@ public class ChooseModeLove extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 sfx.start();
-
-                sfx.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
-                    @Override
-                    public void onCompletion(MediaPlayer mp) {
-                        sfx.release();
-                    }
-                });
-
                 startActivity(new Intent(ChooseModeLove.this, LessonLove.class));
             }
         });
@@ -63,14 +48,6 @@ public class ChooseModeLove extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 sfx.start();
-
-                sfx.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
-                    @Override
-                    public void onCompletion(MediaPlayer mp) {
-                        sfx.release();
-                    }
-                });
-
                 startActivity(new Intent(ChooseModeLove.this, QuizLove.class));
             }
         });
@@ -79,16 +56,16 @@ public class ChooseModeLove extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 sfx.start();
-
-                sfx.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
-                    @Override
-                    public void onCompletion(MediaPlayer mp) {
-                        sfx.release();
-                    }
-                });
-
                 startActivity(new Intent(ChooseModeLove.this,LessonIntroLove.class));
             }
         });
+
+        sfx.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+            @Override
+            public void onCompletion(MediaPlayer mp) {
+                sfx.release();
+            }
+        });
+
     }
 }

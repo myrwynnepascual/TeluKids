@@ -18,6 +18,7 @@ public class LessonResponsibility extends AppCompatActivity {
     Uri uriRP79;
     ImageButton backbtnRP79,nextbtnRP79;
     MediaController mediaController;
+    MediaPlayer sfx;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -28,14 +29,12 @@ public class LessonResponsibility extends AppCompatActivity {
         backbtnRP79 = findViewById(R.id.btnbackRP79);
         nextbtnRP79 = findViewById(R.id.nextbtnRP79);
 
-        MediaPlayer sfx = MediaPlayer.create(this, R.raw.btnsfx);
-
-        BackgroundSoundService.onPause();
-
         mediaController = new MediaController(this);
         videoViewRP79.setMediaController(mediaController);
         mediaController.setVisibility(View.GONE);
         mediaController.setAnchorView(videoViewRP79);
+
+        BackgroundSoundService.onPause();
 
         responsibility1();
     }
@@ -45,14 +44,22 @@ public class LessonResponsibility extends AppCompatActivity {
         uriRP79 = Uri.parse(videoPathRP79);
         videoViewRP79.setVideoURI(uriRP79);
 
-        MediaPlayer sfx = MediaPlayer.create(this, R.raw.btnsfx);
+        sfx = MediaPlayer.create(this, R.raw.btnsfx);
 
-        videoViewRP79.start();
+        videoViewRP79.setOnPreparedListener(new MediaPlayer.OnPreparedListener() {
+            @Override
+            public void onPrepared(MediaPlayer mp) {
+                
+                videoViewRP79.start();
+                
+            }
+        });
 
         videoViewRP79.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
             @Override
             public void onCompletion(MediaPlayer mp) {
 
+                videoViewRP79.stopPlayback();
                 responsibility2();
 
             }
@@ -63,6 +70,7 @@ public class LessonResponsibility extends AppCompatActivity {
             public void onClick(View v) {
 
                 sfx.start();
+                videoViewRP79.stopPlayback();
                 startActivity(new Intent(LessonResponsibility.this,ChooseModeResponsibility.class));
 
             }
@@ -73,6 +81,7 @@ public class LessonResponsibility extends AppCompatActivity {
             public void onClick(View v) {
 
                 sfx.start();
+                videoViewRP79.stopPlayback();
                 responsibility2();
 
             }
@@ -86,12 +95,20 @@ public class LessonResponsibility extends AppCompatActivity {
 
         MediaPlayer sfx = MediaPlayer.create(this, R.raw.btnsfx);
 
-        videoViewRP79.start();
+        videoViewRP79.setOnPreparedListener(new MediaPlayer.OnPreparedListener() {
+            @Override
+            public void onPrepared(MediaPlayer mp) {
+                
+                videoViewRP79.start();
+                
+            }
+        });
 
         videoViewRP79.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
             @Override
             public void onCompletion(MediaPlayer mp) {
 
+                videoViewRP79.stopPlayback();
                 responsibility3();
 
             }
@@ -102,6 +119,7 @@ public class LessonResponsibility extends AppCompatActivity {
             public void onClick(View v) {
 
                 sfx.start();
+                videoViewRP79.stopPlayback();
                 responsibility1();
 
             }
@@ -112,6 +130,7 @@ public class LessonResponsibility extends AppCompatActivity {
             public void onClick(View v) {
 
                 sfx.start();
+                videoViewRP79.stopPlayback();
                 responsibility3();
 
             }
@@ -125,12 +144,20 @@ public class LessonResponsibility extends AppCompatActivity {
 
         MediaPlayer sfx = MediaPlayer.create(this, R.raw.btnsfx);
 
-        videoViewRP79.start();
+        videoViewRP79.setOnPreparedListener(new MediaPlayer.OnPreparedListener() {
+            @Override
+            public void onPrepared(MediaPlayer mp) {
+                
+                videoViewRP79.start();
+                
+            }
+        });
 
         videoViewRP79.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
             @Override
             public void onCompletion(MediaPlayer mp) {
 
+                videoViewRP79.stopPlayback();
                 responsibility4();
 
             }
@@ -141,6 +168,7 @@ public class LessonResponsibility extends AppCompatActivity {
             public void onClick(View v) {
 
                 sfx.start();
+                videoViewRP79.stopPlayback();
                 responsibility2();
 
             }
@@ -151,6 +179,7 @@ public class LessonResponsibility extends AppCompatActivity {
             public void onClick(View v) {
 
                 sfx.start();
+                videoViewRP79.stopPlayback();
                 responsibility4();
 
             }
@@ -164,12 +193,20 @@ public class LessonResponsibility extends AppCompatActivity {
 
         MediaPlayer sfx = MediaPlayer.create(this, R.raw.btnsfx);
 
-        videoViewRP79.start();
+        videoViewRP79.setOnPreparedListener(new MediaPlayer.OnPreparedListener() {
+            @Override
+            public void onPrepared(MediaPlayer mp) {
+                
+                videoViewRP79.start();
+                
+            }
+        });
 
         videoViewRP79.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
             @Override
             public void onCompletion(MediaPlayer mp) {
 
+                videoViewRP79.stopPlayback();
                 responsibility5();
 
             }
@@ -180,6 +217,7 @@ public class LessonResponsibility extends AppCompatActivity {
             public void onClick(View v) {
 
                 sfx.start();
+                videoViewRP79.stopPlayback();
                 responsibility3();
 
             }
@@ -190,6 +228,7 @@ public class LessonResponsibility extends AppCompatActivity {
             public void onClick(View v) {
 
                 sfx.start();
+                videoViewRP79.stopPlayback();
                 responsibility5();
 
             }
@@ -203,12 +242,20 @@ public class LessonResponsibility extends AppCompatActivity {
 
         MediaPlayer sfx = MediaPlayer.create(this, R.raw.btnsfx);
 
-        videoViewRP79.start();
+        videoViewRP79.setOnPreparedListener(new MediaPlayer.OnPreparedListener() {
+            @Override
+            public void onPrepared(MediaPlayer mp) {
+                
+                videoViewRP79.start();
+                
+            }
+        });
 
         videoViewRP79.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
             @Override
             public void onCompletion(MediaPlayer mp) {
 
+                videoViewRP79.stopPlayback();
                 responsibility6();
 
             }
@@ -219,6 +266,7 @@ public class LessonResponsibility extends AppCompatActivity {
             public void onClick(View v) {
 
                 sfx.start();
+                videoViewRP79.stopPlayback();
                 responsibility4();
 
             }
@@ -229,6 +277,7 @@ public class LessonResponsibility extends AppCompatActivity {
             public void onClick(View v) {
 
                 sfx.start();
+                videoViewRP79.stopPlayback();
                 responsibility6();
 
             }
@@ -242,12 +291,20 @@ public class LessonResponsibility extends AppCompatActivity {
 
         MediaPlayer sfx = MediaPlayer.create(this, R.raw.btnsfx);
 
-        videoViewRP79.start();
+        videoViewRP79.setOnPreparedListener(new MediaPlayer.OnPreparedListener() {
+            @Override
+            public void onPrepared(MediaPlayer mp) {
+                
+                videoViewRP79.start();
+                
+            }
+        });
 
         videoViewRP79.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
             @Override
             public void onCompletion(MediaPlayer mp) {
 
+                videoViewRP79.stopPlayback();
                 responsibility7();
 
             }
@@ -258,6 +315,7 @@ public class LessonResponsibility extends AppCompatActivity {
             public void onClick(View v) {
 
                 sfx.start();
+                videoViewRP79.stopPlayback();
                 responsibility5();
 
             }
@@ -268,6 +326,7 @@ public class LessonResponsibility extends AppCompatActivity {
             public void onClick(View v) {
 
                 sfx.start();
+                videoViewRP79.stopPlayback();
                 responsibility7();
 
             }
@@ -281,12 +340,20 @@ public class LessonResponsibility extends AppCompatActivity {
 
         MediaPlayer sfx = MediaPlayer.create(this, R.raw.btnsfx);
 
-        videoViewRP79.start();
+        videoViewRP79.setOnPreparedListener(new MediaPlayer.OnPreparedListener() {
+            @Override
+            public void onPrepared(MediaPlayer mp) {
+                
+                videoViewRP79.start();
+                
+            }
+        });
 
         videoViewRP79.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
             @Override
             public void onCompletion(MediaPlayer mp) {
 
+                videoViewRP79.stopPlayback();
                 responsibility8();
 
             }
@@ -297,6 +364,7 @@ public class LessonResponsibility extends AppCompatActivity {
             public void onClick(View v) {
 
                 sfx.start();
+                videoViewRP79.stopPlayback();
                 responsibility6();
 
             }
@@ -307,6 +375,7 @@ public class LessonResponsibility extends AppCompatActivity {
             public void onClick(View v) {
 
                 sfx.start();
+                videoViewRP79.stopPlayback();
                 responsibility8();
 
             }
@@ -320,12 +389,20 @@ public class LessonResponsibility extends AppCompatActivity {
 
         MediaPlayer sfx = MediaPlayer.create(this, R.raw.btnsfx);
 
-        videoViewRP79.start();
+        videoViewRP79.setOnPreparedListener(new MediaPlayer.OnPreparedListener() {
+            @Override
+            public void onPrepared(MediaPlayer mp) {
+                
+                videoViewRP79.start();
+                
+            }
+        });
 
         videoViewRP79.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
             @Override
             public void onCompletion(MediaPlayer mp) {
 
+                videoViewRP79.stopPlayback();
                 startActivity(new Intent(LessonResponsibility.this, ResponsibilityLessonCongrats.class));
 
             }
@@ -336,6 +413,7 @@ public class LessonResponsibility extends AppCompatActivity {
             public void onClick(View v) {
 
                 sfx.start();
+                videoViewRP79.stopPlayback();
                 responsibility7();
 
             }
@@ -346,6 +424,7 @@ public class LessonResponsibility extends AppCompatActivity {
             public void onClick(View v) {
 
                 sfx.start();
+                videoViewRP79.stopPlayback();
                 startActivity(new Intent(LessonResponsibility.this, ResponsibilityLessonCongrats.class));
 
             }

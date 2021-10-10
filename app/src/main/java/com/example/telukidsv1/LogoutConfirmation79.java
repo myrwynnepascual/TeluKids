@@ -13,6 +13,7 @@ import com.google.firebase.auth.FirebaseAuth;
 public class LogoutConfirmation79 extends AppCompatActivity {
 
     ImageButton btnconfirmLO, btncancelLO;
+    MediaPlayer sfx;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -22,7 +23,7 @@ public class LogoutConfirmation79 extends AppCompatActivity {
 
         btnconfirmLO = findViewById(R.id.confirmlogoutbtn79);
         btncancelLO = findViewById(R.id.cancellogoutbtn79);
-        MediaPlayer sfx = MediaPlayer.create(this, R.raw.btnsfx);
+        sfx = MediaPlayer.create(this, R.raw.btnsfx);
 
         btnconfirmLO.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -40,6 +41,13 @@ public class LogoutConfirmation79 extends AppCompatActivity {
                 sfx.start();
                 startActivity(new Intent(LogoutConfirmation79.this,UserProfile79.class));
                 finish();
+            }
+        });
+
+        sfx.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+            @Override
+            public void onCompletion(MediaPlayer mp) {
+                sfx.release();
             }
         });
     }

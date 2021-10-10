@@ -18,6 +18,7 @@ public class LessonDoingGood extends AppCompatActivity {
     Uri uriDG79;
     ImageButton backbtnDG79,nextbtnDG79;
     MediaController mediaController;
+    MediaPlayer sfx;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -27,12 +28,12 @@ public class LessonDoingGood extends AppCompatActivity {
         backbtnDG79 = findViewById(R.id.btnbackDG79);
         nextbtnDG79 = findViewById(R.id.nextbtnDG79);
 
-        BackgroundSoundService.onPause();
-
         mediaController = new MediaController(this);
         videoViewDG79.setMediaController(mediaController);
         mediaController.setVisibility(View.GONE);
         mediaController.setAnchorView(videoViewDG79);
+
+        BackgroundSoundService.onPause();
 
         good1();
     }
@@ -41,9 +42,16 @@ public class LessonDoingGood extends AppCompatActivity {
         videoPathDG79 = "android.resource://" + getPackageName() + "/" + R.raw.good1;
         uriDG79 = Uri.parse(videoPathDG79);
         videoViewDG79.setVideoURI(uriDG79);
-        MediaPlayer sfx = MediaPlayer.create(this, R.raw.btnsfx);
+        sfx = MediaPlayer.create(this, R.raw.btnsfx);
 
-        videoViewDG79.start();
+        videoViewDG79.setOnPreparedListener(new MediaPlayer.OnPreparedListener() {
+            @Override
+            public void onPrepared(MediaPlayer mp) {
+                
+                videoViewDG79.start();
+                
+            }
+        });
 
         videoViewDG79.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
             @Override
@@ -59,6 +67,7 @@ public class LessonDoingGood extends AppCompatActivity {
             public void onClick(View v) {
 
                 sfx.start();
+                videoViewDG79.stopPlayback();
                 startActivity(new Intent(LessonDoingGood.this,ChooseModeDoingGood.class));
 
             }
@@ -69,8 +78,16 @@ public class LessonDoingGood extends AppCompatActivity {
             public void onClick(View v) {
 
                 sfx.start();
+                videoViewDG79.stopPlayback();
                 good2();
 
+            }
+        });
+
+        sfx.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+            @Override
+            public void onCompletion(MediaPlayer mp) {
+                sfx.release();
             }
         });
     }
@@ -79,14 +96,22 @@ public class LessonDoingGood extends AppCompatActivity {
         videoPathDG79 = "android.resource://" + getPackageName() + "/" + R.raw.good2;
         uriDG79 = Uri.parse(videoPathDG79);
         videoViewDG79.setVideoURI(uriDG79);
-        MediaPlayer sfx = MediaPlayer.create(this, R.raw.btnsfx);
+        sfx = MediaPlayer.create(this, R.raw.btnsfx);
 
-        videoViewDG79.start();
+        videoViewDG79.setOnPreparedListener(new MediaPlayer.OnPreparedListener() {
+            @Override
+            public void onPrepared(MediaPlayer mp) {
+                
+                videoViewDG79.start();
+                
+            }
+        });
 
         videoViewDG79.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
             @Override
             public void onCompletion(MediaPlayer mp) {
 
+                videoViewDG79.stopPlayback();
                 good3();
 
             }
@@ -97,6 +122,7 @@ public class LessonDoingGood extends AppCompatActivity {
             public void onClick(View v) {
 
                 sfx.start();
+                videoViewDG79.stopPlayback();
                 good1();
 
             }
@@ -107,8 +133,16 @@ public class LessonDoingGood extends AppCompatActivity {
             public void onClick(View v) {
 
                 sfx.start();
+                videoViewDG79.stopPlayback();
                 good3();
 
+            }
+        });
+
+        sfx.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+            @Override
+            public void onCompletion(MediaPlayer mp) {
+                sfx.release();
             }
         });
     }
@@ -117,14 +151,22 @@ public class LessonDoingGood extends AppCompatActivity {
         videoPathDG79 = "android.resource://" + getPackageName() + "/" + R.raw.good3;
         uriDG79 = Uri.parse(videoPathDG79);
         videoViewDG79.setVideoURI(uriDG79);
-        MediaPlayer sfx = MediaPlayer.create(this, R.raw.btnsfx);
+        sfx = MediaPlayer.create(this, R.raw.btnsfx);
 
-        videoViewDG79.start();
+        videoViewDG79.setOnPreparedListener(new MediaPlayer.OnPreparedListener() {
+            @Override
+            public void onPrepared(MediaPlayer mp) {
+                
+                videoViewDG79.start();
+                
+            }
+        });
 
         videoViewDG79.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
             @Override
             public void onCompletion(MediaPlayer mp) {
 
+                videoViewDG79.stopPlayback();
                 good4();
 
             }
@@ -135,6 +177,7 @@ public class LessonDoingGood extends AppCompatActivity {
             public void onClick(View v) {
 
                 sfx.start();
+                videoViewDG79.stopPlayback();
                 good2();
 
             }
@@ -145,8 +188,16 @@ public class LessonDoingGood extends AppCompatActivity {
             public void onClick(View v) {
 
                 sfx.start();
+                videoViewDG79.stopPlayback();
                 good4();
 
+            }
+        });
+
+        sfx.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+            @Override
+            public void onCompletion(MediaPlayer mp) {
+                sfx.release();
             }
         });
     }
@@ -155,14 +206,22 @@ public class LessonDoingGood extends AppCompatActivity {
         videoPathDG79 = "android.resource://" + getPackageName() + "/" + R.raw.good4;
         uriDG79 = Uri.parse(videoPathDG79);
         videoViewDG79.setVideoURI(uriDG79);
-        MediaPlayer sfx = MediaPlayer.create(this, R.raw.btnsfx);
+        sfx = MediaPlayer.create(this, R.raw.btnsfx);
 
-        videoViewDG79.start();
+        videoViewDG79.setOnPreparedListener(new MediaPlayer.OnPreparedListener() {
+            @Override
+            public void onPrepared(MediaPlayer mp) {
+                
+                videoViewDG79.start();
+                
+            }
+        });
 
         videoViewDG79.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
             @Override
             public void onCompletion(MediaPlayer mp) {
 
+                videoViewDG79.stopPlayback();
                 startActivity(new Intent(LessonDoingGood.this, DoingGoodLessonCongrats.class));
 
             }
@@ -173,6 +232,7 @@ public class LessonDoingGood extends AppCompatActivity {
             public void onClick(View v) {
 
                 sfx.start();
+                videoViewDG79.stopPlayback();
                 good3();
 
             }
@@ -183,8 +243,16 @@ public class LessonDoingGood extends AppCompatActivity {
             public void onClick(View v) {
 
                 sfx.start();
+                videoViewDG79.stopPlayback();
                 startActivity(new Intent(LessonDoingGood.this, DoingGoodLessonCongrats.class));
 
+            }
+        });
+
+        sfx.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+            @Override
+            public void onCompletion(MediaPlayer mp) {
+                sfx.release();
             }
         });
     }

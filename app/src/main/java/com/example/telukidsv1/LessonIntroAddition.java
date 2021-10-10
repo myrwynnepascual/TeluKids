@@ -18,6 +18,7 @@ public class LessonIntroAddition extends AppCompatActivity {
     VideoView videoViewIA;
     String videoPathIA;
     Uri uriIA;
+    MediaPlayer sfx;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -29,22 +30,31 @@ public class LessonIntroAddition extends AppCompatActivity {
         videoPathIA = "android.resource://" + getPackageName() + "/" + R.raw.additionintrovideo;
         uriIA = Uri.parse(videoPathIA);
         videoViewIA.setVideoURI(uriIA);
-        MediaPlayer sfx = MediaPlayer.create(this, R.raw.btnsfx);
-
-        BackgroundSoundService.onPause();
 
         MediaController mediaController = new MediaController(this);
         videoViewIA.setMediaController(mediaController);
         mediaController.setAnchorView(videoViewIA);
 
-        videoViewIA.start();
+        sfx = MediaPlayer.create(this, R.raw.btnsfx);
 
+        BackgroundSoundService.onPause();
+
+
+        videoViewIA.setOnPreparedListener(new MediaPlayer.OnPreparedListener() {
+            @Override
+            public void onPrepared(MediaPlayer mp) {
+
+                videoViewIA.start();
+
+            }
+        });
 
         btncloseIA.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
                 sfx.start();
+                videoViewIA.stopPlayback();
                 startActivity(new Intent(LessonIntroAddition.this,ChooseModeAddition.class));
 
             }
@@ -54,8 +64,16 @@ public class LessonIntroAddition extends AppCompatActivity {
             @Override
             public void onCompletion(MediaPlayer mp) {
 
+                videoViewIA.stopPlayback();
                 startActivity(new Intent(LessonIntroAddition.this,ChooseModeAddition.class));
 
+            }
+        });
+
+        sfx.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+            @Override
+            public void onCompletion(MediaPlayer mp) {
+                sfx.release();
             }
         });
     }

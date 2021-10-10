@@ -22,7 +22,7 @@ public class SubtractionLessonCongrats extends AppCompatActivity {
 
     ImageButton btnbackSLC,btnachievementsSLC, btnassessmentSLC, btnhomepageSLC;
     ImageView certificateSLC;
-    MediaPlayer congrats;
+    MediaPlayer congrats,sfx;
 
     FirebaseAuth fAuth;
     FirebaseFirestore fStore;
@@ -38,7 +38,7 @@ public class SubtractionLessonCongrats extends AppCompatActivity {
         certificateSLC = findViewById(R.id.certificateSLC);
         btnassessmentSLC = findViewById(R.id.asessmentbtnSLC);
         btnhomepageSLC = findViewById(R.id.homepageSLC);
-        MediaPlayer sfx = MediaPlayer.create(this, R.raw.btnsfx);
+        sfx = MediaPlayer.create(this, R.raw.btnsfx);
 
         congrats = MediaPlayer.create(this, R.raw.yaysfx);
         congrats.start();
@@ -89,6 +89,13 @@ public class SubtractionLessonCongrats extends AppCompatActivity {
             public void onClick(View v) {
                 sfx.start();
                 startActivity(new Intent(SubtractionLessonCongrats.this, Homepage3to6.class));
+            }
+        });
+
+        sfx.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+            @Override
+            public void onCompletion(MediaPlayer mp) {
+                sfx.release();
             }
         });
     }

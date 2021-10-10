@@ -21,6 +21,7 @@ public class LessonIntroShapes extends AppCompatActivity {
     VideoView videoViewIS;
     String videoPathIS;
     Uri uriIS;
+    MediaPlayer sfx;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,22 +33,31 @@ public class LessonIntroShapes extends AppCompatActivity {
         videoPathIS = "android.resource://" + getPackageName() + "/" + R.raw.shapesintrovideo;
         uriIS = Uri.parse(videoPathIS);
         videoViewIS.setVideoURI(uriIS);
-        MediaPlayer sfx = MediaPlayer.create(this, R.raw.btnsfx);
-
-        BackgroundSoundService.onPause();
 
         MediaController mediaController = new MediaController(this);
         videoViewIS.setMediaController(mediaController);
         mediaController.setAnchorView(videoViewIS);
 
-        videoViewIS.start();
+        sfx = MediaPlayer.create(this, R.raw.btnsfx);
 
+        BackgroundSoundService.onPause();
+
+
+        videoViewIS.setOnPreparedListener(new MediaPlayer.OnPreparedListener() {
+            @Override
+            public void onPrepared(MediaPlayer mp) {
+
+                videoViewIS.start();
+
+            }
+        });
 
         btncloseIS.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
                 sfx.start();
+                videoViewIS.stopPlayback();
                 startActivity(new Intent(LessonIntroShapes.this,ChooseModeShapes.class));
 
             }
@@ -57,8 +67,16 @@ public class LessonIntroShapes extends AppCompatActivity {
             @Override
             public void onCompletion(MediaPlayer mp) {
 
+                videoViewIS.stopPlayback();
                 startActivity(new Intent(LessonIntroShapes.this,ChooseModeShapes.class));
 
+            }
+        });
+
+        sfx.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+            @Override
+            public void onCompletion(MediaPlayer mp) {
+                sfx.release();
             }
         });
 

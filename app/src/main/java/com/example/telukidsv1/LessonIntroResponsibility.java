@@ -18,6 +18,7 @@ public class LessonIntroResponsibility extends AppCompatActivity {
     VideoView videoViewRP;
     String videoPathRP;
     Uri uriRP;
+    MediaPlayer sfx;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -29,22 +30,30 @@ public class LessonIntroResponsibility extends AppCompatActivity {
         videoPathRP = "android.resource://" + getPackageName() + "/" + R.raw.responsibilityintrovideo;
         uriRP = Uri.parse(videoPathRP);
         videoViewRP.setVideoURI(uriRP);
-        MediaPlayer sfx = MediaPlayer.create(this, R.raw.btnsfx);
-
-        BackgroundSoundService.onPause();
 
         MediaController mediaController = new MediaController(this);
         videoViewRP.setMediaController(mediaController);
         mediaController.setAnchorView(videoViewRP);
 
-        videoViewRP.start();
+        sfx = MediaPlayer.create(this, R.raw.btnsfx);
 
+        BackgroundSoundService.onPause();
+
+        videoViewRP.setOnPreparedListener(new MediaPlayer.OnPreparedListener() {
+            @Override
+            public void onPrepared(MediaPlayer mp) {
+
+                videoViewRP.start();
+
+            }
+        });
 
         btncloseRP.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
                 sfx.start();
+                videoViewRP.stopPlayback();
                 startActivity(new Intent(LessonIntroResponsibility.this,ChooseModeResponsibility.class));
 
             }
@@ -54,8 +63,16 @@ public class LessonIntroResponsibility extends AppCompatActivity {
             @Override
             public void onCompletion(MediaPlayer mp) {
 
+                videoViewRP.stopPlayback();
                 startActivity(new Intent(LessonIntroResponsibility.this,ChooseModeResponsibility.class));
 
+            }
+        });
+
+        sfx.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+            @Override
+            public void onCompletion(MediaPlayer mp) {
+                sfx.release();
             }
         });
 

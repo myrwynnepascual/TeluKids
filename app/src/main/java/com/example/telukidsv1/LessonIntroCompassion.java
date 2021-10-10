@@ -18,6 +18,7 @@ public class LessonIntroCompassion extends AppCompatActivity {
     VideoView videoViewICP;
     String videoPathICP;
     Uri uriICP;
+    MediaPlayer sfx;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -29,34 +30,50 @@ public class LessonIntroCompassion extends AppCompatActivity {
         videoPathICP = "android.resource://" + getPackageName() + "/" + R.raw.compassionintrovideo;
         uriICP = Uri.parse(videoPathICP);
         videoViewICP.setVideoURI(uriICP);
-        MediaPlayer sfx = MediaPlayer.create(this, R.raw.btnsfx);
-
-        BackgroundSoundService.onPause();
 
         MediaController mediaController = new MediaController(this);
         videoViewICP.setMediaController(mediaController);
         mediaController.setAnchorView(videoViewICP);
 
-        videoViewICP.start();
+        sfx = MediaPlayer.create(this, R.raw.btnsfx);
+
+        BackgroundSoundService.onPause();
 
 
-       btncloseICP.setOnClickListener(new View.OnClickListener() {
+        videoViewICP.setOnPreparedListener(new MediaPlayer.OnPreparedListener() {
+            @Override
+            public void onPrepared(MediaPlayer mp) {
+
+                videoViewICP.start();
+
+            }
+        });
+
+        btncloseICP.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
                 sfx.start();
+                videoViewICP.stopPlayback();
                 startActivity(new Intent(LessonIntroCompassion.this,ChooseModeCompassion.class));
 
             }
-        });
+       });
 
-        videoViewICP.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
-            @Override
-            public void onCompletion(MediaPlayer mp) {
+       videoViewICP.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+           @Override
+           public void onCompletion(MediaPlayer mp) {
 
-                startActivity(new Intent(LessonIntroCompassion.this,ChooseModeCompassion.class));
+               videoViewICP.stopPlayback();
+               startActivity(new Intent(LessonIntroCompassion.this,ChooseModeCompassion.class));
 
-            }
-        });
+           }
+       });
+
+       sfx.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+           @Override
+           public void onCompletion(MediaPlayer mp) {
+               sfx.release();
+           }
+       });
     }
 }

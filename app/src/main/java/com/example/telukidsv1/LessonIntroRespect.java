@@ -18,6 +18,7 @@ public class LessonIntroRespect extends AppCompatActivity {
     VideoView videoViewIR;
     String videoPathIR;
     Uri uriIR;
+    MediaPlayer sfx;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -29,15 +30,25 @@ public class LessonIntroRespect extends AppCompatActivity {
         videoPathIR = "android.resource://" + getPackageName() + "/" + R.raw.respectintrovideo;
         uriIR = Uri.parse(videoPathIR);
         videoViewIR.setVideoURI(uriIR);
-        MediaPlayer sfx = MediaPlayer.create(this, R.raw.btnsfx);
-
-        BackgroundSoundService.onPause();
 
         MediaController mediaController = new MediaController(this);
         videoViewIR.setMediaController(mediaController);
         mediaController.setAnchorView(videoViewIR);
 
-        videoViewIR.start();
+
+        sfx = MediaPlayer.create(this, R.raw.btnsfx);
+
+        BackgroundSoundService.onPause();
+
+
+        videoViewIR.setOnPreparedListener(new MediaPlayer.OnPreparedListener() {
+            @Override
+            public void onPrepared(MediaPlayer mp) {
+
+                videoViewIR.start();
+
+            }
+        });
 
 
         btncloseIR.setOnClickListener(new View.OnClickListener() {
@@ -45,6 +56,7 @@ public class LessonIntroRespect extends AppCompatActivity {
             public void onClick(View v) {
 
                 sfx.start();
+                videoViewIR.stopPlayback();
                 startActivity(new Intent(LessonIntroRespect.this,ChooseModeRespect.class));
 
             }
@@ -54,8 +66,16 @@ public class LessonIntroRespect extends AppCompatActivity {
             @Override
             public void onCompletion(MediaPlayer mp) {
 
+                videoViewIR.stopPlayback();
                 startActivity(new Intent(LessonIntroRespect.this,ChooseModeRespect.class));
 
+            }
+        });
+
+        sfx.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+            @Override
+            public void onCompletion(MediaPlayer mp) {
+                sfx.release();
             }
         });
     }

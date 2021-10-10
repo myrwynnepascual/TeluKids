@@ -22,7 +22,7 @@ public class AdditionLessonCongrats extends AppCompatActivity {
 
     ImageButton btnbackALC,btnachievementsALC, btnassessmentALC, btnhomepageALC;
     ImageView certificateALC;
-    MediaPlayer congrats;
+    MediaPlayer congrats,sfx;
 
     FirebaseAuth fAuth;
     FirebaseFirestore fStore;
@@ -44,7 +44,7 @@ public class AdditionLessonCongrats extends AppCompatActivity {
 
         BackgroundSoundService.onResume();
 
-        MediaPlayer sfx = MediaPlayer.create(this, R.raw.btnsfx);
+        sfx = MediaPlayer.create(this, R.raw.btnsfx);
 
         fAuth = FirebaseAuth.getInstance();
         fStore = FirebaseFirestore.getInstance();
@@ -65,14 +65,6 @@ public class AdditionLessonCongrats extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 sfx.start();
-
-                sfx.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
-                    @Override
-                    public void onCompletion(MediaPlayer mp) {
-                        sfx.release();
-                    }
-                });
-
                 startActivity(new Intent(AdditionLessonCongrats.this, Numbers.class));
             }
         });
@@ -81,14 +73,6 @@ public class AdditionLessonCongrats extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 sfx.start();
-
-                sfx.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
-                    @Override
-                    public void onCompletion(MediaPlayer mp) {
-                        sfx.release();
-                    }
-                });
-
                 startActivity(new Intent(AdditionLessonCongrats.this, Achievements3to6Addition.class));
             }
         });
@@ -97,14 +81,6 @@ public class AdditionLessonCongrats extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 sfx.start();
-
-                sfx.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
-                    @Override
-                    public void onCompletion(MediaPlayer mp) {
-                        sfx.release();
-                    }
-                });
-
                 startActivity(new Intent(AdditionLessonCongrats.this, QuizAddition.class));
             }
         });
@@ -113,15 +89,14 @@ public class AdditionLessonCongrats extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 sfx.start();
-
-                sfx.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
-                    @Override
-                    public void onCompletion(MediaPlayer mp) {
-                        sfx.release();
-                    }
-                });
-
                 startActivity(new Intent(AdditionLessonCongrats.this, Homepage3to6.class));
+            }
+        });
+
+        sfx.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+            @Override
+            public void onCompletion(MediaPlayer mp) {
+                sfx.release();
             }
         });
     }

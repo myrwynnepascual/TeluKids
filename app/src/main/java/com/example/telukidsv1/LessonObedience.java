@@ -18,6 +18,7 @@ public class LessonObedience extends AppCompatActivity {
     Uri uriO79;
     ImageButton backbtnO79,nextbtnO79;
     MediaController mediaController;
+    MediaPlayer sfx;
 
 
     @Override
@@ -28,14 +29,13 @@ public class LessonObedience extends AppCompatActivity {
         videoViewO79 = findViewById(R.id.videoO79);
         backbtnO79 = findViewById(R.id.btnbackO79);
         nextbtnO79 = findViewById(R.id.nextbtnO79);
-        MediaPlayer sfx = MediaPlayer.create(this, R.raw.btnsfx);
-
-        BackgroundSoundService.onPause();
 
         mediaController = new MediaController(this);
         videoViewO79.setMediaController(mediaController);
         mediaController.setVisibility(View.GONE);
         mediaController.setAnchorView(videoViewO79);
+        
+        BackgroundSoundService.onPause();
 
         obedience1();
     }
@@ -44,14 +44,22 @@ public class LessonObedience extends AppCompatActivity {
         videoPathO79 = "android.resource://" + getPackageName() + "/" + R.raw.obedience1;
         uriO79 = Uri.parse(videoPathO79);
         videoViewO79.setVideoURI(uriO79);
-        MediaPlayer sfx = MediaPlayer.create(this, R.raw.btnsfx);
+        sfx = MediaPlayer.create(this, R.raw.btnsfx);
 
-        videoViewO79.start();
+        videoViewO79.setOnPreparedListener(new MediaPlayer.OnPreparedListener() {
+            @Override
+            public void onPrepared(MediaPlayer mp) {
+                
+                videoViewO79.start();
+                
+            }
+        });
 
         videoViewO79.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
             @Override
             public void onCompletion(MediaPlayer mp) {
 
+                videoViewO79.stopPlayback();
                 obedience2();
 
             }
@@ -62,6 +70,7 @@ public class LessonObedience extends AppCompatActivity {
             public void onClick(View v) {
 
                 sfx.start();
+                videoViewO79.stopPlayback();
                 startActivity(new Intent(LessonObedience.this,ChooseModeObedience.class));
 
             }
@@ -72,8 +81,16 @@ public class LessonObedience extends AppCompatActivity {
             public void onClick(View v) {
 
                 sfx.start();
+                videoViewO79.stopPlayback();
                 obedience2();
 
+            }
+        });
+
+        sfx.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+            @Override
+            public void onCompletion(MediaPlayer mp) {
+                sfx.release();
             }
         });
     }
@@ -82,14 +99,22 @@ public class LessonObedience extends AppCompatActivity {
         videoPathO79 = "android.resource://" + getPackageName() + "/" + R.raw.obedience2;
         uriO79 = Uri.parse(videoPathO79);
         videoViewO79.setVideoURI(uriO79);
-        MediaPlayer sfx = MediaPlayer.create(this, R.raw.btnsfx);
+        sfx = MediaPlayer.create(this, R.raw.btnsfx);
 
-        videoViewO79.start();
+        videoViewO79.setOnPreparedListener(new MediaPlayer.OnPreparedListener() {
+            @Override
+            public void onPrepared(MediaPlayer mp) {
+                
+                videoViewO79.start();
+                
+            }
+        });
 
         videoViewO79.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
             @Override
             public void onCompletion(MediaPlayer mp) {
 
+                videoViewO79.stopPlayback();
                 obedience3();
 
             }
@@ -100,6 +125,7 @@ public class LessonObedience extends AppCompatActivity {
             public void onClick(View v) {
 
                 sfx.start();
+                videoViewO79.stopPlayback();
                 obedience1();
 
             }
@@ -110,8 +136,16 @@ public class LessonObedience extends AppCompatActivity {
             public void onClick(View v) {
 
                 sfx.start();
+                videoViewO79.stopPlayback();
                 obedience3();
 
+            }
+        });
+
+        sfx.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+            @Override
+            public void onCompletion(MediaPlayer mp) {
+                sfx.release();
             }
         });
     }
@@ -120,14 +154,22 @@ public class LessonObedience extends AppCompatActivity {
         videoPathO79 = "android.resource://" + getPackageName() + "/" + R.raw.obedience3;
         uriO79 = Uri.parse(videoPathO79);
         videoViewO79.setVideoURI(uriO79);
-        MediaPlayer sfx = MediaPlayer.create(this, R.raw.btnsfx);
+        sfx = MediaPlayer.create(this, R.raw.btnsfx);
 
-        videoViewO79.start();
+        videoViewO79.setOnPreparedListener(new MediaPlayer.OnPreparedListener() {
+            @Override
+            public void onPrepared(MediaPlayer mp) {
+                
+                videoViewO79.start();
+                
+            }
+        });
 
         videoViewO79.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
             @Override
             public void onCompletion(MediaPlayer mp) {
 
+                videoViewO79.stopPlayback();
                 obedience4();
 
             }
@@ -138,6 +180,7 @@ public class LessonObedience extends AppCompatActivity {
             public void onClick(View v) {
 
                 sfx.start();
+                videoViewO79.stopPlayback();
                 obedience2();
 
             }
@@ -148,8 +191,16 @@ public class LessonObedience extends AppCompatActivity {
             public void onClick(View v) {
 
                 sfx.start();
+                videoViewO79.stopPlayback();
                 obedience4();
 
+            }
+        });
+
+        sfx.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+            @Override
+            public void onCompletion(MediaPlayer mp) {
+                sfx.release();
             }
         });
     }
@@ -158,14 +209,22 @@ public class LessonObedience extends AppCompatActivity {
         videoPathO79 = "android.resource://" + getPackageName() + "/" + R.raw.obedience4;
         uriO79 = Uri.parse(videoPathO79);
         videoViewO79.setVideoURI(uriO79);
-        MediaPlayer sfx = MediaPlayer.create(this, R.raw.btnsfx);
+        sfx = MediaPlayer.create(this, R.raw.btnsfx);
 
-        videoViewO79.start();
+        videoViewO79.setOnPreparedListener(new MediaPlayer.OnPreparedListener() {
+            @Override
+            public void onPrepared(MediaPlayer mp) {
+                
+                videoViewO79.start();
+                
+            }
+        });
 
         videoViewO79.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
             @Override
             public void onCompletion(MediaPlayer mp) {
 
+                videoViewO79.stopPlayback();
                 obedience5();
 
             }
@@ -176,6 +235,7 @@ public class LessonObedience extends AppCompatActivity {
             public void onClick(View v) {
 
                 sfx.start();
+                videoViewO79.stopPlayback();
                 obedience3();
 
             }
@@ -186,8 +246,16 @@ public class LessonObedience extends AppCompatActivity {
             public void onClick(View v) {
 
                 sfx.start();
+                videoViewO79.stopPlayback();
                 obedience5();
 
+            }
+        });
+
+        sfx.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+            @Override
+            public void onCompletion(MediaPlayer mp) {
+                sfx.release();
             }
         });
     }
@@ -196,14 +264,22 @@ public class LessonObedience extends AppCompatActivity {
         videoPathO79 = "android.resource://" + getPackageName() + "/" + R.raw.obedience5;
         uriO79 = Uri.parse(videoPathO79);
         videoViewO79.setVideoURI(uriO79);
-        MediaPlayer sfx = MediaPlayer.create(this, R.raw.btnsfx);
+        sfx = MediaPlayer.create(this, R.raw.btnsfx);
 
-        videoViewO79.start();
+        videoViewO79.setOnPreparedListener(new MediaPlayer.OnPreparedListener() {
+            @Override
+            public void onPrepared(MediaPlayer mp) {
+                
+                videoViewO79.start();
+                
+            }
+        });
 
         videoViewO79.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
             @Override
             public void onCompletion(MediaPlayer mp) {
 
+                videoViewO79.stopPlayback();
                 obedience6();
 
             }
@@ -214,6 +290,7 @@ public class LessonObedience extends AppCompatActivity {
             public void onClick(View v) {
 
                 sfx.start();
+                videoViewO79.stopPlayback();
                 obedience4();
 
             }
@@ -224,8 +301,16 @@ public class LessonObedience extends AppCompatActivity {
             public void onClick(View v) {
 
                 sfx.start();
+                videoViewO79.stopPlayback();
                 obedience6();
 
+            }
+        });
+
+        sfx.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+            @Override
+            public void onCompletion(MediaPlayer mp) {
+                sfx.release();
             }
         });
     }
@@ -234,14 +319,22 @@ public class LessonObedience extends AppCompatActivity {
         videoPathO79 = "android.resource://" + getPackageName() + "/" + R.raw.obedience6;
         uriO79 = Uri.parse(videoPathO79);
         videoViewO79.setVideoURI(uriO79);
-        MediaPlayer sfx = MediaPlayer.create(this, R.raw.btnsfx);
+        sfx = MediaPlayer.create(this, R.raw.btnsfx);
 
-        videoViewO79.start();
+        videoViewO79.setOnPreparedListener(new MediaPlayer.OnPreparedListener() {
+            @Override
+            public void onPrepared(MediaPlayer mp) {
+                
+                videoViewO79.start();
+                
+            }
+        });
 
         videoViewO79.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
             @Override
             public void onCompletion(MediaPlayer mp) {
 
+                videoViewO79.stopPlayback();
                 obedience7();
 
             }
@@ -252,6 +345,7 @@ public class LessonObedience extends AppCompatActivity {
             public void onClick(View v) {
 
                 sfx.start();
+                videoViewO79.stopPlayback();
                 obedience5();
 
             }
@@ -262,8 +356,16 @@ public class LessonObedience extends AppCompatActivity {
             public void onClick(View v) {
 
                 sfx.start();
+                videoViewO79.stopPlayback();
                 obedience7();
 
+            }
+        });
+
+        sfx.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+            @Override
+            public void onCompletion(MediaPlayer mp) {
+                sfx.release();
             }
         });
     }
@@ -272,14 +374,22 @@ public class LessonObedience extends AppCompatActivity {
         videoPathO79 = "android.resource://" + getPackageName() + "/" + R.raw.obedience7;
         uriO79 = Uri.parse(videoPathO79);
         videoViewO79.setVideoURI(uriO79);
-        MediaPlayer sfx = MediaPlayer.create(this, R.raw.btnsfx);
+        sfx = MediaPlayer.create(this, R.raw.btnsfx);
 
-        videoViewO79.start();
+        videoViewO79.setOnPreparedListener(new MediaPlayer.OnPreparedListener() {
+            @Override
+            public void onPrepared(MediaPlayer mp) {
+                
+                videoViewO79.start();
+                
+            }
+        });
 
         videoViewO79.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
             @Override
             public void onCompletion(MediaPlayer mp) {
 
+                videoViewO79.stopPlayback();
                 startActivity(new Intent(LessonObedience.this, ObedienceLessonCongrats.class));
 
             }
@@ -290,6 +400,7 @@ public class LessonObedience extends AppCompatActivity {
             public void onClick(View v) {
 
                 sfx.start();
+                videoViewO79.stopPlayback();
                 obedience7();
 
             }
@@ -300,8 +411,16 @@ public class LessonObedience extends AppCompatActivity {
             public void onClick(View v) {
 
                 sfx.start();
+                videoViewO79.stopPlayback();
                 startActivity(new Intent(LessonObedience.this, ObedienceLessonCongrats.class));
 
+            }
+        });
+
+        sfx.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+            @Override
+            public void onCompletion(MediaPlayer mp) {
+                sfx.release();
             }
         });
     }

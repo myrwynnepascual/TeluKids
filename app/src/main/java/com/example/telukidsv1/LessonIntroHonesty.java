@@ -18,6 +18,7 @@ public class LessonIntroHonesty extends AppCompatActivity {
     VideoView videoViewIH;
     String videoPathIH;
     Uri uriIH;
+    MediaPlayer sfx;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -29,22 +30,30 @@ public class LessonIntroHonesty extends AppCompatActivity {
         videoPathIH = "android.resource://" + getPackageName() + "/" + R.raw.honestyintrovideo;
         uriIH = Uri.parse(videoPathIH);
         videoViewIH.setVideoURI(uriIH);
-        MediaPlayer sfx = MediaPlayer.create(this, R.raw.btnsfx);
-
-        BackgroundSoundService.onPause();
 
         MediaController mediaController = new MediaController(this);
         videoViewIH.setMediaController(mediaController);
         mediaController.setAnchorView(videoViewIH);
 
-        videoViewIH.start();
+        sfx = MediaPlayer.create(this, R.raw.btnsfx);
 
+        BackgroundSoundService.onPause();
+
+        videoViewIH.setOnPreparedListener(new MediaPlayer.OnPreparedListener() {
+            @Override
+            public void onPrepared(MediaPlayer mp) {
+
+                videoViewIH.start();
+
+            }
+        });
 
         btncloseIH.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
                 sfx.start();
+                videoViewIH.stopPlayback();
                 startActivity(new Intent(LessonIntroHonesty.this,ChooseModeHonesty.class));
 
             }
@@ -54,8 +63,16 @@ public class LessonIntroHonesty extends AppCompatActivity {
             @Override
             public void onCompletion(MediaPlayer mp) {
 
+                videoViewIH.stopPlayback();
                 startActivity(new Intent(LessonIntroHonesty.this,ChooseModeHonesty.class));
 
+            }
+        });
+
+        sfx.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+            @Override
+            public void onCompletion(MediaPlayer mp) {
+                sfx.release();
             }
         });
         

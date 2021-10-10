@@ -18,6 +18,7 @@ public class LessonIntroDoingGood extends AppCompatActivity {
     VideoView videoViewDG;
     String videoPathDG;
     Uri uriDG;
+    MediaPlayer sfx;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -29,22 +30,30 @@ public class LessonIntroDoingGood extends AppCompatActivity {
         videoPathDG = "android.resource://" + getPackageName() + "/" + R.raw.goodintrovideo;
         uriDG = Uri.parse(videoPathDG);
         videoViewDG.setVideoURI(uriDG);
-        MediaPlayer sfx = MediaPlayer.create(this, R.raw.btnsfx);
-
-        BackgroundSoundService.onPause();
 
         MediaController mediaController = new MediaController(this);
         videoViewDG.setMediaController(mediaController);
         mediaController.setAnchorView(videoViewDG);
 
-        videoViewDG.start();
+        sfx = MediaPlayer.create(this, R.raw.btnsfx);
 
+        BackgroundSoundService.onPause();
+
+        videoViewDG.setOnPreparedListener(new MediaPlayer.OnPreparedListener() {
+            @Override
+            public void onPrepared(MediaPlayer mp) {
+
+                videoViewDG.start();
+
+            }
+        });
 
         btncloseDG.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
                 sfx.start();
+                videoViewDG.stopPlayback();
                 startActivity(new Intent(LessonIntroDoingGood.this,ChooseModeDoingGood.class));
 
             }
@@ -54,8 +63,16 @@ public class LessonIntroDoingGood extends AppCompatActivity {
             @Override
             public void onCompletion(MediaPlayer mp) {
 
+                videoViewDG.stopPlayback();
                 startActivity(new Intent(LessonIntroDoingGood.this,ChooseModeDoingGood.class));
 
+            }
+        });
+
+        sfx.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+            @Override
+            public void onCompletion(MediaPlayer mp) {
+                sfx.release();
             }
         });
     }

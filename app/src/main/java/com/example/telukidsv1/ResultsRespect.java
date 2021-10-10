@@ -26,7 +26,7 @@ import com.google.firebase.firestore.Transaction;
 public class ResultsRespect extends AppCompatActivity {
     private int  score_respect;
     private int initialScore_respect;
-    MediaPlayer congrats;
+    MediaPlayer congrats,sfx;
     FirebaseAuth fAuth;
     FirebaseFirestore fStore;
     FirebaseUser user;
@@ -42,7 +42,8 @@ public class ResultsRespect extends AppCompatActivity {
         ImageButton achievementsbtnCLC_Respect = findViewById(R.id.achievementsbtnCLC_Respect);
         ImageButton btnReadLesson_Quiz_Respect = findViewById(R.id.btnReadLesson_Quiz_Respect);
         ImageButton homepageCLC_Respect = findViewById(R.id.homepageCLC_Respect);
-        MediaPlayer sfx = MediaPlayer.create(this, R.raw.btnsfx);
+
+        sfx = MediaPlayer.create(this, R.raw.btnsfx);
 
         congrats = MediaPlayer.create(this, R.raw.yaysfx);
         congrats.start();
@@ -86,6 +87,7 @@ public class ResultsRespect extends AppCompatActivity {
                 return null;
             }
         });
+
         gmrc36btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -93,6 +95,7 @@ public class ResultsRespect extends AppCompatActivity {
                 startActivity(new Intent(ResultsRespect.this, Gmrc3to6.class));
             }
         });
+
         achievementsbtnCLC_Respect.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -102,6 +105,7 @@ public class ResultsRespect extends AppCompatActivity {
                 startActivity(proceed);
             }
         });
+
         btnReadLesson_Quiz_Respect.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -110,12 +114,20 @@ public class ResultsRespect extends AppCompatActivity {
                 startActivity(proceed);
             }
         });
+
         homepageCLC_Respect.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 sfx.start();
                 Intent proceed = new Intent(ResultsRespect.this, Homepage3to6.class);
                 startActivity(proceed);
+            }
+        });
+
+        sfx.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+            @Override
+            public void onCompletion(MediaPlayer mp) {
+                sfx.release();
             }
         });
     }

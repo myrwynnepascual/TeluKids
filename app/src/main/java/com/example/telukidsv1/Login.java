@@ -24,6 +24,7 @@ public class Login extends AppCompatActivity {
     TextView emessageLI;
     ImageButton backbtnLI,forgotpwLI,loginbtnLI;
     FirebaseAuth fAuth;
+    MediaPlayer sfx;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -40,7 +41,7 @@ public class Login extends AppCompatActivity {
         forgotpwLI = findViewById(R.id.forgotpwLI);
         loginbtnLI = findViewById(R.id.loginbtnLI);
 
-        MediaPlayer sfx = MediaPlayer.create(this, R.raw.btnsfx);
+        sfx = MediaPlayer.create(this, R.raw.btnsfx);
 
         backbtnLI.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -105,8 +106,13 @@ public class Login extends AppCompatActivity {
                         }
                     });
                 }
+            }
+        });
 
-
+        sfx.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+            @Override
+            public void onCompletion(MediaPlayer mp) {
+                sfx.release();
             }
         });
     }

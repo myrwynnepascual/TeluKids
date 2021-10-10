@@ -19,6 +19,7 @@ public class LessonIntroSociability extends AppCompatActivity {
     VideoView videoViewISC;
     String videoPathISC;
     Uri uriISC;
+    MediaPlayer sfx;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -30,22 +31,31 @@ public class LessonIntroSociability extends AppCompatActivity {
         videoPathISC = "android.resource://" + getPackageName() + "/" + R.raw.sociabilityintrovideo;
         uriISC = Uri.parse(videoPathISC);
         videoViewISC.setVideoURI(uriISC);
-        MediaPlayer sfx = MediaPlayer.create(this, R.raw.btnsfx);
-
-        BackgroundSoundService.onPause();
 
         MediaController mediaController = new MediaController(this);
         videoViewISC.setMediaController(mediaController);
         mediaController.setAnchorView(videoViewISC);
 
-        videoViewISC.start();
+        sfx = MediaPlayer.create(this, R.raw.btnsfx);
 
+        BackgroundSoundService.onPause();
+
+
+        videoViewISC.setOnPreparedListener(new MediaPlayer.OnPreparedListener() {
+            @Override
+            public void onPrepared(MediaPlayer mp) {
+
+                videoViewISC.start();
+
+            }
+        });
 
         btncloseICS.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
                 sfx.start();
+                videoViewISC.stopPlayback();
                 startActivity(new Intent(LessonIntroSociability.this,ChooseModeSociability.class));
 
             }
@@ -55,8 +65,16 @@ public class LessonIntroSociability extends AppCompatActivity {
             @Override
             public void onCompletion(MediaPlayer mp) {
 
+                videoViewISC.stopPlayback();
                 startActivity(new Intent(LessonIntroSociability.this,ChooseModeSociability.class));
 
+            }
+        });
+
+        sfx.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+            @Override
+            public void onCompletion(MediaPlayer mp) {
+                sfx.release();
             }
         });
     }

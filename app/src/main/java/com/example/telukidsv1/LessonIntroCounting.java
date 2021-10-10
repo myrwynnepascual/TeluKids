@@ -18,6 +18,7 @@ public class LessonIntroCounting extends AppCompatActivity {
     VideoView videoViewICN;
     String videoPathICN;
     Uri uriICN;
+    MediaPlayer sfx;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -29,22 +30,31 @@ public class LessonIntroCounting extends AppCompatActivity {
         videoPathICN = "android.resource://" + getPackageName() + "/" + R.raw.countingintrovideo;
         uriICN = Uri.parse(videoPathICN);
         videoViewICN.setVideoURI(uriICN);
-        MediaPlayer sfx = MediaPlayer.create(this, R.raw.btnsfx);
-
-        BackgroundSoundService.onPause();
 
         MediaController mediaController = new MediaController(this);
         videoViewICN.setMediaController(mediaController);
         mediaController.setAnchorView(videoViewICN);
 
-        videoViewICN.start();
+        sfx = MediaPlayer.create(this, R.raw.btnsfx);
 
+        BackgroundSoundService.onPause();
+
+
+        videoViewICN.setOnPreparedListener(new MediaPlayer.OnPreparedListener() {
+            @Override
+            public void onPrepared(MediaPlayer mp) {
+
+                videoViewICN.start();
+
+            }
+        });
 
         btnCloseICN.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
                 sfx.start();
+                videoViewICN.stopPlayback();
                 startActivity(new Intent(LessonIntroCounting.this,ChooseModeCounting.class));
 
             }
@@ -54,8 +64,16 @@ public class LessonIntroCounting extends AppCompatActivity {
             @Override
             public void onCompletion(MediaPlayer mp) {
 
+                videoViewICN.stopPlayback();
                 startActivity(new Intent(LessonIntroCounting.this,ChooseModeCounting.class));
 
+            }
+        });
+
+        sfx.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+            @Override
+            public void onCompletion(MediaPlayer mp) {
+                sfx.release();
             }
         });
     }

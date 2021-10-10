@@ -22,7 +22,7 @@ public class DoingGoodLessonCongrats extends AppCompatActivity {
 
     ImageButton btnbackDGLC,btnachievementsDGLC, btnassessmentDGLC, btnhomepageDGLC;
     ImageView certificateDGLC;
-    MediaPlayer congrats;
+    MediaPlayer congrats,sfx;
 
     FirebaseAuth fAuth;
     FirebaseFirestore fStore;
@@ -44,7 +44,7 @@ public class DoingGoodLessonCongrats extends AppCompatActivity {
 
         BackgroundSoundService.onResume();
 
-        MediaPlayer sfx = MediaPlayer.create(this, R.raw.btnsfx);
+        sfx = MediaPlayer.create(this, R.raw.btnsfx);
 
 
         fAuth = FirebaseAuth.getInstance();
@@ -66,14 +66,6 @@ public class DoingGoodLessonCongrats extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 sfx.start();
-
-                sfx.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
-                    @Override
-                    public void onCompletion(MediaPlayer mp) {
-                        sfx.release();
-                    }
-                });
-
                 startActivity(new Intent(DoingGoodLessonCongrats.this, Gmrc7to9.class));
             }
         });
@@ -82,14 +74,6 @@ public class DoingGoodLessonCongrats extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 sfx.start();
-
-                sfx.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
-                    @Override
-                    public void onCompletion(MediaPlayer mp) {
-                        sfx.release();
-                    }
-                });
-
                 startActivity(new Intent(DoingGoodLessonCongrats.this, Achievements7to9DoingGood.class));
             }
         });
@@ -98,14 +82,6 @@ public class DoingGoodLessonCongrats extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 sfx.start();
-
-                sfx.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
-                    @Override
-                    public void onCompletion(MediaPlayer mp) {
-                        sfx.release();
-                    }
-                });
-
                 startActivity(new Intent(DoingGoodLessonCongrats.this, QuizDoingGood.class));
             }
         });
@@ -114,17 +90,17 @@ public class DoingGoodLessonCongrats extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 sfx.start();
-
-                sfx.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
-                    @Override
-                    public void onCompletion(MediaPlayer mp) {
-                        sfx.release();
-                    }
-                });
-
                 startActivity(new Intent(DoingGoodLessonCongrats.this, Homepage7to9.class));
             }
         });
+
+        sfx.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+            @Override
+            public void onCompletion(MediaPlayer mp) {
+                sfx.release();
+            }
+        });
+
     }
 
     @Override

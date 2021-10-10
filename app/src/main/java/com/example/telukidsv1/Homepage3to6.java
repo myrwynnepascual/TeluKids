@@ -20,6 +20,7 @@ public class Homepage3to6 extends AppCompatActivity {
 
     ImageButton btnbackH36, btnUserProf36, btnBConcepts, btnGMRC36Topics, btnAchievements;
     String userID, usericon ;
+    MediaPlayer sfx;
 
     FirebaseFirestore fStore;
     FirebaseAuth fAuth;
@@ -36,8 +37,7 @@ public class Homepage3to6 extends AppCompatActivity {
         btnGMRC36Topics = findViewById(R.id.gmrcH36);
         btnAchievements = findViewById(R.id.achivementsH36);
 
-        MediaPlayer sfx = MediaPlayer.create(this, R.raw.btnsfx);
-
+        sfx = MediaPlayer.create(this, R.raw.btnsfx);
 
 
         fAuth = FirebaseAuth.getInstance();
@@ -83,16 +83,7 @@ public class Homepage3to6 extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 sfx.start();
-
-                sfx.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
-                    @Override
-                    public void onCompletion(MediaPlayer mp) {
-                        sfx.release();
-                    }
-                });
-
                 startActivity(new Intent(Homepage3to6.this, AgeCategorySelection.class));
-
             }
         });
 
@@ -101,14 +92,6 @@ public class Homepage3to6 extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 sfx.start();
-
-                sfx.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
-                    @Override
-                    public void onCompletion(MediaPlayer mp) {
-                        sfx.release();
-                    }
-                });
-
                 startActivity(new Intent(Homepage3to6.this, UserProfile36.class));
             }
         });
@@ -117,14 +100,6 @@ public class Homepage3to6 extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 sfx.start();
-
-                sfx.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
-                    @Override
-                    public void onCompletion(MediaPlayer mp) {
-                        sfx.release();
-                    }
-                });
-
                 startActivity(new Intent(Homepage3to6.this, BasicConcepts.class));
             }
         });
@@ -133,14 +108,6 @@ public class Homepage3to6 extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 sfx.start();
-
-                sfx.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
-                    @Override
-                    public void onCompletion(MediaPlayer mp) {
-                        sfx.release();
-                    }
-                });
-
                 startActivity(new Intent(Homepage3to6.this, Gmrc3to6.class));
             }
         });
@@ -149,15 +116,14 @@ public class Homepage3to6 extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 sfx.start();
-
-                sfx.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
-                    @Override
-                    public void onCompletion(MediaPlayer mp) {
-                        sfx.release();
-                    }
-                });
-
                 startActivity(new Intent(Homepage3to6.this, Achievements3to6Main.class));
+            }
+        });
+
+        sfx.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+            @Override
+            public void onCompletion(MediaPlayer mp) {
+                sfx.release();
             }
         });
 

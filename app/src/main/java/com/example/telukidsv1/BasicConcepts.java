@@ -11,6 +11,7 @@ import android.widget.ImageButton;
 public class BasicConcepts extends AppCompatActivity {
 
     ImageButton btnbackBConcepts,btnColors,btnNumbers,btnShapes;
+    MediaPlayer sfx;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -22,70 +23,47 @@ public class BasicConcepts extends AppCompatActivity {
         btnNumbers = findViewById(R.id.btnNumbers);
         btnShapes = findViewById(R.id.btnShapes);
 
-        MediaPlayer sfx = MediaPlayer.create(this, R.raw.btnsfx);
+        sfx = MediaPlayer.create(this, R.raw.btnsfx);
 
 
         btnbackBConcepts.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 sfx.start();
-
-                sfx.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
-                    @Override
-                    public void onCompletion(MediaPlayer mp) {
-                        sfx.release();
-                    }
-                });
-
                 startActivity(new Intent(BasicConcepts.this, Homepage3to6.class));
             }
         });
+
         btnColors.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 sfx.start();
-
-                sfx.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
-                    @Override
-                    public void onCompletion(MediaPlayer mp) {
-                        sfx.release();
-                    }
-                });
-
                 startActivity(new Intent(BasicConcepts.this, LessonIntroColors.class));
             }
         });
+
         btnNumbers.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 sfx.start();
-
-                sfx.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
-                    @Override
-                    public void onCompletion(MediaPlayer mp) {
-                        sfx.release();
-                    }
-                });
-
                 startActivity(new Intent(BasicConcepts.this, Numbers.class));
             }
         });
+
         btnShapes.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 sfx.start();
-
-                sfx.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
-                    @Override
-                    public void onCompletion(MediaPlayer mp) {
-                        sfx.release();
-                    }
-                });
-
                 startActivity(new Intent(BasicConcepts.this, LessonIntroShapes.class));
 
             }
         });
 
+        sfx.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+            @Override
+            public void onCompletion(MediaPlayer mp) {
+                sfx.release();
+            }
+        });
     }
 }

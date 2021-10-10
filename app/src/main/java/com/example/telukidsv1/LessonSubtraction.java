@@ -18,6 +18,7 @@ public class LessonSubtraction extends AppCompatActivity {
     Uri uriS;
     ImageButton backbtnS,nextbtnS;
     MediaController mediaController;
+    MediaPlayer sfx;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -27,7 +28,11 @@ public class LessonSubtraction extends AppCompatActivity {
         videoViewS = findViewById(R.id.videoS);
         backbtnS = findViewById(R.id.btnbackS);
         nextbtnS = findViewById(R.id.nextbtnS);
-        MediaPlayer sfx = MediaPlayer.create(this, R.raw.btnsfx);
+
+        mediaController = new MediaController(this);
+        videoViewS.setMediaController(mediaController);
+        mediaController.setVisibility(View.GONE);
+        mediaController.setAnchorView(videoViewS);
 
         BackgroundSoundService.onPause();
 
@@ -39,19 +44,22 @@ public class LessonSubtraction extends AppCompatActivity {
         videoPathS = "android.resource://" + getPackageName() + "/" + R.raw.subtractionx;
         uriS = Uri.parse(videoPathS);
         videoViewS.setVideoURI(uriS);
-        MediaPlayer sfx = MediaPlayer.create(this, R.raw.btnsfx);
+        sfx = MediaPlayer.create(this, R.raw.btnsfx);
 
-        mediaController = new MediaController(this);
-        videoViewS.setMediaController(mediaController);
-        mediaController.setVisibility(View.GONE);
-        mediaController.setAnchorView(videoViewS);
-
-        videoViewS.start();
+        videoViewS.setOnPreparedListener(new MediaPlayer.OnPreparedListener() {
+            @Override
+            public void onPrepared(MediaPlayer mp) {
+                
+                videoViewS.start();
+                
+            }
+        });
 
         videoViewS.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
             @Override
             public void onCompletion(MediaPlayer mp) {
 
+                videoViewS.stopPlayback();
                 subtractiony();
 
             }
@@ -62,6 +70,7 @@ public class LessonSubtraction extends AppCompatActivity {
             public void onClick(View v) {
 
                 sfx.start();
+                videoViewS.stopPlayback();
                 startActivity(new Intent(LessonSubtraction.this,ChooseModeSubtraction.class));
 
             }
@@ -72,8 +81,16 @@ public class LessonSubtraction extends AppCompatActivity {
             public void onClick(View v) {
 
                 sfx.start();
+                videoViewS.stopPlayback();
                 subtractiony();
 
+            }
+        });
+
+        sfx.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+            @Override
+            public void onCompletion(MediaPlayer mp) {
+                sfx.release();
             }
         });
     }
@@ -83,19 +100,22 @@ public class LessonSubtraction extends AppCompatActivity {
         videoPathS = "android.resource://" + getPackageName() + "/" + R.raw.subtractiony;
         uriS = Uri.parse(videoPathS);
         videoViewS.setVideoURI(uriS);
-        MediaPlayer sfx = MediaPlayer.create(this, R.raw.btnsfx);
+        sfx = MediaPlayer.create(this, R.raw.btnsfx); 
 
-        mediaController = new MediaController(this);
-        videoViewS.setMediaController(mediaController);
-        mediaController.setVisibility(View.GONE);
-        mediaController.setAnchorView(videoViewS);
-
-        videoViewS.start();
+         videoViewS.setOnPreparedListener(new MediaPlayer.OnPreparedListener() {
+            @Override
+            public void onPrepared(MediaPlayer mp) {
+                
+                videoViewS.start();
+                
+            }
+        });
 
         videoViewS.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
             @Override
             public void onCompletion(MediaPlayer mp) {
 
+                videoViewS.stopPlayback();
                 subtraction1();
 
             }
@@ -106,6 +126,7 @@ public class LessonSubtraction extends AppCompatActivity {
             public void onClick(View v) {
 
                 sfx.start();
+                videoViewS.stopPlayback();
                 startActivity(new Intent(LessonSubtraction.this,ChooseModeSubtraction.class));
 
             }
@@ -116,8 +137,16 @@ public class LessonSubtraction extends AppCompatActivity {
             public void onClick(View v) {
 
                 sfx.start();
+                videoViewS.stopPlayback();
                 subtraction1();
 
+            }
+        });
+
+        sfx.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+            @Override
+            public void onCompletion(MediaPlayer mp) {
+                sfx.release();
             }
         });
     }
@@ -126,14 +155,22 @@ public class LessonSubtraction extends AppCompatActivity {
         videoPathS = "android.resource://" + getPackageName() + "/" + R.raw.subtraction1;
         uriS = Uri.parse(videoPathS);
         videoViewS.setVideoURI(uriS);
-        MediaPlayer sfx = MediaPlayer.create(this, R.raw.btnsfx);
+        sfx = MediaPlayer.create(this, R.raw.btnsfx);
 
-        videoViewS.start();
+         videoViewS.setOnPreparedListener(new MediaPlayer.OnPreparedListener() {
+            @Override
+            public void onPrepared(MediaPlayer mp) {
+
+                videoViewS.start();
+                
+            }
+        });
 
         videoViewS.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
             @Override
             public void onCompletion(MediaPlayer mp) {
 
+                videoViewS.stopPlayback();
                 subtraction2();
 
             }
@@ -144,6 +181,7 @@ public class LessonSubtraction extends AppCompatActivity {
             public void onClick(View v) {
 
                 sfx.start();
+                videoViewS.stopPlayback();
                 subtractionx();
 
             }
@@ -154,8 +192,16 @@ public class LessonSubtraction extends AppCompatActivity {
             public void onClick(View v) {
 
                 sfx.start();
+                videoViewS.stopPlayback();
                 subtraction2();
 
+            }
+        });
+
+        sfx.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+            @Override
+            public void onCompletion(MediaPlayer mp) {
+                sfx.release();
             }
         });
     }
@@ -164,14 +210,22 @@ public class LessonSubtraction extends AppCompatActivity {
         videoPathS = "android.resource://" + getPackageName() + "/" + R.raw.subtraction2;
         uriS = Uri.parse(videoPathS);
         videoViewS.setVideoURI(uriS);
-        MediaPlayer sfx = MediaPlayer.create(this, R.raw.btnsfx);
+        sfx = MediaPlayer.create(this, R.raw.btnsfx);
 
-        videoViewS.start();
+         videoViewS.setOnPreparedListener(new MediaPlayer.OnPreparedListener() {
+            @Override
+            public void onPrepared(MediaPlayer mp) {
+
+                videoViewS.start();
+                
+            }
+        });
 
         videoViewS.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
             @Override
             public void onCompletion(MediaPlayer mp) {
 
+                videoViewS.stopPlayback();
                 subtraction3();
 
             }
@@ -182,6 +236,7 @@ public class LessonSubtraction extends AppCompatActivity {
             public void onClick(View v) {
 
                 sfx.start();
+                videoViewS.stopPlayback();
                 subtraction1();
 
             }
@@ -192,8 +247,16 @@ public class LessonSubtraction extends AppCompatActivity {
             public void onClick(View v) {
 
                 sfx.start();
+                videoViewS.stopPlayback();
                 subtraction3();
 
+            }
+        });
+
+        sfx.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+            @Override
+            public void onCompletion(MediaPlayer mp) {
+                sfx.release();
             }
         });
     }
@@ -202,14 +265,22 @@ public class LessonSubtraction extends AppCompatActivity {
         videoPathS = "android.resource://" + getPackageName() + "/" + R.raw.subtraction3;
         uriS = Uri.parse(videoPathS);
         videoViewS.setVideoURI(uriS);
-        MediaPlayer sfx = MediaPlayer.create(this, R.raw.btnsfx);
+        sfx = MediaPlayer.create(this, R.raw.btnsfx);
 
-        videoViewS.start();
+         videoViewS.setOnPreparedListener(new MediaPlayer.OnPreparedListener() {
+            @Override
+            public void onPrepared(MediaPlayer mp) {
+
+                videoViewS.start();
+                
+            }
+        });
 
         videoViewS.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
             @Override
             public void onCompletion(MediaPlayer mp) {
 
+                videoViewS.stopPlayback();
                 subtraction4();
 
             }
@@ -220,6 +291,7 @@ public class LessonSubtraction extends AppCompatActivity {
             public void onClick(View v) {
 
                 sfx.start();
+                videoViewS.stopPlayback();
                 subtraction2();
 
             }
@@ -230,8 +302,16 @@ public class LessonSubtraction extends AppCompatActivity {
             public void onClick(View v) {
 
                 sfx.start();
+                videoViewS.stopPlayback();
                 subtraction4();
 
+            }
+        });
+
+        sfx.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+            @Override
+            public void onCompletion(MediaPlayer mp) {
+                sfx.release();
             }
         });
     }
@@ -240,14 +320,22 @@ public class LessonSubtraction extends AppCompatActivity {
         videoPathS = "android.resource://" + getPackageName() + "/" + R.raw.subtraction4;
         uriS = Uri.parse(videoPathS);
         videoViewS.setVideoURI(uriS);
-        MediaPlayer sfx = MediaPlayer.create(this, R.raw.btnsfx);
+        sfx = MediaPlayer.create(this, R.raw.btnsfx);
 
-        videoViewS.start();
+         videoViewS.setOnPreparedListener(new MediaPlayer.OnPreparedListener() {
+            @Override
+            public void onPrepared(MediaPlayer mp) {
+
+                videoViewS.start();
+                
+            }
+        });
 
         videoViewS.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
             @Override
             public void onCompletion(MediaPlayer mp) {
 
+                videoViewS.stopPlayback();
                 subtraction5();
 
             }
@@ -258,6 +346,7 @@ public class LessonSubtraction extends AppCompatActivity {
             public void onClick(View v) {
 
                 sfx.start();
+                videoViewS.stopPlayback();
                 subtraction3();
 
             }
@@ -268,8 +357,16 @@ public class LessonSubtraction extends AppCompatActivity {
             public void onClick(View v) {
 
                 sfx.start();
+                videoViewS.stopPlayback();
                 subtraction5();
 
+            }
+        });
+
+        sfx.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+            @Override
+            public void onCompletion(MediaPlayer mp) {
+                sfx.release();
             }
         });
     }
@@ -278,14 +375,22 @@ public class LessonSubtraction extends AppCompatActivity {
         videoPathS = "android.resource://" + getPackageName() + "/" + R.raw.subtraction5;
         uriS = Uri.parse(videoPathS);
         videoViewS.setVideoURI(uriS);
-        MediaPlayer sfx = MediaPlayer.create(this, R.raw.btnsfx);
+        sfx = MediaPlayer.create(this, R.raw.btnsfx);
 
-        videoViewS.start();
+         videoViewS.setOnPreparedListener(new MediaPlayer.OnPreparedListener() {
+            @Override
+            public void onPrepared(MediaPlayer mp) {
+                
+                videoViewS.start();
+                
+            }
+        });
 
         videoViewS.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
             @Override
             public void onCompletion(MediaPlayer mp) {
 
+                videoViewS.stopPlayback();
                 subtraction6();
 
             }
@@ -296,6 +401,7 @@ public class LessonSubtraction extends AppCompatActivity {
             public void onClick(View v) {
 
                 sfx.start();
+                videoViewS.stopPlayback();
                 subtraction4();
 
             }
@@ -306,8 +412,16 @@ public class LessonSubtraction extends AppCompatActivity {
             public void onClick(View v) {
 
                 sfx.start();
+                videoViewS.stopPlayback();
                 subtraction6();
 
+            }
+        });
+
+        sfx.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+            @Override
+            public void onCompletion(MediaPlayer mp) {
+                sfx.release();
             }
         });
     }
@@ -316,14 +430,22 @@ public class LessonSubtraction extends AppCompatActivity {
         videoPathS = "android.resource://" + getPackageName() + "/" + R.raw.subtraction6;
         uriS = Uri.parse(videoPathS);
         videoViewS.setVideoURI(uriS);
-        MediaPlayer sfx = MediaPlayer.create(this, R.raw.btnsfx);
+        sfx = MediaPlayer.create(this, R.raw.btnsfx);
 
-        videoViewS.start();
+         videoViewS.setOnPreparedListener(new MediaPlayer.OnPreparedListener() {
+            @Override
+            public void onPrepared(MediaPlayer mp) {
+                
+                videoViewS.start();
+                
+            }
+        });
 
         videoViewS.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
             @Override
             public void onCompletion(MediaPlayer mp) {
 
+                videoViewS.stopPlayback();
                 subtraction7();
 
             }
@@ -334,6 +456,7 @@ public class LessonSubtraction extends AppCompatActivity {
             public void onClick(View v) {
 
                 sfx.start();
+                videoViewS.stopPlayback();
                 subtraction5();
 
             }
@@ -344,8 +467,16 @@ public class LessonSubtraction extends AppCompatActivity {
             public void onClick(View v) {
 
                 sfx.start();
+                videoViewS.stopPlayback();
                 subtraction7();
 
+            }
+        });
+
+        sfx.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+            @Override
+            public void onCompletion(MediaPlayer mp) {
+                sfx.release();
             }
         });
     }
@@ -354,14 +485,22 @@ public class LessonSubtraction extends AppCompatActivity {
         videoPathS = "android.resource://" + getPackageName() + "/" + R.raw.subtraction7;
         uriS = Uri.parse(videoPathS);
         videoViewS.setVideoURI(uriS);
-        MediaPlayer sfx = MediaPlayer.create(this, R.raw.btnsfx);
+        sfx = MediaPlayer.create(this, R.raw.btnsfx);
 
-        videoViewS.start();
+         videoViewS.setOnPreparedListener(new MediaPlayer.OnPreparedListener() {
+            @Override
+            public void onPrepared(MediaPlayer mp) {
+                
+                videoViewS.start();
+                
+            }
+        });
 
         videoViewS.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
             @Override
             public void onCompletion(MediaPlayer mp) {
 
+                videoViewS.stopPlayback();
                 subtraction8();
 
             }
@@ -372,6 +511,7 @@ public class LessonSubtraction extends AppCompatActivity {
             public void onClick(View v) {
 
                 sfx.start();
+                videoViewS.stopPlayback();
                 subtraction6();
 
             }
@@ -382,8 +522,16 @@ public class LessonSubtraction extends AppCompatActivity {
             public void onClick(View v) {
 
                 sfx.start();
+                videoViewS.stopPlayback();
                 subtraction8();
 
+            }
+        });
+
+        sfx.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+            @Override
+            public void onCompletion(MediaPlayer mp) {
+                sfx.release();
             }
         });
     }
@@ -392,14 +540,22 @@ public class LessonSubtraction extends AppCompatActivity {
         videoPathS = "android.resource://" + getPackageName() + "/" + R.raw.subtraction8;
         uriS = Uri.parse(videoPathS);
         videoViewS.setVideoURI(uriS);
-        MediaPlayer sfx = MediaPlayer.create(this, R.raw.btnsfx);
+        sfx = MediaPlayer.create(this, R.raw.btnsfx);
 
-        videoViewS.start();
+         videoViewS.setOnPreparedListener(new MediaPlayer.OnPreparedListener() {
+            @Override
+            public void onPrepared(MediaPlayer mp) {
+                
+                videoViewS.start();
+                
+            }
+        });
 
         videoViewS.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
             @Override
             public void onCompletion(MediaPlayer mp) {
 
+                videoViewS.stopPlayback();
                 subtraction9();
 
             }
@@ -410,6 +566,7 @@ public class LessonSubtraction extends AppCompatActivity {
             public void onClick(View v) {
 
                 sfx.start();
+                videoViewS.stopPlayback();
                 subtraction7();
 
             }
@@ -420,8 +577,16 @@ public class LessonSubtraction extends AppCompatActivity {
             public void onClick(View v) {
 
                 sfx.start();
+                videoViewS.stopPlayback();
                 subtraction9();
 
+            }
+        });
+
+        sfx.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+            @Override
+            public void onCompletion(MediaPlayer mp) {
+                sfx.release();
             }
         });
     }
@@ -430,14 +595,22 @@ public class LessonSubtraction extends AppCompatActivity {
         videoPathS = "android.resource://" + getPackageName() + "/" + R.raw.subtraction9;
         uriS = Uri.parse(videoPathS);
         videoViewS.setVideoURI(uriS);
-        MediaPlayer sfx = MediaPlayer.create(this, R.raw.btnsfx);
+        sfx = MediaPlayer.create(this, R.raw.btnsfx);
 
-        videoViewS.start();
+         videoViewS.setOnPreparedListener(new MediaPlayer.OnPreparedListener() {
+            @Override
+            public void onPrepared(MediaPlayer mp) {
+                
+                videoViewS.start();
+                
+            }
+        });
 
         videoViewS.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
             @Override
             public void onCompletion(MediaPlayer mp) {
 
+                videoViewS.stopPlayback();
                 subtraction10();
 
             }
@@ -448,6 +621,7 @@ public class LessonSubtraction extends AppCompatActivity {
             public void onClick(View v) {
 
                 sfx.start();
+                videoViewS.stopPlayback();
                 subtraction8();
 
             }
@@ -458,8 +632,16 @@ public class LessonSubtraction extends AppCompatActivity {
             public void onClick(View v) {
 
                 sfx.start();
+                videoViewS.stopPlayback();
                 subtraction10();
 
+            }
+        });
+
+        sfx.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+            @Override
+            public void onCompletion(MediaPlayer mp) {
+                sfx.release();
             }
         });
     }
@@ -468,14 +650,22 @@ public class LessonSubtraction extends AppCompatActivity {
         videoPathS = "android.resource://" + getPackageName() + "/" + R.raw.subtraction10;
         uriS = Uri.parse(videoPathS);
         videoViewS.setVideoURI(uriS);
-        MediaPlayer sfx = MediaPlayer.create(this, R.raw.btnsfx);
+        sfx = MediaPlayer.create(this, R.raw.btnsfx);
 
-        videoViewS.start();
+         videoViewS.setOnPreparedListener(new MediaPlayer.OnPreparedListener() {
+            @Override
+            public void onPrepared(MediaPlayer mp) {
+                
+                videoViewS.start();
+                
+            }
+        });
 
         videoViewS.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
             @Override
             public void onCompletion(MediaPlayer mp) {
 
+                videoViewS.stopPlayback();
                 startActivity(new Intent(LessonSubtraction.this,SubtractionLessonCongrats.class));
 
             }
@@ -486,6 +676,7 @@ public class LessonSubtraction extends AppCompatActivity {
             public void onClick(View v) {
 
                 sfx.start();
+                videoViewS.stopPlayback();
                 subtraction9();
 
             }
@@ -496,8 +687,16 @@ public class LessonSubtraction extends AppCompatActivity {
             public void onClick(View v) {
 
                 sfx.start();
+                videoViewS.stopPlayback();
                 startActivity(new Intent(LessonSubtraction.this,SubtractionLessonCongrats.class));
 
+            }
+        });
+
+        sfx.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+            @Override
+            public void onCompletion(MediaPlayer mp) {
+                sfx.release();
             }
         });
     }

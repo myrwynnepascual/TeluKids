@@ -25,7 +25,7 @@ import com.google.firebase.firestore.Transaction;
 public class ResultsColors extends AppCompatActivity {
     private int  score_colors;
     private int initialScore_colors;
-    MediaPlayer congrats;
+    MediaPlayer congrats,sfx;
     FirebaseAuth fAuth;
     FirebaseFirestore fStore;
     FirebaseUser user;
@@ -41,7 +41,8 @@ public class ResultsColors extends AppCompatActivity {
         ImageButton achievementsbtnCLC_Colors = findViewById(R.id.achievementsbtnCLC_Colors);
         ImageButton btnReadLesson_Quiz_Colors = findViewById(R.id.btnReadLesson_Quiz_Colors);
         ImageButton homepageCLC_Colors = findViewById(R.id.homepageCLC_Colors);
-        MediaPlayer sfx = MediaPlayer.create(this, R.raw.btnsfx);
+
+        sfx = MediaPlayer.create(this, R.raw.btnsfx);
 
         congrats = MediaPlayer.create(this, R.raw.yaysfx);
         congrats.start();
@@ -116,6 +117,13 @@ public class ResultsColors extends AppCompatActivity {
                 sfx.start();
                 Intent proceed = new Intent(ResultsColors.this, Homepage3to6.class);
                 startActivity(proceed);
+            }
+        });
+
+        sfx.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+            @Override
+            public void onCompletion(MediaPlayer mp) {
+                sfx.release();
             }
         });
     }

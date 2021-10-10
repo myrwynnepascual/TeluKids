@@ -25,7 +25,7 @@ import com.google.firebase.firestore.Transaction;
 public class ResultsResponsibility extends AppCompatActivity {
     private int  score_responsibility;
     private int initialScore_responsibility;
-    MediaPlayer congrats;
+    MediaPlayer congrats,sfx;
     FirebaseAuth fAuth;
     FirebaseFirestore fStore;
     FirebaseUser user;
@@ -41,7 +41,8 @@ public class ResultsResponsibility extends AppCompatActivity {
         ImageButton achievementsbtnCLC_Responsibility = findViewById(R.id.achievementsbtnCLC_Responsibility);
         ImageButton btnReadLesson_Quiz_Responsibility = findViewById(R.id.btnReadLesson_Quiz_Responsibility);
         ImageButton homepageCLC_Responsibility = findViewById(R.id.homepageCLC_Responsibility);
-        MediaPlayer sfx = MediaPlayer.create(this, R.raw.btnsfx);
+
+        sfx = MediaPlayer.create(this, R.raw.btnsfx);
 
         congrats = MediaPlayer.create(this, R.raw.yaysfx);
         congrats.start();
@@ -85,6 +86,7 @@ public class ResultsResponsibility extends AppCompatActivity {
                 return null;
             }
         });
+
         gmrc79btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -92,6 +94,7 @@ public class ResultsResponsibility extends AppCompatActivity {
                 startActivity(new Intent(ResultsResponsibility.this,Gmrc7to9.class));
             }
         });
+
         achievementsbtnCLC_Responsibility.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -101,6 +104,7 @@ public class ResultsResponsibility extends AppCompatActivity {
                 startActivity(proceed);
             }
         });
+
         btnReadLesson_Quiz_Responsibility.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -109,12 +113,20 @@ public class ResultsResponsibility extends AppCompatActivity {
                 startActivity(proceed);
             }
         });
+
         homepageCLC_Responsibility.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 sfx.start();
                 Intent proceed = new Intent(ResultsResponsibility.this, Homepage7to9.class);
                 startActivity(proceed);
+            }
+        });
+
+        sfx.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+            @Override
+            public void onCompletion(MediaPlayer mp) {
+                sfx.release();
             }
         });
     }

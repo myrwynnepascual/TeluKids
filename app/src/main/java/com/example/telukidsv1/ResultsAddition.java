@@ -25,7 +25,7 @@ import com.google.firebase.firestore.Transaction;
 public class ResultsAddition extends AppCompatActivity {
     private int  score_addition;
     private int initialScore_addition;
-    MediaPlayer congrats;
+    MediaPlayer congrats,sfx;
     FirebaseAuth fAuth;
     FirebaseFirestore fStore;
     FirebaseUser user;
@@ -41,7 +41,8 @@ public class ResultsAddition extends AppCompatActivity {
         ImageButton achievementsbtnCLC_Addition = findViewById(R.id.achievementsbtnCLC_Addition);
         ImageButton btnReadLesson_Quiz_Addition = findViewById(R.id.btnReadLesson_Quiz_Addition);
         ImageButton homepageCLC_Addition = findViewById(R.id.homepageCLC_Addition);
-        MediaPlayer sfx = MediaPlayer.create(this, R.raw.btnsfx);
+
+        sfx = MediaPlayer.create(this, R.raw.btnsfx);
 
         congrats = MediaPlayer.create(this, R.raw.yaysfx);
         congrats.start();
@@ -116,6 +117,13 @@ public class ResultsAddition extends AppCompatActivity {
                 sfx.start();
                 Intent proceed = new Intent(ResultsAddition.this, Homepage3to6.class);
                 startActivity(proceed);
+            }
+        });
+
+        sfx.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+            @Override
+            public void onCompletion(MediaPlayer mp) {
+                sfx.release();
             }
         });
     }

@@ -25,7 +25,7 @@ import com.google.firebase.firestore.Transaction;
 public class ResultsHonesty extends AppCompatActivity {
     private int  score_honesty;
     private int initialScore_honesty;
-    MediaPlayer congrats;
+    MediaPlayer congrats,sfx;
     FirebaseAuth fAuth;
     FirebaseFirestore fStore;
     FirebaseUser user;
@@ -41,7 +41,7 @@ public class ResultsHonesty extends AppCompatActivity {
         ImageButton achievementsbtnCLC_Honesty = findViewById(R.id.achievementsbtnCLC_Honesty);
         ImageButton btnReadLesson_Quiz_Honesty = findViewById(R.id.btnReadLesson_Quiz_Honesty);
         ImageButton homepageCLC_Honesty = findViewById(R.id.homepageCLC_Honesty);
-        MediaPlayer sfx = MediaPlayer.create(this, R.raw.btnsfx);
+        sfx = MediaPlayer.create(this, R.raw.btnsfx);
 
         congrats = MediaPlayer.create(this, R.raw.yaysfx);
         congrats.start();
@@ -115,6 +115,13 @@ public class ResultsHonesty extends AppCompatActivity {
                 sfx.start();
                 Intent proceed = new Intent(ResultsHonesty.this, Homepage3to6.class);
                 startActivity(proceed);
+            }
+        });
+
+        sfx.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+            @Override
+            public void onCompletion(MediaPlayer mp) {
+                sfx.release();
             }
         });
     }

@@ -26,7 +26,7 @@ import com.google.firebase.firestore.Transaction;
 public class ResultsSubtraction extends AppCompatActivity {
     private int  score_subtraction;
     private int initialScore_subtraction;
-    MediaPlayer congrats;
+    MediaPlayer congrats,sfx;
     FirebaseAuth fAuth;
     FirebaseFirestore fStore;
     FirebaseUser user;
@@ -42,7 +42,7 @@ public class ResultsSubtraction extends AppCompatActivity {
         ImageButton achievementsbtnCLC_Subtraction = findViewById(R.id.achievementsbtnCLC_Subtraction);
         ImageButton btnReadLesson_Quiz_Subtraction = findViewById(R.id.btnReadLesson_Quiz_Subtraction);
         ImageButton homepageCLC_Subtraction = findViewById(R.id.homepageCLC_Subtraction);
-        MediaPlayer sfx = MediaPlayer.create(this, R.raw.btnsfx);
+        sfx = MediaPlayer.create(this, R.raw.btnsfx);
 
         congrats = MediaPlayer.create(this, R.raw.yaysfx);
         congrats.start();
@@ -96,6 +96,7 @@ public class ResultsSubtraction extends AppCompatActivity {
                 startActivity(proceed);
             }
         });
+
         numbersbtnCLC_Subtraction.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -103,6 +104,7 @@ public class ResultsSubtraction extends AppCompatActivity {
                 startActivity(new Intent(ResultsSubtraction.this, Numbers.class));
             }
         });
+
         btnReadLesson_Quiz_Subtraction.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -111,12 +113,20 @@ public class ResultsSubtraction extends AppCompatActivity {
                 startActivity(proceed);
             }
         });
+
         homepageCLC_Subtraction.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 sfx.start();
                 Intent proceed = new Intent(ResultsSubtraction.this, Homepage3to6.class);
                 startActivity(proceed);
+            }
+        });
+
+        sfx.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+            @Override
+            public void onCompletion(MediaPlayer mp) {
+                sfx.release();
             }
         });
     }

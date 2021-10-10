@@ -11,6 +11,7 @@ import android.widget.ImageButton;
 public class Numbers extends AppCompatActivity {
 
     ImageButton btnbackN,btncountN,btnaddN,btnsubN;
+    MediaPlayer sfx;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -21,7 +22,7 @@ public class Numbers extends AppCompatActivity {
         btncountN = findViewById(R.id.btncountingN);
         btnaddN = findViewById(R.id.btnadditionN);
         btnsubN = findViewById(R.id.btnsubtractionN);
-        MediaPlayer sfx = MediaPlayer.create(this, R.raw.btnsfx);
+        sfx = MediaPlayer.create(this, R.raw.btnsfx);
 
         btnbackN.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -60,6 +61,13 @@ public class Numbers extends AppCompatActivity {
                 sfx.start();
                 startActivity(new Intent(Numbers.this,LessonIntroSubtraction.class));
 
+            }
+        });
+
+        sfx.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+            @Override
+            public void onCompletion(MediaPlayer mp) {
+                sfx.release();
             }
         });
     }

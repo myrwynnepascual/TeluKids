@@ -18,6 +18,7 @@ public class LessonIntroDiscipline extends AppCompatActivity {
     VideoView videoViewID;
     String videoPathID;
     Uri uriID;
+    MediaPlayer sfx;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -29,16 +30,24 @@ public class LessonIntroDiscipline extends AppCompatActivity {
         videoPathID = "android.resource://" + getPackageName() + "/" + R.raw.disciplineintrovideo;
         uriID = Uri.parse(videoPathID);
         videoViewID.setVideoURI(uriID);
-        MediaPlayer sfx = MediaPlayer.create(this, R.raw.btnsfx);
-
-        BackgroundSoundService.onPause();
 
         MediaController mediaController = new MediaController(this);
         videoViewID.setMediaController(mediaController);
         mediaController.setAnchorView(videoViewID);
 
-        videoViewID.start();
+        sfx = MediaPlayer.create(this, R.raw.btnsfx);
 
+        BackgroundSoundService.onPause();
+
+
+        videoViewID.setOnPreparedListener(new MediaPlayer.OnPreparedListener() {
+            @Override
+            public void onPrepared(MediaPlayer mp) {
+
+                videoViewID.start();
+
+            }
+        });
 
         btnCloseID.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -56,6 +65,13 @@ public class LessonIntroDiscipline extends AppCompatActivity {
 
                 startActivity(new Intent(LessonIntroDiscipline.this,ChooseModeDiscipline.class));
 
+            }
+        });
+
+        sfx.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+            @Override
+            public void onCompletion(MediaPlayer mp) {
+                sfx.release();
             }
         });
     }

@@ -25,7 +25,7 @@ import com.google.firebase.firestore.Transaction;
 public class ResultsCountingNumbers extends AppCompatActivity {
     private int  score_counting;
     private int initialScore_counting;
-    MediaPlayer congrats;
+    MediaPlayer congrats,sfx;
     FirebaseAuth fAuth;
     FirebaseFirestore fStore;
     FirebaseUser user;
@@ -116,6 +116,13 @@ public class ResultsCountingNumbers extends AppCompatActivity {
                 sfx.start();
                 Intent proceed = new Intent(ResultsCountingNumbers.this, Homepage3to6.class);
                 startActivity(proceed);
+            }
+        });
+
+        sfx.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+            @Override
+            public void onCompletion(MediaPlayer mp) {
+                sfx.release();
             }
         });
     }

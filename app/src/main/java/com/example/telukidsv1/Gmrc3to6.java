@@ -11,6 +11,7 @@ import android.widget.ImageButton;
 public class Gmrc3to6 extends AppCompatActivity {
 
     ImageButton btnBack,btnDiscipline, btnHonesty, btnRespect, btnSociability, btnCompassion;
+    MediaPlayer sfx;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -24,7 +25,7 @@ public class Gmrc3to6 extends AppCompatActivity {
         btnSociability = findViewById(R.id.btnSociabilityG36);
         btnCompassion = findViewById(R.id.btnCompassionG36);
 
-        MediaPlayer sfx = MediaPlayer.create(this, R.raw.btnsfx);
+        sfx = MediaPlayer.create(this, R.raw.btnsfx);
 
 
         btnBack.setOnClickListener(new View.OnClickListener() {
@@ -32,14 +33,6 @@ public class Gmrc3to6 extends AppCompatActivity {
             public void onClick(View v) {
 
                 sfx.start();
-
-                sfx.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
-                    @Override
-                    public void onCompletion(MediaPlayer mp) {
-                        sfx.release();
-                    }
-                });
-
                 startActivity(new Intent(Gmrc3to6.this, Homepage3to6.class));
 
             }
@@ -50,14 +43,6 @@ public class Gmrc3to6 extends AppCompatActivity {
             public void onClick(View v) {
 
                 sfx.start();
-
-                sfx.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
-                    @Override
-                    public void onCompletion(MediaPlayer mp) {
-                        sfx.release();
-                    }
-                });
-
                 startActivity(new Intent(Gmrc3to6.this, LessonIntroDiscipline.class));
 
             }
@@ -68,14 +53,6 @@ public class Gmrc3to6 extends AppCompatActivity {
             public void onClick(View v) {
 
                 sfx.start();
-
-                sfx.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
-                    @Override
-                    public void onCompletion(MediaPlayer mp) {
-                        sfx.release();
-                    }
-                });
-
                 startActivity(new Intent(Gmrc3to6.this, LessonIntroHonesty.class));
 
             }
@@ -86,14 +63,6 @@ public class Gmrc3to6 extends AppCompatActivity {
             public void onClick(View v) {
 
                 sfx.start();
-
-                sfx.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
-                    @Override
-                    public void onCompletion(MediaPlayer mp) {
-                        sfx.release();
-                    }
-                });
-
                 startActivity(new Intent(Gmrc3to6.this, LessonIntroRespect.class));
 
             }
@@ -104,14 +73,6 @@ public class Gmrc3to6 extends AppCompatActivity {
             public void onClick(View v) {
 
                 sfx.start();
-
-                sfx.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
-                    @Override
-                    public void onCompletion(MediaPlayer mp) {
-                        sfx.release();
-                    }
-                });
-
                 startActivity(new Intent(Gmrc3to6.this, LessonIntroSociability.class));
 
             }
@@ -122,16 +83,15 @@ public class Gmrc3to6 extends AppCompatActivity {
             public void onClick(View v) {
 
                 sfx.start();
-
-                sfx.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
-                    @Override
-                    public void onCompletion(MediaPlayer mp) {
-                        sfx.release();
-                    }
-                });
-
                 startActivity(new Intent(Gmrc3to6.this, LessonIntroCompassion.class));
 
+            }
+        });
+
+        sfx.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+            @Override
+            public void onCompletion(MediaPlayer mp) {
+                sfx.release();
             }
         });
 

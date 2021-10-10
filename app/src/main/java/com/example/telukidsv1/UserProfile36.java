@@ -27,11 +27,11 @@ public class UserProfile36 extends AppCompatActivity {
     ImageView profIconUP;
     TextView greetUP;
     String userID, username, usericon, lastpage;
+    MediaPlayer sfx;
 
 
     FirebaseAuth fAuth;
     FirebaseFirestore fStore;
-    FirebaseUser user;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -45,7 +45,7 @@ public class UserProfile36 extends AppCompatActivity {
         btnlogoutUP = findViewById(R.id.logoutbtnUP36);
         btnsurveyUP = findViewById(R.id.surveybtnUP36);
         btnhelpUP = findViewById(R.id.helpbtnUP36);
-        MediaPlayer sfx = MediaPlayer.create(this, R.raw.btnsfx);
+        sfx = MediaPlayer.create(this, R.raw.btnsfx);
 
         fAuth = FirebaseAuth.getInstance();
         fStore = FirebaseFirestore.getInstance();
@@ -135,6 +135,13 @@ public class UserProfile36 extends AppCompatActivity {
                 sfx.start();
                 startActivity(new Intent(UserProfile36.this, LogoutConfirmation36.class));
 
+            }
+        });
+
+        sfx.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+            @Override
+            public void onCompletion(MediaPlayer mp) {
+                sfx.release();
             }
         });
     }

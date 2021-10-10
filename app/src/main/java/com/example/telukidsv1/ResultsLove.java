@@ -26,7 +26,7 @@ import com.google.firebase.firestore.Transaction;
 public class ResultsLove extends AppCompatActivity {
     private int  score_love;
     private int initialScore_love;
-    MediaPlayer congrats;
+    MediaPlayer congrats,sfx;
     FirebaseAuth fAuth;
     FirebaseFirestore fStore;
     FirebaseUser user;
@@ -42,7 +42,8 @@ public class ResultsLove extends AppCompatActivity {
         ImageButton achievementsbtnCLC_Love = findViewById(R.id.achievementsbtnCLC_Love);
         ImageButton btnReadLesson_Quiz_Love = findViewById(R.id.btnReadLesson_Quiz_Love);
         ImageButton homepageCLC_Love = findViewById(R.id.homepageCLC_Love);
-        MediaPlayer sfx = MediaPlayer.create(this, R.raw.btnsfx);
+
+        sfx = MediaPlayer.create(this, R.raw.btnsfx);
 
         congrats = MediaPlayer.create(this, R.raw.yaysfx);
         congrats.start();
@@ -86,6 +87,7 @@ public class ResultsLove extends AppCompatActivity {
                 return null;
             }
         });
+
         gmrc79btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -93,6 +95,7 @@ public class ResultsLove extends AppCompatActivity {
                 startActivity(new Intent(ResultsLove.this, Gmrc7to9.class));
             }
         });
+
         achievementsbtnCLC_Love.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -102,6 +105,7 @@ public class ResultsLove extends AppCompatActivity {
                 startActivity(proceed);
             }
         });
+
         btnReadLesson_Quiz_Love.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -110,12 +114,20 @@ public class ResultsLove extends AppCompatActivity {
                 startActivity(proceed);
             }
         });
+
         homepageCLC_Love.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 sfx.start();
                 Intent proceed = new Intent(ResultsLove.this, Homepage7to9.class);
                 startActivity(proceed);
+            }
+        });
+
+        sfx.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+            @Override
+            public void onCompletion(MediaPlayer mp) {
+                sfx.release();
             }
         });
     }

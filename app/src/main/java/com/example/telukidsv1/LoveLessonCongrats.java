@@ -22,7 +22,7 @@ public class LoveLessonCongrats extends AppCompatActivity {
 
     ImageButton btnbackLLC,btnachievementsLLC, btnassessmentLLC, btnhomepageLLC;
     ImageView certificateLLC;
-    MediaPlayer congrats;
+    MediaPlayer congrats,sfx;
 
     FirebaseAuth fAuth;
     FirebaseFirestore fStore;
@@ -38,7 +38,7 @@ public class LoveLessonCongrats extends AppCompatActivity {
         certificateLLC = findViewById(R.id.certificateLLC);
         btnassessmentLLC = findViewById(R.id.asessmentbtnLLC);
         btnhomepageLLC = findViewById(R.id.homepageLLC);
-        MediaPlayer sfx = MediaPlayer.create(this, R.raw.btnsfx);
+        sfx = MediaPlayer.create(this, R.raw.btnsfx);
 
         congrats = MediaPlayer.create(this, R.raw.yaysfx);
         congrats.start();
@@ -89,6 +89,13 @@ public class LoveLessonCongrats extends AppCompatActivity {
             public void onClick(View v) {
                 sfx.start();
                 startActivity(new Intent(LoveLessonCongrats.this, Homepage3to6.class));
+            }
+        });
+
+        sfx.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+            @Override
+            public void onCompletion(MediaPlayer mp) {
+                sfx.release();
             }
         });
     }

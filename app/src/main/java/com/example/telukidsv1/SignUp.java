@@ -27,6 +27,7 @@ public class SignUp extends AppCompatActivity {
     String userID,uicon;
     FirebaseAuth fAuth;
     FirebaseFirestore fStore;
+    MediaPlayer sfx;
 
 
     @Override
@@ -43,7 +44,8 @@ public class SignUp extends AppCompatActivity {
         emessageSU = findViewById(R.id.errormsgSU);
         backbtnSU = findViewById(R.id.backbtnSU);
         signupbtnSU = findViewById(R.id.signupbtnSU);
-        MediaPlayer sfx = MediaPlayer.create(this, R.raw.btnsfx);
+
+        sfx = MediaPlayer.create(this, R.raw.btnsfx);
 
         fAuth = FirebaseAuth.getInstance();
         fStore = FirebaseFirestore.getInstance();
@@ -148,6 +150,13 @@ public class SignUp extends AppCompatActivity {
                     emessageSU.setText(task.getException().getMessage());
                 }
             });
+        });
+
+        sfx.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+            @Override
+            public void onCompletion(MediaPlayer mp) {
+                sfx.release();
+            }
         });
     }
 }

@@ -22,6 +22,7 @@ public class ForgotPassword extends AppCompatActivity {
     TextView emessageFP;
     ImageButton backbtnFP, changepwFP;
     FirebaseAuth fAuth;
+    MediaPlayer sfx;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,7 +34,7 @@ public class ForgotPassword extends AppCompatActivity {
         backbtnFP = findViewById(R.id.backbtnFP);
         changepwFP = findViewById(R.id.changepwbtnFP);
 
-        MediaPlayer sfx = MediaPlayer.create(this, R.raw.btnsfx);
+        sfx = MediaPlayer.create(this, R.raw.btnsfx);
 
 
         fAuth = FirebaseAuth.getInstance();
@@ -42,13 +43,6 @@ public class ForgotPassword extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 sfx.start();
-
-                sfx.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
-                    @Override
-                    public void onCompletion(MediaPlayer mp) {
-                        sfx.release();
-                    }
-                });
 
                 startActivity(new Intent(ForgotPassword.this, Login.class));
             }
@@ -59,14 +53,6 @@ public class ForgotPassword extends AppCompatActivity {
             public void onClick(View v) {
 
                 sfx.start();
-
-                sfx.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
-                    @Override
-                    public void onCompletion(MediaPlayer mp) {
-                        sfx.release();
-                    }
-                });
-
 
                 String email = emailFP.getText().toString().trim();
 
@@ -93,6 +79,12 @@ public class ForgotPassword extends AppCompatActivity {
             }
         });
 
+        sfx.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+            @Override
+            public void onCompletion(MediaPlayer mp) {
+                sfx.release();
+            }
+        });
 
     }
 }

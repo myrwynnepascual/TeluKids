@@ -18,6 +18,7 @@ public class LessonIntroLove extends AppCompatActivity {
     VideoView videoViewL;
     String videoPathL;
     Uri uriL;
+    MediaPlayer sfx;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -29,22 +30,31 @@ public class LessonIntroLove extends AppCompatActivity {
         videoPathL = "android.resource://" + getPackageName() + "/" + R.raw.loveintrovideo;
         uriL = Uri.parse(videoPathL);
         videoViewL.setVideoURI(uriL);
-        MediaPlayer sfx = MediaPlayer.create(this, R.raw.btnsfx);
-
-        BackgroundSoundService.onPause();
 
         MediaController mediaController = new MediaController(this);
         videoViewL.setMediaController(mediaController);
         mediaController.setAnchorView(videoViewL);
 
-        videoViewL.start();
+        sfx = MediaPlayer.create(this, R.raw.btnsfx);
 
+        BackgroundSoundService.onPause();
+
+
+        videoViewL.setOnPreparedListener(new MediaPlayer.OnPreparedListener() {
+            @Override
+            public void onPrepared(MediaPlayer mp) {
+
+                videoViewL.start();
+
+            }
+        });
 
         btncloseL.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
                 sfx.start();
+                videoViewL.stopPlayback();
                 startActivity(new Intent(LessonIntroLove.this,ChooseModeLove.class));
 
             }
@@ -54,8 +64,16 @@ public class LessonIntroLove extends AppCompatActivity {
             @Override
             public void onCompletion(MediaPlayer mp) {
 
+                videoViewL.stopPlayback();
                 startActivity(new Intent(LessonIntroLove.this,ChooseModeLove.class));
 
+            }
+        });
+
+        sfx.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+            @Override
+            public void onCompletion(MediaPlayer mp) {
+                sfx.release();
             }
         });
     }

@@ -18,6 +18,7 @@ public class LessonColors extends AppCompatActivity {
     Uri uriRDPG1;
     ImageButton backbtnRDPG1,nextbtnRDPG1;
     MediaController mediaController;
+    MediaPlayer sfx;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -27,14 +28,13 @@ public class LessonColors extends AppCompatActivity {
         videoViewRDPG1 = findViewById(R.id.videoRDPG1);
         backbtnRDPG1 = findViewById(R.id.btnbackRDPG1);
         nextbtnRDPG1 = findViewById(R.id.nextbtnRDPG1);
-        MediaPlayer sfx = MediaPlayer.create(this, R.raw.btnsfx);
-
-        BackgroundSoundService.onPause();
 
         mediaController = new MediaController(this);
         videoViewRDPG1.setMediaController(mediaController);
         mediaController.setVisibility(View.GONE);
         mediaController.setAnchorView(videoViewRDPG1);
+
+        BackgroundSoundService.onPause();
 
         red1();
     }
@@ -44,19 +44,22 @@ public class LessonColors extends AppCompatActivity {
         videoPathRDPG1 = "android.resource://" + getPackageName() + "/" + R.raw.red1;
         uriRDPG1 = Uri.parse(videoPathRDPG1);
         videoViewRDPG1.setVideoURI(uriRDPG1);
-        MediaPlayer sfx = MediaPlayer.create(this, R.raw.btnsfx);
+        sfx = MediaPlayer.create(this, R.raw.btnsfx);  
 
-        mediaController = new MediaController(this);
-        videoViewRDPG1.setMediaController(mediaController);
-        mediaController.setVisibility(View.GONE);
-        mediaController.setAnchorView(videoViewRDPG1);
+        videoViewRDPG1.setOnPreparedListener(new MediaPlayer.OnPreparedListener() {
+            @Override
+            public void onPrepared(MediaPlayer mp) {
 
-        videoViewRDPG1.start();
+                videoViewRDPG1.start();
+
+            }
+        });
 
         videoViewRDPG1.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
             @Override
             public void onCompletion(MediaPlayer mp) {
 
+                videoViewRDPG1.stopPlayback();
                 red2();
 
             }
@@ -67,14 +70,7 @@ public class LessonColors extends AppCompatActivity {
             public void onClick(View v) {
 
                 sfx.start();
-
-                sfx.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
-                    @Override
-                    public void onCompletion(MediaPlayer mp) {
-                        sfx.release();
-                    }
-                });
-
+                videoViewRDPG1.stopPlayback();
                 startActivity(new Intent(LessonColors.this,ChooseModeColors.class));
 
             }
@@ -85,17 +81,16 @@ public class LessonColors extends AppCompatActivity {
             public void onClick(View v) {
 
                sfx.start();
+               videoViewRDPG1.stopPlayback();
+               red2();
 
-                sfx.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
-                    @Override
-                    public void onCompletion(MediaPlayer mp) {
-                        sfx.release();
-                    }
-                });
+            }
+        });
 
-
-                red2();
-
+        sfx.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+            @Override
+            public void onCompletion(MediaPlayer mp) {
+                sfx.release();
             }
         });
     }
@@ -105,19 +100,22 @@ public class LessonColors extends AppCompatActivity {
         videoPathRDPG1 = "android.resource://" + getPackageName() + "/" + R.raw.red2;
         uriRDPG1 = Uri.parse(videoPathRDPG1);
         videoViewRDPG1.setVideoURI(uriRDPG1);
-        MediaPlayer sfx = MediaPlayer.create(this, R.raw.btnsfx);
+        sfx = MediaPlayer.create(this, R.raw.btnsfx);  
 
-        mediaController = new MediaController(this);
-        videoViewRDPG1.setMediaController(mediaController);
-        mediaController.setVisibility(View.GONE);
-        mediaController.setAnchorView(videoViewRDPG1);
+        videoViewRDPG1.setOnPreparedListener(new MediaPlayer.OnPreparedListener() {
+            @Override
+            public void onPrepared(MediaPlayer mp) {
 
-        videoViewRDPG1.start();
+                videoViewRDPG1.start();
+
+            }
+        });
 
         videoViewRDPG1.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
             @Override
             public void onCompletion(MediaPlayer mp) {
 
+                videoViewRDPG1.stopPlayback();
                 red3();
 
             }
@@ -128,15 +126,7 @@ public class LessonColors extends AppCompatActivity {
             public void onClick(View v) {
 
                 sfx.start();
-
-                sfx.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
-                    @Override
-                    public void onCompletion(MediaPlayer mp) {
-                        sfx.release();
-                    }
-                });
-
-
+                videoViewRDPG1.stopPlayback();
                 red1();
 
             }
@@ -147,17 +137,16 @@ public class LessonColors extends AppCompatActivity {
             public void onClick(View v) {
 
                 sfx.start();
-
-                sfx.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
-                    @Override
-                    public void onCompletion(MediaPlayer mp) {
-                        sfx.release();
-                    }
-                });
-
-
+                videoViewRDPG1.stopPlayback();
                 red3();
 
+            }
+        });
+
+        sfx.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+            @Override
+            public void onCompletion(MediaPlayer mp) {
+                sfx.release();
             }
         });
     }
@@ -167,19 +156,22 @@ public class LessonColors extends AppCompatActivity {
         videoPathRDPG1 = "android.resource://" + getPackageName() + "/" + R.raw.red3;
         uriRDPG1 = Uri.parse(videoPathRDPG1);
         videoViewRDPG1.setVideoURI(uriRDPG1);
-        MediaPlayer sfx = MediaPlayer.create(this, R.raw.btnsfx);
+        sfx = MediaPlayer.create(this, R.raw.btnsfx);  
 
-        mediaController = new MediaController(this);
-        videoViewRDPG1.setMediaController(mediaController);
-        mediaController.setVisibility(View.GONE);
-        mediaController.setAnchorView(videoViewRDPG1);
+        videoViewRDPG1.setOnPreparedListener(new MediaPlayer.OnPreparedListener() {
+            @Override
+            public void onPrepared(MediaPlayer mp) {
 
-        videoViewRDPG1.start();
+                videoViewRDPG1.start();
+
+            }
+        });
 
         videoViewRDPG1.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
             @Override
             public void onCompletion(MediaPlayer mp) {
 
+                videoViewRDPG1.stopPlayback();
                 red4();
 
             }
@@ -190,15 +182,7 @@ public class LessonColors extends AppCompatActivity {
             public void onClick(View v) {
 
                 sfx.start();
-
-                sfx.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
-                    @Override
-                    public void onCompletion(MediaPlayer mp) {
-                        sfx.release();
-                    }
-                });
-
-
+                videoViewRDPG1.stopPlayback();
                 red2();
 
             }
@@ -209,17 +193,16 @@ public class LessonColors extends AppCompatActivity {
             public void onClick(View v) {
 
                 sfx.start();
-
-                sfx.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
-                    @Override
-                    public void onCompletion(MediaPlayer mp) {
-                        sfx.release();
-                    }
-                });
-
-
+                videoViewRDPG1.stopPlayback();
                 red4();
 
+            }
+        });
+
+        sfx.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+            @Override
+            public void onCompletion(MediaPlayer mp) {
+                sfx.release();
             }
         });
     }
@@ -229,19 +212,22 @@ public class LessonColors extends AppCompatActivity {
         videoPathRDPG1 = "android.resource://" + getPackageName() + "/" + R.raw.red4;
         uriRDPG1 = Uri.parse(videoPathRDPG1);
         videoViewRDPG1.setVideoURI(uriRDPG1);
-        MediaPlayer sfx = MediaPlayer.create(this, R.raw.btnsfx);
+        sfx = MediaPlayer.create(this, R.raw.btnsfx);  
 
-        mediaController = new MediaController(this);
-        videoViewRDPG1.setMediaController(mediaController);
-        mediaController.setVisibility(View.GONE);
-        mediaController.setAnchorView(videoViewRDPG1);
+        videoViewRDPG1.setOnPreparedListener(new MediaPlayer.OnPreparedListener() {
+            @Override
+            public void onPrepared(MediaPlayer mp) {
 
-        videoViewRDPG1.start();
+                videoViewRDPG1.start();
+
+            }
+        });
 
         videoViewRDPG1.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
             @Override
             public void onCompletion(MediaPlayer mp) {
 
+                videoViewRDPG1.stopPlayback();
                 red5();
 
             }
@@ -252,15 +238,7 @@ public class LessonColors extends AppCompatActivity {
             public void onClick(View v) {
 
                 sfx.start();
-
-                sfx.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
-                    @Override
-                    public void onCompletion(MediaPlayer mp) {
-                        sfx.release();
-                    }
-                });
-
-
+                videoViewRDPG1.stopPlayback();
                 red3();
 
             }
@@ -271,16 +249,16 @@ public class LessonColors extends AppCompatActivity {
             public void onClick(View v) {
 
                 sfx.start();
-
-                sfx.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
-                    @Override
-                    public void onCompletion(MediaPlayer mp) {
-                        sfx.release();
-                    }
-                });
-
+                videoViewRDPG1.stopPlayback();
                 red5();
 
+            }
+        });
+
+        sfx.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+            @Override
+            public void onCompletion(MediaPlayer mp) {
+                sfx.release();
             }
         });
     }
@@ -290,19 +268,22 @@ public class LessonColors extends AppCompatActivity {
         videoPathRDPG1 = "android.resource://" + getPackageName() + "/" + R.raw.red5;
         uriRDPG1 = Uri.parse(videoPathRDPG1);
         videoViewRDPG1.setVideoURI(uriRDPG1);
-        MediaPlayer sfx = MediaPlayer.create(this, R.raw.btnsfx);
+        sfx = MediaPlayer.create(this, R.raw.btnsfx);  
 
-        mediaController = new MediaController(this);
-        videoViewRDPG1.setMediaController(mediaController);
-        mediaController.setVisibility(View.GONE);
-        mediaController.setAnchorView(videoViewRDPG1);
+        videoViewRDPG1.setOnPreparedListener(new MediaPlayer.OnPreparedListener() {
+            @Override
+            public void onPrepared(MediaPlayer mp) {
 
-        videoViewRDPG1.start();
+                videoViewRDPG1.start();
+
+            }
+        });
 
         videoViewRDPG1.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
             @Override
             public void onCompletion(MediaPlayer mp) {
 
+                videoViewRDPG1.stopPlayback();
                 red6();
 
             }
@@ -313,15 +294,7 @@ public class LessonColors extends AppCompatActivity {
             public void onClick(View v) {
 
                 sfx.start();
-
-                sfx.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
-                    @Override
-                    public void onCompletion(MediaPlayer mp) {
-                        sfx.release();
-                    }
-                });
-
-
+                videoViewRDPG1.stopPlayback();
                 red4();
 
             }
@@ -332,17 +305,16 @@ public class LessonColors extends AppCompatActivity {
             public void onClick(View v) {
 
                 sfx.start();
-
-                sfx.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
-                    @Override
-                    public void onCompletion(MediaPlayer mp) {
-                        sfx.release();
-                    }
-                });
-
-
+                videoViewRDPG1.stopPlayback();
                 red6();
 
+            }
+        });
+
+        sfx.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+            @Override
+            public void onCompletion(MediaPlayer mp) {
+                sfx.release();
             }
         });
     }
@@ -352,19 +324,22 @@ public class LessonColors extends AppCompatActivity {
         videoPathRDPG1 = "android.resource://" + getPackageName() + "/" + R.raw.red6;
         uriRDPG1 = Uri.parse(videoPathRDPG1);
         videoViewRDPG1.setVideoURI(uriRDPG1);
-        MediaPlayer sfx = MediaPlayer.create(this, R.raw.btnsfx);
+        sfx = MediaPlayer.create(this, R.raw.btnsfx);  
 
-        mediaController = new MediaController(this);
-        videoViewRDPG1.setMediaController(mediaController);
-        mediaController.setVisibility(View.GONE);
-        mediaController.setAnchorView(videoViewRDPG1);
+        videoViewRDPG1.setOnPreparedListener(new MediaPlayer.OnPreparedListener() {
+            @Override
+            public void onPrepared(MediaPlayer mp) {
 
-        videoViewRDPG1.start();
+                videoViewRDPG1.start();
+
+            }
+        });
 
         videoViewRDPG1.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
             @Override
             public void onCompletion(MediaPlayer mp) {
 
+                videoViewRDPG1.stopPlayback();
                 blue1();
 
             }
@@ -375,15 +350,7 @@ public class LessonColors extends AppCompatActivity {
             public void onClick(View v) {
 
                 sfx.start();
-
-                sfx.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
-                    @Override
-                    public void onCompletion(MediaPlayer mp) {
-                        sfx.release();
-                    }
-                });
-
-
+                videoViewRDPG1.stopPlayback();
                 red5();
 
             }
@@ -394,17 +361,16 @@ public class LessonColors extends AppCompatActivity {
             public void onClick(View v) {
 
                 sfx.start();
-
-                sfx.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
-                    @Override
-                    public void onCompletion(MediaPlayer mp) {
-                        sfx.release();
-                    }
-                });
-
-
+                videoViewRDPG1.stopPlayback();
                 blue1();
 
+            }
+        });
+
+        sfx.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+            @Override
+            public void onCompletion(MediaPlayer mp) {
+                sfx.release();
             }
         });
     }
@@ -414,19 +380,22 @@ public class LessonColors extends AppCompatActivity {
         videoPathRDPG1 = "android.resource://" + getPackageName() + "/" + R.raw.blue1;
         uriRDPG1 = Uri.parse(videoPathRDPG1);
         videoViewRDPG1.setVideoURI(uriRDPG1);
-        MediaPlayer sfx = MediaPlayer.create(this, R.raw.btnsfx);
+        sfx = MediaPlayer.create(this, R.raw.btnsfx);  
 
-        mediaController = new MediaController(this);
-        videoViewRDPG1.setMediaController(mediaController);
-        mediaController.setVisibility(View.GONE);
-        mediaController.setAnchorView(videoViewRDPG1);
+        videoViewRDPG1.setOnPreparedListener(new MediaPlayer.OnPreparedListener() {
+            @Override
+            public void onPrepared(MediaPlayer mp) {
 
-        videoViewRDPG1.start();
+                videoViewRDPG1.start();
+
+            }
+        });
 
         videoViewRDPG1.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
             @Override
             public void onCompletion(MediaPlayer mp) {
 
+                videoViewRDPG1.stopPlayback();
                 blue2();
 
             }
@@ -437,15 +406,7 @@ public class LessonColors extends AppCompatActivity {
             public void onClick(View v) {
 
                 sfx.start();
-
-                sfx.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
-                    @Override
-                    public void onCompletion(MediaPlayer mp) {
-                        sfx.release();
-                    }
-                });
-
-
+                videoViewRDPG1.stopPlayback();
                 red6();
 
             }
@@ -456,15 +417,7 @@ public class LessonColors extends AppCompatActivity {
             public void onClick(View v) {
 
                 sfx.start();
-
-                sfx.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
-                    @Override
-                    public void onCompletion(MediaPlayer mp) {
-                        sfx.release();
-                    }
-                });
-
-
+                videoViewRDPG1.stopPlayback();
                 blue2();
 
             }
@@ -476,19 +429,22 @@ public class LessonColors extends AppCompatActivity {
         videoPathRDPG1 = "android.resource://" + getPackageName() + "/" + R.raw.blue2;
         uriRDPG1 = Uri.parse(videoPathRDPG1);
         videoViewRDPG1.setVideoURI(uriRDPG1);
-        MediaPlayer sfx = MediaPlayer.create(this, R.raw.btnsfx);
+        sfx = MediaPlayer.create(this, R.raw.btnsfx);  
 
-        mediaController = new MediaController(this);
-        videoViewRDPG1.setMediaController(mediaController);
-        mediaController.setVisibility(View.GONE);
-        mediaController.setAnchorView(videoViewRDPG1);
+        videoViewRDPG1.setOnPreparedListener(new MediaPlayer.OnPreparedListener() {
+            @Override
+            public void onPrepared(MediaPlayer mp) {
 
-        videoViewRDPG1.start();
+                videoViewRDPG1.start();
+
+            }
+        });
 
         videoViewRDPG1.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
             @Override
             public void onCompletion(MediaPlayer mp) {
 
+                videoViewRDPG1.stopPlayback();
                 blue3();
 
             }
@@ -499,15 +455,7 @@ public class LessonColors extends AppCompatActivity {
             public void onClick(View v) {
 
                 sfx.start();
-
-                sfx.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
-                    @Override
-                    public void onCompletion(MediaPlayer mp) {
-                        sfx.release();
-                    }
-                });
-
-
+                videoViewRDPG1.stopPlayback();
                 blue1();
 
             }
@@ -518,17 +466,16 @@ public class LessonColors extends AppCompatActivity {
             public void onClick(View v) {
 
                 sfx.start();
-
-                sfx.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
-                    @Override
-                    public void onCompletion(MediaPlayer mp) {
-                        sfx.release();
-                    }
-                });
-
-
+                videoViewRDPG1.stopPlayback();
                 blue3();
 
+            }
+        });
+
+        sfx.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+            @Override
+            public void onCompletion(MediaPlayer mp) {
+                sfx.release();
             }
         });
     }
@@ -538,19 +485,22 @@ public class LessonColors extends AppCompatActivity {
         videoPathRDPG1 = "android.resource://" + getPackageName() + "/" + R.raw.blue3;
         uriRDPG1 = Uri.parse(videoPathRDPG1);
         videoViewRDPG1.setVideoURI(uriRDPG1);
-        MediaPlayer sfx = MediaPlayer.create(this, R.raw.btnsfx);
+        sfx = MediaPlayer.create(this, R.raw.btnsfx);  
 
-        mediaController = new MediaController(this);
-        videoViewRDPG1.setMediaController(mediaController);
-        mediaController.setVisibility(View.GONE);
-        mediaController.setAnchorView(videoViewRDPG1);
+        videoViewRDPG1.setOnPreparedListener(new MediaPlayer.OnPreparedListener() {
+            @Override
+            public void onPrepared(MediaPlayer mp) {
 
-        videoViewRDPG1.start();
+                videoViewRDPG1.start();
+
+            }
+        });
 
         videoViewRDPG1.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
             @Override
             public void onCompletion(MediaPlayer mp) {
 
+                videoViewRDPG1.stopPlayback();
                 blue4();
 
             }
@@ -561,15 +511,7 @@ public class LessonColors extends AppCompatActivity {
             public void onClick(View v) {
 
                 sfx.start();
-
-                sfx.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
-                    @Override
-                    public void onCompletion(MediaPlayer mp) {
-                        sfx.release();
-                    }
-                });
-
-
+                videoViewRDPG1.stopPlayback();
                 blue2();
 
             }
@@ -580,17 +522,16 @@ public class LessonColors extends AppCompatActivity {
             public void onClick(View v) {
 
                 sfx.start();
-
-                sfx.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
-                    @Override
-                    public void onCompletion(MediaPlayer mp) {
-                        sfx.release();
-                    }
-                });
-
-
+                videoViewRDPG1.stopPlayback();
                 blue4();
 
+            }
+        });
+
+        sfx.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+            @Override
+            public void onCompletion(MediaPlayer mp) {
+                sfx.release();
             }
         });
     }
@@ -600,19 +541,22 @@ public class LessonColors extends AppCompatActivity {
         videoPathRDPG1 = "android.resource://" + getPackageName() + "/" + R.raw.blue4;
         uriRDPG1 = Uri.parse(videoPathRDPG1);
         videoViewRDPG1.setVideoURI(uriRDPG1);
-        MediaPlayer sfx = MediaPlayer.create(this, R.raw.btnsfx);
+        sfx = MediaPlayer.create(this, R.raw.btnsfx);  
 
-        mediaController = new MediaController(this);
-        videoViewRDPG1.setMediaController(mediaController);
-        mediaController.setVisibility(View.GONE);
-        mediaController.setAnchorView(videoViewRDPG1);
+        videoViewRDPG1.setOnPreparedListener(new MediaPlayer.OnPreparedListener() {
+            @Override
+            public void onPrepared(MediaPlayer mp) {
 
-        videoViewRDPG1.start();
+                videoViewRDPG1.start();
+
+            }
+        });
 
         videoViewRDPG1.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
             @Override
             public void onCompletion(MediaPlayer mp) {
 
+                videoViewRDPG1.stopPlayback();
                 blue5();
 
             }
@@ -623,15 +567,7 @@ public class LessonColors extends AppCompatActivity {
             public void onClick(View v) {
 
                 sfx.start();
-
-                sfx.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
-                    @Override
-                    public void onCompletion(MediaPlayer mp) {
-                        sfx.release();
-                    }
-                });
-
-
+                videoViewRDPG1.stopPlayback();
                 blue3();
 
             }
@@ -642,17 +578,16 @@ public class LessonColors extends AppCompatActivity {
             public void onClick(View v) {
 
                 sfx.start();
-
-                sfx.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
-                    @Override
-                    public void onCompletion(MediaPlayer mp) {
-                        sfx.release();
-                    }
-                });
-
-
+                videoViewRDPG1.stopPlayback();
                 blue5();
 
+            }
+        });
+
+        sfx.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+            @Override
+            public void onCompletion(MediaPlayer mp) {
+                sfx.release();
             }
         });
     }
@@ -662,19 +597,22 @@ public class LessonColors extends AppCompatActivity {
         videoPathRDPG1 = "android.resource://" + getPackageName() + "/" + R.raw.blue5;
         uriRDPG1 = Uri.parse(videoPathRDPG1);
         videoViewRDPG1.setVideoURI(uriRDPG1);
-        MediaPlayer sfx = MediaPlayer.create(this, R.raw.btnsfx);
+        sfx = MediaPlayer.create(this, R.raw.btnsfx);  
 
-        mediaController = new MediaController(this);
-        videoViewRDPG1.setMediaController(mediaController);
-        mediaController.setVisibility(View.GONE);
-        mediaController.setAnchorView(videoViewRDPG1);
+        videoViewRDPG1.setOnPreparedListener(new MediaPlayer.OnPreparedListener() {
+            @Override
+            public void onPrepared(MediaPlayer mp) {
 
-        videoViewRDPG1.start();
+                videoViewRDPG1.start();
+
+            }
+        });
 
         videoViewRDPG1.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
             @Override
             public void onCompletion(MediaPlayer mp) {
 
+                videoViewRDPG1.stopPlayback();
                 blue6();
 
             }
@@ -685,15 +623,7 @@ public class LessonColors extends AppCompatActivity {
             public void onClick(View v) {
 
                 sfx.start();
-
-                sfx.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
-                    @Override
-                    public void onCompletion(MediaPlayer mp) {
-                        sfx.release();
-                    }
-                });
-
-
+                videoViewRDPG1.stopPlayback();
                 blue4();
 
             }
@@ -704,17 +634,16 @@ public class LessonColors extends AppCompatActivity {
             public void onClick(View v) {
 
                 sfx.start();
-
-                sfx.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
-                    @Override
-                    public void onCompletion(MediaPlayer mp) {
-                        sfx.release();
-                    }
-                });
-
-
+                videoViewRDPG1.stopPlayback();
                 blue6();
 
+            }
+        });
+
+        sfx.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+            @Override
+            public void onCompletion(MediaPlayer mp) {
+                sfx.release();
             }
         });
     }
@@ -724,19 +653,22 @@ public class LessonColors extends AppCompatActivity {
         videoPathRDPG1 = "android.resource://" + getPackageName() + "/" + R.raw.blue6;
         uriRDPG1 = Uri.parse(videoPathRDPG1);
         videoViewRDPG1.setVideoURI(uriRDPG1);
-        MediaPlayer sfx = MediaPlayer.create(this, R.raw.btnsfx);
+        sfx = MediaPlayer.create(this, R.raw.btnsfx);  
 
-        mediaController = new MediaController(this);
-        videoViewRDPG1.setMediaController(mediaController);
-        mediaController.setVisibility(View.GONE);
-        mediaController.setAnchorView(videoViewRDPG1);
+        videoViewRDPG1.setOnPreparedListener(new MediaPlayer.OnPreparedListener() {
+            @Override
+            public void onPrepared(MediaPlayer mp) {
 
-        videoViewRDPG1.start();
+                videoViewRDPG1.start();
+
+            }
+        });
 
         videoViewRDPG1.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
             @Override
             public void onCompletion(MediaPlayer mp) {
 
+                videoViewRDPG1.stopPlayback();
                 yellow1();
 
             }
@@ -747,15 +679,7 @@ public class LessonColors extends AppCompatActivity {
             public void onClick(View v) {
 
                 sfx.start();
-
-                sfx.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
-                    @Override
-                    public void onCompletion(MediaPlayer mp) {
-                        sfx.release();
-                    }
-                });
-
-
+                videoViewRDPG1.stopPlayback();
                 blue5();
 
             }
@@ -766,17 +690,16 @@ public class LessonColors extends AppCompatActivity {
             public void onClick(View v) {
 
                 sfx.start();
-
-                sfx.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
-                    @Override
-                    public void onCompletion(MediaPlayer mp) {
-                        sfx.release();
-                    }
-                });
-
-
+                videoViewRDPG1.stopPlayback();
                 yellow1();
 
+            }
+        });
+
+        sfx.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+            @Override
+            public void onCompletion(MediaPlayer mp) {
+                sfx.release();
             }
         });
     }
@@ -786,19 +709,22 @@ public class LessonColors extends AppCompatActivity {
         videoPathRDPG1 = "android.resource://" + getPackageName() + "/" + R.raw.yellow1;
         uriRDPG1 = Uri.parse(videoPathRDPG1);
         videoViewRDPG1.setVideoURI(uriRDPG1);
-        MediaPlayer sfx = MediaPlayer.create(this, R.raw.btnsfx);
+        MediaPlayer sfx = MediaPlayer.create(this, R.raw.btnsfx);  
 
-        mediaController = new MediaController(this);
-        videoViewRDPG1.setMediaController(mediaController);
-        mediaController.setVisibility(View.GONE);
-        mediaController.setAnchorView(videoViewRDPG1);
+        videoViewRDPG1.setOnPreparedListener(new MediaPlayer.OnPreparedListener() {
+            @Override
+            public void onPrepared(MediaPlayer mp) {
 
-        videoViewRDPG1.start();
+                videoViewRDPG1.start();
+
+            }
+        });
 
         videoViewRDPG1.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
             @Override
             public void onCompletion(MediaPlayer mp) {
 
+                videoViewRDPG1.stopPlayback();
                 yellow2();
 
             }
@@ -809,15 +735,7 @@ public class LessonColors extends AppCompatActivity {
             public void onClick(View v) {
 
                 sfx.start();
-
-                sfx.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
-                    @Override
-                    public void onCompletion(MediaPlayer mp) {
-                        sfx.release();
-                    }
-                });
-
-
+                videoViewRDPG1.stopPlayback();
                 blue6();
 
             }
@@ -828,17 +746,16 @@ public class LessonColors extends AppCompatActivity {
             public void onClick(View v) {
 
                 sfx.start();
-
-                sfx.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
-                    @Override
-                    public void onCompletion(MediaPlayer mp) {
-                        sfx.release();
-                    }
-                });
-
-
+                videoViewRDPG1.stopPlayback();
                 yellow2();
 
+            }
+        });
+
+        sfx.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+            @Override
+            public void onCompletion(MediaPlayer mp) {
+                sfx.release();
             }
         });
     }
@@ -848,19 +765,22 @@ public class LessonColors extends AppCompatActivity {
         videoPathRDPG1 = "android.resource://" + getPackageName() + "/" + R.raw.yellow2;
         uriRDPG1 = Uri.parse(videoPathRDPG1);
         videoViewRDPG1.setVideoURI(uriRDPG1);
-        MediaPlayer sfx = MediaPlayer.create(this, R.raw.btnsfx);
+        sfx = MediaPlayer.create(this, R.raw.btnsfx);  
 
-        mediaController = new MediaController(this);
-        videoViewRDPG1.setMediaController(mediaController);
-        mediaController.setVisibility(View.GONE);
-        mediaController.setAnchorView(videoViewRDPG1);
+        videoViewRDPG1.setOnPreparedListener(new MediaPlayer.OnPreparedListener() {
+            @Override
+            public void onPrepared(MediaPlayer mp) {
 
-        videoViewRDPG1.start();
+                videoViewRDPG1.start();
+
+            }
+        });
 
         videoViewRDPG1.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
             @Override
             public void onCompletion(MediaPlayer mp) {
 
+                videoViewRDPG1.stopPlayback();
                 yellow3();
 
             }
@@ -871,15 +791,7 @@ public class LessonColors extends AppCompatActivity {
             public void onClick(View v) {
 
                 sfx.start();
-
-                sfx.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
-                    @Override
-                    public void onCompletion(MediaPlayer mp) {
-                        sfx.release();
-                    }
-                });
-
-
+                videoViewRDPG1.stopPlayback();
                 yellow1();
 
             }
@@ -890,17 +802,16 @@ public class LessonColors extends AppCompatActivity {
             public void onClick(View v) {
 
                 sfx.start();
-
-                sfx.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
-                    @Override
-                    public void onCompletion(MediaPlayer mp) {
-                        sfx.release();
-                    }
-                });
-
-
+                videoViewRDPG1.stopPlayback();
                 yellow3();
 
+            }
+        });
+
+        sfx.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+            @Override
+            public void onCompletion(MediaPlayer mp) {
+                sfx.release();
             }
         });
     }
@@ -910,19 +821,22 @@ public class LessonColors extends AppCompatActivity {
         videoPathRDPG1 = "android.resource://" + getPackageName() + "/" + R.raw.yellow3;
         uriRDPG1 = Uri.parse(videoPathRDPG1);
         videoViewRDPG1.setVideoURI(uriRDPG1);
-        MediaPlayer sfx = MediaPlayer.create(this, R.raw.btnsfx);
+        sfx = MediaPlayer.create(this, R.raw.btnsfx);  
 
-        mediaController = new MediaController(this);
-        videoViewRDPG1.setMediaController(mediaController);
-        mediaController.setVisibility(View.GONE);
-        mediaController.setAnchorView(videoViewRDPG1);
+        videoViewRDPG1.setOnPreparedListener(new MediaPlayer.OnPreparedListener() {
+            @Override
+            public void onPrepared(MediaPlayer mp) {
 
-        videoViewRDPG1.start();
+                videoViewRDPG1.start();
+
+            }
+        });
 
         videoViewRDPG1.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
             @Override
             public void onCompletion(MediaPlayer mp) {
 
+                videoViewRDPG1.stopPlayback();
                 yellow4();
 
             }
@@ -933,15 +847,7 @@ public class LessonColors extends AppCompatActivity {
             public void onClick(View v) {
 
                 sfx.start();
-
-                sfx.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
-                    @Override
-                    public void onCompletion(MediaPlayer mp) {
-                        sfx.release();
-                    }
-                });
-
-
+                videoViewRDPG1.stopPlayback();
                 yellow2();
 
             }
@@ -952,17 +858,16 @@ public class LessonColors extends AppCompatActivity {
             public void onClick(View v) {
 
                 sfx.start();
-
-                sfx.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
-                    @Override
-                    public void onCompletion(MediaPlayer mp) {
-                        sfx.release();
-                    }
-                });
-
-
+                videoViewRDPG1.stopPlayback();
                 yellow4();
 
+            }
+        });
+
+        sfx.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+            @Override
+            public void onCompletion(MediaPlayer mp) {
+                sfx.release();
             }
         });
     }
@@ -972,19 +877,22 @@ public class LessonColors extends AppCompatActivity {
         videoPathRDPG1 = "android.resource://" + getPackageName() + "/" + R.raw.yellow4;
         uriRDPG1 = Uri.parse(videoPathRDPG1);
         videoViewRDPG1.setVideoURI(uriRDPG1);
-        MediaPlayer sfx = MediaPlayer.create(this, R.raw.btnsfx);
+        sfx = MediaPlayer.create(this, R.raw.btnsfx);  
 
-        mediaController = new MediaController(this);
-        videoViewRDPG1.setMediaController(mediaController);
-        mediaController.setVisibility(View.GONE);
-        mediaController.setAnchorView(videoViewRDPG1);
+        videoViewRDPG1.setOnPreparedListener(new MediaPlayer.OnPreparedListener() {
+            @Override
+            public void onPrepared(MediaPlayer mp) {
 
-        videoViewRDPG1.start();
+                videoViewRDPG1.start();
+
+            }
+        });
 
         videoViewRDPG1.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
             @Override
             public void onCompletion(MediaPlayer mp) {
 
+                videoViewRDPG1.stopPlayback();
                 yellow5();
 
             }
@@ -995,15 +903,7 @@ public class LessonColors extends AppCompatActivity {
             public void onClick(View v) {
 
                 sfx.start();
-
-                sfx.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
-                    @Override
-                    public void onCompletion(MediaPlayer mp) {
-                        sfx.release();
-                    }
-                });
-
-
+                videoViewRDPG1.stopPlayback();
                 yellow3();
 
             }
@@ -1014,17 +914,16 @@ public class LessonColors extends AppCompatActivity {
             public void onClick(View v) {
 
                 sfx.start();
-
-                sfx.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
-                    @Override
-                    public void onCompletion(MediaPlayer mp) {
-                        sfx.release();
-                    }
-                });
-
-
+                videoViewRDPG1.stopPlayback();
                 yellow5();
 
+            }
+        });
+
+        sfx.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+            @Override
+            public void onCompletion(MediaPlayer mp) {
+                sfx.release();
             }
         });
     }
@@ -1034,19 +933,22 @@ public class LessonColors extends AppCompatActivity {
         videoPathRDPG1 = "android.resource://" + getPackageName() + "/" + R.raw.yellow5;
         uriRDPG1 = Uri.parse(videoPathRDPG1);
         videoViewRDPG1.setVideoURI(uriRDPG1);
-        MediaPlayer sfx = MediaPlayer.create(this, R.raw.btnsfx);
+        sfx = MediaPlayer.create(this, R.raw.btnsfx);  
 
-        mediaController = new MediaController(this);
-        videoViewRDPG1.setMediaController(mediaController);
-        mediaController.setVisibility(View.GONE);
-        mediaController.setAnchorView(videoViewRDPG1);
+        videoViewRDPG1.setOnPreparedListener(new MediaPlayer.OnPreparedListener() {
+            @Override
+            public void onPrepared(MediaPlayer mp) {
 
-        videoViewRDPG1.start();
+                videoViewRDPG1.start();
+
+            }
+        });
 
         videoViewRDPG1.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
             @Override
             public void onCompletion(MediaPlayer mp) {
 
+                videoViewRDPG1.stopPlayback();
                 yellow6();
 
             }
@@ -1057,15 +959,7 @@ public class LessonColors extends AppCompatActivity {
             public void onClick(View v) {
 
                 sfx.start();
-
-                sfx.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
-                    @Override
-                    public void onCompletion(MediaPlayer mp) {
-                        sfx.release();
-                    }
-                });
-
-
+                videoViewRDPG1.stopPlayback();
                 yellow4();
 
             }
@@ -1076,17 +970,16 @@ public class LessonColors extends AppCompatActivity {
             public void onClick(View v) {
 
                 sfx.start();
-
-                sfx.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
-                    @Override
-                    public void onCompletion(MediaPlayer mp) {
-                        sfx.release();
-                    }
-                });
-
-
+                videoViewRDPG1.stopPlayback();
                 yellow6();
 
+            }
+        });
+
+        sfx.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+            @Override
+            public void onCompletion(MediaPlayer mp) {
+                sfx.release();
             }
         });
     }
@@ -1096,19 +989,22 @@ public class LessonColors extends AppCompatActivity {
         videoPathRDPG1 = "android.resource://" + getPackageName() + "/" + R.raw.yellow6;
         uriRDPG1 = Uri.parse(videoPathRDPG1);
         videoViewRDPG1.setVideoURI(uriRDPG1);
-        MediaPlayer sfx = MediaPlayer.create(this, R.raw.btnsfx);
+        sfx = MediaPlayer.create(this, R.raw.btnsfx);  
 
-        mediaController = new MediaController(this);
-        videoViewRDPG1.setMediaController(mediaController);
-        mediaController.setVisibility(View.GONE);
-        mediaController.setAnchorView(videoViewRDPG1);
+        videoViewRDPG1.setOnPreparedListener(new MediaPlayer.OnPreparedListener() {
+            @Override
+            public void onPrepared(MediaPlayer mp) {
 
-        videoViewRDPG1.start();
+                videoViewRDPG1.start();
+
+            }
+        });
 
         videoViewRDPG1.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
             @Override
             public void onCompletion(MediaPlayer mp) {
 
+                videoViewRDPG1.stopPlayback();
                 orange1();
 
             }
@@ -1119,15 +1015,7 @@ public class LessonColors extends AppCompatActivity {
             public void onClick(View v) {
 
                 sfx.start();
-
-                sfx.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
-                    @Override
-                    public void onCompletion(MediaPlayer mp) {
-                        sfx.release();
-                    }
-                });
-
-
+                videoViewRDPG1.stopPlayback();
                 yellow5();
 
             }
@@ -1138,17 +1026,16 @@ public class LessonColors extends AppCompatActivity {
             public void onClick(View v) {
 
                 sfx.start();
-
-                sfx.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
-                    @Override
-                    public void onCompletion(MediaPlayer mp) {
-                        sfx.release();
-                    }
-                });
-
-
+                videoViewRDPG1.stopPlayback();
                 orange1();
 
+            }
+        });
+
+        sfx.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+            @Override
+            public void onCompletion(MediaPlayer mp) {
+                sfx.release();
             }
         });
     }
@@ -1158,19 +1045,22 @@ public class LessonColors extends AppCompatActivity {
         videoPathRDPG1 = "android.resource://" + getPackageName() + "/" + R.raw.orange1;
         uriRDPG1 = Uri.parse(videoPathRDPG1);
         videoViewRDPG1.setVideoURI(uriRDPG1);
-        MediaPlayer sfx = MediaPlayer.create(this, R.raw.btnsfx);
+        sfx = MediaPlayer.create(this, R.raw.btnsfx);  
 
-        mediaController = new MediaController(this);
-        videoViewRDPG1.setMediaController(mediaController);
-        mediaController.setVisibility(View.GONE);
-        mediaController.setAnchorView(videoViewRDPG1);
+        videoViewRDPG1.setOnPreparedListener(new MediaPlayer.OnPreparedListener() {
+            @Override
+            public void onPrepared(MediaPlayer mp) {
 
-        videoViewRDPG1.start();
+                videoViewRDPG1.start();
+
+            }
+        });
 
         videoViewRDPG1.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
             @Override
             public void onCompletion(MediaPlayer mp) {
 
+                videoViewRDPG1.stopPlayback();
                 orange2();
 
             }
@@ -1181,15 +1071,7 @@ public class LessonColors extends AppCompatActivity {
             public void onClick(View v) {
 
                 sfx.start();
-
-                sfx.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
-                    @Override
-                    public void onCompletion(MediaPlayer mp) {
-                        sfx.release();
-                    }
-                });
-
-
+                videoViewRDPG1.stopPlayback();
                 yellow6();
 
             }
@@ -1200,17 +1082,16 @@ public class LessonColors extends AppCompatActivity {
             public void onClick(View v) {
 
                 sfx.start();
-
-                sfx.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
-                    @Override
-                    public void onCompletion(MediaPlayer mp) {
-                        sfx.release();
-                    }
-                });
-
-
+                videoViewRDPG1.stopPlayback();
                 orange2();
 
+            }
+        });
+
+        sfx.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+            @Override
+            public void onCompletion(MediaPlayer mp) {
+                sfx.release();
             }
         });
     }
@@ -1220,19 +1101,22 @@ public class LessonColors extends AppCompatActivity {
         videoPathRDPG1 = "android.resource://" + getPackageName() + "/" + R.raw.orange2;
         uriRDPG1 = Uri.parse(videoPathRDPG1);
         videoViewRDPG1.setVideoURI(uriRDPG1);
-        MediaPlayer sfx = MediaPlayer.create(this, R.raw.btnsfx);
+        sfx = MediaPlayer.create(this, R.raw.btnsfx);  
 
-        mediaController = new MediaController(this);
-        videoViewRDPG1.setMediaController(mediaController);
-        mediaController.setVisibility(View.GONE);
-        mediaController.setAnchorView(videoViewRDPG1);
+        videoViewRDPG1.setOnPreparedListener(new MediaPlayer.OnPreparedListener() {
+            @Override
+            public void onPrepared(MediaPlayer mp) {
 
-        videoViewRDPG1.start();
+                videoViewRDPG1.start();
+
+            }
+        });
 
         videoViewRDPG1.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
             @Override
             public void onCompletion(MediaPlayer mp) {
 
+                videoViewRDPG1.stopPlayback();
                 orange3();
 
             }
@@ -1243,15 +1127,7 @@ public class LessonColors extends AppCompatActivity {
             public void onClick(View v) {
 
                 sfx.start();
-
-                sfx.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
-                    @Override
-                    public void onCompletion(MediaPlayer mp) {
-                        sfx.release();
-                    }
-                });
-
-
+                videoViewRDPG1.stopPlayback();
                 orange1();
 
             }
@@ -1262,17 +1138,16 @@ public class LessonColors extends AppCompatActivity {
             public void onClick(View v) {
 
                 sfx.start();
-
-                sfx.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
-                    @Override
-                    public void onCompletion(MediaPlayer mp) {
-                        sfx.release();
-                    }
-                });
-
-
+                videoViewRDPG1.stopPlayback();
                 orange3();
 
+            }
+        });
+
+        sfx.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+            @Override
+            public void onCompletion(MediaPlayer mp) {
+                sfx.release();
             }
         });
     }
@@ -1282,19 +1157,22 @@ public class LessonColors extends AppCompatActivity {
         videoPathRDPG1 = "android.resource://" + getPackageName() + "/" + R.raw.orange3;
         uriRDPG1 = Uri.parse(videoPathRDPG1);
         videoViewRDPG1.setVideoURI(uriRDPG1);
-        MediaPlayer sfx = MediaPlayer.create(this, R.raw.btnsfx);
+        sfx = MediaPlayer.create(this, R.raw.btnsfx);  
 
-        mediaController = new MediaController(this);
-        videoViewRDPG1.setMediaController(mediaController);
-        mediaController.setVisibility(View.GONE);
-        mediaController.setAnchorView(videoViewRDPG1);
+        videoViewRDPG1.setOnPreparedListener(new MediaPlayer.OnPreparedListener() {
+            @Override
+            public void onPrepared(MediaPlayer mp) {
 
-        videoViewRDPG1.start();
+                videoViewRDPG1.start();
+
+            }
+        });
 
         videoViewRDPG1.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
             @Override
             public void onCompletion(MediaPlayer mp) {
 
+                videoViewRDPG1.stopPlayback();
                 orange4();
 
             }
@@ -1305,15 +1183,7 @@ public class LessonColors extends AppCompatActivity {
             public void onClick(View v) {
 
                 sfx.start();
-
-                sfx.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
-                    @Override
-                    public void onCompletion(MediaPlayer mp) {
-                        sfx.release();
-                    }
-                });
-
-
+                videoViewRDPG1.stopPlayback();
                 orange2();
 
             }
@@ -1324,17 +1194,16 @@ public class LessonColors extends AppCompatActivity {
             public void onClick(View v) {
 
                 sfx.start();
-
-                sfx.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
-                    @Override
-                    public void onCompletion(MediaPlayer mp) {
-                        sfx.release();
-                    }
-                });
-
-
+                videoViewRDPG1.stopPlayback();
                 orange4();
 
+            }
+        });
+
+        sfx.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+            @Override
+            public void onCompletion(MediaPlayer mp) {
+                sfx.release();
             }
         });
     }
@@ -1344,19 +1213,22 @@ public class LessonColors extends AppCompatActivity {
         videoPathRDPG1 = "android.resource://" + getPackageName() + "/" + R.raw.orange4;
         uriRDPG1 = Uri.parse(videoPathRDPG1);
         videoViewRDPG1.setVideoURI(uriRDPG1);
-        MediaPlayer sfx = MediaPlayer.create(this, R.raw.btnsfx);
+        sfx = MediaPlayer.create(this, R.raw.btnsfx);  
 
-        mediaController = new MediaController(this);
-        videoViewRDPG1.setMediaController(mediaController);
-        mediaController.setVisibility(View.GONE);
-        mediaController.setAnchorView(videoViewRDPG1);
+        videoViewRDPG1.setOnPreparedListener(new MediaPlayer.OnPreparedListener() {
+            @Override
+            public void onPrepared(MediaPlayer mp) {
 
-        videoViewRDPG1.start();
+                videoViewRDPG1.start();
+
+            }
+        });
 
         videoViewRDPG1.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
             @Override
             public void onCompletion(MediaPlayer mp) {
 
+                videoViewRDPG1.stopPlayback();
                 orange5();
 
             }
@@ -1367,15 +1239,7 @@ public class LessonColors extends AppCompatActivity {
             public void onClick(View v) {
 
                 sfx.start();
-
-                sfx.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
-                    @Override
-                    public void onCompletion(MediaPlayer mp) {
-                        sfx.release();
-                    }
-                });
-
-
+                videoViewRDPG1.stopPlayback();
                 orange3();
 
             }
@@ -1386,17 +1250,16 @@ public class LessonColors extends AppCompatActivity {
             public void onClick(View v) {
 
                 sfx.start();
-
-                sfx.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
-                    @Override
-                    public void onCompletion(MediaPlayer mp) {
-                        sfx.release();
-                    }
-                });
-
-
+                videoViewRDPG1.stopPlayback();
                 orange5();
 
+            }
+        });
+
+        sfx.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+            @Override
+            public void onCompletion(MediaPlayer mp) {
+                sfx.release();
             }
         });
     }
@@ -1406,19 +1269,22 @@ public class LessonColors extends AppCompatActivity {
         videoPathRDPG1 = "android.resource://" + getPackageName() + "/" + R.raw.orange5;
         uriRDPG1 = Uri.parse(videoPathRDPG1);
         videoViewRDPG1.setVideoURI(uriRDPG1);
-        MediaPlayer sfx = MediaPlayer.create(this, R.raw.btnsfx);
+        sfx = MediaPlayer.create(this, R.raw.btnsfx);  
 
-        mediaController = new MediaController(this);
-        videoViewRDPG1.setMediaController(mediaController);
-        mediaController.setVisibility(View.GONE);
-        mediaController.setAnchorView(videoViewRDPG1);
+        videoViewRDPG1.setOnPreparedListener(new MediaPlayer.OnPreparedListener() {
+            @Override
+            public void onPrepared(MediaPlayer mp) {
 
-        videoViewRDPG1.start();
+                videoViewRDPG1.start();
+
+            }
+        });
 
         videoViewRDPG1.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
             @Override
             public void onCompletion(MediaPlayer mp) {
 
+                videoViewRDPG1.stopPlayback();
                 orange6();
 
             }
@@ -1429,15 +1295,7 @@ public class LessonColors extends AppCompatActivity {
             public void onClick(View v) {
 
                 sfx.start();
-
-                sfx.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
-                    @Override
-                    public void onCompletion(MediaPlayer mp) {
-                        sfx.release();
-                    }
-                });
-
-
+                videoViewRDPG1.stopPlayback();
                 orange4();
 
             }
@@ -1448,17 +1306,16 @@ public class LessonColors extends AppCompatActivity {
             public void onClick(View v) {
 
                 sfx.start();
-
-                sfx.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
-                    @Override
-                    public void onCompletion(MediaPlayer mp) {
-                        sfx.release();
-                    }
-                });
-
-
+                videoViewRDPG1.stopPlayback();
                 orange6();
 
+            }
+        });
+
+        sfx.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+            @Override
+            public void onCompletion(MediaPlayer mp) {
+                sfx.release();
             }
         });
     }
@@ -1468,19 +1325,22 @@ public class LessonColors extends AppCompatActivity {
         videoPathRDPG1 = "android.resource://" + getPackageName() + "/" + R.raw.orange6;
         uriRDPG1 = Uri.parse(videoPathRDPG1);
         videoViewRDPG1.setVideoURI(uriRDPG1);
-        MediaPlayer sfx = MediaPlayer.create(this, R.raw.btnsfx);
+        sfx = MediaPlayer.create(this, R.raw.btnsfx);  
 
-        mediaController = new MediaController(this);
-        videoViewRDPG1.setMediaController(mediaController);
-        mediaController.setVisibility(View.GONE);
-        mediaController.setAnchorView(videoViewRDPG1);
+        videoViewRDPG1.setOnPreparedListener(new MediaPlayer.OnPreparedListener() {
+            @Override
+            public void onPrepared(MediaPlayer mp) {
 
-        videoViewRDPG1.start();
+                videoViewRDPG1.start();
+
+            }
+        });
 
         videoViewRDPG1.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
             @Override
             public void onCompletion(MediaPlayer mp) {
 
+                videoViewRDPG1.stopPlayback();
                 purple1();
 
             }
@@ -1491,15 +1351,7 @@ public class LessonColors extends AppCompatActivity {
             public void onClick(View v) {
 
                 sfx.start();
-
-                sfx.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
-                    @Override
-                    public void onCompletion(MediaPlayer mp) {
-                        sfx.release();
-                    }
-                });
-
-
+                videoViewRDPG1.stopPlayback();
                 orange5();
 
             }
@@ -1510,17 +1362,16 @@ public class LessonColors extends AppCompatActivity {
             public void onClick(View v) {
 
                 sfx.start();
-
-                sfx.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
-                    @Override
-                    public void onCompletion(MediaPlayer mp) {
-                        sfx.release();
-                    }
-                });
-
-
+                videoViewRDPG1.stopPlayback();
                 purple1();
 
+            }
+        });
+
+        sfx.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+            @Override
+            public void onCompletion(MediaPlayer mp) {
+                sfx.release();
             }
         });
     }
@@ -1530,19 +1381,21 @@ public class LessonColors extends AppCompatActivity {
         videoPathRDPG1 = "android.resource://" + getPackageName() + "/" + R.raw.purple1;
         uriRDPG1 = Uri.parse(videoPathRDPG1);
         videoViewRDPG1.setVideoURI(uriRDPG1);
-        MediaPlayer sfx = MediaPlayer.create(this, R.raw.btnsfx);
+        sfx = MediaPlayer.create(this, R.raw.btnsfx);  
+        videoViewRDPG1.setOnPreparedListener(new MediaPlayer.OnPreparedListener() {
+            @Override
+            public void onPrepared(MediaPlayer mp) {
 
-        mediaController = new MediaController(this);
-        videoViewRDPG1.setMediaController(mediaController);
-        mediaController.setVisibility(View.GONE);
-        mediaController.setAnchorView(videoViewRDPG1);
+                videoViewRDPG1.start();
 
-        videoViewRDPG1.start();
+            }
+        });
 
         videoViewRDPG1.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
             @Override
             public void onCompletion(MediaPlayer mp) {
 
+                videoViewRDPG1.stopPlayback();
                 purple2();
 
             }
@@ -1553,15 +1406,7 @@ public class LessonColors extends AppCompatActivity {
             public void onClick(View v) {
 
                 sfx.start();
-
-                sfx.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
-                    @Override
-                    public void onCompletion(MediaPlayer mp) {
-                        sfx.release();
-                    }
-                });
-
-
+                videoViewRDPG1.stopPlayback();
                 orange6();
 
             }
@@ -1572,17 +1417,16 @@ public class LessonColors extends AppCompatActivity {
             public void onClick(View v) {
 
                 sfx.start();
-
-                sfx.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
-                    @Override
-                    public void onCompletion(MediaPlayer mp) {
-                        sfx.release();
-                    }
-                });
-
-
+                videoViewRDPG1.stopPlayback();
                 purple2();
 
+            }
+        });
+
+        sfx.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+            @Override
+            public void onCompletion(MediaPlayer mp) {
+                sfx.release();
             }
         });
     }
@@ -1592,19 +1436,22 @@ public class LessonColors extends AppCompatActivity {
         videoPathRDPG1 = "android.resource://" + getPackageName() + "/" + R.raw.purple2;
         uriRDPG1 = Uri.parse(videoPathRDPG1);
         videoViewRDPG1.setVideoURI(uriRDPG1);
-        MediaPlayer sfx = MediaPlayer.create(this, R.raw.btnsfx);
+        sfx = MediaPlayer.create(this, R.raw.btnsfx);  
 
-        mediaController = new MediaController(this);
-        videoViewRDPG1.setMediaController(mediaController);
-        mediaController.setVisibility(View.GONE);
-        mediaController.setAnchorView(videoViewRDPG1);
+        videoViewRDPG1.setOnPreparedListener(new MediaPlayer.OnPreparedListener() {
+            @Override
+            public void onPrepared(MediaPlayer mp) {
 
-        videoViewRDPG1.start();
+                videoViewRDPG1.start();
+
+            }
+        });
 
         videoViewRDPG1.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
             @Override
             public void onCompletion(MediaPlayer mp) {
 
+                videoViewRDPG1.stopPlayback();
                 purple3();
 
             }
@@ -1615,15 +1462,7 @@ public class LessonColors extends AppCompatActivity {
             public void onClick(View v) {
 
                 sfx.start();
-
-                sfx.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
-                    @Override
-                    public void onCompletion(MediaPlayer mp) {
-                        sfx.release();
-                    }
-                });
-
-
+                videoViewRDPG1.stopPlayback();
                 purple1();
 
             }
@@ -1634,17 +1473,16 @@ public class LessonColors extends AppCompatActivity {
             public void onClick(View v) {
 
                 sfx.start();
-
-                sfx.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
-                    @Override
-                    public void onCompletion(MediaPlayer mp) {
-                        sfx.release();
-                    }
-                });
-
-
+                videoViewRDPG1.stopPlayback();
                 purple3();
 
+            }
+        });
+
+        sfx.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+            @Override
+            public void onCompletion(MediaPlayer mp) {
+                sfx.release();
             }
         });
     }
@@ -1654,19 +1492,22 @@ public class LessonColors extends AppCompatActivity {
         videoPathRDPG1 = "android.resource://" + getPackageName() + "/" + R.raw.purple3;
         uriRDPG1 = Uri.parse(videoPathRDPG1);
         videoViewRDPG1.setVideoURI(uriRDPG1);
-        MediaPlayer sfx = MediaPlayer.create(this, R.raw.btnsfx);
+        sfx = MediaPlayer.create(this, R.raw.btnsfx);  
 
-        mediaController = new MediaController(this);
-        videoViewRDPG1.setMediaController(mediaController);
-        mediaController.setVisibility(View.GONE);
-        mediaController.setAnchorView(videoViewRDPG1);
+        videoViewRDPG1.setOnPreparedListener(new MediaPlayer.OnPreparedListener() {
+            @Override
+            public void onPrepared(MediaPlayer mp) {
 
-        videoViewRDPG1.start();
+                videoViewRDPG1.start();
+
+            }
+        });
 
         videoViewRDPG1.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
             @Override
             public void onCompletion(MediaPlayer mp) {
 
+                videoViewRDPG1.stopPlayback();
                 purple4();
 
             }
@@ -1677,15 +1518,7 @@ public class LessonColors extends AppCompatActivity {
             public void onClick(View v) {
 
                 sfx.start();
-
-                sfx.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
-                    @Override
-                    public void onCompletion(MediaPlayer mp) {
-                        sfx.release();
-                    }
-                });
-
-
+                videoViewRDPG1.stopPlayback();
                 purple2();
 
             }
@@ -1696,17 +1529,16 @@ public class LessonColors extends AppCompatActivity {
             public void onClick(View v) {
 
                 sfx.start();
-
-                sfx.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
-                    @Override
-                    public void onCompletion(MediaPlayer mp) {
-                        sfx.release();
-                    }
-                });
-
-
+                videoViewRDPG1.stopPlayback();
                 purple4();
 
+            }
+        });
+
+        sfx.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+            @Override
+            public void onCompletion(MediaPlayer mp) {
+                sfx.release();
             }
         });
     }
@@ -1716,19 +1548,22 @@ public class LessonColors extends AppCompatActivity {
         videoPathRDPG1 = "android.resource://" + getPackageName() + "/" + R.raw.purple4;
         uriRDPG1 = Uri.parse(videoPathRDPG1);
         videoViewRDPG1.setVideoURI(uriRDPG1);
-        MediaPlayer sfx = MediaPlayer.create(this, R.raw.btnsfx);
+        sfx = MediaPlayer.create(this, R.raw.btnsfx);  
 
-        mediaController = new MediaController(this);
-        videoViewRDPG1.setMediaController(mediaController);
-        mediaController.setVisibility(View.GONE);
-        mediaController.setAnchorView(videoViewRDPG1);
+        videoViewRDPG1.setOnPreparedListener(new MediaPlayer.OnPreparedListener() {
+            @Override
+            public void onPrepared(MediaPlayer mp) {
 
-        videoViewRDPG1.start();
+                videoViewRDPG1.start();
+
+            }
+        });
 
         videoViewRDPG1.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
             @Override
             public void onCompletion(MediaPlayer mp) {
 
+                videoViewRDPG1.stopPlayback();
                 purple5();
 
             }
@@ -1739,15 +1574,7 @@ public class LessonColors extends AppCompatActivity {
             public void onClick(View v) {
 
                 sfx.start();
-
-                sfx.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
-                    @Override
-                    public void onCompletion(MediaPlayer mp) {
-                        sfx.release();
-                    }
-                });
-
-
+                videoViewRDPG1.stopPlayback();
                 purple3();
 
             }
@@ -1758,17 +1585,16 @@ public class LessonColors extends AppCompatActivity {
             public void onClick(View v) {
 
                 sfx.start();
-
-                sfx.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
-                    @Override
-                    public void onCompletion(MediaPlayer mp) {
-                        sfx.release();
-                    }
-                });
-
-
+                videoViewRDPG1.stopPlayback();
                 purple5();
 
+            }
+        });
+
+        sfx.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+            @Override
+            public void onCompletion(MediaPlayer mp) {
+                sfx.release();
             }
         });
     }
@@ -1778,19 +1604,22 @@ public class LessonColors extends AppCompatActivity {
         videoPathRDPG1 = "android.resource://" + getPackageName() + "/" + R.raw.purple5;
         uriRDPG1 = Uri.parse(videoPathRDPG1);
         videoViewRDPG1.setVideoURI(uriRDPG1);
-        MediaPlayer sfx = MediaPlayer.create(this, R.raw.btnsfx);
+        sfx = MediaPlayer.create(this, R.raw.btnsfx);  
 
-        mediaController = new MediaController(this);
-        videoViewRDPG1.setMediaController(mediaController);
-        mediaController.setVisibility(View.GONE);
-        mediaController.setAnchorView(videoViewRDPG1);
+        videoViewRDPG1.setOnPreparedListener(new MediaPlayer.OnPreparedListener() {
+            @Override
+            public void onPrepared(MediaPlayer mp) {
 
-        videoViewRDPG1.start();
+                videoViewRDPG1.start();
+
+            }
+        });
 
         videoViewRDPG1.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
             @Override
             public void onCompletion(MediaPlayer mp) {
 
+                videoViewRDPG1.stopPlayback();
                 purple6();
 
             }
@@ -1801,15 +1630,7 @@ public class LessonColors extends AppCompatActivity {
             public void onClick(View v) {
 
                 sfx.start();
-
-                sfx.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
-                    @Override
-                    public void onCompletion(MediaPlayer mp) {
-                        sfx.release();
-                    }
-                });
-
-
+                videoViewRDPG1.stopPlayback();
                 purple4();
 
             }
@@ -1820,17 +1641,16 @@ public class LessonColors extends AppCompatActivity {
             public void onClick(View v) {
 
                 sfx.start();
-
-                sfx.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
-                    @Override
-                    public void onCompletion(MediaPlayer mp) {
-                        sfx.release();
-                    }
-                });
-
-
+                videoViewRDPG1.stopPlayback();
                 purple6();
 
+            }
+        });
+
+        sfx.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+            @Override
+            public void onCompletion(MediaPlayer mp) {
+                sfx.release();
             }
         });
     }
@@ -1840,19 +1660,22 @@ public class LessonColors extends AppCompatActivity {
         videoPathRDPG1 = "android.resource://" + getPackageName() + "/" + R.raw.purple6;
         uriRDPG1 = Uri.parse(videoPathRDPG1);
         videoViewRDPG1.setVideoURI(uriRDPG1);
-        MediaPlayer sfx = MediaPlayer.create(this, R.raw.btnsfx);
+        sfx = MediaPlayer.create(this, R.raw.btnsfx);  
 
-        mediaController = new MediaController(this);
-        videoViewRDPG1.setMediaController(mediaController);
-        mediaController.setVisibility(View.GONE);
-        mediaController.setAnchorView(videoViewRDPG1);
+        videoViewRDPG1.setOnPreparedListener(new MediaPlayer.OnPreparedListener() {
+            @Override
+            public void onPrepared(MediaPlayer mp) {
 
-        videoViewRDPG1.start();
+                videoViewRDPG1.start();
+
+            }
+        });
 
         videoViewRDPG1.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
             @Override
             public void onCompletion(MediaPlayer mp) {
 
+                videoViewRDPG1.stopPlayback();
                 green1();
 
             }
@@ -1863,15 +1686,7 @@ public class LessonColors extends AppCompatActivity {
             public void onClick(View v) {
 
                 sfx.start();
-
-                sfx.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
-                    @Override
-                    public void onCompletion(MediaPlayer mp) {
-                        sfx.release();
-                    }
-                });
-
-
+                videoViewRDPG1.stopPlayback();
                 purple5();
 
             }
@@ -1882,17 +1697,16 @@ public class LessonColors extends AppCompatActivity {
             public void onClick(View v) {
 
                 sfx.start();
-
-                sfx.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
-                    @Override
-                    public void onCompletion(MediaPlayer mp) {
-                        sfx.release();
-                    }
-                });
-
-
+                videoViewRDPG1.stopPlayback();
                 green1();
 
+            }
+        });
+
+        sfx.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+            @Override
+            public void onCompletion(MediaPlayer mp) {
+                sfx.release();
             }
         });
     }
@@ -1902,19 +1716,22 @@ public class LessonColors extends AppCompatActivity {
         videoPathRDPG1 = "android.resource://" + getPackageName() + "/" + R.raw.green1;
         uriRDPG1 = Uri.parse(videoPathRDPG1);
         videoViewRDPG1.setVideoURI(uriRDPG1);
-        MediaPlayer sfx = MediaPlayer.create(this, R.raw.btnsfx);
+        sfx = MediaPlayer.create(this, R.raw.btnsfx);  
 
-        mediaController = new MediaController(this);
-        videoViewRDPG1.setMediaController(mediaController);
-        mediaController.setVisibility(View.GONE);
-        mediaController.setAnchorView(videoViewRDPG1);
+        videoViewRDPG1.setOnPreparedListener(new MediaPlayer.OnPreparedListener() {
+            @Override
+            public void onPrepared(MediaPlayer mp) {
 
-        videoViewRDPG1.start();
+                videoViewRDPG1.start();
+
+            }
+        });
 
         videoViewRDPG1.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
             @Override
             public void onCompletion(MediaPlayer mp) {
 
+                videoViewRDPG1.stopPlayback();
                 green2();
 
             }
@@ -1925,15 +1742,7 @@ public class LessonColors extends AppCompatActivity {
             public void onClick(View v) {
 
                 sfx.start();
-
-                sfx.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
-                    @Override
-                    public void onCompletion(MediaPlayer mp) {
-                        sfx.release();
-                    }
-                });
-
-
+                videoViewRDPG1.stopPlayback();
                 purple6();
 
             }
@@ -1944,17 +1753,16 @@ public class LessonColors extends AppCompatActivity {
             public void onClick(View v) {
 
                 sfx.start();
-
-                sfx.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
-                    @Override
-                    public void onCompletion(MediaPlayer mp) {
-                        sfx.release();
-                    }
-                });
-
-
+                videoViewRDPG1.stopPlayback();
                 green2();
 
+            }
+        });
+
+        sfx.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+            @Override
+            public void onCompletion(MediaPlayer mp) {
+                sfx.release();
             }
         });
     }
@@ -1964,19 +1772,22 @@ public class LessonColors extends AppCompatActivity {
         videoPathRDPG1 = "android.resource://" + getPackageName() + "/" + R.raw.green2;
         uriRDPG1 = Uri.parse(videoPathRDPG1);
         videoViewRDPG1.setVideoURI(uriRDPG1);
-        MediaPlayer sfx = MediaPlayer.create(this, R.raw.btnsfx);
+        sfx = MediaPlayer.create(this, R.raw.btnsfx);  
 
-        mediaController = new MediaController(this);
-        videoViewRDPG1.setMediaController(mediaController);
-        mediaController.setVisibility(View.GONE);
-        mediaController.setAnchorView(videoViewRDPG1);
+        videoViewRDPG1.setOnPreparedListener(new MediaPlayer.OnPreparedListener() {
+            @Override
+            public void onPrepared(MediaPlayer mp) {
 
-        videoViewRDPG1.start();
+                videoViewRDPG1.start();
+
+            }
+        });
 
         videoViewRDPG1.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
             @Override
             public void onCompletion(MediaPlayer mp) {
 
+                videoViewRDPG1.stopPlayback();
                 green3();
 
             }
@@ -1987,15 +1798,7 @@ public class LessonColors extends AppCompatActivity {
             public void onClick(View v) {
 
                 sfx.start();
-
-                sfx.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
-                    @Override
-                    public void onCompletion(MediaPlayer mp) {
-                        sfx.release();
-                    }
-                });
-
-
+                videoViewRDPG1.stopPlayback();
                 green1();
 
             }
@@ -2006,17 +1809,16 @@ public class LessonColors extends AppCompatActivity {
             public void onClick(View v) {
 
                 sfx.start();
-
-                sfx.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
-                    @Override
-                    public void onCompletion(MediaPlayer mp) {
-                        sfx.release();
-                    }
-                });
-
-
+                videoViewRDPG1.stopPlayback();
                 green3();
 
+            }
+        });
+
+        sfx.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+            @Override
+            public void onCompletion(MediaPlayer mp) {
+                sfx.release();
             }
         });
     }
@@ -2026,19 +1828,22 @@ public class LessonColors extends AppCompatActivity {
         videoPathRDPG1 = "android.resource://" + getPackageName() + "/" + R.raw.green3;
         uriRDPG1 = Uri.parse(videoPathRDPG1);
         videoViewRDPG1.setVideoURI(uriRDPG1);
-        MediaPlayer sfx = MediaPlayer.create(this, R.raw.btnsfx);
+        sfx = MediaPlayer.create(this, R.raw.btnsfx);  
 
-        mediaController = new MediaController(this);
-        videoViewRDPG1.setMediaController(mediaController);
-        mediaController.setVisibility(View.GONE);
-        mediaController.setAnchorView(videoViewRDPG1);
+        videoViewRDPG1.setOnPreparedListener(new MediaPlayer.OnPreparedListener() {
+            @Override
+            public void onPrepared(MediaPlayer mp) {
 
-        videoViewRDPG1.start();
+                videoViewRDPG1.start();
+
+            }
+        });
 
         videoViewRDPG1.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
             @Override
             public void onCompletion(MediaPlayer mp) {
 
+                videoViewRDPG1.stopPlayback();
                 green4();
 
             }
@@ -2049,15 +1854,7 @@ public class LessonColors extends AppCompatActivity {
             public void onClick(View v) {
 
                 sfx.start();
-
-                sfx.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
-                    @Override
-                    public void onCompletion(MediaPlayer mp) {
-                        sfx.release();
-                    }
-                });
-
-
+                videoViewRDPG1.stopPlayback();
                 green2();
 
             }
@@ -2068,17 +1865,16 @@ public class LessonColors extends AppCompatActivity {
             public void onClick(View v) {
 
                 sfx.start();
-
-                sfx.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
-                    @Override
-                    public void onCompletion(MediaPlayer mp) {
-                        sfx.release();
-                    }
-                });
-
-
+                videoViewRDPG1.stopPlayback();
                 green4();
 
+            }
+        });
+
+        sfx.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+            @Override
+            public void onCompletion(MediaPlayer mp) {
+                sfx.release();
             }
         });
     }
@@ -2088,19 +1884,22 @@ public class LessonColors extends AppCompatActivity {
         videoPathRDPG1 = "android.resource://" + getPackageName() + "/" + R.raw.green4;
         uriRDPG1 = Uri.parse(videoPathRDPG1);
         videoViewRDPG1.setVideoURI(uriRDPG1);
-        MediaPlayer sfx = MediaPlayer.create(this, R.raw.btnsfx);
+        sfx = MediaPlayer.create(this, R.raw.btnsfx);  
 
-        mediaController = new MediaController(this);
-        videoViewRDPG1.setMediaController(mediaController);
-        mediaController.setVisibility(View.GONE);
-        mediaController.setAnchorView(videoViewRDPG1);
+        videoViewRDPG1.setOnPreparedListener(new MediaPlayer.OnPreparedListener() {
+            @Override
+            public void onPrepared(MediaPlayer mp) {
 
-        videoViewRDPG1.start();
+                videoViewRDPG1.start();
+
+            }
+        });
 
         videoViewRDPG1.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
             @Override
             public void onCompletion(MediaPlayer mp) {
 
+                videoViewRDPG1.stopPlayback();
                 green5();
 
             }
@@ -2111,15 +1910,7 @@ public class LessonColors extends AppCompatActivity {
             public void onClick(View v) {
 
                 sfx.start();
-
-                sfx.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
-                    @Override
-                    public void onCompletion(MediaPlayer mp) {
-                        sfx.release();
-                    }
-                });
-
-
+                videoViewRDPG1.stopPlayback();
                 green3();
 
             }
@@ -2130,17 +1921,16 @@ public class LessonColors extends AppCompatActivity {
             public void onClick(View v) {
 
                 sfx.start();
-
-                sfx.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
-                    @Override
-                    public void onCompletion(MediaPlayer mp) {
-                        sfx.release();
-                    }
-                });
-
-
+                videoViewRDPG1.stopPlayback();
                 green5();
 
+            }
+        });
+
+        sfx.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+            @Override
+            public void onCompletion(MediaPlayer mp) {
+                sfx.release();
             }
         });
     }
@@ -2150,19 +1940,22 @@ public class LessonColors extends AppCompatActivity {
         videoPathRDPG1 = "android.resource://" + getPackageName() + "/" + R.raw.green5;
         uriRDPG1 = Uri.parse(videoPathRDPG1);
         videoViewRDPG1.setVideoURI(uriRDPG1);
-        MediaPlayer sfx = MediaPlayer.create(this, R.raw.btnsfx);
+        sfx = MediaPlayer.create(this, R.raw.btnsfx);  
 
-        mediaController = new MediaController(this);
-        videoViewRDPG1.setMediaController(mediaController);
-        mediaController.setVisibility(View.GONE);
-        mediaController.setAnchorView(videoViewRDPG1);
+        videoViewRDPG1.setOnPreparedListener(new MediaPlayer.OnPreparedListener() {
+            @Override
+            public void onPrepared(MediaPlayer mp) {
 
-        videoViewRDPG1.start();
+                videoViewRDPG1.start();
+
+            }
+        });
 
         videoViewRDPG1.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
             @Override
             public void onCompletion(MediaPlayer mp) {
 
+                videoViewRDPG1.stopPlayback();
                 green6();
 
             }
@@ -2173,15 +1966,7 @@ public class LessonColors extends AppCompatActivity {
             public void onClick(View v) {
 
                 sfx.start();
-
-                sfx.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
-                    @Override
-                    public void onCompletion(MediaPlayer mp) {
-                        sfx.release();
-                    }
-                });
-
-
+                videoViewRDPG1.stopPlayback();
                 green4();
 
             }
@@ -2192,17 +1977,16 @@ public class LessonColors extends AppCompatActivity {
             public void onClick(View v) {
 
                 sfx.start();
-
-                sfx.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
-                    @Override
-                    public void onCompletion(MediaPlayer mp) {
-                        sfx.release();
-                    }
-                });
-
-
+                videoViewRDPG1.stopPlayback();
                 green6();
 
+            }
+        });
+
+        sfx.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+            @Override
+            public void onCompletion(MediaPlayer mp) {
+                sfx.release();
             }
         });
     }
@@ -2212,19 +1996,22 @@ public class LessonColors extends AppCompatActivity {
         videoPathRDPG1 = "android.resource://" + getPackageName() + "/" + R.raw.green6;
         uriRDPG1 = Uri.parse(videoPathRDPG1);
         videoViewRDPG1.setVideoURI(uriRDPG1);
-        MediaPlayer sfx = MediaPlayer.create(this, R.raw.btnsfx);
+        sfx = MediaPlayer.create(this, R.raw.btnsfx);  
 
-        mediaController = new MediaController(this);
-        videoViewRDPG1.setMediaController(mediaController);
-        mediaController.setVisibility(View.GONE);
-        mediaController.setAnchorView(videoViewRDPG1);
+        videoViewRDPG1.setOnPreparedListener(new MediaPlayer.OnPreparedListener() {
+            @Override
+            public void onPrepared(MediaPlayer mp) {
 
-        videoViewRDPG1.start();
+                videoViewRDPG1.start();
+
+            }
+        });
 
         videoViewRDPG1.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
             @Override
             public void onCompletion(MediaPlayer mp) {
 
+                videoViewRDPG1.stopPlayback();
                 startActivity(new Intent(LessonColors.this,ColorsLessonCongrats.class));
 
             }
@@ -2235,15 +2022,7 @@ public class LessonColors extends AppCompatActivity {
             public void onClick(View v) {
 
                 sfx.start();
-
-                sfx.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
-                    @Override
-                    public void onCompletion(MediaPlayer mp) {
-                        sfx.release();
-                    }
-                });
-
-
+                videoViewRDPG1.stopPlayback();
                 green5();
 
             }
@@ -2254,17 +2033,16 @@ public class LessonColors extends AppCompatActivity {
             public void onClick(View v) {
 
                 sfx.start();
-
-                sfx.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
-                    @Override
-                    public void onCompletion(MediaPlayer mp) {
-                        sfx.release();
-                    }
-                });
-
-
+                videoViewRDPG1.stopPlayback();
                 startActivity(new Intent(LessonColors.this,ColorsLessonCongrats.class));
 
+            }
+        });
+
+        sfx.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+            @Override
+            public void onCompletion(MediaPlayer mp) {
+                sfx.release();
             }
         });
     }

@@ -11,6 +11,7 @@ import android.widget.ImageButton;
 public class ChooseModeCounting extends AppCompatActivity {
 
     ImageButton backCMCN,learnCMCN,assessCMCN,replayCMCN;
+    MediaPlayer sfx;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -24,20 +25,13 @@ public class ChooseModeCounting extends AppCompatActivity {
 
         BackgroundSoundService.onResume();
 
-        MediaPlayer sfx = MediaPlayer.create(this, R.raw.btnsfx);
+        sfx = MediaPlayer.create(this, R.raw.btnsfx);
 
 
         backCMCN.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 sfx.start();
-
-                sfx.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
-                    @Override
-                    public void onCompletion(MediaPlayer mp) {
-                        sfx.release();
-                    }
-                });
 
                 startActivity(new Intent(ChooseModeCounting.this,Numbers.class));
             }
@@ -48,13 +42,6 @@ public class ChooseModeCounting extends AppCompatActivity {
             public void onClick(View v) {
                 sfx.start();
 
-                sfx.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
-                    @Override
-                    public void onCompletion(MediaPlayer mp) {
-                        sfx.release();
-                    }
-                });
-
                 startActivity(new Intent(ChooseModeCounting.this, LessonCounting.class));
             }
         });
@@ -63,13 +50,6 @@ public class ChooseModeCounting extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 sfx.start();
-
-                sfx.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
-                    @Override
-                    public void onCompletion(MediaPlayer mp) {
-                        sfx.release();
-                    }
-                });
 
                 startActivity(new Intent(ChooseModeCounting.this,QuizCountingNumbers.class));
             }
@@ -80,15 +60,16 @@ public class ChooseModeCounting extends AppCompatActivity {
             public void onClick(View v) {
                 sfx.start();
 
-                sfx.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
-                    @Override
-                    public void onCompletion(MediaPlayer mp) {
-                        sfx.release();
-                    }
-                });
-
                 startActivity(new Intent(ChooseModeCounting.this,LessonIntroCounting.class));
             }
         });
+
+        sfx.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+            @Override
+            public void onCompletion(MediaPlayer mp) {
+                sfx.release();
+            }
+        });
+
     }
 }
