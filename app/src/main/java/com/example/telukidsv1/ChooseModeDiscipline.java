@@ -59,7 +59,10 @@ public class ChooseModeDiscipline extends AppCompatActivity {
                 startActivity(new Intent(ChooseModeDiscipline.this,LessonIntroDiscipline.class));
             }
         });
+    }
 
+    @Override
+    protected void onUserLeaveHint(){
         sfx.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
             @Override
             public void onCompletion(MediaPlayer mp) {
@@ -67,5 +70,6 @@ public class ChooseModeDiscipline extends AppCompatActivity {
             }
         });
 
+        super.onUserLeaveHint();
     }
 }

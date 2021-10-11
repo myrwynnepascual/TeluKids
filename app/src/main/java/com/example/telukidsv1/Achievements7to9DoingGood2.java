@@ -23,6 +23,7 @@ public class Achievements7to9DoingGood2 extends AppCompatActivity {
     FirebaseAuth fAuth;
     FirebaseFirestore fStore;
     FirebaseUser user;
+    MediaPlayer sfx;
 
     // Ages 3-6 Achievements and Lessons
     String achievement_counting, achievement_addition, achievement_subtraction, achievement_colors, achievement_shapes;
@@ -41,7 +42,7 @@ public class Achievements7to9DoingGood2 extends AppCompatActivity {
 
         ImageButton backbtnAchievements7to9= findViewById(R.id.backbtnAchievements79Main);
 
-        MediaPlayer sfx = MediaPlayer.create(this, R.raw.btnsfx);
+        sfx = MediaPlayer.create(this, R.raw.btnsfx);
 
         //Trophies
         //GMRC 3-6
@@ -684,18 +685,23 @@ public class Achievements7to9DoingGood2 extends AppCompatActivity {
             public void onClick(View view) {
                 sfx.start();
 
-                sfx.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
-                    @Override
-                    public void onCompletion(MediaPlayer mp) {
-                        sfx.release();
-                    }
-                });
-
                 Intent proceed = new Intent(Achievements7to9DoingGood2.this, ResultsDoingGood.class);
                 proceed.putExtra("RIGHT_ANSWER_COUNT_DoingGood", score_doinggood);
                 startActivity(proceed);
             }
         });
 
+    }
+
+    @Override
+    protected void onUserLeaveHint(){
+        sfx.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+            @Override
+            public void onCompletion(MediaPlayer mp) {
+                sfx.release();
+            }
+        });
+
+        super.onUserLeaveHint();
     }
 }

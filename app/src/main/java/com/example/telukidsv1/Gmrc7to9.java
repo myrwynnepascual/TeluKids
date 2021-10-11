@@ -67,6 +67,10 @@ public class Gmrc7to9 extends AppCompatActivity {
             }
         });
 
+    }
+
+    @Override
+    protected void onUserLeaveHint(){
         sfx.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
             @Override
             public void onCompletion(MediaPlayer mp) {
@@ -74,6 +78,6 @@ public class Gmrc7to9 extends AppCompatActivity {
             }
         });
 
-
+        super.onUserLeaveHint();
     }
 }

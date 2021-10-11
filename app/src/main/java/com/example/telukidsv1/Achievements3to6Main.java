@@ -685,17 +685,22 @@ public class Achievements3to6Main extends AppCompatActivity {
             public void onClick(View view) {
                 sfx.start();
 
-                sfx.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
-                    @Override
-                    public void onCompletion(MediaPlayer mp) {
-                        sfx.release();
-                    }
-                });
-
                 Intent proceed = new Intent(Achievements3to6Main.this, Homepage3to6.class);
                 startActivity(proceed);
             }
         });
 
+    }
+
+    @Override
+    protected void onUserLeaveHint(){
+        sfx.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+            @Override
+            public void onCompletion(MediaPlayer mp) {
+                sfx.release();
+            }
+        });
+
+        super.onUserLeaveHint();
     }
 }

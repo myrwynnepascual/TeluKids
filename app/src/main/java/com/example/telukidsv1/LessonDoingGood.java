@@ -83,13 +83,6 @@ public class LessonDoingGood extends AppCompatActivity {
 
             }
         });
-
-        sfx.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
-            @Override
-            public void onCompletion(MediaPlayer mp) {
-                sfx.release();
-            }
-        });
     }
 
     public void good2(){
@@ -136,13 +129,6 @@ public class LessonDoingGood extends AppCompatActivity {
                 videoViewDG79.stopPlayback();
                 good3();
 
-            }
-        });
-
-        sfx.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
-            @Override
-            public void onCompletion(MediaPlayer mp) {
-                sfx.release();
             }
         });
     }
@@ -193,13 +179,6 @@ public class LessonDoingGood extends AppCompatActivity {
 
             }
         });
-
-        sfx.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
-            @Override
-            public void onCompletion(MediaPlayer mp) {
-                sfx.release();
-            }
-        });
     }
 
     public void good4() {
@@ -248,12 +227,17 @@ public class LessonDoingGood extends AppCompatActivity {
 
             }
         });
+    }
 
+    @Override
+    protected void onUserLeaveHint(){
         sfx.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
             @Override
             public void onCompletion(MediaPlayer mp) {
                 sfx.release();
             }
         });
+
+        super.onUserLeaveHint();
     }
 }

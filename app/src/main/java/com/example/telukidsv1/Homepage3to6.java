@@ -119,7 +119,10 @@ public class Homepage3to6 extends AppCompatActivity {
                 startActivity(new Intent(Homepage3to6.this, Achievements3to6Main.class));
             }
         });
+    }
 
+    @Override
+    protected void onUserLeaveHint(){
         sfx.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
             @Override
             public void onCompletion(MediaPlayer mp) {
@@ -127,5 +130,6 @@ public class Homepage3to6 extends AppCompatActivity {
             }
         });
 
+        super.onUserLeaveHint();
     }
 }

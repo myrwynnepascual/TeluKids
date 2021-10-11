@@ -68,7 +68,10 @@ public class LessonIntroResponsibility extends AppCompatActivity {
 
             }
         });
+    }
 
+    @Override
+    protected void onUserLeaveHint(){
         sfx.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
             @Override
             public void onCompletion(MediaPlayer mp) {
@@ -76,5 +79,6 @@ public class LessonIntroResponsibility extends AppCompatActivity {
             }
         });
 
+        super.onUserLeaveHint();
     }
 }

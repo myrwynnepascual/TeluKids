@@ -68,12 +68,17 @@ public class LessonIntroCompassion extends AppCompatActivity {
 
            }
        });
+    }
 
-       sfx.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
-           @Override
-           public void onCompletion(MediaPlayer mp) {
-               sfx.release();
-           }
-       });
+    @Override
+    protected void onUserLeaveHint(){
+        sfx.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+            @Override
+            public void onCompletion(MediaPlayer mp) {
+                sfx.release();
+            }
+        });
+
+        super.onUserLeaveHint();
     }
 }

@@ -119,12 +119,6 @@ public class ResultsCountingNumbers extends AppCompatActivity {
             }
         });
 
-        sfx.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
-            @Override
-            public void onCompletion(MediaPlayer mp) {
-                sfx.release();
-            }
-        });
     }
 
     @Override
@@ -135,5 +129,17 @@ public class ResultsCountingNumbers extends AppCompatActivity {
         if( v != null) v.setGravity(Gravity.CENTER);
         toast.show();
 
+    }
+
+    @Override
+    protected void onUserLeaveHint(){
+        sfx.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+            @Override
+            public void onCompletion(MediaPlayer mp) {
+                sfx.release();
+            }
+        });
+
+        super.onUserLeaveHint();
     }
 }

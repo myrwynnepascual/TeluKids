@@ -86,13 +86,6 @@ public class LessonCompassion extends AppCompatActivity {
             }
         });
 
-        sfx.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
-            @Override
-            public void onCompletion(MediaPlayer mp) {
-                sfx.release();
-            }
-        });
-
     }
 
     public void compassion2(){
@@ -139,13 +132,6 @@ public class LessonCompassion extends AppCompatActivity {
                 videoViewCP36.stopPlayback();
                 compassion3();
 
-            }
-        });
-
-        sfx.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
-            @Override
-            public void onCompletion(MediaPlayer mp) {
-                sfx.release();
             }
         });
     }
@@ -196,13 +182,6 @@ public class LessonCompassion extends AppCompatActivity {
 
             }
         });
-
-        sfx.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
-            @Override
-            public void onCompletion(MediaPlayer mp) {
-                sfx.release();
-            }
-        });
     }
 
     public void compassion4(){
@@ -249,13 +228,6 @@ public class LessonCompassion extends AppCompatActivity {
                 videoViewCP36.stopPlayback();
                 compassion5();
 
-            }
-        });
-
-        sfx.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
-            @Override
-            public void onCompletion(MediaPlayer mp) {
-                sfx.release();
             }
         });
     }
@@ -306,12 +278,17 @@ public class LessonCompassion extends AppCompatActivity {
 
             }
         });
+    }
 
+    @Override
+    protected void onUserLeaveHint(){
         sfx.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
             @Override
             public void onCompletion(MediaPlayer mp) {
                 sfx.release();
             }
         });
+
+        super.onUserLeaveHint();
     }
 }

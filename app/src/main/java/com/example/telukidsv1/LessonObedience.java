@@ -86,13 +86,6 @@ public class LessonObedience extends AppCompatActivity {
 
             }
         });
-
-        sfx.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
-            @Override
-            public void onCompletion(MediaPlayer mp) {
-                sfx.release();
-            }
-        });
     }
 
     public void obedience2(){
@@ -139,13 +132,6 @@ public class LessonObedience extends AppCompatActivity {
                 videoViewO79.stopPlayback();
                 obedience3();
 
-            }
-        });
-
-        sfx.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
-            @Override
-            public void onCompletion(MediaPlayer mp) {
-                sfx.release();
             }
         });
     }
@@ -196,13 +182,6 @@ public class LessonObedience extends AppCompatActivity {
 
             }
         });
-
-        sfx.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
-            @Override
-            public void onCompletion(MediaPlayer mp) {
-                sfx.release();
-            }
-        });
     }
 
     public void obedience4(){
@@ -249,13 +228,6 @@ public class LessonObedience extends AppCompatActivity {
                 videoViewO79.stopPlayback();
                 obedience5();
 
-            }
-        });
-
-        sfx.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
-            @Override
-            public void onCompletion(MediaPlayer mp) {
-                sfx.release();
             }
         });
     }
@@ -306,13 +278,6 @@ public class LessonObedience extends AppCompatActivity {
 
             }
         });
-
-        sfx.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
-            @Override
-            public void onCompletion(MediaPlayer mp) {
-                sfx.release();
-            }
-        });
     }
 
     public void obedience6(){
@@ -359,13 +324,6 @@ public class LessonObedience extends AppCompatActivity {
                 videoViewO79.stopPlayback();
                 obedience7();
 
-            }
-        });
-
-        sfx.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
-            @Override
-            public void onCompletion(MediaPlayer mp) {
-                sfx.release();
             }
         });
     }
@@ -416,12 +374,17 @@ public class LessonObedience extends AppCompatActivity {
 
             }
         });
+    }
 
+    @Override
+    protected void onUserLeaveHint(){
         sfx.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
             @Override
             public void onCompletion(MediaPlayer mp) {
                 sfx.release();
             }
         });
+
+        super.onUserLeaveHint();
     }
 }

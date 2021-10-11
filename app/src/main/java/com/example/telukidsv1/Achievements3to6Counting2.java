@@ -686,18 +686,23 @@ public class Achievements3to6Counting2 extends AppCompatActivity {
             public void onClick(View view) {
                 sfx.start();
 
-                sfx.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
-                    @Override
-                    public void onCompletion(MediaPlayer mp) {
-                        sfx.release();
-                    }
-                });
-
                 Intent proceed = new Intent(Achievements3to6Counting2.this, ResultsCountingNumbers.class);
                 proceed.putExtra("RIGHT_ANSWER_COUNT_Counting", score_counting);
                 startActivity(proceed);
             }
         });
 
+    }
+
+    @Override
+    protected void onUserLeaveHint(){
+        sfx.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+            @Override
+            public void onCompletion(MediaPlayer mp) {
+                sfx.release();
+            }
+        });
+
+        super.onUserLeaveHint();
     }
 }

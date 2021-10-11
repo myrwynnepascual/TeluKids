@@ -688,17 +688,22 @@ public class Achievements3to6Discipline2 extends AppCompatActivity {
             public void onClick(View view) {
                 sfx.start();
 
-                sfx.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
-                    @Override
-                    public void onCompletion(MediaPlayer mp) {
-                        sfx.release();
-                    }
-                });
-
                 Intent proceed = new Intent(Achievements3to6Discipline2.this, ResultsDiscipline.class);
                 proceed.putExtra("RIGHT_ANSWER_COUNT_Discipline", score_discipline);
                 startActivity(proceed);
             }
         });
+    }
+
+    @Override
+    protected void onUserLeaveHint(){
+        sfx.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+            @Override
+            public void onCompletion(MediaPlayer mp) {
+                sfx.release();
+            }
+        });
+
+        super.onUserLeaveHint();
     }
 }

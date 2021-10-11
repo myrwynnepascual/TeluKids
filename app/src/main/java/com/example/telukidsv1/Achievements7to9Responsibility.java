@@ -23,6 +23,7 @@ public class Achievements7to9Responsibility extends AppCompatActivity {
     FirebaseAuth fAuth;
     FirebaseFirestore fStore;
     FirebaseUser user;
+    MediaPlayer sfx;
 
     // Ages 3-6 Achievements and Lessons
     String achievement_counting, achievement_addition, achievement_subtraction, achievement_colors, achievement_shapes;
@@ -42,7 +43,7 @@ public class Achievements7to9Responsibility extends AppCompatActivity {
 
         ImageButton backbtnAchievements3to6 = findViewById(R.id.backbtnAchievements79Main);
 
-        MediaPlayer sfx = MediaPlayer.create(this, R.raw.btnsfx);
+        sfx = MediaPlayer.create(this, R.raw.btnsfx);
 
         //Trophies
         //GMRC 3-6
@@ -684,16 +685,21 @@ public class Achievements7to9Responsibility extends AppCompatActivity {
             public void onClick(View view) {
                 sfx.start();
 
-                sfx.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
-                    @Override
-                    public void onCompletion(MediaPlayer mp) {
-                        sfx.release();
-                    }
-                });
-
                 Intent proceed = new Intent(Achievements7to9Responsibility.this, ResponsibilityLessonCongrats.class);
                 startActivity(proceed);
             }
         });
+    }
+
+    @Override
+    protected void onUserLeaveHint(){
+        sfx.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+            @Override
+            public void onCompletion(MediaPlayer mp) {
+                sfx.release();
+            }
+        });
+
+        super.onUserLeaveHint();
     }
 }

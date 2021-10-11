@@ -54,12 +54,17 @@ public class SignUpOrLogInPage extends AppCompatActivity {
                 startActivity(new Intent(SignUpOrLogInPage.this, Login.class));
             }
         });
+    }
 
+    @Override
+    protected void onUserLeaveHint(){
         sfx.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
             @Override
             public void onCompletion(MediaPlayer mp) {
                 sfx.release();
             }
         });
+
+        super.onUserLeaveHint();
     }
 }

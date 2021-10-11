@@ -60,6 +60,10 @@ public class ChooseModeSubtraction extends AppCompatActivity {
             }
         });
 
+    }
+
+    @Override
+    protected void onUserLeaveHint(){
         sfx.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
             @Override
             public void onCompletion(MediaPlayer mp) {
@@ -67,5 +71,6 @@ public class ChooseModeSubtraction extends AppCompatActivity {
             }
         });
 
+        super.onUserLeaveHint();
     }
 }

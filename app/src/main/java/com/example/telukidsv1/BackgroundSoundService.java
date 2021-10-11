@@ -13,7 +13,7 @@ public class BackgroundSoundService extends Service {
     private static final String TAG = null;
     public static MediaPlayer player;
     public static int length;
-    //MediaPlayer player;
+
     public IBinder onBind(Intent arg0) {
 
         return null;
@@ -39,10 +39,6 @@ public class BackgroundSoundService extends Service {
         return null;
     }
 
-    public static void lowerVolume() {
-        player.setVolume(10,10);
-    }
-
     public static void onPause() {
         player.pause();
         length = player.getCurrentPosition();
@@ -51,6 +47,11 @@ public class BackgroundSoundService extends Service {
     public static void onResume(){
         player.seekTo(length);
         player.start();
+    }
+
+    public static void stop(){
+        player.stop();
+        player.release();
     }
 
     @Override

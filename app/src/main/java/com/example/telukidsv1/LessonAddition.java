@@ -37,6 +37,7 @@ public class LessonAddition extends AppCompatActivity {
         BackgroundSoundService.onPause();
 
         additionx();
+
     }
 
     public void additionx(){
@@ -83,13 +84,6 @@ public class LessonAddition extends AppCompatActivity {
                 videoViewAX.stopPlayback();
                 additiony();
 
-            }
-        });
-
-        sfx.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
-            @Override
-            public void onCompletion(MediaPlayer mp) {
-                sfx.release();
             }
         });
 
@@ -142,13 +136,6 @@ public class LessonAddition extends AppCompatActivity {
             }
         });
 
-        sfx.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
-            @Override
-            public void onCompletion(MediaPlayer mp) {
-                sfx.release();
-            }
-        });
-
     }
 
     public void addition1(){
@@ -194,13 +181,6 @@ public class LessonAddition extends AppCompatActivity {
                 videoViewAX.stopPlayback();
                 addition2();
 
-            }
-        });
-
-        sfx.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
-            @Override
-            public void onCompletion(MediaPlayer mp) {
-                sfx.release();
             }
         });
 
@@ -252,13 +232,6 @@ public class LessonAddition extends AppCompatActivity {
             }
         });
 
-        sfx.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
-            @Override
-            public void onCompletion(MediaPlayer mp) {
-                sfx.release();
-            }
-        });
-
     }
 
     public void addition3(){
@@ -307,13 +280,6 @@ public class LessonAddition extends AppCompatActivity {
             }
         });
 
-        sfx.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
-            @Override
-            public void onCompletion(MediaPlayer mp) {
-                sfx.release();
-            }
-        });
-
     }
 
     public void addition4(){
@@ -358,13 +324,6 @@ public class LessonAddition extends AppCompatActivity {
                 videoViewAX.stopPlayback();
                 addition5();
 
-            }
-        });
-
-        sfx.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
-            @Override
-            public void onCompletion(MediaPlayer mp) {
-                sfx.release();
             }
         });
 
@@ -416,13 +375,6 @@ public class LessonAddition extends AppCompatActivity {
             }
         });
 
-        sfx.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
-            @Override
-            public void onCompletion(MediaPlayer mp) {
-                sfx.release();
-            }
-        });
-
     }
 
     public void addition6(){
@@ -468,13 +420,6 @@ public class LessonAddition extends AppCompatActivity {
                 videoViewAX.stopPlayback();
                 addition7();
 
-            }
-        });
-
-        sfx.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
-            @Override
-            public void onCompletion(MediaPlayer mp) {
-                sfx.release();
             }
         });
 
@@ -526,13 +471,6 @@ public class LessonAddition extends AppCompatActivity {
             }
         });
 
-        sfx.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
-            @Override
-            public void onCompletion(MediaPlayer mp) {
-                sfx.release();
-            }
-        });
-
     }
 
     public void addition8(){
@@ -578,13 +516,6 @@ public class LessonAddition extends AppCompatActivity {
                 videoViewAX.stopPlayback();
                 addition9();
 
-            }
-        });
-
-        sfx.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
-            @Override
-            public void onCompletion(MediaPlayer mp) {
-                sfx.release();
             }
         });
 
@@ -636,13 +567,6 @@ public class LessonAddition extends AppCompatActivity {
             }
         });
 
-        sfx.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
-            @Override
-            public void onCompletion(MediaPlayer mp) {
-                sfx.release();
-            }
-        });
-
     }
 
     public void addition10(){
@@ -691,6 +615,10 @@ public class LessonAddition extends AppCompatActivity {
             }
         });
 
+    }
+
+    @Override
+    protected void onUserLeaveHint(){
         sfx.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
             @Override
             public void onCompletion(MediaPlayer mp) {
@@ -698,5 +626,6 @@ public class LessonAddition extends AppCompatActivity {
             }
         });
 
+        super.onUserLeaveHint();
     }
 }

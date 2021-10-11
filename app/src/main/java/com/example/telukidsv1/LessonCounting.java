@@ -87,13 +87,6 @@ public class LessonCounting extends AppCompatActivity {
             }
         });
 
-        sfx.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
-            @Override
-            public void onCompletion(MediaPlayer mp) {
-                sfx.release();
-            }
-        });
-
     }
 
     public void count1() {
@@ -142,13 +135,6 @@ public class LessonCounting extends AppCompatActivity {
                 videoViewCX.stopPlayback();
                 count2();
 
-            }
-        });
-
-        sfx.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
-            @Override
-            public void onCompletion(MediaPlayer mp) {
-                sfx.release();
             }
         });
 
@@ -203,13 +189,6 @@ public class LessonCounting extends AppCompatActivity {
             }
         });
 
-        sfx.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
-            @Override
-            public void onCompletion(MediaPlayer mp) {
-                sfx.release();
-            }
-        });
-
     }
 
     public void count3() {
@@ -258,13 +237,6 @@ public class LessonCounting extends AppCompatActivity {
                 videoViewCX.stopPlayback();
                 count4();
 
-            }
-        });
-
-        sfx.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
-            @Override
-            public void onCompletion(MediaPlayer mp) {
-                sfx.release();
             }
         });
 
@@ -319,13 +291,6 @@ public class LessonCounting extends AppCompatActivity {
             }
         });
 
-        sfx.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
-            @Override
-            public void onCompletion(MediaPlayer mp) {
-                sfx.release();
-            }
-        });
-
     }
 
     public void count5() {
@@ -374,13 +339,6 @@ public class LessonCounting extends AppCompatActivity {
                 videoViewCX.stopPlayback();
                 count6();
 
-            }
-        });
-
-        sfx.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
-            @Override
-            public void onCompletion(MediaPlayer mp) {
-                sfx.release();
             }
         });
 
@@ -435,13 +393,6 @@ public class LessonCounting extends AppCompatActivity {
             }
         });
 
-        sfx.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
-            @Override
-            public void onCompletion(MediaPlayer mp) {
-                sfx.release();
-            }
-        });
-
     }
 
     public void count7() {
@@ -490,13 +441,6 @@ public class LessonCounting extends AppCompatActivity {
                 videoViewCX.stopPlayback();
                 count8();
 
-            }
-        });
-
-        sfx.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
-            @Override
-            public void onCompletion(MediaPlayer mp) {
-                sfx.release();
             }
         });
 
@@ -551,13 +495,6 @@ public class LessonCounting extends AppCompatActivity {
             }
         });
 
-        sfx.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
-            @Override
-            public void onCompletion(MediaPlayer mp) {
-                sfx.release();
-            }
-        });
-
     }
 
     public void count9() {
@@ -606,13 +543,6 @@ public class LessonCounting extends AppCompatActivity {
                 videoViewCX.stopPlayback();
                 count10();
 
-            }
-        });
-
-        sfx.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
-            @Override
-            public void onCompletion(MediaPlayer mp) {
-                sfx.release();
             }
         });
 
@@ -667,13 +597,6 @@ public class LessonCounting extends AppCompatActivity {
             }
         });
 
-        sfx.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
-            @Override
-            public void onCompletion(MediaPlayer mp) {
-                sfx.release();
-            }
-        });
-
     }
 
     public void count11() {
@@ -722,13 +645,6 @@ public class LessonCounting extends AppCompatActivity {
                 videoViewCX.stopPlayback();
                 count12();
 
-            }
-        });
-
-        sfx.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
-            @Override
-            public void onCompletion(MediaPlayer mp) {
-                sfx.release();
             }
         });
 
@@ -783,13 +699,6 @@ public class LessonCounting extends AppCompatActivity {
             }
         });
 
-        sfx.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
-            @Override
-            public void onCompletion(MediaPlayer mp) {
-                sfx.release();
-            }
-        });
-
     }
 
     public void count13() {
@@ -838,13 +747,6 @@ public class LessonCounting extends AppCompatActivity {
                 videoViewCX.stopPlayback();
                 count14();
 
-            }
-        });
-
-        sfx.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
-            @Override
-            public void onCompletion(MediaPlayer mp) {
-                sfx.release();
             }
         });
 
@@ -899,13 +801,6 @@ public class LessonCounting extends AppCompatActivity {
             }
         });
 
-        sfx.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
-            @Override
-            public void onCompletion(MediaPlayer mp) {
-                sfx.release();
-            }
-        });
-
     }
 
     public void count15() {
@@ -954,13 +849,6 @@ public class LessonCounting extends AppCompatActivity {
                 videoViewCX.stopPlayback();
                 count16();
 
-            }
-        });
-
-        sfx.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
-            @Override
-            public void onCompletion(MediaPlayer mp) {
-                sfx.release();
             }
         });
 
@@ -1015,13 +903,6 @@ public class LessonCounting extends AppCompatActivity {
             }
         });
 
-        sfx.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
-            @Override
-            public void onCompletion(MediaPlayer mp) {
-                sfx.release();
-            }
-        });
-
     }
 
     public void count17() {
@@ -1070,13 +951,6 @@ public class LessonCounting extends AppCompatActivity {
                 videoViewCX.stopPlayback();
                 count18();
 
-            }
-        });
-
-        sfx.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
-            @Override
-            public void onCompletion(MediaPlayer mp) {
-                sfx.release();
             }
         });
 
@@ -1131,13 +1005,6 @@ public class LessonCounting extends AppCompatActivity {
             }
         });
 
-        sfx.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
-            @Override
-            public void onCompletion(MediaPlayer mp) {
-                sfx.release();
-            }
-        });
-
     }
 
     public void count19() {
@@ -1186,13 +1053,6 @@ public class LessonCounting extends AppCompatActivity {
                 videoViewCX.stopPlayback();
                 count20();
 
-            }
-        });
-
-        sfx.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
-            @Override
-            public void onCompletion(MediaPlayer mp) {
-                sfx.release();
             }
         });
 
@@ -1247,6 +1107,10 @@ public class LessonCounting extends AppCompatActivity {
             }
         });
 
+    }
+
+    @Override
+    protected void onUserLeaveHint(){
         sfx.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
             @Override
             public void onCompletion(MediaPlayer mp) {
@@ -1254,6 +1118,7 @@ public class LessonCounting extends AppCompatActivity {
             }
         });
 
+        super.onUserLeaveHint();
     }
 
 }

@@ -63,7 +63,10 @@ public class ChooseModeCounting extends AppCompatActivity {
                 startActivity(new Intent(ChooseModeCounting.this,LessonIntroCounting.class));
             }
         });
+    }
 
+    @Override
+    protected void onUserLeaveHint(){
         sfx.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
             @Override
             public void onCompletion(MediaPlayer mp) {
@@ -71,5 +74,6 @@ public class ChooseModeCounting extends AppCompatActivity {
             }
         });
 
+        super.onUserLeaveHint();
     }
 }
