@@ -19,6 +19,7 @@ public class LessonIntroCounting extends AppCompatActivity {
     String videoPathICN;
     Uri uriICN;
     MediaPlayer sfx;
+    int currentPosition;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -73,6 +74,7 @@ public class LessonIntroCounting extends AppCompatActivity {
 
     @Override
     protected void onUserLeaveHint(){
+
         sfx.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
             @Override
             public void onCompletion(MediaPlayer mp) {
@@ -80,6 +82,20 @@ public class LessonIntroCounting extends AppCompatActivity {
             }
         });
 
+        videoViewICN.pause();
+        currentPosition = videoViewICN.getCurrentPosition();
+
         super.onUserLeaveHint();
+
+    }
+
+    @Override
+    protected void onResume(){
+
+        videoViewICN.seekTo(currentPosition);
+        videoViewICN.start();
+
+        super.onResume();
+
     }
 }

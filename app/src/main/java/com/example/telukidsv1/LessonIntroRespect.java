@@ -19,6 +19,7 @@ public class LessonIntroRespect extends AppCompatActivity {
     String videoPathIR;
     Uri uriIR;
     MediaPlayer sfx;
+    int currentPosition;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -75,6 +76,7 @@ public class LessonIntroRespect extends AppCompatActivity {
 
     @Override
     protected void onUserLeaveHint(){
+
         sfx.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
             @Override
             public void onCompletion(MediaPlayer mp) {
@@ -82,6 +84,20 @@ public class LessonIntroRespect extends AppCompatActivity {
             }
         });
 
+        videoViewIR.pause();
+        currentPosition = videoViewIR.getCurrentPosition();
+
         super.onUserLeaveHint();
+
+    }
+
+    @Override
+    protected void onResume(){
+
+        videoViewIR.seekTo(currentPosition);
+        videoViewIR.start();
+
+        super.onResume();
+
     }
 }

@@ -19,6 +19,7 @@ public class LessonSociability extends AppCompatActivity {
     ImageButton backbtnSC36,nextbtnSC36;
     MediaController mediaController;
     MediaPlayer sfx;
+    int currentPosition;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -58,6 +59,8 @@ public class LessonSociability extends AppCompatActivity {
             @Override
             public void onCompletion(MediaPlayer mp) {
 
+                sfx.start();
+
                 videoViewSC36.stopPlayback();
                 sociability2();
 
@@ -69,6 +72,7 @@ public class LessonSociability extends AppCompatActivity {
             public void onClick(View v) {
 
                 sfx.start();
+
                 videoViewSC36.stopPlayback();
                 startActivity(new Intent(LessonSociability.this,ChooseModeSociability.class));
 
@@ -80,6 +84,7 @@ public class LessonSociability extends AppCompatActivity {
             public void onClick(View v) {
 
                 sfx.start();
+
                 videoViewSC36.stopPlayback();
                 sociability2();
 
@@ -96,15 +101,17 @@ public class LessonSociability extends AppCompatActivity {
         videoViewSC36.setOnPreparedListener(new MediaPlayer.OnPreparedListener() {
             @Override
             public void onPrepared(MediaPlayer mp) {
-                
+
                 videoViewSC36.start();
-                
+
             }
         });
 
         videoViewSC36.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
             @Override
             public void onCompletion(MediaPlayer mp) {
+
+                sfx.start();
 
                 videoViewSC36.stopPlayback();
                 sociability3();
@@ -117,6 +124,7 @@ public class LessonSociability extends AppCompatActivity {
             public void onClick(View v) {
 
                 sfx.start();
+
                 videoViewSC36.stopPlayback();
                 sociability1();
 
@@ -128,6 +136,7 @@ public class LessonSociability extends AppCompatActivity {
             public void onClick(View v) {
 
                 sfx.start();
+
                 videoViewSC36.stopPlayback();
                 sociability3();
 
@@ -144,15 +153,17 @@ public class LessonSociability extends AppCompatActivity {
         videoViewSC36.setOnPreparedListener(new MediaPlayer.OnPreparedListener() {
             @Override
             public void onPrepared(MediaPlayer mp) {
-                
+
                 videoViewSC36.start();
-                
+
             }
         });
 
         videoViewSC36.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
             @Override
             public void onCompletion(MediaPlayer mp) {
+
+                sfx.start();
 
                 videoViewSC36.stopPlayback();
                 sociability4();
@@ -165,6 +176,7 @@ public class LessonSociability extends AppCompatActivity {
             public void onClick(View v) {
 
                 sfx.start();
+
                 videoViewSC36.stopPlayback();
                 sociability2();
 
@@ -176,6 +188,7 @@ public class LessonSociability extends AppCompatActivity {
             public void onClick(View v) {
 
                 sfx.start();
+
                 videoViewSC36.stopPlayback();
                 sociability4();
 
@@ -192,15 +205,17 @@ public class LessonSociability extends AppCompatActivity {
         videoViewSC36.setOnPreparedListener(new MediaPlayer.OnPreparedListener() {
             @Override
             public void onPrepared(MediaPlayer mp) {
-                
+
                 videoViewSC36.start();
-                
+
             }
         });
 
         videoViewSC36.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
             @Override
             public void onCompletion(MediaPlayer mp) {
+
+                sfx.start();
 
                 videoViewSC36.stopPlayback();
                 startActivity(new Intent(LessonSociability.this, SociabilityLessonCongrats.class));
@@ -213,6 +228,7 @@ public class LessonSociability extends AppCompatActivity {
             public void onClick(View v) {
 
                 sfx.start();
+
                 videoViewSC36.stopPlayback();
                 sociability3();
 
@@ -224,6 +240,7 @@ public class LessonSociability extends AppCompatActivity {
             public void onClick(View v) {
 
                 sfx.start();
+
                 videoViewSC36.stopPlayback();
                 startActivity(new Intent(LessonSociability.this, SociabilityLessonCongrats.class));
 
@@ -233,13 +250,30 @@ public class LessonSociability extends AppCompatActivity {
 
     @Override
     protected void onUserLeaveHint(){
+
         sfx.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
             @Override
             public void onCompletion(MediaPlayer mp) {
+
                 sfx.release();
+
             }
         });
 
+        videoViewSC36.pause();
+        currentPosition = videoViewSC36.getCurrentPosition();
+
         super.onUserLeaveHint();
+
+    }
+
+    @Override
+    protected void onResume(){
+
+        videoViewSC36.seekTo(currentPosition);
+        videoViewSC36.start();
+
+        super.onResume();
+
     }
 }

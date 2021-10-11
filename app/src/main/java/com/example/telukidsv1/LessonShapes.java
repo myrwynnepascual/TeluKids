@@ -19,6 +19,7 @@ public class LessonShapes extends AppCompatActivity {
     ImageButton backbtnCPG1,nextbtnCPG1;
     MediaController mediaController;
     MediaPlayer sfx;
+    int currentPosition;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -60,6 +61,8 @@ public class LessonShapes extends AppCompatActivity {
             @Override
             public void onCompletion(MediaPlayer mp) {
 
+                sfx.start();
+
                 videoViewCPG1.stopPlayback();
                 circle2();
 
@@ -71,6 +74,7 @@ public class LessonShapes extends AppCompatActivity {
             public void onClick(View v) {
 
                 sfx.start();
+
                 videoViewCPG1.stopPlayback();
                 startActivity(new Intent(LessonShapes.this,ChooseModeShapes.class));
 
@@ -82,6 +86,7 @@ public class LessonShapes extends AppCompatActivity {
             public void onClick(View v) {
 
                 sfx.start();
+
                 videoViewCPG1.stopPlayback();
                 circle2();
 
@@ -109,6 +114,8 @@ public class LessonShapes extends AppCompatActivity {
             @Override
             public void onCompletion(MediaPlayer mp) {
 
+                sfx.start();
+
                 videoViewCPG1.stopPlayback();
                 circle3();
 
@@ -120,6 +127,7 @@ public class LessonShapes extends AppCompatActivity {
             public void onClick(View v) {
 
                 sfx.start();
+
                 videoViewCPG1.stopPlayback();
                 circle1();
 
@@ -131,6 +139,7 @@ public class LessonShapes extends AppCompatActivity {
             public void onClick(View v) {
 
                 sfx.start();
+
                 videoViewCPG1.stopPlayback();
                 circle3();
 
@@ -158,6 +167,8 @@ public class LessonShapes extends AppCompatActivity {
             @Override
             public void onCompletion(MediaPlayer mp) {
 
+                sfx.start();
+
                 videoViewCPG1.stopPlayback();
                 circle4();
 
@@ -169,6 +180,7 @@ public class LessonShapes extends AppCompatActivity {
             public void onClick(View v) {
 
                 sfx.start();
+
                 videoViewCPG1.stopPlayback();
                 circle2();
 
@@ -180,6 +192,7 @@ public class LessonShapes extends AppCompatActivity {
             public void onClick(View v) {
 
                 sfx.start();
+
                 videoViewCPG1.stopPlayback();
                 circle4();
 
@@ -207,6 +220,8 @@ public class LessonShapes extends AppCompatActivity {
             @Override
             public void onCompletion(MediaPlayer mp) {
 
+                sfx.start();
+
                 videoViewCPG1.stopPlayback();
                 circle5();
 
@@ -218,6 +233,7 @@ public class LessonShapes extends AppCompatActivity {
             public void onClick(View v) {
 
                 sfx.start();
+
                 videoViewCPG1.stopPlayback();
                 circle3();
 
@@ -229,6 +245,7 @@ public class LessonShapes extends AppCompatActivity {
             public void onClick(View v) {
 
                 sfx.start();
+
                 videoViewCPG1.stopPlayback();
                 circle5();
 
@@ -256,6 +273,8 @@ public class LessonShapes extends AppCompatActivity {
             @Override
             public void onCompletion(MediaPlayer mp) {
 
+                sfx.start();
+
                 videoViewCPG1.stopPlayback();
                 circle6();
 
@@ -267,6 +286,7 @@ public class LessonShapes extends AppCompatActivity {
             public void onClick(View v) {
 
                 sfx.start();
+
                 videoViewCPG1.stopPlayback();
                 circle4();
 
@@ -278,6 +298,7 @@ public class LessonShapes extends AppCompatActivity {
             public void onClick(View v) {
 
                 sfx.start();
+
                 videoViewCPG1.stopPlayback();
                 circle6();
 
@@ -305,6 +326,8 @@ public class LessonShapes extends AppCompatActivity {
             @Override
             public void onCompletion(MediaPlayer mp) {
 
+                sfx.start();
+
                 videoViewCPG1.stopPlayback();
                 square1();
 
@@ -316,6 +339,7 @@ public class LessonShapes extends AppCompatActivity {
             public void onClick(View v) {
 
                 sfx.start();
+
                 videoViewCPG1.stopPlayback();
                 circle5();
 
@@ -327,6 +351,7 @@ public class LessonShapes extends AppCompatActivity {
             public void onClick(View v) {
 
                 sfx.start();
+
                 videoViewCPG1.stopPlayback();
                 square1();
 
@@ -354,6 +379,8 @@ public class LessonShapes extends AppCompatActivity {
             @Override
             public void onCompletion(MediaPlayer mp) {
 
+                sfx.start();
+
                 videoViewCPG1.stopPlayback();
                 square2();
 
@@ -365,6 +392,7 @@ public class LessonShapes extends AppCompatActivity {
             public void onClick(View v) {
 
                 sfx.start();
+
                 videoViewCPG1.stopPlayback();
                 circle6();
 
@@ -376,6 +404,7 @@ public class LessonShapes extends AppCompatActivity {
             public void onClick(View v) {
 
                 sfx.start();
+
                 videoViewCPG1.stopPlayback();
                 square2();
 
@@ -403,6 +432,8 @@ public class LessonShapes extends AppCompatActivity {
             @Override
             public void onCompletion(MediaPlayer mp) {
 
+                sfx.start();
+
                 videoViewCPG1.stopPlayback();
                 square3();
 
@@ -414,6 +445,7 @@ public class LessonShapes extends AppCompatActivity {
             public void onClick(View v) {
 
                 sfx.start();
+
                 videoViewCPG1.stopPlayback();
                 square1();
 
@@ -425,6 +457,7 @@ public class LessonShapes extends AppCompatActivity {
             public void onClick(View v) {
 
                 sfx.start();
+
                 videoViewCPG1.stopPlayback();
                 square3();
 
@@ -452,6 +485,8 @@ public class LessonShapes extends AppCompatActivity {
             @Override
             public void onCompletion(MediaPlayer mp) {
 
+                sfx.start();
+
                 videoViewCPG1.stopPlayback();
                 square4();
 
@@ -463,6 +498,7 @@ public class LessonShapes extends AppCompatActivity {
             public void onClick(View v) {
 
                 sfx.start();
+
                 videoViewCPG1.stopPlayback();
                 square2();
 
@@ -474,6 +510,7 @@ public class LessonShapes extends AppCompatActivity {
             public void onClick(View v) {
 
                 sfx.start();
+
                 videoViewCPG1.stopPlayback();
                 square4();
 
@@ -501,6 +538,8 @@ public class LessonShapes extends AppCompatActivity {
             @Override
             public void onCompletion(MediaPlayer mp) {
 
+                sfx.start();
+
                 videoViewCPG1.stopPlayback();
                 square5();
 
@@ -512,6 +551,7 @@ public class LessonShapes extends AppCompatActivity {
             public void onClick(View v) {
 
                 sfx.start();
+
                 videoViewCPG1.stopPlayback();
                 square3();
 
@@ -523,6 +563,7 @@ public class LessonShapes extends AppCompatActivity {
             public void onClick(View v) {
 
                 sfx.start();
+
                 videoViewCPG1.stopPlayback();
                 square5();
 
@@ -550,6 +591,8 @@ public class LessonShapes extends AppCompatActivity {
             @Override
             public void onCompletion(MediaPlayer mp) {
 
+                sfx.start();
+
                 videoViewCPG1.stopPlayback();
                 square6();
 
@@ -561,6 +604,7 @@ public class LessonShapes extends AppCompatActivity {
             public void onClick(View v) {
 
                 sfx.start();
+
                 videoViewCPG1.stopPlayback();
                 square4();
 
@@ -572,6 +616,7 @@ public class LessonShapes extends AppCompatActivity {
             public void onClick(View v) {
 
                 sfx.start();
+
                 videoViewCPG1.stopPlayback();
                 square6();
 
@@ -599,6 +644,8 @@ public class LessonShapes extends AppCompatActivity {
             @Override
             public void onCompletion(MediaPlayer mp) {
 
+                sfx.start();
+
                 videoViewCPG1.stopPlayback();
                 triangle1();
 
@@ -610,6 +657,7 @@ public class LessonShapes extends AppCompatActivity {
             public void onClick(View v) {
 
                 sfx.start();
+
                 videoViewCPG1.stopPlayback();
                 square5();
 
@@ -621,6 +669,7 @@ public class LessonShapes extends AppCompatActivity {
             public void onClick(View v) {
 
                 sfx.start();
+
                 videoViewCPG1.stopPlayback();
                 triangle1();
 
@@ -648,6 +697,8 @@ public class LessonShapes extends AppCompatActivity {
             @Override
             public void onCompletion(MediaPlayer mp) {
 
+                sfx.start();
+
                 videoViewCPG1.stopPlayback();
                 triangle2();
 
@@ -659,6 +710,7 @@ public class LessonShapes extends AppCompatActivity {
             public void onClick(View v) {
 
                 sfx.start();
+
                 videoViewCPG1.stopPlayback();
                 square6();
 
@@ -670,6 +722,7 @@ public class LessonShapes extends AppCompatActivity {
             public void onClick(View v) {
 
                 sfx.start();
+
                 videoViewCPG1.stopPlayback();
                 triangle2();
 
@@ -697,6 +750,8 @@ public class LessonShapes extends AppCompatActivity {
             @Override
             public void onCompletion(MediaPlayer mp) {
 
+                sfx.start();
+
                 videoViewCPG1.stopPlayback();
                 triangle3();
 
@@ -708,6 +763,7 @@ public class LessonShapes extends AppCompatActivity {
             public void onClick(View v) {
 
                 sfx.start();
+
                 videoViewCPG1.stopPlayback();
                 triangle1();
 
@@ -719,6 +775,7 @@ public class LessonShapes extends AppCompatActivity {
             public void onClick(View v) {
 
                 sfx.start();
+
                 videoViewCPG1.stopPlayback();
                 triangle3();
 
@@ -746,6 +803,8 @@ public class LessonShapes extends AppCompatActivity {
             @Override
             public void onCompletion(MediaPlayer mp) {
 
+                sfx.start();
+
                 videoViewCPG1.stopPlayback();
                 triangle4();
 
@@ -757,6 +816,7 @@ public class LessonShapes extends AppCompatActivity {
             public void onClick(View v) {
 
                 sfx.start();
+
                 videoViewCPG1.stopPlayback();
                 triangle2();
 
@@ -768,6 +828,7 @@ public class LessonShapes extends AppCompatActivity {
             public void onClick(View v) {
 
                 sfx.start();
+
                 videoViewCPG1.stopPlayback();
                 triangle4();
 
@@ -795,6 +856,8 @@ public class LessonShapes extends AppCompatActivity {
             @Override
             public void onCompletion(MediaPlayer mp) {
 
+                sfx.start();
+
                 videoViewCPG1.stopPlayback();
                 triangle5();
 
@@ -806,6 +869,7 @@ public class LessonShapes extends AppCompatActivity {
             public void onClick(View v) {
 
                 sfx.start();
+
                 videoViewCPG1.stopPlayback();
                 triangle3();
 
@@ -817,6 +881,7 @@ public class LessonShapes extends AppCompatActivity {
             public void onClick(View v) {
 
                 sfx.start();
+
                 videoViewCPG1.stopPlayback();
                 triangle5();
 
@@ -844,6 +909,8 @@ public class LessonShapes extends AppCompatActivity {
             @Override
             public void onCompletion(MediaPlayer mp) {
 
+                sfx.start();
+
                 videoViewCPG1.stopPlayback();
                 triangle6();
 
@@ -855,6 +922,7 @@ public class LessonShapes extends AppCompatActivity {
             public void onClick(View v) {
 
                 sfx.start();
+
                 videoViewCPG1.stopPlayback();
                 triangle4();
 
@@ -866,6 +934,7 @@ public class LessonShapes extends AppCompatActivity {
             public void onClick(View v) {
 
                 sfx.start();
+
                 videoViewCPG1.stopPlayback();
                 triangle6();
 
@@ -893,6 +962,8 @@ public class LessonShapes extends AppCompatActivity {
             @Override
             public void onCompletion(MediaPlayer mp) {
 
+                sfx.start();
+
                 videoViewCPG1.stopPlayback();
                 star1();
 
@@ -904,6 +975,7 @@ public class LessonShapes extends AppCompatActivity {
             public void onClick(View v) {
 
                 sfx.start();
+
                 videoViewCPG1.stopPlayback();
                 triangle5();
 
@@ -915,6 +987,7 @@ public class LessonShapes extends AppCompatActivity {
             public void onClick(View v) {
 
                 sfx.start();
+
                 videoViewCPG1.stopPlayback();
                 star1();
 
@@ -942,6 +1015,8 @@ public class LessonShapes extends AppCompatActivity {
             @Override
             public void onCompletion(MediaPlayer mp) {
 
+                sfx.start();
+
                 videoViewCPG1.stopPlayback();
                 star2();
 
@@ -953,6 +1028,7 @@ public class LessonShapes extends AppCompatActivity {
             public void onClick(View v) {
 
                 sfx.start();
+
                 videoViewCPG1.stopPlayback();
                 triangle6();
 
@@ -964,6 +1040,7 @@ public class LessonShapes extends AppCompatActivity {
             public void onClick(View v) {
 
                 sfx.start();
+
                 videoViewCPG1.stopPlayback();
                 star2();
 
@@ -991,6 +1068,8 @@ public class LessonShapes extends AppCompatActivity {
             @Override
             public void onCompletion(MediaPlayer mp) {
 
+                sfx.start();
+
                 videoViewCPG1.stopPlayback();
                 star3();
 
@@ -1002,6 +1081,7 @@ public class LessonShapes extends AppCompatActivity {
             public void onClick(View v) {
 
                 sfx.start();
+
                 videoViewCPG1.stopPlayback();
                 star1();
 
@@ -1013,6 +1093,7 @@ public class LessonShapes extends AppCompatActivity {
             public void onClick(View v) {
 
                 sfx.start();
+
                 videoViewCPG1.stopPlayback();
                 star3();
 
@@ -1040,6 +1121,8 @@ public class LessonShapes extends AppCompatActivity {
             @Override
             public void onCompletion(MediaPlayer mp) {
 
+                sfx.start();
+
                 videoViewCPG1.stopPlayback();
                 star4();
 
@@ -1051,6 +1134,7 @@ public class LessonShapes extends AppCompatActivity {
             public void onClick(View v) {
 
                 sfx.start();
+
                 videoViewCPG1.stopPlayback();
                 star2();
 
@@ -1062,6 +1146,7 @@ public class LessonShapes extends AppCompatActivity {
             public void onClick(View v) {
 
                 sfx.start();
+
                 videoViewCPG1.stopPlayback();
                 star4();
 
@@ -1089,6 +1174,8 @@ public class LessonShapes extends AppCompatActivity {
             @Override
             public void onCompletion(MediaPlayer mp) {
 
+                sfx.start();
+
                 videoViewCPG1.stopPlayback();
                 star5();
 
@@ -1100,6 +1187,7 @@ public class LessonShapes extends AppCompatActivity {
             public void onClick(View v) {
 
                 sfx.start();
+
                 videoViewCPG1.stopPlayback();
                 star3();
 
@@ -1111,6 +1199,7 @@ public class LessonShapes extends AppCompatActivity {
             public void onClick(View v) {
 
                 sfx.start();
+
                 videoViewCPG1.stopPlayback();
                 star5();
 
@@ -1138,6 +1227,8 @@ public class LessonShapes extends AppCompatActivity {
             @Override
             public void onCompletion(MediaPlayer mp) {
 
+                sfx.start();
+
                 videoViewCPG1.stopPlayback();
                 star6();
 
@@ -1149,6 +1240,7 @@ public class LessonShapes extends AppCompatActivity {
             public void onClick(View v) {
 
                 sfx.start();
+
                 videoViewCPG1.stopPlayback();
                 star4();
 
@@ -1160,6 +1252,7 @@ public class LessonShapes extends AppCompatActivity {
             public void onClick(View v) {
 
                 sfx.start();
+
                 videoViewCPG1.stopPlayback();
                 star6();
 
@@ -1187,6 +1280,8 @@ public class LessonShapes extends AppCompatActivity {
             @Override
             public void onCompletion(MediaPlayer mp) {
 
+                sfx.start();
+
                 videoViewCPG1.stopPlayback();
                 heart1();
 
@@ -1198,6 +1293,7 @@ public class LessonShapes extends AppCompatActivity {
             public void onClick(View v) {
 
                 sfx.start();
+
                 videoViewCPG1.stopPlayback();
                 star5();
 
@@ -1209,6 +1305,7 @@ public class LessonShapes extends AppCompatActivity {
             public void onClick(View v) {
 
                 sfx.start();
+
                 videoViewCPG1.stopPlayback();
                 heart1();
 
@@ -1236,6 +1333,8 @@ public class LessonShapes extends AppCompatActivity {
             @Override
             public void onCompletion(MediaPlayer mp) {
 
+                sfx.start();
+
                 videoViewCPG1.stopPlayback();
                 heart2();
 
@@ -1247,6 +1346,7 @@ public class LessonShapes extends AppCompatActivity {
             public void onClick(View v) {
 
                 sfx.start();
+
                 videoViewCPG1.stopPlayback();
                 star6();
 
@@ -1258,6 +1358,7 @@ public class LessonShapes extends AppCompatActivity {
             public void onClick(View v) {
 
                 sfx.start();
+
                 videoViewCPG1.stopPlayback();
                 heart2();
 
@@ -1285,6 +1386,8 @@ public class LessonShapes extends AppCompatActivity {
             @Override
             public void onCompletion(MediaPlayer mp) {
 
+                sfx.start();
+
                 videoViewCPG1.stopPlayback();
                 heart3();
 
@@ -1296,6 +1399,7 @@ public class LessonShapes extends AppCompatActivity {
             public void onClick(View v) {
 
                 sfx.start();
+
                 videoViewCPG1.stopPlayback();
                 heart1();
 
@@ -1307,6 +1411,7 @@ public class LessonShapes extends AppCompatActivity {
             public void onClick(View v) {
 
                 sfx.start();
+
                 videoViewCPG1.stopPlayback();
                 heart3();
 
@@ -1334,6 +1439,8 @@ public class LessonShapes extends AppCompatActivity {
             @Override
             public void onCompletion(MediaPlayer mp) {
 
+                sfx.start();
+
                 videoViewCPG1.stopPlayback();
                 heart4();
 
@@ -1345,6 +1452,7 @@ public class LessonShapes extends AppCompatActivity {
             public void onClick(View v) {
 
                 sfx.start();
+
                 videoViewCPG1.stopPlayback();
                 heart2();
 
@@ -1356,6 +1464,7 @@ public class LessonShapes extends AppCompatActivity {
             public void onClick(View v) {
 
                 sfx.start();
+
                 videoViewCPG1.stopPlayback();
                 heart4();
 
@@ -1383,6 +1492,8 @@ public class LessonShapes extends AppCompatActivity {
             @Override
             public void onCompletion(MediaPlayer mp) {
 
+                sfx.start();
+
                 videoViewCPG1.stopPlayback();
                 heart5();
 
@@ -1394,6 +1505,7 @@ public class LessonShapes extends AppCompatActivity {
             public void onClick(View v) {
 
                 sfx.start();
+
                 videoViewCPG1.stopPlayback();
                 heart3();
 
@@ -1405,6 +1517,7 @@ public class LessonShapes extends AppCompatActivity {
             public void onClick(View v) {
 
                 sfx.start();
+
                 videoViewCPG1.stopPlayback();
                 heart5();
 
@@ -1432,6 +1545,8 @@ public class LessonShapes extends AppCompatActivity {
             @Override
             public void onCompletion(MediaPlayer mp) {
 
+                sfx.start();
+
                 videoViewCPG1.stopPlayback();
                 heart6();
 
@@ -1443,6 +1558,7 @@ public class LessonShapes extends AppCompatActivity {
             public void onClick(View v) {
 
                 sfx.start();
+
                 videoViewCPG1.stopPlayback();
                 heart4();
 
@@ -1454,6 +1570,7 @@ public class LessonShapes extends AppCompatActivity {
             public void onClick(View v) {
 
                 sfx.start();
+
                 videoViewCPG1.stopPlayback();
                 heart6();
 
@@ -1481,6 +1598,8 @@ public class LessonShapes extends AppCompatActivity {
             @Override
             public void onCompletion(MediaPlayer mp) {
 
+                sfx.start();
+
                 videoViewCPG1.stopPlayback();
                 rectangle1();
 
@@ -1492,6 +1611,7 @@ public class LessonShapes extends AppCompatActivity {
             public void onClick(View v) {
 
                 sfx.start();
+
                 videoViewCPG1.stopPlayback();
                 heart5();
 
@@ -1503,6 +1623,7 @@ public class LessonShapes extends AppCompatActivity {
             public void onClick(View v) {
 
                 sfx.start();
+
                 videoViewCPG1.stopPlayback();
                 rectangle1();
 
@@ -1530,6 +1651,8 @@ public class LessonShapes extends AppCompatActivity {
             @Override
             public void onCompletion(MediaPlayer mp) {
 
+                sfx.start();
+
                 videoViewCPG1.stopPlayback();
                 rectangle2();
 
@@ -1541,6 +1664,7 @@ public class LessonShapes extends AppCompatActivity {
             public void onClick(View v) {
 
                 sfx.start();
+
                 videoViewCPG1.stopPlayback();
                 heart6();
 
@@ -1552,6 +1676,7 @@ public class LessonShapes extends AppCompatActivity {
             public void onClick(View v) {
 
                 sfx.start();
+
                 videoViewCPG1.stopPlayback();
                 rectangle2();
 
@@ -1579,6 +1704,8 @@ public class LessonShapes extends AppCompatActivity {
             @Override
             public void onCompletion(MediaPlayer mp) {
 
+                sfx.start();
+
                 videoViewCPG1.stopPlayback();
                 rectangle3();
 
@@ -1590,6 +1717,7 @@ public class LessonShapes extends AppCompatActivity {
             public void onClick(View v) {
 
                 sfx.start();
+
                 videoViewCPG1.stopPlayback();
                 rectangle1();
 
@@ -1601,6 +1729,7 @@ public class LessonShapes extends AppCompatActivity {
             public void onClick(View v) {
 
                 sfx.start();
+
                 videoViewCPG1.stopPlayback();
                 rectangle3();
 
@@ -1628,6 +1757,8 @@ public class LessonShapes extends AppCompatActivity {
             @Override
             public void onCompletion(MediaPlayer mp) {
 
+                sfx.start();
+
                 videoViewCPG1.stopPlayback();
                 rectangle4();
 
@@ -1639,6 +1770,7 @@ public class LessonShapes extends AppCompatActivity {
             public void onClick(View v) {
 
                 sfx.start();
+
                 videoViewCPG1.stopPlayback();
                 rectangle2();
 
@@ -1650,6 +1782,7 @@ public class LessonShapes extends AppCompatActivity {
             public void onClick(View v) {
 
                 sfx.start();
+
                 videoViewCPG1.stopPlayback();
                 rectangle4();
 
@@ -1677,6 +1810,8 @@ public class LessonShapes extends AppCompatActivity {
             @Override
             public void onCompletion(MediaPlayer mp) {
 
+                sfx.start();
+
                 videoViewCPG1.stopPlayback();
                 rectangle5();
 
@@ -1688,6 +1823,7 @@ public class LessonShapes extends AppCompatActivity {
             public void onClick(View v) {
 
                 sfx.start();
+
                 videoViewCPG1.stopPlayback();
                 rectangle3();
 
@@ -1699,6 +1835,7 @@ public class LessonShapes extends AppCompatActivity {
             public void onClick(View v) {
 
                 sfx.start();
+
                 videoViewCPG1.stopPlayback();
                 rectangle5();
 
@@ -1726,6 +1863,8 @@ public class LessonShapes extends AppCompatActivity {
             @Override
             public void onCompletion(MediaPlayer mp) {
 
+                sfx.start();
+
                 videoViewCPG1.stopPlayback();
                 rectangle6();
 
@@ -1737,6 +1876,7 @@ public class LessonShapes extends AppCompatActivity {
             public void onClick(View v) {
 
                 sfx.start();
+
                 videoViewCPG1.stopPlayback();
                 rectangle4();
 
@@ -1748,6 +1888,7 @@ public class LessonShapes extends AppCompatActivity {
             public void onClick(View v) {
 
                 sfx.start();
+
                 videoViewCPG1.stopPlayback();
                 rectangle6();
 
@@ -1775,6 +1916,8 @@ public class LessonShapes extends AppCompatActivity {
             @Override
             public void onCompletion(MediaPlayer mp) {
 
+                sfx.start();
+
                 videoViewCPG1.stopPlayback();
                 diamond1();
 
@@ -1786,6 +1929,7 @@ public class LessonShapes extends AppCompatActivity {
             public void onClick(View v) {
 
                 sfx.start();
+
                 videoViewCPG1.stopPlayback();
                 rectangle5();
 
@@ -1797,6 +1941,7 @@ public class LessonShapes extends AppCompatActivity {
             public void onClick(View v) {
 
                 sfx.start();
+
                 videoViewCPG1.stopPlayback();
                 diamond1();
 
@@ -1824,6 +1969,8 @@ public class LessonShapes extends AppCompatActivity {
             @Override
             public void onCompletion(MediaPlayer mp) {
 
+                sfx.start();
+
                 videoViewCPG1.stopPlayback();
                 diamond2();
 
@@ -1835,6 +1982,7 @@ public class LessonShapes extends AppCompatActivity {
             public void onClick(View v) {
 
                 sfx.start();
+
                 videoViewCPG1.stopPlayback();
                 rectangle6();
 
@@ -1846,6 +1994,7 @@ public class LessonShapes extends AppCompatActivity {
             public void onClick(View v) {
 
                 sfx.start();
+
                 videoViewCPG1.stopPlayback();
                 diamond2();
 
@@ -1873,6 +2022,8 @@ public class LessonShapes extends AppCompatActivity {
             @Override
             public void onCompletion(MediaPlayer mp) {
 
+                sfx.start();
+
                 videoViewCPG1.stopPlayback();
                 diamond3();
 
@@ -1884,6 +2035,7 @@ public class LessonShapes extends AppCompatActivity {
             public void onClick(View v) {
 
                 sfx.start();
+
                 videoViewCPG1.stopPlayback();
                 diamond1();
 
@@ -1895,6 +2047,7 @@ public class LessonShapes extends AppCompatActivity {
             public void onClick(View v) {
 
                 sfx.start();
+
                 videoViewCPG1.stopPlayback();
                 diamond3();
 
@@ -1922,6 +2075,8 @@ public class LessonShapes extends AppCompatActivity {
             @Override
             public void onCompletion(MediaPlayer mp) {
 
+                sfx.start();
+
                 videoViewCPG1.stopPlayback();
                 diamond4();
 
@@ -1933,6 +2088,7 @@ public class LessonShapes extends AppCompatActivity {
             public void onClick(View v) {
 
                 sfx.start();
+
                 videoViewCPG1.stopPlayback();
                 diamond2();
 
@@ -1944,6 +2100,7 @@ public class LessonShapes extends AppCompatActivity {
             public void onClick(View v) {
 
                 sfx.start();
+
                 videoViewCPG1.stopPlayback();
                 diamond4();
 
@@ -1971,6 +2128,8 @@ public class LessonShapes extends AppCompatActivity {
             @Override
             public void onCompletion(MediaPlayer mp) {
 
+                sfx.start();
+
                 videoViewCPG1.stopPlayback();
                 diamond5();
 
@@ -1982,6 +2141,7 @@ public class LessonShapes extends AppCompatActivity {
             public void onClick(View v) {
 
                 sfx.start();
+
                 videoViewCPG1.stopPlayback();
                 diamond3();
 
@@ -1993,6 +2153,7 @@ public class LessonShapes extends AppCompatActivity {
             public void onClick(View v) {
 
                 sfx.start();
+
                 videoViewCPG1.stopPlayback();
                 diamond5();
 
@@ -2020,6 +2181,8 @@ public class LessonShapes extends AppCompatActivity {
             @Override
             public void onCompletion(MediaPlayer mp) {
 
+                sfx.start();
+
                 videoViewCPG1.stopPlayback();
                 diamond6();
 
@@ -2031,6 +2194,7 @@ public class LessonShapes extends AppCompatActivity {
             public void onClick(View v) {
 
                 sfx.start();
+
                 videoViewCPG1.stopPlayback();
                 diamond4();
 
@@ -2042,6 +2206,7 @@ public class LessonShapes extends AppCompatActivity {
             public void onClick(View v) {
 
                 sfx.start();
+
                 videoViewCPG1.stopPlayback();
                 diamond6();
 
@@ -2069,6 +2234,8 @@ public class LessonShapes extends AppCompatActivity {
             @Override
             public void onCompletion(MediaPlayer mp) {
 
+                sfx.start();
+
                 videoViewCPG1.stopPlayback();
                 startActivity(new Intent(LessonShapes.this,ShapesLessonCongrats.class));
 
@@ -2080,6 +2247,7 @@ public class LessonShapes extends AppCompatActivity {
             public void onClick(View v) {
 
                 sfx.start();
+
                 videoViewCPG1.stopPlayback();
                 diamond5();
 
@@ -2091,6 +2259,7 @@ public class LessonShapes extends AppCompatActivity {
             public void onClick(View v) {
 
                 sfx.start();
+
                 videoViewCPG1.stopPlayback();
                 startActivity(new Intent(LessonShapes.this,ShapesLessonCongrats.class));
 
@@ -2100,13 +2269,30 @@ public class LessonShapes extends AppCompatActivity {
 
     @Override
     protected void onUserLeaveHint(){
+
         sfx.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
             @Override
             public void onCompletion(MediaPlayer mp) {
+
                 sfx.release();
+
             }
         });
 
+        videoViewCPG1.pause();
+        currentPosition = videoViewCPG1.getCurrentPosition();
+
         super.onUserLeaveHint();
+
+    }
+
+    @Override
+    protected void onResume(){
+
+        videoViewCPG1.seekTo(currentPosition);
+        videoViewCPG1.start();
+
+        super.onResume();
+
     }
 }

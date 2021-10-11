@@ -13,12 +13,13 @@ import android.widget.VideoView;
 
 public class LessonAddition extends AppCompatActivity {
 
-    VideoView videoViewAX = null;
+    VideoView videoViewAX;
     String videoPathAX;
     Uri uriAX;
     ImageButton backbtnAX,nextbtnAX;
     MediaController mediaController;
     MediaPlayer sfx;
+    int currentPosition;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -44,8 +45,7 @@ public class LessonAddition extends AppCompatActivity {
 
         videoPathAX = "android.resource://" + getPackageName() + "/" + R.raw.additionx;
         uriAX = Uri.parse(videoPathAX);
-        videoViewAX.setVideoURI(uriAX); 
-
+        videoViewAX.setVideoURI(uriAX);
         sfx = MediaPlayer.create(this, R.raw.btnsfx);
 
         videoViewAX.setOnPreparedListener(new MediaPlayer.OnPreparedListener() {
@@ -58,7 +58,10 @@ public class LessonAddition extends AppCompatActivity {
         videoViewAX.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
             @Override
             public void onCompletion(MediaPlayer mp) {
-
+                
+                sfx.start();
+                
+                sfx.start();
                 videoViewAX.stopPlayback();
                 additiony();
 
@@ -68,7 +71,7 @@ public class LessonAddition extends AppCompatActivity {
         backbtnAX.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                
                 sfx.start();
                 videoViewAX.stopPlayback();
                 startActivity(new Intent(LessonAddition.this,ChooseModeAddition.class));
@@ -79,7 +82,7 @@ public class LessonAddition extends AppCompatActivity {
         nextbtnAX.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                
                 sfx.start();
                 videoViewAX.stopPlayback();
                 additiony();
@@ -93,8 +96,7 @@ public class LessonAddition extends AppCompatActivity {
 
         videoPathAX = "android.resource://" + getPackageName() + "/" + R.raw.additiony;
         uriAX = Uri.parse(videoPathAX);
-        videoViewAX.setVideoURI(uriAX); 
-
+        videoViewAX.setVideoURI(uriAX);
         sfx = MediaPlayer.create(this, R.raw.btnsfx);
 
         videoViewAX.setOnPreparedListener(new MediaPlayer.OnPreparedListener() {
@@ -107,6 +109,8 @@ public class LessonAddition extends AppCompatActivity {
         videoViewAX.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
             @Override
             public void onCompletion(MediaPlayer mp) {
+                
+                sfx.start();
 
                 videoViewAX.stopPlayback();
                 addition1();
@@ -117,7 +121,7 @@ public class LessonAddition extends AppCompatActivity {
         backbtnAX.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                
                 sfx.start();
                 videoViewAX.stopPlayback();
                 additionx();
@@ -128,7 +132,7 @@ public class LessonAddition extends AppCompatActivity {
         nextbtnAX.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                
                 sfx.start();
                 videoViewAX.stopPlayback();
                 addition1();
@@ -142,7 +146,6 @@ public class LessonAddition extends AppCompatActivity {
         videoPathAX = "android.resource://" + getPackageName() + "/" + R.raw.addition1;
         uriAX = Uri.parse(videoPathAX);
         videoViewAX.setVideoURI(uriAX);
-
         sfx = MediaPlayer.create(this, R.raw.btnsfx);
 
         videoViewAX.setOnPreparedListener(new MediaPlayer.OnPreparedListener() {
@@ -155,6 +158,8 @@ public class LessonAddition extends AppCompatActivity {
         videoViewAX.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
             @Override
             public void onCompletion(MediaPlayer mp) {
+                
+                sfx.start();
 
                 videoViewAX.stopPlayback();
                 addition2();
@@ -165,7 +170,7 @@ public class LessonAddition extends AppCompatActivity {
         backbtnAX.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                
                 sfx.start();
                 videoViewAX.stopPlayback();
                 additionx();
@@ -176,7 +181,7 @@ public class LessonAddition extends AppCompatActivity {
         nextbtnAX.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                
                 sfx.start();
                 videoViewAX.stopPlayback();
                 addition2();
@@ -189,8 +194,7 @@ public class LessonAddition extends AppCompatActivity {
     public void addition2(){
         videoPathAX = "android.resource://" + getPackageName() + "/" + R.raw.addition2;
         uriAX = Uri.parse(videoPathAX);
-        videoViewAX.setVideoURI(uriAX); 
-
+        videoViewAX.setVideoURI(uriAX);
         sfx = MediaPlayer.create(this, R.raw.btnsfx);
 
         videoViewAX.setOnPreparedListener(new MediaPlayer.OnPreparedListener() {
@@ -203,6 +207,8 @@ public class LessonAddition extends AppCompatActivity {
         videoViewAX.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
             @Override
             public void onCompletion(MediaPlayer mp) {
+                
+                sfx.start();
 
                 videoViewAX.stopPlayback();
                 addition3();
@@ -213,7 +219,7 @@ public class LessonAddition extends AppCompatActivity {
         backbtnAX.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                
                 sfx.start();
                 videoViewAX.stopPlayback();
                 addition1();
@@ -224,7 +230,7 @@ public class LessonAddition extends AppCompatActivity {
         nextbtnAX.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                
                 sfx.start();
                 videoViewAX.stopPlayback();
                 addition3();
@@ -237,8 +243,7 @@ public class LessonAddition extends AppCompatActivity {
     public void addition3(){
         videoPathAX = "android.resource://" + getPackageName() + "/" + R.raw.addition3;
         uriAX = Uri.parse(videoPathAX);
-        videoViewAX.setVideoURI(uriAX); 
-
+        videoViewAX.setVideoURI(uriAX);
         sfx = MediaPlayer.create(this, R.raw.btnsfx);
 
         videoViewAX.setOnPreparedListener(new MediaPlayer.OnPreparedListener() {
@@ -251,6 +256,8 @@ public class LessonAddition extends AppCompatActivity {
         videoViewAX.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
             @Override
             public void onCompletion(MediaPlayer mp) {
+                
+                sfx.start();
 
                 videoViewAX.stopPlayback();
                 addition4();
@@ -261,7 +268,7 @@ public class LessonAddition extends AppCompatActivity {
         backbtnAX.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                
                 sfx.start();
                 videoViewAX.stopPlayback();
                 addition2();
@@ -272,7 +279,7 @@ public class LessonAddition extends AppCompatActivity {
         nextbtnAX.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                
                 sfx.start();
                 videoViewAX.stopPlayback();
                 addition4();
@@ -285,8 +292,7 @@ public class LessonAddition extends AppCompatActivity {
     public void addition4(){
         videoPathAX = "android.resource://" + getPackageName() + "/" + R.raw.addition4;
         uriAX = Uri.parse(videoPathAX);
-        videoViewAX.setVideoURI(uriAX); 
-
+        videoViewAX.setVideoURI(uriAX);
         sfx = MediaPlayer.create(this, R.raw.btnsfx);
 
         videoViewAX.setOnPreparedListener(new MediaPlayer.OnPreparedListener() {
@@ -299,6 +305,8 @@ public class LessonAddition extends AppCompatActivity {
         videoViewAX.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
             @Override
             public void onCompletion(MediaPlayer mp) {
+                
+                sfx.start();
 
                 videoViewAX.stopPlayback();
                 addition5();
@@ -308,7 +316,7 @@ public class LessonAddition extends AppCompatActivity {
         backbtnAX.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                
                 sfx.start();
                 videoViewAX.stopPlayback();
                 addition3();
@@ -319,7 +327,7 @@ public class LessonAddition extends AppCompatActivity {
         nextbtnAX.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                
                 sfx.start();
                 videoViewAX.stopPlayback();
                 addition5();
@@ -332,8 +340,7 @@ public class LessonAddition extends AppCompatActivity {
     public void addition5(){
         videoPathAX = "android.resource://" + getPackageName() + "/" + R.raw.addition5;
         uriAX = Uri.parse(videoPathAX);
-        videoViewAX.setVideoURI(uriAX); 
-
+        videoViewAX.setVideoURI(uriAX);
         sfx = MediaPlayer.create(this, R.raw.btnsfx);
 
         videoViewAX.setOnPreparedListener(new MediaPlayer.OnPreparedListener() {
@@ -346,6 +353,8 @@ public class LessonAddition extends AppCompatActivity {
         videoViewAX.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
             @Override
             public void onCompletion(MediaPlayer mp) {
+                
+                sfx.start();
 
                 videoViewAX.stopPlayback();
                 addition6();
@@ -356,7 +365,7 @@ public class LessonAddition extends AppCompatActivity {
         backbtnAX.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                
                 sfx.start();
                 videoViewAX.stopPlayback();
                 addition4();
@@ -367,7 +376,7 @@ public class LessonAddition extends AppCompatActivity {
         nextbtnAX.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                
                 sfx.start();
                 videoViewAX.stopPlayback();
                 addition6();
@@ -380,8 +389,7 @@ public class LessonAddition extends AppCompatActivity {
     public void addition6(){
         videoPathAX = "android.resource://" + getPackageName() + "/" + R.raw.addition6;
         uriAX = Uri.parse(videoPathAX);
-        videoViewAX.setVideoURI(uriAX); 
-
+        videoViewAX.setVideoURI(uriAX);
         sfx = MediaPlayer.create(this, R.raw.btnsfx);
 
         videoViewAX.setOnPreparedListener(new MediaPlayer.OnPreparedListener() {
@@ -394,6 +402,8 @@ public class LessonAddition extends AppCompatActivity {
         videoViewAX.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
             @Override
             public void onCompletion(MediaPlayer mp) {
+                
+                sfx.start();
 
                 videoViewAX.stopPlayback();
                 addition7();
@@ -404,7 +414,7 @@ public class LessonAddition extends AppCompatActivity {
         backbtnAX.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                
                 sfx.start();
                 videoViewAX.stopPlayback();
                 addition5();
@@ -415,7 +425,7 @@ public class LessonAddition extends AppCompatActivity {
         nextbtnAX.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                
                 sfx.start();
                 videoViewAX.stopPlayback();
                 addition7();
@@ -428,8 +438,7 @@ public class LessonAddition extends AppCompatActivity {
     public void addition7(){
         videoPathAX = "android.resource://" + getPackageName() + "/" + R.raw.addition7;
         uriAX = Uri.parse(videoPathAX);
-        videoViewAX.setVideoURI(uriAX); 
-
+        videoViewAX.setVideoURI(uriAX);
         sfx = MediaPlayer.create(this, R.raw.btnsfx);
 
         videoViewAX.setOnPreparedListener(new MediaPlayer.OnPreparedListener() {
@@ -442,6 +451,8 @@ public class LessonAddition extends AppCompatActivity {
         videoViewAX.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
             @Override
             public void onCompletion(MediaPlayer mp) {
+                
+                sfx.start();
 
                 videoViewAX.stopPlayback();
                 addition8();
@@ -452,7 +463,7 @@ public class LessonAddition extends AppCompatActivity {
         backbtnAX.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                
                 sfx.start();
                 videoViewAX.stopPlayback();
                 addition6();
@@ -463,7 +474,7 @@ public class LessonAddition extends AppCompatActivity {
         nextbtnAX.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                
                 sfx.start();
                 videoViewAX.stopPlayback();
                 addition8();
@@ -476,8 +487,7 @@ public class LessonAddition extends AppCompatActivity {
     public void addition8(){
         videoPathAX = "android.resource://" + getPackageName() + "/" + R.raw.addition8;
         uriAX = Uri.parse(videoPathAX);
-        videoViewAX.setVideoURI(uriAX); 
-
+        videoViewAX.setVideoURI(uriAX);
         sfx = MediaPlayer.create(this, R.raw.btnsfx);
 
         videoViewAX.setOnPreparedListener(new MediaPlayer.OnPreparedListener() {
@@ -490,6 +500,8 @@ public class LessonAddition extends AppCompatActivity {
         videoViewAX.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
             @Override
             public void onCompletion(MediaPlayer mp) {
+                
+                sfx.start();
 
                 videoViewAX.stopPlayback();
                 addition9();
@@ -500,7 +512,7 @@ public class LessonAddition extends AppCompatActivity {
         backbtnAX.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                
                 sfx.start();
                 videoViewAX.stopPlayback();
                 addition7();
@@ -511,7 +523,7 @@ public class LessonAddition extends AppCompatActivity {
         nextbtnAX.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                
                 sfx.start();
                 videoViewAX.stopPlayback();
                 addition9();
@@ -524,8 +536,7 @@ public class LessonAddition extends AppCompatActivity {
     public void addition9(){
         videoPathAX = "android.resource://" + getPackageName() + "/" + R.raw.addition9;
         uriAX = Uri.parse(videoPathAX);
-        videoViewAX.setVideoURI(uriAX); 
-
+        videoViewAX.setVideoURI(uriAX);
         sfx = MediaPlayer.create(this, R.raw.btnsfx);
 
         videoViewAX.setOnPreparedListener(new MediaPlayer.OnPreparedListener() {
@@ -538,6 +549,8 @@ public class LessonAddition extends AppCompatActivity {
         videoViewAX.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
             @Override
             public void onCompletion(MediaPlayer mp) {
+                
+                sfx.start();
 
                 videoViewAX.stopPlayback();
                 addition10();
@@ -548,7 +561,7 @@ public class LessonAddition extends AppCompatActivity {
         backbtnAX.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                
                 sfx.start();
                 videoViewAX.stopPlayback();
                 addition8();
@@ -559,7 +572,7 @@ public class LessonAddition extends AppCompatActivity {
         nextbtnAX.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                
                 sfx.start();
                 videoViewAX.stopPlayback();
                 addition10();
@@ -572,8 +585,7 @@ public class LessonAddition extends AppCompatActivity {
     public void addition10(){
         videoPathAX = "android.resource://" + getPackageName() + "/" + R.raw.addition10;
         uriAX = Uri.parse(videoPathAX);
-        videoViewAX.setVideoURI(uriAX); 
-
+        videoViewAX.setVideoURI(uriAX);
         sfx = MediaPlayer.create(this, R.raw.btnsfx);
 
         videoViewAX.setOnPreparedListener(new MediaPlayer.OnPreparedListener() {
@@ -586,7 +598,8 @@ public class LessonAddition extends AppCompatActivity {
         videoViewAX.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
             @Override
             public void onCompletion(MediaPlayer mp) {
-
+                
+                sfx.start();
                 videoViewAX.stopPlayback();
                 startActivity(new Intent(LessonAddition.this,AdditionLessonCongrats.class));
 
@@ -596,7 +609,7 @@ public class LessonAddition extends AppCompatActivity {
         backbtnAX.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                
                 sfx.start();
                 videoViewAX.stopPlayback();
                 addition9();
@@ -607,7 +620,7 @@ public class LessonAddition extends AppCompatActivity {
         nextbtnAX.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                
                 sfx.start();
                 videoViewAX.stopPlayback();
                 startActivity(new Intent(LessonAddition.this,AdditionLessonCongrats.class));
@@ -619,13 +632,30 @@ public class LessonAddition extends AppCompatActivity {
 
     @Override
     protected void onUserLeaveHint(){
+        
         sfx.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
             @Override
             public void onCompletion(MediaPlayer mp) {
                 sfx.release();
             }
         });
+        
+        videoViewAX.pause();
+        currentPosition = videoViewAX.getCurrentPosition();
 
         super.onUserLeaveHint();
+
     }
+
+    @Override
+    protected void onResume(){
+
+        videoViewAX.seekTo(currentPosition);
+        videoViewAX.start();
+
+        super.onResume();
+
+    }
+
+
 }

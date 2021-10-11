@@ -19,7 +19,8 @@ public class LessonResponsibility extends AppCompatActivity {
     ImageButton backbtnRP79,nextbtnRP79;
     MediaController mediaController;
     MediaPlayer sfx;
-
+    int currentPosition;
+    
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -43,7 +44,6 @@ public class LessonResponsibility extends AppCompatActivity {
         videoPathRP79 = "android.resource://" + getPackageName() + "/" + R.raw.responsibility1;
         uriRP79 = Uri.parse(videoPathRP79);
         videoViewRP79.setVideoURI(uriRP79);
-
         sfx = MediaPlayer.create(this, R.raw.btnsfx);
 
         videoViewRP79.setOnPreparedListener(new MediaPlayer.OnPreparedListener() {
@@ -59,6 +59,8 @@ public class LessonResponsibility extends AppCompatActivity {
             @Override
             public void onCompletion(MediaPlayer mp) {
 
+                sfx.start();
+
                 videoViewRP79.stopPlayback();
                 responsibility2();
 
@@ -70,6 +72,7 @@ public class LessonResponsibility extends AppCompatActivity {
             public void onClick(View v) {
 
                 sfx.start();
+
                 videoViewRP79.stopPlayback();
                 startActivity(new Intent(LessonResponsibility.this,ChooseModeResponsibility.class));
 
@@ -81,6 +84,7 @@ public class LessonResponsibility extends AppCompatActivity {
             public void onClick(View v) {
 
                 sfx.start();
+
                 videoViewRP79.stopPlayback();
                 responsibility2();
 
@@ -92,8 +96,8 @@ public class LessonResponsibility extends AppCompatActivity {
         videoPathRP79 = "android.resource://" + getPackageName() + "/" + R.raw.responsibility2;
         uriRP79 = Uri.parse(videoPathRP79);
         videoViewRP79.setVideoURI(uriRP79);
+        sfx = MediaPlayer.create(this, R.raw.btnsfx);
 
-        MediaPlayer sfx = MediaPlayer.create(this, R.raw.btnsfx);
 
         videoViewRP79.setOnPreparedListener(new MediaPlayer.OnPreparedListener() {
             @Override
@@ -108,6 +112,8 @@ public class LessonResponsibility extends AppCompatActivity {
             @Override
             public void onCompletion(MediaPlayer mp) {
 
+                sfx.start();
+
                 videoViewRP79.stopPlayback();
                 responsibility3();
 
@@ -119,6 +125,7 @@ public class LessonResponsibility extends AppCompatActivity {
             public void onClick(View v) {
 
                 sfx.start();
+
                 videoViewRP79.stopPlayback();
                 responsibility1();
 
@@ -130,6 +137,7 @@ public class LessonResponsibility extends AppCompatActivity {
             public void onClick(View v) {
 
                 sfx.start();
+
                 videoViewRP79.stopPlayback();
                 responsibility3();
 
@@ -141,8 +149,8 @@ public class LessonResponsibility extends AppCompatActivity {
         videoPathRP79 = "android.resource://" + getPackageName() + "/" + R.raw.responsibility3;
         uriRP79 = Uri.parse(videoPathRP79);
         videoViewRP79.setVideoURI(uriRP79);
+        sfx = MediaPlayer.create(this, R.raw.btnsfx);
 
-        MediaPlayer sfx = MediaPlayer.create(this, R.raw.btnsfx);
 
         videoViewRP79.setOnPreparedListener(new MediaPlayer.OnPreparedListener() {
             @Override
@@ -157,6 +165,8 @@ public class LessonResponsibility extends AppCompatActivity {
             @Override
             public void onCompletion(MediaPlayer mp) {
 
+                sfx.start();
+
                 videoViewRP79.stopPlayback();
                 responsibility4();
 
@@ -168,6 +178,7 @@ public class LessonResponsibility extends AppCompatActivity {
             public void onClick(View v) {
 
                 sfx.start();
+
                 videoViewRP79.stopPlayback();
                 responsibility2();
 
@@ -179,6 +190,7 @@ public class LessonResponsibility extends AppCompatActivity {
             public void onClick(View v) {
 
                 sfx.start();
+
                 videoViewRP79.stopPlayback();
                 responsibility4();
 
@@ -190,8 +202,8 @@ public class LessonResponsibility extends AppCompatActivity {
         videoPathRP79 = "android.resource://" + getPackageName() + "/" + R.raw.responsibility4;
         uriRP79 = Uri.parse(videoPathRP79);
         videoViewRP79.setVideoURI(uriRP79);
+        sfx = MediaPlayer.create(this, R.raw.btnsfx);
 
-        MediaPlayer sfx = MediaPlayer.create(this, R.raw.btnsfx);
 
         videoViewRP79.setOnPreparedListener(new MediaPlayer.OnPreparedListener() {
             @Override
@@ -206,6 +218,8 @@ public class LessonResponsibility extends AppCompatActivity {
             @Override
             public void onCompletion(MediaPlayer mp) {
 
+                sfx.start();
+
                 videoViewRP79.stopPlayback();
                 responsibility5();
 
@@ -217,6 +231,7 @@ public class LessonResponsibility extends AppCompatActivity {
             public void onClick(View v) {
 
                 sfx.start();
+
                 videoViewRP79.stopPlayback();
                 responsibility3();
 
@@ -228,6 +243,7 @@ public class LessonResponsibility extends AppCompatActivity {
             public void onClick(View v) {
 
                 sfx.start();
+
                 videoViewRP79.stopPlayback();
                 responsibility5();
 
@@ -239,8 +255,8 @@ public class LessonResponsibility extends AppCompatActivity {
         videoPathRP79 = "android.resource://" + getPackageName() + "/" + R.raw.responsibility5;
         uriRP79 = Uri.parse(videoPathRP79);
         videoViewRP79.setVideoURI(uriRP79);
+        sfx = MediaPlayer.create(this, R.raw.btnsfx);
 
-        MediaPlayer sfx = MediaPlayer.create(this, R.raw.btnsfx);
 
         videoViewRP79.setOnPreparedListener(new MediaPlayer.OnPreparedListener() {
             @Override
@@ -255,6 +271,8 @@ public class LessonResponsibility extends AppCompatActivity {
             @Override
             public void onCompletion(MediaPlayer mp) {
 
+                sfx.start();
+
                 videoViewRP79.stopPlayback();
                 responsibility6();
 
@@ -266,6 +284,7 @@ public class LessonResponsibility extends AppCompatActivity {
             public void onClick(View v) {
 
                 sfx.start();
+
                 videoViewRP79.stopPlayback();
                 responsibility4();
 
@@ -277,6 +296,7 @@ public class LessonResponsibility extends AppCompatActivity {
             public void onClick(View v) {
 
                 sfx.start();
+
                 videoViewRP79.stopPlayback();
                 responsibility6();
 
@@ -288,8 +308,8 @@ public class LessonResponsibility extends AppCompatActivity {
         videoPathRP79 = "android.resource://" + getPackageName() + "/" + R.raw.responsibility6;
         uriRP79 = Uri.parse(videoPathRP79);
         videoViewRP79.setVideoURI(uriRP79);
+        sfx = MediaPlayer.create(this, R.raw.btnsfx);
 
-        MediaPlayer sfx = MediaPlayer.create(this, R.raw.btnsfx);
 
         videoViewRP79.setOnPreparedListener(new MediaPlayer.OnPreparedListener() {
             @Override
@@ -304,6 +324,8 @@ public class LessonResponsibility extends AppCompatActivity {
             @Override
             public void onCompletion(MediaPlayer mp) {
 
+                sfx.start();
+
                 videoViewRP79.stopPlayback();
                 responsibility7();
 
@@ -315,6 +337,7 @@ public class LessonResponsibility extends AppCompatActivity {
             public void onClick(View v) {
 
                 sfx.start();
+
                 videoViewRP79.stopPlayback();
                 responsibility5();
 
@@ -326,6 +349,7 @@ public class LessonResponsibility extends AppCompatActivity {
             public void onClick(View v) {
 
                 sfx.start();
+
                 videoViewRP79.stopPlayback();
                 responsibility7();
 
@@ -337,8 +361,8 @@ public class LessonResponsibility extends AppCompatActivity {
         videoPathRP79 = "android.resource://" + getPackageName() + "/" + R.raw.responsibility7;
         uriRP79 = Uri.parse(videoPathRP79);
         videoViewRP79.setVideoURI(uriRP79);
+        sfx = MediaPlayer.create(this, R.raw.btnsfx);
 
-        MediaPlayer sfx = MediaPlayer.create(this, R.raw.btnsfx);
 
         videoViewRP79.setOnPreparedListener(new MediaPlayer.OnPreparedListener() {
             @Override
@@ -353,6 +377,8 @@ public class LessonResponsibility extends AppCompatActivity {
             @Override
             public void onCompletion(MediaPlayer mp) {
 
+                sfx.start();
+
                 videoViewRP79.stopPlayback();
                 responsibility8();
 
@@ -364,6 +390,7 @@ public class LessonResponsibility extends AppCompatActivity {
             public void onClick(View v) {
 
                 sfx.start();
+
                 videoViewRP79.stopPlayback();
                 responsibility6();
 
@@ -375,6 +402,7 @@ public class LessonResponsibility extends AppCompatActivity {
             public void onClick(View v) {
 
                 sfx.start();
+
                 videoViewRP79.stopPlayback();
                 responsibility8();
 
@@ -386,8 +414,8 @@ public class LessonResponsibility extends AppCompatActivity {
         videoPathRP79 = "android.resource://" + getPackageName() + "/" + R.raw.responsibility8;
         uriRP79 = Uri.parse(videoPathRP79);
         videoViewRP79.setVideoURI(uriRP79);
+        sfx = MediaPlayer.create(this, R.raw.btnsfx);
 
-        MediaPlayer sfx = MediaPlayer.create(this, R.raw.btnsfx);
 
         videoViewRP79.setOnPreparedListener(new MediaPlayer.OnPreparedListener() {
             @Override
@@ -402,6 +430,8 @@ public class LessonResponsibility extends AppCompatActivity {
             @Override
             public void onCompletion(MediaPlayer mp) {
 
+                sfx.start();
+
                 videoViewRP79.stopPlayback();
                 startActivity(new Intent(LessonResponsibility.this, ResponsibilityLessonCongrats.class));
 
@@ -413,6 +443,7 @@ public class LessonResponsibility extends AppCompatActivity {
             public void onClick(View v) {
 
                 sfx.start();
+
                 videoViewRP79.stopPlayback();
                 responsibility7();
 
@@ -424,6 +455,7 @@ public class LessonResponsibility extends AppCompatActivity {
             public void onClick(View v) {
 
                 sfx.start();
+
                 videoViewRP79.stopPlayback();
                 startActivity(new Intent(LessonResponsibility.this, ResponsibilityLessonCongrats.class));
 
@@ -433,13 +465,30 @@ public class LessonResponsibility extends AppCompatActivity {
 
     @Override
     protected void onUserLeaveHint(){
+
         sfx.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
             @Override
             public void onCompletion(MediaPlayer mp) {
+
                 sfx.release();
+
             }
         });
 
+        videoViewRP79.pause();
+        currentPosition = videoViewRP79.getCurrentPosition();
+
         super.onUserLeaveHint();
+
+    }
+
+    @Override
+    protected void onResume(){
+
+        videoViewRP79.seekTo(currentPosition);
+        videoViewRP79.start();
+
+        super.onResume();
+
     }
 }

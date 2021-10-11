@@ -19,6 +19,7 @@ public class LessonDoingGood extends AppCompatActivity {
     ImageButton backbtnDG79,nextbtnDG79;
     MediaController mediaController;
     MediaPlayer sfx;
+    int currentPosition;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -43,6 +44,7 @@ public class LessonDoingGood extends AppCompatActivity {
         uriDG79 = Uri.parse(videoPathDG79);
         videoViewDG79.setVideoURI(uriDG79);
         sfx = MediaPlayer.create(this, R.raw.btnsfx);
+        
 
         videoViewDG79.setOnPreparedListener(new MediaPlayer.OnPreparedListener() {
             @Override
@@ -57,6 +59,8 @@ public class LessonDoingGood extends AppCompatActivity {
             @Override
             public void onCompletion(MediaPlayer mp) {
 
+                sfx.start();
+
                 good2();
 
             }
@@ -67,6 +71,8 @@ public class LessonDoingGood extends AppCompatActivity {
             public void onClick(View v) {
 
                 sfx.start();
+
+                
                 videoViewDG79.stopPlayback();
                 startActivity(new Intent(LessonDoingGood.this,ChooseModeDoingGood.class));
 
@@ -78,6 +84,8 @@ public class LessonDoingGood extends AppCompatActivity {
             public void onClick(View v) {
 
                 sfx.start();
+
+                
                 videoViewDG79.stopPlayback();
                 good2();
 
@@ -90,6 +98,7 @@ public class LessonDoingGood extends AppCompatActivity {
         uriDG79 = Uri.parse(videoPathDG79);
         videoViewDG79.setVideoURI(uriDG79);
         sfx = MediaPlayer.create(this, R.raw.btnsfx);
+        
 
         videoViewDG79.setOnPreparedListener(new MediaPlayer.OnPreparedListener() {
             @Override
@@ -104,6 +113,8 @@ public class LessonDoingGood extends AppCompatActivity {
             @Override
             public void onCompletion(MediaPlayer mp) {
 
+                sfx.start();
+
                 videoViewDG79.stopPlayback();
                 good3();
 
@@ -115,6 +126,8 @@ public class LessonDoingGood extends AppCompatActivity {
             public void onClick(View v) {
 
                 sfx.start();
+
+                
                 videoViewDG79.stopPlayback();
                 good1();
 
@@ -126,6 +139,8 @@ public class LessonDoingGood extends AppCompatActivity {
             public void onClick(View v) {
 
                 sfx.start();
+
+                
                 videoViewDG79.stopPlayback();
                 good3();
 
@@ -138,6 +153,7 @@ public class LessonDoingGood extends AppCompatActivity {
         uriDG79 = Uri.parse(videoPathDG79);
         videoViewDG79.setVideoURI(uriDG79);
         sfx = MediaPlayer.create(this, R.raw.btnsfx);
+        
 
         videoViewDG79.setOnPreparedListener(new MediaPlayer.OnPreparedListener() {
             @Override
@@ -152,6 +168,8 @@ public class LessonDoingGood extends AppCompatActivity {
             @Override
             public void onCompletion(MediaPlayer mp) {
 
+                sfx.start();
+
                 videoViewDG79.stopPlayback();
                 good4();
 
@@ -163,6 +181,8 @@ public class LessonDoingGood extends AppCompatActivity {
             public void onClick(View v) {
 
                 sfx.start();
+
+                
                 videoViewDG79.stopPlayback();
                 good2();
 
@@ -174,6 +194,8 @@ public class LessonDoingGood extends AppCompatActivity {
             public void onClick(View v) {
 
                 sfx.start();
+
+                
                 videoViewDG79.stopPlayback();
                 good4();
 
@@ -186,6 +208,7 @@ public class LessonDoingGood extends AppCompatActivity {
         uriDG79 = Uri.parse(videoPathDG79);
         videoViewDG79.setVideoURI(uriDG79);
         sfx = MediaPlayer.create(this, R.raw.btnsfx);
+        
 
         videoViewDG79.setOnPreparedListener(new MediaPlayer.OnPreparedListener() {
             @Override
@@ -200,6 +223,8 @@ public class LessonDoingGood extends AppCompatActivity {
             @Override
             public void onCompletion(MediaPlayer mp) {
 
+                sfx.start();
+
                 videoViewDG79.stopPlayback();
                 startActivity(new Intent(LessonDoingGood.this, DoingGoodLessonCongrats.class));
 
@@ -211,6 +236,8 @@ public class LessonDoingGood extends AppCompatActivity {
             public void onClick(View v) {
 
                 sfx.start();
+
+                
                 videoViewDG79.stopPlayback();
                 good3();
 
@@ -222,6 +249,8 @@ public class LessonDoingGood extends AppCompatActivity {
             public void onClick(View v) {
 
                 sfx.start();
+
+                
                 videoViewDG79.stopPlayback();
                 startActivity(new Intent(LessonDoingGood.this, DoingGoodLessonCongrats.class));
 
@@ -231,13 +260,30 @@ public class LessonDoingGood extends AppCompatActivity {
 
     @Override
     protected void onUserLeaveHint(){
+
         sfx.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
             @Override
             public void onCompletion(MediaPlayer mp) {
+
                 sfx.release();
+
             }
         });
 
+        videoViewDG79.pause();
+        currentPosition = videoViewDG79.getCurrentPosition();
+
         super.onUserLeaveHint();
+
+    }
+
+    @Override
+    protected void onResume(){
+
+        videoViewDG79.seekTo(currentPosition);
+        videoViewDG79.start();
+
+        super.onResume();
+
     }
 }

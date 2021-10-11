@@ -20,6 +20,7 @@ public class LessonIntroSociability extends AppCompatActivity {
     String videoPathISC;
     Uri uriISC;
     MediaPlayer sfx;
+    int currentPosition;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -74,6 +75,7 @@ public class LessonIntroSociability extends AppCompatActivity {
 
     @Override
     protected void onUserLeaveHint(){
+
         sfx.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
             @Override
             public void onCompletion(MediaPlayer mp) {
@@ -81,6 +83,20 @@ public class LessonIntroSociability extends AppCompatActivity {
             }
         });
 
+        videoViewISC.pause();
+        currentPosition = videoViewISC.getCurrentPosition();
+
         super.onUserLeaveHint();
+
+    }
+
+    @Override
+    protected void onResume(){
+
+        videoViewISC.seekTo(currentPosition);
+        videoViewISC.start();
+
+        super.onResume();
+
     }
 }

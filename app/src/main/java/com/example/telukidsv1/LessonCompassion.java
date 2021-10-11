@@ -19,6 +19,7 @@ public class LessonCompassion extends AppCompatActivity {
     ImageButton backbtnCP36,nextbtnCP36;
     MediaController mediaController;
     MediaPlayer sfx;
+    int currentPosition;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -43,12 +44,14 @@ public class LessonCompassion extends AppCompatActivity {
         videoPathCP36 = "android.resource://" + getPackageName() + "/" + R.raw.compassion1;
         uriCP36 = Uri.parse(videoPathCP36);
         videoViewCP36.setVideoURI(uriCP36);
-        sfx = MediaPlayer.create(this, R.raw.btnsfx);   
+        sfx = MediaPlayer.create(this, R.raw.btnsfx);
+          
 
         videoViewCP36.setOnPreparedListener(new MediaPlayer.OnPreparedListener() {
             @Override
             public void onPrepared(MediaPlayer mp) {
-
+                
+                sfx.start();
                 videoViewCP36.start();
 
             }
@@ -69,6 +72,8 @@ public class LessonCompassion extends AppCompatActivity {
             public void onClick(View v) {
 
                 sfx.start();
+
+                
                 videoViewCP36.stopPlayback();
                 startActivity(new Intent(LessonCompassion.this, ChooseModeCompassion.class));
 
@@ -80,6 +85,8 @@ public class LessonCompassion extends AppCompatActivity {
             public void onClick(View v) {
 
                 sfx.start();
+
+                
                 videoViewCP36.stopPlayback();
                 compassion2();
 
@@ -92,11 +99,14 @@ public class LessonCompassion extends AppCompatActivity {
         videoPathCP36 = "android.resource://" + getPackageName() + "/" + R.raw.compassion2;
         uriCP36 = Uri.parse(videoPathCP36);
         videoViewCP36.setVideoURI(uriCP36);
-        sfx = MediaPlayer.create(this, R.raw.btnsfx);   
+        sfx = MediaPlayer.create(this, R.raw.btnsfx);
+          
 
         videoViewCP36.setOnPreparedListener(new MediaPlayer.OnPreparedListener() {
             @Override
             public void onPrepared(MediaPlayer mp) {
+                
+                sfx.start();
 
                 videoViewCP36.start();
 
@@ -129,6 +139,7 @@ public class LessonCompassion extends AppCompatActivity {
             public void onClick(View v) {
 
                 sfx.start();
+
                 videoViewCP36.stopPlayback();
                 compassion3();
 
@@ -140,11 +151,14 @@ public class LessonCompassion extends AppCompatActivity {
         videoPathCP36 = "android.resource://" + getPackageName() + "/" + R.raw.compassion3;
         uriCP36 = Uri.parse(videoPathCP36);
         videoViewCP36.setVideoURI(uriCP36);
-        sfx = MediaPlayer.create(this, R.raw.btnsfx);   
+        sfx = MediaPlayer.create(this, R.raw.btnsfx);
+          
 
         videoViewCP36.setOnPreparedListener(new MediaPlayer.OnPreparedListener() {
             @Override
             public void onPrepared(MediaPlayer mp) {
+                
+                sfx.start();
 
                 videoViewCP36.start();
 
@@ -166,6 +180,7 @@ public class LessonCompassion extends AppCompatActivity {
             public void onClick(View v) {
 
                 sfx.start();
+                
                 videoViewCP36.stopPlayback();
                 compassion2();
 
@@ -177,6 +192,8 @@ public class LessonCompassion extends AppCompatActivity {
             public void onClick(View v) {
 
                 sfx.start();
+
+                
                 videoViewCP36.stopPlayback();
                 compassion4();
 
@@ -188,11 +205,14 @@ public class LessonCompassion extends AppCompatActivity {
         videoPathCP36 = "android.resource://" + getPackageName() + "/" + R.raw.compassion4;
         uriCP36 = Uri.parse(videoPathCP36);
         videoViewCP36.setVideoURI(uriCP36);
-        sfx = MediaPlayer.create(this, R.raw.btnsfx);   
+        sfx = MediaPlayer.create(this, R.raw.btnsfx);
+          
 
         videoViewCP36.setOnPreparedListener(new MediaPlayer.OnPreparedListener() {
             @Override
             public void onPrepared(MediaPlayer mp) {
+                
+                sfx.start();
 
                 videoViewCP36.start();
 
@@ -214,6 +234,8 @@ public class LessonCompassion extends AppCompatActivity {
             public void onClick(View v) {
 
                 sfx.start();
+
+                
                 videoViewCP36.stopPlayback();
                 compassion3();
 
@@ -225,6 +247,8 @@ public class LessonCompassion extends AppCompatActivity {
             public void onClick(View v) {
 
                 sfx.start();
+
+                
                 videoViewCP36.stopPlayback();
                 compassion5();
 
@@ -236,11 +260,14 @@ public class LessonCompassion extends AppCompatActivity {
         videoPathCP36 = "android.resource://" + getPackageName() + "/" + R.raw.compassion5;
         uriCP36 = Uri.parse(videoPathCP36);
         videoViewCP36.setVideoURI(uriCP36);
-        sfx = MediaPlayer.create(this, R.raw.btnsfx);   
+        sfx = MediaPlayer.create(this, R.raw.btnsfx);
+          
 
         videoViewCP36.setOnPreparedListener(new MediaPlayer.OnPreparedListener() {
             @Override
             public void onPrepared(MediaPlayer mp) {
+                
+                sfx.start();
 
                 videoViewCP36.start();
                 
@@ -262,6 +289,8 @@ public class LessonCompassion extends AppCompatActivity {
             public void onClick(View v) {
 
                 sfx.start();
+
+                
                 videoViewCP36.stopPlayback();
                 compassion4();
 
@@ -273,6 +302,8 @@ public class LessonCompassion extends AppCompatActivity {
             public void onClick(View v) {
 
                 sfx.start();
+
+                
                 videoViewCP36.stopPlayback();
                 startActivity(new Intent(LessonCompassion.this, CompassionLessonCongrats.class));
 
@@ -282,13 +313,30 @@ public class LessonCompassion extends AppCompatActivity {
 
     @Override
     protected void onUserLeaveHint(){
+
         sfx.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
             @Override
             public void onCompletion(MediaPlayer mp) {
+
                 sfx.release();
+
             }
         });
 
+        videoViewCP36.pause();
+        currentPosition = videoViewCP36.getCurrentPosition();
+
         super.onUserLeaveHint();
+
+    }
+
+    @Override
+    protected void onResume(){
+
+        videoViewCP36.seekTo(currentPosition);
+        videoViewCP36.start();
+
+        super.onResume();
+
     }
 }

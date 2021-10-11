@@ -19,6 +19,7 @@ public class LessonIntroHonesty extends AppCompatActivity {
     String videoPathIH;
     Uri uriIH;
     MediaPlayer sfx;
+    int currentPosition;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -72,6 +73,7 @@ public class LessonIntroHonesty extends AppCompatActivity {
 
     @Override
     protected void onUserLeaveHint(){
+
         sfx.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
             @Override
             public void onCompletion(MediaPlayer mp) {
@@ -79,6 +81,20 @@ public class LessonIntroHonesty extends AppCompatActivity {
             }
         });
 
+        videoViewIH.pause();
+        currentPosition = videoViewIH.getCurrentPosition();
+
         super.onUserLeaveHint();
+
+    }
+
+    @Override
+    protected void onResume(){
+
+        videoViewIH.seekTo(currentPosition);
+        videoViewIH.start();
+
+        super.onResume();
+
     }
 }

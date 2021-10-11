@@ -19,6 +19,7 @@ public class LessonHonesty extends AppCompatActivity {
     ImageButton backbtnH36,nextbtnH36;
     MediaController mediaController;
     MediaPlayer sfx;
+    int currentPosition;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -58,6 +59,8 @@ public class LessonHonesty extends AppCompatActivity {
             @Override
             public void onCompletion(MediaPlayer mp) {
 
+                sfx.start();
+
                 videoViewH36.stopPlayback();
                 honesty2();
 
@@ -69,6 +72,7 @@ public class LessonHonesty extends AppCompatActivity {
             public void onClick(View v) {
 
                 sfx.start();
+
                 videoViewH36.stopPlayback();
                 startActivity(new Intent(LessonHonesty.this, ChooseModeHonesty.class));
 
@@ -80,6 +84,7 @@ public class LessonHonesty extends AppCompatActivity {
             public void onClick(View v) {
 
                 sfx.start();
+
                 videoViewH36.stopPlayback();
                 honesty2();
 
@@ -106,6 +111,8 @@ public class LessonHonesty extends AppCompatActivity {
             @Override
             public void onCompletion(MediaPlayer mp) {
 
+                sfx.start();
+
                 videoViewH36.stopPlayback();
                 honesty3();
 
@@ -117,6 +124,7 @@ public class LessonHonesty extends AppCompatActivity {
             public void onClick(View v) {
 
                 sfx.start();
+
                 videoViewH36.stopPlayback();
                 honesty1();
 
@@ -128,6 +136,7 @@ public class LessonHonesty extends AppCompatActivity {
             public void onClick(View v) {
 
                 sfx.start();
+
                 videoViewH36.stopPlayback();
                 honesty3();
 
@@ -154,6 +163,8 @@ public class LessonHonesty extends AppCompatActivity {
             @Override
             public void onCompletion(MediaPlayer mp) {
 
+                sfx.start();
+
                 videoViewH36.stopPlayback();
                 honesty4();
 
@@ -165,6 +176,7 @@ public class LessonHonesty extends AppCompatActivity {
             public void onClick(View v) {
 
                 sfx.start();
+
                 videoViewH36.stopPlayback();
                 honesty2();
 
@@ -176,6 +188,7 @@ public class LessonHonesty extends AppCompatActivity {
             public void onClick(View v) {
 
                 sfx.start();
+
                 videoViewH36.stopPlayback();
                 honesty4();
 
@@ -202,6 +215,8 @@ public class LessonHonesty extends AppCompatActivity {
             @Override
             public void onCompletion(MediaPlayer mp) {
 
+                sfx.start();
+
                 videoViewH36.stopPlayback();
                 honesty5();
 
@@ -213,6 +228,7 @@ public class LessonHonesty extends AppCompatActivity {
             public void onClick(View v) {
 
                 sfx.start();
+
                 videoViewH36.stopPlayback();
                 honesty3();
 
@@ -224,6 +240,7 @@ public class LessonHonesty extends AppCompatActivity {
             public void onClick(View v) {
 
                 sfx.start();
+
                 videoViewH36.stopPlayback();
                 honesty5();
 
@@ -250,6 +267,8 @@ public class LessonHonesty extends AppCompatActivity {
             @Override
             public void onCompletion(MediaPlayer mp) {
 
+                sfx.start();
+
                 videoViewH36.stopPlayback();
                 startActivity(new Intent(LessonHonesty.this, HonestyLessonCongrats.class));
 
@@ -261,6 +280,7 @@ public class LessonHonesty extends AppCompatActivity {
             public void onClick(View v) {
 
                 sfx.start();
+
                 videoViewH36.stopPlayback();
                 honesty4();
 
@@ -272,6 +292,7 @@ public class LessonHonesty extends AppCompatActivity {
             public void onClick(View v) {
 
                 sfx.start();
+
                 videoViewH36.stopPlayback();
                 startActivity(new Intent(LessonHonesty.this, HonestyLessonCongrats.class));
 
@@ -281,13 +302,30 @@ public class LessonHonesty extends AppCompatActivity {
 
     @Override
     protected void onUserLeaveHint(){
+
         sfx.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
             @Override
             public void onCompletion(MediaPlayer mp) {
+
                 sfx.release();
+
             }
         });
 
+        videoViewH36.pause();
+        currentPosition = videoViewH36.getCurrentPosition();
+
         super.onUserLeaveHint();
+
+    }
+
+    @Override
+    protected void onResume(){
+
+        videoViewH36.seekTo(currentPosition);
+        videoViewH36.start();
+
+        super.onResume();
+
     }
 }

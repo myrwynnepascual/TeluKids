@@ -19,6 +19,7 @@ public class LessonIntroDiscipline extends AppCompatActivity {
     String videoPathID;
     Uri uriID;
     MediaPlayer sfx;
+    int currentPosition;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -71,6 +72,7 @@ public class LessonIntroDiscipline extends AppCompatActivity {
 
     @Override
     protected void onUserLeaveHint(){
+
         sfx.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
             @Override
             public void onCompletion(MediaPlayer mp) {
@@ -78,6 +80,20 @@ public class LessonIntroDiscipline extends AppCompatActivity {
             }
         });
 
+        videoViewID.pause();
+        currentPosition = videoViewID.getCurrentPosition();
+
         super.onUserLeaveHint();
+
+    }
+
+    @Override
+    protected void onResume(){
+
+        videoViewID.seekTo(currentPosition);
+        videoViewID.start();
+
+        super.onResume();
+
     }
 }

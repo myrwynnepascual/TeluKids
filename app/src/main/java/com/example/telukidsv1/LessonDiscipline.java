@@ -19,6 +19,7 @@ public class LessonDiscipline extends AppCompatActivity {
     ImageButton backbtnD36,nextbtnD36;
     MediaController mediaController;
     MediaPlayer sfx;
+    int currentPosition;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -43,7 +44,8 @@ public class LessonDiscipline extends AppCompatActivity {
         videoPathD36 = "android.resource://" + getPackageName() + "/" + R.raw.discipline1;
         uriD36 = Uri.parse(videoPathD36);
         videoViewD36.setVideoURI(uriD36);
-        sfx = MediaPlayer.create(this, R.raw.btnsfx);     
+        sfx = MediaPlayer.create(this, R.raw.btnsfx);
+         
 
         videoViewD36.setOnPreparedListener(new MediaPlayer.OnPreparedListener() {
             @Override
@@ -58,6 +60,8 @@ public class LessonDiscipline extends AppCompatActivity {
             @Override
             public void onCompletion(MediaPlayer mp) {
 
+                sfx.start();
+
                 videoViewD36.stopPlayback();
                 discipline2();
 
@@ -69,6 +73,8 @@ public class LessonDiscipline extends AppCompatActivity {
             public void onClick(View v) {
 
                 sfx.start();
+
+                
                 videoViewD36.stopPlayback();
                 startActivity(new Intent(LessonDiscipline.this,ChooseModeDiscipline.class));
 
@@ -80,6 +86,8 @@ public class LessonDiscipline extends AppCompatActivity {
             public void onClick(View v) {
 
                 sfx.start();
+
+                
                 videoViewD36.stopPlayback();
                 discipline2();
 
@@ -91,7 +99,8 @@ public class LessonDiscipline extends AppCompatActivity {
         videoPathD36 = "android.resource://" + getPackageName() + "/" + R.raw.discipline2;
         uriD36 = Uri.parse(videoPathD36);
         videoViewD36.setVideoURI(uriD36);
-        sfx = MediaPlayer.create(this, R.raw.btnsfx);     
+        sfx = MediaPlayer.create(this, R.raw.btnsfx);
+         
 
         videoViewD36.setOnPreparedListener(new MediaPlayer.OnPreparedListener() {
             @Override
@@ -106,6 +115,8 @@ public class LessonDiscipline extends AppCompatActivity {
             @Override
             public void onCompletion(MediaPlayer mp) {
 
+                sfx.start();
+                
                 videoViewD36.stopPlayback();
                 discipline3();
 
@@ -117,6 +128,8 @@ public class LessonDiscipline extends AppCompatActivity {
             public void onClick(View v) {
 
                 sfx.start();
+
+
                 videoViewD36.stopPlayback();
                 discipline1();
 
@@ -128,6 +141,8 @@ public class LessonDiscipline extends AppCompatActivity {
             public void onClick(View v) {
 
                 sfx.start();
+
+                
                 videoViewD36.stopPlayback();
                 discipline3();
 
@@ -139,7 +154,8 @@ public class LessonDiscipline extends AppCompatActivity {
         videoPathD36 = "android.resource://" + getPackageName() + "/" + R.raw.discipline3;
         uriD36 = Uri.parse(videoPathD36);
         videoViewD36.setVideoURI(uriD36);
-        sfx = MediaPlayer.create(this, R.raw.btnsfx);     
+        sfx = MediaPlayer.create(this, R.raw.btnsfx);
+         
 
         videoViewD36.setOnPreparedListener(new MediaPlayer.OnPreparedListener() {
             @Override
@@ -154,6 +170,8 @@ public class LessonDiscipline extends AppCompatActivity {
             @Override
             public void onCompletion(MediaPlayer mp) {
 
+                sfx.start();
+
                 videoViewD36.stopPlayback();
                 discipline4();
 
@@ -165,6 +183,8 @@ public class LessonDiscipline extends AppCompatActivity {
             public void onClick(View v) {
 
                 sfx.start();
+
+                
                 videoViewD36.stopPlayback();
                 discipline2();
 
@@ -176,6 +196,8 @@ public class LessonDiscipline extends AppCompatActivity {
             public void onClick(View v) {
 
                 sfx.start();
+
+                
                 videoViewD36.stopPlayback();
                 discipline4();
 
@@ -187,7 +209,8 @@ public class LessonDiscipline extends AppCompatActivity {
         videoPathD36 = "android.resource://" + getPackageName() + "/" + R.raw.discipline4;
         uriD36 = Uri.parse(videoPathD36);
         videoViewD36.setVideoURI(uriD36);
-        sfx = MediaPlayer.create(this, R.raw.btnsfx);     
+        sfx = MediaPlayer.create(this, R.raw.btnsfx);
+         
 
         videoViewD36.setOnPreparedListener(new MediaPlayer.OnPreparedListener() {
             @Override
@@ -202,6 +225,8 @@ public class LessonDiscipline extends AppCompatActivity {
             @Override
             public void onCompletion(MediaPlayer mp) {
 
+                sfx.start();
+
                 videoViewD36.stopPlayback();
                 discipline5();
 
@@ -213,6 +238,8 @@ public class LessonDiscipline extends AppCompatActivity {
             public void onClick(View v) {
 
                 sfx.start();
+
+                
                 videoViewD36.stopPlayback();
                 discipline3();
 
@@ -224,6 +251,8 @@ public class LessonDiscipline extends AppCompatActivity {
             public void onClick(View v) {
 
                 sfx.start();
+
+                
                 videoViewD36.stopPlayback();
                 discipline5();
 
@@ -235,7 +264,8 @@ public class LessonDiscipline extends AppCompatActivity {
         videoPathD36 = "android.resource://" + getPackageName() + "/" + R.raw.discipline5;
         uriD36 = Uri.parse(videoPathD36);
         videoViewD36.setVideoURI(uriD36);
-        sfx = MediaPlayer.create(this, R.raw.btnsfx);     
+        sfx = MediaPlayer.create(this, R.raw.btnsfx);
+         
 
         videoViewD36.setOnPreparedListener(new MediaPlayer.OnPreparedListener() {
             @Override
@@ -250,6 +280,8 @@ public class LessonDiscipline extends AppCompatActivity {
             @Override
             public void onCompletion(MediaPlayer mp) {
 
+                sfx.start();
+
                 videoViewD36.stopPlayback();
                 discipline6();
 
@@ -261,6 +293,8 @@ public class LessonDiscipline extends AppCompatActivity {
             public void onClick(View v) {
 
                 sfx.start();
+
+                
                 videoViewD36.stopPlayback();
                 discipline4();
 
@@ -272,6 +306,8 @@ public class LessonDiscipline extends AppCompatActivity {
             public void onClick(View v) {
 
                 sfx.start();
+
+                
                 videoViewD36.stopPlayback();
                 discipline6();
 
@@ -283,7 +319,8 @@ public class LessonDiscipline extends AppCompatActivity {
         videoPathD36 = "android.resource://" + getPackageName() + "/" + R.raw.discipline6;
         uriD36 = Uri.parse(videoPathD36);
         videoViewD36.setVideoURI(uriD36);
-        sfx = MediaPlayer.create(this, R.raw.btnsfx);     
+        sfx = MediaPlayer.create(this, R.raw.btnsfx);
+         
 
         videoViewD36.setOnPreparedListener(new MediaPlayer.OnPreparedListener() {
             @Override
@@ -298,6 +335,8 @@ public class LessonDiscipline extends AppCompatActivity {
             @Override
             public void onCompletion(MediaPlayer mp) {
 
+                sfx.start();
+
                 videoViewD36.stopPlayback();
                 startActivity(new Intent(LessonDiscipline.this, DisciplineLessonCongrats.class));
 
@@ -309,6 +348,8 @@ public class LessonDiscipline extends AppCompatActivity {
             public void onClick(View v) {
 
                 sfx.start();
+
+                
                 videoViewD36.stopPlayback();
                 discipline5();
 
@@ -320,6 +361,8 @@ public class LessonDiscipline extends AppCompatActivity {
             public void onClick(View v) {
 
                 sfx.start();
+
+                
                 videoViewD36.stopPlayback();
                 startActivity(new Intent(LessonDiscipline.this, DisciplineLessonCongrats.class));
 
@@ -329,13 +372,30 @@ public class LessonDiscipline extends AppCompatActivity {
 
     @Override
     protected void onUserLeaveHint(){
+
         sfx.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
             @Override
             public void onCompletion(MediaPlayer mp) {
+
                 sfx.release();
+
             }
         });
 
+        videoViewD36.pause();
+        currentPosition = videoViewD36.getCurrentPosition();
+
         super.onUserLeaveHint();
+
+    }
+
+    @Override
+    protected void onResume(){
+
+        videoViewD36.seekTo(currentPosition);
+        videoViewD36.start();
+
+        super.onResume();
+
     }
 }

@@ -19,6 +19,7 @@ public class LessonLove extends AppCompatActivity {
     ImageButton backbtnL79,nextbtnL79;
     MediaController mediaController;
     MediaPlayer sfx;
+    int currentPosition;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -58,6 +59,8 @@ public class LessonLove extends AppCompatActivity {
             @Override
             public void onCompletion(MediaPlayer mp) {
 
+                sfx.start();
+
                 videoViewL79.stopPlayback();
                 love2();
 
@@ -69,6 +72,7 @@ public class LessonLove extends AppCompatActivity {
             public void onClick(View v) {
 
                 sfx.start();
+
                 videoViewL79.stopPlayback();
                 startActivity(new Intent(LessonLove.this,ChooseModeLove.class));
 
@@ -80,6 +84,7 @@ public class LessonLove extends AppCompatActivity {
             public void onClick(View v) {
 
                 sfx.start();
+
                 videoViewL79.stopPlayback();
                 love2();
 
@@ -106,6 +111,8 @@ public class LessonLove extends AppCompatActivity {
             @Override
             public void onCompletion(MediaPlayer mp) {
 
+                sfx.start();
+
                 videoViewL79.stopPlayback();
                 love3();
 
@@ -117,6 +124,7 @@ public class LessonLove extends AppCompatActivity {
             public void onClick(View v) {
 
                 sfx.start();
+
                 videoViewL79.stopPlayback();
                 love1();
 
@@ -128,6 +136,7 @@ public class LessonLove extends AppCompatActivity {
             public void onClick(View v) {
 
                 sfx.start();
+
                 videoViewL79.stopPlayback();
                 love3();
 
@@ -154,6 +163,8 @@ public class LessonLove extends AppCompatActivity {
             @Override
             public void onCompletion(MediaPlayer mp) {
 
+                sfx.start();
+
                 videoViewL79.stopPlayback();
                 love4();
 
@@ -165,6 +176,7 @@ public class LessonLove extends AppCompatActivity {
             public void onClick(View v) {
 
                 sfx.start();
+
                 videoViewL79.stopPlayback();
                 love2();
 
@@ -176,6 +188,7 @@ public class LessonLove extends AppCompatActivity {
             public void onClick(View v) {
 
                 sfx.start();
+
                 videoViewL79.stopPlayback();
                 love4();
 
@@ -202,6 +215,8 @@ public class LessonLove extends AppCompatActivity {
             @Override
             public void onCompletion(MediaPlayer mp) {
 
+                sfx.start();
+
                 videoViewL79.stopPlayback();
                 love5();
 
@@ -213,6 +228,7 @@ public class LessonLove extends AppCompatActivity {
             public void onClick(View v) {
 
                 sfx.start();
+
                 videoViewL79.stopPlayback();
                 love3();
 
@@ -224,6 +240,7 @@ public class LessonLove extends AppCompatActivity {
             public void onClick(View v) {
 
                 sfx.start();
+
                 videoViewL79.stopPlayback();
                 love5();
 
@@ -251,6 +268,8 @@ public class LessonLove extends AppCompatActivity {
             @Override
             public void onCompletion(MediaPlayer mp) {
 
+                sfx.start();
+
                 videoViewL79.stopPlayback();
                 startActivity(new Intent(LessonLove.this, LoveLessonCongrats.class));
 
@@ -262,6 +281,7 @@ public class LessonLove extends AppCompatActivity {
             public void onClick(View v) {
 
                 sfx.start();
+
                 videoViewL79.stopPlayback();
                 love5();
 
@@ -273,6 +293,7 @@ public class LessonLove extends AppCompatActivity {
             public void onClick(View v) {
 
                 sfx.start();
+
                 videoViewL79.stopPlayback();
                 startActivity(new Intent(LessonLove.this, LoveLessonCongrats.class));
 
@@ -282,13 +303,30 @@ public class LessonLove extends AppCompatActivity {
 
     @Override
     protected void onUserLeaveHint(){
+
         sfx.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
             @Override
             public void onCompletion(MediaPlayer mp) {
+
                 sfx.release();
+
             }
         });
 
+        videoViewL79.pause();
+        currentPosition = videoViewL79.getCurrentPosition();
+
         super.onUserLeaveHint();
+
+    }
+
+    @Override
+    protected void onResume(){
+
+        videoViewL79.seekTo(currentPosition);
+        videoViewL79.start();
+
+        super.onResume();
+
     }
 }

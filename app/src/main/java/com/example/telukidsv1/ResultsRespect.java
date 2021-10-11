@@ -48,7 +48,8 @@ public class ResultsRespect extends AppCompatActivity {
         congrats = MediaPlayer.create(this, R.raw.yaysfx);
         congrats.start();
 
-        BackgroundSoundService.onResume();
+        Intent svc = new Intent(this, BackgroundSoundService.class);
+        startService(svc);
 
         fAuth = FirebaseAuth.getInstance();
         fStore = FirebaseFirestore.getInstance();

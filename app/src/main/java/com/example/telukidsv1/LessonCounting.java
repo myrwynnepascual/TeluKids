@@ -19,6 +19,7 @@ public class LessonCounting extends AppCompatActivity {
     ImageButton backbtnCX, nextbtnCX;
     MediaController mediaController;
     MediaPlayer sfx;
+    int currentPosition;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -44,12 +45,14 @@ public class LessonCounting extends AppCompatActivity {
         videoPathCX = "android.resource://" + getPackageName() + "/" + R.raw.countx;
         uriCX = Uri.parse(videoPathCX);
         videoViewCX.setVideoURI(uriCX);
-        sfx = MediaPlayer.create(this, R.raw.btnsfx);    
+        sfx = MediaPlayer.create(this, R.raw.btnsfx);
+          
 
         videoViewCX.setOnPreparedListener(new MediaPlayer.OnPreparedListener() {
             @Override
             public void onPrepared(MediaPlayer mp) {
-
+                
+                sfx.start();
                 videoViewCX.start();
 
             }
@@ -59,6 +62,7 @@ public class LessonCounting extends AppCompatActivity {
             @Override
             public void onCompletion(MediaPlayer mp) {
 
+                sfx.start();
                 videoViewCX.stopPlayback();
                 count1();
 
@@ -69,7 +73,7 @@ public class LessonCounting extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                sfx.start();
+                
                 videoViewCX.stopPlayback();
                 startActivity(new Intent(LessonCounting.this, ChooseModeCounting.class));
 
@@ -80,7 +84,7 @@ public class LessonCounting extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                sfx.start();
+                
                 videoViewCX.stopPlayback();
                 count1();
 
@@ -94,11 +98,14 @@ public class LessonCounting extends AppCompatActivity {
         videoPathCX = "android.resource://" + getPackageName() + "/" + R.raw.count1;
         uriCX = Uri.parse(videoPathCX);
         videoViewCX.setVideoURI(uriCX);
-        sfx = MediaPlayer.create(this, R.raw.btnsfx);    
+        sfx = MediaPlayer.create(this, R.raw.btnsfx);
+          
 
         videoViewCX.setOnPreparedListener(new MediaPlayer.OnPreparedListener() {
             @Override
             public void onPrepared(MediaPlayer mp) {
+                
+                sfx.start();
 
                 videoViewCX.start();
                 
@@ -109,6 +116,8 @@ public class LessonCounting extends AppCompatActivity {
         videoViewCX.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
             @Override
             public void onCompletion(MediaPlayer mp) {
+                
+                sfx.start();
 
                 videoViewCX.stopPlayback();
                 count2();
@@ -120,7 +129,7 @@ public class LessonCounting extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                sfx.start();
+                
                 videoViewCX.stopPlayback();
                 countx();
 
@@ -131,7 +140,7 @@ public class LessonCounting extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                sfx.start();
+                
                 videoViewCX.stopPlayback();
                 count2();
 
@@ -145,11 +154,14 @@ public class LessonCounting extends AppCompatActivity {
         videoPathCX = "android.resource://" + getPackageName() + "/" + R.raw.count2;
         uriCX = Uri.parse(videoPathCX);
         videoViewCX.setVideoURI(uriCX);
-        sfx = MediaPlayer.create(this, R.raw.btnsfx);    
+        sfx = MediaPlayer.create(this, R.raw.btnsfx);
+          
 
         videoViewCX.setOnPreparedListener(new MediaPlayer.OnPreparedListener() {
             @Override
             public void onPrepared(MediaPlayer mp) {
+                
+                sfx.start();
 
                 videoViewCX.start();
                 
@@ -160,6 +172,8 @@ public class LessonCounting extends AppCompatActivity {
         videoViewCX.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
             @Override
             public void onCompletion(MediaPlayer mp) {
+                
+                sfx.start();
 
                 videoViewCX.stopPlayback();
                 count3();
@@ -171,7 +185,7 @@ public class LessonCounting extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                sfx.start();
+                
                 videoViewCX.stopPlayback();
                 count1();
 
@@ -182,7 +196,7 @@ public class LessonCounting extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                sfx.start();
+                
                 videoViewCX.stopPlayback();
                 count3();
 
@@ -196,11 +210,14 @@ public class LessonCounting extends AppCompatActivity {
         videoPathCX = "android.resource://" + getPackageName() + "/" + R.raw.count3;
         uriCX = Uri.parse(videoPathCX);
         videoViewCX.setVideoURI(uriCX);
-        sfx = MediaPlayer.create(this, R.raw.btnsfx);    
+        sfx = MediaPlayer.create(this, R.raw.btnsfx);
+          
 
         videoViewCX.setOnPreparedListener(new MediaPlayer.OnPreparedListener() {
             @Override
             public void onPrepared(MediaPlayer mp) {
+                
+                sfx.start();
 
                 videoViewCX.start();
                 
@@ -211,6 +228,8 @@ public class LessonCounting extends AppCompatActivity {
         videoViewCX.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
             @Override
             public void onCompletion(MediaPlayer mp) {
+                
+                sfx.start();
 
                 videoViewCX.stopPlayback();
                 count4();
@@ -222,7 +241,7 @@ public class LessonCounting extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                sfx.start();
+                
                 videoViewCX.stopPlayback();
                 count2();
 
@@ -233,7 +252,7 @@ public class LessonCounting extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                sfx.start();
+                
                 videoViewCX.stopPlayback();
                 count4();
 
@@ -247,11 +266,14 @@ public class LessonCounting extends AppCompatActivity {
         videoPathCX = "android.resource://" + getPackageName() + "/" + R.raw.count4;
         uriCX = Uri.parse(videoPathCX);
         videoViewCX.setVideoURI(uriCX);
-        sfx = MediaPlayer.create(this, R.raw.btnsfx);    
+        sfx = MediaPlayer.create(this, R.raw.btnsfx);
+          
 
         videoViewCX.setOnPreparedListener(new MediaPlayer.OnPreparedListener() {
             @Override
             public void onPrepared(MediaPlayer mp) {
+                
+                sfx.start();
 
                 videoViewCX.start();
                 
@@ -262,6 +284,8 @@ public class LessonCounting extends AppCompatActivity {
         videoViewCX.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
             @Override
             public void onCompletion(MediaPlayer mp) {
+                
+                sfx.start();
 
                 videoViewCX.stopPlayback();
                 count5();
@@ -273,7 +297,7 @@ public class LessonCounting extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                sfx.start();
+                
                 videoViewCX.stopPlayback();
                 count3();
 
@@ -284,7 +308,7 @@ public class LessonCounting extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                sfx.start();
+                
                 videoViewCX.stopPlayback();
                 count5();
 
@@ -298,11 +322,14 @@ public class LessonCounting extends AppCompatActivity {
         videoPathCX = "android.resource://" + getPackageName() + "/" + R.raw.count5;
         uriCX = Uri.parse(videoPathCX);
         videoViewCX.setVideoURI(uriCX);
-        sfx = MediaPlayer.create(this, R.raw.btnsfx);    
+        sfx = MediaPlayer.create(this, R.raw.btnsfx);
+          
 
         videoViewCX.setOnPreparedListener(new MediaPlayer.OnPreparedListener() {
             @Override
             public void onPrepared(MediaPlayer mp) {
+                
+                sfx.start();
 
                 videoViewCX.start();
                 
@@ -313,6 +340,8 @@ public class LessonCounting extends AppCompatActivity {
         videoViewCX.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
             @Override
             public void onCompletion(MediaPlayer mp) {
+                
+                sfx.start();
 
                 videoViewCX.stopPlayback();
                 count6();
@@ -324,7 +353,7 @@ public class LessonCounting extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                sfx.start();
+                
                 videoViewCX.stopPlayback();
                 count4();
 
@@ -335,7 +364,7 @@ public class LessonCounting extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                sfx.start();
+                
                 videoViewCX.stopPlayback();
                 count6();
 
@@ -349,11 +378,14 @@ public class LessonCounting extends AppCompatActivity {
         videoPathCX = "android.resource://" + getPackageName() + "/" + R.raw.count6;
         uriCX = Uri.parse(videoPathCX);
         videoViewCX.setVideoURI(uriCX);
-        sfx = MediaPlayer.create(this, R.raw.btnsfx);    
+        sfx = MediaPlayer.create(this, R.raw.btnsfx);
+          
 
         videoViewCX.setOnPreparedListener(new MediaPlayer.OnPreparedListener() {
             @Override
             public void onPrepared(MediaPlayer mp) {
+                
+                sfx.start();
 
                 videoViewCX.start();
                 
@@ -364,6 +396,8 @@ public class LessonCounting extends AppCompatActivity {
         videoViewCX.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
             @Override
             public void onCompletion(MediaPlayer mp) {
+                
+                sfx.start();
 
                 videoViewCX.stopPlayback();
                 count7();
@@ -375,7 +409,7 @@ public class LessonCounting extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                sfx.start();
+                
                 videoViewCX.stopPlayback();
                 count5();
 
@@ -386,7 +420,7 @@ public class LessonCounting extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                sfx.start();
+                
                 videoViewCX.stopPlayback();
                 count7();
 
@@ -400,11 +434,14 @@ public class LessonCounting extends AppCompatActivity {
         videoPathCX = "android.resource://" + getPackageName() + "/" + R.raw.count7;
         uriCX = Uri.parse(videoPathCX);
         videoViewCX.setVideoURI(uriCX);
-        sfx = MediaPlayer.create(this, R.raw.btnsfx);    
+        sfx = MediaPlayer.create(this, R.raw.btnsfx);
+          
 
         videoViewCX.setOnPreparedListener(new MediaPlayer.OnPreparedListener() {
             @Override
             public void onPrepared(MediaPlayer mp) {
+                
+                sfx.start();
 
                 videoViewCX.start();
                 
@@ -415,6 +452,8 @@ public class LessonCounting extends AppCompatActivity {
         videoViewCX.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
             @Override
             public void onCompletion(MediaPlayer mp) {
+                
+                sfx.start();
 
                 videoViewCX.stopPlayback();
                 count8();
@@ -426,7 +465,7 @@ public class LessonCounting extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                sfx.start();
+                
                 videoViewCX.stopPlayback();
                 count6();
 
@@ -437,7 +476,7 @@ public class LessonCounting extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                sfx.start();
+                
                 videoViewCX.stopPlayback();
                 count8();
 
@@ -451,11 +490,14 @@ public class LessonCounting extends AppCompatActivity {
         videoPathCX = "android.resource://" + getPackageName() + "/" + R.raw.count8;
         uriCX = Uri.parse(videoPathCX);
         videoViewCX.setVideoURI(uriCX);
-        sfx = MediaPlayer.create(this, R.raw.btnsfx);    
+        sfx = MediaPlayer.create(this, R.raw.btnsfx);
+          
 
         videoViewCX.setOnPreparedListener(new MediaPlayer.OnPreparedListener() {
             @Override
             public void onPrepared(MediaPlayer mp) {
+                
+                sfx.start();
 
                 videoViewCX.start();
                 
@@ -466,6 +508,8 @@ public class LessonCounting extends AppCompatActivity {
         videoViewCX.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
             @Override
             public void onCompletion(MediaPlayer mp) {
+                
+                sfx.start();
 
                 videoViewCX.stopPlayback();
                 count9();
@@ -477,7 +521,7 @@ public class LessonCounting extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                sfx.start();
+                
                 videoViewCX.stopPlayback();
                 count7();
 
@@ -488,7 +532,7 @@ public class LessonCounting extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                sfx.start();
+                
                 videoViewCX.stopPlayback();
                 count9();
 
@@ -502,11 +546,14 @@ public class LessonCounting extends AppCompatActivity {
         videoPathCX = "android.resource://" + getPackageName() + "/" + R.raw.count9;
         uriCX = Uri.parse(videoPathCX);
         videoViewCX.setVideoURI(uriCX);
-        sfx = MediaPlayer.create(this, R.raw.btnsfx);    
+        sfx = MediaPlayer.create(this, R.raw.btnsfx);
+          
 
         videoViewCX.setOnPreparedListener(new MediaPlayer.OnPreparedListener() {
             @Override
             public void onPrepared(MediaPlayer mp) {
+                
+                sfx.start();
 
                 videoViewCX.start();
                 
@@ -517,6 +564,8 @@ public class LessonCounting extends AppCompatActivity {
         videoViewCX.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
             @Override
             public void onCompletion(MediaPlayer mp) {
+                
+                sfx.start();
 
                 videoViewCX.stopPlayback();
                 count10();
@@ -528,7 +577,7 @@ public class LessonCounting extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                sfx.start();
+                
                 videoViewCX.stopPlayback();
                 count8();
 
@@ -539,7 +588,7 @@ public class LessonCounting extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                sfx.start();
+                
                 videoViewCX.stopPlayback();
                 count10();
 
@@ -553,11 +602,14 @@ public class LessonCounting extends AppCompatActivity {
         videoPathCX = "android.resource://" + getPackageName() + "/" + R.raw.count10;
         uriCX = Uri.parse(videoPathCX);
         videoViewCX.setVideoURI(uriCX);
-        sfx = MediaPlayer.create(this, R.raw.btnsfx);    
+        sfx = MediaPlayer.create(this, R.raw.btnsfx);
+          
 
         videoViewCX.setOnPreparedListener(new MediaPlayer.OnPreparedListener() {
             @Override
             public void onPrepared(MediaPlayer mp) {
+                
+                sfx.start();
 
                 videoViewCX.start();
                 
@@ -568,6 +620,8 @@ public class LessonCounting extends AppCompatActivity {
         videoViewCX.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
             @Override
             public void onCompletion(MediaPlayer mp) {
+                
+                sfx.start();
 
                 videoViewCX.stopPlayback();
                 count11();
@@ -579,7 +633,7 @@ public class LessonCounting extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                sfx.start();
+                
                 videoViewCX.stopPlayback();
                 count9();
 
@@ -590,7 +644,7 @@ public class LessonCounting extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                sfx.start();
+                
                 videoViewCX.stopPlayback();
                 count11();
 
@@ -604,11 +658,14 @@ public class LessonCounting extends AppCompatActivity {
         videoPathCX = "android.resource://" + getPackageName() + "/" + R.raw.count11;
         uriCX = Uri.parse(videoPathCX);
         videoViewCX.setVideoURI(uriCX);
-        sfx = MediaPlayer.create(this, R.raw.btnsfx);    
+        sfx = MediaPlayer.create(this, R.raw.btnsfx);
+          
 
         videoViewCX.setOnPreparedListener(new MediaPlayer.OnPreparedListener() {
             @Override
             public void onPrepared(MediaPlayer mp) {
+                
+                sfx.start();
 
                 videoViewCX.start();
                 
@@ -619,6 +676,8 @@ public class LessonCounting extends AppCompatActivity {
         videoViewCX.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
             @Override
             public void onCompletion(MediaPlayer mp) {
+                
+                sfx.start();
 
                 videoViewCX.stopPlayback();
                 count12();
@@ -630,7 +689,7 @@ public class LessonCounting extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                sfx.start();
+                
                 videoViewCX.stopPlayback();
                 count10();
 
@@ -641,7 +700,7 @@ public class LessonCounting extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                sfx.start();
+                
                 videoViewCX.stopPlayback();
                 count12();
 
@@ -655,11 +714,14 @@ public class LessonCounting extends AppCompatActivity {
         videoPathCX = "android.resource://" + getPackageName() + "/" + R.raw.count12;
         uriCX = Uri.parse(videoPathCX);
         videoViewCX.setVideoURI(uriCX);
-        sfx = MediaPlayer.create(this, R.raw.btnsfx);    
+        sfx = MediaPlayer.create(this, R.raw.btnsfx);
+          
 
         videoViewCX.setOnPreparedListener(new MediaPlayer.OnPreparedListener() {
             @Override
             public void onPrepared(MediaPlayer mp) {
+                
+                sfx.start();
 
                 videoViewCX.start();
                 
@@ -670,6 +732,8 @@ public class LessonCounting extends AppCompatActivity {
         videoViewCX.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
             @Override
             public void onCompletion(MediaPlayer mp) {
+                
+                sfx.start();
 
                 videoViewCX.stopPlayback();
                 count13();
@@ -681,7 +745,7 @@ public class LessonCounting extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                sfx.start();
+                
                 videoViewCX.stopPlayback();
                 count11();
 
@@ -692,7 +756,7 @@ public class LessonCounting extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                sfx.start();
+                
                 videoViewCX.stopPlayback();
                 count13();
 
@@ -706,11 +770,14 @@ public class LessonCounting extends AppCompatActivity {
         videoPathCX = "android.resource://" + getPackageName() + "/" + R.raw.count13;
         uriCX = Uri.parse(videoPathCX);
         videoViewCX.setVideoURI(uriCX);
-        sfx = MediaPlayer.create(this, R.raw.btnsfx);    
+        sfx = MediaPlayer.create(this, R.raw.btnsfx);
+          
 
         videoViewCX.setOnPreparedListener(new MediaPlayer.OnPreparedListener() {
             @Override
             public void onPrepared(MediaPlayer mp) {
+                
+                sfx.start();
 
                 videoViewCX.start();
                 
@@ -721,6 +788,8 @@ public class LessonCounting extends AppCompatActivity {
         videoViewCX.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
             @Override
             public void onCompletion(MediaPlayer mp) {
+                
+                sfx.start();
 
                 videoViewCX.stopPlayback();
                 count14();
@@ -732,7 +801,7 @@ public class LessonCounting extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                sfx.start();
+                
                 videoViewCX.stopPlayback();
                 count12();
 
@@ -743,7 +812,7 @@ public class LessonCounting extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                sfx.start();
+                
                 videoViewCX.stopPlayback();
                 count14();
 
@@ -757,11 +826,14 @@ public class LessonCounting extends AppCompatActivity {
         videoPathCX = "android.resource://" + getPackageName() + "/" + R.raw.count14;
         uriCX = Uri.parse(videoPathCX);
         videoViewCX.setVideoURI(uriCX);
-        sfx = MediaPlayer.create(this, R.raw.btnsfx);    
+        sfx = MediaPlayer.create(this, R.raw.btnsfx);
+          
 
         videoViewCX.setOnPreparedListener(new MediaPlayer.OnPreparedListener() {
             @Override
             public void onPrepared(MediaPlayer mp) {
+                
+                sfx.start();
 
                 videoViewCX.start();
                 
@@ -772,6 +844,8 @@ public class LessonCounting extends AppCompatActivity {
         videoViewCX.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
             @Override
             public void onCompletion(MediaPlayer mp) {
+                
+                sfx.start();
 
                 videoViewCX.stopPlayback();
                 count15();
@@ -783,7 +857,7 @@ public class LessonCounting extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                sfx.start();
+                
                 videoViewCX.stopPlayback();
                 count13();
 
@@ -794,7 +868,7 @@ public class LessonCounting extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                sfx.start();
+                
                 videoViewCX.stopPlayback();
                 count15();
 
@@ -808,11 +882,14 @@ public class LessonCounting extends AppCompatActivity {
         videoPathCX = "android.resource://" + getPackageName() + "/" + R.raw.count15;
         uriCX = Uri.parse(videoPathCX);
         videoViewCX.setVideoURI(uriCX);
-        sfx = MediaPlayer.create(this, R.raw.btnsfx);    
+        sfx = MediaPlayer.create(this, R.raw.btnsfx);
+          
 
         videoViewCX.setOnPreparedListener(new MediaPlayer.OnPreparedListener() {
             @Override
             public void onPrepared(MediaPlayer mp) {
+                
+                sfx.start();
 
                 videoViewCX.start();
                 
@@ -823,6 +900,8 @@ public class LessonCounting extends AppCompatActivity {
         videoViewCX.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
             @Override
             public void onCompletion(MediaPlayer mp) {
+                
+                sfx.start();
 
                 videoViewCX.stopPlayback();
                 count16();
@@ -834,7 +913,7 @@ public class LessonCounting extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                sfx.start();
+                
                 videoViewCX.stopPlayback();
                 count14();
 
@@ -845,7 +924,7 @@ public class LessonCounting extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                sfx.start();
+                
                 videoViewCX.stopPlayback();
                 count16();
 
@@ -859,11 +938,14 @@ public class LessonCounting extends AppCompatActivity {
         videoPathCX = "android.resource://" + getPackageName() + "/" + R.raw.count16;
         uriCX = Uri.parse(videoPathCX);
         videoViewCX.setVideoURI(uriCX);
-        sfx = MediaPlayer.create(this, R.raw.btnsfx);    
+        sfx = MediaPlayer.create(this, R.raw.btnsfx);
+          
 
         videoViewCX.setOnPreparedListener(new MediaPlayer.OnPreparedListener() {
             @Override
             public void onPrepared(MediaPlayer mp) {
+                
+                sfx.start();
 
                 videoViewCX.start();
                 
@@ -874,6 +956,8 @@ public class LessonCounting extends AppCompatActivity {
         videoViewCX.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
             @Override
             public void onCompletion(MediaPlayer mp) {
+                
+                sfx.start();
 
                 videoViewCX.stopPlayback();
                 count17();
@@ -885,7 +969,7 @@ public class LessonCounting extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                sfx.start();
+                
                 videoViewCX.stopPlayback();
                 count15();
 
@@ -896,7 +980,7 @@ public class LessonCounting extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                sfx.start();
+                
                 videoViewCX.stopPlayback();
                 count17();
 
@@ -910,11 +994,14 @@ public class LessonCounting extends AppCompatActivity {
         videoPathCX = "android.resource://" + getPackageName() + "/" + R.raw.count17;
         uriCX = Uri.parse(videoPathCX);
         videoViewCX.setVideoURI(uriCX);
-        sfx = MediaPlayer.create(this, R.raw.btnsfx);    
+        sfx = MediaPlayer.create(this, R.raw.btnsfx);
+          
 
         videoViewCX.setOnPreparedListener(new MediaPlayer.OnPreparedListener() {
             @Override
             public void onPrepared(MediaPlayer mp) {
+                
+                sfx.start();
 
                 videoViewCX.start();
                 
@@ -925,6 +1012,8 @@ public class LessonCounting extends AppCompatActivity {
         videoViewCX.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
             @Override
             public void onCompletion(MediaPlayer mp) {
+                
+                sfx.start();
 
                 videoViewCX.stopPlayback();
                 count18();
@@ -936,7 +1025,7 @@ public class LessonCounting extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                sfx.start();
+                
                 videoViewCX.stopPlayback();
                 count16();
 
@@ -947,7 +1036,7 @@ public class LessonCounting extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                sfx.start();
+                
                 videoViewCX.stopPlayback();
                 count18();
 
@@ -961,11 +1050,14 @@ public class LessonCounting extends AppCompatActivity {
         videoPathCX = "android.resource://" + getPackageName() + "/" + R.raw.count18;
         uriCX = Uri.parse(videoPathCX);
         videoViewCX.setVideoURI(uriCX);
-        sfx = MediaPlayer.create(this, R.raw.btnsfx);    
+        sfx = MediaPlayer.create(this, R.raw.btnsfx);
+          
 
         videoViewCX.setOnPreparedListener(new MediaPlayer.OnPreparedListener() {
             @Override
             public void onPrepared(MediaPlayer mp) {
+                
+                sfx.start();
 
                 videoViewCX.start();
                 
@@ -976,6 +1068,8 @@ public class LessonCounting extends AppCompatActivity {
         videoViewCX.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
             @Override
             public void onCompletion(MediaPlayer mp) {
+                
+                sfx.start();
 
                 videoViewCX.stopPlayback();
                 count19();
@@ -987,7 +1081,7 @@ public class LessonCounting extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                sfx.start();
+                
                 videoViewCX.stopPlayback();
                 count17();
 
@@ -998,7 +1092,7 @@ public class LessonCounting extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                sfx.start();
+                
                 videoViewCX.stopPlayback();
                 count19();
 
@@ -1012,11 +1106,14 @@ public class LessonCounting extends AppCompatActivity {
         videoPathCX = "android.resource://" + getPackageName() + "/" + R.raw.count19;
         uriCX = Uri.parse(videoPathCX);
         videoViewCX.setVideoURI(uriCX);
-        sfx = MediaPlayer.create(this, R.raw.btnsfx);    
+        sfx = MediaPlayer.create(this, R.raw.btnsfx);
+          
 
         videoViewCX.setOnPreparedListener(new MediaPlayer.OnPreparedListener() {
             @Override
             public void onPrepared(MediaPlayer mp) {
+                
+                sfx.start();
 
                 videoViewCX.start();
                 
@@ -1027,6 +1124,8 @@ public class LessonCounting extends AppCompatActivity {
         videoViewCX.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
             @Override
             public void onCompletion(MediaPlayer mp) {
+                
+                sfx.start();
 
                 videoViewCX.stopPlayback();
                 count20();
@@ -1038,7 +1137,7 @@ public class LessonCounting extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                sfx.start();
+                
                 videoViewCX.stopPlayback();
                 count18();
 
@@ -1049,7 +1148,7 @@ public class LessonCounting extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                sfx.start();
+                
                 videoViewCX.stopPlayback();
                 count20();
 
@@ -1063,11 +1162,14 @@ public class LessonCounting extends AppCompatActivity {
         videoPathCX = "android.resource://" + getPackageName() + "/" + R.raw.count20;
         uriCX = Uri.parse(videoPathCX);
         videoViewCX.setVideoURI(uriCX);
-        sfx = MediaPlayer.create(this, R.raw.btnsfx);    
+        sfx = MediaPlayer.create(this, R.raw.btnsfx);
+          
 
         videoViewCX.setOnPreparedListener(new MediaPlayer.OnPreparedListener() {
             @Override
             public void onPrepared(MediaPlayer mp) {
+                
+                sfx.start();
 
                 videoViewCX.start();
                 
@@ -1078,6 +1180,8 @@ public class LessonCounting extends AppCompatActivity {
         videoViewCX.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
             @Override
             public void onCompletion(MediaPlayer mp) {
+                
+                sfx.start();
 
                 videoViewCX.stopPlayback();
                 startActivity(new Intent(LessonCounting.this, CountingLessonCongrats.class));
@@ -1089,7 +1193,7 @@ public class LessonCounting extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                sfx.start();
+                
                 videoViewCX.stopPlayback();
                 count19();
 
@@ -1100,7 +1204,7 @@ public class LessonCounting extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                sfx.start();
+                
                 videoViewCX.stopPlayback();
                 startActivity(new Intent(LessonCounting.this, CountingLessonCongrats.class));
 
@@ -1111,14 +1215,31 @@ public class LessonCounting extends AppCompatActivity {
 
     @Override
     protected void onUserLeaveHint(){
+
         sfx.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
             @Override
             public void onCompletion(MediaPlayer mp) {
+
                 sfx.release();
+
             }
         });
 
+        videoViewCX.pause();
+        currentPosition = videoViewCX.getCurrentPosition();
+
         super.onUserLeaveHint();
+
+    }
+
+    @Override
+    protected void onResume(){
+
+        videoViewCX.seekTo(currentPosition);
+        videoViewCX.start();
+
+        super.onResume();
+
     }
 
 }

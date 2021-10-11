@@ -19,6 +19,7 @@ public class LessonIntroCompassion extends AppCompatActivity {
     String videoPathICP;
     Uri uriICP;
     MediaPlayer sfx;
+    int currentPosition;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -72,6 +73,7 @@ public class LessonIntroCompassion extends AppCompatActivity {
 
     @Override
     protected void onUserLeaveHint(){
+
         sfx.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
             @Override
             public void onCompletion(MediaPlayer mp) {
@@ -79,6 +81,20 @@ public class LessonIntroCompassion extends AppCompatActivity {
             }
         });
 
+        videoViewICP.pause();
+        currentPosition = videoViewICP.getCurrentPosition();
+
         super.onUserLeaveHint();
+
+    }
+
+    @Override
+    protected void onResume(){
+
+        videoViewICP.seekTo(currentPosition);
+        videoViewICP.start();
+
+        super.onResume();
+
     }
 }

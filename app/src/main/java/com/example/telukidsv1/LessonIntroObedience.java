@@ -19,6 +19,7 @@ public class LessonIntroObedience extends AppCompatActivity {
     String videoPathO;
     Uri uriO;
     MediaPlayer sfx;
+    int currentPosition;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -70,6 +71,7 @@ public class LessonIntroObedience extends AppCompatActivity {
 
     @Override
     protected void onUserLeaveHint(){
+
         sfx.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
             @Override
             public void onCompletion(MediaPlayer mp) {
@@ -77,6 +79,20 @@ public class LessonIntroObedience extends AppCompatActivity {
             }
         });
 
+        videoViewO.pause();
+        currentPosition = videoViewO.getCurrentPosition();
+
         super.onUserLeaveHint();
+
+    }
+
+    @Override
+    protected void onResume(){
+
+        videoViewO.seekTo(currentPosition);
+        videoViewO.start();
+
+        super.onResume();
+
     }
 }

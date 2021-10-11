@@ -19,6 +19,7 @@ public class LessonIntroSubtraction extends AppCompatActivity {
     String videoPathISB;
     Uri uriISB;
     MediaPlayer sfx;
+    int currentPosition;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -73,6 +74,7 @@ public class LessonIntroSubtraction extends AppCompatActivity {
 
     @Override
     protected void onUserLeaveHint(){
+
         sfx.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
             @Override
             public void onCompletion(MediaPlayer mp) {
@@ -80,6 +82,20 @@ public class LessonIntroSubtraction extends AppCompatActivity {
             }
         });
 
+        videoViewISB.pause();
+        currentPosition = videoViewISB.getCurrentPosition();
+
         super.onUserLeaveHint();
+
+    }
+
+    @Override
+    protected void onResume(){
+
+        videoViewISB.seekTo(currentPosition);
+        videoViewISB.start();
+
+        super.onResume();
+
     }
 }

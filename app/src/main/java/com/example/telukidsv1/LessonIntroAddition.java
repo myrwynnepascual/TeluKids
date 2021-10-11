@@ -19,6 +19,7 @@ public class LessonIntroAddition extends AppCompatActivity {
     String videoPathIA;
     Uri uriIA;
     MediaPlayer sfx;
+    int currentPosition;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -74,13 +75,28 @@ public class LessonIntroAddition extends AppCompatActivity {
 
     @Override
     protected void onUserLeaveHint(){
+        
         sfx.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
             @Override
             public void onCompletion(MediaPlayer mp) {
                 sfx.release();
             }
         });
+        
+        videoViewIA.pause();
+        currentPosition = videoViewIA.getCurrentPosition();
 
         super.onUserLeaveHint();
+
+    }
+
+    @Override
+    protected void onResume(){
+
+        videoViewIA.seekTo(currentPosition);
+        videoViewIA.start();
+
+        super.onResume();
+
     }
 }

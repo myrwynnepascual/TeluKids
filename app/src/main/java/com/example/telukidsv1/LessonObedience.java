@@ -19,6 +19,7 @@ public class LessonObedience extends AppCompatActivity {
     ImageButton backbtnO79,nextbtnO79;
     MediaController mediaController;
     MediaPlayer sfx;
+    int currentPosition;
 
 
     @Override
@@ -59,6 +60,8 @@ public class LessonObedience extends AppCompatActivity {
             @Override
             public void onCompletion(MediaPlayer mp) {
 
+                sfx.start();
+
                 videoViewO79.stopPlayback();
                 obedience2();
 
@@ -70,6 +73,7 @@ public class LessonObedience extends AppCompatActivity {
             public void onClick(View v) {
 
                 sfx.start();
+
                 videoViewO79.stopPlayback();
                 startActivity(new Intent(LessonObedience.this,ChooseModeObedience.class));
 
@@ -81,6 +85,7 @@ public class LessonObedience extends AppCompatActivity {
             public void onClick(View v) {
 
                 sfx.start();
+
                 videoViewO79.stopPlayback();
                 obedience2();
 
@@ -107,6 +112,8 @@ public class LessonObedience extends AppCompatActivity {
             @Override
             public void onCompletion(MediaPlayer mp) {
 
+                sfx.start();
+
                 videoViewO79.stopPlayback();
                 obedience3();
 
@@ -118,6 +125,7 @@ public class LessonObedience extends AppCompatActivity {
             public void onClick(View v) {
 
                 sfx.start();
+
                 videoViewO79.stopPlayback();
                 obedience1();
 
@@ -129,6 +137,7 @@ public class LessonObedience extends AppCompatActivity {
             public void onClick(View v) {
 
                 sfx.start();
+
                 videoViewO79.stopPlayback();
                 obedience3();
 
@@ -155,6 +164,8 @@ public class LessonObedience extends AppCompatActivity {
             @Override
             public void onCompletion(MediaPlayer mp) {
 
+                sfx.start();
+
                 videoViewO79.stopPlayback();
                 obedience4();
 
@@ -166,6 +177,7 @@ public class LessonObedience extends AppCompatActivity {
             public void onClick(View v) {
 
                 sfx.start();
+
                 videoViewO79.stopPlayback();
                 obedience2();
 
@@ -177,6 +189,7 @@ public class LessonObedience extends AppCompatActivity {
             public void onClick(View v) {
 
                 sfx.start();
+
                 videoViewO79.stopPlayback();
                 obedience4();
 
@@ -203,6 +216,8 @@ public class LessonObedience extends AppCompatActivity {
             @Override
             public void onCompletion(MediaPlayer mp) {
 
+                sfx.start();
+
                 videoViewO79.stopPlayback();
                 obedience5();
 
@@ -214,6 +229,7 @@ public class LessonObedience extends AppCompatActivity {
             public void onClick(View v) {
 
                 sfx.start();
+
                 videoViewO79.stopPlayback();
                 obedience3();
 
@@ -225,6 +241,7 @@ public class LessonObedience extends AppCompatActivity {
             public void onClick(View v) {
 
                 sfx.start();
+
                 videoViewO79.stopPlayback();
                 obedience5();
 
@@ -251,6 +268,8 @@ public class LessonObedience extends AppCompatActivity {
             @Override
             public void onCompletion(MediaPlayer mp) {
 
+                sfx.start();
+
                 videoViewO79.stopPlayback();
                 obedience6();
 
@@ -262,6 +281,7 @@ public class LessonObedience extends AppCompatActivity {
             public void onClick(View v) {
 
                 sfx.start();
+
                 videoViewO79.stopPlayback();
                 obedience4();
 
@@ -273,6 +293,7 @@ public class LessonObedience extends AppCompatActivity {
             public void onClick(View v) {
 
                 sfx.start();
+
                 videoViewO79.stopPlayback();
                 obedience6();
 
@@ -299,6 +320,8 @@ public class LessonObedience extends AppCompatActivity {
             @Override
             public void onCompletion(MediaPlayer mp) {
 
+                sfx.start();
+
                 videoViewO79.stopPlayback();
                 obedience7();
 
@@ -310,6 +333,7 @@ public class LessonObedience extends AppCompatActivity {
             public void onClick(View v) {
 
                 sfx.start();
+
                 videoViewO79.stopPlayback();
                 obedience5();
 
@@ -321,6 +345,7 @@ public class LessonObedience extends AppCompatActivity {
             public void onClick(View v) {
 
                 sfx.start();
+
                 videoViewO79.stopPlayback();
                 obedience7();
 
@@ -347,6 +372,8 @@ public class LessonObedience extends AppCompatActivity {
             @Override
             public void onCompletion(MediaPlayer mp) {
 
+                sfx.start();
+
                 videoViewO79.stopPlayback();
                 startActivity(new Intent(LessonObedience.this, ObedienceLessonCongrats.class));
 
@@ -358,6 +385,7 @@ public class LessonObedience extends AppCompatActivity {
             public void onClick(View v) {
 
                 sfx.start();
+
                 videoViewO79.stopPlayback();
                 obedience7();
 
@@ -369,6 +397,7 @@ public class LessonObedience extends AppCompatActivity {
             public void onClick(View v) {
 
                 sfx.start();
+
                 videoViewO79.stopPlayback();
                 startActivity(new Intent(LessonObedience.this, ObedienceLessonCongrats.class));
 
@@ -378,13 +407,30 @@ public class LessonObedience extends AppCompatActivity {
 
     @Override
     protected void onUserLeaveHint(){
+
         sfx.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
             @Override
             public void onCompletion(MediaPlayer mp) {
+
                 sfx.release();
+
             }
         });
 
+        videoViewO79.pause();
+        currentPosition = videoViewO79.getCurrentPosition();
+
         super.onUserLeaveHint();
+
+    }
+
+    @Override
+    protected void onResume(){
+
+        videoViewO79.seekTo(currentPosition);
+        videoViewO79.start();
+
+        super.onResume();
+
     }
 }

@@ -19,6 +19,7 @@ public class LessonSubtraction extends AppCompatActivity {
     ImageButton backbtnS,nextbtnS;
     MediaController mediaController;
     MediaPlayer sfx;
+    int currentPosition;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -59,6 +60,8 @@ public class LessonSubtraction extends AppCompatActivity {
             @Override
             public void onCompletion(MediaPlayer mp) {
 
+                sfx.start();
+
                 videoViewS.stopPlayback();
                 subtractiony();
 
@@ -69,7 +72,6 @@ public class LessonSubtraction extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                sfx.start();
                 videoViewS.stopPlayback();
                 startActivity(new Intent(LessonSubtraction.this,ChooseModeSubtraction.class));
 
@@ -80,7 +82,6 @@ public class LessonSubtraction extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                sfx.start();
                 videoViewS.stopPlayback();
                 subtractiony();
 
@@ -93,7 +94,7 @@ public class LessonSubtraction extends AppCompatActivity {
         videoPathS = "android.resource://" + getPackageName() + "/" + R.raw.subtractiony;
         uriS = Uri.parse(videoPathS);
         videoViewS.setVideoURI(uriS);
-        sfx = MediaPlayer.create(this, R.raw.btnsfx); 
+        sfx = MediaPlayer.create(this, R.raw.btnsfx);
 
          videoViewS.setOnPreparedListener(new MediaPlayer.OnPreparedListener() {
             @Override
@@ -108,6 +109,8 @@ public class LessonSubtraction extends AppCompatActivity {
             @Override
             public void onCompletion(MediaPlayer mp) {
 
+                sfx.start();
+
                 videoViewS.stopPlayback();
                 subtraction1();
 
@@ -118,7 +121,6 @@ public class LessonSubtraction extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                sfx.start();
                 videoViewS.stopPlayback();
                 startActivity(new Intent(LessonSubtraction.this,ChooseModeSubtraction.class));
 
@@ -129,7 +131,6 @@ public class LessonSubtraction extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                sfx.start();
                 videoViewS.stopPlayback();
                 subtraction1();
 
@@ -156,6 +157,8 @@ public class LessonSubtraction extends AppCompatActivity {
             @Override
             public void onCompletion(MediaPlayer mp) {
 
+                sfx.start();
+
                 videoViewS.stopPlayback();
                 subtraction2();
 
@@ -166,7 +169,6 @@ public class LessonSubtraction extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                sfx.start();
                 videoViewS.stopPlayback();
                 subtractionx();
 
@@ -177,7 +179,6 @@ public class LessonSubtraction extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                sfx.start();
                 videoViewS.stopPlayback();
                 subtraction2();
 
@@ -204,6 +205,8 @@ public class LessonSubtraction extends AppCompatActivity {
             @Override
             public void onCompletion(MediaPlayer mp) {
 
+                sfx.start();
+
                 videoViewS.stopPlayback();
                 subtraction3();
 
@@ -214,7 +217,6 @@ public class LessonSubtraction extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                sfx.start();
                 videoViewS.stopPlayback();
                 subtraction1();
 
@@ -225,7 +227,6 @@ public class LessonSubtraction extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                sfx.start();
                 videoViewS.stopPlayback();
                 subtraction3();
 
@@ -252,6 +253,8 @@ public class LessonSubtraction extends AppCompatActivity {
             @Override
             public void onCompletion(MediaPlayer mp) {
 
+                sfx.start();
+
                 videoViewS.stopPlayback();
                 subtraction4();
 
@@ -262,7 +265,6 @@ public class LessonSubtraction extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                sfx.start();
                 videoViewS.stopPlayback();
                 subtraction2();
 
@@ -273,7 +275,6 @@ public class LessonSubtraction extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                sfx.start();
                 videoViewS.stopPlayback();
                 subtraction4();
 
@@ -300,6 +301,8 @@ public class LessonSubtraction extends AppCompatActivity {
             @Override
             public void onCompletion(MediaPlayer mp) {
 
+                sfx.start();
+
                 videoViewS.stopPlayback();
                 subtraction5();
 
@@ -310,7 +313,6 @@ public class LessonSubtraction extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                sfx.start();
                 videoViewS.stopPlayback();
                 subtraction3();
 
@@ -321,7 +323,6 @@ public class LessonSubtraction extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                sfx.start();
                 videoViewS.stopPlayback();
                 subtraction5();
 
@@ -348,6 +349,8 @@ public class LessonSubtraction extends AppCompatActivity {
             @Override
             public void onCompletion(MediaPlayer mp) {
 
+                sfx.start();
+
                 videoViewS.stopPlayback();
                 subtraction6();
 
@@ -358,7 +361,6 @@ public class LessonSubtraction extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                sfx.start();
                 videoViewS.stopPlayback();
                 subtraction4();
 
@@ -369,7 +371,6 @@ public class LessonSubtraction extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                sfx.start();
                 videoViewS.stopPlayback();
                 subtraction6();
 
@@ -396,6 +397,8 @@ public class LessonSubtraction extends AppCompatActivity {
             @Override
             public void onCompletion(MediaPlayer mp) {
 
+                sfx.start();
+
                 videoViewS.stopPlayback();
                 subtraction7();
 
@@ -406,7 +409,6 @@ public class LessonSubtraction extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                sfx.start();
                 videoViewS.stopPlayback();
                 subtraction5();
 
@@ -417,7 +419,6 @@ public class LessonSubtraction extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                sfx.start();
                 videoViewS.stopPlayback();
                 subtraction7();
 
@@ -444,6 +445,8 @@ public class LessonSubtraction extends AppCompatActivity {
             @Override
             public void onCompletion(MediaPlayer mp) {
 
+                sfx.start();
+
                 videoViewS.stopPlayback();
                 subtraction8();
 
@@ -454,7 +457,6 @@ public class LessonSubtraction extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                sfx.start();
                 videoViewS.stopPlayback();
                 subtraction6();
 
@@ -465,7 +467,6 @@ public class LessonSubtraction extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                sfx.start();
                 videoViewS.stopPlayback();
                 subtraction8();
 
@@ -492,6 +493,8 @@ public class LessonSubtraction extends AppCompatActivity {
             @Override
             public void onCompletion(MediaPlayer mp) {
 
+                sfx.start();
+
                 videoViewS.stopPlayback();
                 subtraction9();
 
@@ -502,7 +505,6 @@ public class LessonSubtraction extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                sfx.start();
                 videoViewS.stopPlayback();
                 subtraction7();
 
@@ -513,7 +515,6 @@ public class LessonSubtraction extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                sfx.start();
                 videoViewS.stopPlayback();
                 subtraction9();
 
@@ -540,6 +541,8 @@ public class LessonSubtraction extends AppCompatActivity {
             @Override
             public void onCompletion(MediaPlayer mp) {
 
+                sfx.start();
+
                 videoViewS.stopPlayback();
                 subtraction10();
 
@@ -550,7 +553,6 @@ public class LessonSubtraction extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                sfx.start();
                 videoViewS.stopPlayback();
                 subtraction8();
 
@@ -561,7 +563,6 @@ public class LessonSubtraction extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                sfx.start();
                 videoViewS.stopPlayback();
                 subtraction10();
 
@@ -588,6 +589,8 @@ public class LessonSubtraction extends AppCompatActivity {
             @Override
             public void onCompletion(MediaPlayer mp) {
 
+                sfx.start();
+
                 videoViewS.stopPlayback();
                 startActivity(new Intent(LessonSubtraction.this,SubtractionLessonCongrats.class));
 
@@ -598,7 +601,6 @@ public class LessonSubtraction extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                sfx.start();
                 videoViewS.stopPlayback();
                 subtraction9();
 
@@ -609,7 +611,6 @@ public class LessonSubtraction extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                sfx.start();
                 videoViewS.stopPlayback();
                 startActivity(new Intent(LessonSubtraction.this,SubtractionLessonCongrats.class));
 
@@ -619,13 +620,30 @@ public class LessonSubtraction extends AppCompatActivity {
 
     @Override
     protected void onUserLeaveHint(){
+
         sfx.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
             @Override
             public void onCompletion(MediaPlayer mp) {
+
                 sfx.release();
+
             }
         });
 
+        videoViewS.pause();
+        currentPosition = videoViewS.getCurrentPosition();
+
         super.onUserLeaveHint();
+
+    }
+
+    @Override
+    protected void onResume(){
+
+        videoViewS.seekTo(currentPosition);
+        videoViewS.start();
+
+        super.onResume();
+
     }
 }

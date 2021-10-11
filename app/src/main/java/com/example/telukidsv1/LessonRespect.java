@@ -19,6 +19,7 @@ public class LessonRespect extends AppCompatActivity {
     ImageButton backbtnR36,nextbtnR36;
     MediaController mediaController;
     MediaPlayer sfx;
+    int currentPosition;
 
     
     @Override
@@ -59,6 +60,8 @@ public class LessonRespect extends AppCompatActivity {
             @Override
             public void onCompletion(MediaPlayer mp) {
 
+                sfx.start();
+
                 videoViewR36.stopPlayback();
                 respect2();
 
@@ -70,6 +73,7 @@ public class LessonRespect extends AppCompatActivity {
             public void onClick(View v) {
 
                 sfx.start();
+
                 videoViewR36.stopPlayback();
                 startActivity(new Intent(LessonRespect.this,ChooseModeRespect.class));
 
@@ -81,6 +85,7 @@ public class LessonRespect extends AppCompatActivity {
             public void onClick(View v) {
 
                 sfx.start();
+
                 videoViewR36.stopPlayback();
                 respect2();
 
@@ -107,6 +112,8 @@ public class LessonRespect extends AppCompatActivity {
             @Override
             public void onCompletion(MediaPlayer mp) {
 
+                sfx.start();
+
                 videoViewR36.stopPlayback();
                 respect3();
 
@@ -118,6 +125,7 @@ public class LessonRespect extends AppCompatActivity {
             public void onClick(View v) {
 
                 sfx.start();
+
                 videoViewR36.stopPlayback();
                 respect1();
 
@@ -129,6 +137,7 @@ public class LessonRespect extends AppCompatActivity {
             public void onClick(View v) {
 
                 sfx.start();
+
                 videoViewR36.stopPlayback();
                 respect3();
 
@@ -155,6 +164,8 @@ public class LessonRespect extends AppCompatActivity {
             @Override
             public void onCompletion(MediaPlayer mp) {
 
+                sfx.start();
+
                 videoViewR36.stopPlayback();
                 respect4();
 
@@ -166,6 +177,7 @@ public class LessonRespect extends AppCompatActivity {
             public void onClick(View v) {
 
                 sfx.start();
+
                 videoViewR36.stopPlayback();
                 respect2();
 
@@ -177,6 +189,7 @@ public class LessonRespect extends AppCompatActivity {
             public void onClick(View v) {
 
                 sfx.start();
+
                 videoViewR36.stopPlayback();
                 respect4();
 
@@ -203,6 +216,8 @@ public class LessonRespect extends AppCompatActivity {
             @Override
             public void onCompletion(MediaPlayer mp) {
 
+                sfx.start();
+
                 videoViewR36.stopPlayback();
                 startActivity(new Intent(LessonRespect.this, RespectLessonCongrats.class));
 
@@ -214,6 +229,7 @@ public class LessonRespect extends AppCompatActivity {
             public void onClick(View v) {
 
                 sfx.start();
+
                 videoViewR36.stopPlayback();
                 respect3();
 
@@ -225,6 +241,7 @@ public class LessonRespect extends AppCompatActivity {
             public void onClick(View v) {
 
                 sfx.start();
+
                 videoViewR36.stopPlayback();
                 startActivity(new Intent(LessonRespect.this, RespectLessonCongrats.class));
 
@@ -234,13 +251,30 @@ public class LessonRespect extends AppCompatActivity {
 
     @Override
     protected void onUserLeaveHint(){
+
         sfx.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
             @Override
             public void onCompletion(MediaPlayer mp) {
+
                 sfx.release();
+
             }
         });
 
+        videoViewR36.pause();
+        currentPosition = videoViewR36.getCurrentPosition();
+
         super.onUserLeaveHint();
+
+    }
+
+    @Override
+    protected void onResume(){
+
+        videoViewR36.seekTo(currentPosition);
+        videoViewR36.start();
+
+        super.onResume();
+
     }
 }

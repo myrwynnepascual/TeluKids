@@ -20,6 +20,7 @@ public class LessonIntroColors extends AppCompatActivity {
     String videoPathIC;
     Uri uriIC;
     MediaPlayer sfx;
+    int currentPosition;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -55,6 +56,7 @@ public class LessonIntroColors extends AppCompatActivity {
             public void onClick(View v) {
 
                 sfx.start();
+
                 videoViewIC.stopPlayback();
                 startActivity(new Intent(LessonIntroColors.this,ChooseModeColors.class));
 
@@ -73,6 +75,7 @@ public class LessonIntroColors extends AppCompatActivity {
 
     @Override
     protected void onUserLeaveHint(){
+
         sfx.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
             @Override
             public void onCompletion(MediaPlayer mp) {
@@ -80,6 +83,20 @@ public class LessonIntroColors extends AppCompatActivity {
             }
         });
 
+        videoViewIC.pause();
+        currentPosition = videoViewIC.getCurrentPosition();
+
         super.onUserLeaveHint();
+
+    }
+
+    @Override
+    protected void onResume(){
+
+        videoViewIC.seekTo(currentPosition);
+        videoViewIC.start();
+
+        super.onResume();
+
     }
 }
