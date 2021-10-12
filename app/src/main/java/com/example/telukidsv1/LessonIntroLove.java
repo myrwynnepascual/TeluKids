@@ -14,58 +14,58 @@ import android.widget.VideoView;
 
 public class LessonIntroLove extends AppCompatActivity {
 
-    ImageButton btncloseL;
-    VideoView videoViewL;
-    String videoPathL;
-    Uri uriL;
+    ImageButton btncloseIL;
+    VideoView videoViewIL;
+    String videoPathIL;
+    Uri uriIL;
     MediaPlayer sfx;
     int currentPosition;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_lesson_intro_love);
+        setContentView(R.layout.activity_lesson_intro_vid);
 
-        btncloseL = findViewById(R.id.btncloseL79);
-        videoViewL = findViewById(R.id.videoL79);
-        videoPathL = "android.resource://" + getPackageName() + "/" + R.raw.loveintrovideo;
-        uriL = Uri.parse(videoPathL);
-        videoViewL.setVideoURI(uriL);
+        btncloseIL = findViewById(R.id.btncloseLIV);
+        videoViewIL = findViewById(R.id.videoLIV);
+        videoPathIL = "android.resource://" + getPackageName() + "/" + R.raw.loveintrovideo;
+        uriIL = Uri.parse(videoPathIL);
+        videoViewIL.setVideoURI(uriIL);
 
         MediaController mediaController = new MediaController(this);
-        videoViewL.setMediaController(mediaController);
-        mediaController.setAnchorView(videoViewL);
+        videoViewIL.setMediaController(mediaController);
+        mediaController.setAnchorView(videoViewIL);
 
         sfx = MediaPlayer.create(this, R.raw.btnsfx);
 
         BackgroundSoundService.onPause();
 
 
-        videoViewL.setOnPreparedListener(new MediaPlayer.OnPreparedListener() {
+        videoViewIL.setOnPreparedListener(new MediaPlayer.OnPreparedListener() {
             @Override
             public void onPrepared(MediaPlayer mp) {
 
-                videoViewL.start();
+                videoViewIL.start();
 
             }
         });
 
-        btncloseL.setOnClickListener(new View.OnClickListener() {
+        btncloseIL.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
                 sfx.start();
-                videoViewL.stopPlayback();
+                videoViewIL.stopPlayback();
                 startActivity(new Intent(LessonIntroLove.this,ChooseModeLove.class));
 
             }
         });
 
-        videoViewL.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+        videoViewIL.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
             @Override
             public void onCompletion(MediaPlayer mp) {
 
-                videoViewL.stopPlayback();
+                videoViewIL.stopPlayback();
                 startActivity(new Intent(LessonIntroLove.this,ChooseModeLove.class));
 
             }
@@ -82,8 +82,8 @@ public class LessonIntroLove extends AppCompatActivity {
             }
         });
 
-        videoViewL.pause();
-        currentPosition = videoViewL.getCurrentPosition();
+        videoViewIL.pause();
+        currentPosition = videoViewIL.getCurrentPosition();
 
         super.onUserLeaveHint();
 
@@ -92,8 +92,8 @@ public class LessonIntroLove extends AppCompatActivity {
     @Override
     protected void onResume(){
 
-        videoViewL.seekTo(currentPosition);
-        videoViewL.start();
+        videoViewIL.seekTo(currentPosition);
+        videoViewIL.start();
 
         super.onResume();
 

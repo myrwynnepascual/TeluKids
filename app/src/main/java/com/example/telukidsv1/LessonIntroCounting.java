@@ -24,10 +24,10 @@ public class LessonIntroCounting extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_lesson_intro_counting);
+        setContentView(R.layout.activity_lesson_intro_vid);
 
-        btnCloseICN = findViewById(R.id.btncloseIC);
-        videoViewICN = findViewById(R.id.videoIC);
+        btnCloseICN = findViewById(R.id.btncloseLIV);
+        videoViewICN = findViewById(R.id.videoLIV);
         videoPathICN = "android.resource://" + getPackageName() + "/" + R.raw.countingintrovideo;
         uriICN = Uri.parse(videoPathICN);
         videoViewICN.setVideoURI(uriICN);

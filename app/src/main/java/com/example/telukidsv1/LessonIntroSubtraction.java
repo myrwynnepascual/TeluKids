@@ -24,10 +24,10 @@ public class LessonIntroSubtraction extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_lesson_intro_subtraction);
+        setContentView(R.layout.activity_lesson_intro_vid);
 
-        btncloseISB = findViewById(R.id.btncloseISB);
-        videoViewISB = findViewById(R.id.videoISB);
+        btncloseISB = findViewById(R.id.btncloseLIV);
+        videoViewISB = findViewById(R.id.videoLIV);
         videoPathISB = "android.resource://" + getPackageName() + "/" + R.raw.subtractionintrovideo;
         uriISB = Uri.parse(videoPathISB);
         videoViewISB.setVideoURI(uriISB);

@@ -18,11 +18,11 @@ public class LogoutConfirmation79 extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_logout_confirmation79);
+        setContentView(R.layout.activity_logout_confirmation);
 
 
-        btnconfirmLO = findViewById(R.id.confirmlogoutbtn79);
-        btncancelLO = findViewById(R.id.cancellogoutbtn79);
+        btnconfirmLO = findViewById(R.id.confirmlogoutbtn);
+        btncancelLO = findViewById(R.id.cancellogoutbtn);
         sfx = MediaPlayer.create(this, R.raw.btnsfx);
 
         btnconfirmLO.setOnClickListener(new View.OnClickListener() {

@@ -24,10 +24,10 @@ public class LessonIntroObedience extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_lesson_intro_obedience);
+        setContentView(R.layout.activity_lesson_intro_vid);
 
-        btncloseO = findViewById(R.id.btncloseO79);
-        videoViewO = findViewById(R.id.videoO79);
+        btncloseO = findViewById(R.id.btncloseLIV);
+        videoViewO = findViewById(R.id.videoLIV);
         videoPathO = "android.resource://" + getPackageName() + "/" + R.raw.obedienceintrovideo;
         uriO = Uri.parse(videoPathO);
         videoViewO.setVideoURI(uriO);

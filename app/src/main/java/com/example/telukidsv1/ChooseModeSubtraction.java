@@ -16,12 +16,12 @@ public class ChooseModeSubtraction extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_choose_mode_subtraction);
+        setContentView(R.layout.activity_choose_mode);
 
-        backCMSB = findViewById(R.id.bconceptsbtnCMSB);
-        learnCMSB = findViewById(R.id.learnCMSB);
-        assessCMSB = findViewById(R.id.assessCMSB);
-        replayCMSB = findViewById(R.id.replayintroCMSB);
+        backCMSB = findViewById(R.id.bconceptsbtnCM);
+        learnCMSB = findViewById(R.id.learnCM);
+        assessCMSB = findViewById(R.id.assessCM);
+        replayCMSB = findViewById(R.id.replayintroCM);
 
         BackgroundSoundService.onResume();
 

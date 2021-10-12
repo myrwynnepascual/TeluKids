@@ -25,10 +25,10 @@ public class LessonIntroSociability extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_lesson_intro_sociability);
+        setContentView(R.layout.activity_lesson_intro_vid);
 
-        btncloseICS = findViewById(R.id.btncloseISC);
-        videoViewISC = findViewById(R.id.videoISC);
+        btncloseICS = findViewById(R.id.btncloseLIV);
+        videoViewISC = findViewById(R.id.videoLIV);
         videoPathISC = "android.resource://" + getPackageName() + "/" + R.raw.sociabilityintrovideo;
         uriISC = Uri.parse(videoPathISC);
         videoViewISC.setVideoURI(uriISC);

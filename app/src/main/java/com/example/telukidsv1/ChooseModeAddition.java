@@ -16,12 +16,12 @@ public class ChooseModeAddition extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_choose_mode_addition);
+        setContentView(R.layout.activity_choose_mode);
 
-        backCMA = findViewById(R.id.bconceptsbtnCMA);
-        learnCMA = findViewById(R.id.learnCMA);
-        assessCMA = findViewById(R.id.assessCMA);
-        replayCMA = findViewById(R.id.replayintroCMA);
+        backCMA = findViewById(R.id.bconceptsbtnCM);
+        learnCMA = findViewById(R.id.learnCM);
+        assessCMA = findViewById(R.id.assessCM);
+        replayCMA = findViewById(R.id.replayintroCM);
 
         BackgroundSoundService.onResume();
 

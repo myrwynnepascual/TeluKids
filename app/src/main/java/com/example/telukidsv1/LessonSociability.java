@@ -13,10 +13,10 @@ import android.widget.VideoView;
 
 public class LessonSociability extends AppCompatActivity {
 
-    VideoView videoViewSC36;
-    String videoPathSC36;
-    Uri uriSC36;
-    ImageButton backbtnSC36,nextbtnSC36;
+    VideoView videoViewSC;
+    String videoPathSC;
+    Uri uriSC;
+    ImageButton backbtnSC,nextbtnSC;
     MediaController mediaController;
     MediaPlayer sfx;
     int currentPosition;
@@ -24,16 +24,16 @@ public class LessonSociability extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_lesson_sociability);
+        setContentView(R.layout.activity_lesson);
 
-        videoViewSC36 = findViewById(R.id.videoSC36);
-        backbtnSC36 = findViewById(R.id.btnbackSC36);
-        nextbtnSC36 = findViewById(R.id.nextbtnSC36);
+        videoViewSC = findViewById(R.id.video);
+        backbtnSC = findViewById(R.id.btnback);
+        nextbtnSC = findViewById(R.id.nextbtn);
 
         mediaController = new MediaController(this);
-        videoViewSC36.setMediaController(mediaController);
+        videoViewSC.setMediaController(mediaController);
         mediaController.setVisibility(View.GONE);
-        mediaController.setAnchorView(videoViewSC36);
+        mediaController.setAnchorView(videoViewSC);
 
         BackgroundSoundService.onPause();
 
@@ -41,51 +41,49 @@ public class LessonSociability extends AppCompatActivity {
     }
 
     public void sociability1(){
-        videoPathSC36 = "android.resource://" + getPackageName() + "/" + R.raw.sociability1;
-        uriSC36 = Uri.parse(videoPathSC36);
-        videoViewSC36.setVideoURI(uriSC36);
+        videoPathSC = "android.resource://" + getPackageName() + "/" + R.raw.sociability1;
+        uriSC = Uri.parse(videoPathSC);
+        videoViewSC.setVideoURI(uriSC);
         sfx = MediaPlayer.create(this, R.raw.btnsfx);
 
-        videoViewSC36.setOnPreparedListener(new MediaPlayer.OnPreparedListener() {
+        videoViewSC.setOnPreparedListener(new MediaPlayer.OnPreparedListener() {
             @Override
             public void onPrepared(MediaPlayer mp) {
                 
-                videoViewSC36.start();
+                videoViewSC.start();
                 
             }
         });
 
-        videoViewSC36.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+        videoViewSC.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
             @Override
             public void onCompletion(MediaPlayer mp) {
 
-                sfx.start();
-
-                videoViewSC36.stopPlayback();
+                videoViewSC.stopPlayback();
                 sociability2();
 
             }
         });
 
-        backbtnSC36.setOnClickListener(new View.OnClickListener() {
+        backbtnSC.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
                 sfx.start();
 
-                videoViewSC36.stopPlayback();
+                videoViewSC.stopPlayback();
                 startActivity(new Intent(LessonSociability.this,ChooseModeSociability.class));
 
             }
         });
 
-        nextbtnSC36.setOnClickListener(new View.OnClickListener() {
+        nextbtnSC.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
                 sfx.start();
 
-                videoViewSC36.stopPlayback();
+                videoViewSC.stopPlayback();
                 sociability2();
 
             }
@@ -93,51 +91,49 @@ public class LessonSociability extends AppCompatActivity {
     }
 
     public void sociability2(){
-        videoPathSC36 = "android.resource://" + getPackageName() + "/" + R.raw.sociability2;
-        uriSC36 = Uri.parse(videoPathSC36);
-        videoViewSC36.setVideoURI(uriSC36);
+        videoPathSC = "android.resource://" + getPackageName() + "/" + R.raw.sociability2;
+        uriSC = Uri.parse(videoPathSC);
+        videoViewSC.setVideoURI(uriSC);
         sfx = MediaPlayer.create(this, R.raw.btnsfx);
 
-        videoViewSC36.setOnPreparedListener(new MediaPlayer.OnPreparedListener() {
+        videoViewSC.setOnPreparedListener(new MediaPlayer.OnPreparedListener() {
             @Override
             public void onPrepared(MediaPlayer mp) {
 
-                videoViewSC36.start();
+                videoViewSC.start();
 
             }
         });
 
-        videoViewSC36.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+        videoViewSC.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
             @Override
             public void onCompletion(MediaPlayer mp) {
 
-                sfx.start();
-
-                videoViewSC36.stopPlayback();
+                videoViewSC.stopPlayback();
                 sociability3();
 
             }
         });
 
-        backbtnSC36.setOnClickListener(new View.OnClickListener() {
+        backbtnSC.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
                 sfx.start();
 
-                videoViewSC36.stopPlayback();
+                videoViewSC.stopPlayback();
                 sociability1();
 
             }
         });
 
-        nextbtnSC36.setOnClickListener(new View.OnClickListener() {
+        nextbtnSC.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
                 sfx.start();
 
-                videoViewSC36.stopPlayback();
+                videoViewSC.stopPlayback();
                 sociability3();
 
             }
@@ -145,51 +141,49 @@ public class LessonSociability extends AppCompatActivity {
     }
 
     public void sociability3(){
-        videoPathSC36 = "android.resource://" + getPackageName() + "/" + R.raw.sociability3;
-        uriSC36 = Uri.parse(videoPathSC36);
-        videoViewSC36.setVideoURI(uriSC36);
+        videoPathSC = "android.resource://" + getPackageName() + "/" + R.raw.sociability3;
+        uriSC = Uri.parse(videoPathSC);
+        videoViewSC.setVideoURI(uriSC);
         sfx = MediaPlayer.create(this, R.raw.btnsfx);
 
-        videoViewSC36.setOnPreparedListener(new MediaPlayer.OnPreparedListener() {
+        videoViewSC.setOnPreparedListener(new MediaPlayer.OnPreparedListener() {
             @Override
             public void onPrepared(MediaPlayer mp) {
 
-                videoViewSC36.start();
+                videoViewSC.start();
 
             }
         });
 
-        videoViewSC36.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+        videoViewSC.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
             @Override
             public void onCompletion(MediaPlayer mp) {
 
-                sfx.start();
-
-                videoViewSC36.stopPlayback();
+                videoViewSC.stopPlayback();
                 sociability4();
 
             }
         });
 
-        backbtnSC36.setOnClickListener(new View.OnClickListener() {
+        backbtnSC.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
                 sfx.start();
 
-                videoViewSC36.stopPlayback();
+                videoViewSC.stopPlayback();
                 sociability2();
 
             }
         });
 
-        nextbtnSC36.setOnClickListener(new View.OnClickListener() {
+        nextbtnSC.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
                 sfx.start();
 
-                videoViewSC36.stopPlayback();
+                videoViewSC.stopPlayback();
                 sociability4();
 
             }
@@ -197,51 +191,49 @@ public class LessonSociability extends AppCompatActivity {
     }
 
     public void sociability4(){
-        videoPathSC36 = "android.resource://" + getPackageName() + "/" + R.raw.sociability4;
-        uriSC36 = Uri.parse(videoPathSC36);
-        videoViewSC36.setVideoURI(uriSC36);
+        videoPathSC = "android.resource://" + getPackageName() + "/" + R.raw.sociability4;
+        uriSC = Uri.parse(videoPathSC);
+        videoViewSC.setVideoURI(uriSC);
         sfx = MediaPlayer.create(this, R.raw.btnsfx);
 
-        videoViewSC36.setOnPreparedListener(new MediaPlayer.OnPreparedListener() {
+        videoViewSC.setOnPreparedListener(new MediaPlayer.OnPreparedListener() {
             @Override
             public void onPrepared(MediaPlayer mp) {
 
-                videoViewSC36.start();
+                videoViewSC.start();
 
             }
         });
 
-        videoViewSC36.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+        videoViewSC.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
             @Override
             public void onCompletion(MediaPlayer mp) {
 
-                sfx.start();
-
-                videoViewSC36.stopPlayback();
+                videoViewSC.stopPlayback();
                 startActivity(new Intent(LessonSociability.this, SociabilityLessonCongrats.class));
 
             }
         });
 
-        backbtnSC36.setOnClickListener(new View.OnClickListener() {
+        backbtnSC.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
                 sfx.start();
 
-                videoViewSC36.stopPlayback();
+                videoViewSC.stopPlayback();
                 sociability3();
 
             }
         });
 
-        nextbtnSC36.setOnClickListener(new View.OnClickListener() {
+        nextbtnSC.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
                 sfx.start();
 
-                videoViewSC36.stopPlayback();
+                videoViewSC.stopPlayback();
                 startActivity(new Intent(LessonSociability.this, SociabilityLessonCongrats.class));
 
             }
@@ -260,8 +252,8 @@ public class LessonSociability extends AppCompatActivity {
             }
         });
 
-        videoViewSC36.pause();
-        currentPosition = videoViewSC36.getCurrentPosition();
+        videoViewSC.pause();
+        currentPosition = videoViewSC.getCurrentPosition();
 
         super.onUserLeaveHint();
 
@@ -270,8 +262,8 @@ public class LessonSociability extends AppCompatActivity {
     @Override
     protected void onResume(){
 
-        videoViewSC36.seekTo(currentPosition);
-        videoViewSC36.start();
+        videoViewSC.seekTo(currentPosition);
+        videoViewSC.start();
 
         super.onResume();
 

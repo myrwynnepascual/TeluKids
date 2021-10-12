@@ -24,10 +24,10 @@ public class LessonIntroDoingGood extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_lesson_intro_doing_good);
+        setContentView(R.layout.activity_lesson_intro_vid);
 
-        btncloseDG = findViewById(R.id.btncloseDG79);
-        videoViewDG = findViewById(R.id.videoDG79);
+        btncloseDG = findViewById(R.id.btncloseLIV);
+        videoViewDG = findViewById(R.id.videoLIV);
         videoPathDG = "android.resource://" + getPackageName() + "/" + R.raw.goodintrovideo;
         uriDG = Uri.parse(videoPathDG);
         videoViewDG.setVideoURI(uriDG);

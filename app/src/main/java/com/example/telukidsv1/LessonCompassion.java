@@ -13,10 +13,10 @@ import android.widget.VideoView;
 
 public class LessonCompassion extends AppCompatActivity {
 
-    VideoView videoViewCP36;
-    String videoPathCP36;
-    Uri uriCP36;
-    ImageButton backbtnCP36,nextbtnCP36;
+    VideoView videoViewCP;
+    String videoPathCP;
+    Uri uriCP;
+    ImageButton backbtnCP,nextbtnCP;
     MediaController mediaController;
     MediaPlayer sfx;
     int currentPosition;
@@ -24,16 +24,16 @@ public class LessonCompassion extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_lesson_compassion);
+        setContentView(R.layout.activity_lesson);
 
-        videoViewCP36 = findViewById(R.id.videoCP36);
-        backbtnCP36 = findViewById(R.id.btnbackCP36);
-        nextbtnCP36 = findViewById(R.id.nextbtnCP36);
+        videoViewCP = findViewById(R.id.video);
+        backbtnCP = findViewById(R.id.btnback);
+        nextbtnCP = findViewById(R.id.nextbtn);
 
         mediaController = new MediaController(this);
-        videoViewCP36.setMediaController(mediaController);
+        videoViewCP.setMediaController(mediaController);
         mediaController.setVisibility(View.GONE);
-        mediaController.setAnchorView(videoViewCP36);
+        mediaController.setAnchorView(videoViewCP);
 
         BackgroundSoundService.onPause();
 
@@ -41,53 +41,50 @@ public class LessonCompassion extends AppCompatActivity {
     }
 
     public void compassion1(){
-        videoPathCP36 = "android.resource://" + getPackageName() + "/" + R.raw.compassion1;
-        uriCP36 = Uri.parse(videoPathCP36);
-        videoViewCP36.setVideoURI(uriCP36);
+        videoPathCP = "android.resource://" + getPackageName() + "/" + R.raw.compassion1;
+        uriCP = Uri.parse(videoPathCP);
+        videoViewCP.setVideoURI(uriCP);
         sfx = MediaPlayer.create(this, R.raw.btnsfx);
           
 
-        videoViewCP36.setOnPreparedListener(new MediaPlayer.OnPreparedListener() {
+        videoViewCP.setOnPreparedListener(new MediaPlayer.OnPreparedListener() {
             @Override
             public void onPrepared(MediaPlayer mp) {
-                
-                sfx.start();
-                videoViewCP36.start();
+
+                videoViewCP.start();
 
             }
         });
 
-        videoViewCP36.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+        videoViewCP.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
             @Override
             public void onCompletion(MediaPlayer mp) {
 
-                videoViewCP36.stopPlayback();
+                videoViewCP.stopPlayback();
                 compassion2();
 
             }
         });
 
-        backbtnCP36.setOnClickListener(new View.OnClickListener() {
+        backbtnCP.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
                 sfx.start();
 
-                
-                videoViewCP36.stopPlayback();
+                videoViewCP.stopPlayback();
                 startActivity(new Intent(LessonCompassion.this, ChooseModeCompassion.class));
 
             }
         });
 
-        nextbtnCP36.setOnClickListener(new View.OnClickListener() {
+        nextbtnCP.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
                 sfx.start();
-
                 
-                videoViewCP36.stopPlayback();
+                videoViewCP.stopPlayback();
                 compassion2();
 
             }
@@ -96,51 +93,50 @@ public class LessonCompassion extends AppCompatActivity {
     }
 
     public void compassion2(){
-        videoPathCP36 = "android.resource://" + getPackageName() + "/" + R.raw.compassion2;
-        uriCP36 = Uri.parse(videoPathCP36);
-        videoViewCP36.setVideoURI(uriCP36);
+        videoPathCP = "android.resource://" + getPackageName() + "/" + R.raw.compassion2;
+        uriCP = Uri.parse(videoPathCP);
+        videoViewCP.setVideoURI(uriCP);
         sfx = MediaPlayer.create(this, R.raw.btnsfx);
           
 
-        videoViewCP36.setOnPreparedListener(new MediaPlayer.OnPreparedListener() {
+        videoViewCP.setOnPreparedListener(new MediaPlayer.OnPreparedListener() {
             @Override
             public void onPrepared(MediaPlayer mp) {
-                
-                sfx.start();
 
-                videoViewCP36.start();
+                videoViewCP.start();
 
             }
         });
 
-        videoViewCP36.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+        videoViewCP.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
             @Override
             public void onCompletion(MediaPlayer mp) {
 
-                videoViewCP36.stopPlayback();
+                videoViewCP.stopPlayback();
                 compassion3();
 
             }
         });
 
-        backbtnCP36.setOnClickListener(new View.OnClickListener() {
+        backbtnCP.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
                 sfx.start();
-                videoViewCP36.stopPlayback();
+
+                videoViewCP.stopPlayback();
                 compassion1();
 
             }
         });
 
-        nextbtnCP36.setOnClickListener(new View.OnClickListener() {
+        nextbtnCP.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
                 sfx.start();
 
-                videoViewCP36.stopPlayback();
+                videoViewCP.stopPlayback();
                 compassion3();
 
             }
@@ -148,53 +144,50 @@ public class LessonCompassion extends AppCompatActivity {
     }
 
     public void compassion3(){
-        videoPathCP36 = "android.resource://" + getPackageName() + "/" + R.raw.compassion3;
-        uriCP36 = Uri.parse(videoPathCP36);
-        videoViewCP36.setVideoURI(uriCP36);
+        videoPathCP = "android.resource://" + getPackageName() + "/" + R.raw.compassion3;
+        uriCP = Uri.parse(videoPathCP);
+        videoViewCP.setVideoURI(uriCP);
         sfx = MediaPlayer.create(this, R.raw.btnsfx);
           
 
-        videoViewCP36.setOnPreparedListener(new MediaPlayer.OnPreparedListener() {
+        videoViewCP.setOnPreparedListener(new MediaPlayer.OnPreparedListener() {
             @Override
             public void onPrepared(MediaPlayer mp) {
-                
-                sfx.start();
 
-                videoViewCP36.start();
+                videoViewCP.start();
 
             }
         });
 
-        videoViewCP36.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+        videoViewCP.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
             @Override
             public void onCompletion(MediaPlayer mp) {
 
-                videoViewCP36.stopPlayback();
+                videoViewCP.stopPlayback();
                 compassion4();
 
             }
         });
 
-        backbtnCP36.setOnClickListener(new View.OnClickListener() {
+        backbtnCP.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
                 sfx.start();
                 
-                videoViewCP36.stopPlayback();
+                videoViewCP.stopPlayback();
                 compassion2();
 
             }
         });
 
-        nextbtnCP36.setOnClickListener(new View.OnClickListener() {
+        nextbtnCP.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
                 sfx.start();
-
                 
-                videoViewCP36.stopPlayback();
+                videoViewCP.stopPlayback();
                 compassion4();
 
             }
@@ -202,54 +195,50 @@ public class LessonCompassion extends AppCompatActivity {
     }
 
     public void compassion4(){
-        videoPathCP36 = "android.resource://" + getPackageName() + "/" + R.raw.compassion4;
-        uriCP36 = Uri.parse(videoPathCP36);
-        videoViewCP36.setVideoURI(uriCP36);
+        videoPathCP = "android.resource://" + getPackageName() + "/" + R.raw.compassion4;
+        uriCP = Uri.parse(videoPathCP);
+        videoViewCP.setVideoURI(uriCP);
         sfx = MediaPlayer.create(this, R.raw.btnsfx);
           
 
-        videoViewCP36.setOnPreparedListener(new MediaPlayer.OnPreparedListener() {
+        videoViewCP.setOnPreparedListener(new MediaPlayer.OnPreparedListener() {
             @Override
             public void onPrepared(MediaPlayer mp) {
-                
-                sfx.start();
 
-                videoViewCP36.start();
+                videoViewCP.start();
 
             }
         });
 
-        videoViewCP36.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+        videoViewCP.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
             @Override
             public void onCompletion(MediaPlayer mp) {
 
-                videoViewCP36.stopPlayback();
+                videoViewCP.stopPlayback();
                 compassion5();
 
             }
         });
 
-        backbtnCP36.setOnClickListener(new View.OnClickListener() {
+        backbtnCP.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
                 sfx.start();
-
                 
-                videoViewCP36.stopPlayback();
+                videoViewCP.stopPlayback();
                 compassion3();
 
             }
         });
 
-        nextbtnCP36.setOnClickListener(new View.OnClickListener() {
+        nextbtnCP.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
                 sfx.start();
-
                 
-                videoViewCP36.stopPlayback();
+                videoViewCP.stopPlayback();
                 compassion5();
 
             }
@@ -257,54 +246,50 @@ public class LessonCompassion extends AppCompatActivity {
     }
 
     public void compassion5(){
-        videoPathCP36 = "android.resource://" + getPackageName() + "/" + R.raw.compassion5;
-        uriCP36 = Uri.parse(videoPathCP36);
-        videoViewCP36.setVideoURI(uriCP36);
+        videoPathCP = "android.resource://" + getPackageName() + "/" + R.raw.compassion5;
+        uriCP = Uri.parse(videoPathCP);
+        videoViewCP.setVideoURI(uriCP);
         sfx = MediaPlayer.create(this, R.raw.btnsfx);
           
 
-        videoViewCP36.setOnPreparedListener(new MediaPlayer.OnPreparedListener() {
+        videoViewCP.setOnPreparedListener(new MediaPlayer.OnPreparedListener() {
             @Override
             public void onPrepared(MediaPlayer mp) {
-                
-                sfx.start();
 
-                videoViewCP36.start();
+                videoViewCP.start();
                 
             }
         });
 
-        videoViewCP36.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+        videoViewCP.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
             @Override
             public void onCompletion(MediaPlayer mp) {
 
-                videoViewCP36.stopPlayback();
+                videoViewCP.stopPlayback();
                 startActivity(new Intent(LessonCompassion.this, CompassionLessonCongrats.class));
 
             }
         });
 
-        backbtnCP36.setOnClickListener(new View.OnClickListener() {
+        backbtnCP.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
                 sfx.start();
 
-                
-                videoViewCP36.stopPlayback();
+                videoViewCP.stopPlayback();
                 compassion4();
 
             }
         });
 
-        nextbtnCP36.setOnClickListener(new View.OnClickListener() {
+        nextbtnCP.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
                 sfx.start();
 
-                
-                videoViewCP36.stopPlayback();
+                videoViewCP.stopPlayback();
                 startActivity(new Intent(LessonCompassion.this, CompassionLessonCongrats.class));
 
             }
@@ -323,8 +308,8 @@ public class LessonCompassion extends AppCompatActivity {
             }
         });
 
-        videoViewCP36.pause();
-        currentPosition = videoViewCP36.getCurrentPosition();
+        videoViewCP.pause();
+        currentPosition = videoViewCP.getCurrentPosition();
 
         super.onUserLeaveHint();
 
@@ -333,8 +318,8 @@ public class LessonCompassion extends AppCompatActivity {
     @Override
     protected void onResume(){
 
-        videoViewCP36.seekTo(currentPosition);
-        videoViewCP36.start();
+        videoViewCP.seekTo(currentPosition);
+        videoViewCP.start();
 
         super.onResume();
 

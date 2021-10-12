@@ -16,12 +16,12 @@ public class ChooseModeDoingGood extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_choose_mode_doing_good);
+        setContentView(R.layout.activity_choose_mode);
 
-        backCMDG79 = findViewById(R.id.bconceptsbtnCMDG79);
-        learnCMDG79 = findViewById(R.id.learnCMDG79);
-        assessCMDG79 = findViewById(R.id.assessCMDG79);
-        replayCMDG79 = findViewById(R.id.replayintroCMDG79);
+        backCMDG79 = findViewById(R.id.bconceptsbtnCM);
+        learnCMDG79 = findViewById(R.id.learnCM);
+        assessCMDG79 = findViewById(R.id.assessCM);
+        replayCMDG79 = findViewById(R.id.replayintroCM);
 
         BackgroundSoundService.onResume();
 

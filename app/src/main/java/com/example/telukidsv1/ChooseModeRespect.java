@@ -16,12 +16,12 @@ public class ChooseModeRespect extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_choose_mode_respect);
+        setContentView(R.layout.activity_choose_mode);
 
-        backCMR = findViewById(R.id.bconceptsbtnCMR);
-        learnCMR = findViewById(R.id.learnCMR);
-        assessCMR = findViewById(R.id.assessCMR);
-        replayCMR = findViewById(R.id.replayintroCMR);
+        backCMR = findViewById(R.id.bconceptsbtnCM);
+        learnCMR = findViewById(R.id.learnCM);
+        assessCMR = findViewById(R.id.assessCM);
+        replayCMR = findViewById(R.id.replayintroCM);
 
         BackgroundSoundService.onResume();
 

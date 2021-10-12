@@ -16,9 +16,9 @@ public class HelpPage79 extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_help_page79);
+        setContentView(R.layout.activity_help_page);
 
-        btnback = findViewById(R.id.backbtnHP79);
+        btnback = findViewById(R.id.backbtnHP);
 
         sfx = MediaPlayer.create(this, R.raw.btnsfx);
 

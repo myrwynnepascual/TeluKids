@@ -16,12 +16,12 @@ public class ChooseModeCounting extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_choose_mode_counting);
+        setContentView(R.layout.activity_choose_mode);
 
-        backCMCN = findViewById(R.id.bconceptsbtnCMCN);
-        learnCMCN = findViewById(R.id.learnCMCN);
-        assessCMCN = findViewById(R.id.assessCMCN);
-        replayCMCN = findViewById(R.id.replayintroCMCN);
+        backCMCN = findViewById(R.id.bconceptsbtnCM);
+        learnCMCN = findViewById(R.id.learnCM);
+        assessCMCN = findViewById(R.id.assessCM);
+        replayCMCN = findViewById(R.id.replayintroCM);
 
         BackgroundSoundService.onResume();
 

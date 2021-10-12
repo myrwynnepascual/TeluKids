@@ -13,10 +13,10 @@ import android.widget.VideoView;
 
 public class LessonColors extends AppCompatActivity {
 
-    VideoView videoViewRDPG1;
-    String videoPathRDPG1;
-    Uri uriRDPG1;
-    ImageButton backbtnRDPG1,nextbtnRDPG1;
+    VideoView videoViewCL;
+    String videoPathCL;
+    Uri uriCL;
+    ImageButton backbtnCL,nextbtnCL;
     MediaController mediaController;
     MediaPlayer sfx;
     int currentPosition;
@@ -24,16 +24,16 @@ public class LessonColors extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_lesson_colors);
+        setContentView(R.layout.activity_lesson);
 
-        videoViewRDPG1 = findViewById(R.id.videoRDPG1);
-        backbtnRDPG1 = findViewById(R.id.btnbackRDPG1);
-        nextbtnRDPG1 = findViewById(R.id.nextbtnRDPG1);
+        videoViewCL = findViewById(R.id.video);
+        backbtnCL = findViewById(R.id.btnback);
+        nextbtnCL = findViewById(R.id.nextbtn);
 
         mediaController = new MediaController(this);
-        videoViewRDPG1.setMediaController(mediaController);
+        videoViewCL.setMediaController(mediaController);
         mediaController.setVisibility(View.GONE);
-        mediaController.setAnchorView(videoViewRDPG1);
+        mediaController.setAnchorView(videoViewCL);
 
         BackgroundSoundService.onPause();
 
@@ -42,51 +42,49 @@ public class LessonColors extends AppCompatActivity {
 
     public void red1(){
 
-        videoPathRDPG1 = "android.resource://" + getPackageName() + "/" + R.raw.red1;
-        uriRDPG1 = Uri.parse(videoPathRDPG1);
-        videoViewRDPG1.setVideoURI(uriRDPG1);
+        videoPathCL = "android.resource://" + getPackageName() + "/" + R.raw.red1;
+        uriCL = Uri.parse(videoPathCL);
+        videoViewCL.setVideoURI(uriCL);
         sfx = MediaPlayer.create(this, R.raw.btnsfx);
         
 
-        videoViewRDPG1.setOnPreparedListener(new MediaPlayer.OnPreparedListener() {
+        videoViewCL.setOnPreparedListener(new MediaPlayer.OnPreparedListener() {
             @Override
             public void onPrepared(MediaPlayer mp) {
 
-                videoViewRDPG1.start();
+                videoViewCL.start();
 
             }
         });
 
-        videoViewRDPG1.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+        videoViewCL.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
             @Override
             public void onCompletion(MediaPlayer mp) {
 
-                sfx.start();
-
-                videoViewRDPG1.stopPlayback();
+                videoViewCL.stopPlayback();
                 red2();
 
             }
         });
 
-        backbtnRDPG1.setOnClickListener(new View.OnClickListener() {
+        backbtnCL.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
                 sfx.start();
-                videoViewRDPG1.stopPlayback();
+                videoViewCL.stopPlayback();
                 startActivity(new Intent(LessonColors.this,ChooseModeColors.class));
 
             }
         });
 
-        nextbtnRDPG1.setOnClickListener(new View.OnClickListener() {
+        nextbtnCL.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
                 sfx.start();
                
-               videoViewRDPG1.stopPlayback();
+               videoViewCL.stopPlayback();
                red2();
 
             }
@@ -95,52 +93,50 @@ public class LessonColors extends AppCompatActivity {
 
     public void red2(){
 
-        videoPathRDPG1 = "android.resource://" + getPackageName() + "/" + R.raw.red2;
-        uriRDPG1 = Uri.parse(videoPathRDPG1);
-        videoViewRDPG1.setVideoURI(uriRDPG1);
+        videoPathCL = "android.resource://" + getPackageName() + "/" + R.raw.red2;
+        uriCL = Uri.parse(videoPathCL);
+        videoViewCL.setVideoURI(uriCL);
         sfx = MediaPlayer.create(this, R.raw.btnsfx);
         
 
-        videoViewRDPG1.setOnPreparedListener(new MediaPlayer.OnPreparedListener() {
+        videoViewCL.setOnPreparedListener(new MediaPlayer.OnPreparedListener() {
             @Override
             public void onPrepared(MediaPlayer mp) {
 
-                videoViewRDPG1.start();
+                videoViewCL.start();
 
             }
         });
 
-        videoViewRDPG1.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+        videoViewCL.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
             @Override
             public void onCompletion(MediaPlayer mp) {
 
-                sfx.start();
-                videoViewRDPG1.stopPlayback();
+                videoViewCL.stopPlayback();
                 red3();
 
             }
         });
 
-        backbtnRDPG1.setOnClickListener(new View.OnClickListener() {
+        backbtnCL.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
                 sfx.start();
 
-                videoViewRDPG1.stopPlayback();
+                videoViewCL.stopPlayback();
                 red1();
 
             }
         });
 
-        nextbtnRDPG1.setOnClickListener(new View.OnClickListener() {
+        nextbtnCL.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
                 sfx.start();
 
-
-                videoViewRDPG1.stopPlayback();
+                videoViewCL.stopPlayback();
                 red3();
 
             }
@@ -149,54 +145,50 @@ public class LessonColors extends AppCompatActivity {
 
     public void red3(){
 
-        videoPathRDPG1 = "android.resource://" + getPackageName() + "/" + R.raw.red3;
-        uriRDPG1 = Uri.parse(videoPathRDPG1);
-        videoViewRDPG1.setVideoURI(uriRDPG1);
+        videoPathCL = "android.resource://" + getPackageName() + "/" + R.raw.red3;
+        uriCL = Uri.parse(videoPathCL);
+        videoViewCL.setVideoURI(uriCL);
         sfx = MediaPlayer.create(this, R.raw.btnsfx);
 
 
-        videoViewRDPG1.setOnPreparedListener(new MediaPlayer.OnPreparedListener() {
+        videoViewCL.setOnPreparedListener(new MediaPlayer.OnPreparedListener() {
             @Override
             public void onPrepared(MediaPlayer mp) {
 
-                videoViewRDPG1.start();
+                videoViewCL.start();
 
             }
         });
 
-        videoViewRDPG1.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+        videoViewCL.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
             @Override
             public void onCompletion(MediaPlayer mp) {
 
-                sfx.start();
-
-                videoViewRDPG1.stopPlayback();
+                videoViewCL.stopPlayback();
                 red4();
 
             }
         });
 
-        backbtnRDPG1.setOnClickListener(new View.OnClickListener() {
+        backbtnCL.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
                 sfx.start();
 
-
-                videoViewRDPG1.stopPlayback();
+                videoViewCL.stopPlayback();
                 red2();
 
             }
         });
 
-        nextbtnRDPG1.setOnClickListener(new View.OnClickListener() {
+        nextbtnCL.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
                 sfx.start();
 
-
-                videoViewRDPG1.stopPlayback();
+                videoViewCL.stopPlayback();
                 red4();
 
             }
@@ -205,54 +197,50 @@ public class LessonColors extends AppCompatActivity {
 
     public void red4(){
 
-        videoPathRDPG1 = "android.resource://" + getPackageName() + "/" + R.raw.red4;
-        uriRDPG1 = Uri.parse(videoPathRDPG1);
-        videoViewRDPG1.setVideoURI(uriRDPG1);
+        videoPathCL = "android.resource://" + getPackageName() + "/" + R.raw.red4;
+        uriCL = Uri.parse(videoPathCL);
+        videoViewCL.setVideoURI(uriCL);
         sfx = MediaPlayer.create(this, R.raw.btnsfx);
 
 
-        videoViewRDPG1.setOnPreparedListener(new MediaPlayer.OnPreparedListener() {
+        videoViewCL.setOnPreparedListener(new MediaPlayer.OnPreparedListener() {
             @Override
             public void onPrepared(MediaPlayer mp) {
 
-                videoViewRDPG1.start();
+                videoViewCL.start();
 
             }
         });
 
-        videoViewRDPG1.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+        videoViewCL.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
             @Override
             public void onCompletion(MediaPlayer mp) {
 
-                sfx.start();
-
-                videoViewRDPG1.stopPlayback();
+                videoViewCL.stopPlayback();
                 red5();
 
             }
         });
 
-        backbtnRDPG1.setOnClickListener(new View.OnClickListener() {
+        backbtnCL.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
                 sfx.start();
 
-
-                videoViewRDPG1.stopPlayback();
+                videoViewCL.stopPlayback();
                 red3();
 
             }
         });
 
-        nextbtnRDPG1.setOnClickListener(new View.OnClickListener() {
+        nextbtnCL.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
                 sfx.start();
 
-
-                videoViewRDPG1.stopPlayback();
+                videoViewCL.stopPlayback();
                 red5();
 
             }
@@ -261,54 +249,50 @@ public class LessonColors extends AppCompatActivity {
 
     public void red5(){
 
-        videoPathRDPG1 = "android.resource://" + getPackageName() + "/" + R.raw.red5;
-        uriRDPG1 = Uri.parse(videoPathRDPG1);
-        videoViewRDPG1.setVideoURI(uriRDPG1);
+        videoPathCL = "android.resource://" + getPackageName() + "/" + R.raw.red5;
+        uriCL = Uri.parse(videoPathCL);
+        videoViewCL.setVideoURI(uriCL);
         sfx = MediaPlayer.create(this, R.raw.btnsfx);
 
 
-        videoViewRDPG1.setOnPreparedListener(new MediaPlayer.OnPreparedListener() {
+        videoViewCL.setOnPreparedListener(new MediaPlayer.OnPreparedListener() {
             @Override
             public void onPrepared(MediaPlayer mp) {
 
-                videoViewRDPG1.start();
+                videoViewCL.start();
 
             }
         });
 
-        videoViewRDPG1.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+        videoViewCL.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
             @Override
             public void onCompletion(MediaPlayer mp) {
 
-                sfx.start();
-
-                videoViewRDPG1.stopPlayback();
+                videoViewCL.stopPlayback();
                 red6();
 
             }
         });
 
-        backbtnRDPG1.setOnClickListener(new View.OnClickListener() {
+        backbtnCL.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
                 sfx.start();
 
-
-                videoViewRDPG1.stopPlayback();
+                videoViewCL.stopPlayback();
                 red4();
 
             }
         });
 
-        nextbtnRDPG1.setOnClickListener(new View.OnClickListener() {
+        nextbtnCL.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
                 sfx.start();
 
-
-                videoViewRDPG1.stopPlayback();
+                videoViewCL.stopPlayback();
                 red6();
 
             }
@@ -317,54 +301,50 @@ public class LessonColors extends AppCompatActivity {
 
     public void red6(){
 
-        videoPathRDPG1 = "android.resource://" + getPackageName() + "/" + R.raw.red6;
-        uriRDPG1 = Uri.parse(videoPathRDPG1);
-        videoViewRDPG1.setVideoURI(uriRDPG1);
+        videoPathCL = "android.resource://" + getPackageName() + "/" + R.raw.red6;
+        uriCL = Uri.parse(videoPathCL);
+        videoViewCL.setVideoURI(uriCL);
         sfx = MediaPlayer.create(this, R.raw.btnsfx);
 
 
-        videoViewRDPG1.setOnPreparedListener(new MediaPlayer.OnPreparedListener() {
+        videoViewCL.setOnPreparedListener(new MediaPlayer.OnPreparedListener() {
             @Override
             public void onPrepared(MediaPlayer mp) {
 
-                videoViewRDPG1.start();
+                videoViewCL.start();
 
             }
         });
 
-        videoViewRDPG1.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+        videoViewCL.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
             @Override
             public void onCompletion(MediaPlayer mp) {
 
-                sfx.start();
-
-                videoViewRDPG1.stopPlayback();
+                videoViewCL.stopPlayback();
                 blue1();
 
             }
         });
 
-        backbtnRDPG1.setOnClickListener(new View.OnClickListener() {
+        backbtnCL.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
                 sfx.start();
 
-
-                videoViewRDPG1.stopPlayback();
+                videoViewCL.stopPlayback();
                 red5();
 
             }
         });
 
-        nextbtnRDPG1.setOnClickListener(new View.OnClickListener() {
+        nextbtnCL.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
                 sfx.start();
 
-
-                videoViewRDPG1.stopPlayback();
+                videoViewCL.stopPlayback();
                 blue1();
 
             }
@@ -373,54 +353,50 @@ public class LessonColors extends AppCompatActivity {
 
     public void blue1(){
 
-        videoPathRDPG1 = "android.resource://" + getPackageName() + "/" + R.raw.blue1;
-        uriRDPG1 = Uri.parse(videoPathRDPG1);
-        videoViewRDPG1.setVideoURI(uriRDPG1);
+        videoPathCL = "android.resource://" + getPackageName() + "/" + R.raw.blue1;
+        uriCL = Uri.parse(videoPathCL);
+        videoViewCL.setVideoURI(uriCL);
         sfx = MediaPlayer.create(this, R.raw.btnsfx);
 
 
-        videoViewRDPG1.setOnPreparedListener(new MediaPlayer.OnPreparedListener() {
+        videoViewCL.setOnPreparedListener(new MediaPlayer.OnPreparedListener() {
             @Override
             public void onPrepared(MediaPlayer mp) {
 
-                videoViewRDPG1.start();
+                videoViewCL.start();
 
             }
         });
 
-        videoViewRDPG1.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+        videoViewCL.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
             @Override
             public void onCompletion(MediaPlayer mp) {
 
-                sfx.start();
-
-                videoViewRDPG1.stopPlayback();
+                videoViewCL.stopPlayback();
                 blue2();
 
             }
         });
 
-        backbtnRDPG1.setOnClickListener(new View.OnClickListener() {
+        backbtnCL.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
                 sfx.start();
 
-
-                videoViewRDPG1.stopPlayback();
+                videoViewCL.stopPlayback();
                 red6();
 
             }
         });
 
-        nextbtnRDPG1.setOnClickListener(new View.OnClickListener() {
+        nextbtnCL.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
                 sfx.start();
 
-
-                videoViewRDPG1.stopPlayback();
+                videoViewCL.stopPlayback();
                 blue2();
 
             }
@@ -429,54 +405,50 @@ public class LessonColors extends AppCompatActivity {
 
     public void blue2(){
 
-        videoPathRDPG1 = "android.resource://" + getPackageName() + "/" + R.raw.blue2;
-        uriRDPG1 = Uri.parse(videoPathRDPG1);
-        videoViewRDPG1.setVideoURI(uriRDPG1);
+        videoPathCL = "android.resource://" + getPackageName() + "/" + R.raw.blue2;
+        uriCL = Uri.parse(videoPathCL);
+        videoViewCL.setVideoURI(uriCL);
         sfx = MediaPlayer.create(this, R.raw.btnsfx);
 
 
-        videoViewRDPG1.setOnPreparedListener(new MediaPlayer.OnPreparedListener() {
+        videoViewCL.setOnPreparedListener(new MediaPlayer.OnPreparedListener() {
             @Override
             public void onPrepared(MediaPlayer mp) {
 
-                videoViewRDPG1.start();
+                videoViewCL.start();
 
             }
         });
 
-        videoViewRDPG1.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+        videoViewCL.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
             @Override
             public void onCompletion(MediaPlayer mp) {
 
-                sfx.start();
-
-                videoViewRDPG1.stopPlayback();
+                videoViewCL.stopPlayback();
                 blue3();
 
             }
         });
 
-        backbtnRDPG1.setOnClickListener(new View.OnClickListener() {
+        backbtnCL.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
                 sfx.start();
 
-
-                videoViewRDPG1.stopPlayback();
+                videoViewCL.stopPlayback();
                 blue1();
 
             }
         });
 
-        nextbtnRDPG1.setOnClickListener(new View.OnClickListener() {
+        nextbtnCL.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
                 sfx.start();
 
-
-                videoViewRDPG1.stopPlayback();
+                videoViewCL.stopPlayback();
                 blue3();
 
             }
@@ -485,54 +457,50 @@ public class LessonColors extends AppCompatActivity {
 
     public void blue3(){
 
-        videoPathRDPG1 = "android.resource://" + getPackageName() + "/" + R.raw.blue3;
-        uriRDPG1 = Uri.parse(videoPathRDPG1);
-        videoViewRDPG1.setVideoURI(uriRDPG1);
+        videoPathCL = "android.resource://" + getPackageName() + "/" + R.raw.blue3;
+        uriCL = Uri.parse(videoPathCL);
+        videoViewCL.setVideoURI(uriCL);
         sfx = MediaPlayer.create(this, R.raw.btnsfx);
 
 
-        videoViewRDPG1.setOnPreparedListener(new MediaPlayer.OnPreparedListener() {
+        videoViewCL.setOnPreparedListener(new MediaPlayer.OnPreparedListener() {
             @Override
             public void onPrepared(MediaPlayer mp) {
 
-                videoViewRDPG1.start();
+                videoViewCL.start();
 
             }
         });
 
-        videoViewRDPG1.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+        videoViewCL.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
             @Override
             public void onCompletion(MediaPlayer mp) {
 
-                sfx.start();
-
-                videoViewRDPG1.stopPlayback();
+                videoViewCL.stopPlayback();
                 blue4();
 
             }
         });
 
-        backbtnRDPG1.setOnClickListener(new View.OnClickListener() {
+        backbtnCL.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
                 sfx.start();
 
-
-                videoViewRDPG1.stopPlayback();
+                videoViewCL.stopPlayback();
                 blue2();
 
             }
         });
 
-        nextbtnRDPG1.setOnClickListener(new View.OnClickListener() {
+        nextbtnCL.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
                 sfx.start();
 
-
-                videoViewRDPG1.stopPlayback();
+                videoViewCL.stopPlayback();
                 blue4();
 
             }
@@ -541,54 +509,50 @@ public class LessonColors extends AppCompatActivity {
 
     public void blue4(){
 
-        videoPathRDPG1 = "android.resource://" + getPackageName() + "/" + R.raw.blue4;
-        uriRDPG1 = Uri.parse(videoPathRDPG1);
-        videoViewRDPG1.setVideoURI(uriRDPG1);
+        videoPathCL = "android.resource://" + getPackageName() + "/" + R.raw.blue4;
+        uriCL = Uri.parse(videoPathCL);
+        videoViewCL.setVideoURI(uriCL);
         sfx = MediaPlayer.create(this, R.raw.btnsfx);
 
 
-        videoViewRDPG1.setOnPreparedListener(new MediaPlayer.OnPreparedListener() {
+        videoViewCL.setOnPreparedListener(new MediaPlayer.OnPreparedListener() {
             @Override
             public void onPrepared(MediaPlayer mp) {
 
-                videoViewRDPG1.start();
+                videoViewCL.start();
 
             }
         });
 
-        videoViewRDPG1.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+        videoViewCL.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
             @Override
             public void onCompletion(MediaPlayer mp) {
 
-                sfx.start();
-
-                videoViewRDPG1.stopPlayback();
+                videoViewCL.stopPlayback();
                 blue5();
 
             }
         });
 
-        backbtnRDPG1.setOnClickListener(new View.OnClickListener() {
+        backbtnCL.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
                 sfx.start();
 
-
-                videoViewRDPG1.stopPlayback();
+                videoViewCL.stopPlayback();
                 blue3();
 
             }
         });
 
-        nextbtnRDPG1.setOnClickListener(new View.OnClickListener() {
+        nextbtnCL.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
                 sfx.start();
 
-
-                videoViewRDPG1.stopPlayback();
+                videoViewCL.stopPlayback();
                 blue5();
 
             }
@@ -597,54 +561,50 @@ public class LessonColors extends AppCompatActivity {
 
     public void blue5(){
 
-        videoPathRDPG1 = "android.resource://" + getPackageName() + "/" + R.raw.blue5;
-        uriRDPG1 = Uri.parse(videoPathRDPG1);
-        videoViewRDPG1.setVideoURI(uriRDPG1);
+        videoPathCL = "android.resource://" + getPackageName() + "/" + R.raw.blue5;
+        uriCL = Uri.parse(videoPathCL);
+        videoViewCL.setVideoURI(uriCL);
         sfx = MediaPlayer.create(this, R.raw.btnsfx);
 
 
-        videoViewRDPG1.setOnPreparedListener(new MediaPlayer.OnPreparedListener() {
+        videoViewCL.setOnPreparedListener(new MediaPlayer.OnPreparedListener() {
             @Override
             public void onPrepared(MediaPlayer mp) {
 
-                videoViewRDPG1.start();
+                videoViewCL.start();
 
             }
         });
 
-        videoViewRDPG1.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+        videoViewCL.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
             @Override
             public void onCompletion(MediaPlayer mp) {
 
-                sfx.start();
-
-                videoViewRDPG1.stopPlayback();
+                videoViewCL.stopPlayback();
                 blue6();
 
             }
         });
 
-        backbtnRDPG1.setOnClickListener(new View.OnClickListener() {
+        backbtnCL.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
                 sfx.start();
 
-
-                videoViewRDPG1.stopPlayback();
+                videoViewCL.stopPlayback();
                 blue4();
 
             }
         });
 
-        nextbtnRDPG1.setOnClickListener(new View.OnClickListener() {
+        nextbtnCL.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
                 sfx.start();
 
-
-                videoViewRDPG1.stopPlayback();
+                videoViewCL.stopPlayback();
                 blue6();
 
             }
@@ -653,54 +613,50 @@ public class LessonColors extends AppCompatActivity {
 
     public void blue6(){
 
-        videoPathRDPG1 = "android.resource://" + getPackageName() + "/" + R.raw.blue6;
-        uriRDPG1 = Uri.parse(videoPathRDPG1);
-        videoViewRDPG1.setVideoURI(uriRDPG1);
+        videoPathCL = "android.resource://" + getPackageName() + "/" + R.raw.blue6;
+        uriCL = Uri.parse(videoPathCL);
+        videoViewCL.setVideoURI(uriCL);
         sfx = MediaPlayer.create(this, R.raw.btnsfx);
 
 
-        videoViewRDPG1.setOnPreparedListener(new MediaPlayer.OnPreparedListener() {
+        videoViewCL.setOnPreparedListener(new MediaPlayer.OnPreparedListener() {
             @Override
             public void onPrepared(MediaPlayer mp) {
 
-                videoViewRDPG1.start();
+                videoViewCL.start();
 
             }
         });
 
-        videoViewRDPG1.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+        videoViewCL.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
             @Override
             public void onCompletion(MediaPlayer mp) {
 
-                sfx.start();
-
-                videoViewRDPG1.stopPlayback();
+                videoViewCL.stopPlayback();
                 yellow1();
 
             }
         });
 
-        backbtnRDPG1.setOnClickListener(new View.OnClickListener() {
+        backbtnCL.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
                 sfx.start();
 
-
-                videoViewRDPG1.stopPlayback();
+                videoViewCL.stopPlayback();
                 blue5();
 
             }
         });
 
-        nextbtnRDPG1.setOnClickListener(new View.OnClickListener() {
+        nextbtnCL.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
                 sfx.start();
 
-
-                videoViewRDPG1.stopPlayback();
+                videoViewCL.stopPlayback();
                 yellow1();
 
             }
@@ -709,53 +665,49 @@ public class LessonColors extends AppCompatActivity {
 
     public void yellow1(){
 
-        videoPathRDPG1 = "android.resource://" + getPackageName() + "/" + R.raw.yellow1;
-        uriRDPG1 = Uri.parse(videoPathRDPG1);
-        videoViewRDPG1.setVideoURI(uriRDPG1);
+        videoPathCL = "android.resource://" + getPackageName() + "/" + R.raw.yellow1;
+        uriCL = Uri.parse(videoPathCL);
+        videoViewCL.setVideoURI(uriCL);
         sfx = MediaPlayer.create(this, R.raw.btnsfx);
 
-        videoViewRDPG1.setOnPreparedListener(new MediaPlayer.OnPreparedListener() {
+        videoViewCL.setOnPreparedListener(new MediaPlayer.OnPreparedListener() {
             @Override
             public void onPrepared(MediaPlayer mp) {
 
-                videoViewRDPG1.start();
+                videoViewCL.start();
 
             }
         });
 
-        videoViewRDPG1.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+        videoViewCL.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
             @Override
             public void onCompletion(MediaPlayer mp) {
 
-                sfx.start();
-
-                videoViewRDPG1.stopPlayback();
+                videoViewCL.stopPlayback();
                 yellow2();
 
             }
         });
 
-        backbtnRDPG1.setOnClickListener(new View.OnClickListener() {
+        backbtnCL.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
                 sfx.start();
 
-
-                videoViewRDPG1.stopPlayback();
+                videoViewCL.stopPlayback();
                 blue6();
 
             }
         });
 
-        nextbtnRDPG1.setOnClickListener(new View.OnClickListener() {
+        nextbtnCL.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
                 sfx.start();
 
-
-                videoViewRDPG1.stopPlayback();
+                videoViewCL.stopPlayback();
                 yellow2();
 
             }
@@ -764,54 +716,50 @@ public class LessonColors extends AppCompatActivity {
 
     public void yellow2(){
 
-        videoPathRDPG1 = "android.resource://" + getPackageName() + "/" + R.raw.yellow2;
-        uriRDPG1 = Uri.parse(videoPathRDPG1);
-        videoViewRDPG1.setVideoURI(uriRDPG1);
+        videoPathCL = "android.resource://" + getPackageName() + "/" + R.raw.yellow2;
+        uriCL = Uri.parse(videoPathCL);
+        videoViewCL.setVideoURI(uriCL);
         sfx = MediaPlayer.create(this, R.raw.btnsfx);
 
 
-        videoViewRDPG1.setOnPreparedListener(new MediaPlayer.OnPreparedListener() {
+        videoViewCL.setOnPreparedListener(new MediaPlayer.OnPreparedListener() {
             @Override
             public void onPrepared(MediaPlayer mp) {
 
-                videoViewRDPG1.start();
+                videoViewCL.start();
 
             }
         });
 
-        videoViewRDPG1.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+        videoViewCL.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
             @Override
             public void onCompletion(MediaPlayer mp) {
 
-                sfx.start();
-
-                videoViewRDPG1.stopPlayback();
+                videoViewCL.stopPlayback();
                 yellow3();
 
             }
         });
 
-        backbtnRDPG1.setOnClickListener(new View.OnClickListener() {
+        backbtnCL.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
                 sfx.start();
 
-
-                videoViewRDPG1.stopPlayback();
+                videoViewCL.stopPlayback();
                 yellow1();
 
             }
         });
 
-        nextbtnRDPG1.setOnClickListener(new View.OnClickListener() {
+        nextbtnCL.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
                 sfx.start();
 
-
-                videoViewRDPG1.stopPlayback();
+                videoViewCL.stopPlayback();
                 yellow3();
 
             }
@@ -820,54 +768,50 @@ public class LessonColors extends AppCompatActivity {
 
     public void yellow3(){
 
-        videoPathRDPG1 = "android.resource://" + getPackageName() + "/" + R.raw.yellow3;
-        uriRDPG1 = Uri.parse(videoPathRDPG1);
-        videoViewRDPG1.setVideoURI(uriRDPG1);
+        videoPathCL = "android.resource://" + getPackageName() + "/" + R.raw.yellow3;
+        uriCL = Uri.parse(videoPathCL);
+        videoViewCL.setVideoURI(uriCL);
         sfx = MediaPlayer.create(this, R.raw.btnsfx);
 
 
-        videoViewRDPG1.setOnPreparedListener(new MediaPlayer.OnPreparedListener() {
+        videoViewCL.setOnPreparedListener(new MediaPlayer.OnPreparedListener() {
             @Override
             public void onPrepared(MediaPlayer mp) {
 
-                videoViewRDPG1.start();
+                videoViewCL.start();
 
             }
         });
 
-        videoViewRDPG1.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+        videoViewCL.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
             @Override
             public void onCompletion(MediaPlayer mp) {
 
-                sfx.start();
-
-                videoViewRDPG1.stopPlayback();
+                videoViewCL.stopPlayback();
                 yellow4();
 
             }
         });
 
-        backbtnRDPG1.setOnClickListener(new View.OnClickListener() {
+        backbtnCL.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
                 sfx.start();
 
-
-                videoViewRDPG1.stopPlayback();
+                videoViewCL.stopPlayback();
                 yellow2();
 
             }
         });
 
-        nextbtnRDPG1.setOnClickListener(new View.OnClickListener() {
+        nextbtnCL.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
                 sfx.start();
 
-
-                videoViewRDPG1.stopPlayback();
+                videoViewCL.stopPlayback();
                 yellow4();
 
             }
@@ -876,54 +820,50 @@ public class LessonColors extends AppCompatActivity {
 
     public void yellow4(){
 
-        videoPathRDPG1 = "android.resource://" + getPackageName() + "/" + R.raw.yellow4;
-        uriRDPG1 = Uri.parse(videoPathRDPG1);
-        videoViewRDPG1.setVideoURI(uriRDPG1);
+        videoPathCL = "android.resource://" + getPackageName() + "/" + R.raw.yellow4;
+        uriCL = Uri.parse(videoPathCL);
+        videoViewCL.setVideoURI(uriCL);
         sfx = MediaPlayer.create(this, R.raw.btnsfx);
 
 
-        videoViewRDPG1.setOnPreparedListener(new MediaPlayer.OnPreparedListener() {
+        videoViewCL.setOnPreparedListener(new MediaPlayer.OnPreparedListener() {
             @Override
             public void onPrepared(MediaPlayer mp) {
 
-                videoViewRDPG1.start();
+                videoViewCL.start();
 
             }
         });
 
-        videoViewRDPG1.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+        videoViewCL.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
             @Override
             public void onCompletion(MediaPlayer mp) {
 
-                sfx.start();
-
-                videoViewRDPG1.stopPlayback();
+                videoViewCL.stopPlayback();
                 yellow5();
 
             }
         });
 
-        backbtnRDPG1.setOnClickListener(new View.OnClickListener() {
+        backbtnCL.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
                 sfx.start();
 
-
-                videoViewRDPG1.stopPlayback();
+                videoViewCL.stopPlayback();
                 yellow3();
 
             }
         });
 
-        nextbtnRDPG1.setOnClickListener(new View.OnClickListener() {
+        nextbtnCL.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
                 sfx.start();
 
-
-                videoViewRDPG1.stopPlayback();
+                videoViewCL.stopPlayback();
                 yellow5();
 
             }
@@ -932,54 +872,50 @@ public class LessonColors extends AppCompatActivity {
 
     public void yellow5(){
 
-        videoPathRDPG1 = "android.resource://" + getPackageName() + "/" + R.raw.yellow5;
-        uriRDPG1 = Uri.parse(videoPathRDPG1);
-        videoViewRDPG1.setVideoURI(uriRDPG1);
+        videoPathCL = "android.resource://" + getPackageName() + "/" + R.raw.yellow5;
+        uriCL = Uri.parse(videoPathCL);
+        videoViewCL.setVideoURI(uriCL);
         sfx = MediaPlayer.create(this, R.raw.btnsfx);
 
 
-        videoViewRDPG1.setOnPreparedListener(new MediaPlayer.OnPreparedListener() {
+        videoViewCL.setOnPreparedListener(new MediaPlayer.OnPreparedListener() {
             @Override
             public void onPrepared(MediaPlayer mp) {
 
-                videoViewRDPG1.start();
+                videoViewCL.start();
 
             }
         });
 
-        videoViewRDPG1.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+        videoViewCL.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
             @Override
             public void onCompletion(MediaPlayer mp) {
 
-                sfx.start();
-
-                videoViewRDPG1.stopPlayback();
+                videoViewCL.stopPlayback();
                 yellow6();
 
             }
         });
 
-        backbtnRDPG1.setOnClickListener(new View.OnClickListener() {
+        backbtnCL.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
                 sfx.start();
 
-
-                videoViewRDPG1.stopPlayback();
+                videoViewCL.stopPlayback();
                 yellow4();
 
             }
         });
 
-        nextbtnRDPG1.setOnClickListener(new View.OnClickListener() {
+        nextbtnCL.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
                 sfx.start();
 
-
-                videoViewRDPG1.stopPlayback();
+                videoViewCL.stopPlayback();
                 yellow6();
 
             }
@@ -988,54 +924,50 @@ public class LessonColors extends AppCompatActivity {
 
     public void yellow6(){
 
-        videoPathRDPG1 = "android.resource://" + getPackageName() + "/" + R.raw.yellow6;
-        uriRDPG1 = Uri.parse(videoPathRDPG1);
-        videoViewRDPG1.setVideoURI(uriRDPG1);
+        videoPathCL = "android.resource://" + getPackageName() + "/" + R.raw.yellow6;
+        uriCL = Uri.parse(videoPathCL);
+        videoViewCL.setVideoURI(uriCL);
         sfx = MediaPlayer.create(this, R.raw.btnsfx);
 
 
-        videoViewRDPG1.setOnPreparedListener(new MediaPlayer.OnPreparedListener() {
+        videoViewCL.setOnPreparedListener(new MediaPlayer.OnPreparedListener() {
             @Override
             public void onPrepared(MediaPlayer mp) {
 
-                videoViewRDPG1.start();
+                videoViewCL.start();
 
             }
         });
 
-        videoViewRDPG1.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+        videoViewCL.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
             @Override
             public void onCompletion(MediaPlayer mp) {
 
-                sfx.start();
-
-                videoViewRDPG1.stopPlayback();
+                videoViewCL.stopPlayback();
                 orange1();
 
             }
         });
 
-        backbtnRDPG1.setOnClickListener(new View.OnClickListener() {
+        backbtnCL.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
                 sfx.start();
 
-
-                videoViewRDPG1.stopPlayback();
+                videoViewCL.stopPlayback();
                 yellow5();
 
             }
         });
 
-        nextbtnRDPG1.setOnClickListener(new View.OnClickListener() {
+        nextbtnCL.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
                 sfx.start();
 
-
-                videoViewRDPG1.stopPlayback();
+                videoViewCL.stopPlayback();
                 orange1();
 
             }
@@ -1044,54 +976,50 @@ public class LessonColors extends AppCompatActivity {
 
     public void orange1(){
 
-        videoPathRDPG1 = "android.resource://" + getPackageName() + "/" + R.raw.orange1;
-        uriRDPG1 = Uri.parse(videoPathRDPG1);
-        videoViewRDPG1.setVideoURI(uriRDPG1);
+        videoPathCL = "android.resource://" + getPackageName() + "/" + R.raw.orange1;
+        uriCL = Uri.parse(videoPathCL);
+        videoViewCL.setVideoURI(uriCL);
         sfx = MediaPlayer.create(this, R.raw.btnsfx);
 
 
-        videoViewRDPG1.setOnPreparedListener(new MediaPlayer.OnPreparedListener() {
+        videoViewCL.setOnPreparedListener(new MediaPlayer.OnPreparedListener() {
             @Override
             public void onPrepared(MediaPlayer mp) {
 
-                videoViewRDPG1.start();
+                videoViewCL.start();
 
             }
         });
 
-        videoViewRDPG1.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+        videoViewCL.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
             @Override
             public void onCompletion(MediaPlayer mp) {
 
-                sfx.start();
-
-                videoViewRDPG1.stopPlayback();
+                videoViewCL.stopPlayback();
                 orange2();
 
             }
         });
 
-        backbtnRDPG1.setOnClickListener(new View.OnClickListener() {
+        backbtnCL.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
                 sfx.start();
 
-
-                videoViewRDPG1.stopPlayback();
+                videoViewCL.stopPlayback();
                 yellow6();
 
             }
         });
 
-        nextbtnRDPG1.setOnClickListener(new View.OnClickListener() {
+        nextbtnCL.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
                 sfx.start();
 
-
-                videoViewRDPG1.stopPlayback();
+                videoViewCL.stopPlayback();
                 orange2();
 
             }
@@ -1100,54 +1028,50 @@ public class LessonColors extends AppCompatActivity {
 
     public void orange2(){
 
-        videoPathRDPG1 = "android.resource://" + getPackageName() + "/" + R.raw.orange2;
-        uriRDPG1 = Uri.parse(videoPathRDPG1);
-        videoViewRDPG1.setVideoURI(uriRDPG1);
+        videoPathCL = "android.resource://" + getPackageName() + "/" + R.raw.orange2;
+        uriCL = Uri.parse(videoPathCL);
+        videoViewCL.setVideoURI(uriCL);
         sfx = MediaPlayer.create(this, R.raw.btnsfx);
 
 
-        videoViewRDPG1.setOnPreparedListener(new MediaPlayer.OnPreparedListener() {
+        videoViewCL.setOnPreparedListener(new MediaPlayer.OnPreparedListener() {
             @Override
             public void onPrepared(MediaPlayer mp) {
 
-                videoViewRDPG1.start();
+                videoViewCL.start();
 
             }
         });
 
-        videoViewRDPG1.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+        videoViewCL.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
             @Override
             public void onCompletion(MediaPlayer mp) {
 
-                sfx.start();
-
-                videoViewRDPG1.stopPlayback();
+                videoViewCL.stopPlayback();
                 orange3();
 
             }
         });
 
-        backbtnRDPG1.setOnClickListener(new View.OnClickListener() {
+        backbtnCL.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
                 sfx.start();
 
-
-                videoViewRDPG1.stopPlayback();
+                videoViewCL.stopPlayback();
                 orange1();
 
             }
         });
 
-        nextbtnRDPG1.setOnClickListener(new View.OnClickListener() {
+        nextbtnCL.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
                 sfx.start();
 
-
-                videoViewRDPG1.stopPlayback();
+                videoViewCL.stopPlayback();
                 orange3();
 
             }
@@ -1156,54 +1080,50 @@ public class LessonColors extends AppCompatActivity {
 
     public void orange3(){
 
-        videoPathRDPG1 = "android.resource://" + getPackageName() + "/" + R.raw.orange3;
-        uriRDPG1 = Uri.parse(videoPathRDPG1);
-        videoViewRDPG1.setVideoURI(uriRDPG1);
+        videoPathCL = "android.resource://" + getPackageName() + "/" + R.raw.orange3;
+        uriCL = Uri.parse(videoPathCL);
+        videoViewCL.setVideoURI(uriCL);
         sfx = MediaPlayer.create(this, R.raw.btnsfx);
 
 
-        videoViewRDPG1.setOnPreparedListener(new MediaPlayer.OnPreparedListener() {
+        videoViewCL.setOnPreparedListener(new MediaPlayer.OnPreparedListener() {
             @Override
             public void onPrepared(MediaPlayer mp) {
 
-                videoViewRDPG1.start();
+                videoViewCL.start();
 
             }
         });
 
-        videoViewRDPG1.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+        videoViewCL.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
             @Override
             public void onCompletion(MediaPlayer mp) {
 
-                sfx.start();
-
-                videoViewRDPG1.stopPlayback();
+                videoViewCL.stopPlayback();
                 orange4();
 
             }
         });
 
-        backbtnRDPG1.setOnClickListener(new View.OnClickListener() {
+        backbtnCL.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
                 sfx.start();
 
-
-                videoViewRDPG1.stopPlayback();
+                videoViewCL.stopPlayback();
                 orange2();
 
             }
         });
 
-        nextbtnRDPG1.setOnClickListener(new View.OnClickListener() {
+        nextbtnCL.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
                 sfx.start();
 
-
-                videoViewRDPG1.stopPlayback();
+                videoViewCL.stopPlayback();
                 orange4();
 
             }
@@ -1212,54 +1132,50 @@ public class LessonColors extends AppCompatActivity {
 
     public void orange4(){
 
-        videoPathRDPG1 = "android.resource://" + getPackageName() + "/" + R.raw.orange4;
-        uriRDPG1 = Uri.parse(videoPathRDPG1);
-        videoViewRDPG1.setVideoURI(uriRDPG1);
+        videoPathCL = "android.resource://" + getPackageName() + "/" + R.raw.orange4;
+        uriCL = Uri.parse(videoPathCL);
+        videoViewCL.setVideoURI(uriCL);
         sfx = MediaPlayer.create(this, R.raw.btnsfx);
 
 
-        videoViewRDPG1.setOnPreparedListener(new MediaPlayer.OnPreparedListener() {
+        videoViewCL.setOnPreparedListener(new MediaPlayer.OnPreparedListener() {
             @Override
             public void onPrepared(MediaPlayer mp) {
 
-                videoViewRDPG1.start();
+                videoViewCL.start();
 
             }
         });
 
-        videoViewRDPG1.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+        videoViewCL.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
             @Override
             public void onCompletion(MediaPlayer mp) {
 
-                sfx.start();
-
-                videoViewRDPG1.stopPlayback();
+                videoViewCL.stopPlayback();
                 orange5();
 
             }
         });
 
-        backbtnRDPG1.setOnClickListener(new View.OnClickListener() {
+        backbtnCL.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
                 sfx.start();
 
-
-                videoViewRDPG1.stopPlayback();
+                videoViewCL.stopPlayback();
                 orange3();
 
             }
         });
 
-        nextbtnRDPG1.setOnClickListener(new View.OnClickListener() {
+        nextbtnCL.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
                 sfx.start();
 
-
-                videoViewRDPG1.stopPlayback();
+                videoViewCL.stopPlayback();
                 orange5();
 
             }
@@ -1268,54 +1184,50 @@ public class LessonColors extends AppCompatActivity {
 
     public void orange5(){
 
-        videoPathRDPG1 = "android.resource://" + getPackageName() + "/" + R.raw.orange5;
-        uriRDPG1 = Uri.parse(videoPathRDPG1);
-        videoViewRDPG1.setVideoURI(uriRDPG1);
+        videoPathCL = "android.resource://" + getPackageName() + "/" + R.raw.orange5;
+        uriCL = Uri.parse(videoPathCL);
+        videoViewCL.setVideoURI(uriCL);
         sfx = MediaPlayer.create(this, R.raw.btnsfx);
 
 
-        videoViewRDPG1.setOnPreparedListener(new MediaPlayer.OnPreparedListener() {
+        videoViewCL.setOnPreparedListener(new MediaPlayer.OnPreparedListener() {
             @Override
             public void onPrepared(MediaPlayer mp) {
 
-                videoViewRDPG1.start();
+                videoViewCL.start();
 
             }
         });
 
-        videoViewRDPG1.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+        videoViewCL.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
             @Override
             public void onCompletion(MediaPlayer mp) {
 
-                sfx.start();
-
-                videoViewRDPG1.stopPlayback();
+                videoViewCL.stopPlayback();
                 orange6();
 
             }
         });
 
-        backbtnRDPG1.setOnClickListener(new View.OnClickListener() {
+        backbtnCL.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
                 sfx.start();
 
-
-                videoViewRDPG1.stopPlayback();
+                videoViewCL.stopPlayback();
                 orange4();
 
             }
         });
 
-        nextbtnRDPG1.setOnClickListener(new View.OnClickListener() {
+        nextbtnCL.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
                 sfx.start();
 
-
-                videoViewRDPG1.stopPlayback();
+                videoViewCL.stopPlayback();
                 orange6();
 
             }
@@ -1324,54 +1236,50 @@ public class LessonColors extends AppCompatActivity {
 
     public void orange6(){
 
-        videoPathRDPG1 = "android.resource://" + getPackageName() + "/" + R.raw.orange6;
-        uriRDPG1 = Uri.parse(videoPathRDPG1);
-        videoViewRDPG1.setVideoURI(uriRDPG1);
+        videoPathCL = "android.resource://" + getPackageName() + "/" + R.raw.orange6;
+        uriCL = Uri.parse(videoPathCL);
+        videoViewCL.setVideoURI(uriCL);
         sfx = MediaPlayer.create(this, R.raw.btnsfx);
 
 
-        videoViewRDPG1.setOnPreparedListener(new MediaPlayer.OnPreparedListener() {
+        videoViewCL.setOnPreparedListener(new MediaPlayer.OnPreparedListener() {
             @Override
             public void onPrepared(MediaPlayer mp) {
 
-                videoViewRDPG1.start();
+                videoViewCL.start();
 
             }
         });
 
-        videoViewRDPG1.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+        videoViewCL.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
             @Override
             public void onCompletion(MediaPlayer mp) {
 
-                sfx.start();
-
-                videoViewRDPG1.stopPlayback();
+                videoViewCL.stopPlayback();
                 purple1();
 
             }
         });
 
-        backbtnRDPG1.setOnClickListener(new View.OnClickListener() {
+        backbtnCL.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
                 sfx.start();
 
-
-                videoViewRDPG1.stopPlayback();
+                videoViewCL.stopPlayback();
                 orange5();
 
             }
         });
 
-        nextbtnRDPG1.setOnClickListener(new View.OnClickListener() {
+        nextbtnCL.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
                 sfx.start();
 
-
-                videoViewRDPG1.stopPlayback();
+                videoViewCL.stopPlayback();
                 purple1();
 
             }
@@ -1380,53 +1288,49 @@ public class LessonColors extends AppCompatActivity {
 
     public void purple1(){
 
-        videoPathRDPG1 = "android.resource://" + getPackageName() + "/" + R.raw.purple1;
-        uriRDPG1 = Uri.parse(videoPathRDPG1);
-        videoViewRDPG1.setVideoURI(uriRDPG1);
+        videoPathCL = "android.resource://" + getPackageName() + "/" + R.raw.purple1;
+        uriCL = Uri.parse(videoPathCL);
+        videoViewCL.setVideoURI(uriCL);
         sfx = MediaPlayer.create(this, R.raw.btnsfx);
 
-        videoViewRDPG1.setOnPreparedListener(new MediaPlayer.OnPreparedListener() {
+        videoViewCL.setOnPreparedListener(new MediaPlayer.OnPreparedListener() {
             @Override
             public void onPrepared(MediaPlayer mp) {
 
-                videoViewRDPG1.start();
+                videoViewCL.start();
 
             }
         });
 
-        videoViewRDPG1.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+        videoViewCL.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
             @Override
             public void onCompletion(MediaPlayer mp) {
 
-                sfx.start();
-
-                videoViewRDPG1.stopPlayback();
+                videoViewCL.stopPlayback();
                 purple2();
 
             }
         });
 
-        backbtnRDPG1.setOnClickListener(new View.OnClickListener() {
+        backbtnCL.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
                 sfx.start();
 
-
-                videoViewRDPG1.stopPlayback();
+                videoViewCL.stopPlayback();
                 orange6();
 
             }
         });
 
-        nextbtnRDPG1.setOnClickListener(new View.OnClickListener() {
+        nextbtnCL.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
                 sfx.start();
 
-
-                videoViewRDPG1.stopPlayback();
+                videoViewCL.stopPlayback();
                 purple2();
 
             }
@@ -1435,54 +1339,50 @@ public class LessonColors extends AppCompatActivity {
 
     public void purple2(){
 
-        videoPathRDPG1 = "android.resource://" + getPackageName() + "/" + R.raw.purple2;
-        uriRDPG1 = Uri.parse(videoPathRDPG1);
-        videoViewRDPG1.setVideoURI(uriRDPG1);
+        videoPathCL = "android.resource://" + getPackageName() + "/" + R.raw.purple2;
+        uriCL = Uri.parse(videoPathCL);
+        videoViewCL.setVideoURI(uriCL);
         sfx = MediaPlayer.create(this, R.raw.btnsfx);
 
 
-        videoViewRDPG1.setOnPreparedListener(new MediaPlayer.OnPreparedListener() {
+        videoViewCL.setOnPreparedListener(new MediaPlayer.OnPreparedListener() {
             @Override
             public void onPrepared(MediaPlayer mp) {
 
-                videoViewRDPG1.start();
+                videoViewCL.start();
 
             }
         });
 
-        videoViewRDPG1.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+        videoViewCL.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
             @Override
             public void onCompletion(MediaPlayer mp) {
 
-                sfx.start();
-
-                videoViewRDPG1.stopPlayback();
+                videoViewCL.stopPlayback();
                 purple3();
 
             }
         });
 
-        backbtnRDPG1.setOnClickListener(new View.OnClickListener() {
+        backbtnCL.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
                 sfx.start();
 
-
-                videoViewRDPG1.stopPlayback();
+                videoViewCL.stopPlayback();
                 purple1();
 
             }
         });
 
-        nextbtnRDPG1.setOnClickListener(new View.OnClickListener() {
+        nextbtnCL.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
                 sfx.start();
 
-
-                videoViewRDPG1.stopPlayback();
+                videoViewCL.stopPlayback();
                 purple3();
 
             }
@@ -1491,54 +1391,50 @@ public class LessonColors extends AppCompatActivity {
 
     public void purple3(){
 
-        videoPathRDPG1 = "android.resource://" + getPackageName() + "/" + R.raw.purple3;
-        uriRDPG1 = Uri.parse(videoPathRDPG1);
-        videoViewRDPG1.setVideoURI(uriRDPG1);
+        videoPathCL = "android.resource://" + getPackageName() + "/" + R.raw.purple3;
+        uriCL = Uri.parse(videoPathCL);
+        videoViewCL.setVideoURI(uriCL);
         sfx = MediaPlayer.create(this, R.raw.btnsfx);
 
 
-        videoViewRDPG1.setOnPreparedListener(new MediaPlayer.OnPreparedListener() {
+        videoViewCL.setOnPreparedListener(new MediaPlayer.OnPreparedListener() {
             @Override
             public void onPrepared(MediaPlayer mp) {
 
-                videoViewRDPG1.start();
+                videoViewCL.start();
 
             }
         });
 
-        videoViewRDPG1.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+        videoViewCL.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
             @Override
             public void onCompletion(MediaPlayer mp) {
 
-                sfx.start();
-
-                videoViewRDPG1.stopPlayback();
+                videoViewCL.stopPlayback();
                 purple4();
 
             }
         });
 
-        backbtnRDPG1.setOnClickListener(new View.OnClickListener() {
+        backbtnCL.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
                 sfx.start();
 
-
-                videoViewRDPG1.stopPlayback();
+                videoViewCL.stopPlayback();
                 purple2();
 
             }
         });
 
-        nextbtnRDPG1.setOnClickListener(new View.OnClickListener() {
+        nextbtnCL.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
                 sfx.start();
 
-
-                videoViewRDPG1.stopPlayback();
+                videoViewCL.stopPlayback();
                 purple4();
 
             }
@@ -1547,54 +1443,50 @@ public class LessonColors extends AppCompatActivity {
 
     public void purple4(){
 
-        videoPathRDPG1 = "android.resource://" + getPackageName() + "/" + R.raw.purple4;
-        uriRDPG1 = Uri.parse(videoPathRDPG1);
-        videoViewRDPG1.setVideoURI(uriRDPG1);
+        videoPathCL = "android.resource://" + getPackageName() + "/" + R.raw.purple4;
+        uriCL = Uri.parse(videoPathCL);
+        videoViewCL.setVideoURI(uriCL);
         sfx = MediaPlayer.create(this, R.raw.btnsfx);
 
 
-        videoViewRDPG1.setOnPreparedListener(new MediaPlayer.OnPreparedListener() {
+        videoViewCL.setOnPreparedListener(new MediaPlayer.OnPreparedListener() {
             @Override
             public void onPrepared(MediaPlayer mp) {
 
-                videoViewRDPG1.start();
+                videoViewCL.start();
 
             }
         });
 
-        videoViewRDPG1.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+        videoViewCL.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
             @Override
             public void onCompletion(MediaPlayer mp) {
 
-                sfx.start();
-
-                videoViewRDPG1.stopPlayback();
+                videoViewCL.stopPlayback();
                 purple5();
 
             }
         });
 
-        backbtnRDPG1.setOnClickListener(new View.OnClickListener() {
+        backbtnCL.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
                 sfx.start();
 
-
-                videoViewRDPG1.stopPlayback();
+                videoViewCL.stopPlayback();
                 purple3();
 
             }
         });
 
-        nextbtnRDPG1.setOnClickListener(new View.OnClickListener() {
+        nextbtnCL.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
                 sfx.start();
 
-
-                videoViewRDPG1.stopPlayback();
+                videoViewCL.stopPlayback();
                 purple5();
 
             }
@@ -1603,54 +1495,50 @@ public class LessonColors extends AppCompatActivity {
 
     public void purple5(){
 
-        videoPathRDPG1 = "android.resource://" + getPackageName() + "/" + R.raw.purple5;
-        uriRDPG1 = Uri.parse(videoPathRDPG1);
-        videoViewRDPG1.setVideoURI(uriRDPG1);
+        videoPathCL = "android.resource://" + getPackageName() + "/" + R.raw.purple5;
+        uriCL = Uri.parse(videoPathCL);
+        videoViewCL.setVideoURI(uriCL);
         sfx = MediaPlayer.create(this, R.raw.btnsfx);
 
 
-        videoViewRDPG1.setOnPreparedListener(new MediaPlayer.OnPreparedListener() {
+        videoViewCL.setOnPreparedListener(new MediaPlayer.OnPreparedListener() {
             @Override
             public void onPrepared(MediaPlayer mp) {
 
-                videoViewRDPG1.start();
+                videoViewCL.start();
 
             }
         });
 
-        videoViewRDPG1.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+        videoViewCL.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
             @Override
             public void onCompletion(MediaPlayer mp) {
 
-                sfx.start();
-
-                videoViewRDPG1.stopPlayback();
+                videoViewCL.stopPlayback();
                 purple6();
 
             }
         });
 
-        backbtnRDPG1.setOnClickListener(new View.OnClickListener() {
+        backbtnCL.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
                 sfx.start();
 
-
-                videoViewRDPG1.stopPlayback();
+                videoViewCL.stopPlayback();
                 purple4();
 
             }
         });
 
-        nextbtnRDPG1.setOnClickListener(new View.OnClickListener() {
+        nextbtnCL.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
                 sfx.start();
 
-
-                videoViewRDPG1.stopPlayback();
+                videoViewCL.stopPlayback();
                 purple6();
 
             }
@@ -1659,54 +1547,50 @@ public class LessonColors extends AppCompatActivity {
 
     public void purple6(){
 
-        videoPathRDPG1 = "android.resource://" + getPackageName() + "/" + R.raw.purple6;
-        uriRDPG1 = Uri.parse(videoPathRDPG1);
-        videoViewRDPG1.setVideoURI(uriRDPG1);
+        videoPathCL = "android.resource://" + getPackageName() + "/" + R.raw.purple6;
+        uriCL = Uri.parse(videoPathCL);
+        videoViewCL.setVideoURI(uriCL);
         sfx = MediaPlayer.create(this, R.raw.btnsfx);
 
 
-        videoViewRDPG1.setOnPreparedListener(new MediaPlayer.OnPreparedListener() {
+        videoViewCL.setOnPreparedListener(new MediaPlayer.OnPreparedListener() {
             @Override
             public void onPrepared(MediaPlayer mp) {
 
-                videoViewRDPG1.start();
+                videoViewCL.start();
 
             }
         });
 
-        videoViewRDPG1.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+        videoViewCL.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
             @Override
             public void onCompletion(MediaPlayer mp) {
 
-                sfx.start();
-
-                videoViewRDPG1.stopPlayback();
+                videoViewCL.stopPlayback();
                 green1();
 
             }
         });
 
-        backbtnRDPG1.setOnClickListener(new View.OnClickListener() {
+        backbtnCL.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
                 sfx.start();
 
-
-                videoViewRDPG1.stopPlayback();
+                videoViewCL.stopPlayback();
                 purple5();
 
             }
         });
 
-        nextbtnRDPG1.setOnClickListener(new View.OnClickListener() {
+        nextbtnCL.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
                 sfx.start();
 
-
-                videoViewRDPG1.stopPlayback();
+                videoViewCL.stopPlayback();
                 green1();
 
             }
@@ -1715,54 +1599,50 @@ public class LessonColors extends AppCompatActivity {
 
     public void green1(){
 
-        videoPathRDPG1 = "android.resource://" + getPackageName() + "/" + R.raw.green1;
-        uriRDPG1 = Uri.parse(videoPathRDPG1);
-        videoViewRDPG1.setVideoURI(uriRDPG1);
+        videoPathCL = "android.resource://" + getPackageName() + "/" + R.raw.green1;
+        uriCL = Uri.parse(videoPathCL);
+        videoViewCL.setVideoURI(uriCL);
         sfx = MediaPlayer.create(this, R.raw.btnsfx);
 
 
-        videoViewRDPG1.setOnPreparedListener(new MediaPlayer.OnPreparedListener() {
+        videoViewCL.setOnPreparedListener(new MediaPlayer.OnPreparedListener() {
             @Override
             public void onPrepared(MediaPlayer mp) {
 
-                videoViewRDPG1.start();
+                videoViewCL.start();
 
             }
         });
 
-        videoViewRDPG1.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+        videoViewCL.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
             @Override
             public void onCompletion(MediaPlayer mp) {
 
-                sfx.start();
-
-                videoViewRDPG1.stopPlayback();
+                videoViewCL.stopPlayback();
                 green2();
 
             }
         });
 
-        backbtnRDPG1.setOnClickListener(new View.OnClickListener() {
+        backbtnCL.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
                 sfx.start();
 
-
-                videoViewRDPG1.stopPlayback();
+                videoViewCL.stopPlayback();
                 purple6();
 
             }
         });
 
-        nextbtnRDPG1.setOnClickListener(new View.OnClickListener() {
+        nextbtnCL.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
                 sfx.start();
 
-
-                videoViewRDPG1.stopPlayback();
+                videoViewCL.stopPlayback();
                 green2();
 
             }
@@ -1771,54 +1651,50 @@ public class LessonColors extends AppCompatActivity {
 
     public void green2(){
 
-        videoPathRDPG1 = "android.resource://" + getPackageName() + "/" + R.raw.green2;
-        uriRDPG1 = Uri.parse(videoPathRDPG1);
-        videoViewRDPG1.setVideoURI(uriRDPG1);
+        videoPathCL = "android.resource://" + getPackageName() + "/" + R.raw.green2;
+        uriCL = Uri.parse(videoPathCL);
+        videoViewCL.setVideoURI(uriCL);
         sfx = MediaPlayer.create(this, R.raw.btnsfx);
 
 
-        videoViewRDPG1.setOnPreparedListener(new MediaPlayer.OnPreparedListener() {
+        videoViewCL.setOnPreparedListener(new MediaPlayer.OnPreparedListener() {
             @Override
             public void onPrepared(MediaPlayer mp) {
 
-                videoViewRDPG1.start();
+                videoViewCL.start();
 
             }
         });
 
-        videoViewRDPG1.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+        videoViewCL.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
             @Override
             public void onCompletion(MediaPlayer mp) {
 
-                sfx.start();
-
-                videoViewRDPG1.stopPlayback();
+                videoViewCL.stopPlayback();
                 green3();
 
             }
         });
 
-        backbtnRDPG1.setOnClickListener(new View.OnClickListener() {
+        backbtnCL.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
                 sfx.start();
 
-
-                videoViewRDPG1.stopPlayback();
+                videoViewCL.stopPlayback();
                 green1();
 
             }
         });
 
-        nextbtnRDPG1.setOnClickListener(new View.OnClickListener() {
+        nextbtnCL.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
                 sfx.start();
 
-
-                videoViewRDPG1.stopPlayback();
+                videoViewCL.stopPlayback();
                 green3();
 
             }
@@ -1827,54 +1703,50 @@ public class LessonColors extends AppCompatActivity {
 
     public void green3(){
 
-        videoPathRDPG1 = "android.resource://" + getPackageName() + "/" + R.raw.green3;
-        uriRDPG1 = Uri.parse(videoPathRDPG1);
-        videoViewRDPG1.setVideoURI(uriRDPG1);
+        videoPathCL = "android.resource://" + getPackageName() + "/" + R.raw.green3;
+        uriCL = Uri.parse(videoPathCL);
+        videoViewCL.setVideoURI(uriCL);
         sfx = MediaPlayer.create(this, R.raw.btnsfx);
 
 
-        videoViewRDPG1.setOnPreparedListener(new MediaPlayer.OnPreparedListener() {
+        videoViewCL.setOnPreparedListener(new MediaPlayer.OnPreparedListener() {
             @Override
             public void onPrepared(MediaPlayer mp) {
 
-                videoViewRDPG1.start();
+                videoViewCL.start();
 
             }
         });
 
-        videoViewRDPG1.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+        videoViewCL.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
             @Override
             public void onCompletion(MediaPlayer mp) {
 
-                sfx.start();
-
-                videoViewRDPG1.stopPlayback();
+                videoViewCL.stopPlayback();
                 green4();
 
             }
         });
 
-        backbtnRDPG1.setOnClickListener(new View.OnClickListener() {
+        backbtnCL.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
                 sfx.start();
 
-
-                videoViewRDPG1.stopPlayback();
+                videoViewCL.stopPlayback();
                 green2();
 
             }
         });
 
-        nextbtnRDPG1.setOnClickListener(new View.OnClickListener() {
+        nextbtnCL.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
                 sfx.start();
 
-
-                videoViewRDPG1.stopPlayback();
+                videoViewCL.stopPlayback();
                 green4();
 
             }
@@ -1883,52 +1755,50 @@ public class LessonColors extends AppCompatActivity {
 
     public void green4(){
 
-        videoPathRDPG1 = "android.resource://" + getPackageName() + "/" + R.raw.green4;
-        uriRDPG1 = Uri.parse(videoPathRDPG1);
-        videoViewRDPG1.setVideoURI(uriRDPG1);
+        videoPathCL = "android.resource://" + getPackageName() + "/" + R.raw.green4;
+        uriCL = Uri.parse(videoPathCL);
+        videoViewCL.setVideoURI(uriCL);
         sfx = MediaPlayer.create(this, R.raw.btnsfx);
 
 
-        videoViewRDPG1.setOnPreparedListener(new MediaPlayer.OnPreparedListener() {
+        videoViewCL.setOnPreparedListener(new MediaPlayer.OnPreparedListener() {
             @Override
             public void onPrepared(MediaPlayer mp) {
 
-                videoViewRDPG1.start();
+                videoViewCL.start();
 
             }
         });
 
-        videoViewRDPG1.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+        videoViewCL.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
             @Override
             public void onCompletion(MediaPlayer mp) {
 
-                sfx.start();
-
-                videoViewRDPG1.stopPlayback();
+                videoViewCL.stopPlayback();
                 green5();
 
             }
         });
 
-        backbtnRDPG1.setOnClickListener(new View.OnClickListener() {
+        backbtnCL.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
                 sfx.start();
 
-                videoViewRDPG1.stopPlayback();
+                videoViewCL.stopPlayback();
                 green3();
 
             }
         });
 
-        nextbtnRDPG1.setOnClickListener(new View.OnClickListener() {
+        nextbtnCL.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
                 sfx.start();
 
-                videoViewRDPG1.stopPlayback();
+                videoViewCL.stopPlayback();
                 green5();
 
             }
@@ -1937,54 +1807,50 @@ public class LessonColors extends AppCompatActivity {
 
     public void green5(){
 
-        videoPathRDPG1 = "android.resource://" + getPackageName() + "/" + R.raw.green5;
-        uriRDPG1 = Uri.parse(videoPathRDPG1);
-        videoViewRDPG1.setVideoURI(uriRDPG1);
+        videoPathCL = "android.resource://" + getPackageName() + "/" + R.raw.green5;
+        uriCL = Uri.parse(videoPathCL);
+        videoViewCL.setVideoURI(uriCL);
         sfx = MediaPlayer.create(this, R.raw.btnsfx);
 
 
-        videoViewRDPG1.setOnPreparedListener(new MediaPlayer.OnPreparedListener() {
+        videoViewCL.setOnPreparedListener(new MediaPlayer.OnPreparedListener() {
             @Override
             public void onPrepared(MediaPlayer mp) {
 
-                videoViewRDPG1.start();
+                videoViewCL.start();
 
             }
         });
 
-        videoViewRDPG1.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+        videoViewCL.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
             @Override
             public void onCompletion(MediaPlayer mp) {
 
-                sfx.start();
-
-                videoViewRDPG1.stopPlayback();
+                videoViewCL.stopPlayback();
                 green6();
 
             }
         });
 
-        backbtnRDPG1.setOnClickListener(new View.OnClickListener() {
+        backbtnCL.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
                 sfx.start();
 
-
-                videoViewRDPG1.stopPlayback();
+                videoViewCL.stopPlayback();
                 green4();
 
             }
         });
 
-        nextbtnRDPG1.setOnClickListener(new View.OnClickListener() {
+        nextbtnCL.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
                 sfx.start();
 
-
-                videoViewRDPG1.stopPlayback();
+                videoViewCL.stopPlayback();
                 green6();
 
             }
@@ -1993,52 +1859,50 @@ public class LessonColors extends AppCompatActivity {
 
     public void green6(){
 
-        videoPathRDPG1 = "android.resource://" + getPackageName() + "/" + R.raw.green6;
-        uriRDPG1 = Uri.parse(videoPathRDPG1);
-        videoViewRDPG1.setVideoURI(uriRDPG1);
+        videoPathCL = "android.resource://" + getPackageName() + "/" + R.raw.green6;
+        uriCL = Uri.parse(videoPathCL);
+        videoViewCL.setVideoURI(uriCL);
         sfx = MediaPlayer.create(this, R.raw.btnsfx);
 
 
-        videoViewRDPG1.setOnPreparedListener(new MediaPlayer.OnPreparedListener() {
+        videoViewCL.setOnPreparedListener(new MediaPlayer.OnPreparedListener() {
             @Override
             public void onPrepared(MediaPlayer mp) {
 
-                videoViewRDPG1.start();
+                videoViewCL.start();
 
             }
         });
 
-        videoViewRDPG1.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+        videoViewCL.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
             @Override
             public void onCompletion(MediaPlayer mp) {
 
-                sfx.start();
-
-                videoViewRDPG1.stopPlayback();
+                videoViewCL.stopPlayback();
                 startActivity(new Intent(LessonColors.this,ColorsLessonCongrats.class));
 
             }
         });
 
-        backbtnRDPG1.setOnClickListener(new View.OnClickListener() {
+        backbtnCL.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
                 sfx.start();
 
-                videoViewRDPG1.stopPlayback();
+                videoViewCL.stopPlayback();
                 green5();
 
             }
         });
 
-        nextbtnRDPG1.setOnClickListener(new View.OnClickListener() {
+        nextbtnCL.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
                 sfx.start();
 
-                videoViewRDPG1.stopPlayback();
+                videoViewCL.stopPlayback();
                 startActivity(new Intent(LessonColors.this,ColorsLessonCongrats.class));
 
             }
@@ -2055,8 +1919,8 @@ public class LessonColors extends AppCompatActivity {
             }
         });
         
-        videoViewRDPG1.pause();
-        currentPosition = videoViewRDPG1.getCurrentPosition();
+        videoViewCL.pause();
+        currentPosition = videoViewCL.getCurrentPosition();
 
         super.onUserLeaveHint();
 
@@ -2065,8 +1929,8 @@ public class LessonColors extends AppCompatActivity {
     @Override
     protected void onResume(){
 
-        videoViewRDPG1.seekTo(currentPosition);
-        videoViewRDPG1.start();
+        videoViewCL.seekTo(currentPosition);
+        videoViewCL.start();
 
         super.onResume();
 

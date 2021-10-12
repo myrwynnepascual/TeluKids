@@ -16,12 +16,12 @@ public class ChooseModeHonesty extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_choose_mode_honesty);
+        setContentView(R.layout.activity_choose_mode);
 
-        backCMH36 = findViewById(R.id.bconceptsbtnCMH36);
-        learnCMH36 = findViewById(R.id.learnCMH36);
-        assessCMH36 = findViewById(R.id.assessCMH36);
-        replayCMH36 = findViewById(R.id.replayintroCMH36);
+        backCMH36 = findViewById(R.id.bconceptsbtnCM);
+        learnCMH36 = findViewById(R.id.learnCM);
+        assessCMH36 = findViewById(R.id.assessCM);
+        replayCMH36 = findViewById(R.id.replayintroCM);
 
         BackgroundSoundService.onResume();
 

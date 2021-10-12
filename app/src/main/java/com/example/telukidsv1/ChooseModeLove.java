@@ -16,12 +16,12 @@ public class ChooseModeLove extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_choose_mode_love);
+        setContentView(R.layout.activity_choose_mode);
 
-        backCML79 = findViewById(R.id.bconceptsbtnCML79);
-        learnCML79 = findViewById(R.id.learnCML79);
-        assessCML79 = findViewById(R.id.assessCML79);
-        replayCML79 = findViewById(R.id.replayintroCML79);
+        backCML79 = findViewById(R.id.bconceptsbtnCM);
+        learnCML79 = findViewById(R.id.learnCM);
+        assessCML79 = findViewById(R.id.assessCM);
+        replayCML79 = findViewById(R.id.replayintroCM);
 
         BackgroundSoundService.onResume();
 

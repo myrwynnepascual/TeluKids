@@ -24,10 +24,10 @@ public class LessonIntroHonesty extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_lesson_intro_honesty);
+        setContentView(R.layout.activity_lesson_intro_vid);
 
-        btncloseIH = findViewById(R.id.btncloseIH);
-        videoViewIH = findViewById(R.id.videoIH);
+        btncloseIH = findViewById(R.id.btncloseLIV);
+        videoViewIH = findViewById(R.id.videoLIV);
         videoPathIH = "android.resource://" + getPackageName() + "/" + R.raw.honestyintrovideo;
         uriIH = Uri.parse(videoPathIH);
         videoViewIH.setVideoURI(uriIH);

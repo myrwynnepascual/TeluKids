@@ -25,7 +25,7 @@
             android:orientation="vertical">
 
             <ImageButton
-                android:id="@+id/backbtnHP36"
+                android:id="@+id/backbtnHP"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="20dp"
@@ -35,7 +35,7 @@
                 tools:ignore="SpeakableTextPresentCheck,ImageContrastCheck,DuplicateSpeakableTextCheck" />
 
             <ImageView
-                android:id="@+id/logoHP36"
+                android:id="@+id/logoHP"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"
@@ -43,7 +43,7 @@
                 app:srcCompat="@drawable/teluiconsmall" />
 
             <ImageView
-                android:id="@+id/telukidstitleHP36"
+                android:id="@+id/telukidstitleHP"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"
@@ -52,7 +52,7 @@
                 tools:ignore="ImageContrastCheck" />
 
             <ImageView
-                android:id="@+id/howtousetxtHP36"
+                android:id="@+id/howtousetxtHP"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"
@@ -61,7 +61,7 @@
                 tools:ignore="ImageContrastCheck" />
 
             <ImageView
-                android:id="@+id/howtouseHP36"
+                android:id="@+id/howtouseHP"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="5dp"
@@ -71,7 +71,7 @@
                 tools:ignore="ImageContrastCheck" />
 
             <ImageView
-                android:id="@+id/abouttxtHP36"
+                android:id="@+id/abouttxtHP"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="20dp"
@@ -81,7 +81,7 @@
                 tools:ignore="ImageContrastCheck" />
 
             <ImageView
-                android:id="@+id/aboutHP36"
+                android:id="@+id/aboutHP"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"
@@ -90,7 +90,7 @@
                 tools:ignore="ImageContrastCheck" />
 
             <ImageView
-                android:id="@+id/faqstxtHP36"
+                android:id="@+id/faqstxtHP"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="20dp"
@@ -100,7 +100,7 @@
                 tools:ignore="ImageContrastCheck" />
 
             <ImageView
-                android:id="@+id/faqsHP36"
+                android:id="@+id/faqsHP"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="20dp"

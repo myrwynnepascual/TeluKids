@@ -13,10 +13,10 @@ import android.widget.VideoView;
 
 public class LessonCounting extends AppCompatActivity {
 
-    VideoView videoViewCX;
-    String videoPathCX;
-    Uri uriCX;
-    ImageButton backbtnCX, nextbtnCX;
+    VideoView videoViewCN;
+    String videoPathCN;
+    Uri uriCN;
+    ImageButton backbtnCN, nextbtnCN;
     MediaController mediaController;
     MediaPlayer sfx;
     int currentPosition;
@@ -24,16 +24,16 @@ public class LessonCounting extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_lesson_counting);
+        setContentView(R.layout.activity_lesson);
 
-        videoViewCX = findViewById(R.id.videoCX);
-        backbtnCX = findViewById(R.id.btnbackCX);
-        nextbtnCX = findViewById(R.id.nextbtnCX);
+        videoViewCN = findViewById(R.id.video);
+        backbtnCN = findViewById(R.id.btnback);
+        nextbtnCN = findViewById(R.id.nextbtn);
 
         mediaController = new MediaController(this);
-        videoViewCX.setMediaController(mediaController);
+        videoViewCN.setMediaController(mediaController);
         mediaController.setVisibility(View.GONE);
-        mediaController.setAnchorView(videoViewCX);
+        mediaController.setAnchorView(videoViewCN);
 
         BackgroundSoundService.onPause();
 
@@ -42,50 +42,50 @@ public class LessonCounting extends AppCompatActivity {
 
     public void countx() {
 
-        videoPathCX = "android.resource://" + getPackageName() + "/" + R.raw.countx;
-        uriCX = Uri.parse(videoPathCX);
-        videoViewCX.setVideoURI(uriCX);
+        videoPathCN = "android.resource://" + getPackageName() + "/" + R.raw.countx;
+        uriCN = Uri.parse(videoPathCN);
+        videoViewCN.setVideoURI(uriCN);
         sfx = MediaPlayer.create(this, R.raw.btnsfx);
           
 
-        videoViewCX.setOnPreparedListener(new MediaPlayer.OnPreparedListener() {
+        videoViewCN.setOnPreparedListener(new MediaPlayer.OnPreparedListener() {
             @Override
             public void onPrepared(MediaPlayer mp) {
                 
-                sfx.start();
-                videoViewCX.start();
+                videoViewCN.start();
 
             }
         });
 
-        videoViewCX.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+        videoViewCN.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
             @Override
             public void onCompletion(MediaPlayer mp) {
 
-                sfx.start();
-                videoViewCX.stopPlayback();
+                videoViewCN.stopPlayback();
                 count1();
 
             }
         });
 
-        backbtnCX.setOnClickListener(new View.OnClickListener() {
+        backbtnCN.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
+                sfx.start();
                 
-                videoViewCX.stopPlayback();
+                videoViewCN.stopPlayback();
                 startActivity(new Intent(LessonCounting.this, ChooseModeCounting.class));
 
             }
         });
 
-        nextbtnCX.setOnClickListener(new View.OnClickListener() {
+        nextbtnCN.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
+                sfx.start();
                 
-                videoViewCX.stopPlayback();
+                videoViewCN.stopPlayback();
                 count1();
 
             }
@@ -95,53 +95,51 @@ public class LessonCounting extends AppCompatActivity {
 
     public void count1() {
 
-        videoPathCX = "android.resource://" + getPackageName() + "/" + R.raw.count1;
-        uriCX = Uri.parse(videoPathCX);
-        videoViewCX.setVideoURI(uriCX);
+        videoPathCN = "android.resource://" + getPackageName() + "/" + R.raw.count1;
+        uriCN = Uri.parse(videoPathCN);
+        videoViewCN.setVideoURI(uriCN);
         sfx = MediaPlayer.create(this, R.raw.btnsfx);
           
 
-        videoViewCX.setOnPreparedListener(new MediaPlayer.OnPreparedListener() {
+        videoViewCN.setOnPreparedListener(new MediaPlayer.OnPreparedListener() {
             @Override
             public void onPrepared(MediaPlayer mp) {
-                
-                sfx.start();
 
-                videoViewCX.start();
+                videoViewCN.start();
                 
             }
         });
 
 
-        videoViewCX.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+        videoViewCN.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
             @Override
             public void onCompletion(MediaPlayer mp) {
-                
-                sfx.start();
 
-                videoViewCX.stopPlayback();
+                videoViewCN.stopPlayback();
                 count2();
 
             }
         });
 
-        backbtnCX.setOnClickListener(new View.OnClickListener() {
+        backbtnCN.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
+                sfx.start();
                 
-                videoViewCX.stopPlayback();
+                videoViewCN.stopPlayback();
                 countx();
 
             }
         });
 
-        nextbtnCX.setOnClickListener(new View.OnClickListener() {
+        nextbtnCN.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
+                sfx.start();
                 
-                videoViewCX.stopPlayback();
+                videoViewCN.stopPlayback();
                 count2();
 
             }
@@ -151,53 +149,51 @@ public class LessonCounting extends AppCompatActivity {
 
     public void count2() {
 
-        videoPathCX = "android.resource://" + getPackageName() + "/" + R.raw.count2;
-        uriCX = Uri.parse(videoPathCX);
-        videoViewCX.setVideoURI(uriCX);
+        videoPathCN = "android.resource://" + getPackageName() + "/" + R.raw.count2;
+        uriCN = Uri.parse(videoPathCN);
+        videoViewCN.setVideoURI(uriCN);
         sfx = MediaPlayer.create(this, R.raw.btnsfx);
           
 
-        videoViewCX.setOnPreparedListener(new MediaPlayer.OnPreparedListener() {
+        videoViewCN.setOnPreparedListener(new MediaPlayer.OnPreparedListener() {
             @Override
             public void onPrepared(MediaPlayer mp) {
-                
-                sfx.start();
 
-                videoViewCX.start();
+                videoViewCN.start();
                 
             }
         });
 
 
-        videoViewCX.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+        videoViewCN.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
             @Override
             public void onCompletion(MediaPlayer mp) {
-                
-                sfx.start();
 
-                videoViewCX.stopPlayback();
+                videoViewCN.stopPlayback();
                 count3();
 
             }
         });
 
-        backbtnCX.setOnClickListener(new View.OnClickListener() {
+        backbtnCN.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
-                
-                videoViewCX.stopPlayback();
+                sfx.start();
+
+                videoViewCN.stopPlayback();
                 count1();
 
             }
         });
 
-        nextbtnCX.setOnClickListener(new View.OnClickListener() {
+        nextbtnCN.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
-                
-                videoViewCX.stopPlayback();
+                sfx.start();
+
+                videoViewCN.stopPlayback();
                 count3();
 
             }
@@ -207,53 +203,51 @@ public class LessonCounting extends AppCompatActivity {
 
     public void count3() {
 
-        videoPathCX = "android.resource://" + getPackageName() + "/" + R.raw.count3;
-        uriCX = Uri.parse(videoPathCX);
-        videoViewCX.setVideoURI(uriCX);
+        videoPathCN = "android.resource://" + getPackageName() + "/" + R.raw.count3;
+        uriCN = Uri.parse(videoPathCN);
+        videoViewCN.setVideoURI(uriCN);
         sfx = MediaPlayer.create(this, R.raw.btnsfx);
           
 
-        videoViewCX.setOnPreparedListener(new MediaPlayer.OnPreparedListener() {
+        videoViewCN.setOnPreparedListener(new MediaPlayer.OnPreparedListener() {
             @Override
             public void onPrepared(MediaPlayer mp) {
-                
-                sfx.start();
 
-                videoViewCX.start();
+                videoViewCN.start();
                 
             }
         });
 
 
-        videoViewCX.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+        videoViewCN.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
             @Override
             public void onCompletion(MediaPlayer mp) {
-                
-                sfx.start();
 
-                videoViewCX.stopPlayback();
+                videoViewCN.stopPlayback();
                 count4();
 
             }
         });
 
-        backbtnCX.setOnClickListener(new View.OnClickListener() {
+        backbtnCN.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
+                sfx.start();
                 
-                videoViewCX.stopPlayback();
+                videoViewCN.stopPlayback();
                 count2();
 
             }
         });
 
-        nextbtnCX.setOnClickListener(new View.OnClickListener() {
+        nextbtnCN.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
+                sfx.start();
                 
-                videoViewCX.stopPlayback();
+                videoViewCN.stopPlayback();
                 count4();
 
             }
@@ -263,53 +257,51 @@ public class LessonCounting extends AppCompatActivity {
 
     public void count4() {
 
-        videoPathCX = "android.resource://" + getPackageName() + "/" + R.raw.count4;
-        uriCX = Uri.parse(videoPathCX);
-        videoViewCX.setVideoURI(uriCX);
+        videoPathCN = "android.resource://" + getPackageName() + "/" + R.raw.count4;
+        uriCN = Uri.parse(videoPathCN);
+        videoViewCN.setVideoURI(uriCN);
         sfx = MediaPlayer.create(this, R.raw.btnsfx);
           
 
-        videoViewCX.setOnPreparedListener(new MediaPlayer.OnPreparedListener() {
+        videoViewCN.setOnPreparedListener(new MediaPlayer.OnPreparedListener() {
             @Override
             public void onPrepared(MediaPlayer mp) {
-                
-                sfx.start();
 
-                videoViewCX.start();
+                videoViewCN.start();
                 
             }
         });
 
 
-        videoViewCX.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+        videoViewCN.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
             @Override
             public void onCompletion(MediaPlayer mp) {
-                
-                sfx.start();
 
-                videoViewCX.stopPlayback();
+                videoViewCN.stopPlayback();
                 count5();
 
             }
         });
 
-        backbtnCX.setOnClickListener(new View.OnClickListener() {
+        backbtnCN.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
+                sfx.start();
                 
-                videoViewCX.stopPlayback();
+                videoViewCN.stopPlayback();
                 count3();
 
             }
         });
 
-        nextbtnCX.setOnClickListener(new View.OnClickListener() {
+        nextbtnCN.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
-                
-                videoViewCX.stopPlayback();
+                sfx.start();
+
+                videoViewCN.stopPlayback();
                 count5();
 
             }
@@ -319,53 +311,51 @@ public class LessonCounting extends AppCompatActivity {
 
     public void count5() {
 
-        videoPathCX = "android.resource://" + getPackageName() + "/" + R.raw.count5;
-        uriCX = Uri.parse(videoPathCX);
-        videoViewCX.setVideoURI(uriCX);
+        videoPathCN = "android.resource://" + getPackageName() + "/" + R.raw.count5;
+        uriCN = Uri.parse(videoPathCN);
+        videoViewCN.setVideoURI(uriCN);
         sfx = MediaPlayer.create(this, R.raw.btnsfx);
           
 
-        videoViewCX.setOnPreparedListener(new MediaPlayer.OnPreparedListener() {
+        videoViewCN.setOnPreparedListener(new MediaPlayer.OnPreparedListener() {
             @Override
             public void onPrepared(MediaPlayer mp) {
-                
-                sfx.start();
 
-                videoViewCX.start();
+                videoViewCN.start();
                 
             }
         });
 
 
-        videoViewCX.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+        videoViewCN.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
             @Override
             public void onCompletion(MediaPlayer mp) {
-                
-                sfx.start();
 
-                videoViewCX.stopPlayback();
+                videoViewCN.stopPlayback();
                 count6();
 
             }
         });
 
-        backbtnCX.setOnClickListener(new View.OnClickListener() {
+        backbtnCN.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
+                sfx.start();
                 
-                videoViewCX.stopPlayback();
+                videoViewCN.stopPlayback();
                 count4();
 
             }
         });
 
-        nextbtnCX.setOnClickListener(new View.OnClickListener() {
+        nextbtnCN.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
+                sfx.start();
                 
-                videoViewCX.stopPlayback();
+                videoViewCN.stopPlayback();
                 count6();
 
             }
@@ -375,53 +365,51 @@ public class LessonCounting extends AppCompatActivity {
 
     public void count6() {
 
-        videoPathCX = "android.resource://" + getPackageName() + "/" + R.raw.count6;
-        uriCX = Uri.parse(videoPathCX);
-        videoViewCX.setVideoURI(uriCX);
+        videoPathCN = "android.resource://" + getPackageName() + "/" + R.raw.count6;
+        uriCN = Uri.parse(videoPathCN);
+        videoViewCN.setVideoURI(uriCN);
         sfx = MediaPlayer.create(this, R.raw.btnsfx);
           
 
-        videoViewCX.setOnPreparedListener(new MediaPlayer.OnPreparedListener() {
+        videoViewCN.setOnPreparedListener(new MediaPlayer.OnPreparedListener() {
             @Override
             public void onPrepared(MediaPlayer mp) {
-                
-                sfx.start();
 
-                videoViewCX.start();
+                videoViewCN.start();
                 
             }
         });
 
 
-        videoViewCX.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+        videoViewCN.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
             @Override
             public void onCompletion(MediaPlayer mp) {
-                
-                sfx.start();
 
-                videoViewCX.stopPlayback();
+                videoViewCN.stopPlayback();
                 count7();
 
             }
         });
 
-        backbtnCX.setOnClickListener(new View.OnClickListener() {
+        backbtnCN.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
-                
-                videoViewCX.stopPlayback();
+                sfx.start();
+
+                videoViewCN.stopPlayback();
                 count5();
 
             }
         });
 
-        nextbtnCX.setOnClickListener(new View.OnClickListener() {
+        nextbtnCN.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
+                sfx.start();
                 
-                videoViewCX.stopPlayback();
+                videoViewCN.stopPlayback();
                 count7();
 
             }
@@ -431,53 +419,51 @@ public class LessonCounting extends AppCompatActivity {
 
     public void count7() {
 
-        videoPathCX = "android.resource://" + getPackageName() + "/" + R.raw.count7;
-        uriCX = Uri.parse(videoPathCX);
-        videoViewCX.setVideoURI(uriCX);
+        videoPathCN = "android.resource://" + getPackageName() + "/" + R.raw.count7;
+        uriCN = Uri.parse(videoPathCN);
+        videoViewCN.setVideoURI(uriCN);
         sfx = MediaPlayer.create(this, R.raw.btnsfx);
           
 
-        videoViewCX.setOnPreparedListener(new MediaPlayer.OnPreparedListener() {
+        videoViewCN.setOnPreparedListener(new MediaPlayer.OnPreparedListener() {
             @Override
             public void onPrepared(MediaPlayer mp) {
-                
-                sfx.start();
 
-                videoViewCX.start();
+                videoViewCN.start();
                 
             }
         });
 
 
-        videoViewCX.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+        videoViewCN.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
             @Override
             public void onCompletion(MediaPlayer mp) {
-                
-                sfx.start();
 
-                videoViewCX.stopPlayback();
+                videoViewCN.stopPlayback();
                 count8();
 
             }
         });
 
-        backbtnCX.setOnClickListener(new View.OnClickListener() {
+        backbtnCN.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
+                sfx.start();
                 
-                videoViewCX.stopPlayback();
+                videoViewCN.stopPlayback();
                 count6();
 
             }
         });
 
-        nextbtnCX.setOnClickListener(new View.OnClickListener() {
+        nextbtnCN.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
+                sfx.start();
                 
-                videoViewCX.stopPlayback();
+                videoViewCN.stopPlayback();
                 count8();
 
             }
@@ -487,53 +473,51 @@ public class LessonCounting extends AppCompatActivity {
 
     public void count8() {
 
-        videoPathCX = "android.resource://" + getPackageName() + "/" + R.raw.count8;
-        uriCX = Uri.parse(videoPathCX);
-        videoViewCX.setVideoURI(uriCX);
+        videoPathCN = "android.resource://" + getPackageName() + "/" + R.raw.count8;
+        uriCN = Uri.parse(videoPathCN);
+        videoViewCN.setVideoURI(uriCN);
         sfx = MediaPlayer.create(this, R.raw.btnsfx);
           
 
-        videoViewCX.setOnPreparedListener(new MediaPlayer.OnPreparedListener() {
+        videoViewCN.setOnPreparedListener(new MediaPlayer.OnPreparedListener() {
             @Override
             public void onPrepared(MediaPlayer mp) {
-                
-                sfx.start();
 
-                videoViewCX.start();
+                videoViewCN.start();
                 
             }
         });
 
 
-        videoViewCX.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+        videoViewCN.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
             @Override
             public void onCompletion(MediaPlayer mp) {
-                
-                sfx.start();
 
-                videoViewCX.stopPlayback();
+                videoViewCN.stopPlayback();
                 count9();
 
             }
         });
 
-        backbtnCX.setOnClickListener(new View.OnClickListener() {
+        backbtnCN.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
+                sfx.start();
                 
-                videoViewCX.stopPlayback();
+                videoViewCN.stopPlayback();
                 count7();
 
             }
         });
 
-        nextbtnCX.setOnClickListener(new View.OnClickListener() {
+        nextbtnCN.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
+                sfx.start();
                 
-                videoViewCX.stopPlayback();
+                videoViewCN.stopPlayback();
                 count9();
 
             }
@@ -543,53 +527,51 @@ public class LessonCounting extends AppCompatActivity {
 
     public void count9() {
 
-        videoPathCX = "android.resource://" + getPackageName() + "/" + R.raw.count9;
-        uriCX = Uri.parse(videoPathCX);
-        videoViewCX.setVideoURI(uriCX);
+        videoPathCN = "android.resource://" + getPackageName() + "/" + R.raw.count9;
+        uriCN = Uri.parse(videoPathCN);
+        videoViewCN.setVideoURI(uriCN);
         sfx = MediaPlayer.create(this, R.raw.btnsfx);
           
 
-        videoViewCX.setOnPreparedListener(new MediaPlayer.OnPreparedListener() {
+        videoViewCN.setOnPreparedListener(new MediaPlayer.OnPreparedListener() {
             @Override
             public void onPrepared(MediaPlayer mp) {
-                
-                sfx.start();
 
-                videoViewCX.start();
+                videoViewCN.start();
                 
             }
         });
 
 
-        videoViewCX.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+        videoViewCN.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
             @Override
             public void onCompletion(MediaPlayer mp) {
-                
-                sfx.start();
 
-                videoViewCX.stopPlayback();
+                videoViewCN.stopPlayback();
                 count10();
 
             }
         });
 
-        backbtnCX.setOnClickListener(new View.OnClickListener() {
+        backbtnCN.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
+                sfx.start();
                 
-                videoViewCX.stopPlayback();
+                videoViewCN.stopPlayback();
                 count8();
 
             }
         });
 
-        nextbtnCX.setOnClickListener(new View.OnClickListener() {
+        nextbtnCN.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
+                sfx.start();
                 
-                videoViewCX.stopPlayback();
+                videoViewCN.stopPlayback();
                 count10();
 
             }
@@ -599,53 +581,51 @@ public class LessonCounting extends AppCompatActivity {
 
     public void count10() {
 
-        videoPathCX = "android.resource://" + getPackageName() + "/" + R.raw.count10;
-        uriCX = Uri.parse(videoPathCX);
-        videoViewCX.setVideoURI(uriCX);
+        videoPathCN = "android.resource://" + getPackageName() + "/" + R.raw.count10;
+        uriCN = Uri.parse(videoPathCN);
+        videoViewCN.setVideoURI(uriCN);
         sfx = MediaPlayer.create(this, R.raw.btnsfx);
           
 
-        videoViewCX.setOnPreparedListener(new MediaPlayer.OnPreparedListener() {
+        videoViewCN.setOnPreparedListener(new MediaPlayer.OnPreparedListener() {
             @Override
             public void onPrepared(MediaPlayer mp) {
-                
-                sfx.start();
 
-                videoViewCX.start();
+                videoViewCN.start();
                 
             }
         });
 
 
-        videoViewCX.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+        videoViewCN.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
             @Override
             public void onCompletion(MediaPlayer mp) {
-                
-                sfx.start();
 
-                videoViewCX.stopPlayback();
+                videoViewCN.stopPlayback();
                 count11();
 
             }
         });
 
-        backbtnCX.setOnClickListener(new View.OnClickListener() {
+        backbtnCN.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
+                sfx.start();
                 
-                videoViewCX.stopPlayback();
+                videoViewCN.stopPlayback();
                 count9();
 
             }
         });
 
-        nextbtnCX.setOnClickListener(new View.OnClickListener() {
+        nextbtnCN.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
-                
-                videoViewCX.stopPlayback();
+                sfx.start();
+
+                videoViewCN.stopPlayback();
                 count11();
 
             }
@@ -655,53 +635,51 @@ public class LessonCounting extends AppCompatActivity {
 
     public void count11() {
 
-        videoPathCX = "android.resource://" + getPackageName() + "/" + R.raw.count11;
-        uriCX = Uri.parse(videoPathCX);
-        videoViewCX.setVideoURI(uriCX);
+        videoPathCN = "android.resource://" + getPackageName() + "/" + R.raw.count11;
+        uriCN = Uri.parse(videoPathCN);
+        videoViewCN.setVideoURI(uriCN);
         sfx = MediaPlayer.create(this, R.raw.btnsfx);
           
 
-        videoViewCX.setOnPreparedListener(new MediaPlayer.OnPreparedListener() {
+        videoViewCN.setOnPreparedListener(new MediaPlayer.OnPreparedListener() {
             @Override
             public void onPrepared(MediaPlayer mp) {
-                
-                sfx.start();
 
-                videoViewCX.start();
+                videoViewCN.start();
                 
             }
         });
 
 
-        videoViewCX.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+        videoViewCN.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
             @Override
             public void onCompletion(MediaPlayer mp) {
-                
-                sfx.start();
 
-                videoViewCX.stopPlayback();
+                videoViewCN.stopPlayback();
                 count12();
 
             }
         });
 
-        backbtnCX.setOnClickListener(new View.OnClickListener() {
+        backbtnCN.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
+                sfx.start();
                 
-                videoViewCX.stopPlayback();
+                videoViewCN.stopPlayback();
                 count10();
 
             }
         });
 
-        nextbtnCX.setOnClickListener(new View.OnClickListener() {
+        nextbtnCN.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
+                sfx.start();
                 
-                videoViewCX.stopPlayback();
+                videoViewCN.stopPlayback();
                 count12();
 
             }
@@ -711,53 +689,51 @@ public class LessonCounting extends AppCompatActivity {
 
     public void count12() {
 
-        videoPathCX = "android.resource://" + getPackageName() + "/" + R.raw.count12;
-        uriCX = Uri.parse(videoPathCX);
-        videoViewCX.setVideoURI(uriCX);
+        videoPathCN = "android.resource://" + getPackageName() + "/" + R.raw.count12;
+        uriCN = Uri.parse(videoPathCN);
+        videoViewCN.setVideoURI(uriCN);
         sfx = MediaPlayer.create(this, R.raw.btnsfx);
           
 
-        videoViewCX.setOnPreparedListener(new MediaPlayer.OnPreparedListener() {
+        videoViewCN.setOnPreparedListener(new MediaPlayer.OnPreparedListener() {
             @Override
             public void onPrepared(MediaPlayer mp) {
-                
-                sfx.start();
 
-                videoViewCX.start();
+                videoViewCN.start();
                 
             }
         });
 
 
-        videoViewCX.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+        videoViewCN.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
             @Override
             public void onCompletion(MediaPlayer mp) {
-                
-                sfx.start();
 
-                videoViewCX.stopPlayback();
+                videoViewCN.stopPlayback();
                 count13();
 
             }
         });
 
-        backbtnCX.setOnClickListener(new View.OnClickListener() {
+        backbtnCN.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
+                sfx.start();
                 
-                videoViewCX.stopPlayback();
+                videoViewCN.stopPlayback();
                 count11();
 
             }
         });
 
-        nextbtnCX.setOnClickListener(new View.OnClickListener() {
+        nextbtnCN.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
+                sfx.start();
                 
-                videoViewCX.stopPlayback();
+                videoViewCN.stopPlayback();
                 count13();
 
             }
@@ -767,53 +743,51 @@ public class LessonCounting extends AppCompatActivity {
 
     public void count13() {
 
-        videoPathCX = "android.resource://" + getPackageName() + "/" + R.raw.count13;
-        uriCX = Uri.parse(videoPathCX);
-        videoViewCX.setVideoURI(uriCX);
+        videoPathCN = "android.resource://" + getPackageName() + "/" + R.raw.count13;
+        uriCN = Uri.parse(videoPathCN);
+        videoViewCN.setVideoURI(uriCN);
         sfx = MediaPlayer.create(this, R.raw.btnsfx);
           
 
-        videoViewCX.setOnPreparedListener(new MediaPlayer.OnPreparedListener() {
+        videoViewCN.setOnPreparedListener(new MediaPlayer.OnPreparedListener() {
             @Override
             public void onPrepared(MediaPlayer mp) {
-                
-                sfx.start();
 
-                videoViewCX.start();
+                videoViewCN.start();
                 
             }
         });
 
 
-        videoViewCX.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+        videoViewCN.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
             @Override
             public void onCompletion(MediaPlayer mp) {
-                
-                sfx.start();
 
-                videoViewCX.stopPlayback();
+                videoViewCN.stopPlayback();
                 count14();
 
             }
         });
 
-        backbtnCX.setOnClickListener(new View.OnClickListener() {
+        backbtnCN.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
-                
-                videoViewCX.stopPlayback();
+                sfx.start();
+
+                videoViewCN.stopPlayback();
                 count12();
 
             }
         });
 
-        nextbtnCX.setOnClickListener(new View.OnClickListener() {
+        nextbtnCN.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
-                
-                videoViewCX.stopPlayback();
+                sfx.start();
+
+                videoViewCN.stopPlayback();
                 count14();
 
             }
@@ -823,53 +797,51 @@ public class LessonCounting extends AppCompatActivity {
 
     public void count14() {
 
-        videoPathCX = "android.resource://" + getPackageName() + "/" + R.raw.count14;
-        uriCX = Uri.parse(videoPathCX);
-        videoViewCX.setVideoURI(uriCX);
+        videoPathCN = "android.resource://" + getPackageName() + "/" + R.raw.count14;
+        uriCN = Uri.parse(videoPathCN);
+        videoViewCN.setVideoURI(uriCN);
         sfx = MediaPlayer.create(this, R.raw.btnsfx);
           
 
-        videoViewCX.setOnPreparedListener(new MediaPlayer.OnPreparedListener() {
+        videoViewCN.setOnPreparedListener(new MediaPlayer.OnPreparedListener() {
             @Override
             public void onPrepared(MediaPlayer mp) {
-                
-                sfx.start();
 
-                videoViewCX.start();
+                videoViewCN.start();
                 
             }
         });
 
 
-        videoViewCX.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+        videoViewCN.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
             @Override
             public void onCompletion(MediaPlayer mp) {
-                
-                sfx.start();
 
-                videoViewCX.stopPlayback();
+                videoViewCN.stopPlayback();
                 count15();
 
             }
         });
 
-        backbtnCX.setOnClickListener(new View.OnClickListener() {
+        backbtnCN.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
+                sfx.start();
                 
-                videoViewCX.stopPlayback();
+                videoViewCN.stopPlayback();
                 count13();
 
             }
         });
 
-        nextbtnCX.setOnClickListener(new View.OnClickListener() {
+        nextbtnCN.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
-                
-                videoViewCX.stopPlayback();
+                sfx.start();
+
+                videoViewCN.stopPlayback();
                 count15();
 
             }
@@ -879,53 +851,51 @@ public class LessonCounting extends AppCompatActivity {
 
     public void count15() {
 
-        videoPathCX = "android.resource://" + getPackageName() + "/" + R.raw.count15;
-        uriCX = Uri.parse(videoPathCX);
-        videoViewCX.setVideoURI(uriCX);
+        videoPathCN = "android.resource://" + getPackageName() + "/" + R.raw.count15;
+        uriCN = Uri.parse(videoPathCN);
+        videoViewCN.setVideoURI(uriCN);
         sfx = MediaPlayer.create(this, R.raw.btnsfx);
           
 
-        videoViewCX.setOnPreparedListener(new MediaPlayer.OnPreparedListener() {
+        videoViewCN.setOnPreparedListener(new MediaPlayer.OnPreparedListener() {
             @Override
             public void onPrepared(MediaPlayer mp) {
-                
-                sfx.start();
 
-                videoViewCX.start();
+                videoViewCN.start();
                 
             }
         });
 
 
-        videoViewCX.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+        videoViewCN.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
             @Override
             public void onCompletion(MediaPlayer mp) {
-                
-                sfx.start();
 
-                videoViewCX.stopPlayback();
+                videoViewCN.stopPlayback();
                 count16();
 
             }
         });
 
-        backbtnCX.setOnClickListener(new View.OnClickListener() {
+        backbtnCN.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
+                sfx.start();
                 
-                videoViewCX.stopPlayback();
+                videoViewCN.stopPlayback();
                 count14();
 
             }
         });
 
-        nextbtnCX.setOnClickListener(new View.OnClickListener() {
+        nextbtnCN.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
-                
-                videoViewCX.stopPlayback();
+                sfx.start();
+
+                videoViewCN.stopPlayback();
                 count16();
 
             }
@@ -935,53 +905,51 @@ public class LessonCounting extends AppCompatActivity {
 
     public void count16() {
 
-        videoPathCX = "android.resource://" + getPackageName() + "/" + R.raw.count16;
-        uriCX = Uri.parse(videoPathCX);
-        videoViewCX.setVideoURI(uriCX);
+        videoPathCN = "android.resource://" + getPackageName() + "/" + R.raw.count16;
+        uriCN = Uri.parse(videoPathCN);
+        videoViewCN.setVideoURI(uriCN);
         sfx = MediaPlayer.create(this, R.raw.btnsfx);
           
 
-        videoViewCX.setOnPreparedListener(new MediaPlayer.OnPreparedListener() {
+        videoViewCN.setOnPreparedListener(new MediaPlayer.OnPreparedListener() {
             @Override
             public void onPrepared(MediaPlayer mp) {
-                
-                sfx.start();
 
-                videoViewCX.start();
+                videoViewCN.start();
                 
             }
         });
 
 
-        videoViewCX.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+        videoViewCN.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
             @Override
             public void onCompletion(MediaPlayer mp) {
-                
-                sfx.start();
 
-                videoViewCX.stopPlayback();
+                videoViewCN.stopPlayback();
                 count17();
 
             }
         });
 
-        backbtnCX.setOnClickListener(new View.OnClickListener() {
+        backbtnCN.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
+                sfx.start();
                 
-                videoViewCX.stopPlayback();
+                videoViewCN.stopPlayback();
                 count15();
 
             }
         });
 
-        nextbtnCX.setOnClickListener(new View.OnClickListener() {
+        nextbtnCN.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
+                sfx.start();
                 
-                videoViewCX.stopPlayback();
+                videoViewCN.stopPlayback();
                 count17();
 
             }
@@ -991,53 +959,51 @@ public class LessonCounting extends AppCompatActivity {
 
     public void count17() {
 
-        videoPathCX = "android.resource://" + getPackageName() + "/" + R.raw.count17;
-        uriCX = Uri.parse(videoPathCX);
-        videoViewCX.setVideoURI(uriCX);
+        videoPathCN = "android.resource://" + getPackageName() + "/" + R.raw.count17;
+        uriCN = Uri.parse(videoPathCN);
+        videoViewCN.setVideoURI(uriCN);
         sfx = MediaPlayer.create(this, R.raw.btnsfx);
           
 
-        videoViewCX.setOnPreparedListener(new MediaPlayer.OnPreparedListener() {
+        videoViewCN.setOnPreparedListener(new MediaPlayer.OnPreparedListener() {
             @Override
             public void onPrepared(MediaPlayer mp) {
-                
-                sfx.start();
 
-                videoViewCX.start();
+                videoViewCN.start();
                 
             }
         });
 
 
-        videoViewCX.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+        videoViewCN.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
             @Override
             public void onCompletion(MediaPlayer mp) {
-                
-                sfx.start();
 
-                videoViewCX.stopPlayback();
+                videoViewCN.stopPlayback();
                 count18();
 
             }
         });
 
-        backbtnCX.setOnClickListener(new View.OnClickListener() {
+        backbtnCN.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
+                sfx.start();
                 
-                videoViewCX.stopPlayback();
+                videoViewCN.stopPlayback();
                 count16();
 
             }
         });
 
-        nextbtnCX.setOnClickListener(new View.OnClickListener() {
+        nextbtnCN.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
-                
-                videoViewCX.stopPlayback();
+                sfx.start();
+
+                videoViewCN.stopPlayback();
                 count18();
 
             }
@@ -1047,53 +1013,51 @@ public class LessonCounting extends AppCompatActivity {
 
     public void count18() {
 
-        videoPathCX = "android.resource://" + getPackageName() + "/" + R.raw.count18;
-        uriCX = Uri.parse(videoPathCX);
-        videoViewCX.setVideoURI(uriCX);
+        videoPathCN = "android.resource://" + getPackageName() + "/" + R.raw.count18;
+        uriCN = Uri.parse(videoPathCN);
+        videoViewCN.setVideoURI(uriCN);
         sfx = MediaPlayer.create(this, R.raw.btnsfx);
           
 
-        videoViewCX.setOnPreparedListener(new MediaPlayer.OnPreparedListener() {
+        videoViewCN.setOnPreparedListener(new MediaPlayer.OnPreparedListener() {
             @Override
             public void onPrepared(MediaPlayer mp) {
-                
-                sfx.start();
 
-                videoViewCX.start();
+                videoViewCN.start();
                 
             }
         });
 
 
-        videoViewCX.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+        videoViewCN.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
             @Override
             public void onCompletion(MediaPlayer mp) {
-                
-                sfx.start();
 
-                videoViewCX.stopPlayback();
+                videoViewCN.stopPlayback();
                 count19();
 
             }
         });
 
-        backbtnCX.setOnClickListener(new View.OnClickListener() {
+        backbtnCN.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
+                sfx.start();
                 
-                videoViewCX.stopPlayback();
+                videoViewCN.stopPlayback();
                 count17();
 
             }
         });
 
-        nextbtnCX.setOnClickListener(new View.OnClickListener() {
+        nextbtnCN.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
-                
-                videoViewCX.stopPlayback();
+                sfx.start();
+
+                videoViewCN.stopPlayback();
                 count19();
 
             }
@@ -1103,53 +1067,51 @@ public class LessonCounting extends AppCompatActivity {
 
     public void count19() {
 
-        videoPathCX = "android.resource://" + getPackageName() + "/" + R.raw.count19;
-        uriCX = Uri.parse(videoPathCX);
-        videoViewCX.setVideoURI(uriCX);
+        videoPathCN = "android.resource://" + getPackageName() + "/" + R.raw.count19;
+        uriCN = Uri.parse(videoPathCN);
+        videoViewCN.setVideoURI(uriCN);
         sfx = MediaPlayer.create(this, R.raw.btnsfx);
           
 
-        videoViewCX.setOnPreparedListener(new MediaPlayer.OnPreparedListener() {
+        videoViewCN.setOnPreparedListener(new MediaPlayer.OnPreparedListener() {
             @Override
             public void onPrepared(MediaPlayer mp) {
-                
-                sfx.start();
 
-                videoViewCX.start();
+                videoViewCN.start();
                 
             }
         });
 
 
-        videoViewCX.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+        videoViewCN.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
             @Override
             public void onCompletion(MediaPlayer mp) {
-                
-                sfx.start();
 
-                videoViewCX.stopPlayback();
+                videoViewCN.stopPlayback();
                 count20();
 
             }
         });
 
-        backbtnCX.setOnClickListener(new View.OnClickListener() {
+        backbtnCN.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
+                sfx.start();
                 
-                videoViewCX.stopPlayback();
+                videoViewCN.stopPlayback();
                 count18();
 
             }
         });
 
-        nextbtnCX.setOnClickListener(new View.OnClickListener() {
+        nextbtnCN.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
+                sfx.start();
                 
-                videoViewCX.stopPlayback();
+                videoViewCN.stopPlayback();
                 count20();
 
             }
@@ -1159,53 +1121,51 @@ public class LessonCounting extends AppCompatActivity {
 
     public void count20() {
 
-        videoPathCX = "android.resource://" + getPackageName() + "/" + R.raw.count20;
-        uriCX = Uri.parse(videoPathCX);
-        videoViewCX.setVideoURI(uriCX);
+        videoPathCN = "android.resource://" + getPackageName() + "/" + R.raw.count20;
+        uriCN = Uri.parse(videoPathCN);
+        videoViewCN.setVideoURI(uriCN);
         sfx = MediaPlayer.create(this, R.raw.btnsfx);
           
 
-        videoViewCX.setOnPreparedListener(new MediaPlayer.OnPreparedListener() {
+        videoViewCN.setOnPreparedListener(new MediaPlayer.OnPreparedListener() {
             @Override
             public void onPrepared(MediaPlayer mp) {
-                
-                sfx.start();
 
-                videoViewCX.start();
+                videoViewCN.start();
                 
             }
         });
 
 
-        videoViewCX.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+        videoViewCN.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
             @Override
             public void onCompletion(MediaPlayer mp) {
-                
-                sfx.start();
 
-                videoViewCX.stopPlayback();
+                videoViewCN.stopPlayback();
                 startActivity(new Intent(LessonCounting.this, CountingLessonCongrats.class));
 
             }
         });
 
-        backbtnCX.setOnClickListener(new View.OnClickListener() {
+        backbtnCN.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
+                sfx.start();
                 
-                videoViewCX.stopPlayback();
+                videoViewCN.stopPlayback();
                 count19();
 
             }
         });
 
-        nextbtnCX.setOnClickListener(new View.OnClickListener() {
+        nextbtnCN.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
+                sfx.start();
                 
-                videoViewCX.stopPlayback();
+                videoViewCN.stopPlayback();
                 startActivity(new Intent(LessonCounting.this, CountingLessonCongrats.class));
 
             }
@@ -1225,8 +1185,8 @@ public class LessonCounting extends AppCompatActivity {
             }
         });
 
-        videoViewCX.pause();
-        currentPosition = videoViewCX.getCurrentPosition();
+        videoViewCN.pause();
+        currentPosition = videoViewCN.getCurrentPosition();
 
         super.onUserLeaveHint();
 
@@ -1235,8 +1195,8 @@ public class LessonCounting extends AppCompatActivity {
     @Override
     protected void onResume(){
 
-        videoViewCX.seekTo(currentPosition);
-        videoViewCX.start();
+        videoViewCN.seekTo(currentPosition);
+        videoViewCN.start();
 
         super.onResume();
 

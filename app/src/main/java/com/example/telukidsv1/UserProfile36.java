@@ -1,6 +1,5 @@
 package com.example.telukidsv1;
 
-import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -14,13 +13,11 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.google.firebase.auth.FirebaseAuth;
-import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.EventListener;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.FirebaseFirestoreException;
-import com.google.firebase.firestore.Transaction;
 
 public class UserProfile36 extends AppCompatActivity {
     ImageButton btnbackUP, btneditUP, btnlogoutUP, btnsurveyUP, btnhelpUP;
@@ -36,15 +33,15 @@ public class UserProfile36 extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_user_profile36);
+        setContentView(R.layout.activity_user_profile);
 
-        profIconUP = findViewById(R.id.usericonUP36);
-        greetUP = findViewById(R.id.greetingsUP36);
-        btnbackUP = findViewById(R.id.backbtnUP36);
-        btneditUP = findViewById(R.id.editprofilebtnUP36);
-        btnlogoutUP = findViewById(R.id.logoutbtnUP36);
-        btnsurveyUP = findViewById(R.id.surveybtnUP36);
-        btnhelpUP = findViewById(R.id.helpbtnUP36);
+        profIconUP = findViewById(R.id.usericonUP);
+        greetUP = findViewById(R.id.greetingsUP);
+        btnbackUP = findViewById(R.id.backbtnUP);
+        btneditUP = findViewById(R.id.editprofilebtnUP);
+        btnlogoutUP = findViewById(R.id.logoutbtnUP);
+        btnsurveyUP = findViewById(R.id.surveybtnUP);
+        btnhelpUP = findViewById(R.id.helpbtnUP);
         sfx = MediaPlayer.create(this, R.raw.btnsfx);
 
         fAuth = FirebaseAuth.getInstance();

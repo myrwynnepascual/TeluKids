@@ -16,12 +16,12 @@ public class ChooseModeCompassion extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_choose_mode_compassion);
+        setContentView(R.layout.activity_choose_mode);
 
-        backCMCP = findViewById(R.id.bconceptsbtnCMCP);
-        learnCMCP = findViewById(R.id.learnCMCP);
-        assessCMCP = findViewById(R.id.assessCMCP);
-        replayCMCP = findViewById(R.id.replayintroCMCP);
+        backCMCP = findViewById(R.id.bconceptsbtnCM);
+        learnCMCP = findViewById(R.id.learnCM);
+        assessCMCP = findViewById(R.id.assessCM);
+        replayCMCP = findViewById(R.id.replayintroCM);
 
         BackgroundSoundService.onResume();
 

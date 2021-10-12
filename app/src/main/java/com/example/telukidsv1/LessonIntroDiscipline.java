@@ -24,10 +24,10 @@ public class LessonIntroDiscipline extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_lesson_intro_discipline);
+        setContentView(R.layout.activity_lesson_intro_vid);
 
-        btnCloseID = findViewById(R.id.btncloseID);
-        videoViewID = findViewById(R.id.videoID);
+        btnCloseID = findViewById(R.id.btncloseLIV);
+        videoViewID = findViewById(R.id.videoLIV);
         videoPathID = "android.resource://" + getPackageName() + "/" + R.raw.disciplineintrovideo;
         uriID = Uri.parse(videoPathID);
         videoViewID.setVideoURI(uriID);

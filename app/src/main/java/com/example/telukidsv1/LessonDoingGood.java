@@ -13,10 +13,10 @@ import android.widget.VideoView;
 
 public class LessonDoingGood extends AppCompatActivity {
 
-    VideoView videoViewDG79;
-    String videoPathDG79;
-    Uri uriDG79;
-    ImageButton backbtnDG79,nextbtnDG79;
+    VideoView videoViewDG;
+    String videoPathDG;
+    Uri uriDG;
+    ImageButton backbtnDG,nextbtnDG;
     MediaController mediaController;
     MediaPlayer sfx;
     int currentPosition;
@@ -24,15 +24,16 @@ public class LessonDoingGood extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_lesson_doing_good);
-        videoViewDG79 = findViewById(R.id.videoDG79);
-        backbtnDG79 = findViewById(R.id.btnbackDG79);
-        nextbtnDG79 = findViewById(R.id.nextbtnDG79);
+        setContentView(R.layout.activity_lesson);
+
+        videoViewDG = findViewById(R.id.video);
+        backbtnDG = findViewById(R.id.btnback);
+        nextbtnDG = findViewById(R.id.nextbtn);
 
         mediaController = new MediaController(this);
-        videoViewDG79.setMediaController(mediaController);
+        videoViewDG.setMediaController(mediaController);
         mediaController.setVisibility(View.GONE);
-        mediaController.setAnchorView(videoViewDG79);
+        mediaController.setAnchorView(videoViewDG);
 
         BackgroundSoundService.onPause();
 
@@ -40,53 +41,50 @@ public class LessonDoingGood extends AppCompatActivity {
     }
 
     public void good1(){
-        videoPathDG79 = "android.resource://" + getPackageName() + "/" + R.raw.good1;
-        uriDG79 = Uri.parse(videoPathDG79);
-        videoViewDG79.setVideoURI(uriDG79);
+        videoPathDG = "android.resource://" + getPackageName() + "/" + R.raw.good1;
+        uriDG = Uri.parse(videoPathDG);
+        videoViewDG.setVideoURI(uriDG);
         sfx = MediaPlayer.create(this, R.raw.btnsfx);
         
 
-        videoViewDG79.setOnPreparedListener(new MediaPlayer.OnPreparedListener() {
+        videoViewDG.setOnPreparedListener(new MediaPlayer.OnPreparedListener() {
             @Override
             public void onPrepared(MediaPlayer mp) {
-                
-                videoViewDG79.start();
+
+                videoViewDG.start();
                 
             }
         });
 
-        videoViewDG79.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+        videoViewDG.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
             @Override
             public void onCompletion(MediaPlayer mp) {
 
-                sfx.start();
-
+                videoViewDG.stopPlayback();
                 good2();
 
             }
         });
 
-        backbtnDG79.setOnClickListener(new View.OnClickListener() {
+        backbtnDG.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
                 sfx.start();
 
-                
-                videoViewDG79.stopPlayback();
+                videoViewDG.stopPlayback();
                 startActivity(new Intent(LessonDoingGood.this,ChooseModeDoingGood.class));
 
             }
         });
 
-        nextbtnDG79.setOnClickListener(new View.OnClickListener() {
+        nextbtnDG.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
                 sfx.start();
 
-                
-                videoViewDG79.stopPlayback();
+                videoViewDG.stopPlayback();
                 good2();
 
             }
@@ -94,54 +92,50 @@ public class LessonDoingGood extends AppCompatActivity {
     }
 
     public void good2(){
-        videoPathDG79 = "android.resource://" + getPackageName() + "/" + R.raw.good2;
-        uriDG79 = Uri.parse(videoPathDG79);
-        videoViewDG79.setVideoURI(uriDG79);
+        videoPathDG = "android.resource://" + getPackageName() + "/" + R.raw.good2;
+        uriDG = Uri.parse(videoPathDG);
+        videoViewDG.setVideoURI(uriDG);
         sfx = MediaPlayer.create(this, R.raw.btnsfx);
         
 
-        videoViewDG79.setOnPreparedListener(new MediaPlayer.OnPreparedListener() {
+        videoViewDG.setOnPreparedListener(new MediaPlayer.OnPreparedListener() {
             @Override
             public void onPrepared(MediaPlayer mp) {
                 
-                videoViewDG79.start();
+                videoViewDG.start();
                 
             }
         });
 
-        videoViewDG79.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+        videoViewDG.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
             @Override
             public void onCompletion(MediaPlayer mp) {
 
-                sfx.start();
-
-                videoViewDG79.stopPlayback();
+                videoViewDG.stopPlayback();
                 good3();
 
             }
         });
 
-        backbtnDG79.setOnClickListener(new View.OnClickListener() {
+        backbtnDG.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
                 sfx.start();
 
-                
-                videoViewDG79.stopPlayback();
+                videoViewDG.stopPlayback();
                 good1();
 
             }
         });
 
-        nextbtnDG79.setOnClickListener(new View.OnClickListener() {
+        nextbtnDG.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
                 sfx.start();
-
                 
-                videoViewDG79.stopPlayback();
+                videoViewDG.stopPlayback();
                 good3();
 
             }
@@ -149,54 +143,50 @@ public class LessonDoingGood extends AppCompatActivity {
     }
 
     public void good3(){
-        videoPathDG79 = "android.resource://" + getPackageName() + "/" + R.raw.good3;
-        uriDG79 = Uri.parse(videoPathDG79);
-        videoViewDG79.setVideoURI(uriDG79);
+        videoPathDG = "android.resource://" + getPackageName() + "/" + R.raw.good3;
+        uriDG = Uri.parse(videoPathDG);
+        videoViewDG.setVideoURI(uriDG);
         sfx = MediaPlayer.create(this, R.raw.btnsfx);
         
 
-        videoViewDG79.setOnPreparedListener(new MediaPlayer.OnPreparedListener() {
+        videoViewDG.setOnPreparedListener(new MediaPlayer.OnPreparedListener() {
             @Override
             public void onPrepared(MediaPlayer mp) {
                 
-                videoViewDG79.start();
+                videoViewDG.start();
                 
             }
         });
 
-        videoViewDG79.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+        videoViewDG.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
             @Override
             public void onCompletion(MediaPlayer mp) {
 
-                sfx.start();
-
-                videoViewDG79.stopPlayback();
+                videoViewDG.stopPlayback();
                 good4();
 
             }
         });
 
-        backbtnDG79.setOnClickListener(new View.OnClickListener() {
+        backbtnDG.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
                 sfx.start();
 
-                
-                videoViewDG79.stopPlayback();
+                videoViewDG.stopPlayback();
                 good2();
 
             }
         });
 
-        nextbtnDG79.setOnClickListener(new View.OnClickListener() {
+        nextbtnDG.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
                 sfx.start();
-
                 
-                videoViewDG79.stopPlayback();
+                videoViewDG.stopPlayback();
                 good4();
 
             }
@@ -204,54 +194,50 @@ public class LessonDoingGood extends AppCompatActivity {
     }
 
     public void good4() {
-        videoPathDG79 = "android.resource://" + getPackageName() + "/" + R.raw.good4;
-        uriDG79 = Uri.parse(videoPathDG79);
-        videoViewDG79.setVideoURI(uriDG79);
+        videoPathDG = "android.resource://" + getPackageName() + "/" + R.raw.good4;
+        uriDG = Uri.parse(videoPathDG);
+        videoViewDG.setVideoURI(uriDG);
         sfx = MediaPlayer.create(this, R.raw.btnsfx);
         
 
-        videoViewDG79.setOnPreparedListener(new MediaPlayer.OnPreparedListener() {
+        videoViewDG.setOnPreparedListener(new MediaPlayer.OnPreparedListener() {
             @Override
             public void onPrepared(MediaPlayer mp) {
                 
-                videoViewDG79.start();
+                videoViewDG.start();
                 
             }
         });
 
-        videoViewDG79.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+        videoViewDG.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
             @Override
             public void onCompletion(MediaPlayer mp) {
 
-                sfx.start();
-
-                videoViewDG79.stopPlayback();
+                videoViewDG.stopPlayback();
                 startActivity(new Intent(LessonDoingGood.this, DoingGoodLessonCongrats.class));
 
             }
         });
 
-        backbtnDG79.setOnClickListener(new View.OnClickListener() {
+        backbtnDG.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
                 sfx.start();
 
-                
-                videoViewDG79.stopPlayback();
+                videoViewDG.stopPlayback();
                 good3();
 
             }
         });
 
-        nextbtnDG79.setOnClickListener(new View.OnClickListener() {
+        nextbtnDG.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
                 sfx.start();
 
-                
-                videoViewDG79.stopPlayback();
+                videoViewDG.stopPlayback();
                 startActivity(new Intent(LessonDoingGood.this, DoingGoodLessonCongrats.class));
 
             }
@@ -270,8 +256,8 @@ public class LessonDoingGood extends AppCompatActivity {
             }
         });
 
-        videoViewDG79.pause();
-        currentPosition = videoViewDG79.getCurrentPosition();
+        videoViewDG.pause();
+        currentPosition = videoViewDG.getCurrentPosition();
 
         super.onUserLeaveHint();
 
@@ -280,8 +266,8 @@ public class LessonDoingGood extends AppCompatActivity {
     @Override
     protected void onResume(){
 
-        videoViewDG79.seekTo(currentPosition);
-        videoViewDG79.start();
+        videoViewDG.seekTo(currentPosition);
+        videoViewDG.start();
 
         super.onResume();
 

@@ -92,7 +92,7 @@ public class LoveLessonCongrats extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 sfx.start();
-                startActivity(new Intent(LoveLessonCongrats.this, Homepage3to6.class));
+                startActivity(new Intent(LoveLessonCongrats.this, Homepage7to9.class));
             }
         });
 

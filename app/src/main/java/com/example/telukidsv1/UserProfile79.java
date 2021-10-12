@@ -33,15 +33,15 @@ public class UserProfile79 extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_user_profile79);
+        setContentView(R.layout.activity_user_profile);
 
-        profIconUP = findViewById(R.id.usericonUP79);
-        greetUP = findViewById(R.id.greetingsUP79);
-        btnbackUP = findViewById(R.id.backbtnUP79);
-        btneditUP = findViewById(R.id.editprofilebtnUP79);
-        btnlogoutUP = findViewById(R.id.logoutbtnUP79);
-        btnsurveyUP = findViewById(R.id.surveybtnUP79);
-        btnhelpUP = findViewById(R.id.helpbtnUP79);
+        profIconUP = findViewById(R.id.usericonUP);
+        greetUP = findViewById(R.id.greetingsUP);
+        btnbackUP = findViewById(R.id.backbtnUP);
+        btneditUP = findViewById(R.id.editprofilebtnUP);
+        btnlogoutUP = findViewById(R.id.logoutbtnUP);
+        btnsurveyUP = findViewById(R.id.surveybtnUP);
+        btnhelpUP = findViewById(R.id.helpbtnUP);
 
         sfx = MediaPlayer.create(this, R.raw.btnsfx);
 

@@ -16,12 +16,12 @@ public class ChooseModeObedience extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_choose_mode_obedience);
+        setContentView(R.layout.activity_choose_mode);
 
-        backCMO79 = findViewById(R.id.bconceptsbtnCMO79);
-        learnCMO79 = findViewById(R.id.learnCMO79);
-        assessCMO79 = findViewById(R.id.assessCMO79);
-        replayCMO79 = findViewById(R.id.replayintroCMO79);
+        backCMO79 = findViewById(R.id.bconceptsbtnCM);
+        learnCMO79 = findViewById(R.id.learnCM);
+        assessCMO79 = findViewById(R.id.assessCM);
+        replayCMO79 = findViewById(R.id.replayintroCM);
 
         BackgroundSoundService.onResume();
 

@@ -16,12 +16,12 @@ public class ChooseModeResponsibility extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_choose_mode_responsibility);
+        setContentView(R.layout.activity_choose_mode);
 
-        backCMRP79 = findViewById(R.id.bconceptsbtnCMRP79);
-        learnCMRP79 = findViewById(R.id.learnCMRP79);
-        assessCMRP79 = findViewById(R.id.assessCMRP79);
-        replayCMRP79 = findViewById(R.id.replayintroCMRP79);
+        backCMRP79 = findViewById(R.id.bconceptsbtnCM);
+        learnCMRP79 = findViewById(R.id.learnCM);
+        assessCMRP79 = findViewById(R.id.assessCM);
+        replayCMRP79 = findViewById(R.id.replayintroCM);
 
         BackgroundSoundService.onResume();
 

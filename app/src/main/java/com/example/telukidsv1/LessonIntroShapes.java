@@ -27,10 +27,10 @@ public class LessonIntroShapes extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_lesson_intro_shapes);
+        setContentView(R.layout.activity_lesson_intro_vid);
 
-        btncloseIS = findViewById(R.id.btncloseIS);
-        videoViewIS = findViewById(R.id.videoIS);
+        btncloseIS = findViewById(R.id.btncloseLIV);
+        videoViewIS = findViewById(R.id.videoLIV);
         videoPathIS = "android.resource://" + getPackageName() + "/" + R.raw.shapesintrovideo;
         uriIS = Uri.parse(videoPathIS);
         videoViewIS.setVideoURI(uriIS);

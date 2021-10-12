@@ -24,10 +24,10 @@ public class LessonIntroRespect extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_lesson_intro_respect);
+        setContentView(R.layout.activity_lesson_intro_vid);
 
-        btncloseIR = findViewById(R.id.btncloseIR);
-        videoViewIR = findViewById(R.id.videoIR);
+        btncloseIR = findViewById(R.id.btncloseLIV);
+        videoViewIR = findViewById(R.id.videoLIV);
         videoPathIR = "android.resource://" + getPackageName() + "/" + R.raw.respectintrovideo;
         uriIR = Uri.parse(videoPathIR);
         videoViewIR.setVideoURI(uriIR);

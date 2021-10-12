@@ -6,7 +6,6 @@ import android.content.Intent;
 import android.media.MediaPlayer;
 import android.net.Uri;
 import android.os.Bundle;
-import android.os.Handler;
 import android.view.View;
 import android.widget.ImageButton;
 import android.widget.MediaController;
@@ -24,10 +23,10 @@ public class LessonIntroAddition extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_lesson_intro_addition);
+        setContentView(R.layout.activity_lesson_intro_vid);
 
-        btncloseIA = findViewById(R.id.btncloseIA);
-        videoViewIA = findViewById(R.id.videoIA);
+        btncloseIA = findViewById(R.id.btncloseLIV);
+        videoViewIA = findViewById(R.id.videoLIV);
         videoPathIA = "android.resource://" + getPackageName() + "/" + R.raw.additionintrovideo;
         uriIA = Uri.parse(videoPathIA);
         videoViewIA.setVideoURI(uriIA);

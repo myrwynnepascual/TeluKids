@@ -24,10 +24,10 @@ public class LessonIntroResponsibility extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_lesson_intro_responsibility);
+        setContentView(R.layout.activity_lesson_intro_vid);
 
-        btncloseRP = findViewById(R.id.btncloseRP79);
-        videoViewRP = findViewById(R.id.videoRP79);
+        btncloseRP = findViewById(R.id.btncloseLIV);
+        videoViewRP = findViewById(R.id.videoLIV);
         videoPathRP = "android.resource://" + getPackageName() + "/" + R.raw.responsibilityintrovideo;
         uriRP = Uri.parse(videoPathRP);
         videoViewRP.setVideoURI(uriRP);

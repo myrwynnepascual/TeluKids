@@ -16,12 +16,12 @@ public class ChooseModeDiscipline extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_choose_mode_discipline);
+        setContentView(R.layout.activity_choose_mode);
 
-        backCMD36 = findViewById(R.id.bconceptsbtnCMD36);
-        learnCMD36 = findViewById(R.id.learnCMD36);
-        assessCMD36 = findViewById(R.id.assessCMD36);
-        replayCMD36 = findViewById(R.id.replayintroCMD36);
+        backCMD36 = findViewById(R.id.bconceptsbtnCM);
+        learnCMD36 = findViewById(R.id.learnCM);
+        assessCMD36 = findViewById(R.id.assessCM);
+        replayCMD36 = findViewById(R.id.replayintroCM);
 
         BackgroundSoundService.onResume();
 

@@ -7,13 +7,10 @@ import android.content.Intent;
 import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.os.Handler;
-import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.ImageButton;
-import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
@@ -26,9 +23,6 @@ import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.FirebaseFirestoreException;
 import com.google.firebase.firestore.Transaction;
-
-import java.util.HashMap;
-import java.util.Map;
 
 public class EditProfile36 extends AppCompatActivity {
     ImageButton btnBackEP36,btnSaveEP36,icon1EP36,icon2EP36,icon3EP36,icon4EP36,icon5EP36,icon6EP36,icon7EP36,icon8EP36;
@@ -44,26 +38,26 @@ public class EditProfile36 extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_edit_profile36);
+        setContentView(R.layout.activity_edit_profile);
 
-        btnBackEP36 = findViewById(R.id.backbtnEP36);
-        btnSaveEP36 = findViewById(R.id.savebtnEP36);
+        btnBackEP36 = findViewById(R.id.backbtnEP);
+        btnSaveEP36 = findViewById(R.id.savebtnEP);
 
-        nUsername = findViewById(R.id.nusernameEP36);
-        oPassword = findViewById(R.id.oldpasswordEP36);
-        nPassword = findViewById(R.id.npasswordEP36);
-        nCPassword = findViewById(R.id.ncpasswordEP36);
+        nUsername = findViewById(R.id.nusernameEP);
+        oPassword = findViewById(R.id.oldpasswordEP);
+        nPassword = findViewById(R.id.npasswordEP);
+        nCPassword = findViewById(R.id.ncpasswordEP);
 
-        changesStatus = findViewById(R.id.settingsstatusEP36);
+        changesStatus = findViewById(R.id.settingsstatusEP);
 
-        icon1EP36 = findViewById(R.id.icon1EP36);
-        icon2EP36 = findViewById(R.id.icon2EP36);
-        icon3EP36 = findViewById(R.id.icon3EP36);
-        icon4EP36 = findViewById(R.id.icon4EP36);
-        icon5EP36 = findViewById(R.id.icon5EP36);
-        icon6EP36 = findViewById(R.id.icon6EP36);
-        icon7EP36 = findViewById(R.id.icon7EP36);
-        icon8EP36 = findViewById(R.id.icon8EP36);
+        icon1EP36 = findViewById(R.id.icon1EP);
+        icon2EP36 = findViewById(R.id.icon2EP);
+        icon3EP36 = findViewById(R.id.icon3EP);
+        icon4EP36 = findViewById(R.id.icon4EP);
+        icon5EP36 = findViewById(R.id.icon5EP);
+        icon6EP36 = findViewById(R.id.icon6EP);
+        icon7EP36 = findViewById(R.id.icon7EP);
+        icon8EP36 = findViewById(R.id.icon8EP);
 
         sfx = MediaPlayer.create(this, R.raw.btnsfx);
 

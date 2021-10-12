@@ -40,26 +40,26 @@ public class EditProfile79 extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_edit_profile79);
+        setContentView(R.layout.activity_edit_profile);
 
-        btnBackEP79 = findViewById(R.id.backbtnEP79);
-        btnSaveEP79 = findViewById(R.id.savebtnEP79);
+        btnBackEP79 = findViewById(R.id.backbtnEP);
+        btnSaveEP79 = findViewById(R.id.savebtnEP);
 
-        nUsername = findViewById(R.id.nusernameEP79);
-        oPassword = findViewById(R.id.oldpasswordEP79);
-        nPassword = findViewById(R.id.npasswordEP79);
-        nCPassword = findViewById(R.id.ncpasswordEP79);
+        nUsername = findViewById(R.id.nusernameEP);
+        oPassword = findViewById(R.id.oldpasswordEP);
+        nPassword = findViewById(R.id.npasswordEP);
+        nCPassword = findViewById(R.id.ncpasswordEP);
 
-        changesStatus = findViewById(R.id.settingsstatusEP79);
+        changesStatus = findViewById(R.id.settingsstatusEP);
 
-        icon1EP79 = findViewById(R.id.icon1EP79);
-        icon2EP79 = findViewById(R.id.icon2EP79);
-        icon3EP79 = findViewById(R.id.icon3EP79);
-        icon4EP79 = findViewById(R.id.icon4EP79);
-        icon5EP79 = findViewById(R.id.icon5EP79);
-        icon6EP79 = findViewById(R.id.icon6EP79);
-        icon7EP79 = findViewById(R.id.icon7EP79);
-        icon8EP79 = findViewById(R.id.icon8EP79);
+        icon1EP79 = findViewById(R.id.icon1EP);
+        icon2EP79 = findViewById(R.id.icon2EP);
+        icon3EP79 = findViewById(R.id.icon3EP);
+        icon4EP79 = findViewById(R.id.icon4EP);
+        icon5EP79 = findViewById(R.id.icon5EP);
+        icon6EP79 = findViewById(R.id.icon6EP);
+        icon7EP79 = findViewById(R.id.icon7EP);
+        icon8EP79 = findViewById(R.id.icon8EP);
 
         sfx = MediaPlayer.create(this, R.raw.btnsfx);
 

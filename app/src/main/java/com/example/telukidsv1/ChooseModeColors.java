@@ -16,12 +16,12 @@ public class ChooseModeColors extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_choose_mode_colors);
+        setContentView(R.layout.activity_choose_mode);
 
-        backCMC = findViewById(R.id.bconceptsbtnCMC);
-        learnCMC = findViewById(R.id.learnCMC);
-        assessCMC = findViewById(R.id.assessCMC);
-        replayCMC = findViewById(R.id.replayintroCMC);
+        backCMC = findViewById(R.id.bconceptsbtnCM);
+        learnCMC = findViewById(R.id.learnCM);
+        assessCMC = findViewById(R.id.assessCM);
+        replayCMC = findViewById(R.id.replayintroCM);
 
         BackgroundSoundService.onResume();
 

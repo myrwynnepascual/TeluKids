@@ -5,10 +5,10 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/bg2"
-    tools:context=".ChooseModeDiscipline">
+    tools:context=".ChooseModeAddition">
 
     <LinearLayout
-        android:id="@+id/linearLayout1CMD36"
+        android:id="@+id/linearLayout1CM"
         android:layout_width="371dp"
         android:layout_height="wrap_content"
         android:layout_marginLeft="20dp"
@@ -22,7 +22,7 @@
         app:layout_constraintVertical_bias="0.024">
 
         <ImageButton
-            android:id="@+id/bconceptsbtnCMD36"
+            android:id="@+id/bconceptsbtnCM"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:backgroundTint="#00FFFFFF"
@@ -36,7 +36,7 @@
             android:orientation="horizontal">
 
             <ImageButton
-                android:id="@+id/replayintroCMD36"
+                android:id="@+id/replayintroCM"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:backgroundTint="#00FFFFFF"
@@ -46,18 +46,17 @@
 
 
             <ImageView
-                android:id="@+id/logoCMD36"
+                android:id="@+id/logoCM"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="42dp"
                 android:contentDescription="@string/todo"
                 app:srcCompat="@drawable/classroomlogotitle" />
 
-
         </LinearLayout>
 
         <ImageView
-            android:id="@+id/chooseCMD36"
+            android:id="@+id/chooseCM"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
@@ -66,7 +65,7 @@
             app:srcCompat="@drawable/classroomtxt" />
 
         <ImageButton
-            android:id="@+id/learnCMD36"
+            android:id="@+id/learnCM"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
@@ -77,7 +76,7 @@
             tools:ignore="SpeakableTextPresentCheck,ImageContrastCheck" />
 
         <ImageButton
-            android:id="@+id/assessCMD36"
+            android:id="@+id/assessCM"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"

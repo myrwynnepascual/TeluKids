@@ -13,10 +13,10 @@ import android.widget.VideoView;
 
 public class LessonDiscipline extends AppCompatActivity {
 
-    VideoView videoViewD36;
-    String videoPathD36;
-    Uri uriD36;
-    ImageButton backbtnD36,nextbtnD36;
+    VideoView videoViewD;
+    String videoPathD;
+    Uri uriD;
+    ImageButton backbtnD,nextbtnD;
     MediaController mediaController;
     MediaPlayer sfx;
     int currentPosition;
@@ -24,16 +24,16 @@ public class LessonDiscipline extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_lesson_discipline);
+        setContentView(R.layout.activity_lesson);
 
-        videoViewD36 = findViewById(R.id.videoD36);
-        backbtnD36 = findViewById(R.id.btnbackD36);
-        nextbtnD36 = findViewById(R.id.nextbtnD36);
+        videoViewD = findViewById(R.id.video);
+        backbtnD = findViewById(R.id.btnback);
+        nextbtnD = findViewById(R.id.nextbtn);
 
         mediaController = new MediaController(this);
-        videoViewD36.setMediaController(mediaController);
+        videoViewD.setMediaController(mediaController);
         mediaController.setVisibility(View.GONE);
-        mediaController.setAnchorView(videoViewD36);
+        mediaController.setAnchorView(videoViewD);
 
         BackgroundSoundService.onPause();
 
@@ -41,54 +41,50 @@ public class LessonDiscipline extends AppCompatActivity {
     }
 
     public void discipline1(){
-        videoPathD36 = "android.resource://" + getPackageName() + "/" + R.raw.discipline1;
-        uriD36 = Uri.parse(videoPathD36);
-        videoViewD36.setVideoURI(uriD36);
+        videoPathD = "android.resource://" + getPackageName() + "/" + R.raw.discipline1;
+        uriD = Uri.parse(videoPathD);
+        videoViewD.setVideoURI(uriD);
         sfx = MediaPlayer.create(this, R.raw.btnsfx);
          
 
-        videoViewD36.setOnPreparedListener(new MediaPlayer.OnPreparedListener() {
+        videoViewD.setOnPreparedListener(new MediaPlayer.OnPreparedListener() {
             @Override
             public void onPrepared(MediaPlayer mp) {
 
-                videoViewD36.start();
+                videoViewD.start();
                 
             }
         });
 
-        videoViewD36.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+        videoViewD.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
             @Override
             public void onCompletion(MediaPlayer mp) {
 
-                sfx.start();
-
-                videoViewD36.stopPlayback();
+                videoViewD.stopPlayback();
                 discipline2();
 
             }
         });
 
-        backbtnD36.setOnClickListener(new View.OnClickListener() {
+        backbtnD.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
                 sfx.start();
 
-                
-                videoViewD36.stopPlayback();
+                videoViewD.stopPlayback();
                 startActivity(new Intent(LessonDiscipline.this,ChooseModeDiscipline.class));
 
             }
         });
 
-        nextbtnD36.setOnClickListener(new View.OnClickListener() {
+        nextbtnD.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
                 sfx.start();
 
-                
-                videoViewD36.stopPlayback();
+                videoViewD.stopPlayback();
                 discipline2();
 
             }
@@ -96,54 +92,50 @@ public class LessonDiscipline extends AppCompatActivity {
     }
 
     public void discipline2(){
-        videoPathD36 = "android.resource://" + getPackageName() + "/" + R.raw.discipline2;
-        uriD36 = Uri.parse(videoPathD36);
-        videoViewD36.setVideoURI(uriD36);
+        videoPathD = "android.resource://" + getPackageName() + "/" + R.raw.discipline2;
+        uriD = Uri.parse(videoPathD);
+        videoViewD.setVideoURI(uriD);
         sfx = MediaPlayer.create(this, R.raw.btnsfx);
          
 
-        videoViewD36.setOnPreparedListener(new MediaPlayer.OnPreparedListener() {
+        videoViewD.setOnPreparedListener(new MediaPlayer.OnPreparedListener() {
             @Override
             public void onPrepared(MediaPlayer mp) {
 
-                videoViewD36.start();
+                videoViewD.start();
                 
             }
         });
 
-        videoViewD36.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+        videoViewD.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
             @Override
             public void onCompletion(MediaPlayer mp) {
-
-                sfx.start();
                 
-                videoViewD36.stopPlayback();
+                videoViewD.stopPlayback();
                 discipline3();
 
             }
         });
 
-        backbtnD36.setOnClickListener(new View.OnClickListener() {
+        backbtnD.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
                 sfx.start();
 
-
-                videoViewD36.stopPlayback();
+                videoViewD.stopPlayback();
                 discipline1();
 
             }
         });
 
-        nextbtnD36.setOnClickListener(new View.OnClickListener() {
+        nextbtnD.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
                 sfx.start();
 
-                
-                videoViewD36.stopPlayback();
+                videoViewD.stopPlayback();
                 discipline3();
 
             }
@@ -151,54 +143,50 @@ public class LessonDiscipline extends AppCompatActivity {
     }
 
     public void discipline3(){
-        videoPathD36 = "android.resource://" + getPackageName() + "/" + R.raw.discipline3;
-        uriD36 = Uri.parse(videoPathD36);
-        videoViewD36.setVideoURI(uriD36);
+        videoPathD = "android.resource://" + getPackageName() + "/" + R.raw.discipline3;
+        uriD = Uri.parse(videoPathD);
+        videoViewD.setVideoURI(uriD);
         sfx = MediaPlayer.create(this, R.raw.btnsfx);
          
 
-        videoViewD36.setOnPreparedListener(new MediaPlayer.OnPreparedListener() {
+        videoViewD.setOnPreparedListener(new MediaPlayer.OnPreparedListener() {
             @Override
             public void onPrepared(MediaPlayer mp) {
 
-                videoViewD36.start();
+                videoViewD.start();
                 
             }
         });
 
-        videoViewD36.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+        videoViewD.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
             @Override
             public void onCompletion(MediaPlayer mp) {
 
-                sfx.start();
-
-                videoViewD36.stopPlayback();
+                videoViewD.stopPlayback();
                 discipline4();
 
             }
         });
 
-        backbtnD36.setOnClickListener(new View.OnClickListener() {
+        backbtnD.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
                 sfx.start();
-
                 
-                videoViewD36.stopPlayback();
+                videoViewD.stopPlayback();
                 discipline2();
 
             }
         });
 
-        nextbtnD36.setOnClickListener(new View.OnClickListener() {
+        nextbtnD.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
                 sfx.start();
 
-                
-                videoViewD36.stopPlayback();
+                videoViewD.stopPlayback();
                 discipline4();
 
             }
@@ -206,54 +194,50 @@ public class LessonDiscipline extends AppCompatActivity {
     }
 
     public void discipline4(){
-        videoPathD36 = "android.resource://" + getPackageName() + "/" + R.raw.discipline4;
-        uriD36 = Uri.parse(videoPathD36);
-        videoViewD36.setVideoURI(uriD36);
+        videoPathD = "android.resource://" + getPackageName() + "/" + R.raw.discipline4;
+        uriD = Uri.parse(videoPathD);
+        videoViewD.setVideoURI(uriD);
         sfx = MediaPlayer.create(this, R.raw.btnsfx);
          
 
-        videoViewD36.setOnPreparedListener(new MediaPlayer.OnPreparedListener() {
+        videoViewD.setOnPreparedListener(new MediaPlayer.OnPreparedListener() {
             @Override
             public void onPrepared(MediaPlayer mp) {
 
-                videoViewD36.start();
+                videoViewD.start();
                 
             }
         });
 
-        videoViewD36.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+        videoViewD.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
             @Override
             public void onCompletion(MediaPlayer mp) {
 
-                sfx.start();
-
-                videoViewD36.stopPlayback();
+                videoViewD.stopPlayback();
                 discipline5();
 
             }
         });
 
-        backbtnD36.setOnClickListener(new View.OnClickListener() {
+        backbtnD.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
                 sfx.start();
 
-                
-                videoViewD36.stopPlayback();
+                videoViewD.stopPlayback();
                 discipline3();
 
             }
         });
 
-        nextbtnD36.setOnClickListener(new View.OnClickListener() {
+        nextbtnD.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
                 sfx.start();
-
                 
-                videoViewD36.stopPlayback();
+                videoViewD.stopPlayback();
                 discipline5();
 
             }
@@ -261,54 +245,50 @@ public class LessonDiscipline extends AppCompatActivity {
     }
 
     public void discipline5(){
-        videoPathD36 = "android.resource://" + getPackageName() + "/" + R.raw.discipline5;
-        uriD36 = Uri.parse(videoPathD36);
-        videoViewD36.setVideoURI(uriD36);
+        videoPathD = "android.resource://" + getPackageName() + "/" + R.raw.discipline5;
+        uriD = Uri.parse(videoPathD);
+        videoViewD.setVideoURI(uriD);
         sfx = MediaPlayer.create(this, R.raw.btnsfx);
          
 
-        videoViewD36.setOnPreparedListener(new MediaPlayer.OnPreparedListener() {
+        videoViewD.setOnPreparedListener(new MediaPlayer.OnPreparedListener() {
             @Override
             public void onPrepared(MediaPlayer mp) {
 
-                videoViewD36.start();
+                videoViewD.start();
                 
             }
         });
 
-        videoViewD36.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+        videoViewD.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
             @Override
             public void onCompletion(MediaPlayer mp) {
 
-                sfx.start();
-
-                videoViewD36.stopPlayback();
+                videoViewD.stopPlayback();
                 discipline6();
 
             }
         });
 
-        backbtnD36.setOnClickListener(new View.OnClickListener() {
+        backbtnD.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
                 sfx.start();
 
-                
-                videoViewD36.stopPlayback();
+                videoViewD.stopPlayback();
                 discipline4();
 
             }
         });
 
-        nextbtnD36.setOnClickListener(new View.OnClickListener() {
+        nextbtnD.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
                 sfx.start();
 
-                
-                videoViewD36.stopPlayback();
+                videoViewD.stopPlayback();
                 discipline6();
 
             }
@@ -316,54 +296,50 @@ public class LessonDiscipline extends AppCompatActivity {
     }
 
     public void discipline6(){
-        videoPathD36 = "android.resource://" + getPackageName() + "/" + R.raw.discipline6;
-        uriD36 = Uri.parse(videoPathD36);
-        videoViewD36.setVideoURI(uriD36);
+        videoPathD = "android.resource://" + getPackageName() + "/" + R.raw.discipline6;
+        uriD = Uri.parse(videoPathD);
+        videoViewD.setVideoURI(uriD);
         sfx = MediaPlayer.create(this, R.raw.btnsfx);
          
 
-        videoViewD36.setOnPreparedListener(new MediaPlayer.OnPreparedListener() {
+        videoViewD.setOnPreparedListener(new MediaPlayer.OnPreparedListener() {
             @Override
             public void onPrepared(MediaPlayer mp) {
 
-                videoViewD36.start();
+                videoViewD.start();
                 
             }
         });
 
-        videoViewD36.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+        videoViewD.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
             @Override
             public void onCompletion(MediaPlayer mp) {
 
-                sfx.start();
-
-                videoViewD36.stopPlayback();
+                videoViewD.stopPlayback();
                 startActivity(new Intent(LessonDiscipline.this, DisciplineLessonCongrats.class));
 
             }
         });
 
-        backbtnD36.setOnClickListener(new View.OnClickListener() {
+        backbtnD.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
                 sfx.start();
-
                 
-                videoViewD36.stopPlayback();
+                videoViewD.stopPlayback();
                 discipline5();
 
             }
         });
 
-        nextbtnD36.setOnClickListener(new View.OnClickListener() {
+        nextbtnD.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
                 sfx.start();
 
-                
-                videoViewD36.stopPlayback();
+                videoViewD.stopPlayback();
                 startActivity(new Intent(LessonDiscipline.this, DisciplineLessonCongrats.class));
 
             }
@@ -382,8 +358,8 @@ public class LessonDiscipline extends AppCompatActivity {
             }
         });
 
-        videoViewD36.pause();
-        currentPosition = videoViewD36.getCurrentPosition();
+        videoViewD.pause();
+        currentPosition = videoViewD.getCurrentPosition();
 
         super.onUserLeaveHint();
 
@@ -392,8 +368,8 @@ public class LessonDiscipline extends AppCompatActivity {
     @Override
     protected void onResume(){
 
-        videoViewD36.seekTo(currentPosition);
-        videoViewD36.start();
+        videoViewD.seekTo(currentPosition);
+        videoViewD.start();
 
         super.onResume();
 

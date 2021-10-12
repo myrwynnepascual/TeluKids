@@ -24,10 +24,10 @@ public class LessonIntroCompassion extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_lesson_intro_compassion);
+        setContentView(R.layout.activity_lesson_intro_vid);
 
-        btncloseICP = findViewById(R.id.btncloseICP);
-        videoViewICP = findViewById(R.id.videoICP);
+        btncloseICP = findViewById(R.id.btncloseLIV);
+        videoViewICP = findViewById(R.id.videoLIV);
         videoPathICP = "android.resource://" + getPackageName() + "/" + R.raw.compassionintrovideo;
         uriICP = Uri.parse(videoPathICP);
         videoViewICP.setVideoURI(uriICP);

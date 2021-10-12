@@ -25,10 +25,10 @@ public class LessonIntroColors extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_lesson_intro_colors);
+        setContentView(R.layout.activity_lesson_intro_vid);
 
-        btncloseIC = findViewById(R.id.btncloseIC);
-        videoViewIC = findViewById(R.id.videoIC);
+        btncloseIC = findViewById(R.id.btncloseLIV);
+        videoViewIC = findViewById(R.id.videoLIV);
         videoPathIC = "android.resource://" + getPackageName() + "/" + R.raw.colorsintrovideo;
         uriIC = Uri.parse(videoPathIC);
         videoViewIC.setVideoURI(uriIC);

@@ -16,12 +16,12 @@ public class ChooseModeShapes extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_choose_mode_shapes);
+        setContentView(R.layout.activity_choose_mode);
 
-        backCMS = findViewById(R.id.bconceptsbtnCMS);
-        learnCMS = findViewById(R.id.learnCMS);
-        assessCMS = findViewById(R.id.assessCMS);
-        replayCMS = findViewById(R.id.replayintroCMS);
+        backCMS = findViewById(R.id.bconceptsbtnCM);
+        learnCMS = findViewById(R.id.learnCM);
+        assessCMS = findViewById(R.id.assessCM);
+        replayCMS = findViewById(R.id.replayintroCM);
 
         BackgroundSoundService.onResume();
 

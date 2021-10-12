@@ -16,12 +16,12 @@ public class ChooseModeSociability extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_choose_mode_sociability);
+        setContentView(R.layout.activity_choose_mode);
 
-        backCMSC = findViewById(R.id.bconceptsbtnCMSC);
-        learnCMSC = findViewById(R.id.learnCMSC);
-        assessCMSC = findViewById(R.id.assessCMSC);
-        replayCMSC = findViewById(R.id.replayintroCMSC);
+        backCMSC = findViewById(R.id.bconceptsbtnCM);
+        learnCMSC = findViewById(R.id.learnCM);
+        assessCMSC = findViewById(R.id.assessCM);
+        replayCMSC = findViewById(R.id.replayintroCM);
 
         BackgroundSoundService.onResume();
 

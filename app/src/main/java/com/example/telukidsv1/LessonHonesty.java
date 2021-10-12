@@ -13,10 +13,10 @@ import android.widget.VideoView;
 
 public class LessonHonesty extends AppCompatActivity {
 
-    VideoView videoViewH36;
-    String videoPathH36;
-    Uri uriH36;
-    ImageButton backbtnH36,nextbtnH36;
+    VideoView videoViewH;
+    String videoPathH;
+    Uri uriH;
+    ImageButton backbtnH,nextbtnH;
     MediaController mediaController;
     MediaPlayer sfx;
     int currentPosition;
@@ -24,16 +24,16 @@ public class LessonHonesty extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_lesson_honesty);
+        setContentView(R.layout.activity_lesson);
 
-        videoViewH36 = findViewById(R.id.videoH36);
-        backbtnH36 = findViewById(R.id.btnbackH36);
-        nextbtnH36 = findViewById(R.id.nextbtnH36);
+        videoViewH = findViewById(R.id.video);
+        backbtnH = findViewById(R.id.btnback);
+        nextbtnH = findViewById(R.id.nextbtn);
 
         mediaController = new MediaController(this);
-        videoViewH36.setMediaController(mediaController);
+        videoViewH.setMediaController(mediaController);
         mediaController.setVisibility(View.GONE);
-        mediaController.setAnchorView(videoViewH36);
+        mediaController.setAnchorView(videoViewH);
 
         BackgroundSoundService.onPause();
 
@@ -41,51 +41,49 @@ public class LessonHonesty extends AppCompatActivity {
     }
 
     public void honesty1(){
-        videoPathH36 = "android.resource://" + getPackageName() + "/" + R.raw.honesty1;
-        uriH36 = Uri.parse(videoPathH36);
-        videoViewH36.setVideoURI(uriH36);
+        videoPathH = "android.resource://" + getPackageName() + "/" + R.raw.honesty1;
+        uriH = Uri.parse(videoPathH);
+        videoViewH.setVideoURI(uriH);
         sfx = MediaPlayer.create(this, R.raw.btnsfx);
 
-        videoViewH36.setOnPreparedListener(new MediaPlayer.OnPreparedListener() {
+        videoViewH.setOnPreparedListener(new MediaPlayer.OnPreparedListener() {
             @Override
             public void onPrepared(MediaPlayer mp) {
                 
-                videoViewH36.start();
+                videoViewH.start();
                 
             }
         });
 
-        videoViewH36.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+        videoViewH.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
             @Override
             public void onCompletion(MediaPlayer mp) {
 
-                sfx.start();
-
-                videoViewH36.stopPlayback();
+                videoViewH.stopPlayback();
                 honesty2();
 
             }
         });
 
-        backbtnH36.setOnClickListener(new View.OnClickListener() {
+        backbtnH.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
                 sfx.start();
 
-                videoViewH36.stopPlayback();
+                videoViewH.stopPlayback();
                 startActivity(new Intent(LessonHonesty.this, ChooseModeHonesty.class));
 
             }
         });
 
-        nextbtnH36.setOnClickListener(new View.OnClickListener() {
+        nextbtnH.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
                 sfx.start();
 
-                videoViewH36.stopPlayback();
+                videoViewH.stopPlayback();
                 honesty2();
 
             }
@@ -93,51 +91,49 @@ public class LessonHonesty extends AppCompatActivity {
     }
 
     public void honesty2(){
-        videoPathH36 = "android.resource://" + getPackageName() + "/" + R.raw.honesty2;
-        uriH36 = Uri.parse(videoPathH36);
-        videoViewH36.setVideoURI(uriH36);
+        videoPathH = "android.resource://" + getPackageName() + "/" + R.raw.honesty2;
+        uriH = Uri.parse(videoPathH);
+        videoViewH.setVideoURI(uriH);
         sfx = MediaPlayer.create(this, R.raw.btnsfx);
 
-        videoViewH36.setOnPreparedListener(new MediaPlayer.OnPreparedListener() {
+        videoViewH.setOnPreparedListener(new MediaPlayer.OnPreparedListener() {
             @Override
             public void onPrepared(MediaPlayer mp) {
                 
-                videoViewH36.start();
+                videoViewH.start();
                 
             }
         });
 
-        videoViewH36.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+        videoViewH.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
             @Override
             public void onCompletion(MediaPlayer mp) {
 
-                sfx.start();
-
-                videoViewH36.stopPlayback();
+                videoViewH.stopPlayback();
                 honesty3();
 
             }
         });
 
-        backbtnH36.setOnClickListener(new View.OnClickListener() {
+        backbtnH.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
                 sfx.start();
 
-                videoViewH36.stopPlayback();
+                videoViewH.stopPlayback();
                 honesty1();
 
             }
         });
 
-        nextbtnH36.setOnClickListener(new View.OnClickListener() {
+        nextbtnH.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
                 sfx.start();
 
-                videoViewH36.stopPlayback();
+                videoViewH.stopPlayback();
                 honesty3();
 
             }
@@ -145,51 +141,49 @@ public class LessonHonesty extends AppCompatActivity {
     }
 
     public void honesty3(){
-        videoPathH36 = "android.resource://" + getPackageName() + "/" + R.raw.honesty3;
-        uriH36 = Uri.parse(videoPathH36);
-        videoViewH36.setVideoURI(uriH36);
+        videoPathH = "android.resource://" + getPackageName() + "/" + R.raw.honesty3;
+        uriH = Uri.parse(videoPathH);
+        videoViewH.setVideoURI(uriH);
         sfx = MediaPlayer.create(this, R.raw.btnsfx);
 
-        videoViewH36.setOnPreparedListener(new MediaPlayer.OnPreparedListener() {
+        videoViewH.setOnPreparedListener(new MediaPlayer.OnPreparedListener() {
             @Override
             public void onPrepared(MediaPlayer mp) {
                 
-                videoViewH36.start();
+                videoViewH.start();
                 
             }
         });
 
-        videoViewH36.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+        videoViewH.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
             @Override
             public void onCompletion(MediaPlayer mp) {
 
-                sfx.start();
-
-                videoViewH36.stopPlayback();
+                videoViewH.stopPlayback();
                 honesty4();
 
             }
         });
 
-        backbtnH36.setOnClickListener(new View.OnClickListener() {
+        backbtnH.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
                 sfx.start();
 
-                videoViewH36.stopPlayback();
+                videoViewH.stopPlayback();
                 honesty2();
 
             }
         });
 
-        nextbtnH36.setOnClickListener(new View.OnClickListener() {
+        nextbtnH.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
                 sfx.start();
 
-                videoViewH36.stopPlayback();
+                videoViewH.stopPlayback();
                 honesty4();
 
             }
@@ -197,51 +191,49 @@ public class LessonHonesty extends AppCompatActivity {
     }
 
     public void honesty4(){
-        videoPathH36 = "android.resource://" + getPackageName() + "/" + R.raw.honesty4;
-        uriH36 = Uri.parse(videoPathH36);
-        videoViewH36.setVideoURI(uriH36);
+        videoPathH = "android.resource://" + getPackageName() + "/" + R.raw.honesty4;
+        uriH = Uri.parse(videoPathH);
+        videoViewH.setVideoURI(uriH);
         sfx = MediaPlayer.create(this, R.raw.btnsfx);
 
-        videoViewH36.setOnPreparedListener(new MediaPlayer.OnPreparedListener() {
+        videoViewH.setOnPreparedListener(new MediaPlayer.OnPreparedListener() {
             @Override
             public void onPrepared(MediaPlayer mp) {
                 
-                videoViewH36.start();
+                videoViewH.start();
                 
             }
         });
 
-        videoViewH36.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+        videoViewH.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
             @Override
             public void onCompletion(MediaPlayer mp) {
 
-                sfx.start();
-
-                videoViewH36.stopPlayback();
+                videoViewH.stopPlayback();
                 honesty5();
 
             }
         });
 
-        backbtnH36.setOnClickListener(new View.OnClickListener() {
+        backbtnH.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
                 sfx.start();
 
-                videoViewH36.stopPlayback();
+                videoViewH.stopPlayback();
                 honesty3();
 
             }
         });
 
-        nextbtnH36.setOnClickListener(new View.OnClickListener() {
+        nextbtnH.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
                 sfx.start();
 
-                videoViewH36.stopPlayback();
+                videoViewH.stopPlayback();
                 honesty5();
 
             }
@@ -249,51 +241,49 @@ public class LessonHonesty extends AppCompatActivity {
     }
 
     public void honesty5(){
-        videoPathH36 = "android.resource://" + getPackageName() + "/" + R.raw.honesty5;
-        uriH36 = Uri.parse(videoPathH36);
-        videoViewH36.setVideoURI(uriH36);
+        videoPathH = "android.resource://" + getPackageName() + "/" + R.raw.honesty5;
+        uriH = Uri.parse(videoPathH);
+        videoViewH.setVideoURI(uriH);
         sfx = MediaPlayer.create(this, R.raw.btnsfx);
 
-        videoViewH36.setOnPreparedListener(new MediaPlayer.OnPreparedListener() {
+        videoViewH.setOnPreparedListener(new MediaPlayer.OnPreparedListener() {
             @Override
             public void onPrepared(MediaPlayer mp) {
                 
-                videoViewH36.start();
+                videoViewH.start();
                 
             }
         });
 
-        videoViewH36.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+        videoViewH.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
             @Override
             public void onCompletion(MediaPlayer mp) {
 
-                sfx.start();
-
-                videoViewH36.stopPlayback();
+                videoViewH.stopPlayback();
                 startActivity(new Intent(LessonHonesty.this, HonestyLessonCongrats.class));
 
             }
         });
 
-        backbtnH36.setOnClickListener(new View.OnClickListener() {
+        backbtnH.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
                 sfx.start();
 
-                videoViewH36.stopPlayback();
+                videoViewH.stopPlayback();
                 honesty4();
 
             }
         });
 
-        nextbtnH36.setOnClickListener(new View.OnClickListener() {
+        nextbtnH.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
                 sfx.start();
 
-                videoViewH36.stopPlayback();
+                videoViewH.stopPlayback();
                 startActivity(new Intent(LessonHonesty.this, HonestyLessonCongrats.class));
 
             }
@@ -312,8 +302,8 @@ public class LessonHonesty extends AppCompatActivity {
             }
         });
 
-        videoViewH36.pause();
-        currentPosition = videoViewH36.getCurrentPosition();
+        videoViewH.pause();
+        currentPosition = videoViewH.getCurrentPosition();
 
         super.onUserLeaveHint();
 
@@ -322,8 +312,8 @@ public class LessonHonesty extends AppCompatActivity {
     @Override
     protected void onResume(){
 
-        videoViewH36.seekTo(currentPosition);
-        videoViewH36.start();
+        videoViewH.seekTo(currentPosition);
+        videoViewH.start();
 
         super.onResume();
 
