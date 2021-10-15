@@ -41,7 +41,8 @@ public class ResultsCountingNumbers extends AppCompatActivity {
         ImageButton achievementsbtnCLC_Counting = findViewById(R.id.achievementsbtnCLC_Counting);
         ImageButton btnReadLesson_Quiz_Counting = findViewById(R.id.btnReadLesson_Quiz_Counting);
         ImageButton homepageCLC_Counting = findViewById(R.id.homepageCLC_Counting);
-        MediaPlayer sfx = MediaPlayer.create(this, R.raw.btnsfx);
+
+        sfx = MediaPlayer.create(this, R.raw.btnsfx);
 
         congrats = MediaPlayer.create(this, R.raw.yaysfx);
         congrats.start();

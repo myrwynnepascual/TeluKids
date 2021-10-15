@@ -32,4 +32,9 @@ public class SplashScreen extends AppCompatActivity {
             }
         },5000);
     }
+
+    @Override
+    public void onBackPressed(){
+
+    }
 }

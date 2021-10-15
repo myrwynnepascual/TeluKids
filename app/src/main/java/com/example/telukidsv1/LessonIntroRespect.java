@@ -75,6 +75,11 @@ public class LessonIntroRespect extends AppCompatActivity {
     }
 
     @Override
+    public void onBackPressed(){
+
+    }
+
+    @Override
     protected void onUserLeaveHint(){
 
         sfx.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {

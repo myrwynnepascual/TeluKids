@@ -6,8 +6,11 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.media.MediaPlayer;
 import android.os.Bundle;
+import android.view.Gravity;
 import android.view.View;
 import android.widget.ImageButton;
+import android.widget.TextView;
+import android.widget.Toast;
 
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
@@ -47,6 +50,11 @@ public class AgeCategorySelection extends AppCompatActivity {
                startActivity(new Intent(AgeCategorySelection.this, Homepage7to9.class));
            }
        });
+
+    }
+
+    @Override
+    public void onBackPressed(){
 
     }
 
