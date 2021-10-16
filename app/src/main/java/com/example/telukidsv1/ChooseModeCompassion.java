@@ -64,7 +64,7 @@ public class ChooseModeCompassion extends AppCompatActivity {
 
     @Override
     public void onBackPressed(){
-
+        startActivity(new Intent(ChooseModeCompassion.this, Gmrc3to6.class));
     }
 
 

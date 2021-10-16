@@ -67,7 +67,7 @@ public class ChooseModeCounting extends AppCompatActivity {
 
     @Override
     public void onBackPressed(){
-
+        startActivity(new Intent(ChooseModeCounting.this,Numbers.class));
     }
 
 

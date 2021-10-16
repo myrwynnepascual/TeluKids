@@ -696,6 +696,19 @@ public class Achievements7to9Love extends AppCompatActivity {
 
     @Override
     public void onBackPressed(){
+        Intent proceed = new Intent(Achievements7to9Love.this, LoveLessonCongrats.class);
+        startActivity(proceed);
+    }
 
+    @Override
+    protected void onUserLeaveHint(){
+        sfx.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+            @Override
+            public void onCompletion(MediaPlayer mp) {
+                sfx.release();
+            }
+        });
+
+        super.onUserLeaveHint();
     }
 }

@@ -74,7 +74,7 @@ public class LessonIntroSubtraction extends AppCompatActivity {
 
     @Override
     public void onBackPressed(){
-
+        startActivity(new Intent(LessonIntroSubtraction.this,Numbers.class));
     }
 
     @Override

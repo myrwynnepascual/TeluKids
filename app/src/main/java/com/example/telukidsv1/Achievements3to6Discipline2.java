@@ -700,7 +700,9 @@ public class Achievements3to6Discipline2 extends AppCompatActivity {
 
     @Override
     public void onBackPressed(){
-
+        Intent proceed = new Intent(Achievements3to6Discipline2.this, ResultsDiscipline.class);
+        proceed.putExtra("RIGHT_ANSWER_COUNT_Discipline", score_discipline);
+        startActivity(proceed);
     }
 
     @Override

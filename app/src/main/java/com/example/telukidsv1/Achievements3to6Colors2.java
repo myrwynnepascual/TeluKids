@@ -700,7 +700,9 @@ public class Achievements3to6Colors2 extends AppCompatActivity {
 
     @Override
     public void onBackPressed(){
-
+        Intent proceed = new Intent(Achievements3to6Colors2.this, ResultsColors.class);
+        proceed.putExtra("RIGHT_ANSWER_COUNT_Colors", score_colors);
+        startActivity(proceed);
     }
 
     @Override

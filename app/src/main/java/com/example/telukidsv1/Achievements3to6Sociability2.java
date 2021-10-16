@@ -699,7 +699,9 @@ public class Achievements3to6Sociability2 extends AppCompatActivity {
 
     @Override
     public void onBackPressed(){
-
+        Intent proceed = new Intent(Achievements3to6Sociability2.this, ResultsSociability.class);
+        proceed.putExtra("RIGHT_ANSWER_COUNT_Sociability", score_sociability);
+        startActivity(proceed);
     }
 
     @Override

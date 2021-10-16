@@ -64,7 +64,7 @@ public class ChooseModeHonesty extends AppCompatActivity {
 
     @Override
     public void onBackPressed(){
-
+        startActivity(new Intent(ChooseModeHonesty.this,Gmrc3to6.class));
     }
 
 

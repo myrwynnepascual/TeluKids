@@ -64,7 +64,7 @@ public class ChooseModeObedience extends AppCompatActivity {
 
     @Override
     public void onBackPressed(){
-
+        startActivity(new Intent(ChooseModeObedience.this,Gmrc7to9.class));
     }
 
 

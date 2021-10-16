@@ -699,7 +699,9 @@ public class Achievements3to6Counting2 extends AppCompatActivity {
 
     @Override
     public void onBackPressed(){
-
+        Intent proceed = new Intent(Achievements3to6Counting2.this, ResultsCountingNumbers.class);
+        proceed.putExtra("RIGHT_ANSWER_COUNT_Counting", score_counting);
+        startActivity(proceed);
     }
 
     @Override

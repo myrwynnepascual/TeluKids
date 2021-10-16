@@ -113,7 +113,7 @@ public class Login extends AppCompatActivity {
 
     @Override
     public void onBackPressed(){
-
+        startActivity(new Intent(Login.this,SignUpOrLogInPage.class));
     }
 
     @Override

@@ -63,7 +63,7 @@ public class ChooseModeDiscipline extends AppCompatActivity {
 
     @Override
     public void onBackPressed(){
-
+        startActivity(new Intent(ChooseModeDiscipline.this,Gmrc3to6.class));
     }
 
 

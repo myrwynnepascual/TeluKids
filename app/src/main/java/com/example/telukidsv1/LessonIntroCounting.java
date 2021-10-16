@@ -74,7 +74,7 @@ public class LessonIntroCounting extends AppCompatActivity {
 
     @Override
     public void onBackPressed(){
-
+        startActivity(new Intent(LessonIntroCounting.this,Numbers.class));
     }
 
     @Override

@@ -120,7 +120,7 @@ public class Homepage7to9 extends AppCompatActivity {
 
     @Override
     public void onBackPressed(){
-
+        startActivity(new Intent(Homepage7to9.this, AgeCategorySelection.class));
     }
 
     @Override

@@ -64,7 +64,7 @@ public class ChooseModeColors extends AppCompatActivity {
 
     @Override
     public void onBackPressed(){
-
+        startActivity(new Intent(ChooseModeColors.this,BasicConcepts.class));
     }
 
 

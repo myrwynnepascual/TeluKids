@@ -73,7 +73,7 @@ public class LessonIntroDoingGood extends AppCompatActivity {
 
     @Override
     public void onBackPressed(){
-
+        startActivity(new Intent(LessonIntroDoingGood.this,Gmrc7to9.class));
     }
 
     @Override

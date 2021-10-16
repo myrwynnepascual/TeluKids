@@ -83,7 +83,7 @@ public class ForgotPassword extends AppCompatActivity {
 
     @Override
     public void onBackPressed(){
-
+        startActivity(new Intent(ForgotPassword.this, Login.class));
     }
 
     @Override

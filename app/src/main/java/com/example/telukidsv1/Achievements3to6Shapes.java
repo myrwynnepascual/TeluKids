@@ -697,7 +697,8 @@ public class Achievements3to6Shapes extends AppCompatActivity {
 
     @Override
     public void onBackPressed(){
-
+        Intent proceed = new Intent(Achievements3to6Shapes.this, ShapesLessonCongrats.class);
+        startActivity(proceed);
     }
 
     @Override

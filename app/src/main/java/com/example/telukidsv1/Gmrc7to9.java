@@ -71,7 +71,7 @@ public class Gmrc7to9 extends AppCompatActivity {
 
     @Override
     public void onBackPressed(){
-
+        startActivity(new Intent(Gmrc7to9.this, Homepage7to9.class));
     }
 
     @Override

@@ -74,7 +74,7 @@ public class LessonIntroLove extends AppCompatActivity {
 
     @Override
     public void onBackPressed(){
-
+        startActivity(new Intent(LessonIntroLove.this,Gmrc7to9.class));
     }
 
     @Override

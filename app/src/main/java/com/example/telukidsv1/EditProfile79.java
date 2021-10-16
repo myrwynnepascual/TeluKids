@@ -438,7 +438,7 @@ public class EditProfile79 extends AppCompatActivity {
 
     @Override
     public void onBackPressed(){
-
+        startActivity(new Intent(EditProfile79.this,UserProfile79.class));
     }
 
 

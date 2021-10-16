@@ -696,7 +696,8 @@ public class Achievements3to6Colors extends AppCompatActivity {
 
     @Override
     public void onBackPressed(){
-
+        Intent proceed = new Intent(Achievements3to6Colors.this, ColorsLessonCongrats.class);
+        startActivity(proceed);
     }
 
     @Override

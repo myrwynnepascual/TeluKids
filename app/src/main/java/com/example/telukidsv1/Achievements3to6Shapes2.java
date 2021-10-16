@@ -699,7 +699,9 @@ public class Achievements3to6Shapes2 extends AppCompatActivity {
 
     @Override
     public void onBackPressed(){
-
+        Intent proceed = new Intent(Achievements3to6Shapes2.this, ResultsShapes.class);
+        proceed.putExtra("RIGHT_ANSWER_COUNT_Shapes", score_shapes);
+        startActivity(proceed);
     }
 
     @Override

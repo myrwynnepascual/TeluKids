@@ -697,7 +697,8 @@ public class Achievements3to6Honesty extends AppCompatActivity {
 
     @Override
     public void onBackPressed(){
-
+        Intent proceed = new Intent(Achievements3to6Honesty.this, HonestyLessonCongrats.class);
+        startActivity(proceed);
     }
 
     @Override

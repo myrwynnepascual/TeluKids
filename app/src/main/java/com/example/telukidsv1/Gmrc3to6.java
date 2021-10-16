@@ -92,7 +92,7 @@ public class Gmrc3to6 extends AppCompatActivity {
 
     @Override
     public void onBackPressed(){
-
+        startActivity(new Intent(Gmrc3to6.this, Homepage3to6.class));
     }
 
     @Override

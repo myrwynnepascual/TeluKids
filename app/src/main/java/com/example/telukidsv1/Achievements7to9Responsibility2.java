@@ -699,7 +699,9 @@ public class Achievements7to9Responsibility2 extends AppCompatActivity {
 
     @Override
     public void onBackPressed(){
-
+        Intent proceed = new Intent(Achievements7to9Responsibility2.this, ResultsResponsibility.class);
+        proceed.putExtra("RIGHT_ANSWER_COUNT_Responsibility", score_responsibility);
+        startActivity(proceed);
     }
 
     @Override

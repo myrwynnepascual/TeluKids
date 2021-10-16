@@ -700,7 +700,9 @@ public class Achievements3to6Compassion2 extends AppCompatActivity {
 
     @Override
     public void onBackPressed(){
-
+        Intent proceed = new Intent(Achievements3to6Compassion2.this, ResultsCompassion.class);
+        proceed.putExtra("RIGHT_ANSWER_COUNT_Compassion", score_compassion);
+        startActivity(proceed);
     }
 
     @Override

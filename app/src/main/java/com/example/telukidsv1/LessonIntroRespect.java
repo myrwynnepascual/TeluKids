@@ -76,7 +76,7 @@ public class LessonIntroRespect extends AppCompatActivity {
 
     @Override
     public void onBackPressed(){
-
+        startActivity(new Intent(LessonIntroRespect.this,Gmrc3to6.class));
     }
 
     @Override

@@ -73,7 +73,7 @@ public class LessonIntroCompassion extends AppCompatActivity {
 
     @Override
     public void onBackPressed(){
-
+        startActivity(new Intent(LessonIntroCompassion.this, Gmrc3to6.class));
     }
 
     @Override

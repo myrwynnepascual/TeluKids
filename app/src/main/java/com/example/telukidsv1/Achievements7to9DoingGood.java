@@ -696,7 +696,8 @@ public class Achievements7to9DoingGood extends AppCompatActivity {
 
     @Override
     public void onBackPressed(){
-
+        Intent proceed = new Intent(Achievements7to9DoingGood.this, DoingGoodLessonCongrats.class);
+        startActivity(proceed);
     }
 
     @Override

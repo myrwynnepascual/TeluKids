@@ -139,7 +139,7 @@ public class UserProfile36 extends AppCompatActivity {
 
     @Override
     public void onBackPressed(){
-
+        startActivity(new Intent(UserProfile36.this,Homepage3to6.class));
     }
 
     @Override

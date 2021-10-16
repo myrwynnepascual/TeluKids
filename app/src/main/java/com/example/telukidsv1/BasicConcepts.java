@@ -65,7 +65,7 @@ public class BasicConcepts extends AppCompatActivity {
 
     @Override
     public void onBackPressed(){
-
+        startActivity(new Intent(BasicConcepts.this, Homepage3to6.class));
     }
 
     @Override

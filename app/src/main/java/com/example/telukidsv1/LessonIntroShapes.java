@@ -77,7 +77,7 @@ public class LessonIntroShapes extends AppCompatActivity {
 
     @Override
     public void onBackPressed(){
-
+        startActivity(new Intent(LessonIntroShapes.this,BasicConcepts.class));
     }
 
     @Override

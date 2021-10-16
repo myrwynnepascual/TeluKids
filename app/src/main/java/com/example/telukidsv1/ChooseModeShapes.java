@@ -64,7 +64,7 @@ public class ChooseModeShapes extends AppCompatActivity {
 
     @Override
     public void onBackPressed(){
-
+        startActivity(new Intent(ChooseModeShapes.this,BasicConcepts.class));
     }
 
 

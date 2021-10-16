@@ -700,7 +700,9 @@ public class Achievements3to6Respect2 extends AppCompatActivity {
 
     @Override
     public void onBackPressed(){
-
+        Intent proceed = new Intent(Achievements3to6Respect2.this, ResultsRespect.class);
+        proceed.putExtra("RIGHT_ANSWER_COUNT_Respect", score_respect);
+        startActivity(proceed);
     }
 
     @Override

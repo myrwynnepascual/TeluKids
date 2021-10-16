@@ -35,7 +35,7 @@ public class HelpPage79 extends AppCompatActivity {
 
     @Override
     public void onBackPressed(){
-
+        startActivity(new Intent(HelpPage79.this, UserProfile79.class));
     }
 
     @Override

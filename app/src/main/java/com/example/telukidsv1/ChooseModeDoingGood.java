@@ -64,7 +64,7 @@ public class ChooseModeDoingGood extends AppCompatActivity {
 
     @Override
     public void onBackPressed(){
-
+        startActivity(new Intent(ChooseModeDoingGood.this, Gmrc7to9.class));
     }
 
 

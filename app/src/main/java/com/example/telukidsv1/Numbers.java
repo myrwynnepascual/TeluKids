@@ -68,7 +68,7 @@ public class Numbers extends AppCompatActivity {
 
     @Override
     public void onBackPressed(){
-
+        startActivity(new Intent(Numbers.this,BasicConcepts.class));
     }
 
     @Override

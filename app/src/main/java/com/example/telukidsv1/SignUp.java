@@ -156,7 +156,7 @@ public class SignUp extends AppCompatActivity {
 
     @Override
     public void onBackPressed(){
-
+        startActivity(new Intent(SignUp.this,SignUpOrLogInPage.class));
     }
 
     @Override

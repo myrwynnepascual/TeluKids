@@ -75,7 +75,7 @@ public class LessonIntroColors extends AppCompatActivity {
 
     @Override
     public void onBackPressed(){
-
+        startActivity(new Intent(LessonIntroColors.this,BasicConcepts.class));
     }
 
     @Override

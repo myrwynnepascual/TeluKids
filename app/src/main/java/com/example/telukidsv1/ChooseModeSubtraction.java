@@ -64,7 +64,7 @@ public class ChooseModeSubtraction extends AppCompatActivity {
 
     @Override
     public void onBackPressed(){
-
+        startActivity(new Intent(ChooseModeSubtraction.this,Numbers.class));
     }
 
     @Override

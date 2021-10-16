@@ -55,7 +55,7 @@ public class AgeCategorySelection extends AppCompatActivity {
 
     @Override
     public void onBackPressed(){
-
+        startActivity(new Intent(AgeCategorySelection.this, Homepage7to9.class));
     }
 
     @Override

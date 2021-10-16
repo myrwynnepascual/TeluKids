@@ -74,7 +74,7 @@ public class LessonIntroAddition extends AppCompatActivity {
 
     @Override
     public void onBackPressed(){
-
+        startActivity(new Intent(LessonIntroAddition.this,Numbers.class));
     }
 
     @Override

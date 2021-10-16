@@ -64,7 +64,7 @@ public class ChooseModeResponsibility extends AppCompatActivity {
 
     @Override
     public void onBackPressed(){
-
+        startActivity(new Intent(ChooseModeResponsibility.this,Gmrc7to9.class));
     }
 
 

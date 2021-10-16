@@ -47,7 +47,8 @@ public class LogoutConfirmation79 extends AppCompatActivity {
 
     @Override
     public void onBackPressed(){
-
+        startActivity(new Intent(LogoutConfirmation79.this,UserProfile79.class));
+        finish();
     }
 
     @Override

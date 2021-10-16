@@ -699,7 +699,9 @@ public class Achievements7to9Love2 extends AppCompatActivity {
 
     @Override
     public void onBackPressed(){
-
+        Intent proceed = new Intent(Achievements7to9Love2.this, ResultsLove.class);
+        proceed.putExtra("RIGHT_ANSWER_COUNT_Love", score_love);
+        startActivity(proceed);
     }
 
     @Override

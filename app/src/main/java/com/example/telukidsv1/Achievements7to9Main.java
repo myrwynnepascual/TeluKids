@@ -696,7 +696,8 @@ public class Achievements7to9Main extends AppCompatActivity {
 
     @Override
     public void onBackPressed(){
-
+        Intent proceed = new Intent(Achievements7to9Main.this, Homepage7to9.class);
+        startActivity(proceed);
     }
 
     @Override
