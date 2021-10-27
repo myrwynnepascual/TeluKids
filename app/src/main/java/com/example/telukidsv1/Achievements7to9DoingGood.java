@@ -639,7 +639,7 @@ public class Achievements7to9DoingGood extends AppCompatActivity {
                 lesson_obedience = documentSnapshot.getString("obedience lesson");
 
                 if (lesson_obedience.equals("Completed")){
-                    imgAchievements_ObedienceCertificate.setImageResource(R.drawable.badgeobedience);
+                    imgAchievements_ObedienceCertificate.setImageResource(R.drawable.certificateobedience);
                 }
                 return null;
             }
