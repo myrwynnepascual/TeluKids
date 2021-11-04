@@ -339,14 +339,6 @@ public class EditProfile79 extends AppCompatActivity {
                                         nPassword.getText().clear();
                                         nCPassword.getText().clear();
 
-                                        SendMail mail = new SendMail("telukids.help@gmail.com","telukidsv1test",
-                                                user.getEmail(),
-                                                "TeluKids Update Password",
-                                                "Hello,\n" +
-                                                        "\n" +
-                                                        "This is to notify you that your TeluKids account's password has been updated.\n\n" + "Thanks,\n" +
-                                                        "Your TeluKids team");
-                                        mail.execute();
                                     }
                                 }).addOnFailureListener(new OnFailureListener() {
                                     @Override
